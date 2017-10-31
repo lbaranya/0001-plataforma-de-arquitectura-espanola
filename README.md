@@ -1,0 +1,3 @@
+# Bienvenido al repositorio CAAR 0001
+Este repositorio ha sido configurado por Oficina Técnica para usar git-flow. Para cualquier consulta sobre el modelo, no dudéis en consultarnos presencialmente o escribirnos a oficina.tecnica@atsistemas.com
+ 
