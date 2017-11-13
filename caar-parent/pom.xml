@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>es.arquia.magnolia</groupId>
+	<artifactId>caar-parent</artifactId>
+	<name>caar-parent (parent pom)</name>
+	<version>${parent.module.version}</version>
+	<packaging>pom</packaging>
+
+	<properties>
+		<magnoliaVersion>5.5.7</magnoliaVersion>
+		<javaVersion>1.8</javaVersion>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<parent.module.version>1.0-SNAPSHOT</parent.module.version>
+	    <webapp.module.version>1.0-SNAPSHOT</webapp.module.version>
+	</properties>
+
+	<!-- Fill the following in, so you can use the release plugin -->
+	<scm>
+		<developerConnection>scm:git:ssh://git.atsistemas.com:7999/scm/caar/0001-plataforma-de-arquitectura-espanola.git</developerConnection>
+		<connection>scm:git:ssh://git.atsistemas.com:7999/scm/caar/0001-plataforma-de-arquitectura-espanola.git</connection>
+		<url>scm:git:ssh://git.atsistemas.com:7999/scm/caar/0001-plataforma-de-arquitectura-espanola.git</url>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://desarrollo.atsistemas.com/nexus/content/repositories/atsistemas-snapshot/</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus</id>
+			<url>http://desarrollo.atsistemas.com/nexus/content/repositories/atsistemas/</url>
+		</repository>
+	</distributionManagement>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- Option A -->
+			<!-- Importing dependencyManagement of CE bundle. -->
+			<!-- <dependency> <groupId>info.magnolia.bundle</groupId> <artifactId>magnolia-bundle-parent</artifactId> 
+				<version>${magnoliaVersion}</version> <type>pom</type> <scope>import</scope> 
+				</dependency> -->
+
+			<!-- Option B -->
+			<!-- If you want to use the Enterprise Edition. -->
+			<dependency>
+				<groupId>info.magnolia.eebundle</groupId>
+				<artifactId>magnolia-enterprise-bundle-parent</artifactId>
+				<version>${magnoliaVersion}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- TEST -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>4.11</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.3</version>
+					<configuration>
+						<source>${javaVersion}</source>
+						<target>${javaVersion}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<tagNameFormat>@{project.version}</tagNameFormat>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+			</plugin>
+		</plugins>
+
+		<!-- default resources configuration which will filter your module descriptors -->
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+			<resource>
+				<filtering>true</filtering>
+				<directory>src/main/resources</directory>
+				<includes>
+					<include>META-INF/magnolia/*</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
+
+	<modules>
+		<module>caar-webapp</module>
+	</modules>
+</project>

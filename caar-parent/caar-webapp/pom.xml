@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	
+	<modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>es.arquia.magnolia</groupId>
+		<artifactId>caar-parent</artifactId>
+		<version>${parent.module.version}</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	
+	<artifactId>caar-webapp</artifactId>
+	<version>${webapp.module.version}</version>
+	<name>caar-webapp: webapp</name>
+	<packaging>war</packaging>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<dependencies>
+		<!-- Add your project specific dependencies here: A custom webapp typically 
+			is based on a magnolia webapp. The most simple and reduced bundle to start 
+			with is the "magnolia-empty-webapp" (see "option i" below). To see a complete 
+			list of preconfigured Magnolia webapps, have a look at https://documentation.magnolia-cms.com/display/DOCS/Bundles+and+webapps 
+			=> Please just use one of the four below listed options! Make sure to use 
+			the appropriate option (A or B) in the parent pom -->
+
+		<!-- option i - magnolia-empty-webapp -->
+		<!-- Dependencies versions are already imported by parent pom. Requires 
+			"Option A" in the parent pom. -->
+		<!-- 
+		<dependency>
+			<groupId>info.magnolia</groupId>
+			<artifactId>magnolia-empty-webapp</artifactId>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>info.magnolia</groupId>
+			<artifactId>magnolia-empty-webapp</artifactId>
+			<type>war</type>
+		</dependency>
+		 -->
+
+
+		<!-- option ii - magnolia-community-webapp -->
+		<!-- Dependencies versions are already imported by parent pom. Requires 
+			"Option A" in the parent pom. -->
+		<!-- <dependency> <groupId>info.magnolia.bundle</groupId> <artifactId>magnolia-community-webapp</artifactId> 
+			<type>pom</type> </dependency> <dependency> <groupId>info.magnolia.bundle</groupId> 
+			<artifactId>magnolia-community-webapp</artifactId> <type>war</type> </dependency> -->
+
+
+		<!-- option iii - magnolia-enterprise-standard-webapp -->
+		<!-- Dependencies versions are already imported by parent pom. Requires 
+			"Option B" in the parent pom. -->
+		<dependency>
+			<groupId>info.magnolia.eebundle</groupId>
+			<artifactId>magnolia-enterprise-standard-webapp</artifactId>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>info.magnolia.eebundle</groupId>
+			<artifactId>magnolia-enterprise-standard-webapp</artifactId>
+			<type>war</type>
+		</dependency>
+
+
+		<!-- option iv - magnolia-enterprise-pro-webapp -->
+		<!-- Dependencies versions are already imported by parent pom. Requires 
+			"Option B" in the parent pom. -->
+		<!-- <dependency> <groupId>info.magnolia.eebundle</groupId> <artifactId>magnolia-enterprise-pro-webapp</artifactId> 
+			<type>pom</type> </dependency> <dependency> <groupId>info.magnolia.eebundle</groupId> 
+			<artifactId>magnolia-enterprise-pro-webapp</artifactId> <type>war</type> 
+			</dependency> -->
+			
+		<!-- MySQL driver: 
+			It is not necessary to add driver dependency because .jar file of driver is in "lib" Tomcat folder, because Tomcat needs this 
+			driver to be able to publish our Resources (datasources) in context.xml, due to these Resources need the class com.mysql.jdbc.Driver, 
+			that is contained into .jar driver file -->
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<!-- exclude jars copied "physically" from the webapp overlay - so we 
+						only get those resolved by Maven's dependency management -->
+					<dependentWarExcludes>WEB-INF/lib/*.jar</dependentWarExcludes>
+					<packagingExcludes>cache/**,logs/**,repositories/**,tmp/**</packagingExcludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<profiles>
+		<profile>
+			<id>DEV</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<!-- exclude jars copied "physically" from the webapp overlay - so 
+								we only get those resolved by Maven's dependency management -->
+							<dependentWarExcludes>WEB-INF/lib/*.jar</dependentWarExcludes>
+							<classifier>DEV</classifier>
+							<webResources>
+								<resource>
+									<directory>env/dev/config</directory>
+									<targetPath>WEB-INF/config</targetPath>
+								</resource>
+								<resource>
+									<directory>env/dev/docroot</directory>
+									<targetPath>docroot</targetPath>
+								</resource>
+							</webResources>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>PRE</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<!-- exclude jars copied "physically" from the webapp overlay - so 
+								we only get those resolved by Maven's dependency management -->
+							<dependentWarExcludes>WEB-INF/lib/*.jar</dependentWarExcludes>
+							<classifier>PRE</classifier>
+							<webResources>
+								<resource>
+									<directory>env/pre/config</directory>
+									<targetPath>WEB-INF/config</targetPath>
+								</resource>
+								<resource>
+									<directory>env/pre/docroot</directory>
+									<targetPath>docroot</targetPath>
+								</resource>
+							</webResources>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>PRO</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-war-plugin</artifactId>
+						<configuration>
+							<!-- exclude jars copied "physically" from the webapp overlay - so 
+								we only get those resolved by Maven's dependency management -->
+							<dependentWarExcludes>WEB-INF/lib/*.jar</dependentWarExcludes>
+							<classifier>PRO</classifier>
+							<webResources>
+								<resource>
+									<directory>env/pro/config</directory>
+									<targetPath>WEB-INF/config</targetPath>
+								</resource>
+								<resource>
+									<directory>env/pro/docroot</directory>
+									<targetPath>docroot</targetPath>
+								</resource>
+								<resource>
+									<directory>env/pro/bootstrap/common</directory>
+									<targetPath>WEB-INF/bootstrap/common</targetPath>
+								</resource>
+							</webResources>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>
