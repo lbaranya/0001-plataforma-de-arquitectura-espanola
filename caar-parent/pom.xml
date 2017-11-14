@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>es.arquia.magnolia</groupId>
@@ -15,6 +14,12 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<parent.module.version>1.0-SNAPSHOT</parent.module.version>
 	    <webapp.module.version>1.0-SNAPSHOT</webapp.module.version>
+	    <templating.module.version>1.0-SNAPSHOT</templating.module.version>
+	    <arquitecture.files.module.version>1.0-SNAPSHOT</arquitecture.files.module.version>
+	    <institutions.module.version>1.0-SNAPSHOT</institutions.module.version>
+	    <news.module.version>1.0-SNAPSHOT</news.module.version>
+	    <theme.module.version>1.0-SNAPSHOT</theme.module.version>
+	    <utils.module.version>1.0-SNAPSHOT</utils.module.version>
 	</properties>
 
 	<!-- Fill the following in, so you can use the release plugin -->
@@ -61,6 +66,14 @@
 				<version>4.11</version>
 				<scope>test</scope>
 			</dependency>
+
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>3.0</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -128,5 +141,10 @@
 
 	<modules>
 		<module>caar-webapp</module>
+		<module>caar-templating-module</module>
+		<module>caar-theme-module</module>
+		<module>caar-utils-module</module>
+		<module>caar-news-app</module>
+		<module>caar-architecture-files-app</module>
 	</modules>
 </project>

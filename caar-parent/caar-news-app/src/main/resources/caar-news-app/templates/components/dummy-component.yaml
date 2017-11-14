@@ -1,0 +1,2 @@
+templateScript: /caar-news-app/templates/components/dummy-component.ftl
+renderType: freemarker

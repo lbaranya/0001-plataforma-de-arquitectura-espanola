@@ -1,0 +1,10 @@
+templateScript: /caar-templating-module/templates/pages/dummy-page.ftl
+renderType: freemarker
+visible: true
+dialog: caar-templating-module:pages/dummy-page-properties
+areas:
+  main:
+    renderType: freemarker
+    availableComponents:
+      dummy-component:
+        id: caar-templating-module:components/dummy-component
