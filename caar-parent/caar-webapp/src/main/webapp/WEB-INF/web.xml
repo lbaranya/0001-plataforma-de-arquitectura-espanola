@@ -3,6 +3,8 @@
   <description>Magnolia</description>
   <display-name>magnolia</display-name>
   <distributable/>
+  
+  <!-- Filter to add X-Frame-Options, X-Content-Type-Options and X-Frame-Options headers -->
   <filter>
     <filter-name>HeaderSecurityFilter</filter-name>
     <filter-class>org.apache.catalina.filters.HttpHeaderSecurityFilter</filter-class>
