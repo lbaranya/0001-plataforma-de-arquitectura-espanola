@@ -12,3 +12,9 @@ nbactions.xml
 
 Servers/
 .recommenders/
+
+# Proyectos propios
+
+# Excluir todo lo contenido en la carpeta webapp menos la subcarpeta WEB-INF
+caar-parent/caar-webapp/src/main/webapp/
+!caar-parent/caar-webapp/src/main/webapp/WEB-INF/
