@@ -1,0 +1,11 @@
+cssFiles:
+  caar-css:
+    addFingerPrint: true
+    link: /.resources/webresources/caar-theme/css/caar-theme.css
+    media: all
+jsFiles:
+  caar-js:
+    addFingerPrint: true
+    link: /.resources/webresources/caar-theme/js/caar-theme.js
+imaging: 
+  #Imaging variations configuration

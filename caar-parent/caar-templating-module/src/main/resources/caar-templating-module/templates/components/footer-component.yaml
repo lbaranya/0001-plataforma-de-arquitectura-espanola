@@ -1,0 +1,4 @@
+title: Componente Pie    
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/footer-component.ftl    
+dialog: caar-templating-module:components/footer-component-properties    

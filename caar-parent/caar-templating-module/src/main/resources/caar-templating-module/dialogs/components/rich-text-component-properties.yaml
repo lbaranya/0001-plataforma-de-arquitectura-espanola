@@ -1,0 +1,15 @@
+form:          
+  tabs:          
+    - name: tabMain          
+      fields:          
+        - name: texto          
+          label: Texto Enriquecido          
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition          
+          i18n: true          
+          required: true  
+          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/caar-standard-config-magnolia.js  
+actions:          
+  commit:          
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition          
+  cancel:          
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition          

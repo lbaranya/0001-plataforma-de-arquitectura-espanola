@@ -1,0 +1,4 @@
+title: Componente Destacados de Excelencia    
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/highlights-excellence-component.ftl    
+dialog: caar-templating-module:components/highlights-excellence-component-properties    

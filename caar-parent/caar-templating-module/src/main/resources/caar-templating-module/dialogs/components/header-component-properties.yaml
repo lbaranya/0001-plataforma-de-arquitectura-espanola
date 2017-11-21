@@ -1,0 +1,61 @@
+form:      
+  tabs:      
+    - name: tabMain      
+      fields:      
+        - name: elements      
+          label: Listado de logos      
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
+          field:      
+            name: compositeField      
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
+            layout: vertical      
+            required: true      
+            fields:      
+              - name: textCaption      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
+                value: -------------------------------------------------------------      
+                label: Logo      
+              - name: link      
+                class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
+                label: Enlace      
+                options:      
+                  - name: internalLink      
+                    label: Interno      
+                    selected: true      
+                    value: internalLink      
+                  - name: externalLink      
+                    label: Externo      
+                    value: externalLink      
+                fields:      
+                  - name: internalLink      
+                    label: Enlace interno      
+                    class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                    targetWorkspace: website      
+                    appName: pages      
+                    identifierToPathConverter:      
+                      class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                          
+                  - name: externalLink      
+                    label: Enlace externo      
+                    class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+              - name: image      
+                required: true      
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent      
+                label: Subir logo      
+                description: Subir fichero de imagen.     
+              - name: altImage      
+                label: Alt de la imagen      
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+                i18n: true     
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition      
