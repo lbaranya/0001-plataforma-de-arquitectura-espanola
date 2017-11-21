@@ -30,7 +30,7 @@
     </FileSystem>
     <PersistenceManager class="org.apache.jackrabbit.core.persistence.pool.MySqlPersistenceManager">
       <param name="dataSourceName" value="magnolia"/>
-      <param name="schemaObjectPrefix" value="${wsp.name}_" />
+      <param name="schemaObjectPrefix" value="pm_${wsp.name}_" />
     </PersistenceManager>
     <SearchIndex class="org.apache.jackrabbit.core.query.lucene.SearchIndex">
       <param name="path" value="${wsp.home}/index" />

@@ -19,7 +19,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-	
+
 	<dependencies>
 		<!-- Add your project specific dependencies here: A custom webapp typically 
 			is based on a magnolia webapp. The most simple and reduced bundle to start 
@@ -31,18 +31,9 @@
 		<!-- option i - magnolia-empty-webapp -->
 		<!-- Dependencies versions are already imported by parent pom. Requires 
 			"Option A" in the parent pom. -->
-		<!-- 
-		<dependency>
-			<groupId>info.magnolia</groupId>
-			<artifactId>magnolia-empty-webapp</artifactId>
-			<type>pom</type>
-		</dependency>
-		<dependency>
-			<groupId>info.magnolia</groupId>
-			<artifactId>magnolia-empty-webapp</artifactId>
-			<type>war</type>
-		</dependency>
-		 -->
+		<!-- <dependency> <groupId>info.magnolia</groupId> <artifactId>magnolia-empty-webapp</artifactId> 
+			<type>pom</type> </dependency> <dependency> <groupId>info.magnolia</groupId> 
+			<artifactId>magnolia-empty-webapp</artifactId> <type>war</type> </dependency> -->
 
 
 		<!-- option ii - magnolia-community-webapp -->
@@ -75,11 +66,44 @@
 			<type>pom</type> </dependency> <dependency> <groupId>info.magnolia.eebundle</groupId> 
 			<artifactId>magnolia-enterprise-pro-webapp</artifactId> <type>war</type> 
 			</dependency> -->
-			
-		<!-- MySQL driver: 
-			It is not necessary to add driver dependency because .jar file of driver is in "lib" Tomcat folder, because Tomcat needs this 
-			driver to be able to publish our Resources (datasources) in context.xml, due to these Resources need the class com.mysql.jdbc.Driver, 
-			that is contained into .jar driver file -->
+
+		<!-- MySQL driver: It is not necessary to add driver dependency because 
+			.jar file of driver is in "lib" Tomcat folder, because Tomcat needs this 
+			driver to be able to publish our Resources (datasources) in context.xml, 
+			due to these Resources need the class com.mysql.jdbc.Driver, that is contained 
+			into .jar driver file -->
+
+
+
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-architecture-files-app</artifactId>
+			<version>${caar.project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-news-app</artifactId>
+			<version>${caar.project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-templating-module</artifactId>
+			<version>${caar.project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-theme-module</artifactId>
+			<version>${caar.project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-utils-module</artifactId>
+			<version>${caar.project.version}</version>
+		</dependency>
 
 	</dependencies>
 
