@@ -1,0 +1,38 @@
+form:      
+  tabs:      
+    - name: tabMain      
+      fields:    
+        - name: newsListPageLink    
+          required: true    
+          label: Enlace a página general de noticias     
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: website      
+          appName: pages  
+          identifierToPathConverter:        
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter               
+        - name: elements      
+          label: Noticias      
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
+          field:      
+            name: compositeField      
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
+            layout: vertical      
+            required: true      
+            fields:      
+              - name: textCaption      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
+                value: -------------------------------------------------------------      
+                label: Noticia    
+              - name: newsLink  
+                required: true      
+                label: Enlace a noticia    
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: news      
+                appName: news-app       
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition      

@@ -1,0 +1,44 @@
+form:  
+  label: Propiedades  
+  tabs:  
+    - name: tabMain  
+      label: Plantilla Portada  
+      fields:  
+        - name: title  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: Título  
+          required: true
+        - name: navigationTitle  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: Título de navegación  
+        - name: windowTitle  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: Título de ventana  
+        - name: hideInNav  
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition  
+          defaultValue: false  
+          i18n: false  
+          type: Boolean  
+          label:  Ocultar de navegación  
+          buttonLabel: hide  
+    - name: tabMeta  
+      label: Meta Data  
+      fields:  
+        - name: keywords  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: Meta keywords  
+          rows: 3  
+        - name: description  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: Meta description  
+          rows: 5  
+actions:  
+  commit:  
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition  
+  cancel:  
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition  

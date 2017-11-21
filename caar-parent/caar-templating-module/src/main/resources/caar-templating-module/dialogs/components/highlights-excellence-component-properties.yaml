@@ -1,0 +1,90 @@
+form:        
+  tabs:        
+    - name: tabMain        
+      fields:        
+        - name: elements        
+          label: Destacados        
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition        
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer        
+          field:        
+            name: compositeField        
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition        
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer        
+            layout: vertical        
+            required: true        
+            fields:        
+              - name: textCaption        
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition        
+                value: -------------------------------------------------------------        
+                label: Destacado      
+              - name: title        
+                label: Título corto        
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition        
+                i18n: true    
+                required: true    
+              - name: longTitle        
+                label: Título largo        
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition        
+                i18n: true    
+                required: true    
+              - name: typeFile        
+                label: Tipo ficha        
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition        
+                i18n: true    
+                required: true    
+              - name: description        
+                label: Descripción        
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition     
+                i18n: true    
+                required: true    
+              - name: link        
+                label: Ficha Soporte       
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition        
+                targetWorkspace: architecture-files        
+                appName: architecture-files-app        
+                identifierToPathConverter:        
+                  class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter       
+                targetTreeRootPath: /soporte/excellence   
+              - name: multimedia        
+                class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition        
+                required: true    
+                label: Elemento multimedia       
+                options:        
+                  - name: imageLink        
+                    label: Imagen representativa        
+                    selected: true        
+                    value: imageLink        
+                  - name: videoLink        
+                    label: Video representativo            
+                    value: videoLink        
+                fields:        
+                  - name: imageLink        
+                    label: Imagen representativa       
+                    class: info.magnolia.ui.form.field.definition.LinkFieldDefinition        
+                    targetWorkspace: dam        
+                    appName: assets        
+                    identifierToPathConverter:        
+                      class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter    
+                    contentPreviewDefinition:        
+                      contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent       
+                    description: Enlazar imagen desde Assets.      
+                  - name: videoLink        
+                    label: Video representativo        
+                    class: info.magnolia.ui.form.field.definition.LinkFieldDefinition        
+                    targetWorkspace: dam        
+                    appName: assets        
+                    identifierToPathConverter:        
+                      class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter       
+                    contentPreviewDefinition:        
+                      contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent    
+                    description: Enlazar vídeo desde Assets.                           
+              - name: altImage        
+                label: Alt de la imagen/video        
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition       
+                required: true     
+                i18n: true       
+actions:        
+  commit:        
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition        
+  cancel:        
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition        

@@ -1,0 +1,11 @@
+title: Contenido      
+templateScript: /caar-templating-module/templates/pages/content-page.ftl      
+renderType: site      
+dialog: caar-templating-module:pages/content-page-properties      
+visible: true      
+areas:      
+  main:    
+    renderType: freemarker    
+    availableComponents:    
+      rich-text-component:    
+        id: caar-templating-module:components/rich-text-component    

@@ -1,0 +1,21 @@
+areas:
+  header:
+    renderType: freemarker
+    maxComponents: 1
+    type: list
+    availableComponents:
+      header-component:
+        id: caar-templating-module:components/header-component
+    inheritance:
+      enabled: true
+      components: all
+  footer:
+    renderType: freemarker
+    maxComponents: 1
+    type: list
+    availableComponents:
+      footer-component:
+        id: caar-templating-module:components/footer-component
+    inheritance:
+      enabled: true
+      components: all
