@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>caar-templating-module</artifactId>
-	<version>${templating.module.version}</version>
+	<version>${caar.project.version}</version>
 	<packaging>jar</packaging>
 	<name>caar-templating-module Magnolia Module</name>
 	<!-- <description>Please uncomment and fill in ...</description> -->

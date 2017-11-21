@@ -12,7 +12,7 @@
 	</parent>
 	
 	<artifactId>caar-webapp</artifactId>
-	<version>${webapp.module.version}</version>
+	<version>${caar.project.version}</version>
 	<name>caar-webapp: webapp</name>
 	<packaging>war</packaging>
 	
