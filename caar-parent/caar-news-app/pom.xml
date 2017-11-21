@@ -8,7 +8,7 @@
 	</parent>
 	
 	<artifactId>caar-news-app</artifactId>
-	<version>${news.module.version}</version>
+	<version>${caar.project.version}</version>
 	<packaging>jar</packaging>
 	<name>caar-news-app Magnolia Module</name>
   <!--

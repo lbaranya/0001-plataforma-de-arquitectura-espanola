@@ -12,14 +12,7 @@
 		<magnoliaVersion>5.6</magnoliaVersion>
 		<javaVersion>1.8</javaVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<parent.module.version>1.0-SNAPSHOT</parent.module.version>
-	    <webapp.module.version>1.0-SNAPSHOT</webapp.module.version>
-	    <templating.module.version>1.0-SNAPSHOT</templating.module.version>
-	    <arquitecture.files.module.version>1.0-SNAPSHOT</arquitecture.files.module.version>
-	    <institutions.module.version>1.0-SNAPSHOT</institutions.module.version>
-	    <news.module.version>1.0-SNAPSHOT</news.module.version>
-	    <theme.module.version>1.0-SNAPSHOT</theme.module.version>
-	    <utils.module.version>1.0-SNAPSHOT</utils.module.version>
+		<caar.project.version>0.1-SNAPSHOT</caar.project.version>
 	</properties>
 
 	<!-- Fill the following in, so you can use the release plugin -->
