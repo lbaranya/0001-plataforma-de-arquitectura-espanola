@@ -1,0 +1,19 @@
+@import "utilites/colors.scss";
+/*Reset*/
+*{
+margin: 0px;
+padding: 0px;
+list-style: none;
+text-decoration: none;
+}
+a:hover,
+a:active,
+a:visited,
+a:focus{
+text-decoration: none;
+}
+.cmp-dummy{
+    img{
+        width: 100%;
+    }
+}

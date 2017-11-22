@@ -1,11 +1,9 @@
-title: Portada
-templateScript: /caar-templating-module/templates/pages/home-page.ftl
 renderType: site
+title: Portada
 dialog: caar-templating-module:pages/home-page-properties
 visible: true
 areas:
   main:
-    renderType: freemarker
     availableComponents:
       highlights-excellence-component:
         id: caar-templating-module:components/highlights-excellence-component
