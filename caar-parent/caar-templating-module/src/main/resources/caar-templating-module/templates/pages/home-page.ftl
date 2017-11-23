@@ -1,3 +1,4 @@
 <section class="cmp-dummy">
-	<img src="./assets/img/homedummy.jpg" alt="dummy"/>
+	[#-- Falta por maquetar --]
+	<img src="${ctx.resourcesURL}/img/homedummy.jpg" alt="dummy"/>
 </section>

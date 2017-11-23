@@ -5,6 +5,15 @@ templateScript: /caar-templating-module/templates/pages/prototype.ftl
 renderType: site
 type: feature
 areas:
+  top-banner:
+    renderType: freemarker
+    type: single
+    availableComponents:
+      header-component:
+        id: caar-templating-module:components/top-banner-component
+    inheritance:
+      enabled: true
+      components: all
   header:
     renderType: freemarker
     type: single
@@ -16,7 +25,6 @@ areas:
       components: all
   main:
     type: list
-    templateScript: /caar-templating-module/templates/pages/home-page.ftl
   footer:
     renderType: freemarker
     maxComponents: 1
