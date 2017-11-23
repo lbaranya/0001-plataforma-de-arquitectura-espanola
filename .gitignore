@@ -17,5 +17,7 @@ Servers/
 # Proyectos propios
 
 # Excluir todo lo contenido en la carpeta webapp menos la subcarpeta WEB-INF
-caar-parent/caar-webapp/src/main/webapp/
-!caar-parent/caar-webapp/src/main/webapp/WEB-INF/
+caar-parent/caar-webapp/src/main/webapp/cache
+caar-parent/caar-webapp/src/main/webapp/logs
+caar-parent/caar-webapp/src/main/webapp/repositories
+caar-parent/caar-webapp/src/main/webapp/tmp
