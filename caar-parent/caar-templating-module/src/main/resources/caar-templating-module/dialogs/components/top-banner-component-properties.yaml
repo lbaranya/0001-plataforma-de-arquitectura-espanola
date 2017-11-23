@@ -1,0 +1,49 @@
+form:
+  tabs:
+    - name: tabMain
+      label: Banner Images
+      fields:
+        - name: bannerElements
+          label: Imagenes del banner
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer
+          field:
+            name: compositeField      
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
+            layout: vertical      
+            required: true      
+            fields:
+              - name: image      
+                required: true       
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent      
+                label: Subir logo      
+                description: Subir un fichero de imagen.     
+              - name: altImage      
+                label: Alt de la imagen      
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+                i18n: true
+              - name: title      
+                label: Título      
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: phrase      
+                label: Frase      
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: author
+                label: Autor      
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: text
+                label: Texto de imagen enriquecido
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/caar-standard-config-magnolia.js
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
