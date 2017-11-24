@@ -8,7 +8,7 @@
 	</parent>
 	
 	<artifactId>caar-theme-module</artifactId>
-	<version>${caar.project.version}</version>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>caar-theme-module Magnolia Module</name>
   <!--

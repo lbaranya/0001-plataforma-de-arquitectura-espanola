@@ -12,7 +12,6 @@
 		<magnoliaVersion>5.6</magnoliaVersion>
 		<javaVersion>1.8</javaVersion>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<caar.project.version>0.1-SNAPSHOT</caar.project.version>
 	</properties>
 
 	<!-- Fill the following in, so you can use the release plugin -->
