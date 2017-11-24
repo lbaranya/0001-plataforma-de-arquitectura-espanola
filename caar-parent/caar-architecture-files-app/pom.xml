@@ -9,7 +9,7 @@
 	</parent>
 
 	<artifactId>caar-architecture-files-app</artifactId>
-	<version>${caar.project.version}</version>
+	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>caar-architecture-files-app Magnolia Module</name>
   <!--
