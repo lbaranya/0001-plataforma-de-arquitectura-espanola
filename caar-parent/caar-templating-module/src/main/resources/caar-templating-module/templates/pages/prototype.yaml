@@ -1,14 +1,30 @@
+dialog: mte:pages/pageProperties
+class: info.magnolia.module.site.templates.PrototypeTemplateDefinition
+ 
+templateScript: /caar-templating-module/templates/pages/prototype.ftl
+renderType: site
+type: feature
 areas:
+  top-banner:
+    renderType: freemarker
+    type: single
+    availableComponents:
+      header-component:
+        id: caar-templating-module:components/top-banner-component
+    inheritance:
+      enabled: true
+      components: all
   header:
     renderType: freemarker
-    maxComponents: 1
-    type: list
+    type: single
     availableComponents:
       header-component:
         id: caar-templating-module:components/header-component
     inheritance:
       enabled: true
       components: all
+  main:
+    type: list
   footer:
     renderType: freemarker
     maxComponents: 1
