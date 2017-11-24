@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="caar">
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="site">
   <sv:property sv:name="jcr:primaryType" sv:type="Name">
     <sv:value>mgnl:contentNode</sv:value>
   </sv:property>
@@ -77,17 +77,12 @@
       <sv:value>caar-theme</sv:value>
     </sv:property>
   </sv:node>
-  <sv:node sv:name="domains">
-    <sv:property sv:name="jcr:primaryType" sv:type="Name">
-      <sv:value>mgnl:contentNode</sv:value>
-    </sv:property>
-  </sv:node>
   <sv:node sv:name="templates">
     <sv:property sv:name="jcr:primaryType" sv:type="Name">
       <sv:value>mgnl:contentNode</sv:value>
     </sv:property>
     <sv:property sv:name="class" sv:type="String">
-      <sv:value>info.magnolia.module.site.templates.PrototypeTemplateDefinition</sv:value>
+      <sv:value>info.magnolia.module.site.templates.ReferencingPrototypeTemplateSettings</sv:value>
     </sv:property>
     <sv:property sv:name="prototypeId" sv:type="String">
       <sv:value>caar-templating-module:pages/prototype</sv:value>
