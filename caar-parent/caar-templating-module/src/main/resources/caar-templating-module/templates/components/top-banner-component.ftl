@@ -19,6 +19,9 @@
 							<p class="autor">${element.author!""}</p>
 						</div>
 				</div>
+				<div>
+					${element.text!""}
+				</div>
 			</div>
 			[#assign cont = cont + 1]
 			[/#list]

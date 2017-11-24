@@ -39,10 +39,10 @@
                 <div class="col-sm-2 col-xs-12">
                     <h4 class="footer-title">nota legal</h4>
                     <li class="footer-global-link">
-                            <a href="${element.legalLink!""}" class="global-link" alt="legal_link" title="nota legal">nota legal</a>
+                            <a href="${content.legalLink!""}" class="global-link" alt="legal_link" title="nota legal">nota legal</a>
                     </li>
                     <li class="footer-global-link">
-                            <a href="${element.cookiesLink!""}" class="global-link" alt="cookies_link" title="cookies">cookies</a>
+                            <a href="${content.cookiesLink!""}" class="global-link" alt="cookies_link" title="cookies">cookies</a>
                     </li>
                 </div>
                 <div class="col-sm-2 col-xs-12">
@@ -72,7 +72,8 @@
 				<ul class="footer-logos-list">
 				[#if content.logoElements?has_content]
 				[#list cmsfn.children(content.logoElements) as logoElement]
-					<li class="logo-item"><a href="#" class="footer-logo"><img src="${logoElement.image}" width="175" alt="${logoElement.altImage!""}"></a></li>
+				[#assign image = damfn.getAssetLink(logoElement.image)!]
+					<li class="logo-item"><a href="#" class="footer-logo"><img src="${image}" width="175" alt="${logoElement.altImage!""}"></a></li>
 				[/#list]
 				[/#if]
 				</ul>
