@@ -1,47 +1,15 @@
-<section class="cmp-banner-header">
-    <div class="contenedor-images-banner">
-        <div class="contenedor-frases">
-            <div class="block-frase active">
-                <img class="image-banner" src="../../assets/img/banner-1.jpg" alt="banner1" />
-                <div class="block-contenido">
-                    <h2 class="title">Arquitectura Española</h2>
-                    <div class="contenido">
-                        <p class="frase">"Un arquitecto es un dibujante de sueños"</p>
-                        <p class="autor">Grace McGarvie</p>
-                    </div>
-                </div>
-            </div>
-            <div class="block-frase">
-                <img class="image-banner" src="../../assets/img/banner-2.jpg" alt="banner2" />
-                <div class="block-contenido">
-                    <h2 class="title">Arquitectura Española</h2>
-                    <div class="contenido">
-                        <p class="frase">"Hay un número tan elevado de grandes ciudades en el mundo"</p>
-                        <p class="autor">Toyo Ito</p>
-                    </div>
-                </div>
-            </div>
-            <div class="block-frase">
-                <img class="image-banner" src="../../assets/img/banner-3.jpeg" alt="banner3" />
-                <div class="block-contenido">
-                    <h2 class="title">Arquitectura Española</h2>
-                    <div class="contenido">
-                        <p class="frase">"No soy una criatura de hábitos. Me gusta encontrar cosas de fuentes inesperadas"</p>
-                        <p class="autor">Norman Foster</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
+[#-- [#include "/mtk/templates/macros/navigation.ftl"]
+ 
+[#assign navigationRootPage = navfn.rootPage(content)!]
+ 
+[@navigation navParentItem=navigationRootPage depth=1 expandAll=true /] --]
 <!--Menu: cmp-menu-->
 <section class="cmp-menu">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12 submenu-container">
                 <div class="close close-btn">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <img src="${ctx.resourcesURL}/icons/close-icon.svg" width="30" alt="cerrar">
                 </div>
                 <div class="submenu ae">
                     <ul class="submenu-list">
@@ -147,6 +115,7 @@
                         </li>
                     </ul>
                 </div>
+                <!--
                 <div class="submenu instituciones">
                     <ul class="submenu-list">
                         <li class="submenu-link">
@@ -159,10 +128,12 @@
                             <a href="#">directorio instituciones</a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="submenu search">
                     <div class="search-container">
-                        <img class="form-search-icon" src="../../assets/icons/search-icon-blanco.svg">
+                    	[#-- [#assign search_icon_blanco = cmsfn.contentByPath("/caar-theme/icons/", "resources")!""]
+                    	[#assign iconLink = imgfn.getImageVariationLinkFromBinary(search_icon_blanco, "original")!""] --]
+                        <img class="form-search-icon" src="${ctx.resourcesURL}/icons/search-icon-blanco.svg">
                         <form class="form-search">
                             <input class="search-input" type="search" placeholder="Escribe aquí tu búsqueda">
                         </form>
@@ -347,28 +318,23 @@
                         <li class="menu-item">
                             <a href="#" data-submenu="sector" class="menu-link" alt="sector" title="sector">sector</a>
                         </li>
-                        <li class="menu-item">
+                        <!-- <li class="menu-item">
                             <a href="#" data-submenu="instituciones" class="menu-link" alt="instituciones" title="instituciones">instituciones</a>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
                 <div class="col-sm-3 col-menu-logos">
                     <ul class="menu-logos">
+                    [#if content.elements?has_content]
+                    [#list cmsfn.children(content.elements) as element]
                         <li class="menu-item-logo">
-                            <a href="#" class="">
-                                <img src="../../assets/img/logo-gobierno-1.jpg" alt="">
+                            <a href="${element.internalLink!""}" class="">
+                            	[#assign image = damfn.getAssetLink(element.image)!]
+                                <img src="${image}" alt="${element.atlImage!""}">
                             </a>
                         </li>
-                        <li class="menu-item-logo">
-                            <a href="#" class="">
-                                <img src="../../assets/img/logo-gobierno-2.jpg" alt="">
-                            </a>
-                        </li>
-                        <li class="menu-item-logo">
-                            <a href="#" class="">
-                                <img src="../../assets/img/logo-fundacion-arquia.jpg" alt="">
-                            </a>
-                        </li>
+                    [/#list]
+                    [/#if]
                     </ul>
                 </div>
                 <div class="col-sm-2 col-menu-idioma">
@@ -383,13 +349,13 @@
                     <ul class="menu-icons">
                         <li class="menu-item-icon">
                             <a href="#" class="menu-link" data-submenu="signin" alt="registro" title="registro">
-                                <img class="user-icon" src="../../assets/icons/usuario-icon.svg">
+                                <img class="user-icon" src="${ctx.resourcesURL}/icons/usuario-icon.svg">
                             </a>
 
                         </li>
                         <li class="menu-item-icon">
                                 <a href="#" class="menu-link" data-submenu="search" alt="buscador" title="buscador">
-                            <img class="search-icon" src="../../assets/icons/search-icon.svg">
+                            <img class="search-icon" src="${ctx.resourcesURL}/icons/search-icon.svg">
                             </a>
                         </li>
                     </ul>
