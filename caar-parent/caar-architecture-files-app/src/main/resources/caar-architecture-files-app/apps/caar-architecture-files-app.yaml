@@ -1,0 +1,197 @@
+appClass: info.magnolia.ui.contentapp.ContentApp
+class: info.magnolia.ui.contentapp.ContentAppDescriptor
+i18nBasename: caar-architecture-files-app.i18n.module-caar-architecture-files-app-messages
+icon: icon-articles-app
+label: caar-architecture-files-app.appLauncherLayout.label
+subApps:
+  browser:
+    subAppClass: info.magnolia.ui.contentapp.browser.BrowserSubApp
+    class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
+    label: caar-architecture-files-app.subapp.browser.label
+    contentConnector:
+      includeProperties: false
+      workspace: architecture-files
+      rootPath: /
+      defaultOrder: jcrName
+      nodeTypes:
+        - name: mgnl:portfolio
+          icon: icon-items
+        - name: mgnl:support-wrapper
+          icon: icon-folder
+        - name: mgnl:support-architect-wrapper
+          icon: icon-folder
+        - name: mgnl:support-architect
+          icon: icon-items
+        - name: mgnl:support-project
+          icon: icon-items
+        - name: mgnl:support-review-i
+          icon: icon-items
+        - name: mgnl:support-review-ii
+          icon: icon-items
+        - name: mgnl:support-review-iii
+          icon: icon-items
+        - name: mgnl:support-review-iv
+          icon: icon-items
+        - name: mgnl:support-business
+          icon: icon-items
+        - name: mgnl:format-video
+          icon: icon-items
+        - name: mgnl:format-three-dimensional
+          icon: icon-items
+        - name: mgnl:format-cartographic
+          icon: icon-items
+        - name: mgnl:format-audio
+          icon: icon-items
+        - name: mgnl:format-book
+          icon: icon-items
+        - name: mgnl:format-manuscript
+          icon: icon-items
+        - name: mgnl:format-graphic
+          icon: icon-items
+        - name: mgnl:format-continuous
+          icon: icon-items
+        - name: mgnl:format-electronic
+          icon: icon-items
+        - name: mgnl:folder
+          icon: icon-folder
+    workbench:
+      dropConstraintClass: info.magnolia.ui.workbench.tree.drop.AlwaysTrueDropConstraint
+      editable: false
+      contentViews:
+        - name: tree
+          class: info.magnolia.ui.workbench.tree.TreePresenterDefinition
+          columns: &defaultColumns
+            - name: name
+              editable: true
+              sortable: true
+              propertyName: jcrName
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+            - name: status
+              width: 45
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.StatusColumnFormatter
+              class: info.magnolia.ui.workbench.column.definition.StatusColumnDefinition
+            - name: moddate
+              width: 160
+              sortable: true
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.DateColumnFormatter
+              propertyName: mgnl:lastModified
+              class: info.magnolia.ui.workbench.column.definition.MetaDataColumnDefinition
+        - name: list
+          class: info.magnolia.ui.workbench.list.ListPresenterDefinition
+          columns: *defaultColumns
+        - name: search
+          class: info.magnolia.ui.workbench.search.SearchPresenterDefinition
+          columns: *defaultColumns
+    actions:
+      addSupportWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportWrapper.label
+        availability:
+          root: true
+      editWrapper:
+        icon: icon-edit
+        dialogName: ui-framework:folder
+        class: info.magnolia.ui.framework.action.OpenEditDialogActionDefinition
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+            - mgnl:support-architect-wrapper
+      deleteWrapper:
+        icon: icon-delete
+        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+      addSupportArchitectWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-architect-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportArchitectWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+      addSupportArchitect:
+        subAppId: detailSupportArchitect
+        icon: icon-add-item
+        nodeType: mgnl:support-architect
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        availability:
+          nodeTypes:
+            - mgnl:support-architect-wrapper
+    actionbar:
+      defaultAction: addFolder
+      sections:
+        - name: root
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.root.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportWrapper
+          availability:
+            nodes: false
+            root: true
+        - name: supportWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportArchitectWrapper
+            - name: editActions
+              items:
+                - name: editWrapper
+          availability:
+            nodeTypes:
+              - mgnl:support-wrapper
+        - name: supporArquitectWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitectWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportArchitect
+            - name: editActions
+              items:
+                - name: editWrapper
+          availability:
+            nodeTypes:
+              - mgnl:support-architect-wrapper
+        - name: supportArchitect
+          groups:
+            - name: editActions
+              items:
+               - name: editSupportArchitect
+               - name: deleteSupportArchitect
+          availability:
+            nodeTypes:
+              - mgnl:support-architect
+    imageProvider:
+       class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
+       damLinkPropertyName: image
+  detailSupportArchitect:
+    subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+    class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+    label: caar-architecture-files-app.subapp.detailSupportArchitect.label
+    contentConnector:
+      workspace: architecture-files
+    editor:
+      nodeType:
+        icon: icon-items
+        name: mgnl:support-architect
+      form:
+        tabs:
+          - name: personalData
+            fields:
+              - name: jcrName
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: surname
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+      actions:
+        - name: commit
+        - name: cancel
+
+    actions:
+      commit:
+        class: info.magnolia.ui.form.action.SaveFormActionDefinition
+      cancel:
+        class: info.magnolia.ui.form.action.CancelFormActionDefinition
