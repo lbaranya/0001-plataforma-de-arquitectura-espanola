@@ -11,8 +11,7 @@ form:
             name: compositeField      
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
-            layout: vertical      
-            required: true      
+            layout: vertical   
             fields:      
               - name: textCaption      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
@@ -80,8 +79,7 @@ form:
             name: compositeField      
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
-            layout: vertical      
-            required: true      
+            layout: vertical 
             fields:      
               - name: textCaption      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
@@ -89,7 +87,7 @@ form:
                 label: Logo      
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-                label: Enlace      
+                label: Enlace
                 options:      
                   - name: internalLink      
                     label: Interno      
@@ -124,8 +122,7 @@ form:
             name: compositeField      
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
-            layout: vertical      
-            required: true      
+            layout: vertical 
             fields:      
               - name: textCaption      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
@@ -156,7 +153,37 @@ form:
               - name: linkText      
                 label: Texto enlace      
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-                i18n: true      
+                i18n: true
+    - name: tabRRSS
+      label: Enlaces RRSS
+      fields:
+        - name: listElementsRRSS
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer
+          label: Enlaces a redes
+          field:      
+            name: compositeFieldRRSS      
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
+            layout: vertical  
+            fields:
+              - name: link
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Enlace
+              - name: listRRSS
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                label: Redes
+                options:
+                  - name: facebook
+                    value: facebook
+                    selected: true
+                    label: Facebook
+                  - name: twitter
+                    value: twitter
+                    label: Twitter
+                  - name: youtube
+                    value: youtube
+                    label: Youtube
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
