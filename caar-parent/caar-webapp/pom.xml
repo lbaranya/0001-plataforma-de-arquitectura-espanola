@@ -12,7 +12,7 @@
 	</parent>
 	
 	<artifactId>caar-webapp</artifactId>
-	<version>${caar.project.version}</version>
+	<version>0.1-SNAPSHOT</version>
 	<name>caar-webapp: webapp</name>
 	<packaging>war</packaging>
 	
@@ -78,31 +78,31 @@
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-architecture-files-app</artifactId>
-			<version>${caar.project.version}</version>
+			<version>0.1-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-news-app</artifactId>
-			<version>${caar.project.version}</version>
+			<version>0.1-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-templating-module</artifactId>
-			<version>${caar.project.version}</version>
+			<version>0.1-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-theme-module</artifactId>
-			<version>${caar.project.version}</version>
+			<version>0.1-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-utils-module</artifactId>
-			<version>${caar.project.version}</version>
+			<version>0.1-SNAPSHOT</version>
 		</dependency>
 
 	</dependencies>
