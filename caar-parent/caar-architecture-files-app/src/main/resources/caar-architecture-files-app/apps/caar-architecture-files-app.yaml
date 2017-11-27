@@ -9,7 +9,7 @@ subApps:
     class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
     label: caar-architecture-files-app.subapp.browser.label
     contentConnector:
-      includeProperties: false
+      includeProperties: true
       workspace: architecture-files
       rootPath: /
       defaultOrder: jcrName
@@ -66,6 +66,11 @@ subApps:
               sortable: true
               propertyName: jcrName
               class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+            - name: value
+              editable: true
+              sortable: true
+              propertyName: value
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
             - name: status
               width: 45
               displayInChooseDialog: false
@@ -85,6 +90,7 @@ subApps:
           class: info.magnolia.ui.workbench.search.SearchPresenterDefinition
           columns: *defaultColumns
     actions:
+      # Wrapper
       addSupportWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -96,13 +102,20 @@ subApps:
         icon: icon-edit
         dialogName: ui-framework:folder
         class: info.magnolia.ui.framework.action.OpenEditDialogActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editWrapper.label
         availability:
           nodeTypes:
             - mgnl:support-wrapper
             - mgnl:support-architect-wrapper
       deleteWrapper:
-        icon: icon-delete
+        icon: icon-trash
         class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.deleteWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+            - mgnl:support-architect-wrapper
+      # Architect Wrapper
       addSupportArchitectWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -111,15 +124,37 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-wrapper
+      # Support Architect
       addSupportArchitect:
         subAppId: detailSupportArchitect
         icon: icon-add-item
         nodeType: mgnl:support-architect
         appName: caar-architecture-files-app
         class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportArchitect.label
         availability:
           nodeTypes:
             - mgnl:support-architect-wrapper
+      deleteSupportArchitect:
+        icon: icon-trash
+        nodeType: mgnl:support-architect
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.deleteSupportArchitect.label
+        availability:
+          nodeTypes:
+            - mgnl:support-architect
+      editSupportArchitect:
+        subAppId: detailSupportArchitect
+        icon: icon-edit-wo
+        nodeType: mgnl:support-architect
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editSupportArchitect.label
+        availability:
+          nodeTypes:
+            - mgnl:support-architect
+      # Sections
     actionbar:
       defaultAction: addFolder
       sections:
@@ -141,6 +176,7 @@ subApps:
             - name: editActions
               items:
                 - name: editWrapper
+                - name: deleteWrapper
           availability:
             nodeTypes:
               - mgnl:support-wrapper
@@ -153,6 +189,7 @@ subApps:
             - name: editActions
               items:
                 - name: editWrapper
+                - name: deleteWrapper
           availability:
             nodeTypes:
               - mgnl:support-architect-wrapper
