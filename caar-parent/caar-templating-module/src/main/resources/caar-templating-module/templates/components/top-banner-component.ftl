@@ -13,14 +13,9 @@
 				[#assign image = damfn.getAssetLink(element.image)!]
 				<img class="image-banner" src="${image}" alt="${element.altImage!""}" />
 				<div class="block-contenido">
-					<h2 class="title">${element.title!""}</h2>
-						<div class="contenido">
-							<p class="frase">${element.phrase!""}</p>
-							<p class="autor">${element.author!""}</p>
-						</div>
-				</div>
-				<div>
-					${element.text!""}
+					<div class="contenido">
+						${cmsfn.decode(element).text!""}
+					</div>
 				</div>
 			</div>
 			[#assign cont = cont + 1]

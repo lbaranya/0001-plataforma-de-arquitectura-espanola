@@ -29,15 +29,6 @@ form:
                 label: Alt de la imagen      
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
                 i18n: true
-              - name: title      
-                label: Título      
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-              - name: phrase      
-                label: Frase      
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-              - name: author
-                label: Autor      
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
               - name: text
                 label: Texto de imagen enriquecido
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition

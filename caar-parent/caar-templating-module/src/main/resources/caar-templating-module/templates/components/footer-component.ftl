@@ -48,21 +48,15 @@
                 <div class="col-sm-2 col-xs-12">
                     <h4 class="footer-title">siguenos en</h4>
                     <ul class="rrss-list">
+                    [#if content.listElementsRRSS?has_content]
+                    [#list cmsfn.children(content.listElementsRRSS) as element]
                         <li class="rrss-link">
-                            <a href="" class="rrss-icon">
-                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <a href="${element.link!""}" class="rrss-icon">
+                                <i class="fa fa-${element.listRRSS!""}" aria-hidden="true"></i>
                             </a>
                         </li>
-                        <li class="rrss-link">
-                            <a href="" class="rrss-icon">
-                                <i class="fa fa-twitter" aria-hidden="true"></i>
-                            </a>
-                        </li>
-                        <li class="rrss-link">
-                            <a href="" class="rrss-icon">
-                                <i class="fa fa-youtube" aria-hidden="true"></i>
-                            </a>
-                        </li>
+                    [/#list]
+                    [/#if]
                     </ul>
                 </div>
             </div>

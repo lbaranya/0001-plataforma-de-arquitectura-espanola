@@ -8,7 +8,7 @@
 CKEDITOR.stylesSet.add( 'mystyles', [
     { name: 'Titulo cabecera', element: 'h2', attributes: { 'class': 'title' } },
     { name: 'Frase', element: 'p', attributes: {'class':'frase'}},
-    {name:'Autor', element: 'p', attributes: {'class', 'autor'}}
+    {name:'Autor', element: 'p', attributes: {'class': 'autor'}}
     //{ name: 'Texto naranja',  element: 'span', attributes: { 'class': 'title-normal-orange'} },
 //    { name: 'Texto normal', element: 'p', styles: {'font-family': 'Ubuntu, sans-serif', 'color':'#333','font-size':'13pt' } },
 //    { name: 'Titulo secundario', element: 'h3', styles: { 'font-family': 'exo , sans-serif','text-align':'center' } },
@@ -87,6 +87,13 @@ CKEDITOR.editorConfig = function( config ) {
 	config.stylesSet = 'mystyles';
 	
 	config.allowedContent = true;
+	config.disallowedContent = 'br';
+	
+	config.fillEmptyBlocks = false;
+
+	config.fullPage = false;
+	
+	config.enterMode = CKEDITOR.ENTER_P;
 
 	config.baseFloatZIndex = 1500;
 	config.resize_enabled = false;
