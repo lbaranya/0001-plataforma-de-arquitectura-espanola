@@ -1,0 +1,33 @@
+#DIB: appspec.yml v1.0
+version: 0.0
+os: linux
+files:
+  - source: /artifacts/
+    destination: /opt/magnoliaPublic/webapps/magnoliaPublic/WEB-INF/lib/
+permissions:
+  - object: /opt/magnoliaPublic/webapps/magnoliaPublic/WEB-INF/lib/
+    pattern: "**"
+    owner: tomcat8
+    group: tomcat8
+    mode: 644
+    type:
+      - file
+  - object: /opt/magnoliaPublic/webapps/magnoliaPublic/WEB-INF/lib/
+    pattern: "**"
+    owner: tomcat8
+    group: tomcat8
+    mode: 755
+    type:
+      - directory
+hooks:
+  BeforeInstall:
+    - location: scripts/publicStopServer.sh
+      timeout: 300
+      runas: root
+    - location: scripts/publicBackupAndClean.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: scripts/publicStartServer.sh
+      timeout: 300
+      runas: root
