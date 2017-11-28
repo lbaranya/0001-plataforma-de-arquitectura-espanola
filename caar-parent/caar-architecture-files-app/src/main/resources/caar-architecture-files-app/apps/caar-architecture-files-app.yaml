@@ -221,8 +221,57 @@ subApps:
             fields:
               - name: jcrName
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-              - name: surname
+                label: caar-architecture-files-app.files.support.architect.personalData.jcrName.label
+              - name: FS1.1.1
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.name.label
+              - name: FS1.1.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.firstSurname.label
+              - name: FS1.1.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.secondSurname.label
+              - name: FS1.1.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.otherNames.label
+              - name: FS1.1.5
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                targetWorkspace: dam
+                appName: assets
+                identifierToPathConverter:
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                contentPreviewDefinition:
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: caar-architecture-files-app.files.support.architect.personalData.photo.label
+              - name: FS1.1.6
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.architect.personalData.birthDate.label
+              - name: FS1.1.7
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.birthCity.label
+              - name: FS1.1.8
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.birthCountry.label
+              - name: FS1.1.9
+                class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.death.label
+                buttonLabel: caar-architecture-files-app.files.support.architect.personalData.death.button.label
+              - name: FS1.1.9.1
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.architect.personalData.deathDate.label
+              - name: FS1.1.9.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.deathCity.label
+              - name: FS1.1.9.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.deathCountry.label
+          - name: formation
       actions:
         - name: commit
         - name: cancel
