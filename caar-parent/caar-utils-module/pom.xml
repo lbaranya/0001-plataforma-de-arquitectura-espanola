@@ -4,11 +4,10 @@
 	<parent>
 		<artifactId>caar-parent</artifactId>
 		<groupId>es.arquia.magnolia</groupId>
-		<version>${parent.module.version}</version>
+		<version>0.1-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>caar-utils-module</artifactId>
-	<version>0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>caar-utils-module Magnolia Module</name>
   <!--
