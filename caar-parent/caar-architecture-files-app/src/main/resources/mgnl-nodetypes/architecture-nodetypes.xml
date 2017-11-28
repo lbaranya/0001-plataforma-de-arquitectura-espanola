@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <nodeTypes xmlns:mgnl="http://www.magnolia.info/jcr/mgnl">
 
+  <nodeType name="mgnl:portfolio-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
   <nodeType name="mgnl:portfolio" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
@@ -47,6 +52,11 @@
     </supertypes>
   </nodeType>
   <nodeType name="mgnl:support-business" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
     </supertypes>

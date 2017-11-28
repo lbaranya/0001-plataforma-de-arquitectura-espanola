@@ -2,7 +2,7 @@ appClass: info.magnolia.ui.contentapp.ContentApp
 class: info.magnolia.ui.contentapp.ContentAppDescriptor
 i18nBasename: caar-architecture-files-app.i18n.module-caar-architecture-files-app-messages
 icon: icon-articles-app
-label: caar-architecture-files-app.appLauncherLayout.label
+label: caar-architecture-files-app.appLauncherLayout.architectureFiles.label
 subApps:
   browser:
     subAppClass: info.magnolia.ui.contentapp.browser.BrowserSubApp
@@ -14,6 +14,8 @@ subApps:
       rootPath: /
       defaultOrder: jcrName
       nodeTypes:
+        - name: mgnl:portfolio-wrapper
+          icon: icon-folder
         - name: mgnl:portfolio
           icon: icon-items
         - name: mgnl:support-wrapper
@@ -34,6 +36,8 @@ subApps:
           icon: icon-items
         - name: mgnl:support-business
           icon: icon-items
+        - name: mgnl:format-wrapper
+          icon: icon-folder
         - name: mgnl:format-video
           icon: icon-items
         - name: mgnl:format-three-dimensional
@@ -90,12 +94,26 @@ subApps:
           class: info.magnolia.ui.workbench.search.SearchPresenterDefinition
           columns: *defaultColumns
     actions:
-      # Wrapper
+      # General wrappers
+      addPortfolioWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:portfolio-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addPortfolioWrapper.label
+        availability:
+          root: true
       addSupportWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
         nodeType: mgnl:support-wrapper
         label: caar-architecture-files-app.subapp.browser.actions.addSupportWrapper.label
+        availability:
+          root: true
+      addFormatWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:format-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addFormatWrapper.label
         availability:
           root: true
       editWrapper:
@@ -107,6 +125,8 @@ subApps:
           nodeTypes:
             - mgnl:support-wrapper
             - mgnl:support-architect-wrapper
+            - mgnl:portfolio-wrapper
+            - mgnl:format-wrapper
       deleteWrapper:
         icon: icon-trash
         class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
@@ -115,7 +135,9 @@ subApps:
           nodeTypes:
             - mgnl:support-wrapper
             - mgnl:support-architect-wrapper
-      # Architect Wrapper
+            - mgnl:portfolio-wrapper
+            - mgnl:format-wrapper
+      # Support Architect Wrapper
       addSupportArchitectWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -154,7 +176,37 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-architect
-      # Sections
+      # Portfolio
+      addPortfolio:
+        subAppId: detailPortfolio
+        icon: icon-add-item
+        nodeType: mgnl:portfolio
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addPortfolio.label
+        availability:
+          nodeTypes:
+            - mgnl:portfolio-wrapper
+      deletePortfolio:
+        icon: icon-trash
+        nodeType: mgnl:portfolio
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.deletePortfolio.label
+        availability:
+          nodeTypes:
+            - mgnl:portfolio
+      editPortfolio:
+        subAppId: detailPortfolio
+        icon: icon-edit-wo
+        nodeType: mgnl:portfolio
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editPortfolio.label
+        availability:
+          nodeTypes:
+            - mgnl:portfolio
+    # Sections
     actionbar:
       defaultAction: addFolder
       sections:
@@ -164,9 +216,24 @@ subApps:
             - name: addActions
               items:
                 - name: addSupportWrapper
+                - name: addPortfolioWrapper
+                - name: addFormatWrapper
           availability:
             nodes: false
             root: true
+        - name: portfolioWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolioWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addPortfolio
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: deleteWrapper
+          availability:
+            nodeTypes:
+              - mgnl:portfolio-wrapper
         - name: supportWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportWrapper.label
           groups:
@@ -194,6 +261,7 @@ subApps:
             nodeTypes:
               - mgnl:support-architect-wrapper
         - name: supportArchitect
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitect.label
           groups:
             - name: editActions
               items:
@@ -202,6 +270,16 @@ subApps:
           availability:
             nodeTypes:
               - mgnl:support-architect
+        - name: formatWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
+          groups:
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: deleteWrapper
+          availability:
+            nodeTypes:
+              - mgnl:format-wrapper
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
