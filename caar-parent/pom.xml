@@ -16,9 +16,9 @@
 
 	<!-- Fill the following in, so you can use the release plugin -->
 	<scm>
-		<developerConnection>scm:git:ssh://git.atsistemas.com:7999/scm/caar/0001-plataforma-de-arquitectura-espanola.git</developerConnection>
-		<connection>scm:git:ssh://git.atsistemas.com:7999/scm/caar/0001-plataforma-de-arquitectura-espanola.git</connection>
-		<url>scm:git:ssh://git.atsistemas.com:7999/scm/caar/0001-plataforma-de-arquitectura-espanola.git</url>
+		<developerConnection>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</developerConnection>
+		<connection>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</connection>
+		<url>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</url>
 	</scm>
 
 	<distributionManagement>
