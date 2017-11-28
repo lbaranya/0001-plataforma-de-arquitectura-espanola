@@ -28,6 +28,10 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>info.magnolia</groupId>
+  			<artifactId>magnolia-rendering</artifactId>
+		</dependency>
 
 		<!-- TEST -->
 		<dependency>

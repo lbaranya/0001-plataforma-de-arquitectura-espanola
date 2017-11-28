@@ -1,11 +1,20 @@
+name: caar-theme
 cssFiles:
+  bootstrap-css:
+    addFingerPrint: true
+    link: /.resources/caar-theme-module/webresources/caar-theme/framework/bootstrap/css/bootstrap.min.css
+    media: all
   caar-css:
     addFingerPrint: true
-    link: /.resources/caar-theme/css/style.css
+    link: /.resources/caar-theme-module/webresources/caar-theme/css/style.css
     media: all
 jsFiles:
+  jquery-js:
+    addFingerPrint: true
+    link: /.resources/caar-theme-module/webresources/caar-theme/js/jquery.min.js
+  bootstrap-js:
+    addFingerPrint: true
+    link: /.resources/caar-theme-module/webresources/caar-theme/framework/bootstrap/js/bootstrap.min.js
   caar-js:
     addFingerPrint: true
-    link: /.resources/caar-theme/js/scripts.js
-imaging: 
-  #Imaging variations configuration
+    link: /.resources/caar-theme-module/webresources/caar-theme/js/site.js

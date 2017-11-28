@@ -25,6 +25,9 @@
                         <li class="submenu-link">
                             <a href="#">itinerarios</a>
                         </li>
+                        <li class="submenu-link">
+                            <a href="#">instituciones</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="submenu explorando">
@@ -36,15 +39,7 @@
                             <a href="#">noticias</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">descatados</a>
-                            <ul class="menu-level3">
-                                <li class="level3-item">
-                                    <a href="#" class="level3-link">mensajes de excelencia</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="#" class="level3-link">actualidad</a>
-                                </li>
-                            </ul>
+                            <a href="#">destacados</a>
                         </li>
                         <li class="submenu-link">
                             <a href="#">documental</a>
@@ -115,20 +110,24 @@
                         </li>
                     </ul>
                 </div>
-                <!--
-                <div class="submenu instituciones">
+                <div class="submenu sector">
                     <ul class="submenu-list">
                         <li class="submenu-link">
-                            <a href="#">acerca de "instituciones"</a>
+                            <a href="#">acerca de "sector"</a>
                         </li>
                         <li class="submenu-link">
                             <a href="#">noticias</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">directorio instituciones</a>
+                            <a href="#">directorio</a>
+                        </li>
+                        <li class="submenu-link">
+                        	<p class="registro-texto">
+                        		<a href="#" class="registro-link" alt="registro">Regístrate</a>
+                        	</p>
                         </li>
                     </ul>
-                </div> -->
+                </div>
                 <div class="submenu search">
                     <div class="search-container">
                     	[#-- [#assign search_icon_blanco = cmsfn.contentByPath("/caar-theme/icons/", "resources")!""]
