@@ -217,11 +217,13 @@ subApps:
         name: mgnl:support-architect
       form:
         tabs:
-          - name: personalData
+          - name: fileData
             fields:
               - name: jcrName
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.jcrName.label
+          - name: personalData
+            fields:
               - name: FS1.1.1
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.name.label
@@ -266,12 +268,178 @@ subApps:
                 defaultValue: now
                 label: caar-architecture-files-app.files.support.architect.personalData.deathDate.label
               - name: FS1.1.9.2
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
                 label: caar-architecture-files-app.files.support.architect.personalData.deathCity.label
               - name: FS1.1.9.3
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.deathCountry.label
-          - name: formation
+          - name: educationData
+            fields:
+              - name: FS1.2.1
+                # certification list
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.certification.label
+              - name: FS1.2.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.certificationCenter.label
+              - name: FS1.2.3
+                # list
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.certificationCountry.label
+              - name: FS1.2.4
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.architect.educationData.certificationYear.label
+              - name: FS1.2.5
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.otherStudies.label
+              - name: FS1.2.6
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.doctorate.label
+          - name: professionalData
+            fields:
+              - name: FS1.3.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeName.label
+              - name: FS1.3.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeWebUrl.label
+              - name: FS1.3.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeCity.label
+              - name: FS1.3.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeCountry.label
+              - name: FS1.3.5
+                # user picker
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeComponents.label
+              - name: FS1.3.6
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.biographicReview.label
+              - name: FS1.3.7
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.CV.label
+              - name: FS1.3.8
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.awardsDistinctions.label
+          - name: workExperienceData
+            fields:
+              - name: listExperience
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.workExperienceData.listExperience.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS1.4.1
+                      class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                      time: false
+                      type: Date
+                      defaultValue: now
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.startDate.label
+                    - name: FS1.4.2
+                      class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                      time: false
+                      type: Date
+                      defaultValue: now
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.endDate.label
+                    - name: FS1.4.3
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.position.label
+                    - name: FS1.4.4
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.functionsResponsibilities.label
+                    - name: FS1.4.5
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.companyName.label
+                    - name: FS1.4.6
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.companyType.label
+          - name: educationListData
+            fields:
+              - name: listEducation
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationListData.listExperience.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS1.5.1
+                      class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                      time: false
+                      type: Date
+                      defaultValue: now
+                      label: caar-architecture-files-app.files.support.architect.educationListData.startDate.label
+                    - name: FS1.5.2
+                      class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                      time: false
+                      type: Date
+                      defaultValue: now
+                      label: caar-architecture-files-app.files.support.architect.educationListData.endDate.label
+                    - name: FS1.5.3
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.qualification.label
+                    - name: FS1.5.4
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.subjectsProfessionalCompetence.label
+                    - name: FS1.5.5
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.educationalCenter.label
+                    - name: FS1.5.6
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.educationalCenterType.label
+                    - name: FS1.5.7
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.nationalLevel.label
+          - name: languagesData
+            fields:
+              - name: listLanguages
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.languagesData.listLanguages.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS1.6.1
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.language.label
+                    - name: FS1.6.2
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.otherLanguages.label
+                    - name: FS1.6.3
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.firstLanguage.label
+                    - name: FS1.6.4
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.auditiveComprehension.label
+                    - name: FS1.6.5
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.readingComprehension.label
+                    - name: FS1.6.6
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.oralInteraction.label
+                    - name: FS1.6.7
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.oralExpression.label
+                    - name: FS1.6.8
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.writting.label
+          
       actions:
         - name: commit
         - name: cancel
