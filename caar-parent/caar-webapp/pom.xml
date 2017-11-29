@@ -143,6 +143,10 @@
 									<directory>env/dev/docroot</directory>
 									<targetPath>docroot</targetPath>
 								</resource>
+								<resource>
+									<directory>env/dev/bootstrap</directory>
+									<targetPath>WEB-INF/bootstrap</targetPath>
+								</resource>
 							</webResources>
 						</configuration>
 					</plugin>
@@ -169,6 +173,10 @@
 								<resource>
 									<directory>env/pre/docroot</directory>
 									<targetPath>docroot</targetPath>
+								</resource>
+								<resource>
+									<directory>env/pre/bootstrap</directory>
+									<targetPath>WEB-INF/bootstrap</targetPath>
 								</resource>
 							</webResources>
 						</configuration>
@@ -198,8 +206,8 @@
 									<targetPath>docroot</targetPath>
 								</resource>
 								<resource>
-									<directory>env/pro/bootstrap/common</directory>
-									<targetPath>WEB-INF/bootstrap/common</targetPath>
+									<directory>env/pro/bootstrap</directory>
+									<targetPath>WEB-INF/bootstrap</targetPath>
 								</resource>
 							</webResources>
 						</configuration>
