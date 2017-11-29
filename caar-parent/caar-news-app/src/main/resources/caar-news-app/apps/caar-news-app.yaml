@@ -9,7 +9,7 @@ subApps:
     class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
     label: caar-news-app.subapp.browser.label
     contentConnector:
-      includeProperties: true
+      includeProperties: false
       workspace: news
       rootPath: /
       defaultOrder: jcrName
@@ -79,9 +79,10 @@ subApps:
           nodeTypes:
             - mgnl:folder
       editNews:
-        icon: icon-trash
+        icon: icon-edit
         nodeType: mgnl:news
         appName: caar-news-app
+        subAppId: detailNews
         class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
         label: caar-news-app.subapp.browser.actions.editNews.label
         availability:
@@ -100,6 +101,7 @@ subApps:
       defaultAction: editFolder
       sections:
         - name: root
+          label: caar-news-app.subapp.browser.actionbar.sections.root.label
           groups:
             - name: addActions
               items:
@@ -108,6 +110,7 @@ subApps:
             nodes: false
             root: true
         - name: folder
+          label: caar-news-app.subapp.browser.actionbar.sections.folder.label
           groups:
             - name: addActions
               items:
@@ -121,6 +124,7 @@ subApps:
             nodeTypes:
               - mgnl:folder
         - name: news
+          label: caar-news-app.subapp.browser.actionbar.sections.news.label
           groups:
             - name: editActions
               items:
@@ -145,11 +149,13 @@ subApps:
       form:
         tabs:
           - name: fileData
+            label: caar-news-app.fileData.label
             fields:
               - name: jcrName
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-news-app.fileData.jcrName.label
           - name: newsData
+            label: caar-news-app.newsData.label
             fields:
               - name: headline
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -168,8 +174,8 @@ subApps:
               - name: dateTime
                 class: info.magnolia.ui.form.field.definition.DateFieldDefinition
                 type: Date
-                dateFormat: apps.date.format
-                timeFormat: apps.time.format
+                dateFormat: dd/MM/yyyy
+                timeFormat: HH:mm
                 label: caar-news-app.newsData.dateTime.label
                 defaultValue: now
       actions:
