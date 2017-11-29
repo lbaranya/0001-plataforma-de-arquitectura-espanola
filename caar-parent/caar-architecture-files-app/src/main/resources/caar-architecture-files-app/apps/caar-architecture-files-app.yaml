@@ -1,0 +1,839 @@
+appClass: info.magnolia.ui.contentapp.ContentApp
+class: info.magnolia.ui.contentapp.ContentAppDescriptor
+i18nBasename: caar-architecture-files-app.i18n.module-caar-architecture-files-app-messages
+icon: icon-articles-app
+label: caar-architecture-files-app.appLauncherLayout.architectureFiles.label
+subApps:
+  browser:
+    subAppClass: info.magnolia.ui.contentapp.browser.BrowserSubApp
+    class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
+    label: caar-architecture-files-app.subapp.browser.label
+    contentConnector:
+      includeProperties: true
+      workspace: architecture-files
+      rootPath: /
+      defaultOrder: jcrName
+      nodeTypes:
+        - name: mgnl:portfolio-wrapper
+          icon: icon-folder
+        - name: mgnl:portfolio
+          icon: icon-items
+        - name: mgnl:support-wrapper
+          icon: icon-folder
+        - name: mgnl:support-architect-wrapper
+          icon: icon-folder
+        - name: mgnl:support-architect
+          icon: icon-items
+        - name: mgnl:support-project
+          icon: icon-items
+        - name: mgnl:support-review-i-wrapper
+          icon: icon-folder
+        - name: mgnl:support-review-i
+          icon: icon-items
+        - name: mgnl:support-review-ii
+          icon: icon-items
+        - name: mgnl:support-review-iii
+          icon: icon-items
+        - name: mgnl:support-review-iv
+          icon: icon-items
+        - name: mgnl:support-business
+          icon: icon-items
+        - name: mgnl:format-wrapper
+          icon: icon-folder
+        - name: mgnl:format-video
+          icon: icon-items
+        - name: mgnl:format-three-dimensional
+          icon: icon-items
+        - name: mgnl:format-cartographic
+          icon: icon-items
+        - name: mgnl:format-audio
+          icon: icon-items
+        - name: mgnl:format-book
+          icon: icon-items
+        - name: mgnl:format-manuscript
+          icon: icon-items
+        - name: mgnl:format-graphic
+          icon: icon-items
+        - name: mgnl:format-continuous
+          icon: icon-items
+        - name: mgnl:format-electronic
+          icon: icon-items
+        - name: mgnl:folder
+          icon: icon-folder
+    workbench:
+      dropConstraintClass: info.magnolia.ui.workbench.tree.drop.AlwaysTrueDropConstraint
+      editable: false
+      contentViews:
+        - name: tree
+          class: info.magnolia.ui.workbench.tree.TreePresenterDefinition
+          columns: &defaultColumns
+            - name: name
+              editable: true
+              sortable: true
+              propertyName: jcrName
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+            - name: value
+              editable: true
+              sortable: true
+              propertyName: value
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+            - name: status
+              width: 45
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.StatusColumnFormatter
+              class: info.magnolia.ui.workbench.column.definition.StatusColumnDefinition
+            - name: moddate
+              width: 160
+              sortable: true
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.DateColumnFormatter
+              propertyName: mgnl:lastModified
+              class: info.magnolia.ui.workbench.column.definition.MetaDataColumnDefinition
+        - name: list
+          class: info.magnolia.ui.workbench.list.ListPresenterDefinition
+          columns: *defaultColumns
+        - name: search
+          class: info.magnolia.ui.workbench.search.SearchPresenterDefinition
+          columns: *defaultColumns
+    actions:
+      # General wrappers
+      addPortfolioWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:portfolio-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addPortfolioWrapper.label
+        availability:
+          root: true
+      addSupportWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportWrapper.label
+        availability:
+          root: true
+      addFormatWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:format-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addFormatWrapper.label
+        availability:
+          root: true
+      editWrapper:
+        icon: icon-edit
+        dialogName: ui-framework:folder
+        class: info.magnolia.ui.framework.action.OpenEditDialogActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+            - mgnl:support-architect-wrapper
+            - mgnl:support-review-i-wrapper
+            - mgnl:portfolio-wrapper
+            - mgnl:format-wrapper
+      deleteWrapper:
+        icon: icon-trash
+        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.deleteWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+            - mgnl:support-architect-wrapper
+            - mgnl:support-review-i-wrapper
+            - mgnl:portfolio-wrapper
+            - mgnl:format-wrapper
+      # Support Architect Wrapper
+      addSupportArchitectWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-architect-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportArchitectWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+      addSupportReviewIWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-review-i-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+      # Support Architect
+      addSupportArchitect:
+        subAppId: detailSupportArchitect
+        icon: icon-add-item
+        nodeType: mgnl:support-architect
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportArchitect.label
+        availability:
+          nodeTypes:
+            - mgnl:support-architect-wrapper
+      deleteSupportArchitect:
+        icon: icon-trash
+        nodeType: mgnl:support-architect
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.deleteSupportArchitect.label
+        availability:
+          nodeTypes:
+            - mgnl:support-architect
+      editSupportArchitect:
+        subAppId: detailSupportArchitect
+        icon: icon-edit-wo
+        nodeType: mgnl:support-architect
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editSupportArchitect.label
+        availability:
+          nodeTypes:
+            - mgnl:support-architect
+      # Support Review I
+      addSupportReviewI:
+        subAppId: detailSupportReviewI
+        icon: icon-add-item
+        nodeType: mgnl:support-review-i
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewI.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-i-wrapper
+      deleteSupportReviewI:
+        icon: icon-trash
+        nodeType: mgnl:support-review-i
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.deleteSupportReviewI.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-i
+      editSupportReviewI:
+        subAppId: detailSupportReviewI
+        icon: icon-edit-wo
+        nodeType: mgnl:support-review-i
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editSupportReviewI.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-i
+      # Portfolio
+      addPortfolio:
+        subAppId: detailPortfolio
+        icon: icon-add-item
+        nodeType: mgnl:portfolio
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addPortfolio.label
+        availability:
+          nodeTypes:
+            - mgnl:portfolio-wrapper
+      deletePortfolio:
+        icon: icon-trash
+        nodeType: mgnl:portfolio
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.deletePortfolio.label
+        availability:
+          nodeTypes:
+            - mgnl:portfolio
+      editPortfolio:
+        subAppId: detailPortfolio
+        icon: icon-edit-wo
+        nodeType: mgnl:portfolio
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editPortfolio.label
+        availability:
+          nodeTypes:
+            - mgnl:portfolio
+    # Sections
+    actionbar:
+      defaultAction: addFolder
+      sections:
+        - name: root
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.root.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportWrapper
+                - name: addPortfolioWrapper
+                - name: addFormatWrapper
+          availability:
+            nodes: false
+            root: true
+        # Portfolio group
+        - name: portfolioWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolioWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addPortfolio
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: deleteWrapper
+          availability:
+            nodeTypes:
+              - mgnl:portfolio-wrapper
+        # Support group
+        - name: supportWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportArchitectWrapper
+                - name: addSupportReviewIWrapper
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: deleteWrapper
+          availability:
+            nodeTypes:
+              - mgnl:support-wrapper
+        # Support Architect
+        # Wrapper
+        - name: supporArquitectWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitectWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportArchitect
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: deleteWrapper
+          availability:
+            nodeTypes:
+              - mgnl:support-architect-wrapper
+        # Node actions
+        - name: supportArchitect
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitect.label
+          groups:
+            - name: editActions
+              items:
+               - name: editSupportArchitect
+               - name: deleteSupportArchitect
+          availability:
+            nodeTypes:
+              - mgnl:support-architect
+        # Support Review I
+        # Wrapper
+        - name: supportReviewIWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportReviewI
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: deleteWrapper
+          availability:
+            nodeTypes:
+              - mgnl:support-review-i-wrapper
+        # Node actions      
+        - name: supportReviewI
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewI.label
+          groups:
+            - name: editActions
+              items:
+                - name: editSupportReviewI
+                - name: deleteSupportReviewI
+          availability:
+            nodeTypes:
+              - mgnl:support-review-i
+        # Format group
+        - name: formatWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
+          groups:
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: deleteWrapper
+          availability:
+            nodeTypes:
+              - mgnl:format-wrapper
+    imageProvider:
+       class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
+       damLinkPropertyName: image
+  # Support architect sub app
+  detailSupportArchitect:
+    subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+    class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+    label: caar-architecture-files-app.subapp.detailSupportArchitect.label
+    contentConnector:
+      workspace: architecture-files
+    editor:
+      nodeType:
+        icon: icon-items
+        name: mgnl:support-architect
+      form:
+        tabs:
+          - name: fileData
+            label: caar-architecture-files-app.files.support.architect.fileData.label
+            fields:
+              - name: jcrName
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.fileData.jcrName.label
+          - name: personalData
+            label: caar-architecture-files-app.files.support.architect.personalData.label
+            fields:
+              - name: FS1.1.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.name.label
+              - name: FS1.1.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.firstSurname.label
+              - name: FS1.1.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.secondSurname.label
+              - name: FS1.1.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.otherNames.label
+              - name: FS1.1.5
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                targetWorkspace: dam
+                appName: assets
+                identifierToPathConverter:
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                contentPreviewDefinition:
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: caar-architecture-files-app.files.support.architect.personalData.photo.label
+              - name: FS1.1.6
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.architect.personalData.birthDate.label
+              - name: FS1.1.7
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.birthCity.label
+              - name: FS1.1.8
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.birthCountry.label
+              - name: FS1.1.9
+                class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.death.label
+                buttonLabel: caar-architecture-files-app.files.support.architect.personalData.death.button.label
+              - name: FS1.1.9.1
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.architect.personalData.deathDate.label
+              - name: FS1.1.9.2
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.architect.personalData.deathCity.label
+              - name: FS1.1.9.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalData.deathCountry.label
+          - name: educationData
+            label: caar-architecture-files-app.files.support.architect.educationData.label
+            fields:
+              - name: FS1.2.1
+                # certification list
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.certification.label
+              - name: FS1.2.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.certificationCenter.label
+              - name: FS1.2.3
+                # list
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.certificationCountry.label
+              - name: FS1.2.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.certificationYear.label
+                validators:
+                  - name: onlyNumber
+                    class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                    pattern: \d{4}?
+                    errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
+              - name: FS1.2.5
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.otherStudies.label
+              - name: FS1.2.6
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationData.doctorate.label
+          - name: professionalData
+            label: caar-architecture-files-app.files.support.architect.professionalData.label
+            fields:
+              - name: FS1.3.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeName.label
+              - name: FS1.3.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeWebUrl.label
+              - name: FS1.3.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeCity.label
+              - name: FS1.3.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeCountry.label
+              - name: FS1.3.5
+                # user picker
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.officeComponents.label
+              - name: FS1.3.6
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.biographicReview.label
+              - name: FS1.3.7
+                class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.CV.label
+                options:
+                  - name: cv
+                    label: caar-architecture-files-app.files.support.architect.professionalData.pdf.label
+                    selected: true
+                    value: cv
+                  - name: caar-architecture-files-app.files.support.architect.professionalData.richText.label
+                    label: richText
+                    value: richText
+                fields:
+                  - name: cv
+                    class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                    targetWorkspace: dam
+                    appName: assets
+                    label: caar-architecture-files-app.files.support.architect.professionalData.selectPDF.label
+                    identifierToPathConverter:
+                      class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                    contentPreviewDefinition:
+                      contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                  - name: richText
+                    class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                    label: caar-architecture-files-app.files.support.architect.professionalData.richTextMessage.label
+              - name: FS1.3.8
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.professionalData.awardsDistinctions.label
+          - name: workExperienceData
+            label: caar-architecture-files-app.files.support.architect.workExperienceData.label
+            fields:
+              - name: listExperience
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.workExperienceData.listExperience.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS1.4.1
+                      class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                      time: false
+                      type: Date
+                      defaultValue: now
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.startDate.label
+                    - name: FS1.4.2
+                      class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                      time: false
+                      type: Date
+                      defaultValue: now
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.endDate.label
+                    - name: FS1.4.3
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.position.label
+                    - name: FS1.4.4
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.functionsResponsibilities.label
+                    - name: FS1.4.5
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.companyName.label
+                    - name: FS1.4.6
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.workExperienceData.companyType.label
+          - name: educationListData
+            label: caar-architecture-files-app.files.support.architect.educationListData.label
+            fields:
+              - name: listEducation
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.educationListData.listExperience.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS1.5.1
+                      class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                      time: false
+                      type: Date
+                      defaultValue: now
+                      label: caar-architecture-files-app.files.support.architect.educationListData.startDate.label
+                    - name: FS1.5.2
+                      class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                      time: false
+                      type: Date
+                      defaultValue: now
+                      label: caar-architecture-files-app.files.support.architect.educationListData.endDate.label
+                    - name: FS1.5.3
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.qualification.label
+                    - name: FS1.5.4
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.subjectsProfessionalCompetence.label
+                    - name: FS1.5.5
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.educationalCenter.label
+                    - name: FS1.5.6
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.educationalCenterType.label
+                    - name: FS1.5.7
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.educationListData.nationalLevel.label
+          - name: languagesData
+            label: caar-architecture-files-app.files.support.architect.languagesData.label
+            fields:
+              - name: listLanguages
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.languagesData.listLanguages.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS1.6.1
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.language.label
+                    - name: FS1.6.2
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.otherLanguages.label
+                    - name: FS1.6.3
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.firstLanguage.label
+                    - name: FS1.6.4
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.auditiveComprehension.label
+                    - name: FS1.6.5
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.readingComprehension.label
+                    - name: FS1.6.6
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.oralInteraction.label
+                    - name: FS1.6.7
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.oralExpression.label
+                    - name: FS1.6.8
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.architect.languagesData.writting.label
+          - name: personalCapabilitiesData
+            label: caar-architecture-files-app.files.support.architect.personalCapabilitiesData.label
+            fields:
+              - name: FS1.7.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalCapabilitiesData.socialAptitudes.label
+              - name: FS1.7.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalCapabilitiesData.organizationalAptitudes.label
+              - name: FS1.7.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalCapabilitiesData.technicalAptitudes.label
+              - name: FS1.7.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalCapabilitiesData.computerAptitudes.label
+              - name: FS1.7.5
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalCapabilitiesData.artAptitudes.label
+              - name: FS1.7.6
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalCapabilitiesData.otherAptitudes.label
+              - name: FS1.7.7
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.personalCapabilitiesData.driveLicense.label
+          - name: additonalInfoData
+            label: caar-architecture-files-app.files.support.architect.additonalInfoData.label
+            fields:
+              - name: FS1.8.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.additonalInfoData.additionalInformation.label
+              - name: FS1.8.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.architect.additonalInfoData.annexes.label
+      actions:
+        - name: commit
+        - name: cancel
+    actions:
+      commit:
+        class: info.magnolia.ui.form.action.SaveFormActionDefinition
+      cancel:
+        class: info.magnolia.ui.form.action.CancelFormActionDefinition
+  # Support review i sub app
+  detailSupportReviewI:
+    subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+    class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+    label: caar-architecture-files-app.subapp.detailSupportReviewI.label
+    contentConnector:
+      workspace: architecture-files
+    editor:
+      nodeType:
+        icon: icon-items
+        name: mgnl:support-review-i
+      form:
+        tabs:
+          - name: fileData
+            label: caar-architecture-files-app.files.support.reviewi.fileData.label
+            fields:
+              - name: jcrName
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.fileData.jcrName.label
+          - name: platformData
+            label: caar-architecture-files-app.files.support.reviewi.platformData.label          
+            fields:
+              - name: FS3.1.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.platformData.pieceId.label
+              - name: FS3.1.2
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.reviewi.platformData.dischargeDate.label
+              - name: FS3.1.3
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.reviewi.platformData.lastUpdateDate.label
+              - name: FS3.1.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.platformData.publishedDirectory.label
+          - name: workData
+            label: caar-architecture-files-app.files.support.reviewi.workData.label
+            fields:
+              - name: FS3.2.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.workData.title.label
+              - name: FS3.2.2
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.reviewi.workData.presentationDate.label
+              - name: FS3.2.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.workData.presentationLocation.label
+              - name: FS3.2.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.workData.presentationEntity.label
+              - name: FS3.2.5
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.workData.abstract.label
+          - name: authorshipData
+            label: caar-architecture-files-app.files.support.reviewi.authorshipData.label
+            fields:
+              - name: listAuthorship
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.authorshipData.listAuthorship.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS3.3.1
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewi.authorshipData.authorshipType.label
+                    - name: FS3.3.2
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewi.authorshipData.authorshipName.label
+                    - name: FS3.3.3
+                      class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewi.authorshipData.authorshipDetails.label
+          - name: notesData
+            label: caar-architecture-files-app.files.support.reviewi.notesData.label
+            fields:
+              - name: FS3.4
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.notesData.notes.label
+          - name: informationData
+            label: caar-architecture-files-app.files.support.reviewi.informationData.label
+            fields:
+              - name: FS3.5.1
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.informationData.typology.label
+                options:
+                  - name: conference
+                    value: conference
+                    label: caar-architecture-files-app.files.support.reviewi.informationData.typology.conference.label
+                  - name: roundTable
+                    value: roundTable
+                    label: caar-architecture-files-app.files.support.reviewi.informationData.typology.roundTable.label
+                  - name: poster
+                    value: poster
+                    label: caar-architecture-files-app.files.support.reviewi.informationData.typology.poster.label
+                  - name: course
+                    value: course
+                    label: caar-architecture-files-app.files.support.reviewi.informationData.typology.course.label
+                  - name: awards
+                    value: awards
+                    label: caar-architecture-files-app.files.support.reviewi.informationData.typology.awards.label
+          - name: relatedThoughtData
+            label: caar-architecture-files-app.files.support.reviewi.relatedThoughtData.label
+            fields:
+              - name: listRelatedThought
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.relatedThoughtData.listRelatedThought.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS3.6
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewi.relatedThoughtData.relatedThought.label
+          - name: mediaGalleryData
+            label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.label
+            fields:
+              - name: listMedia
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.listMedia.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+                  layout: vertical
+                  fields:
+                    - name: FS3.7.1
+                      class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.mediaType.label
+                      options:
+                        - name: video
+                          value: video
+                          label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.mediaType.video.label
+                        - name: image
+                          value: image
+                          label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.mediaType.image.label
+                    - name: FS3.7.2
+                      class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                      targetWorkspace: dam
+                      appName: assets
+                      label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.photoPreview.label
+                      identifierToPathConverter:
+                        class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                      contentPreviewDefinition:
+                        contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                    - name: FS3.7.3
+                      class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.mediaDetails.label
+                    - name: FS3.7.4
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.mediaTitle.label
+      actions:
+        - name: commit
+        - name: cancel
+    actions:
+      commit:
+        class: info.magnolia.ui.form.action.SaveFormActionDefinition
+      cancel:
+        class: info.magnolia.ui.form.action.CancelFormActionDefinition

@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE module SYSTEM "module.dtd" >
 <module>
-  <name>caar-architecture-files-app</name>
-  <displayName>${project.name}</displayName>
-  <description>${project.description}</description>
-  <class>es.arquia.magnolia.CaarArquitectureFilesApp</class>
-  <versionHandler>es.arquia.magnolia.setup.CaarArquitectureFilesAppVersionHandler</versionHandler>
-  <version>${project.version}</version>
+	<name>caar-architecture-files-app</name>
+	<displayName>${project.name}</displayName>
+	<description>${project.description}</description>
+	<class>es.arquia.magnolia.CaarArquitectureFilesApp</class>
+	<versionHandler>es.arquia.magnolia.setup.CaarArquitectureFilesAppVersionHandler</versionHandler>
+	<version>${project.version}</version>
 
-  <dependencies>
-    <dependency>
-      <name>core</name>
-      <version>5.6/*</version>
-    </dependency>
-    <!--  Add other dependencies here, e.g the mte (magnolia templating essentials).
-    <dependency>
-      <name>mte</name>
-      <version>0.7/*</version>
-    </dependency>
-    -->
-  </dependencies>
+	<dependencies>
+		<dependency>
+			<name>core</name>
+			<version>5.6/*</version>
+		</dependency>
+		<!-- Add other dependencies here, e.g the mte (magnolia templating essentials). 
+			<dependency> <name>mte</name> <version>0.7/*</version> </dependency> -->
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<name>magnolia</name>
+			<workspaces>
+				<workspace>architecture-files</workspace>
+			</workspaces>
+			<nodeTypeFile>/mgnl-nodetypes/architecture-nodetypes.xml</nodeTypeFile>
+		</repository>
+	</repositories>
 </module>
