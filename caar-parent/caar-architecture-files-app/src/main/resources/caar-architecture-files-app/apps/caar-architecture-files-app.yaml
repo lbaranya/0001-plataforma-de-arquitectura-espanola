@@ -9,7 +9,7 @@ subApps:
     class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
     label: caar-architecture-files-app.subapp.browser.label
     contentConnector:
-      includeProperties: true
+      includeProperties: false
       workspace: architecture-files
       rootPath: /
       defaultOrder: jcrName
@@ -36,6 +36,8 @@ subApps:
           icon: icon-items
         - name: mgnl:support-review-iv
           icon: icon-items
+        - name: mgnl:support-business-wrapper
+          icon: icon-folder
         - name: mgnl:support-business
           icon: icon-items
         - name: mgnl:format-wrapper
@@ -128,6 +130,7 @@ subApps:
             - mgnl:support-wrapper
             - mgnl:support-architect-wrapper
             - mgnl:support-review-i-wrapper
+            - mgnl:support-business-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
       deleteWrapper:
@@ -139,9 +142,10 @@ subApps:
             - mgnl:support-wrapper
             - mgnl:support-architect-wrapper
             - mgnl:support-review-i-wrapper
+            - mgnl:support-business-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
-      # Support Architect Wrapper
+      # Support Wrapper
       addSupportArchitectWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -155,6 +159,14 @@ subApps:
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
         nodeType: mgnl:support-review-i-wrapper
         label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+      addSupportBusinessWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-business-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportBusinessWrapper.label
         availability:
           nodeTypes:
             - mgnl:support-wrapper
@@ -218,6 +230,36 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-review-i
+      # Support Business
+      addSupportBusiness:
+        subAppId: detailSupportBusiness
+        icon: icon-add-item
+        nodeType: mgnl:support-business
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportBusiness.label
+        availability:
+          nodeTypes:
+            - mgnl:support-business-wrapper
+      deleteSupportBusiness:
+        icon: icon-trash
+        nodeType: mgnl:support-business
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.deleteSupportBusiness.label
+        availability:
+          nodeTypes:
+            - mgnl:support-business
+      editSupportBusiness:
+        subAppId: detailSupportBusiness
+        icon: icon-edit-wo
+        nodeType: mgnl:support-business
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editSupportBusiness.label
+        availability:
+          nodeTypes:
+            - mgnl:support-business
       # Portfolio
       addPortfolio:
         subAppId: detailPortfolio
@@ -285,6 +327,7 @@ subApps:
               items:
                 - name: addSupportArchitectWrapper
                 - name: addSupportReviewIWrapper
+                - name: addSupportBusinessWrapper
             - name: editActions
               items:
                 - name: editWrapper
@@ -344,6 +387,32 @@ subApps:
           availability:
             nodeTypes:
               - mgnl:support-review-i
+        # Support business
+        # Wrapper
+        - name: supportBusinessWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusinessWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportBusiness
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: deleteWrapper
+          availability:
+            nodeTypes:
+              - mgnl:support-business-wrapper
+        # Node actions      
+        - name: supportBusiness
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusiness.label
+          groups:
+            - name: editActions
+              items:
+                - name: editSupportBusiness
+                - name: deleteSupportBusiness
+          availability:
+            nodeTypes:
+              - mgnl:support-business
         # Format group
         - name: formatWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
@@ -480,7 +549,7 @@ subApps:
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.professionalData.officeComponents.label
               - name: FS1.3.6
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.professionalData.biographicReview.label
               - name: FS1.3.7
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
@@ -490,8 +559,8 @@ subApps:
                     label: caar-architecture-files-app.files.support.architect.professionalData.pdf.label
                     selected: true
                     value: cv
-                  - name: caar-architecture-files-app.files.support.architect.professionalData.richText.label
-                    label: richText
+                  - name: richText
+                    label: caar-architecture-files-app.files.support.architect.professionalData.richText.label 
                     value: richText
                 fields:
                   - name: cv
@@ -832,6 +901,112 @@ subApps:
       actions:
         - name: commit
         - name: cancel
+    actions:
+      commit:
+        class: info.magnolia.ui.form.action.SaveFormActionDefinition
+      cancel:
+        class: info.magnolia.ui.form.action.CancelFormActionDefinition
+  # Suppor business sub app
+  detailSupportBusiness:
+    subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+    class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+    label: caar-architecture-files-app.subapp.detailSupportBusiness.label
+    contentConnector:
+      workspace: architecture-files
+    editor:
+      nodeType:
+        icon: icon-items
+        name: mgnl:support-business
+      form:
+        tabs:
+          - name: fileData
+            label: caar-architecture-files-app.files.support.business.fileData.label
+            fields:
+              - name: jcrName
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.fileData.jcrName.label
+          - name: businessData
+            label: caar-architecture-files-app.files.support.business.businessData.label
+            fields:
+              - name: FS4.1.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.businessType.label
+              - name: FS4.1.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.businessLegalName.label
+              - name: FS4.1.3
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                targetWorkspace: dam
+                appName: assets
+                label: caar-architecture-files-app.files.support.business.businessData.logo.label
+                identifierToPathConverter:
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                contentPreviewDefinition:
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+              - name: FS4.1.4
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.business.businessData.constitutionDate.label
+              - name: FS4.1.5
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.departmentWebPage.label
+              - name: FS4.1.6
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.departmentCity.label
+              - name: FS4.1.7
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.departmentCountry.label
+              # user picker
+              - name: FS4.1.8
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.departmentComponents.label
+              - name: FS4.1.9
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.biographicReview.label
+              - name: FS4.1.10
+                class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.CV.label
+                options:
+                  - name: cv
+                    label: caar-architecture-files-app.files.support.business.businessData.pdf.label
+                    selected: true
+                    value: cv
+                  - name: richText
+                    label: caar-architecture-files-app.files.support.business.businessData.richText.label 
+                    value: richText
+                fields:
+                  - name: cv
+                    class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                    targetWorkspace: dam
+                    appName: assets
+                    label: caar-architecture-files-app.files.support.business.businessData.selectPDF.label
+                    identifierToPathConverter:
+                      class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                    contentPreviewDefinition:
+                      contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                  - name: richText
+                    class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                    label: caar-architecture-files-app.files.support.business.businessData.richTextMessage.label
+              - name: FS4.1.11
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.businessData.awards.label
+          - name: additionalInfoData
+            label: caar-architecture-files-app.files.support.business.additionalInfoData.label
+            fields:
+              - name: FS4.2.1
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.additionalInfoData.additionalInfo.label
+              - name: FS4.2.2
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.additionalInfoData.annexes.label
+              - name: FS4.2.3
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-architecture-files-app.files.support.business.additionalInfoData.dossier.label
+      actions:
+          - name: commit
+          - name: cancel
     actions:
       commit:
         class: info.magnolia.ui.form.action.SaveFormActionDefinition
