@@ -20,4 +20,14 @@
     </dependency>
     -->
   </dependencies>
+
+	<repositories>
+		<repository>
+			<name>magnolia</name>
+			<workspaces>
+				<workspace>news</workspace>
+			</workspaces>
+			<nodeTypeFile>/mgnl-nodetypes/news-nodetypes.xml</nodeTypeFile>
+		</repository>
+	</repositories>
 </module>
