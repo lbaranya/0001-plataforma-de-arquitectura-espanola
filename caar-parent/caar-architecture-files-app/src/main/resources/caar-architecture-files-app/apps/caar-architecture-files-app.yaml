@@ -368,11 +368,13 @@ subApps:
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.educationData.certificationCountry.label
               - name: FS1.2.4
-                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
-                time: false
-                type: Date
-                defaultValue: now
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.educationData.certificationYear.label
+                validators:
+                  - name: onlyNumber
+                    class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                    pattern: \d{4}?
+                    errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
               - name: FS1.2.5
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.educationData.otherStudies.label
