@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>es.arquia.magnolia</groupId>
 	<artifactId>caar-parent</artifactId>
@@ -14,11 +15,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
-	<!--  Fill the following in, so you can use the release plugin  -->
+	<!-- Fill the following in, so you can use the release plugin -->
 	<scm>
-		<developerConnection>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</developerConnection>
-		<connection>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</connection>
-		<url>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</url>
+		<developerConnection>scm:git:https://git.atsistemas.com/scm/caar/0001-plataforma-de-arquitectura-espanola.git</developerConnection>
+		<connection>scm:git:https://git.atsistemas.com/scm/caar/0001-plataforma-de-arquitectura-espanola.git</connection>
+		<url>scm:git:https://git.atsistemas.com/scm/caar/0001-plataforma-de-arquitectura-espanola.git</url>
 	</scm>
 
 	<distributionManagement>
@@ -61,9 +62,9 @@
 
 
 			<dependency>
-			    <groupId>javax.servlet</groupId>
-			    <artifactId>javax.servlet-api</artifactId>
-			    <version>3.1.0</version>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>3.1.0</version>
 			</dependency>
 
 		</dependencies>
@@ -99,6 +100,11 @@
 					<artifactId>maven-install-plugin</artifactId>
 					<version>2.4</version>
 				</plugin>
+				<plugin>
+					<groupId>org.codehaus.sonar</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>5.1</version>
+				</plugin>
 			</plugins>
 		</pluginManagement>
 
@@ -110,6 +116,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.sonar</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 
