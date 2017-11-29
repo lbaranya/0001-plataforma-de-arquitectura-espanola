@@ -27,7 +27,7 @@
       <sv:value>mgnl:contentNode</sv:value>
     </sv:property>
     <sv:property sv:name="class" sv:type="String">
-      <sv:value>com.atsistemas.magnolia.i18n.PersonalI18nContentSupport</sv:value>
+      <sv:value>info.magnolia.cms.i18n.DefaultI18nContentSupport</sv:value>
     </sv:property>
     <sv:property sv:name="enabled" sv:type="String">
       <sv:value>true</sv:value>
