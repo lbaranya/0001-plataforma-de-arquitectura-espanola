@@ -161,16 +161,20 @@ subApps:
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-news-app.newsData.headline.label
                 required: true
+                i18n: true
               - name: longTitle
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-news-app.newsData.longTitle.label
                 required: true
+                i18n: true
               - name: description
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition 
                 label: caar-news-app.newsData.description.label
+                i18n: true
               - name: longDescription
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition 
                 label: caar-news-app.newsData.longDescription.label
+                i18n: true
               - name: dateTime
                 class: info.magnolia.ui.form.field.definition.DateFieldDefinition
                 type: Date
@@ -178,6 +182,39 @@ subApps:
                 timeFormat: HH:mm
                 label: caar-news-app.newsData.dateTime.label
                 defaultValue: now
+              - name: image
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                targetWorkspace: dam
+                appName: assets
+                label: caar-news-app.newsData.image.label
+                identifierToPathConverter:
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                contentPreviewDefinition:
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+              - name: categories
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-news-app.newsData.categories.label
+                field:
+                  name: linkField
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                  targetWorkspace: category
+                  appName: categories
+                  identifierToPathConverter:
+                    class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+              - name: important
+                class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+                label: caar-news-app.newsData.important.label
+                buttonLabel: caar-news-app.newsData.important.buttonLabel
+              - name: files
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-news-app.newsData.files.label
+                field:
+                  name: linkField
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                  targetWorkspace: architecture-files
+                  appName: caar-architecture-files-app
+                  identifierToPathConverter:
+                    class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
       actions:
         - name: commit
         - name: cancel
