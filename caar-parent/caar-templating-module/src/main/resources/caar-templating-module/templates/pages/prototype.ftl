@@ -6,6 +6,8 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     ${resfn.css("/caar-theme-module/webresources.*bootstrap.min.css")}
     ${resfn.css("/caar-theme-module/webresources.*/css/style.css")}
+    ${resfn.css("/caar-theme-module/webresources.*/css/.*cmp-acerca-de-ae.css")}
+    
     [@cms.page /]
 </head>
 

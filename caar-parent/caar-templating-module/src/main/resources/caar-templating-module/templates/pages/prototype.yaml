@@ -6,14 +6,7 @@ renderType: site
 type: feature
 areas:
   top-banner:
-    renderType: freemarker
     type: single
-    availableComponents:
-      header-component:
-        id: caar-templating-module:components/top-banner-component
-    inheritance:
-      enabled: true
-      components: all
   header:
     renderType: freemarker
     type: single
