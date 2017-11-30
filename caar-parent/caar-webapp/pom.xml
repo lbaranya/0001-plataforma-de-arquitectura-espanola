@@ -103,6 +103,16 @@
 			<version>0.3-SNAPSHOT</version>
 		</dependency>
 
+		<!-- Solr -->
+		<dependency>
+			<groupId>info.magnolia.solr</groupId>
+			<artifactId>magnolia-content-indexer</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>info.magnolia.solr</groupId>
+			<artifactId>magnolia-solr-search-provider</artifactId>
+		</dependency>
+
 	</dependencies>
 
 	<build>
