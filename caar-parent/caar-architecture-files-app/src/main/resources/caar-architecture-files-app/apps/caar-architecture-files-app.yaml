@@ -453,12 +453,15 @@ subApps:
               - name: FS1.1.1
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.name.label
+                required: true
               - name: FS1.1.2
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.firstSurname.label
+                required: true
               - name: FS1.1.3
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.secondSurname.label
+                required: true
               - name: FS1.1.4
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.otherNames.label
@@ -471,6 +474,7 @@ subApps:
                 contentPreviewDefinition:
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
                 label: caar-architecture-files-app.files.support.architect.personalData.photo.label
+                required: true
               - name: FS1.1.6
                 class: info.magnolia.ui.form.field.definition.DateFieldDefinition
                 time: false
@@ -480,6 +484,7 @@ subApps:
               - name: FS1.1.7
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.birthCity.label
+                required: true
               - name: FS1.1.8
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.personalData.birthCountry.label
@@ -509,9 +514,11 @@ subApps:
                 # certification list
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.educationData.certification.label
+                required: true
               - name: FS1.2.2
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.educationData.certificationCenter.label
+                required: true
               - name: FS1.2.3
                 # list
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -536,15 +543,18 @@ subApps:
               - name: FS1.3.1
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.professionalData.officeName.label
+                required: true
               - name: FS1.3.2
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.professionalData.officeWebUrl.label
               - name: FS1.3.3
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.professionalData.officeCity.label
+                required: true
               - name: FS1.3.4
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.professionalData.officeCountry.label
+                required: true
               - name: FS1.3.5
                 # user picker
                 class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
@@ -617,6 +627,7 @@ subApps:
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.architect.workExperienceData.position.label
                       i18n: true
+                      required: true
                     - name: FS1.4.4
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.architect.workExperienceData.functionsResponsibilities.label
@@ -624,6 +635,7 @@ subApps:
                     - name: FS1.4.5
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.architect.workExperienceData.companyName.label
+                      required: true
                     - name: FS1.4.6
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.architect.workExperienceData.companyType.label
@@ -686,9 +698,11 @@ subApps:
                     - name: FS1.6.1
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.architect.languagesData.language.label
+                      required: true
                     - name: FS1.6.2
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.architect.languagesData.otherLanguages.label
+                      required: true
                     - name: FS1.6.3
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.architect.languagesData.firstLanguage.label
@@ -804,6 +818,7 @@ subApps:
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.reviewi.workData.title.label
                 i18n: true
+                required: true
               - name: FS3.2.2
                 class: info.magnolia.ui.form.field.definition.DateFieldDefinition
                 time: false
@@ -813,6 +828,8 @@ subApps:
               - name: FS3.2.3
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.reviewi.workData.presentationLocation.label
+                i18n: true
+                required: true
               - name: FS3.2.4
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.reviewi.workData.presentationEntity.label
@@ -836,10 +853,12 @@ subApps:
                     - name: FS3.3.1
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.reviewi.authorshipData.authorshipType.label
+                      required: true
                     - name: FS3.3.2
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.reviewi.authorshipData.authorshipName.label
                       i18n: true
+                      required: true
                     - name: FS3.3.3
                       class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                       label: caar-architecture-files-app.files.support.reviewi.authorshipData.authorshipDetails.label
@@ -857,6 +876,7 @@ subApps:
               - name: FS3.5.1
                 class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
                 label: caar-architecture-files-app.files.support.reviewi.informationData.typology.label
+                required: true
                 options:
                   - name: conference
                     value: conference
@@ -964,9 +984,11 @@ subApps:
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.business.businessData.businessType.label
                 i18n: true
+                required: true
               - name: FS4.1.2
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.business.businessData.businessLegalName.label
+                required: true
               - name: FS4.1.3
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
                 targetWorkspace: dam
@@ -988,9 +1010,11 @@ subApps:
               - name: FS4.1.6
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.business.businessData.departmentCity.label
+                required: true
               - name: FS4.1.7
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.business.businessData.departmentCountry.label
+                required: true
               # user picker
               - name: FS4.1.8
                 class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
@@ -1034,6 +1058,7 @@ subApps:
               - name: FS4.1.11
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-architecture-files-app.files.support.business.businessData.awards.label
+                required: true
           - name: additionalInfoData
             label: caar-architecture-files-app.files.support.business.additionalInfoData.label
             fields:
