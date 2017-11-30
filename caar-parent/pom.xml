@@ -5,7 +5,7 @@
 	<groupId>es.arquia.magnolia</groupId>
 	<artifactId>caar-parent</artifactId>
 	<name>caar-parent (parent pom)</name>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.3-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>
@@ -16,9 +16,9 @@
 
 	<!-- Fill the following in, so you can use the release plugin -->
 	<scm>
-		<developerConnection>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</developerConnection>
-		<connection>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</connection>
-		<url>scm:git:ssh://git.atsistemas.com:7999/caar/0001-plataforma-de-arquitectura-espanola.git</url>
+		<developerConnection>scm:git:https://git.atsistemas.com/scm/caar/0001-plataforma-de-arquitectura-espanola.git</developerConnection>
+		<connection>scm:git:https://git.atsistemas.com/scm/caar/0001-plataforma-de-arquitectura-espanola.git</connection>
+		<url>scm:git:https://git.atsistemas.com/scm/caar/0001-plataforma-de-arquitectura-espanola.git</url>
 	  <tag>HEAD</tag>
   </scm>
 
@@ -36,7 +36,7 @@
 	<dependencyManagement>
 		<dependencies>
 
-			<!-- Option A -->
+			<!-- Option A  -->
 			<!-- Importing dependencyManagement of CE bundle. -->
 			<!-- <dependency> <groupId>info.magnolia.bundle</groupId> <artifactId>magnolia-bundle-parent</artifactId> 
 				<version>${magnoliaVersion}</version> <type>pom</type> <scope>import</scope> 
