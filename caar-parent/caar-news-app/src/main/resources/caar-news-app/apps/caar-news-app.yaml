@@ -178,6 +178,7 @@ subApps:
               - name: dateTime
                 class: info.magnolia.ui.form.field.definition.DateFieldDefinition
                 type: Date
+                time: true
                 dateFormat: dd/MM/yyyy
                 timeFormat: HH:mm
                 label: caar-news-app.newsData.dateTime.label
