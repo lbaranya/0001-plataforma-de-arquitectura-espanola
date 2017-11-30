@@ -33,6 +33,7 @@ form:
                 label: Texto de imagen enriquecido
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                i18n: true
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      

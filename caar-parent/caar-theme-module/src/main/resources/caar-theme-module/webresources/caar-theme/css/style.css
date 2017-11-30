@@ -20,96 +20,96 @@ a:focus {
 
 @font-face {
   font-family: 'FreightDispBlack';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightDispBlack.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightDispBlack.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightDispBlack.ttf") format("truetype");
+  src: url("../fonts/FreightDispBlack.eot");
+  src: url("../fonts/FreightDispBlack.woff") format("woff"), url("../fonts/FreightDispBlack.ttf") format("truetype");
   font-weight: 900;
   font-style: bold;
 }
 
 @font-face {
   font-family: 'FreightDispBlackItalic';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightDispBlackItalic.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightDispBlackItalic.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightDispBlackItalic.ttf") format("truetype");
+  src: url("../fonts/FreightDispBlackItalic.eot");
+  src: url("../fonts/FreightDispBlackItalic.woff") format("woff"), url("../fonts/FreightDispBlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'FreightTextBook';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightTextBook.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightTextBook.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightTextBook.ttf") format("truetype");
+  src: url("../fonts/FreightTextBook.eot");
+  src: url("../fonts/FreightTextBook.woff") format("woff"), url("../fonts/FreightTextBook.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'FreightTextBookItalic';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightTextBookItalic.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightTextBookItalic.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/FreightTextBookItalic.ttf") format("truetype");
+  src: url("../fonts/FreightTextBookItalic.eot");
+  src: url("../fonts/FreightTextBookItalic.woff") format("woff"), url("../fonts/FreightTextBookItalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'National-Black';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Black.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Black.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Black.otf") format("opentype"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Black.ttf") format("truetype");
+  src: url("../fonts/National-Black.eot");
+  src: url("../fonts/National-Black.woff") format("woff"), url("../fonts/National-Black.otf") format("opentype"), url("../fonts/National-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'National-BlackItalic';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BlackItalic.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BlackItalic.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BlackItalic.otf") format("opentype"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BlackItalic.ttf") format("truetype");
+  src: url("../fonts/National-BlackItalic.eot");
+  src: url("../fonts/National-BlackItalic.woff") format("woff"), url("../fonts/National-BlackItalic.otf") format("opentype"), url("../fonts/National-BlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'National-Bold';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Bold.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Bold.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Bold.otf") format("opentype"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Bold.ttf") format("truetype");
+  src: url("../fonts/National-Bold.eot");
+  src: url("../fonts/National-Bold.woff") format("woff"), url("../fonts/National-Bold.otf") format("opentype"), url("../fonts/National-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'National-BoldItalic';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BoldItalic.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BoldItalic.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BoldItalic.otf") format("opentype"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BoldItalic.ttf") format("truetype");
+  src: url("../fonts/National-BoldItalic.eot");
+  src: url("../fonts/National-BoldItalic.woff") format("woff"), url("../fonts/National-BoldItalic.otf") format("opentype"), url("../fonts/National-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'National-Book';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Book.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Book.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Book.otf") format("opentype"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Book.ttf") format("truetype");
+  src: url("../fonts/National-Book.eot");
+  src: url("../fonts/National-Book.woff") format("woff"), url("../fonts/National-Book.otf") format("opentype"), url("../fonts/National-Book.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'National-BookItalic';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BookItalic.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BookItalic.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BookItalic.otf") format("opentype"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-BookItalic.ttf") format("truetype");
+  src: url("../fonts/National-BookItalic.eot");
+  src: url("../fonts/National-BookItalic.woff") format("woff"), url("../fonts/National-BookItalic.otf") format("opentype"), url("../fonts/National-BookItalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'National-Regular';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Regular.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Regular.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Regular.otf") format("opentype"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-Regular.ttf") format("truetype");
+  src: url("../fonts/National-Regular.eot");
+  src: url("../fonts/National-Regular.woff") format("woff"), url("../fonts/National-Regular.otf") format("opentype"), url("../fonts/National-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'National-RegularItalic';
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-RegularItalic.eot");
-  src: url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-RegularItalic.woff") format("woff"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-RegularItalic.otf") format("opentype"), url("http://localhost:8080/caar-webapp/.resources/caar-theme-module/webresources/caar-theme/fonts/National-RegularItalic.ttf") format("truetype");
+  src: url("../fonts/National-RegularItalic.eot");
+  src: url("../fonts/National-RegularItalic.woff") format("woff"), url("../fonts/National-RegularItalic.otf") format("opentype"), url("../fonts/National-RegularItalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
@@ -620,6 +620,15 @@ a:focus {
   transition-duration: 300ms;
   transform: translate(0px, 0px);
   margin-top: 0px;
+}
+
+.cmp-menu .col-sm-12.banner-menu {
+  width: 100%;
+  height: 410px;
+  background-image: url("../img/banner-menu.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
 }
 
 .cmp-menu .menu-row {
