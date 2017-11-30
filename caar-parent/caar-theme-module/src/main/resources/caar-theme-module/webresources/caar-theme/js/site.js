@@ -2,11 +2,11 @@ var booleanmouse = true;
 var scroll;
 
 $(document).ready(function () {
-    /**Banner-header**/
 	// Resources URL
 	var resourcesURL = document.location.origin + "/caar-webapp/.resources/caar-theme-module/webresources/caar-theme";
 	// Icons URL
 	var iconsURL = resourcesURL + "/icons/";
+    /**Banner-header**/
 
     $('.cmp-banner-header').mouseover(function () {
         if (booleanmouse) {
@@ -20,21 +20,20 @@ $(document).ready(function () {
     });
 
     /**Termina Banner-header**/
-    
+
     /**Posición del scroll para hacerlo fijo**/
-    window.onscroll = function()
-    {
-    scroll = document.documentElement.scrollTop || document.body.scrollTop;
-        if(scroll >400){
-            if($(".submenu-container").hasClass("clicked") != true){
-                $(".cmp-menu").addClass("fixed-menu");
+    window.onscroll = function () {
+            scroll = document.documentElement.scrollTop || document.body.scrollTop;
+            if (scroll > 400) {
+                if ($(".submenu-container").hasClass("clicked") != true) {
+                    $(".cmp-menu").addClass("fixed-menu");
+                }
+            } else {
+                $(".cmp-menu").removeClass("fixed-menu");
             }
-        }else{
-            $(".cmp-menu").removeClass("fixed-menu");
+
         }
-    
-    }
-    /**Termina posición del scroll**/
+        /**Termina posición del scroll**/
 
     /**Enventos del menu**/
 
@@ -50,11 +49,11 @@ $(document).ready(function () {
         $(".logo").removeClass('active-item');
         $('.search-icon').attr('src', iconsURL + 'search-icon.svg');
         $('.user-icon').attr('src', iconsURL + 'usuario-icon.svg');
-        
-        if($(this).hasClass("menu-item-icon")){
+
+        if ($(this).hasClass("menu-item-icon")) {
             datamenu = $(this).find(".icon-link").attr('data-submenu');
         }
-        
+
 
         if (datamenu != 'search') {
 
@@ -82,7 +81,9 @@ $(document).ready(function () {
             $(this).addClass('active-item');
 
         }
-        $("html, body").animate({ scrollTop: 0 }, 600);
+        $("html, body").animate({
+            scrollTop: 0
+        }, 600);
         $(".cmp-menu").removeClass("fixed-menu");
     });
 
@@ -110,8 +111,33 @@ $(document).ready(function () {
     });
 
     /**Termina eventos del menu**/
-    
-    
+
+    /**Función para cambiar icono de acordeon**/
+    $(".panel-title").on("click", function (e) {
+        e.preventDefault();
+
+        $(".panel-principal").addClass("close-acordeon");
+        
+        if ($(this).find(".icon i").hasClass("fa-chevron-up")) {
+            $(".panel-heading").find(".panel-title").find(".icon i").removeClass("fa-chevron-up");
+            $(".panel-heading").find(".panel-title").find(".icon i").addClass("fa-chevron-down");
+            $(this).find(".icon i").addClass("fa-chevron-down");
+            $(this).find(".icon i").removeClass("fa-chevron-up");
+            $(".panel-principal").addClass("close-acordeon");
+
+        } else {
+            $(".panel-heading").find(".panel-title").find(".icon i").removeClass("fa-chevron-up");
+            $(".panel-heading").find(".panel-title").find(".icon i").addClass("fa-chevron-down");
+            $(this).find(".icon i").removeClass("fa-chevron-down");
+            $(this).find(".icon i").addClass("fa-chevron-up");
+
+            
+            $(this).parents(".panel-principal").removeClass("close-acordeon");
+        }
+
+    });
+    /**Termina icono de acordeon**/
+
 });
 
 /**Función para Banner-header**/

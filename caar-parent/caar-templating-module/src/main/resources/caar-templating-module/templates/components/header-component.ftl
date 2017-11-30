@@ -14,55 +14,47 @@
                 <div class="submenu ae">
                     <ul class="submenu-list">
                         <li class="submenu-link">
-                            <a href="#">acerca de A.E.</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.ae.aboutAE.label']!"acerca de A.E."}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">noticias</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.ae.newsAE.label']!"noticias"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">agenda</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.ae.diary.label']!"agenda"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">itinerarios</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.ae.itineraries.label']!"itinerarios"}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="submenu explorando">
                     <ul class="submenu-list">
                         <li class="submenu-link">
-                            <a href="#">acerca de "explorando arquitectura"</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.explore.aboutExplore.label']!"acerca de \"explorando arquitectura\""}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">noticias</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.explore.newsExplore.label']!"noticias"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">descatados</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.explore.highlightsExplore.label']!"destacados"}</a>
+                        </li>
+                        <li class="submenu-link">
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.label']!"documental"}</a>
                             <ul class="menu-level3">
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">mensajes de excelencia</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.excellence.label']!"excelencia"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">actualidad</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="submenu-link">
-                            <a href="#">documental</a>
-                            <ul class="menu-level3">
-                                <li class="level3-item">
-                                    <a href="#" class="level3-link">excelencia</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.architects.label']!"arquitectos"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">arquitectos</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.ouvresAwards.label']!"obras y premios"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">obras y premios</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.reviews.label']!"pensamientos, crítica e investigación"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">pensamientos, crítica e investigación</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="#" class="level3-link">instituciones y fondos</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.institutions.label']!"instituciones y fondos"}</a>
                                 </li>
                             </ul>
                         </li>
@@ -71,64 +63,50 @@
                 <div class="submenu bienales">
                     <ul class="submenu-list">
                         <li class="submenu-link">
-                            <a href="#">acerca de "bienales y premios"</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.biennals.abountBiennials.label']!"acerca de \"bienales y premios\""}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">noticias</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.biennals.newsBiennials.label']!"noticias"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">bienales</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.label']!"bienales"}</a>
                             <ul class="menu-level3">
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">BEAU</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.BEAU.label']!"BEAU"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">BIAU</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.BIAU.label']!"BIAU"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">Biennale</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.biennale.label']!"Biennale"}</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="submenu-link">
-                            <a href="#">premios</a>
+                            <a href="#">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.label']!"premios"}</a>
                             <ul class="menu-level3">
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">premio Nacional</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.national.label']!"premio Nacional"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">premio Mies Van der Rohe</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.MVR.label']!"premio Mies Van der Rohe"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">premio Eduardo Torroja</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.ET.label']!"premio Eduardo Torroja"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">premio Arquía próxima</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.arquiaNext.label']!"premio Arquia próxima"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">premio Arquía tesis</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.arquiaThesis.label']!"premio Arquia tesis"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="#" class="level3-link">Europan</a>
+                                    <a href="#" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.europan.label']!"Europan"}</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </div>
-                <!--
-                <div class="submenu instituciones">
-                    <ul class="submenu-list">
-                        <li class="submenu-link">
-                            <a href="#">acerca de "instituciones"</a>
-                        </li>
-                        <li class="submenu-link">
-                            <a href="#">noticias</a>
-                        </li>
-                        <li class="submenu-link">
-                            <a href="#">directorio instituciones</a>
-                        </li>
-                    </ul>
-                </div> -->
                 <div class="submenu search">
                     <div class="search-container">
                     	[#-- [#assign search_icon_blanco = cmsfn.contentByPath("/caar-theme/icons/", "resources")!""]
@@ -307,20 +285,17 @@
                 <div class="col-sm-7 col-menu-list">
                     <ul class="menu-list">
                         <li class="menu-item">
-                            <a href="#" data-submenu="ae" class="logo" alt="arquitectura_española_logotipo" title="arquitectura_española_logotipo">A.E.</a>
+                            <a href="#" data-submenu="ae" class="logo" alt="arquitectura_española_logotipo" title="arquitectura_española_logotipo">${i18n['caar-templating-module.templates.components.header-component.ae.label']!"A.E."}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#" data-submenu="explorando" class="menu-link" alt="explorando_arquitectura" title="explorando_arquitectura">explorando arquitectura</a>
+                            <a href="#" data-submenu="explorando" class="menu-link" alt="explorando_arquitectura" title="explorando_arquitectura">${i18n['caar-templating-module.templates.components.header-component.exploreArchitecture.label']!"explorando arquitectura"}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#" data-submenu="bienales" class="menu-link" alt="bienales_premios" title="bienales_premios">bienales y premios</a>
+                            <a href="#" data-submenu="bienales" class="menu-link" alt="bienales_premios" title="bienales_premios">${i18n['caar-templating-module.templates.components.header-component.biennialsAndAwards.label']!"bienales y premios"}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#" data-submenu="sector" class="menu-link" alt="sector" title="sector">sector</a>
+                            <a href="#" data-submenu="sector" class="menu-link" alt="sector" title="sector">${i18n['caar-templating-module.templates.components.header-component.sector.label']!"sector"}</a>
                         </li>
-                        <!-- <li class="menu-item">
-                            <a href="#" data-submenu="instituciones" class="menu-link" alt="instituciones" title="instituciones">instituciones</a>
-                        </li> -->
                     </ul>
                 </div>
                 <div class="col-sm-3 col-menu-logos">
@@ -338,14 +313,22 @@
                     </ul>
                 </div>
                 <div class="col-sm-2 col-menu-idioma">
-                    <ul class="menu-idioma">
-                        <li class="menu-item-idioma">
-                            <a href="#" class="menu-link">es</a>
-                        </li>
-                        <li class="menu-item-idioma">
-                            <a href="#" class="menu-link">en</a>
-                        </li>
-                    </ul>
+                    [#-- Build language navigation. --]
+					[#assign localizedLinks = cmsfn.localizedLinks()!]
+					[#if localizedLinks?has_content]
+					   [#assign languages = localizedLinks?keys]
+					   <ul class="menu-idioma">
+					      [#list languages as lang]
+					      [#assign current = cmsfn.isCurrentLocale(lang)]
+					      [#-- Use "compress" to put "li" and "a" on one line to prevent white spaces. --]
+					      <li class="menu-item-idioma">[@compress single_line=true]
+					         [#-- Current locale should not be linked. --]
+					         [#if current]<a>${lang!}</a>[/#if]
+					         [#if !current]<a href="${localizedLinks[lang]!'#'}">${lang!}</a>[/#if]
+					      [/@compress]</li>
+					      [/#list]
+					   </ul>
+					[/#if]
                     <ul class="menu-icons">
                         <li class="menu-item-icon">
                             <a href="#" class="menu-link" data-submenu="signin" alt="registro" title="registro">
