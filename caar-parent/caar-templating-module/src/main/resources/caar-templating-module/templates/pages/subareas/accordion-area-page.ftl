@@ -1,3 +1,8 @@
+<div class="row">
+	<div class="separador">
+		<hr>
+	</div>
+</div>
 <!-- Cuerpo principal del componente -->
 <section class="cmp-acerca-de-ae cmp-accordion-acercade">
 <div class="container">
