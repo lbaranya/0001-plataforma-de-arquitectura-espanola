@@ -113,29 +113,48 @@ $(document).ready(function () {
     /**Termina eventos del menu**/
 
     /**Función para cambiar icono de acordeon**/
-    $(".panel-title").on("click", function (e) {
+    $('.panel-heading.close-acordeon .panel-title').on('click', function(e) {
         e.preventDefault();
 
-        $(".panel-principal").addClass("close-acordeon");
-        
-        if ($(this).find(".icon i").hasClass("fa-chevron-up")) {
-            $(".panel-heading").find(".panel-title").find(".icon i").removeClass("fa-chevron-up");
-            $(".panel-heading").find(".panel-title").find(".icon i").addClass("fa-chevron-down");
-            $(this).find(".icon i").addClass("fa-chevron-down");
-            $(this).find(".icon i").removeClass("fa-chevron-up");
-            $(".panel-principal").addClass("close-acordeon");
+
+        if (
+          $(this)
+            .find('.icon i')
+            .hasClass('fa-chevron-up')
+        ) {
+          $('.panel-heading')
+            .find('.panel-title')
+            .find('.icon i')
+            .removeClass('fa-chevron-up');
+          $('.panel-heading')
+            .find('.panel-title')
+            .find('.icon i')
+            .addClass('fa-chevron-down');
+          $(this)
+            .find('.icon i')
+            .addClass('fa-chevron-down');
+          $(this)
+            .find('.icon i')
+            .removeClass('fa-chevron-up');
 
         } else {
-            $(".panel-heading").find(".panel-title").find(".icon i").removeClass("fa-chevron-up");
-            $(".panel-heading").find(".panel-title").find(".icon i").addClass("fa-chevron-down");
-            $(this).find(".icon i").removeClass("fa-chevron-down");
-            $(this).find(".icon i").addClass("fa-chevron-up");
+          $('.panel-heading')
+            .find('.panel-title')
+            .find('.icon i')
+            .removeClass('fa-chevron-up');
+          $('.panel-heading')
+            .find('.panel-title')
+            .find('.icon i')
+            .addClass('fa-chevron-down');
+          $(this)
+            .find('.icon i')
+            .removeClass('fa-chevron-down');
+          $(this)
+            .find('.icon i')
+            .addClass('fa-chevron-up');
 
-            
-            $(this).parents(".panel-principal").removeClass("close-acordeon");
         }
-
-    });
+      });
     /**Termina icono de acordeon**/
 
 });
