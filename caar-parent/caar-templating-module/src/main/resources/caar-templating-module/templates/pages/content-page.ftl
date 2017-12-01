@@ -1,1 +1,5 @@
-<h1>CONTENT PAGE</h1>
+[#list components as component]
+    [@cms.component content=component /]
+[/#list]
+[@cms.area name="content" /]
+[@cms.area name="accordion" /]
