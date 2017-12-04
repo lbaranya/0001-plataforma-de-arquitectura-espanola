@@ -1,0 +1,3 @@
+title: Child list
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/child-list-component.ftl
