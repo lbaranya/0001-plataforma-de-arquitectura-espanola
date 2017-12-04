@@ -7,7 +7,7 @@ form:
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition          
           i18n: true          
           required: true  
-          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/caar-standard-config-magnolia.js  
+          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js  
 actions:          
   commit:          
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition          

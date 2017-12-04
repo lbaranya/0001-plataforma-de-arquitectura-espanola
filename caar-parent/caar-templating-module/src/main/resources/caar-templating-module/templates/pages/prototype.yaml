@@ -28,3 +28,12 @@ areas:
     inheritance:
       enabled: true
       components: all
+  cookies:
+    renderType: freemarker
+    type: single
+    availableComponents:
+      cookies-component:
+        id: caar-templating-module:components/cookies-component
+    inheritance:
+      enabled: true
+      components: all

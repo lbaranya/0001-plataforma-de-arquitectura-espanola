@@ -20,6 +20,8 @@
 [@cms.area name="main" contextAttributes={"resourcesURL":resourcesURL}/]
 
 [@cms.area name="footer" contextAttributes={"resourcesURL":resourcesURL}/]
+
+[@cms.area name="cookies" contextAttributes={"resourcesURL":resourcesURL}/]
 	
 	[#-- automatizar --]
 	${resfn.js("/caar-theme-module/webresources.*jquery.min.js")}
