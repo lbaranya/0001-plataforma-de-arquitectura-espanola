@@ -71,8 +71,6 @@
 			due to these Resources need the class com.mysql.jdbc.Driver, that is contained 
 			into .jar driver file -->
 
-
-
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-architecture-files-app</artifactId>

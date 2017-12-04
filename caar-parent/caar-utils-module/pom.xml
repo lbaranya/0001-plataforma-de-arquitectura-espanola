@@ -27,6 +27,11 @@
       <artifactId>javax.servlet-api</artifactId>
       <scope>provided</scope>
     </dependency>
+    
+    <dependency>
+      <groupId>info.magnolia.ui</groupId>
+      <artifactId>magnolia-ui-contentapp</artifactId>
+    </dependency>
 
     <!-- TEST -->
     <dependency>
