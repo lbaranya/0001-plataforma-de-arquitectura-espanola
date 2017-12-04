@@ -1,5 +1,14 @@
 /*Reset*/
 
+.header-comun {
+  background-color: #D0021B;
+  color: #fff;
+}
+
+.header-comun .container .row h3 {
+  margin-bottom: 20px;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -810,3 +819,110 @@ a:focus {
 }
 
 /**Menú: Termina**/
+
+/*Freight Display Font*/
+/*National Font*/
+.cmp-acerca-de-ae .header-comun {
+  background-color: #D0021B;
+  color: #fff; }
+  .cmp-acerca-de-ae .header-comun .container .row h3 {
+    margin-bottom: 20px; }
+
+.cmp-acerca-de-ae .breadcrumb {
+  background: transparent;
+  margin-top: 10px;
+  font-family: "National-Book", "Helvetica", "sans-serif";
+  font-size: 22px;
+  line-height: 1;
+  letter-spacing: -0.2px; }
+  .cmp-acerca-de-ae .breadcrumb li {
+    text-transform: lowercase; }
+    .cmp-acerca-de-ae .breadcrumb li a {
+      text-decoration: none;
+      color: #D0021B; }
+    .cmp-acerca-de-ae .breadcrumb li:before {
+      content: ">";
+      color: #D0021B; }
+    .cmp-acerca-de-ae .breadcrumb li:first-child:before {
+      content: ""; }
+    .cmp-acerca-de-ae .breadcrumb li.active {
+      color: #D0021B;
+      font-weight: bold; }
+      .cmp-acerca-de-ae .breadcrumb li.active:before {
+        font-weight: normal; }
+
+.cmp-acerca-de-ae .info-acerca {
+  font-family: "National-Book", "Helvetica", "sans-serif";
+  font-size: 19px;
+  text-align: left;
+  font-weight: bold; }
+
+.cmp-acerca-de-ae .video-img-acerca {
+  overflow: hidden; }
+  .cmp-acerca-de-ae .video-img-acerca iframe {
+    width: 100%;
+    height: 389px; }
+
+.cmp-acerca-de-ae .separador {
+  width: 100%;
+  margin: 0 auto; }
+  .cmp-acerca-de-ae .separador hr {
+    border: 1px solid #9b9b9b; }
+
+.cmp-acerca-de-ae .acordeon-acerca .panel {
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none; }
+  .cmp-acerca-de-ae .acordeon-acerca .panel .panel-collapse {
+    border: none; }
+    .cmp-acerca-de-ae .acordeon-acerca .panel .panel-collapse .panel-body {
+      border: none;
+      background-color: #f9f7f3; }
+
+.cmp-acerca-de-ae .acordeon-acerca .panel-heading {
+  background-color: transparent;
+  border: none;
+  font-size: 30px; }
+  .cmp-acerca-de-ae .acordeon-acerca .panel-heading .panel-title {
+    height: 30px; }
+    .cmp-acerca-de-ae .acordeon-acerca .panel-heading .panel-title a {
+      font-size: 25px; }
+      .cmp-acerca-de-ae .acordeon-acerca .panel-heading .panel-title a .text {
+        width: 80%;
+        float: left; }
+      .cmp-acerca-de-ae .acordeon-acerca .panel-heading .panel-title a .icon {
+        width: 20%;
+        float: left;
+        font-size: 14px;
+        text-align: right; }
+        .cmp-acerca-de-ae .acordeon-acerca .panel-heading .panel-title a .icon i {
+          padding: 5px;
+          border: 1px solid #9b9b9b;
+          border-radius: 50%;
+          color: #9b9b9b;
+          font-weight: normal; }
+
+.cmp-acerca-de-ae .acordeon-acerca .close-acordeon {
+  border-bottom: 3px solid #D0021B; }
+
+.cmp-acerca-de-ae .acordeon-acerca .sub-acordeon-acerca .panel-heading {
+  background-color: #f9f7f3;
+  border-bottom: 1px solid #979797; }
+  .cmp-acerca-de-ae .acordeon-acerca .sub-acordeon-acerca .panel-heading div {
+    font-size: 25px;
+    cursor: pointer; }
+    .cmp-acerca-de-ae .acordeon-acerca .sub-acordeon-acerca .panel-heading div .text {
+      width: 80%;
+      float: left; }
+  .cmp-acerca-de-ae .acordeon-acerca .sub-acordeon-acerca .panel-heading .panel-title .icon-descargar {
+    width: 20%;
+    font-size: 16px;
+    color: #607d8b;
+    float: left;
+    border: none;
+    background: none; }
+    .cmp-acerca-de-ae .acordeon-acerca .sub-acordeon-acerca .panel-heading .panel-title .icon-descargar i {
+      color: #9b9b9b; }
+  .cmp-acerca-de-ae .acordeon-acerca .sub-acordeon-acerca .panel-heading .panel-title :focus {
+    outline: none; }

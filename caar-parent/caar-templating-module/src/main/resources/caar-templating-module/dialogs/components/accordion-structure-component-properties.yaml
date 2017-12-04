@@ -1,0 +1,40 @@
+form:      
+  tabs:      
+    - name: tabMain    
+      label: Accordion      
+      fields:
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: First level accordion title
+        - name: text
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+          label: Accordion first level text
+        - name: listSecondLevel
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Second level
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: secondLevel
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            layout: vertical
+            fields:
+              - name: subtitle
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Second level accordion title
+              - name: subtext
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: Accordion second level text
+              - name: linkPDF      
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition  
