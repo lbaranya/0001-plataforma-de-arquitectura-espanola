@@ -1,0 +1,4 @@
+title: Accordion Structure
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/accordion-structure-component.ftl
+dialog: caar-templating-module:components/accordion-structure-component-properties

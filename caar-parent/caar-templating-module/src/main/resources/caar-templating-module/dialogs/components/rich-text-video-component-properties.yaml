@@ -1,0 +1,17 @@
+form:
+  tabs:
+    - name: tabMain
+      label: Rich Text and Video component
+      fields:
+        - name: text
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition      
+          i18n: true
+          required: true
+        - name: videoLink
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          required: true
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
