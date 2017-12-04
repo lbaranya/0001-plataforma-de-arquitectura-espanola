@@ -189,3 +189,9 @@ function banneraletario() {
             }
         });
 }
+
+/**Función para cerrar política de cookies**/
+$('.aceptar-btn').click(function() {
+    $('.cmp-politica-cookies').css('display', 'none');
+});
+/**Termina función política de cookies**/
