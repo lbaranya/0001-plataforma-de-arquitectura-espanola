@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>caar-parent</artifactId>
 		<groupId>es.arquia.magnolia</groupId>
-		<version>0.3-SNAPSHOT</version>
+		<version>0.4-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>caar-utils-module</artifactId>
@@ -26,6 +26,11 @@
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <scope>provided</scope>
+    </dependency>
+    
+    <dependency>
+      <groupId>info.magnolia.ui</groupId>
+      <artifactId>magnolia-ui-contentapp</artifactId>
     </dependency>
 
     <!-- TEST -->

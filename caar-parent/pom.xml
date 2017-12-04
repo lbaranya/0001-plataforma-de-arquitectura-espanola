@@ -5,7 +5,7 @@
 	<groupId>es.arquia.magnolia</groupId>
 	<artifactId>caar-parent</artifactId>
 	<name>caar-parent (parent pom)</name>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<properties>

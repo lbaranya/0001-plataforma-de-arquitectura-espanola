@@ -1,5 +1,5 @@
 appClass: info.magnolia.ui.contentapp.ContentApp
-class: info.magnolia.ui.contentapp.ContentAppDescriptor
+class: info.magnolia.ui.contentapp.ConfiguredContentAppDescriptor
 i18nBasename: caar-news-app.i18n.module-caar-news-app-messages
 icon: icon-news
 label: caar-news-app.appLauncherLayout.news.label
@@ -7,7 +7,7 @@ subApps:
   browser:
     subAppClass: info.magnolia.ui.contentapp.browser.BrowserSubApp
     class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
-    label: caar-news-app.subapp.browser.label
+    label: caar-news-app.browser.label
     contentConnector:
       includeProperties: false
       workspace: news
@@ -54,19 +54,121 @@ subApps:
           class: info.magnolia.ui.workbench.search.SearchPresenterDefinition
           columns: *defaultColumns
     actions:
+      # Common
+      export: 
+        class: info.magnolia.ui.framework.action.ExportActionDefinition
+        command: export
+        icon: icon-export
+        availability: 
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      import: 
+        class: info.magnolia.ui.framework.action.OpenCreateDialogActionDefinition
+        dialogName: ui-admincentral:import
+        icon: icon-import
+        name: import
+        availability: 
+          root: true
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      activate: 
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        icon: icon-publish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      deactivate: 
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.DeactivationActionDefinition
+        command: deactivate
+        icon: icon-unpublish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+            IsPublishedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsPublishedRule
+      confirmDelete: 
+        class: info.magnolia.module.dependencies.action.DependencyAwareConfirmationActionDefinition
+        icon: icon-trash
+        successActionName: delete
+        availability: 
+          multiple: true
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+        # TODO: add necessary references
+        references: 
+          - name: website
+            nodeType: mgnl:page
+            workspace: website
+      delete: 
+        class: info.magnolia.ui.framework.action.MarkNodeAsDeletedActionDefinition
+        command: markAsDeleted
+        availability: 
+          writePermissionRequired: true
+      activateDeleted: 
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        icon: icon-publish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      restorePreviousVersion: 
+        class: info.magnolia.ui.contentapp.detail.action.RestorePreviousVersionActionDefinition
+        icon: icon-undo
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      showVersions: 
+        class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+        icon: icon-show-versions
+        subAppId: detailNews
+        availability: 
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      restoreVersion: 
+        class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
+        icon: icon-retrieve-versions
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
       # Folder
       addFolder:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddFolderActionDefinition
         availability:
           root: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       editFolder:
         icon: icon-edit
         dialogName: ui-framework:folder
         class: info.magnolia.ui.framework.action.OpenEditDialogActionDefinition
-      deleteFolder:
-        icon: icon-delete
-        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
+        availability: 
+          nodeTypes:
+            - mgnl:folder
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # News
       addNews:
         subAppId: detailNews
@@ -74,43 +176,46 @@ subApps:
         nodeType: mgnl:news
         appName: caar-news-app
         class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
-        label: caar-news-app.subapp.browser.actions.addNews.label
+        label: caar-news-app.browser.actions.addNews.label
         availability:
           nodeTypes:
             - mgnl:folder
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       editNews:
         icon: icon-edit
         nodeType: mgnl:news
         appName: caar-news-app
         subAppId: detailNews
         class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
-        label: caar-news-app.subapp.browser.actions.editNews.label
+        label: caar-news-app.browser.actions.editNews.label
         availability:
           nodeTypes:
             - mgnl:news
-      deleteNews:
-        icon: icon-trash
-        nodeType: mgnl:news
-        appName: caar-news-app
-        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
-        label: caar-news-app.subapp.browser.actions.deleteNews.label
-        availability:
-          nodeTypes:
-            - mgnl:news
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
     actionbar:
       defaultAction: editFolder
+      # SECTIONS
       sections:
+        # root
         - name: root
-          label: caar-news-app.subapp.browser.actionbar.sections.root.label
+          label: caar-news-app.browser.actionbar.sections.root.label
           groups:
             - name: addActions
               items:
-                - name: addFolder
+                - name: addFolder 
+            - name: importExportActions
+              items:
+                - name: import
           availability:
             nodes: false
             root: true
-        - name: folder
-          label: caar-news-app.subapp.browser.actionbar.sections.folder.label
+        # deleted folder
+        - name: deletedFolder
+          label: caar-news-app.browser.actionbar.sections.deletedFolder.label
           groups:
             - name: addActions
               items:
@@ -119,17 +224,91 @@ subApps:
             - name: editActions
               items:
                 - name: editFolder
-                - name: deleteFolder
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
           availability:
             nodeTypes:
               - mgnl:folder
-        - name: news
-          label: caar-news-app.subapp.browser.actionbar.sections.news.label
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # folder
+        - name: folder
+          label: caar-news-app.browser.actionbar.sections.folder.label
+          groups:
+            - name: addActions
+              items:
+                - name: addFolder
+                - name: addNews
+            - name: editActions
+              items:
+                - name: editFolder
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+          availability:
+            nodeTypes:
+              - mgnl:folder
+        # deletedNews
+        - name: deletedNews
+          label: caar-news-app.browser.actionbar.sections.deletedNews.label
           groups:
             - name: editActions
               items:
                 - name: editNews
-                - name: deleteNews
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersions
+                - name: restoreVersion
+          availability:
+            nodeTypes:
+              - mgnl:news
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # news
+        - name: news
+          label: caar-news-app.browser.actionbar.sections.news.label
+          groups:
+            - name: editActions
+              items:
+                - name: editNews
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersions
+                - name: restoreVersion
           availability:
             nodeTypes:
               - mgnl:news

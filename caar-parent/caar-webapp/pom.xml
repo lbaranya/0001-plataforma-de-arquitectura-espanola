@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>es.arquia.magnolia</groupId>
 		<artifactId>caar-parent</artifactId>
-		<version>0.3-SNAPSHOT</version>
+		<version>0.4-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	
@@ -71,36 +71,34 @@
 			due to these Resources need the class com.mysql.jdbc.Driver, that is contained 
 			into .jar driver file -->
 
-
-
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-architecture-files-app</artifactId>
-			<version>0.3-SNAPSHOT</version>
+			<version>0.4-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-news-app</artifactId>
-			<version>0.3-SNAPSHOT</version>
+			<version>0.4-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-templating-module</artifactId>
-			<version>0.3-SNAPSHOT</version>
+			<version>0.4-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-theme-module</artifactId>
-			<version>0.3-SNAPSHOT</version>
+			<version>0.4-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-utils-module</artifactId>
-			<version>0.3-SNAPSHOT</version>
+			<version>0.4-SNAPSHOT</version>
 		</dependency>
 
 		<!-- Solr -->
