@@ -926,3 +926,43 @@ a:focus {
       color: #9b9b9b; }
   .cmp-acerca-de-ae .acordeon-acerca .sub-acordeon-acerca .panel-heading .panel-title :focus {
     outline: none; }
+    
+    
+/**Cookies: cmp-politica-cookies**/
+.cmp-politica-cookies {
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 999999;
+  width: 100%;
+  padding: 15px 0px; }
+  .cmp-politica-cookies .cookies-container {
+    overflow: hidden;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+    .cmp-politica-cookies .cookies-container .cookies-info {
+      float: left;
+      text-align: center;
+      font-family: "National-Book", "Helvetica", "sans-serif"; }
+      .cmp-politica-cookies .cookies-container .cookies-info .cookies-text {
+        color: #fff;
+        width: 100%;
+        margin-bottom: 0px; }
+        .cmp-politica-cookies .cookies-container .cookies-info .cookies-text .cookies-link {
+          color: #ffb200;
+          text-decoration: underline; }
+      .cmp-politica-cookies .cookies-container .cookies-info .aceptar-btn {
+        display: inline-block;
+        background-color: #D0021B;
+        color: #fff;
+        padding: 5px 20px;
+        border-radius: 5px;
+        margin-top: 10px; }
+        .cmp-politica-cookies .cookies-container .cookies-info .aceptar-btn:hover {
+          background-color: #970213; }
+/**Cookies: Termina**/

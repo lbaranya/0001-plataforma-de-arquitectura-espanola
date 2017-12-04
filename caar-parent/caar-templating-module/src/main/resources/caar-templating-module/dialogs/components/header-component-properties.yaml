@@ -53,7 +53,126 @@ form:
               - name: altImage      
                 label: Alt de la imagen      
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-                i18n: true     
+                i18n: true
+    - name: tabMenuLinks
+      label: Header menu links
+      fields:
+        - name: subMenu1
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          value: ------------------------------------------------------------
+          label: Spanish architecture header menu links
+        - name: aboutAE
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.ae.aboutAE.label
+        - name: newsAE
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.ae.newsAE.label
+        - name: diaryAE
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.ae.diary.label
+        - name: itinerariesAE
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.ae.itineraries.label
+        - name: subMenu2
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          value: ------------------------------------------------------------
+          label: Exploring architecture header menu links
+        - name: aboutExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.aboutExplore.label
+        - name: newsExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.newsExplore.label
+        - name: highlightsExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.highlightsExplore.label
+        - name: documentaryExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.documentaryExplore.label
+        - name: excellenceExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.documentaryExplore.excellence.label
+        - name: architectsExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.documentaryExplore.architects.label
+        - name: ouvresExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.documentaryExplore.ouvresAwards.label
+        - name: thoughtsExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.documentaryExplore.reviews.label
+        - name: institutionsExAr
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.explore.documentaryExplore.institutions.label
+        - name: subMenu3
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          value: ------------------------------------------------------------
+          label: Biennials and Awards header menu links
+        - name: aboutBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.abountBiennials.label
+        - name: newsBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.newsBiennials.label
+        - name: biennialsBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.biennials.label
+        - name: beauBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.biennials.BEAU.label
+        - name: biauBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.biennials.BIAU.label
+        - name: biennaleBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.biennials.biennale.label
+        - name: awardsBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.label
+        - name: nationalBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.national.label
+        - name: mvrBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.MVR.label
+        - name: etBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.ET.label
+        - name: arquiaNextBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.arquiaNext.label
+        - name: arquiaThesisBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.arquiaThesis.label
+        - name: europanBA
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.europan.label
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      

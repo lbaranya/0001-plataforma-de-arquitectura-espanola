@@ -1,0 +1,20 @@
+form:
+  tabs:
+    - name: tabMain
+      fields:
+        - name: cookiesText
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+          label: Cookies text
+          i18n: true
+          required: true
+          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+        - name: cookiesLink
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: Cookies link
+          required: true
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition  

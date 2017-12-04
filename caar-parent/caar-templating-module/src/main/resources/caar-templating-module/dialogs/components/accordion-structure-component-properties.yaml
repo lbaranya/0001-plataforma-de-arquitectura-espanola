@@ -5,10 +5,13 @@ form:
       fields:
         - name: title
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
           label: First level accordion title
         - name: text
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
           label: Accordion first level text
+          i18n: true
+          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
         - name: listSecondLevel
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
           label: Second level
@@ -21,9 +24,12 @@ form:
             fields:
               - name: subtitle
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                i18n: true
                 label: Second level accordion title
               - name: subtext
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                i18n: true
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                 label: Accordion second level text
               - name: linkPDF      
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
