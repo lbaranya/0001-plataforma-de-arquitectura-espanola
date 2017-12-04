@@ -164,6 +164,8 @@ subApps:
         dialogName: ui-framework:folder
         class: info.magnolia.ui.framework.action.OpenEditDialogActionDefinition
         availability: 
+          nodeTypes:
+            - mgnl:folder
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
