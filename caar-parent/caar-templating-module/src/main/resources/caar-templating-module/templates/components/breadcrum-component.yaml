@@ -1,0 +1,3 @@
+title: Breadcrum
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/breadcrum-component.ftl
