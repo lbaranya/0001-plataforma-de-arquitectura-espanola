@@ -4,7 +4,8 @@ form:
       label: Sub header title
       fields:
         - name: subHeaderTitle
-          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.sub-header-component.subHeaderTitle.label    
           i18n: true
           required: true
 actions:      
