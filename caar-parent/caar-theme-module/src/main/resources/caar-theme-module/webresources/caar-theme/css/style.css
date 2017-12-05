@@ -966,3 +966,78 @@ a:focus {
         .cmp-politica-cookies .cookies-container .cookies-info .aceptar-btn:hover {
           background-color: #970213; }
 /**Cookies: Termina**/
+
+/**cmp-distribuidor**/
+.cmp-distribuidor .row {
+  margin-bottom: 20px; }
+  .cmp-distribuidor .row a {
+    text-decoration: none;
+    color: #000; }
+    .cmp-distribuidor .row a .title {
+      font-size: 15px;
+      font-family: "National-BookItalic", "Helvetica", "sans-serif"; }
+    .cmp-distribuidor .row a .img-arquia {
+      position: relative; }
+      .cmp-distribuidor .row a .img-arquia img {
+        width: 555px;
+        height: 400px;
+        border-bottom: 3px solid #D0021B; }
+      .cmp-distribuidor .row a .img-arquia:hover img {
+        border: none; }
+      .cmp-distribuidor .row a .img-arquia:hover .texto {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .cmp-distribuidor .row a .img-arquia .texto {
+        display: none;
+        width: 555px;
+        position: absolute;
+        top: 0;
+        height: 400px;
+        color: #fff;
+        background-color: rgba(208, 2, 27, 0.7); }
+        .cmp-distribuidor .row a .img-arquia .texto h2 {
+          margin: 0;
+          text-align: center;
+          font-size: 64px;
+          font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
+    .cmp-distribuidor .row a .descrip-arquia {
+      font-size: 14px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      padding-top: 20px; }
+
+@media screen and (max-width: 1200px) {
+  .cmp-distribuidor .row a .img-arquia img {
+    width: 454px;
+    height: 300px; }
+  .cmp-distribuidor .row a .img-arquia .texto {
+    width: 454px;
+    height: 300px; }
+    .cmp-distribuidor .row a .img-arquia .texto h2 {
+      font-size: 64px; }
+  .cmp-distribuidor .row a .descrip-arquia {
+    font-size: 14px;
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    width: 454px; } }
+
+@media screen and (max-width: 992px) {
+  .cmp-distribuidor .row a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto; }
+    .cmp-distribuidor .row a .img-arquia img {
+      width: 100%;
+      height: 300px; }
+    .cmp-distribuidor .row a .img-arquia .texto {
+      width: 100%;
+      height: 300px; }
+      .cmp-distribuidor .row a .img-arquia .texto h2 {
+        font-size: 64px; }
+    .cmp-distribuidor .row a .descrip-arquia {
+      font-size: 14px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      width: 100%; } }
+/**Termina: cmp-distribuidor**/
