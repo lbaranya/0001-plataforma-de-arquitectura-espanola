@@ -73,6 +73,10 @@ form:
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
           label: caar-templating-module.templates.components.header-component.dialog.ae.diary.label
+        - name: institutionsAE
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          appName: pages
+          label: caar-templating-module.templates.components.header-component.dialog.ae.institutions.label
         - name: itinerariesAE
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
