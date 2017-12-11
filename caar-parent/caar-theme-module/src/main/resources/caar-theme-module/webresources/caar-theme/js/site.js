@@ -2,8 +2,14 @@ var booleanmouse = true;
 var scroll;
 
 $(document).ready(function () {
+	// Context URL
+	var contextName = $('#context').val();
+	// Module URL
+	var moduleName = $('#module').val();
+	// Theme URL
+	var themeName = $('#theme').val();
 	// Resources URL
-	var resourcesURL = document.location.origin + "/caar-webapp/.resources/caar-theme-module/webresources/caar-theme";
+	var resourcesURL = document.location.origin + contextName +"/.resources" + moduleName + "/webresources/" + themeName;
 	// Icons URL
 	var iconsURL = resourcesURL + "/icons/";
     /**Banner-header**/

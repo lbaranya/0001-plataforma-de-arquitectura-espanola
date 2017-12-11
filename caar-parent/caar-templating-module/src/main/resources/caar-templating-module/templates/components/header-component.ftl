@@ -27,6 +27,7 @@
                         </li>
                         <li class="submenu-link">
                             <a href="${cmsfn.link(cmsfn.contentByPath(content.itinerariesAE!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.itineraries.label']!"itinerarios"}</a>
+                            <a href="#">instituciones</a>
                         </li>
                     </ul>
                 </div>
