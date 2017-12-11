@@ -2,12 +2,6 @@ var booleanmouse = true;
 var scroll;
 
 $(document).ready(function () {
-	// Context URL
-	var contextName = $('#context').val();
-	// Module URL
-	var moduleName = $('#module').val();
-	// Theme URL
-	var themeName = $('#theme').val();
 	// Resources URL
 	var resourcesURL = $("#resources").val();
 	// Icons URL

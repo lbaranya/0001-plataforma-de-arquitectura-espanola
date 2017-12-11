@@ -5,6 +5,8 @@ templateScript: /caar-templating-module/templates/pages/prototype.ftl
 renderType: site
 type: feature
 areas:
+  top-banner:
+    enabled: false
   header:
     renderType: freemarker
     type: single
