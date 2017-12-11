@@ -41,8 +41,14 @@ $(document).ready(function () {
         e.preventDefault();
 
         var datamenu = $(this).attr('data-submenu');
-        $('.submenu-container').removeClass("clicked");
-        $('.submenu-container').addClass("clicked");
+        //Compruebo si cmp-exist-home existe
+        if ($(".cmp-exist-home").length) {
+            $('.submenu-container').removeClass('clicked');
+            $('.submenu-container').addClass('clicked');
+        } else {
+            $('.submenu-container').removeClass("clicked-nh");
+            $('.submenu-container').addClass("clicked-nh");
+        }
         $('.submenu').css('display', 'none');
         $(".menu-link").removeClass('active-item');
         $(".menu-item-icon").removeClass('active-item');
@@ -91,8 +97,13 @@ $(document).ready(function () {
         var datamenu = $(this).attr('data-submenu');
         $('.submenu').css('display', 'none');
         $('.' + datamenu).css('display', 'flex');
-        $('.submenu-container').removeClass("clicked");
-        $('.submenu-container').addClass("clicked");
+        if ($(".cmp-exist-home").length) {
+            $('.submenu-container').removeClass('clicked');
+            $('.submenu-container').addClass('clicked');
+        } else {
+            $('.submenu-container').removeClass("clicked-nh");
+            $('.submenu-container').addClass("clicked-nh");
+        }
         $(".menu-link").removeClass('active-item');
         $(this).addClass('active-item');
 
@@ -101,8 +112,9 @@ $(document).ready(function () {
     $('.close-btn').on('click', function (e) {
         e.preventDefault();
         $('.submenu-container').removeClass("clicked");
+        $('.submenu-container').removeClass('clicked-nh');
         $(".menu-link").removeClass("active-item");
-
+        $('.logo').removeClass("active-item");
         $('.search-icon').attr('src', iconsURL + 'search-icon.svg');
         $(".menu-item-icon").removeClass('active-item');
 
