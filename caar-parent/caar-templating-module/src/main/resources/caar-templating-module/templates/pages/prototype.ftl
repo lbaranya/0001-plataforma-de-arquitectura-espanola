@@ -1,8 +1,3 @@
-[#-- Assigns --]
-	[#assign moduleName = "/caar-theme-module" /]
-	[#assign site = sitefn.site()!""/]
-	[#assign theme = sitefn.theme(site)!"" /]
-[#-- /Assigns --]
 <html>
 <head>
 	[#assign siteResourcesURL = sitefn.theme(sitefn.site())]
