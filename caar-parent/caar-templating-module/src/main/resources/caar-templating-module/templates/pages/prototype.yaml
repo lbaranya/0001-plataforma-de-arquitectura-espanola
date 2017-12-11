@@ -6,7 +6,7 @@ renderType: site
 type: feature
 areas:
   top-banner:
-    type: single
+    enabled: false
   header:
     renderType: freemarker
     type: single
