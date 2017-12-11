@@ -3,6 +3,8 @@ renderType: site
 dialog: caar-templating-module:pages/content-page-properties      
 visible: true      
 areas:
+  top-banner:
+    enabled: false
   header:
     editable: true     
   main:

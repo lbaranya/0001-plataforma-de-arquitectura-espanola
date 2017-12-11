@@ -9,7 +9,7 @@ $(document).ready(function () {
 	// Theme URL
 	var themeName = $('#theme').val();
 	// Resources URL
-	var resourcesURL = document.location.origin + contextName +"/.resources" + moduleName + "/webresources/" + themeName;
+	var resourcesURL = $("#resources").val();
 	// Icons URL
 	var iconsURL = resourcesURL + "/icons/";
     /**Banner-header**/

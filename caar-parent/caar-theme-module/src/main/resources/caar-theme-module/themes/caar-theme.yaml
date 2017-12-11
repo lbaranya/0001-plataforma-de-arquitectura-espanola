@@ -1,20 +1,24 @@
 name: caar-theme
 cssFiles:
-  bootstrap-css:
-    addFingerPrint: true
-    link: /.resources/caar-theme-module/webresources/caar-theme/framework/bootstrap/css/bootstrap.min.css
-    media: all
   caar-css:
     addFingerPrint: true
     link: /.resources/caar-theme-module/webresources/caar-theme/css/style.css
     media: all
+  bootstrap-css:
+    addFingerPrint: true
+    link: /.resources/caar-theme-module/webresources/caar-theme/framework/bootstrap/css/bootstrap.min.css
+    media: all
+  font-awesome:
+    addFingerPrint: true
+    link: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css
+    media: all
 jsFiles:
   jquery-js:
+  jquery-min:
     addFingerPrint: true
     link: /.resources/caar-theme-module/webresources/caar-theme/js/jquery.min.js
-  bootstrap-js:
-    addFingerPrint: true
-    link: /.resources/caar-theme-module/webresources/caar-theme/framework/bootstrap/js/bootstrap.min.js
   caar-js:
     addFingerPrint: true
     link: /.resources/caar-theme-module/webresources/caar-theme/js/site.js
+imaging: 
+  #Imaging variations configuration
