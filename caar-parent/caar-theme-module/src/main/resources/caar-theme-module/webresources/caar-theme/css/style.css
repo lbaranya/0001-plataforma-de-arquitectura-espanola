@@ -802,6 +802,12 @@ a:focus {
   align-self: center;
 }
 
+.cmp-menu .clicked-nh {
+    transition-duration: 300ms;
+    transform: translate(0px, 0px);
+    margin-top: 0px;
+}
+
 .fixed-menu {
   position: fixed;
   z-index: 99999;
@@ -851,6 +857,13 @@ a:focus {
       .cmp-acerca-de-ae .breadcrumb li.active:before {
         font-weight: normal; }
 
+.cmp-acerca-de-ae .title h3 {
+  font-family: "National-Book", "Helvetica", "sans-serif";
+  font-size: 36px;
+  text-align: left;
+  font-weight: bold;
+  color: #D0021B; }
+
 .cmp-acerca-de-ae .info-acerca {
   font-family: "National-Book", "Helvetica", "sans-serif";
   font-size: 19px;
@@ -867,7 +880,7 @@ a:focus {
   width: 100%;
   margin: 0 auto; }
   .cmp-acerca-de-ae .separador hr {
-    border: 1px solid #9b9b9b; }
+    border-top: 1px solid #9b9b9b; }
 
 .cmp-acerca-de-ae .acordeon-acerca .panel {
   font-size: 14px;
@@ -926,6 +939,7 @@ a:focus {
       color: #9b9b9b; }
   .cmp-acerca-de-ae .acordeon-acerca .sub-acordeon-acerca .panel-heading .panel-title :focus {
     outline: none; }
+
     
     
 /**Cookies: cmp-politica-cookies**/
@@ -1041,3 +1055,9 @@ a:focus {
       font-family: "National-Book", "Helvetica", "sans-serif";
       width: 100%; } }
 /**Termina: cmp-distribuidor**/
+
+/** NOTA LEGAL **/
+.cmp-nota-legal {
+  margin-top: 50px;
+  font-family: "National-Book", "Helvetica", "sans-serif"; }
+/** TERMINA NOTA LEGAL **/

@@ -3,14 +3,20 @@ form:
     - name: tabMain
       label: Rich Text and Video component
       fields:
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.rich-text-video-component.dialog.title.label
         - name: text
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition      
           i18n: true
           required: true
+          label: caar-templating-module.templates.components.rich-text-video-component.dialog.text.label
           configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
         - name: videoLink
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           required: true
+          label: caar-templating-module.templates.components.rich-text-video-component.dialog.videoLink.label
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      

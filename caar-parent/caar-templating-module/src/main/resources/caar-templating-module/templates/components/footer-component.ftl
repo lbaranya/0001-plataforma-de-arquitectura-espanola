@@ -39,10 +39,10 @@
                 <div class="col-sm-2 col-xs-12">
                     <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.legalNote.label']!"nota legal"}</h4>
                     <li class="footer-global-link">
-                            <a href="${content.legalLink!""}" class="global-link" alt="legal_link" title="nota legal">${i18n['caar-templating-module.templates.components.footer-component.legalNote.label']!"nota legal"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentById(content.legalLink!"/"))!"#"}" class="global-link" alt="legal_link" title="nota legal">${i18n['caar-templating-module.templates.components.footer-component.legalNote.label']!"nota legal"}</a>
                     </li>
                     <li class="footer-global-link">
-                            <a href="${content.cookiesLink!""}" class="global-link" alt="cookies_link" title="cookies">${i18n['caar-templating-module.templates.components.footer-component.cookies.label']!"cookies"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentById(content.cookiesLink!"/"))!"#"}" class="global-link" alt="cookies_link" title="cookies">${i18n['caar-templating-module.templates.components.footer-component.cookies.label']!"cookies"}</a>
                     </li>
                 </div>
                 <div class="col-sm-2 col-xs-12">
