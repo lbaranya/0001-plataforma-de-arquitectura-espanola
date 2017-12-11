@@ -3,7 +3,7 @@ var scroll;
 
 $(document).ready(function () {
 	// Resources URL
-	var resourcesURL = document.location.origin + "/caar-webapp/.resources/caar-theme-module/webresources/caar-theme";
+	var resourcesURL = $("#resources").val();
 	// Icons URL
 	var iconsURL = resourcesURL + "/icons/";
     /**Banner-header**/
