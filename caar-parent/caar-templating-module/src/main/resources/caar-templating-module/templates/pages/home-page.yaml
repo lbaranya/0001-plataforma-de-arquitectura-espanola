@@ -2,8 +2,10 @@ renderType: site
 dialog: caar-templating-module:pages/home-page-properties
 title: Portada
 visible: true
+templateScript: /caar-templating-module/templates/pages/home-page.ftl
 areas:
   top-banner:
+    type: single
     renderType: freemarker
     availableComponents:
       header-component:
@@ -12,7 +14,7 @@ areas:
       enabled: true
       components: all
   main:
-    templateScript: /caar-templating-module/templates/pages/home-page.ftl
+    templateScript: /caar-templating-module/templates/components/dummy-home-component.ftl
     availableComponents:
       highlights-excellence-component:
         id: caar-templating-module:components/highlights-excellence-component

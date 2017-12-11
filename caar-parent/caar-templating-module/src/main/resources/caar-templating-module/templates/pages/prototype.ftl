@@ -13,8 +13,6 @@
 <body>
 [#assign resourcesURL = "${ctx.contextPath}/.resources/caar-theme-module/webresources/caar-theme"]
 
-[@cms.area name="top-banner" contextAttributes={"resourcesURL":resourcesURL}/]
-
 [@cms.area name="header" contextAttributes={"resourcesURL":resourcesURL}/]
 
 [@cms.area name="main" contextAttributes={"resourcesURL":resourcesURL}/]
