@@ -8,6 +8,9 @@
     [#list siteResourcesURL.cssFiles as cssFile]
 	    <link rel="stylesheet" href="${cssFile.link}" media="${cssFile.media}" />
 	[/#list]
+	[#list siteResourcesURL.jsFiles as jsFile]
+	    <script src="${jsFile.link}"></script>
+	[/#list]
     [@cms.page /]
 </head>
 
@@ -25,13 +28,7 @@
 
 [@cms.area name="footer" contextAttributes={"resourcesURL":resourcesURL}/]
 
-[@cms.area name="cookies" contextAttributes={"resourcesURL":resourcesURL}/]
-	
-	[#-- automatizar --]
-	[#list siteResourcesURL.jsFiles as jsFile]
-	    <script src="${jsFile.link}"></script>
-	[/#list]
-    
+[@cms.area name="cookies-area" contextAttributes={"resourcesURL":resourcesURL}/]
 </body>
 
 </html>

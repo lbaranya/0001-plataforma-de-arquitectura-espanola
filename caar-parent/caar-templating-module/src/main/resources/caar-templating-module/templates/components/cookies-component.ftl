@@ -1,4 +1,4 @@
-<section class="cmp-politica-cookies">
+<section id="cookiesBox" class="cmp-politica-cookies">
     <div class="container-fluid">
         <div class="row">
             <div class="container">
