@@ -13,9 +13,11 @@ form:
             layout: vertical        
             required: true        
             fields:        
-              - name: textCaption        
+              - name: separator1      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                
+              - name: separator2      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition        
-                value: -------------------------------------------------------------        
                 label: Destacado      
               - name: title        
                 label: Título corto        

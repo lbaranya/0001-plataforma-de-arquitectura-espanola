@@ -936,7 +936,9 @@ subApps:
                 label: caar-architecture-files-app.files.support.architect.personalData.birthCity.label
                 required: true
               - name: FS1.1.8
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                repository: category
+                path: caar/caar-countries
                 label: caar-architecture-files-app.files.support.architect.personalData.birthCountry.label
               - name: FS1.1.9
                 class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
@@ -971,7 +973,9 @@ subApps:
                 required: true
               - name: FS1.2.3
                 # list
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                repository: category
+                path: caar/caar-countries
                 label: caar-architecture-files-app.files.support.architect.educationData.certificationCountry.label
               - name: FS1.2.4
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -1002,7 +1006,9 @@ subApps:
                 label: caar-architecture-files-app.files.support.architect.professionalData.officeCity.label
                 required: true
               - name: FS1.3.4
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                repository: category
+                path: caar/caar-countries
                 label: caar-architecture-files-app.files.support.architect.professionalData.officeCountry.label
                 required: true
               - name: FS1.3.5
@@ -1462,7 +1468,9 @@ subApps:
                 label: caar-architecture-files-app.files.support.business.businessData.departmentCity.label
                 required: true
               - name: FS4.1.7
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                repository: category
+                path: caar/caar-countries
                 label: caar-architecture-files-app.files.support.business.businessData.departmentCountry.label
                 required: true
               # user picker

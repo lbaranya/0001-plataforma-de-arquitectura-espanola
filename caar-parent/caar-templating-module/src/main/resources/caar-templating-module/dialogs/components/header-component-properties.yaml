@@ -13,9 +13,10 @@ form:
             layout: vertical      
             required: true      
             fields:      
-              - name: textCaption      
-                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
-                value: -------------------------------------------------------------      
+              - name: separator1      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+              - name: separator2      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
                 label: Logo      
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
@@ -59,7 +60,6 @@ form:
       fields:
         - name: subMenu1
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-          value: ------------------------------------------------------------
           label: Spanish architecture header menu links
         - name: aboutAE
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
@@ -81,9 +81,11 @@ form:
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
           label: caar-templating-module.templates.components.header-component.dialog.ae.itineraries.label
-        - name: subMenu2
+        - name: separator3      
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-          value: ------------------------------------------------------------
+                
+        - name: separator4      
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
           label: Exploring architecture header menu links
         - name: aboutExAr
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
@@ -121,10 +123,14 @@ form:
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
           label: caar-templating-module.templates.components.header-component.dialog.explore.documentaryExplore.institutions.label
-        - name: subMenu3
+        
+        - name: separator5      
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-          value: ------------------------------------------------------------
+                
+        - name: separator6      
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
           label: Biennials and Awards header menu links
+          
         - name: aboutBA
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
