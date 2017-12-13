@@ -150,6 +150,12 @@ subApps:
           rules: 
             HasVersionsRule: 
               implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      requestTranslation:
+        command: requestTranslation
+        icon: icon-content-translation-app
+        catalog: translations
+        class: es.arquia.magnolia.contentApps.actions.RequestTranslationActionDefinition
+        label: caar-news-app.browser.actions.requestTranslation.label
       # Folder
       addFolder:
         icon: icon-add-folder
@@ -302,6 +308,7 @@ subApps:
               items:
                 - name: activate
                 - name: deactivate
+                - name: requestTranslation
             - name: importExportActions
               items:
                 - name: export
