@@ -15,10 +15,8 @@ form:
             fields:      
               - name: separator1      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
               - name: separator2      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
                 label: Logo      
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
