@@ -14,47 +14,50 @@
                 <div class="submenu ae">
                     <ul class="submenu-list">
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.aboutAE!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.aboutAE.label']!"acerca de A.E."}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.aboutAE!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.aboutAE.label']!"acerca de A.E."}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.newsAE!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.newsAE.label']!"noticias"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.newsAE!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.newsAE.label']!"noticias"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.diaryAE!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.diary.label']!"agenda"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.diaryAE!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.diary.label']!"agenda"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.itinerariesAE!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.itineraries.label']!"itinerarios"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.institutionsAE!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.institutions.label']!"instituciones"}</a>
+                        </li>
+                        <li class="submenu-link">
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.itinerariesAE!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.ae.itineraries.label']!"itinerarios"}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="submenu explorando">
                     <ul class="submenu-list">
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.aboutExAr!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.explore.aboutExplore.label']!"acerca de \"explorando arquitectura\""}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.aboutExAr!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.explore.aboutExplore.label']!"acerca de \"explorando arquitectura\""}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.newsExAr!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.explore.newsExplore.label']!"noticias"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.newsExAr!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.explore.newsExplore.label']!"noticias"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.highlightsExAr!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.explore.highlightsExplore.label']!"destacados"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.highlightsExAr!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.explore.highlightsExplore.label']!"destacados"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.documentaryExAr!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.label']!"documental"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.documentaryExAr!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.label']!"documental"}</a>
                             <ul class="menu-level3">
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.excellenceExAr!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.excellence.label']!"excelencia"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.excellenceExAr!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.excellence.label']!"excelencia"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.architectsExAr!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.architects.label']!"arquitectos"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.architectsExAr!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.architects.label']!"arquitectos"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.ouvresExAr!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.ouvresAwards.label']!"obras y premios"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.ouvresExAr!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.ouvresAwards.label']!"obras y premios"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.thoughtsExAr!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.reviews.label']!"pensamientos, crítica e investigación"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.thoughtsExAr!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.reviews.label']!"pensamientos, crítica e investigación"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.institutionsExAr!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.institutions.label']!"instituciones y fondos"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.institutionsExAr!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.explore.documentaryExplore.institutions.label']!"instituciones y fondos"}</a>
                                 </li>
                             </ul>
                         </li>
@@ -63,45 +66,45 @@
                 <div class="submenu bienales">
                     <ul class="submenu-list">
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.aboutBA!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.abountBiennials.label']!"acerca de \"bienales y premios\""}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.aboutBA!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.abountBiennials.label']!"acerca de \"bienales y premios\""}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.newsBA!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.newsBiennials.label']!"noticias"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.newsBA!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.newsBiennials.label']!"noticias"}</a>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.biennialsBA!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.label']!"bienales"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.biennialsBA!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.label']!"bienales"}</a>
                             <ul class="menu-level3">
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.beauBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.BEAU.label']!"BEAU"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.beauBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.BEAU.label']!"BEAU"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.biauBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.BIAU.label']!"BIAU"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.biauBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.BIAU.label']!"BIAU"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.biennaleBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.biennale.label']!"Biennale"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.biennaleBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.biennale.label']!"Biennale"}</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="submenu-link">
-                            <a href="${cmsfn.link(cmsfn.contentByPath(content.awardsBA!))!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.label']!"premios"}</a>
+                            <a href="${cmsfn.link(cmsfn.contentByPath(content.awardsBA!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.label']!"premios"}</a>
                             <ul class="menu-level3">
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.nationalBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.national.label']!"premio Nacional"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.nationalBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.national.label']!"premio Nacional"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.mvrBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.MVR.label']!"premio Mies Van der Rohe"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.mvrBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.MVR.label']!"premio Mies Van der Rohe"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.etBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.ET.label']!"premio Eduardo Torroja"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.etBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.ET.label']!"premio Eduardo Torroja"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.arquiaNextBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.arquiaNext.label']!"premio Arquia próxima"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.arquiaNextBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.arquiaNext.label']!"premio Arquia próxima"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.arquiaThesisBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.arquiaThesis.label']!"premio Arquia tesis"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.arquiaThesisBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.arquiaThesis.label']!"premio Arquia tesis"}</a>
                                 </li>
                                 <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.europanBA!))!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.europan.label']!"Europan"}</a>
+                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.europanBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.europan.label']!"Europan"}</a>
                                 </li>
                             </ul>
                         </li>
@@ -327,14 +330,14 @@
 					   </ul>
 					[/#if]
                     <ul class="menu-icons">
-                        <li class="menu-item-icon">
-                            <a href="#" class="menu-link" data-submenu="signin" alt="registro" title="registro">
+                        <li class="menu-item-icon menu-link">
+                            <a href="#" class="icon-link" data-submenu="signin" alt="registro" title="registro">
                                 <img class="user-icon" src="${ctx.resourcesURL}/icons/usuario-icon.svg">
                             </a>
 
                         </li>
-                        <li class="menu-item-icon">
-                                <a href="#" class="menu-link" data-submenu="search" alt="buscador" title="buscador">
+                        <li class="menu-item-icon menu-link">
+                                <a href="#" class="icon-link" data-submenu="search" alt="buscador" title="buscador">
                             <img class="search-icon" src="${ctx.resourcesURL}/icons/search-icon.svg">
                             </a>
                         </li>

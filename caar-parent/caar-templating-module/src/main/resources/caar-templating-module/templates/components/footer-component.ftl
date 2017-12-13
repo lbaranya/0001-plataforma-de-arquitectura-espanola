@@ -18,7 +18,17 @@
                     	[#if content.linkElements1?has_content]
                     	[#list cmsfn.children(content.linkElements1) as element]
                         <li class="footer-global-link">
-                            <a href="${element.link!""}" class="global-link" alt="explorando_arquitectura" title="${element.linkText!""}">${element.linkText!""}</a>
+                        	[#assign hrefTmp = "#"]
+                        	[#if element.link == "internalLink"]
+	                        	[#if element.linkinternalLink?has_content]
+	                        		[#assign hrefTmp = cmsfn.link(cmsfn.contentById(element.linkinternalLink))]
+	                        	[/#if]
+	                      	[#else]
+	                      		[#if element.linkexternalLink?has_content]
+	                        		[#assign hrefTmp = cmsfn.externalLink(element, "linkexternalLink")]
+	                        	[/#if]
+                        	[/#if]
+                            <a href="${hrefTmp}" class="global-link" alt="explorando_arquitectura" title="${element.linkText!""}">${element.linkText!""}</a>
                         </li>
                         [/#list]
                         [/#if]
@@ -30,7 +40,17 @@
                         [#if content.linkElements2?has_content]
                     	[#list cmsfn.children(content.linkElements2) as element]
                         <li class="footer-global-link">
-                            <a href="${element.link!""}" class="global-link" alt="explorando_arquitectura" title="${element.linkText!""}">${element.linkText!""}</a>
+                        	[#assign hrefTmp = "#"]
+                        	[#if element.link == "internalLink"]
+	                        	[#if element.linkinternalLink?has_content]
+	                        		[#assign hrefTmp = cmsfn.link(cmsfn.contentById(element.linkinternalLink))]
+	                        	[/#if]
+	                      	[#else]
+	                      		[#if element.linkexternalLink?has_content]
+	                        		[#assign hrefTmp = cmsfn.externalLink(element, "linkexternalLink")]
+	                        	[/#if]
+                        	[/#if]
+                            <a href="${hrefTmp}" class="global-link" alt="explorando_arquitectura" title="${element.linkText!""}">${element.linkText!""}</a>
                         </li>
                         [/#list]
                         [/#if]
@@ -39,11 +59,19 @@
                 <div class="col-sm-2 col-xs-12">
                     <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.legalNote.label']!"nota legal"}</h4>
                     <li class="footer-global-link">
-                            <a href="${content.legalLink!""}" class="global-link" alt="legal_link" title="nota legal">${i18n['caar-templating-module.templates.components.footer-component.legalNote.label']!"nota legal"}</a>
+                    	[#assign hrefLegalLink = "#"]
+                		[#if content.legalLink?has_content]
+                        	[#assign hrefLegalLink = cmsfn.link(cmsfn.contentById(content.legalLink!"/"))!"#"]
+                		[/#if]
+                    	<a href="${hrefLegalLink}" class="global-link" alt="legal_link" title="nota legal">${i18n['caar-templating-module.templates.components.footer-component.legalNote.label']!"nota legal"}</a>
                     </li>
                     <li class="footer-global-link">
-                            <a href="${content.cookiesLink!""}" class="global-link" alt="cookies_link" title="cookies">${i18n['caar-templating-module.templates.components.footer-component.cookies.label']!"cookies"}</a>
-                    </li>
+                		[#assign hrefCookiesLink = "#"]
+                		[#if content.cookiesLink?has_content]
+                        	[#assign hrefCookiesLink = cmsfn.link(cmsfn.contentById(content.cookiesLink!"/"))!"#"]
+                		[/#if]
+                        <a href="${hrefCookiesLink}" class="global-link" alt="cookies_link" title="cookies">${i18n['caar-templating-module.templates.components.footer-component.cookies.label']!"cookies"}</a>
+                     </li>
                 </div>
                 <div class="col-sm-2 col-xs-12">
                     <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.followUs.label']!"siguenos en"}</h4>
@@ -67,7 +95,7 @@
 				[#if content.logoElements?has_content]
 				[#list cmsfn.children(content.logoElements) as logoElement]
 				[#assign image = damfn.getAssetLink(logoElement.image)!]
-					<li class="logo-item"><a href="#" class="footer-logo"><img src="${image}" width="175" alt="${logoElement.altImage!""}"></a></li>
+					<li class="logo-item"><a href="#" class="footer-logo"><img src="${image}" width="175" height="40" alt="${logoElement.altImage!""}"></a></li>
 				[/#list]
 				[/#if]
 				</ul>

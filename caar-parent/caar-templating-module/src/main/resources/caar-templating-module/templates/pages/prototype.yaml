@@ -6,7 +6,7 @@ renderType: site
 type: feature
 areas:
   top-banner:
-    type: single
+    enabled: false
   header:
     renderType: freemarker
     type: single
@@ -28,7 +28,7 @@ areas:
     inheritance:
       enabled: true
       components: all
-  cookies:
+  cookies-area:
     renderType: freemarker
     type: single
     availableComponents:

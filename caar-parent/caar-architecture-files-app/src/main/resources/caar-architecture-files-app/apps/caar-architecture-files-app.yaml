@@ -98,6 +98,123 @@ subApps:
           class: info.magnolia.ui.workbench.search.SearchPresenterDefinition
           columns: *defaultColumns
     actions:
+      # Common actions
+      export: 
+        class: info.magnolia.ui.framework.action.ExportActionDefinition
+        command: export
+        icon: icon-export
+        availability: 
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      import: 
+        class: info.magnolia.ui.framework.action.OpenCreateDialogActionDefinition
+        dialogName: ui-admincentral:import
+        icon: icon-import
+        name: import
+        availability: 
+          root: true
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      activate: 
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        icon: icon-publish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      deactivate: 
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.DeactivationActionDefinition
+        command: deactivate
+        icon: icon-unpublish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+            IsPublishedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsPublishedRule
+      confirmDelete: 
+        class: info.magnolia.module.dependencies.action.DependencyAwareConfirmationActionDefinition
+        icon: icon-trash
+        label: caar-architecture-files-app.browser.actions.confirmDelete.label
+        successActionName: delete
+        availability: 
+          multiple: true
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+        # TODO: add necessary references
+        references: 
+          - name: website
+            nodeType: mgnl:page
+            workspace: website
+      delete: 
+        class: info.magnolia.ui.framework.action.MarkNodeAsDeletedActionDefinition
+        command: markAsDeleted
+        availability: 
+          writePermissionRequired: true
+      activateDeleted: 
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        icon: icon-publish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      restorePreviousVersion: 
+        class: info.magnolia.ui.contentapp.detail.action.RestorePreviousVersionActionDefinition
+        icon: icon-undo
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      # showVersions each file type
+      # Details architect
+      showVersionsArchitects: 
+        class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+        icon: icon-show-versions
+        subAppId: detailSupportArchitect
+        availability: 
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      # Details Review Type I
+      showVersionsReviewI: 
+        class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+        icon: icon-show-versions
+        subAppId: detailSupportReviewI
+        availability: 
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      # Details Business
+      showVersionsBusiness: 
+        class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+        icon: icon-show-versions
+        subAppId: detailSupportBusiness
+        availability: 
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      restoreVersion: 
+        class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
+        icon: icon-retrieve-versions
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule      
       # General wrappers
       addPortfolioWrapper:
         icon: icon-add-folder
@@ -106,6 +223,9 @@ subApps:
         label: caar-architecture-files-app.subapp.browser.actions.addPortfolioWrapper.label
         availability:
           root: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       addSupportWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -113,6 +233,9 @@ subApps:
         label: caar-architecture-files-app.subapp.browser.actions.addSupportWrapper.label
         availability:
           root: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       addFormatWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -120,6 +243,9 @@ subApps:
         label: caar-architecture-files-app.subapp.browser.actions.addFormatWrapper.label
         availability:
           root: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       editWrapper:
         icon: icon-edit
         dialogName: ui-framework:folder
@@ -133,19 +259,9 @@ subApps:
             - mgnl:support-business-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
-      deleteWrapper:
-        icon: icon-trash
-        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
-        label: caar-architecture-files-app.subapp.browser.actions.deleteWrapper.label
-        availability:
-          nodeTypes:
-            - mgnl:support-wrapper
-            - mgnl:support-architect-wrapper
-            - mgnl:support-review-i-wrapper
-            - mgnl:support-business-wrapper
-            - mgnl:portfolio-wrapper
-            - mgnl:format-wrapper
-      # Support Wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       addSupportArchitectWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -154,6 +270,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       addSupportReviewIWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -162,6 +281,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       addSupportBusinessWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -170,6 +292,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # Support Architect
       addSupportArchitect:
         subAppId: detailSupportArchitect
@@ -181,15 +306,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-architect-wrapper
-      deleteSupportArchitect:
-        icon: icon-trash
-        nodeType: mgnl:support-architect
-        appName: caar-architecture-files-app
-        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
-        label: caar-architecture-files-app.subapp.browser.actions.deleteSupportArchitect.label
-        availability:
-          nodeTypes:
-            - mgnl:support-architect
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       editSupportArchitect:
         subAppId: detailSupportArchitect
         icon: icon-edit-wo
@@ -200,6 +319,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-architect
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # Support Review I
       addSupportReviewI:
         subAppId: detailSupportReviewI
@@ -211,15 +333,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-review-i-wrapper
-      deleteSupportReviewI:
-        icon: icon-trash
-        nodeType: mgnl:support-review-i
-        appName: caar-architecture-files-app
-        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
-        label: caar-architecture-files-app.subapp.browser.actions.deleteSupportReviewI.label
-        availability:
-          nodeTypes:
-            - mgnl:support-review-i
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       editSupportReviewI:
         subAppId: detailSupportReviewI
         icon: icon-edit-wo
@@ -230,6 +346,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-review-i
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # Support Business
       addSupportBusiness:
         subAppId: detailSupportBusiness
@@ -241,15 +360,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-business-wrapper
-      deleteSupportBusiness:
-        icon: icon-trash
-        nodeType: mgnl:support-business
-        appName: caar-architecture-files-app
-        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
-        label: caar-architecture-files-app.subapp.browser.actions.deleteSupportBusiness.label
-        availability:
-          nodeTypes:
-            - mgnl:support-business
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       editSupportBusiness:
         subAppId: detailSupportBusiness
         icon: icon-edit-wo
@@ -260,6 +373,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-business
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # Portfolio
       addPortfolio:
         subAppId: detailPortfolio
@@ -271,15 +387,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:portfolio-wrapper
-      deletePortfolio:
-        icon: icon-trash
-        nodeType: mgnl:portfolio
-        appName: caar-architecture-files-app
-        class: info.magnolia.ui.framework.action.DeleteItemActionDefinition
-        label: caar-architecture-files-app.subapp.browser.actions.deletePortfolio.label
-        availability:
-          nodeTypes:
-            - mgnl:portfolio
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       editPortfolio:
         subAppId: detailPortfolio
         icon: icon-edit-wo
@@ -290,6 +400,9 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:portfolio
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
     # Sections
     actionbar:
       defaultAction: addFolder
@@ -302,10 +415,40 @@ subApps:
                 - name: addSupportWrapper
                 - name: addPortfolioWrapper
                 - name: addFormatWrapper
+            - name: importExportActions
+              items:
+                - name: import
           availability:
             nodes: false
             root: true
         # Portfolio group
+        - name: portfolioWrapperDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolioWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addPortfolio
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:portfolio-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
         - name: portfolioWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolioWrapper.label
           groups:
@@ -315,11 +458,51 @@ subApps:
             - name: editActions
               items:
                 - name: editWrapper
-                - name: deleteWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
           availability:
             nodeTypes:
               - mgnl:portfolio-wrapper
         # Support group
+        - name: supportWrapperDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportArchitectWrapper
+                - name: addSupportReviewIWrapper
+                - name: addSupportBusinessWrapper
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
         - name: supportWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportWrapper.label
           groups:
@@ -331,12 +514,50 @@ subApps:
             - name: editActions
               items:
                 - name: editWrapper
-                - name: deleteWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
           availability:
             nodeTypes:
               - mgnl:support-wrapper
         # Support Architect
         # Wrapper
+        - name: supporArquitectWrapperDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitectWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportArchitect
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-architect-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
         - name: supporArquitectWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitectWrapper.label
           groups:
@@ -346,23 +567,96 @@ subApps:
             - name: editActions
               items:
                 - name: editWrapper
-                - name: deleteWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
           availability:
             nodeTypes:
               - mgnl:support-architect-wrapper
         # Node actions
+        - name: supportArchitectDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitect.label
+          groups:
+            - name: editActions
+              items:
+               - name: editSupportArchitect
+               - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsArchitect
+                - name: restoreVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-architect
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
         - name: supportArchitect
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitect.label
           groups:
             - name: editActions
               items:
                - name: editSupportArchitect
-               - name: deleteSupportArchitect
+               - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsArchitect
+                - name: restoreVersion
           availability:
             nodeTypes:
               - mgnl:support-architect
         # Support Review I
         # Wrapper
+        - name: supportReviewIWrapperDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportReviewI
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-i-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
         - name: supportReviewIWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIWrapper.label
           groups:
@@ -372,23 +666,96 @@ subApps:
             - name: editActions
               items:
                 - name: editWrapper
-                - name: deleteWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
           availability:
             nodeTypes:
               - mgnl:support-review-i-wrapper
-        # Node actions      
+        # Node actions
+        - name: supportReviewIDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewI.label
+          groups:
+            - name: editActions
+              items:
+                - name: editSupportReviewI
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsReviewI
+                - name: restoreVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-i
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
         - name: supportReviewI
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewI.label
           groups:
             - name: editActions
               items:
                 - name: editSupportReviewI
-                - name: deleteSupportReviewI
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsReviewI
+                - name: restoreVersion
           availability:
             nodeTypes:
               - mgnl:support-review-i
         # Support business
         # Wrapper
+        - name: supportBusinessWrapperDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusinessWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addSupportBusiness
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-business-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
         - name: supportBusinessWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusinessWrapper.label
           groups:
@@ -398,29 +765,112 @@ subApps:
             - name: editActions
               items:
                 - name: editWrapper
-                - name: deleteWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
           availability:
             nodeTypes:
               - mgnl:support-business-wrapper
-        # Node actions      
+        # Node actions
+        # Support Business Deleted
+        - name: supportBusinessDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusiness.label
+          groups:
+            - name: editActions
+              items:
+                - name: editSupportBusiness
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsBusiness
+                - name: restoreVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-business
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Support Business Not Deleted
         - name: supportBusiness
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusiness.label
           groups:
             - name: editActions
               items:
                 - name: editSupportBusiness
-                - name: deleteSupportBusiness
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsBusiness
+                - name: restoreVersion
           availability:
             nodeTypes:
               - mgnl:support-business
         # Format group
+        - name: formatWrapperDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
+          groups:
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:format-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
         - name: formatWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
           groups:
             - name: editActions
               items:
                 - name: editWrapper
-                - name: deleteWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
           availability:
             nodeTypes:
               - mgnl:format-wrapper

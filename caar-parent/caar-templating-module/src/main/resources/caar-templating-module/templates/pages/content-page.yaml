@@ -7,11 +7,7 @@ areas:
     editable: true     
   main:
     templateScript: /caar-templating-module/templates/pages/content-page.ftl
-    availableComponents:    
-      rich-text-component:    
-        id: caar-templating-module:components/rich-text-component
-      sub-header-component:
-        id: caar-templating-module:components/sub-header-component
+    availableComponents:
     areas:
       content:
         templateScript: /caar-templating-module/templates/pages/subareas/content-area-page.ftl
@@ -20,6 +16,14 @@ areas:
             id: caar-templating-module:components/breadcrum-component
           rich-text-video-component:
             id: caar-templating-module:components/rich-text-video-component
+          rich-text-component:    
+            id: caar-templating-module:components/rich-text-component
+          sub-header-component:
+            id: caar-templating-module:components/sub-header-component
+          child-list-component:
+            id: caar-templating-module:components/child-list-component
+          separator-component:
+            id: caar-templating-module:components/separator-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:

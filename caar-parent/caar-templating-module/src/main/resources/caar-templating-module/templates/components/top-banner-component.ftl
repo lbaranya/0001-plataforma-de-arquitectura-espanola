@@ -1,3 +1,4 @@
+<section class="cmp-exist-home" style="visibility: hidden; width:1px; height: 1px; z-index: -1; top: -8000"></section>
 <!--Banner: cmp-banner-header-->
 <section class="cmp-banner-header">
 	<div class="contenedor-images-banner">

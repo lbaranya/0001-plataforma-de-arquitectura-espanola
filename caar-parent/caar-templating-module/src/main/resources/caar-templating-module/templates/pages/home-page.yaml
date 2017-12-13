@@ -4,6 +4,8 @@ title: Portada
 visible: true
 areas:
   top-banner:
+    enabled: true
+    type: single
     renderType: freemarker
     availableComponents:
       header-component:
