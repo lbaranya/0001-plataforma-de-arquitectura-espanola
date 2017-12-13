@@ -5,7 +5,7 @@
 	<parent>
 		<artifactId>caar-parent</artifactId>
 		<groupId>es.arquia.magnolia</groupId>
-		<version>0.7-SNAPSHOT</version>
+		<version>0.7</version>
 	</parent>
 
 	<artifactId>caar-architecture-files-app</artifactId>
