@@ -397,7 +397,7 @@ subApps:
                     class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
               - name: N1.10
                 class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-                label:
+                label: caar-news-app.relatedNews.news.label
                 field:
                   name: linkNews
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
