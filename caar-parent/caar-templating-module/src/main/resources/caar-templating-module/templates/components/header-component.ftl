@@ -330,14 +330,14 @@
 					   </ul>
 					[/#if]
                     <ul class="menu-icons">
-                        <li class="menu-item-icon">
-                            <a href="#" class="menu-link" data-submenu="signin" alt="registro" title="registro">
+                        <li class="menu-item-icon menu-link">
+                            <a href="#" class="icon-link" data-submenu="signin" alt="registro" title="registro">
                                 <img class="user-icon" src="${ctx.resourcesURL}/icons/usuario-icon.svg">
                             </a>
 
                         </li>
-                        <li class="menu-item-icon">
-                                <a href="#" class="menu-link" data-submenu="search" alt="buscador" title="buscador">
+                        <li class="menu-item-icon menu-link">
+                                <a href="#" class="icon-link" data-submenu="search" alt="buscador" title="buscador">
                             <img class="search-icon" src="${ctx.resourcesURL}/icons/search-icon.svg">
                             </a>
                         </li>

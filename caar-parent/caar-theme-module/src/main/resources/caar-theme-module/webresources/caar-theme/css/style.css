@@ -723,6 +723,10 @@ a:focus {
   color: #fff;
 }
 
+.cmp-menu .menu-item a.active-item:focus{
+	text-decoration: none;
+}
+
 .cmp-menu .menu-row .main-container .menu-logos {
   display: flex;
   justify-content: space-around;

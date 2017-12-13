@@ -25,11 +25,16 @@ $(document).ready(function () {
     window.onscroll = function () {
             scroll = document.documentElement.scrollTop || document.body.scrollTop;
             if (scroll > 400) {
-                if ($(".submenu-container").hasClass("clicked") != true) {
-                    $(".cmp-menu").addClass("fixed-menu");
-                }
+            	//Si hacemos un cambio de estructura respectarlo
+            	 if ($(".cmp-exist-home").length) {
+	                if ($(".submenu-container").hasClass("clicked") != true) {
+	                    $(".cmp-menu").addClass("fixed-menu");
+	                }
+            	 }
             } else {
-                $(".cmp-menu").removeClass("fixed-menu");
+            	 if ($(".cmp-exist-home").length) {
+            		 $(".cmp-menu").removeClass("fixed-menu");
+            	 }
             }
 
         }

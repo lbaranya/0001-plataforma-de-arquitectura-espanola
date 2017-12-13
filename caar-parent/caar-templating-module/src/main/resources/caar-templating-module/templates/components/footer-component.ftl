@@ -95,7 +95,7 @@
 				[#if content.logoElements?has_content]
 				[#list cmsfn.children(content.logoElements) as logoElement]
 				[#assign image = damfn.getAssetLink(logoElement.image)!]
-					<li class="logo-item"><a href="#" class="footer-logo"><img src="${image}" width="175" alt="${logoElement.altImage!""}"></a></li>
+					<li class="logo-item"><a href="#" class="footer-logo"><img src="${image}" width="175" height="40" alt="${logoElement.altImage!""}"></a></li>
 				[/#list]
 				[/#if]
 				</ul>

@@ -22,6 +22,8 @@ areas:
             id: caar-templating-module:components/sub-header-component
           child-list-component:
             id: caar-templating-module:components/child-list-component
+          separator-component:
+            id: caar-templating-module:components/separator-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:
