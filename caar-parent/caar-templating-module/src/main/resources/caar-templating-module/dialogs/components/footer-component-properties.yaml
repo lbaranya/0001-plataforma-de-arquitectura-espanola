@@ -13,9 +13,11 @@ form:
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
             layout: vertical   
             fields:      
-              - name: textCaption      
-                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
-                value: -------------------------------------------------------------      
+              - name: separator1      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                
+              - name: separator2      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition   
                 label: Logo      
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
@@ -81,9 +83,11 @@ form:
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
             layout: vertical 
             fields:      
-              - name: textCaption      
+              - name: separator3      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                
+              - name: separator4      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
-                value: -------------------------------------------------------------      
                 label: Logo      
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
@@ -124,9 +128,11 @@ form:
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
             layout: vertical 
             fields:      
-              - name: textCaption      
+              - name: separator5      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                
+              - name: separator6      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
-                value: -------------------------------------------------------------      
                 label: Logo      
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      

@@ -1,17 +1,6 @@
 <section class="cmp-footer">
         <div class="container footer">
             <div class="row footer-row">
-                <div class="col-sm-2 col-xs-12 col-sm-offset-1 newsletter">
-                    <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.newsletter.label']!"newsletter"}</h4>
-                    <ul>
-                        <li class="footer-nl-link">
-                            <a href="#" class="nl-link" alt="tu_email" title="tu_email">${i18n['caar-templating-module.templates.components.footer-component.yourEmail.label']!"Tu email"}</a>
-                        </li>
-                        <li class="footer-nl-link">
-                            <a href="#" class="nl-link" alt="subscribe" title="subscribe">${i18n['caar-templating-module.templates.components.footer-component.subscribe.label']!"subscribe!"}</a>
-                        </li>
-                    </ul>
-                </div>
                 <div class="col-sm-2 col-xs-12">
                     <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.webMap.label']!"mapa web"}</h4>
                     <ul>

@@ -23,4 +23,29 @@ jsFiles:
     addFingerPrint: true
     link: /.resources/caar-theme-module/webresources/caar-theme/framework/bootstrap/js/bootstrap.min.js
 imaging: 
-  #Imaging variations configuration
+  class:  info.magnolia.templating.imaging.VariationAwareImagingSupport
+  variations:
+    "1200":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 1200
+    "992":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 992
+    "768":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 768
+    "1024":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 1024
+    "375":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 375
+    "414":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 414
+    "320":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 320
+    "360":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 360
