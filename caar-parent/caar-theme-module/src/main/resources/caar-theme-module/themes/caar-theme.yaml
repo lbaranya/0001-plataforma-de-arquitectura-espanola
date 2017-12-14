@@ -49,3 +49,7 @@ imaging:
     "360":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 360
+    "555x400":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 555
+      height: 400

@@ -11,8 +11,13 @@
 			[#else]
 			<div class="block-frase">
 			[/#if]
-				[#assign image = damfn.getAssetLink(element.image)!]
-				<img class="image-banner" src="${image}" alt="${element.altImage!""}" />
+				[#assign imgItemKey = element.image!]
+            	[#if imgItemKey??]
+            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1200")]
+            		[#if imgMediaRendition??]
+						<img class="image-banner" src="${imgMediaRendition.getLink()}" alt="${element.altImage!""}" />
+					[/#if]
+                [/#if]
 				<div class="block-contenido">
 					<div class="contenido">
 						${cmsfn.decode(element).text!""}

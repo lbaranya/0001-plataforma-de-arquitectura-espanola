@@ -1,0 +1,53 @@
+form:      
+  tabs:      
+    - name: tabMain    
+      label: Accordion Lemma
+      fields:
+        - name: title_accordion
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+        - name: sub_title_accordion
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: First level accordion title
+        - name: basic_information
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+          label: Basic information
+          i18n: true
+          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+        - name: preview_file
+          required: true
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+        - name: architect_file_link
+          required: true
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: website      
+          appName: pages
+        - name: info_preview
+          class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+          transformerClass:  info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+          label: Info preview
+          fields:
+            - name: info_preview_text
+              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              i18n: true
+              label: Info preview text
+            - name: info_preview_year
+              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              label: Info preview Year
+              validators:
+                  - name: onlyNumber
+                    class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                    pattern: \d{4}?
+                    errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

@@ -1,0 +1,20 @@
+form:
+  tabs:
+    - name: tabMain
+      label: Child list image background
+      fields:
+        - name: image      
+          required: true       
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          label: Background image    
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent  
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

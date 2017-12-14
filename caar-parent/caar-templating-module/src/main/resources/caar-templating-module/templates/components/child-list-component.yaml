@@ -1,3 +1,4 @@
 title: Child list
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/child-list-component.ftl
+dialog: caar-templating-module:components/child-list-component-properties   
