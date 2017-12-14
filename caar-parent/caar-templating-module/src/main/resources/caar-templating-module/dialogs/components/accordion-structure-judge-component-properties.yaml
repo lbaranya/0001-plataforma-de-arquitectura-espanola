@@ -1,0 +1,51 @@
+form:      
+  tabs:      
+    - name: tabMain    
+      label: Accordion Lemma
+      fields:
+        - name: title_accordion
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Title
+          i18n: true
+        - name: judgeList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Second level
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: secondLevel
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            layout: vertical
+            fields:
+              - name: judge_name
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Judge name
+                i18n: true
+                label: First level accordion title
+              - name: basic_text
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: Basic information
+                i18n: true
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+              - name: judge_image
+                label: Photo
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+              - name: architect_file_link
+                label: File link
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: website      
+                appName: pages
+          
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

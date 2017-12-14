@@ -31,3 +31,5 @@ areas:
             id: caar-templating-module:components/accordion-structure-component
           accordion-lemma-component:
             id: caar-templating-module:components/accordion-structure-lemma-component
+          accordion-judge-component:
+            id: caar-templating-module:components/accordion-structure-judge-component

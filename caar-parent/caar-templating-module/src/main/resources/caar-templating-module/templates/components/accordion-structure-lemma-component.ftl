@@ -1,5 +1,4 @@
 [#assign countFirstLevel = ctx.countFirstLevel]
-<div class="cmp-accordion-convocatoria">
 <div class="panel panel-default panel-principal">
     <div class="panel-heading close-acordeon">
         <h4 class="panel-title">
@@ -41,5 +40,4 @@
             </div>
         </div>
     </div>
-</div>
 </div>
