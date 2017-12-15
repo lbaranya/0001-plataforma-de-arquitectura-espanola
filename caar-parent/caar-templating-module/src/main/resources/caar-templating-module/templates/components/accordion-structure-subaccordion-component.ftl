@@ -10,6 +10,8 @@
         	${cmsfn.decode(content).text!""}
         	[#-- [#if cmsfn.children(firstLevelElement.listSecondLevel)?has_content] --]
         	[#assign countSecondLevel = 1]
+        	[#if content.listSecondLevel??]
+        	[#if cmsfn.children(content.listSecondLevel)??]
         	<div class="panel-group sub-acordeon-acerca">
 			[#list cmsfn.children(content.listSecondLevel) as secondLevelElement]
 				<div class="panel panel-default">
@@ -27,6 +29,8 @@
 		        [#assign countSecondLevel = countSecondLevel + 1]
 			[/#list]
 			</div>
+			[/#if]
+			[/#if]
 		</div>
 		[#-- [/#if] --]
     </div>

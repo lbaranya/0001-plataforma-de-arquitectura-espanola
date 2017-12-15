@@ -1209,7 +1209,7 @@ a:focus {
     padding-left: 0;
     margin-right: 22px; }
 
-.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .inscripcion button {
+.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .inscripcion a {
   border-radius: 0;
   border: 2px solid #D0021B;
   color: #fff;

@@ -1,0 +1,27 @@
+form:      
+  tabs:      
+    - name: tabMain    
+      label: Accordion Lemma
+      fields:
+        - name: title_accordion
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+        - name: basic_information
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+          label: Basic information
+          i18n: true
+          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+        - name: architect_link_name
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Button text
+        - name: architect_file_link
+          label: File link
+          required: true
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: website      
+          appName: pages
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
