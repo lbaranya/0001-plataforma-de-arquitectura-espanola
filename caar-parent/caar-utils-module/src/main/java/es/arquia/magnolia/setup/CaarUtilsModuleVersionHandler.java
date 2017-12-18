@@ -1,6 +1,10 @@
 package es.arquia.magnolia.setup;
 
+import javax.jcr.ImportUUIDBehavior;
+
 import info.magnolia.module.DefaultModuleVersionHandler;
+import info.magnolia.module.delta.BootstrapSingleModuleResource;
+import info.magnolia.module.delta.DeltaBuilder;
 
 /**
  * This class is optional and lets you manage the versions of your module,
@@ -13,4 +17,12 @@ import info.magnolia.module.DefaultModuleVersionHandler;
  */
 public class CaarUtilsModuleVersionHandler extends DefaultModuleVersionHandler {
 
+	public CaarUtilsModuleVersionHandler() {
+		
+		register(DeltaBuilder.update("0.7", "")
+				.addTask(new BootstrapSingleModuleResource("Module commands", "Create all module commands", "config.modules.caar-utils-module.commands.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				.addTask(new BootstrapSingleModuleResource("Request translation mail template", "Mail template to request translation action business", "config.modules.mail.config.templatesConfiguration.requestTranslation.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				);
+	}
+	
 }
