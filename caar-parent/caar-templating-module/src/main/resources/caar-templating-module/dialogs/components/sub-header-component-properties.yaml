@@ -1,7 +1,7 @@
 form:
   tabs:
     - name: tabMain
-      label: Sub header title
+      label:caar-templating-module.templates.components.sub-header-component.tabMain.label
       fields:
         - name: subHeaderTitle
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition

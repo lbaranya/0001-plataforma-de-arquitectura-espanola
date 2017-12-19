@@ -3,7 +3,7 @@ form:
     - name: tabMain          
       fields:          
         - name: texto          
-          label: Texto Enriquecido          
+          label: caar-templating-module.templates.components.rich-text-component.tabMain.label          
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition          
           i18n: true          
           required: true  
