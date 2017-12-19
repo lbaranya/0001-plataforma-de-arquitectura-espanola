@@ -36,6 +36,11 @@
 			<groupId>info.magnolia</groupId>
 			<artifactId>magnolia-module-mail</artifactId>
 		</dependency>
+		
+		<dependency>
+		    <groupId>info.magnolia.workflow</groupId>
+		    <artifactId>magnolia-module-workflow-jbpm</artifactId>
+		</dependency>
 
 		<!-- TEST -->
 		<dependency>
