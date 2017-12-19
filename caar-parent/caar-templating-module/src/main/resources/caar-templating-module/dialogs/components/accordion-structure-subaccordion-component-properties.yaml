@@ -1,20 +1,20 @@
 form:      
   tabs:      
     - name: tabMain    
-      label: Accordion      
+      label: caar-templating-module.templates.components.accordion-structure-subaccordion-component.tabMain.label      
       fields:
         - name: title
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           i18n: true
-          label: First level accordion title
+          label: caar-templating-module.templates.components.accordion-structure-subaccordion-component.tabMain.titleAccordion.label
         - name: text
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
-          label: Accordion first level text
+          label: caar-templating-module.templates.components.accordion-structure-subaccordion-component.tabMain.textAccordion.label
           i18n: true
           configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
         - name: listSecondLevel
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          label: Second level
+          label: caar-templating-module.templates.components.accordion-structure-subaccordion-component.tabMain.listSecondLevel.label
           transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
           field:
             name: secondLevel
@@ -22,17 +22,22 @@ form:
             transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
             layout: vertical
             fields:
+              - name: separator1
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                label: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.label
+                value: caar-templating-module.components.footer-component-properties.tabLogos.elements.compositeField.separator1.value
               - name: subtitle
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 i18n: true
-                label: Second level accordion title
+                label: caar-templating-module.templates.components.accordion-structure-subaccordion-component.tabMain.listSecondLevel.subAccordionTitle.label
               - name: subtext
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 i18n: true
                 configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
-                label: Accordion second level text
+                label: caar-templating-module.templates.components.accordion-structure-subaccordion-component.tabMain.listSecondLevel.subAccordionText.label
               - name: linkPDF      
-                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                label: caar-templating-module.templates.components.accordion-structure-subaccordion-component.tabMain.listSecondLevel.linkPDF.label  
                 targetWorkspace: dam      
                 appName: assets      
                 identifierToPathConverter:      
