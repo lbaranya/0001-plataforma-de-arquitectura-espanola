@@ -11,7 +11,13 @@
 					<p>${child.title!""}</p>
 				</div>
 				<div class="img-arquia">
-                    <img src="${ctx.resourcesURL}/img/banner-2.jpg" alt="arquitecto" />
+					[#assign imgItemKey = content.image!]
+	            	[#if imgItemKey??]
+	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "555x400")]
+	            		[#if imgMediaRendition??]
+                    		<img src="${imgMediaRendition.getLink()}" alt="arquitecto" />
+                    	[/#if]
+                    [/#if]
                     <div class="texto"><h2>${child.title!""}</h2></div>
                 </div>
                 <div class="descrip-arquia">
