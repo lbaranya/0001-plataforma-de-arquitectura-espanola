@@ -23,13 +23,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 row-info">
-                	[#assign parent = cmsfn.parent(content, "mgnl:page")]
-                	[#assign path = cmsfn.link(parent)]
-                	[#assign path = path?replace(".html", "")]
-                	[#assign hrefLink = "#"]
-                	[#assign parameter = "/"]
-                	[#assign hrefLink = path+parameter+newNode.UUID]
-                    <a href="${hrefLink}"><div><i class="fa fa-file" aria-hidden="true"></i> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</div></a>
+                    <a href="${cmsfn.link(newNode)!"algo"}"><div><i class="fa fa-file" aria-hidden="true"></i> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</div></a>
                 </div>
             </div>
         </div>

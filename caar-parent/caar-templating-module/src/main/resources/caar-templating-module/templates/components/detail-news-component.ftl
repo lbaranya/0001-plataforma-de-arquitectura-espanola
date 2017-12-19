@@ -1,6 +1,6 @@
-[#assign nodeJcrId = ctx.getParameter('newsId')!?html]
-[#if nodeJcrId?has_content]
-[#assign newsContent = cmsfn.contentById(nodeJcrId, "news")]
+[#assign nodeJcrPath = ctx.getParameter('newsPath')!?html]
+[#if nodeJcrPath?has_content]
+[#assign newsContent = cmsfn.contentByPath(nodeJcrPath, "news")]
 [#assign newsContentNode = cmsfn.asJCRNode(newsContent)]
 <section class="cmp-detalle-noticia">
     <div class="row-imagen-video">
