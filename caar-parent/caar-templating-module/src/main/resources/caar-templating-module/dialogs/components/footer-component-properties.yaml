@@ -1,10 +1,10 @@
 form:      
   tabs:      
     - name: tabLogos    
-      label: Logos      
+      label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logo.label      
       fields:      
         - name: logoElements      
-          label: Listado de logos      
+          label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
           field:      
@@ -15,31 +15,33 @@ form:
             fields:      
               - name: separator1      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
+                value: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.value
+                label: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.label
               - name: separator2      
-                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition   
-                label: Logo      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                value: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.value
+                label: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.label
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-                label: Enlace      
+                label: caar-templating-module.common.field.text.link.label
                 options:      
-                  - name: internalLink      
-                    label: Interno      
+                  - name: internalLink    
+                    label: caar-templating-module.common.field.text.internal.label      
                     selected: true      
                     value: internalLink      
                   - name: externalLink      
-                    label: Externo      
+                    label: caar-templating-module.common.field.text.external.label     
                     value: externalLink      
                 fields:      
                   - name: internalLink      
-                    label: Enlace interno      
+                    label: caar-templating-module.common.field.text.internalLink.label      
                     class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                     targetWorkspace: website      
                     appName: pages      
                     identifierToPathConverter:      
                       class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                          
                   - name: externalLink      
-                    label: Enlace externo      
+                    label: caar-templating-module.common.field.text.externalLink.label      
                     class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
               - name: image      
                 required: true       
@@ -50,7 +52,7 @@ form:
                   class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
                 contentPreviewDefinition:      
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent      
-                label: Subir logo      
+                label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.image.label      
                 description: Subir un fichero de imagen.     
               - name: altImage      
                 label: Alt de la imagen      
@@ -60,21 +62,21 @@ form:
       label: Enlaces bloque 1    
       fields:      
         - name: cookiesLink      
-          label: Enlace cookies      
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.cookiesLink.label      
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: website      
           appName: pages      
           identifierToPathConverter:      
             class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter      
         - name: legalLink      
-          label: Enlace nota legal    
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.legalLink.label    
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: website      
           appName: pages      
           identifierToPathConverter:      
             class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter      
         - name: linkElements1      
-          label: Listado de enlaces      
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.listElements1.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
           field:      
@@ -91,35 +93,35 @@ form:
                 label: Logo      
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-                label: Enlace
+                label: caar-templating-module.common.field.text.link.label
                 options:      
                   - name: internalLink      
-                    label: Interno      
+                    label: caar-templating-module.common.field.text.internal.label      
                     selected: true      
                     value: internalLink      
                   - name: externalLink      
-                    label: Externo      
+                    label: caar-templating-module.common.field.text.external.label      
                     value: externalLink      
                 fields:      
                   - name: internalLink      
-                    label: Enlace interno      
+                    label: caar-templating-module.common.field.text.internalLink.label      
                     class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                     targetWorkspace: website      
                     appName: pages      
                     identifierToPathConverter:      
                       class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                          
                   - name: externalLink      
-                    label: Enlace externo      
+                    label: caar-templating-module.common.field.text.externalLink.label      
                     class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
               - name: linkText      
-                label: Texto enlace      
+                label: caar-templating-module.common.field.text.linkText.label     
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
                 i18n: true      
     - name: tabEnlaces2    
       label: Enlaces bloque 2    
       fields:      
         - name: linkElements2      
-          label: Listado de enlaces      
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.listElements2.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
           field:      
@@ -132,41 +134,40 @@ form:
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
                 
               - name: separator6      
-                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
-                label: Logo      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-                label: Enlace      
+                label: caar-templating-module.common.field.text.link.label      
                 options:      
                   - name: internalLink      
-                    label: Interno      
+                    label: caar-templating-module.common.field.text.internal.label    
                     selected: true      
                     value: internalLink      
                   - name: externalLink      
-                    label: Externo      
+                    label: caar-templating-module.common.field.text.external.label     
                     value: externalLink      
                 fields:      
                   - name: internalLink      
-                    label: Enlace interno      
+                    label: caar-templating-module.common.field.text.internalLink.label      
                     class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                     targetWorkspace: website      
                     appName: pages      
                     identifierToPathConverter:      
                       class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                          
                   - name: externalLink      
-                    label: Enlace externo      
+                    label: caar-templating-module.common.field.text.externalLink.label      
                     class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
               - name: linkText      
-                label: Texto enlace      
+                label: caar-templating-module.common.field.text.linkText.label      
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
                 i18n: true
     - name: tabRRSS
-      label: Enlaces RRSS
+      label: caar-templating-module.templates.components.dialog.footer-component.tabRRSS.label
       fields:
         - name: listElementsRRSS
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer
-          label: Enlaces a redes
+          label: caar-templating-module.templates.components.dialog.footer-component.tabRRSS.listElementsRRSS.label
           field:      
             name: compositeFieldRRSS      
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
@@ -175,10 +176,10 @@ form:
             fields:
               - name: link
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-                label: Enlace
+                label: caar-templating-module.common.field.text.link.label
               - name: listRRSS
                 class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
-                label: Redes
+                label: caar-templating-module.templates.components.dialog.footer-component.tabRRSS.listElementsRRSS.listRRSS.label
                 options:
                   - name: facebook
                     value: facebook

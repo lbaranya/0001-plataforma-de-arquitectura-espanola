@@ -1,41 +1,41 @@
 form:  
-  label: Propiedades  
+  label: caar-templating-module.templates.pages.content-page.label 
   tabs:  
     - name: tabMain  
-      label: Plantilla Portada  
+      label: caar-templating-module.templates.pages.content-page.tabMain.label  
       fields:  
         - name: title  
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
           i18n: true  
-          label: Título  
+          label: caar-templating-module.templates.pages.content-page.tabMain.title.label  
           required: true
         - name: navigationTitle  
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
           i18n: true  
-          label: Título de navegación  
+          label: caar-templating-module.templates.pages.content-page.tabMain.navigationTitle.label  
         - name: windowTitle  
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
           i18n: true  
-          label: Título de ventana  
+          label: caar-templating-module.templates.pages.content-page.tabMain.windowTitle.label  
         - name: hideInNav  
           class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition  
           defaultValue: false  
           i18n: false  
           type: Boolean  
-          label:  Ocultar de navegación  
-          buttonLabel: hide  
+          label: caar-templating-module.templates.pages.content-page.tabMain.hideInNav.label 
+          buttonLabel: caar-templating-module.templates.pages.content-page.tabMain.hideInNav.buttonLabel  
     - name: tabMeta  
-      label: Meta Data  
+      label: caar-templating-module.templates.pages.content-page.tabMeta.label  
       fields:  
         - name: keywords  
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
           i18n: true  
-          label: Meta keywords  
+          label: caar-templating-module.templates.pages.content-page.tabMeta.keywords.label  
           rows: 3  
         - name: description  
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
           i18n: true  
-          label: Meta description  
+          label: caar-templating-module.templates.pages.content-page.tabMeta.description.label  
           rows: 5  
 actions:  
   commit:  

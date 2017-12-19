@@ -1,12 +1,12 @@
 form:
   tabs:
     - name: tabMain
-      label: Child list image background
+      label: caar-templating-module.templates.components.child-list-component.tabMain.label
       fields:
         - name: image      
           required: true       
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          label: Background image    
+          label: caar-templating-module.templates.components.child-list-component.tabMain.backgroundImage.label    
           targetWorkspace: dam      
           appName: assets      
           identifierToPathConverter:      
