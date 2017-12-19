@@ -29,7 +29,7 @@
                 <a href="${hrefLink}" class="ficha-jurado">
                     <div><i class="fa fa-plus" aria-hidden="true"></i></div>
                 </a>
-                <a href="#" class="pdf">Descargar CV en .pdf <i class="fa fa-file-o" aria-hidden="true"></i></a>
+                <a href="#" class="pdf">${i18n['caar-templating-module.templates.components.accordion-structure-judge-component.PDF.label']} <i class="fa fa-file-o" aria-hidden="true"></i></a>
             </div>
             [/#list]
         </div>

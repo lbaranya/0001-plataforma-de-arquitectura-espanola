@@ -1,22 +1,23 @@
 form:      
   tabs:      
     - name: tabMain    
-      label: Accordion Lemma
+      label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.label
       fields:
         - name: title_accordion
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.titleAccordion.label
           i18n: true
         - name: sub_title_accordion
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           i18n: true
-          label: First level accordion title
+          label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.subTitleAccordion.label
         - name: basic_information
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
-          label: Basic information
+          label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.basicInformation.label
           i18n: true
           configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
         - name: preview_file
-          label: File preview photo
+          label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.filePreviewPhoto.label
           required: true
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: dam      
@@ -26,7 +27,7 @@ form:
           contentPreviewDefinition:      
             contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
         - name: architect_file_link
-          label: File link
+          label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.architectFileLink.label
           required: true
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: website      
@@ -34,15 +35,15 @@ form:
         - name: info_preview
           class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
           transformerClass:  info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
-          label: Info preview
+          label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.infoPreview.label
           fields:
             - name: info_preview_text
               class: info.magnolia.ui.form.field.definition.TextFieldDefinition
               i18n: true
-              label: Info preview text
+              label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.infoPreview.text.label
             - name: info_preview_year
               class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-              label: Info preview Year
+              label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.infoPreview.year.label
               validators:
                   - name: onlyNumber
                     class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
