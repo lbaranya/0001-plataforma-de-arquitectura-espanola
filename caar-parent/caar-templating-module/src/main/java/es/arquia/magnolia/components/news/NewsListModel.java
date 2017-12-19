@@ -21,29 +21,47 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.ValueFormatException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import info.magnolia.context.MgnlContext;
+import info.magnolia.jcr.predicate.AbstractPredicate;
+import info.magnolia.jcr.util.NodeTypes;
+import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
 
 public class NewsListModel <RD extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
+	
+	private static final Logger log = LoggerFactory.getLogger(NewsListModel.class);
+	
 	public NewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent) throws PathNotFoundException, RepositoryException {
         super(content, definition, parent);
     }
 	
-	public List<Node> getNewsList() throws LoginException, RepositoryException{
+	public static AbstractPredicate<Node> MAGNOLIA_NEWS_FILTER = new AbstractPredicate<Node>() {
+
+        @Override
+        public boolean evaluateTyped(Node node) {
+
+            try {
+                return node.isNodeType("mgnl:news");
+            } catch (RepositoryException e) {
+                log.error("Unable to read nodeType for node {}", NodeUtil.getNodePathIfPossible(node));
+            }
+            return false;
+        }
+    };
+	
+	public List<Node> getNewsList() throws Exception{
 		List<Node> newsList = new ArrayList<Node>();
 		
 		Session session = MgnlContext.getJCRSession("news");
-		Node parentNewsNodeFolder = null;
-		if(session.getRootNode().hasNode("caar/news")) {
-			parentNewsNodeFolder = session.getRootNode().getNode("caar/news");
-			if(parentNewsNodeFolder.getNodes() != null) {
-				NodeIterator childList = parentNewsNodeFolder.getNodes();
-				while(childList.hasNext()) {
-					newsList.add(childList.nextNode());
-				}
-			}
+		Node parentNewsNodeFolder = session.getRootNode();
+		if(parentNewsNodeFolder.hasNodes()) {
+			Iterable<Node> childList = NodeUtil.collectAllChildren(parentNewsNodeFolder, MAGNOLIA_NEWS_FILTER);
+			newsList = NodeUtil.asList(childList);
 		}
 		
 		return newsList;
