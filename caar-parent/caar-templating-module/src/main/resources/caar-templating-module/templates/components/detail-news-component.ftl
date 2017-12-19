@@ -2,6 +2,7 @@
 [#if nodeJcrId?has_content]
 [#assign newsContent = cmsfn.contentById(nodeJcrId, "news")]
 [#assign newsContentNode = cmsfn.asJCRNode(newsContent)]
+${cmsfn.link(newsContentNode)!"nulo"}
 <section class="cmp-detalle-noticia">
     <div class="row-imagen-video">
         <div class="container">
