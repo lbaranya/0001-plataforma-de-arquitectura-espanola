@@ -1,0 +1,4 @@
+title: News List    
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/news-list-component.ftl
+modelClass: es.arquia.magnolia.components.news.NewsListModel
