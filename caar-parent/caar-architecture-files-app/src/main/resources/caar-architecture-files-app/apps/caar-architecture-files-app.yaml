@@ -119,7 +119,7 @@ subApps:
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       activate: 
-        catalog: versioned
+        catalog: workflow
         class: info.magnolia.ui.framework.action.ActivationActionDefinition
         command: activate
         icon: icon-publish
@@ -130,6 +130,7 @@ subApps:
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       activateRecursive:
         class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        catalog: workflow
         command: activate
         asynchronous: true
         icon: icon-publish-incl-sub
@@ -140,7 +141,7 @@ subApps:
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       deactivate: 
-        catalog: versioned
+        catalog: workflow
         class: info.magnolia.ui.framework.action.DeactivationActionDefinition
         command: deactivate
         icon: icon-unpublish

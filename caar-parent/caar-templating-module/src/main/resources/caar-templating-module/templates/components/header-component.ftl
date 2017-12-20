@@ -305,7 +305,12 @@
                         <li class="menu-item-logo">
                             <a href="${element.internalLink!""}" class="">
                             	[#assign image = damfn.getAssetLink(element.image)!]
-                                <img src="${image}" alt="${element.atlImage!""}">
+                            	[#assign imageAlternativeText = ""]
+                    			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(element.image!"").getPath(),"dam")!]
+                    			[#if imageAlt?has_content]
+                    				[#assign imageAlternativeText = imageAlt.alternative!""]
+                    			[/#if]
+                                <img src="${image}" alt="${imageAlternativeText!""}">
                             </a>
                         </li>
                     [/#list]
