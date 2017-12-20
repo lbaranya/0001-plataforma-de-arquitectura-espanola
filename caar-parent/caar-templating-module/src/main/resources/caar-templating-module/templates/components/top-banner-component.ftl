@@ -13,9 +13,14 @@
 			[/#if]
 				[#assign imgItemKey = element.image!]
             	[#if imgItemKey??]
-            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1200")]
+            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1200")!]
             		[#if imgMediaRendition??]
-						<img class="image-banner" src="${imgMediaRendition.getLink()}" alt="${element.altImage!""}" />
+            			[#assign imageAlternativeText = "imagen de banner en la cabecera"]
+            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+            			[#if imageAlt?has_content]
+            				[#assign imageAlternativeText = imageAlt.alternative!""]
+            			[/#if]
+						<img class="image-banner" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />						
 					[/#if]
                 [/#if]
 				<div class="block-contenido">

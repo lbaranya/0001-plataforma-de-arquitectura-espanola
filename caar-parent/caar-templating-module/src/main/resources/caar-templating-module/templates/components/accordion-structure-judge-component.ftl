@@ -14,7 +14,12 @@
             	[#if imgItemKey??]
             		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
             		[#if imgMediaRendition??]
-                		<img src="${imgMediaRendition.getLink()}" alt="ficha" />
+            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
+            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+            			[#if imageAlt?has_content]
+            				[#assign imageAlternativeText = imageAlt.alternative!""]
+            			[/#if]
+                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
                 	[/#if]
                 [/#if]
                 </div>
