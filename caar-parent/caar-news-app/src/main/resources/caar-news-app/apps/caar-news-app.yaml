@@ -84,6 +84,17 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      activateRecursive:
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        asynchronous: true
+        icon: icon-publish-incl-sub
+        recursive: true
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       deactivate: 
         catalog: versioned
         class: info.magnolia.ui.framework.action.DeactivationActionDefinition
@@ -238,6 +249,7 @@ subApps:
             - name: activationActions
               items:
                 - name: activateDeleted
+                - name: activateRecursive
                 - name: deactivate
             - name: deletedActions
               items:
@@ -267,6 +279,7 @@ subApps:
             - name: activationActions
               items:
                 - name: activate
+                - name: activateRecursive
                 - name: deactivate
           availability:
             nodeTypes:
@@ -282,6 +295,7 @@ subApps:
             - name: activationActions
               items:
                 - name: activateDeleted
+                - name: activateRecursive
                 - name: deactivate
             - name: importExportActions
               items:
@@ -307,6 +321,7 @@ subApps:
             - name: activationActions
               items:
                 - name: activate
+                - name: activateRecursive
                 - name: deactivate
                 - name: requestTranslation
             - name: importExportActions

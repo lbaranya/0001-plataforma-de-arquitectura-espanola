@@ -1068,85 +1068,85 @@ a:focus {
 
 @font-face {
   font-family: 'FreightDispBlack';
-  src: url("../../fonts/FreightDispBlack.eot");
-  src: url("../../fonts/FreightDispBlack.woff") format("woff"), url("../../fonts/FreightDispBlack.ttf") format("truetype");
+  src: url("../fonts/FreightDispBlack.eot");
+  src: url("../fonts/FreightDispBlack.woff") format("woff"), url("../fonts/FreightDispBlack.ttf") format("truetype");
   font-weight: 900;
   font-style: bold; }
 
 @font-face {
   font-family: 'FreightDispBlackItalic';
-  src: url("../../fonts/FreightDispBlackItalic.eot");
-  src: url("../../fonts/FreightDispBlackItalic.woff") format("woff"), url("../../fonts/FreightDispBlackItalic.ttf") format("truetype");
+  src: url("../fonts/FreightDispBlackItalic.eot");
+  src: url("../fonts/FreightDispBlackItalic.woff") format("woff"), url("../fonts/FreightDispBlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic; }
 
 @font-face {
   font-family: 'FreightTextBook';
-  src: url("../../fonts/FreightTextBook.eot");
-  src: url("../../fonts/FreightTextBook.woff") format("woff"), url("../../fonts/FreightTextBook.ttf") format("truetype");
+  src: url("../fonts/FreightTextBook.eot");
+  src: url("../fonts/FreightTextBook.woff") format("woff"), url("../fonts/FreightTextBook.ttf") format("truetype");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: 'FreightTextBookItalic';
-  src: url("../../fonts/FreightTextBookItalic.eot");
-  src: url("../../fonts/FreightTextBookItalic.woff") format("woff"), url("../../fonts/FreightTextBookItalic.ttf") format("truetype");
+  src: url("../fonts/FreightTextBookItalic.eot");
+  src: url("../fonts/FreightTextBookItalic.woff") format("woff"), url("../fonts/FreightTextBookItalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic; }
 
 @font-face {
   font-family: 'National-Black';
-  src: url("../../fonts/National-Black.eot");
-  src: url("../../fonts/National-Black.woff") format("woff"), url("../../fonts/National-Black.otf") format("opentype"), url("../../fonts/National-Black.ttf") format("truetype");
+  src: url("../fonts/National-Black.eot");
+  src: url("../fonts/National-Black.woff") format("woff"), url("../fonts/National-Black.otf") format("opentype"), url("../fonts/National-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal; }
 
 @font-face {
   font-family: 'National-BlackItalic';
-  src: url("../../fonts/National-BlackItalic.eot");
-  src: url("../../fonts/National-BlackItalic.woff") format("woff"), url("../../fonts/National-BlackItalic.otf") format("opentype"), url("../../fonts/National-BlackItalic.ttf") format("truetype");
+  src: url("../fonts/National-BlackItalic.eot");
+  src: url("../fonts/National-BlackItalic.woff") format("woff"), url("../fonts/National-BlackItalic.otf") format("opentype"), url("../fonts/National-BlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic; }
 
 @font-face {
   font-family: 'National-Bold';
-  src: url("../../fonts/National-Bold.eot");
-  src: url("../../fonts/National-Bold.woff") format("woff"), url("../../fonts/National-Bold.otf") format("opentype"), url("../../fonts/National-Bold.ttf") format("truetype");
+  src: url("../fonts/National-Bold.eot");
+  src: url("../fonts/National-Bold.woff") format("woff"), url("../fonts/National-Bold.otf") format("opentype"), url("../fonts/National-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal; }
 
 @font-face {
   font-family: 'National-BoldItalic';
-  src: url("../../fonts/National-BoldItalic.eot");
-  src: url("../../fonts/National-BoldItalic.woff") format("woff"), url("../../fonts/National-BoldItalic.otf") format("opentype"), url("../../fonts/National-BoldItalic.ttf") format("truetype");
+  src: url("../fonts/National-BoldItalic.eot");
+  src: url("../fonts/National-BoldItalic.woff") format("woff"), url("../fonts/National-BoldItalic.otf") format("opentype"), url("../fonts/National-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic; }
 
 @font-face {
   font-family: 'National-Book';
-  src: url("../../fonts/National-Book.eot");
-  src: url("../../fonts/National-Book.woff") format("woff"), url("../../fonts/National-Book.otf") format("opentype"), url("../../fonts/National-Book.ttf") format("truetype");
+  src: url("../fonts/National-Book.eot");
+  src: url("../fonts/National-Book.woff") format("woff"), url("../fonts/National-Book.otf") format("opentype"), url("../fonts/National-Book.ttf") format("truetype");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: 'National-BookItalic';
-  src: url("../../fonts/National-BookItalic.eot");
-  src: url("../../fonts/National-BookItalic.woff") format("woff"), url("../../fonts/National-BookItalic.otf") format("opentype"), url("../../fonts/National-BookItalic.ttf") format("truetype");
+  src: url("../fonts/National-BookItalic.eot");
+  src: url("../fonts/National-BookItalic.woff") format("woff"), url("../fonts/National-BookItalic.otf") format("opentype"), url("../fonts/National-BookItalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic; }
 
 @font-face {
   font-family: 'National-Regular';
-  src: url("../../fonts/National-Regular.eot");
-  src: url("../../fonts/National-Regular.woff") format("woff"), url("../../fonts/National-Regular.otf") format("opentype"), url("../../fonts/National-Regular.ttf") format("truetype");
+  src: url("../fonts/National-Regular.eot");
+  src: url("../fonts/National-Regular.woff") format("woff"), url("../fonts/National-Regular.otf") format("opentype"), url("../fonts/National-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: 'National-RegularItalic';
-  src: url("../../fonts/National-RegularItalic.eot");
-  src: url("../../fonts/National-RegularItalic.woff") format("woff"), url("../../fonts/National-RegularItalic.otf") format("opentype"), url("../../fonts/National-RegularItalic.ttf") format("truetype");
+  src: url("../fonts/National-RegularItalic.eot");
+  src: url("../fonts/National-RegularItalic.woff") format("woff"), url("../fonts/National-RegularItalic.otf") format("opentype"), url("../fonts/National-RegularItalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic; }
 
@@ -1209,7 +1209,7 @@ a:focus {
     padding-left: 0;
     margin-right: 22px; }
 
-.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .inscripcion button {
+.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .inscripcion a {
   border-radius: 0;
   border: 2px solid #D0021B;
   color: #fff;
@@ -1283,3 +1283,107 @@ a:focus {
 @media screen and (max-width: 992px) {
   .cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .lema .preview .descript .info-basica {
     width: 63%; } }
+    
+    
+/**Noticias: cmp-noticias**/
+.cmp-noticias .header-comun {
+  background-color: #D0021B;
+  color: #fff; }
+  .cmp-noticias .header-comun .container .row h3 {
+    margin-bottom: 20px; }
+
+.cmp-noticias .row-new {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  }
+  .cmp-noticias .row-new .imagen-destacada-new {
+    margin: 0 auto;
+    height: 250px; }
+    .cmp-noticias .row-new .imagen-destacada-new div {
+      display: block;
+      float: left;
+      width: 35%;
+      height: 250px; }
+      .cmp-noticias .row-new .imagen-destacada-new div img {
+        width: 100%;
+        height: 250px; }
+    .cmp-noticias .row-new .imagen-destacada-new .noticia {
+      display: flex;
+      flex-direction: column;
+      float: left;
+      width: 64%;
+      padding: 0px 10px 0px 10px;
+      height: 250px; }
+      .cmp-noticias .row-new .imagen-destacada-new .noticia h4 {
+        margin-top: 0;
+        font-size: 24px;
+        color: #d0021b; }
+      .cmp-noticias .row-new .imagen-destacada-new .noticia span {
+        padding-bottom: 10px;
+        color: #939598; }
+    .cmp-noticias .row-new .imagen-destacada-new:hover {
+      color: #d0021b; }
+      .cmp-noticias .row-new .imagen-destacada-new:hover span {
+        color: #d0021b; }
+
+.cmp-noticias .row-info {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+  margin-top: 20px; }
+
+/**Noticias: Termina**/
+
+/**Detalle Noticia: cmp-detalle-noticia**/
+.cmp-detalle-noticia {
+  margin-bottom: 20px; }
+  .cmp-detalle-noticia .header-comun {
+    background-color: #D0021B;
+    color: #fff; }
+    .cmp-detalle-noticia .header-comun .container .row h3 {
+      margin-bottom: 20px;
+      float: left; }
+    .cmp-detalle-noticia .header-comun .container .row .botonera {
+      float: right;
+      height: 66px;
+      display: flex;
+      align-items: center; }
+      .cmp-detalle-noticia .header-comun .container .row .botonera a {
+        color: #fff;
+        float: left;
+        border-right: 1px solid #fff;
+        padding: 0px 5px 0px 5px; }
+        .cmp-detalle-noticia .header-comun .container .row .botonera a:last-child {
+          padding-right: 0;
+          border: none; }
+  .cmp-detalle-noticia .row-imagen-video .container {
+    padding: 0;
+    border-bottom: 1px solid #000; }
+    .cmp-detalle-noticia .row-imagen-video .container .imagen-video {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      height: 400px;
+      overflow: hidden; }
+      .cmp-detalle-noticia .row-imagen-video .container .imagen-video img {
+        width: 100%; }
+      .cmp-detalle-noticia .row-imagen-video .container .imagen-video iframe {
+        width: 100%;
+        height: 100%; }
+  .cmp-detalle-noticia .row-noticia .container {
+    padding: 0; }
+    .cmp-detalle-noticia .row-noticia .container h3 {
+      font-size: 34px;
+      color: #d0021b; }
+    .cmp-detalle-noticia .row-noticia .container p {
+      color: #939598; }
+      .cmp-detalle-noticia .row-noticia .container p span {
+        font-style: italic; }
+    .cmp-detalle-noticia .row-noticia .container .info-noticia p {
+      color: #000;
+      line-height: 35px; }
+
+/**Detalle Noticia: Termina**/

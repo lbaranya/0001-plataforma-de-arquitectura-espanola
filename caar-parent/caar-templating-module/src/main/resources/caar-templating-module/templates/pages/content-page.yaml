@@ -10,6 +10,8 @@ areas:
     availableComponents:
       sub-header-component:
         id: caar-templating-module:components/sub-header-component
+      sub-header-nav-component:
+        id: caar-templating-module:components/sub-header-nav-component
     areas:
       content:
         templateScript: /caar-templating-module/templates/pages/subareas/content-area-page.ftl
@@ -24,8 +26,18 @@ areas:
             id: caar-templating-module:components/child-list-component
           separator-component:
             id: caar-templating-module:components/separator-component
+          news-list-component:
+            id: caar-templating-module:components/news-list-component
+          detail-news-component:
+            id: caar-templating-module:components/detail-news-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:
-          accordion-component:
-            id: caar-templating-module:components/accordion-structure-component
+          accordion-subaccordion-component:
+            id: caar-templating-module:components/accordion-structure-subaccordion-component
+          accordion-lemma-component:
+            id: caar-templating-module:components/accordion-structure-lemma-component
+          accordion-judge-component:
+            id: caar-templating-module:components/accordion-structure-judge-component
+          accordion-enrollment-component:
+            id: caar-templating-module:components/accordion-structure-enrollment-component

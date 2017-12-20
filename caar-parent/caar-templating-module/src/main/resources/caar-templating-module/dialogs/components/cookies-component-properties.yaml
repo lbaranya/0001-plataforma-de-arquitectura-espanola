@@ -1,17 +1,18 @@
 form:
   tabs:
     - name: tabMain
+      label: caar-templating-module.templates.components.cookies-component.tabMain.label
       fields:
         - name: cookiesText
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
-          label: Cookies text
+          label: caar-templating-module.templates.components.cookies-component.tabMain.cookiesText.label
           i18n: true
           required: true
           configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
         - name: cookiesLink
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
-          label: Cookies link
+          label: caar-templating-module.templates.components.cookies-component.tabMain.cookiesLink.label
           required: true
 actions:      
   commit:      

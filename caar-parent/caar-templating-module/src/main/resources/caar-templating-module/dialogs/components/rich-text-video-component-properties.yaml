@@ -1,7 +1,7 @@
 form:
   tabs:
     - name: tabMain
-      label: Rich Text and Video component
+      label: caar-templating-module.templates.components.rich-text-video-component.tabMain.label
       fields:
         - name: title
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition

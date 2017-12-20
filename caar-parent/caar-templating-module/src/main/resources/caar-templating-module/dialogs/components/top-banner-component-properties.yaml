@@ -1,10 +1,10 @@
 form:
   tabs:
     - name: tabMain
-      label: Banner Images
+      label: caar-templating-module.templates.components.top-banner-component.tabMain.label
       fields:
         - name: bannerElements
-          label: Imagenes del banner
+          label: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.label
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer
           field:
@@ -23,14 +23,10 @@ form:
                   class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
                 contentPreviewDefinition:      
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent      
-                label: Subir logo      
-                description: Subir un fichero de imagen.     
-              - name: altImage      
-                label: Alt de la imagen      
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-                i18n: true
+                label: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.compositeField.image.label     
+                description: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.compositeField.image.description       
               - name: text
-                label: Texto de imagen enriquecido
+                label: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.compositeField.texto.label
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                 i18n: true

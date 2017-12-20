@@ -1,0 +1,54 @@
+form:      
+  tabs:      
+    - name: tabMain    
+      label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.label
+      fields:
+        - name: title_accordion
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.titleAccordion.label
+          i18n: true
+        - name: judgeList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.judgeList.label
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: secondLevel
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            layout: vertical
+            fields:
+              - name: separator1
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                value: caar-templating-module.components.footer-component-properties.tabLogos.elements.compositeField.separator1.value
+                label: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.label
+              - name: judge_name
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.judgeList.judgeName.label
+                i18n: true
+              - name: basic_text
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.judgeList.basicInformation.label
+                i18n: true
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+              - name: judge_image
+                label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.judgeList.judgePhoto.label
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+              - name: architect_file_link
+                label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.judgeList.architectFileLink.label
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: website      
+                appName: pages
+          
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

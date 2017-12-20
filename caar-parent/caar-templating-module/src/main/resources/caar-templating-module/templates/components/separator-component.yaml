@@ -1,0 +1,3 @@
+title: Separador
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/separator-component.ftl

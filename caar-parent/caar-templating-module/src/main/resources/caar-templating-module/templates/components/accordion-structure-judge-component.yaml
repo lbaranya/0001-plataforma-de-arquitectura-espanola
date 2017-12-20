@@ -1,0 +1,4 @@
+title: Accordion Structure Judge
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/accordion-structure-judge-component.ftl
+dialog: caar-templating-module:components/accordion-structure-judge-component-properties

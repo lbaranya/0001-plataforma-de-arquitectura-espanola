@@ -1,0 +1,4 @@
+title: Accordion Structure Lemma
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/accordion-structure-lemma-component.ftl
+dialog: caar-templating-module:components/accordion-structure-lemma-component-properties
