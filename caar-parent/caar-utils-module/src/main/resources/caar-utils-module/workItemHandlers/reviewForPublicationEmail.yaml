@@ -1,7 +1,0 @@
-class: es.arquia.magnolia.workflow.EmailWorkItemHandlerDefinition
-mailCommand: sendMail
-mailCommandCatalog: default
-mailTemplate: ReviewForPublicationWithEmail
-from: no-reply@arquia.com
-subject: caar-utils-module.templates.email.reviewForPublication.subject
-to: publisherArquia@yopmail.com

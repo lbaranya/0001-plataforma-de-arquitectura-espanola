@@ -21,12 +21,6 @@ public class EmailWorkItemHandler implements WorkItemHandler {
 	
     /** The Constant TEMPLATE_PARAMETER_NAME. */
     private static final String TEMPLATE_PARAM_NAME = "mailTemplate";
-  
-    /** The mail command catalog. */
-    private String mailCommandCatalog;
-  
-    /** The mail command. */
-    private String mailCommand;
     
     /** The Constant DATA_PARAMETER_NAME. */
     private static final String DATA_PARAM_NAME= "mgnlData";
@@ -72,7 +66,7 @@ public class EmailWorkItemHandler implements WorkItemHandler {
         
         // Command call
 		try {
-			this.commandsManager.executeCommand(this.mailCommandCatalog, this.mailCommand, mailParameters);
+			this.commandsManager.executeCommand(this.definition.getMailCommandCatalog(), this.definition.getMailCommand(), mailParameters);
 		} catch (Exception e) {
 			// TODO: show message to Magnolia user
 			log.error("Sending publication request email failed: " + "Repository: " + dataParameters.get("repository") + " Path: " + dataParameters.get("path"), e.getMessage());

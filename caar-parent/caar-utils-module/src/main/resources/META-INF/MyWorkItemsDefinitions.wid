@@ -3,7 +3,7 @@ import org.drools.process.core.datatype.impl.type.StringDataType
 [
    // the Email notification work item
    [
-     "name" : "email",
+     "name" : "reviewForPublicationEmail",
      "displayName" : "EmailNotification"
    ]
 ]

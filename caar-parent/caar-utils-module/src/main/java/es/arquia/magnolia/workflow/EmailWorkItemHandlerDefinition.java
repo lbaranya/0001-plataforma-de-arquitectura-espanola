@@ -7,6 +7,9 @@ import info.magnolia.module.workflow.jbpm.workitem.handler.definition.Configured
  */
 public class EmailWorkItemHandlerDefinition extends ConfiguredWorkItemHandlerDefinition {
   
+    /** The mail command catalog. */
+    private String mailCommandCatalog;
+  
     /** The mail command. */
     private String mailCommand;
     
@@ -84,5 +87,13 @@ public class EmailWorkItemHandlerDefinition extends ConfiguredWorkItemHandlerDef
 
 	public void setTo(String to) {
 		this.to = to;
+	}
+
+	public String getMailCommandCatalog() {
+		return mailCommandCatalog;
+	}
+
+	public void setMailCommandCatalog(String mailCommandCatalog) {
+		this.mailCommandCatalog = mailCommandCatalog;
 	}
 }
