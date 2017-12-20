@@ -20,7 +20,8 @@
                         	[#if imgItemKey??]
                         		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
                         		[#if imgMediaRendition??]
-                            		<img src="${imgMediaRendition.getLink()}" alt="ficha" />
+                        			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(content.preview_file!"").getPath(),"dam")!]
+                            		<img src="${imgMediaRendition.getLink()}" alt="${imageAlt.alternative!""}" />
                             	[/#if]
                             [/#if]
                         </a>

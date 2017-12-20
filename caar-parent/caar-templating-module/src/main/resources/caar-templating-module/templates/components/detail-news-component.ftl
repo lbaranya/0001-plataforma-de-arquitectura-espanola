@@ -10,7 +10,8 @@
             	[#if imgItemKey??]
             		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1024")]
             		[#if imgMediaRendition??]
-                		<img src="${imgMediaRendition.getLink()}" alt="${imgMediaRendition.getAsset().getFileName()}" />
+            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlt.alternative!""}" />
                 	[/#if]
                 [/#if]
             </div>

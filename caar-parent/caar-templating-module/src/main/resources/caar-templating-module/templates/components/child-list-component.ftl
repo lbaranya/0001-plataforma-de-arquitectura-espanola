@@ -15,7 +15,8 @@
 	            	[#if imgItemKey??]
 	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "555x400")]
 	            		[#if imgMediaRendition??]
-                    		<img src="${imgMediaRendition.getLink()}" alt="arquitecto" />
+	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(content.image!"").getPath(),"dam")!]
+                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlt.alternative!""}" />
                     	[/#if]
                     [/#if]
                     <div class="texto"><h2>${child.title!""}</h2></div>
