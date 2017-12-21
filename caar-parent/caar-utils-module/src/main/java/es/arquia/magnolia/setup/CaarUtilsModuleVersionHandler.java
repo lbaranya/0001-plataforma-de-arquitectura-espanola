@@ -24,7 +24,7 @@ public class CaarUtilsModuleVersionHandler extends DefaultModuleVersionHandler {
 				.addTask(new BootstrapSingleModuleResource("Request translation mail template", "Mail template to request translation action business", "config.modules.mail.config.templatesConfiguration.requestTranslation.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				);
 		
-		register(DeltaBuilder.update("0.10", "")
+		register(DeltaBuilder.update("0.12", "")
 				.addTask(new BootstrapSingleModuleResource("Publishing request mail template", "Mail template to request an approval from publication", "config.modules.mail.config.templatesConfiguration.ReviewForPublicationWithEmail.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				.addTask(new BootstrapSingleModuleResource("Activate workflow modification", "Modified for publication review with email", "config.modules.workflow.commands.workflow.activate.activate.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				.addTask(new BootstrapSingleModuleResource("Workflow definition", "Review for publication with email workflow definition", "config.modules.caar-utils-module.workflows.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
