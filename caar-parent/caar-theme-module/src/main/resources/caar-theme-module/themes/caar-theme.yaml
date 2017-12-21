@@ -56,3 +56,10 @@ imaging:
     "1520":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 1520
+    "181x181":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 181
+      height: 181
+    "1440":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 1440
