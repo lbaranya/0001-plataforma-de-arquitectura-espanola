@@ -22,11 +22,15 @@ subApps:
           icon: icon-folder
         - name: mgnl:support-architect-wrapper
           icon: icon-folder
+        - name: mgnl:support-architect-folder-wrapper
+          icon: icon-folder
         - name: mgnl:support-architect
           icon: icon-items
         - name: mgnl:support-project
           icon: icon-items
         - name: mgnl:support-review-i-wrapper
+          icon: icon-folder
+        - name: mgnl:support-review-i-folder-wrapper
           icon: icon-folder
         - name: mgnl:support-review-i
           icon: icon-items
@@ -37,6 +41,8 @@ subApps:
         - name: mgnl:support-review-iv
           icon: icon-items
         - name: mgnl:support-business-wrapper
+          icon: icon-folder
+        - name: mgnl:support-business-folder-wrapper
           icon: icon-folder
         - name: mgnl:support-business
           icon: icon-items
@@ -226,8 +232,73 @@ subApps:
           writePermissionRequired: true
           rules: 
             HasVersionsRule: 
-              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule      
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      # Folder
+      # Architect folder
+      addFolderSupportArchitect:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addFolder.label
+        nodeType: mgnl:support-architect-folder-wrapper
+        availability:
+          nodeTypes:
+            - mgnl:support-architect-wrapper
+            - mgnl:support-architect-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Review I folder
+      addFolderSupportReviewI:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addFolder.label
+        nodeType: mgnl:support-review-i-folder-wrapper
+        availability:
+          nodeTypes:
+            - mgnl:support-review-i-wrapper
+            - mgnl:support-review-i-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Business folder
+      addFolderSupportBusiness:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addFolder.label
+        nodeType: mgnl:support-business-folder-wrapper
+        availability:
+          nodeTypes:
+            - mgnl:support-business-wrapper
+            - mgnl:support-business-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Portfolio folder
+      addFolderPortfolio:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addFolder.label
+        availability:
+          nodeTypes:
+            - mgnl:portfolio-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Edit any folder
+      editFolder:
+        icon: icon-edit
+        dialogName: ui-framework:folder
+        class: info.magnolia.ui.framework.action.OpenEditDialogActionDefinition
+        availability: 
+          nodeTypes:
+            - mgnl:support-architect-folder-wrapper
+            - mgnl:support-review-i-folder-wrapper
+            - mgnl:support-business-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # General wrappers
+      # Portfolio
       addPortfolioWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -238,6 +309,7 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Support
       addSupportWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -248,6 +320,7 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Format
       addFormatWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -274,6 +347,8 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Support wrappers
+      # Add
       addSupportArchitectWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -318,6 +393,7 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-architect-wrapper
+            - mgnl:support-architect-folder-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -345,6 +421,7 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-review-i-wrapper
+            - mgnl:support-review-i-folder-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -372,6 +449,7 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-business-wrapper
+            - mgnl:support-business-folder-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -419,6 +497,7 @@ subApps:
     actionbar:
       defaultAction: addFolder
       sections:
+        # Root section
         - name: root
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.root.label
           groups:
@@ -434,11 +513,13 @@ subApps:
             nodes: false
             root: true
         # Portfolio group
+        # Section if portfolio wrapper is marked for deletion
         - name: portfolioWrapperDeleted
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolioWrapper.label
           groups:
             - name: addActions
               items:
+                - name: addFolderPortfolio
                 - name: addPortfolio
             - name: editActions
               items:
@@ -462,11 +543,13 @@ subApps:
             rules:
               IsDeletedRule:
                 implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if portfolio wrapper is not deleted
         - name: portfolioWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolioWrapper.label
           groups:
             - name: addActions
               items:
+                - name: addFolderPortfolio
                 - name: addPortfolio
             - name: editActions
               items:
@@ -488,6 +571,7 @@ subApps:
             nodeTypes:
               - mgnl:portfolio-wrapper
         # Support group
+        # Section if support wrapper is marked for deletion
         - name: supportWrapperDeleted
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportWrapper.label
           groups:
@@ -518,6 +602,7 @@ subApps:
             rules:
               IsDeletedRule:
                 implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if support wrapper is not deleted
         - name: supportWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportWrapper.label
           groups:
@@ -547,11 +632,13 @@ subApps:
               - mgnl:support-wrapper
         # Support Architect
         # Wrapper
+        # Section if architect wrapper is marked for deletion
         - name: supporArquitectWrapperDeleted
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitectWrapper.label
           groups:
             - name: addActions
               items:
+                - name: addFolderSupportArchitect
                 - name: addSupportArchitect
             - name: editActions
               items:
@@ -575,11 +662,13 @@ subApps:
             rules:
               IsDeletedRule:
                 implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if architect wrapper is not deleted
         - name: supporArquitectWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitectWrapper.label
           groups:
             - name: addActions
               items:
+                - name: addFolderSupportArchitect
                 - name: addSupportArchitect
             - name: editActions
               items:
@@ -600,7 +689,66 @@ subApps:
           availability:
             nodeTypes:
               - mgnl:support-architect-wrapper
+        # Support architect wrapper 2
+        # Section if architect folder is marked for deletion
+        - name: supportArchitectFolderActionsDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitectWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportArchitect
+            - name: addSupportArchitect
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-architect-folder-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if architect folder is not deleted
+        - name: supportArchitectFolderActions
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitectWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportArchitect
+            - name: addSupportArchitect
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-architect-folder-wrapper
         # Node actions
+        # Section if architect is marked for deletion
         - name: supportArchitectDeleted
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitect.label
           groups:
@@ -626,6 +774,7 @@ subApps:
             rules:
               IsDeletedRule:
                 implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if architect is not deleted
         - name: supportArchitect
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitect.label
           groups:
@@ -650,11 +799,13 @@ subApps:
               - mgnl:support-architect
         # Support Review I
         # Wrapper
+        # Section if review i wrapper is marked for deletion
         - name: supportReviewIWrapperDeleted
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIWrapper.label
           groups:
             - name: addActions
               items:
+                - name: addFolderSupportReviewI
                 - name: addSupportReviewI
             - name: editActions
               items:
@@ -678,11 +829,13 @@ subApps:
             rules:
               IsDeletedRule:
                 implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if review i wrapper is not deleted
         - name: supportReviewIWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIWrapper.label
           groups:
             - name: addActions
               items:
+                - name: addFolderSupportReviewI
                 - name: addSupportReviewI
             - name: editActions
               items:
@@ -703,7 +856,66 @@ subApps:
           availability:
             nodeTypes:
               - mgnl:support-review-i-wrapper
+        # Support review i wrapper 2
+        # Section if review i folder is marked for deletion
+        - name: supportReviewIFolderActionsDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportReviewI
+            - name: addSupportReviewI
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-i-folder-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if review i folder is not deleted
+        - name: supportReviewIFolderActions
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportReviewI
+            - name: addSupportReviewI
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-i-folder-wrapper
         # Node actions
+        # Section if node review i is marked for deletion
         - name: supportReviewIDeleted
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewI.label
           groups:
@@ -729,6 +941,7 @@ subApps:
             rules:
               IsDeletedRule:
                 implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if node review i is not deleted
         - name: supportReviewI
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewI.label
           groups:
@@ -753,11 +966,13 @@ subApps:
               - mgnl:support-review-i
         # Support business
         # Wrapper
+        # Section if business wrapper is marked for deletion
         - name: supportBusinessWrapperDeleted
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusinessWrapper.label
           groups:
             - name: addActions
               items:
+                - name: addFolderSupportBusiness
                 - name: addSupportBusiness
             - name: editActions
               items:
@@ -781,11 +996,13 @@ subApps:
             rules:
               IsDeletedRule:
                 implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if business wrapper is not deleted
         - name: supportBusinessWrapper
           label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusinessWrapper.label
           groups:
             - name: addActions
               items:
+                - name: addFolderSupportBusiness
                 - name: addSupportBusiness
             - name: editActions
               items:
@@ -806,6 +1023,64 @@ subApps:
           availability:
             nodeTypes:
               - mgnl:support-business-wrapper
+        # Support architect wrapper 2
+        # Section if business folder is marked for deletion
+        - name: supportBusinessFolderActionsDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusinessWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportBusiness
+            - name: addSupportBusiness
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-business-folder-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if business folder is not deleted
+        - name: supportBusinessFolderActions
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportBusinessWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportBusiness
+            - name: addSupportBusiness
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-business-folder-wrapper
         # Node actions
         # Support Business Deleted
         - name: supportBusinessDeleted
