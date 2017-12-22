@@ -3,7 +3,7 @@
   <sv:property sv:name="jcr:primaryType" sv:type="Name">
     <sv:value>mgnl:content</sv:value>
   </sv:property>
-  <sv:node sv:name="reviewForPublicationEmail">
+  <sv:node sv:name="publicationEmails">
     <sv:property sv:name="jcr:primaryType" sv:type="Name">
       <sv:value>mgnl:contentNode</sv:value>
     </sv:property>
@@ -19,11 +19,11 @@
     <sv:property sv:name="mailCommandCatalog" sv:type="String">
       <sv:value>default</sv:value>
     </sv:property>
-    <sv:property sv:name="mailTemplate" sv:type="String">
-      <sv:value>ReviewForPublicationWithEmail</sv:value>
+    <sv:property sv:name="rejectedPublicationMailTemplate" sv:type="String">
+      <sv:value>rejectedPublication</sv:value>
     </sv:property>
-    <sv:property sv:name="subject" sv:type="String">
-      <sv:value>caar-utils-module.templates.email.reviewForPublication.subject</sv:value>
+    <sv:property sv:name="reviewForPublicationMailTemplate" sv:type="String">
+      <sv:value>reviewForPublication</sv:value>
     </sv:property>
     <sv:property sv:name="to" sv:type="String">
       <sv:value>publisherArquia@yopmail.com</sv:value>

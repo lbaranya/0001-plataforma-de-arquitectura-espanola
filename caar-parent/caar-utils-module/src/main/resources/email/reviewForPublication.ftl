@@ -1,8 +1,6 @@
 <html>
-    <head>
-        ${i18n['caar-utils-module.templates.email.reviewForPublication.header']!"Solicitud de publicaci&oacute;n"}
-    </head>
     <body>
+        <p>${i18n['caar-utils-module.templates.email.reviewForPublication.header']!"Solicitud de publicaci&oacute;n"}</p>
         <dl>
 	        [#if mgnlData['requestor']?? && mgnlData['requestor']?has_content]
 	        	<dt>${i18n['caar-utils-module.templates.email.reviewForPublication.user']!"Usuario: "}${mgnlData['requestor']}</dt>

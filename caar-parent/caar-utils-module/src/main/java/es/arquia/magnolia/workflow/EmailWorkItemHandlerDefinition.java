@@ -13,10 +13,9 @@ public class EmailWorkItemHandlerDefinition extends ConfiguredWorkItemHandlerDef
     /** The mail command. */
     private String mailCommand;
     
-    /** The mail template. */
-    private String mailTemplate;
+    private String rejectedPublicationMailTemplate;
     
-    private String subject;
+    private String reviewForPublicationMailTemplate;
     
     private String from;
     
@@ -27,15 +26,6 @@ public class EmailWorkItemHandlerDefinition extends ConfiguredWorkItemHandlerDef
      */
     public EmailWorkItemHandlerDefinition() {
         setImplementationClass(EmailWorkItemHandler.class);
-    }
-  
-    /**
-     * Gets the mail template.
-     *
-     * @return the mail template
-     */
-    public String getMailTemplate() {
-        return mailTemplate;
     }
     
     /**
@@ -48,15 +38,6 @@ public class EmailWorkItemHandlerDefinition extends ConfiguredWorkItemHandlerDef
     }
     
     /**
-     * Sets the mail template.
-     *
-     * @param mailTemplate the new mail template
-     */
-    public void setMailTemplate(String mailTemplate) {
-        this.mailTemplate = mailTemplate;
-    }
-    
-    /**
      * Sets the mail command.
      *
      * @param mailCommand the new mail command
@@ -64,14 +45,6 @@ public class EmailWorkItemHandlerDefinition extends ConfiguredWorkItemHandlerDef
     public void setMailCommand(String mailCommand) {
         this.mailCommand = mailCommand;
     }
-
-	public String getSubject() {
-		return subject;
-	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
 
 	public String getFrom() {
 		return from;
@@ -95,5 +68,21 @@ public class EmailWorkItemHandlerDefinition extends ConfiguredWorkItemHandlerDef
 
 	public void setMailCommandCatalog(String mailCommandCatalog) {
 		this.mailCommandCatalog = mailCommandCatalog;
+	}
+
+	public String getRejectedPublicationMailTemplate() {
+		return rejectedPublicationMailTemplate;
+	}
+
+	public void setRejectedPublicationMailTemplate(String rejectedPublicationMailTemplate) {
+		this.rejectedPublicationMailTemplate = rejectedPublicationMailTemplate;
+	}
+
+	public String getReviewForPublicationMailTemplate() {
+		return reviewForPublicationMailTemplate;
+	}
+
+	public void setReviewForPublicationMailTemplate(String reviewForPublicationMailTemplate) {
+		this.reviewForPublicationMailTemplate = reviewForPublicationMailTemplate;
 	}
 }
