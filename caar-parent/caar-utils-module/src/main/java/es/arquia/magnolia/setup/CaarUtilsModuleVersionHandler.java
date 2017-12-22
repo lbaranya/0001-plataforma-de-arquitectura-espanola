@@ -23,6 +23,14 @@ public class CaarUtilsModuleVersionHandler extends DefaultModuleVersionHandler {
 				.addTask(new BootstrapSingleModuleResource("Module commands", "Create all module commands", "config.modules.caar-utils-module.commands.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				.addTask(new BootstrapSingleModuleResource("Request translation mail template", "Mail template to request translation action business", "config.modules.mail.config.templatesConfiguration.requestTranslation.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				);
+		
+		register(DeltaBuilder.update("0.12", "")
+				.addTask(new BootstrapSingleModuleResource("Publishing request mail template", "Mail template to request an approval from publication", "config.modules.mail.config.templatesConfiguration.reviewForPublication.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				.addTask(new BootstrapSingleModuleResource("Publication rejected mail template", "Mail template to notify a rejected publication", "config.modules.mail.config.templatesConfiguration.rejectedPublication.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				.addTask(new BootstrapSingleModuleResource("Activate workflow modification", "Modified for publication review with email", "config.modules.workflow.commands.workflow.activate.activate.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				.addTask(new BootstrapSingleModuleResource("Workflow definition", "Review for publication with email workflow definition", "config.modules.caar-utils-module.workflows.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				.addTask(new BootstrapSingleModuleResource("WorkItemHandler definition", "Review for publication with email workItem handler definition", "config.modules.caar-utils-module.workItemHandlers.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				);
 	}
 	
 }
