@@ -34,6 +34,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:support-review-i
           icon: icon-items
+        - name: mgnl:support-review-ii-wrapper
+          icon: icon-folder
+        - name: mgnl:support-review-ii-folder-wrapper
+          icon: icon-folder
         - name: mgnl:support-review-ii
           icon: icon-items
         - name: mgnl:support-review-iii
@@ -216,6 +220,15 @@ subApps:
           rules: 
             HasVersionsRule: 
               implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      # Details Review Type II
+      showVersionsReviewII: 
+        class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+        icon: icon-show-versions
+        subAppId: detailSupportReviewII
+        availability: 
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
       # Details Business
       showVersionsBusiness: 
         class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
@@ -260,6 +273,19 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Review II folder
+      addFolderSupportReviewII:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addFolder.label
+        nodeType: mgnl:support-review-ii-folder-wrapper
+        availability:
+          nodeTypes:
+            - mgnl:support-review-ii-wrapper
+            - mgnl:support-review-ii-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # Business folder
       addFolderSupportBusiness:
         icon: icon-add-folder
@@ -293,6 +319,7 @@ subApps:
           nodeTypes:
             - mgnl:support-architect-folder-wrapper
             - mgnl:support-review-i-folder-wrapper
+            - mgnl:support-review-ii-folder-wrapper
             - mgnl:support-business-folder-wrapper
           rules: 
             IsNotDeletedRule: 
@@ -341,6 +368,7 @@ subApps:
             - mgnl:support-wrapper
             - mgnl:support-architect-wrapper
             - mgnl:support-review-i-wrapper
+            - mgnl:support-review-ii-wrapper
             - mgnl:support-business-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
@@ -364,6 +392,17 @@ subApps:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
         nodeType: mgnl:support-review-i-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      addSupportReviewIIWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-review-ii-wrapper
         label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIWrapper.label
         availability:
           nodeTypes:
@@ -435,6 +474,34 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-review-i
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Support Review II
+      addSupportReviewII:
+        subAppId: detailSupportReviewII
+        icon: icon-add-item
+        nodeType: mgnl:support-review-ii
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewI.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-ii-wrapper
+            - mgnl:support-review-ii-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      editSupportReviewII:
+        subAppId: detailSupportReviewII
+        icon: icon-edit-wo
+        nodeType: mgnl:support-review-ii
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editSupportReviewI.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-ii
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -579,6 +646,7 @@ subApps:
               items:
                 - name: addSupportArchitectWrapper
                 - name: addSupportReviewIWrapper
+                - name: addSupportReviewIIWrapper
                 - name: addSupportBusinessWrapper
             - name: editActions
               items:
@@ -610,6 +678,7 @@ subApps:
               items:
                 - name: addSupportArchitectWrapper
                 - name: addSupportReviewIWrapper
+                - name: addSupportReviewIIWrapper
                 - name: addSupportBusinessWrapper
             - name: editActions
               items:
