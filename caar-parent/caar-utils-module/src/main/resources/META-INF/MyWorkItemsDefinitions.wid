@@ -1,0 +1,9 @@
+import org.drools.process.core.datatype.impl.type.StringDataType
+ 
+[
+   // the Email notification work item
+   [
+     "name" : "publicationEmails",
+     "displayName" : "Email notification"
+   ]
+]

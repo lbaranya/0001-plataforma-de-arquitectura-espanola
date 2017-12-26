@@ -30,10 +30,10 @@
         <sv:value>requestTranslation</sv:value>
       </sv:property>
       <sv:property sv:name="subject" sv:type="String">
-        <sv:value>caar-utils-module.templates.email.subject</sv:value>
+        <sv:value>caar-utils-module.templates.email.requestTranslation.subject</sv:value>
       </sv:property>
       <sv:property sv:name="to" sv:type="String">
-        <sv:value>arquia@yopmail.com</sv:value>
+        <sv:value>translatorArquia@yopmail.com</sv:value>
       </sv:property>
     </sv:node>
   </sv:node>
