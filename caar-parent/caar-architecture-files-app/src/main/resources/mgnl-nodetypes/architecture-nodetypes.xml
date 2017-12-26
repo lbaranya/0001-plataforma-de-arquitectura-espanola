@@ -61,6 +61,16 @@
       <supertype>mgnl:content</supertype>
     </supertypes>
   </nodeType>
+  <nodeType name="mgnl:support-review-ii-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:support-review-ii-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
   <nodeType name="mgnl:support-review-ii" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
