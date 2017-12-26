@@ -42,6 +42,10 @@ subApps:
           icon: icon-items
         - name: mgnl:support-review-iii
           icon: icon-items
+        - name: mgnl:support-review-iv-wrapper
+          icon: icon-folder
+        - name: mgnl:support-review-iv-folder-wrapper
+          icon: icon-folder
         - name: mgnl:support-review-iv
           icon: icon-items
         - name: mgnl:support-business-wrapper
@@ -229,6 +233,15 @@ subApps:
           rules: 
             HasVersionsRule: 
               implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+      # Details Review Type IV
+      showVersionsReviewII: 
+        class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+        icon: icon-show-versions
+        subAppId: detailSupportReviewIV
+        availability: 
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
       # Details Business
       showVersionsBusiness: 
         class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
@@ -286,6 +299,19 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Review IV folder
+      addFolderSupportReviewIV:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addFolder.label
+        nodeType: mgnl:support-review-iv-folder-wrapper
+        availability:
+          nodeTypes:
+            - mgnl:support-review-iv-wrapper
+            - mgnl:support-review-iv-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # Business folder
       addFolderSupportBusiness:
         icon: icon-add-folder
@@ -320,6 +346,7 @@ subApps:
             - mgnl:support-architect-folder-wrapper
             - mgnl:support-review-i-folder-wrapper
             - mgnl:support-review-ii-folder-wrapper
+            - mgnl:support-review-iv-folder-wrapper
             - mgnl:support-business-folder-wrapper
           rules: 
             IsNotDeletedRule: 
@@ -369,6 +396,7 @@ subApps:
             - mgnl:support-architect-wrapper
             - mgnl:support-review-i-wrapper
             - mgnl:support-review-ii-wrapper
+            - mgnl:support-review-iv-wrapper
             - mgnl:support-business-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
@@ -404,6 +432,17 @@ subApps:
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
         nodeType: mgnl:support-review-ii-wrapper
         label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIIWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      addSupportReviewIVWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-review-iv-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIVWrapper.label
         availability:
           nodeTypes:
             - mgnl:support-wrapper
@@ -502,6 +541,34 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-review-ii
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Support Review IV
+      addSupportReviewIV:
+        subAppId: detailSupportReviewIV
+        icon: icon-add-item
+        nodeType: mgnl:support-review-iv
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIV.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-iv-wrapper
+            - mgnl:support-review-iv-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      editSupportReviewI:
+        subAppId: detailSupportReviewIV
+        icon: icon-edit-wo
+        nodeType: mgnl:support-review-iv
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editSupportReviewIV.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-iv
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -647,6 +714,7 @@ subApps:
                 - name: addSupportArchitectWrapper
                 - name: addSupportReviewIWrapper
                 - name: addSupportReviewIIWrapper
+                - name: addSupportReviewIVWrapper
                 - name: addSupportBusinessWrapper
             - name: editActions
               items:
@@ -679,6 +747,7 @@ subApps:
                 - name: addSupportArchitectWrapper
                 - name: addSupportReviewIWrapper
                 - name: addSupportReviewIIWrapper
+                - name: addSupportReviewIVWrapper
                 - name: addSupportBusinessWrapper
             - name: editActions
               items:
@@ -1200,6 +1269,173 @@ subApps:
           availability:
             nodeTypes:
               - mgnl:support-review-ii
+        # Support Review IV
+        # Wrapper
+        # Section if review iv wrapper is marked for deletion
+        - name: supportReviewIVWrapperDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIVWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addFolderSupportReviewIV
+                - name: addSupportReviewIV
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: activateRecursive
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iv-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if review iv wrapper is not deleted
+        - name: supportReviewIVWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIVWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addFolderSupportReviewIV
+                - name: addSupportReviewIV
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: activateRecursive
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iv-wrapper
+        # Support review iv wrapper 2
+        # Section if review iv folder is marked for deletion
+        - name: supportReviewIVFolderActionsDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIVWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportReviewIV
+            - name: addSupportReviewIV
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iv-folder-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if review iv folder is not deleted
+        - name: supportReviewIVFolderActions
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIVWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportReviewIV
+            - name: addSupportReviewIV
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iv-folder-wrapper
+        # Node actions
+        # Section if node review iv is marked for deletion
+        - name: supportReviewIVDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIV.label
+          groups:
+            - name: editActions
+              items:
+                - name: editSupportReviewIV
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: activateRecursive
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsReviewIV
+                - name: restoreVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iv
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if node review iv is not deleted
+        - name: supportReviewIV
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIV.label
+          groups:
+            - name: editActions
+              items:
+                - name: editSupportReviewIV
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activate
+                - name: activateRecursive
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsReviewIV
+                - name: restoreVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iv
         # Support business
         # Wrapper
         # Section if business wrapper is marked for deletion
@@ -2167,6 +2403,202 @@ subApps:
                     - name: FS3.7.4
                       class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                       label: caar-architecture-files-app.files.support.reviewii.mediaGalleryData.mediaTitle.label
+                      i18n: true
+      actions:
+        - name: commit
+        - name: cancel
+    actions:
+      commit:
+        class: info.magnolia.ui.form.action.SaveFormActionDefinition
+      cancel:
+        class: info.magnolia.ui.form.action.CancelFormActionDefinition
+  # Support review iv sub app
+  detailSupportReviewIV:
+    subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+    class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+    label: caar-architecture-files-app.subapp.detailSupportReviewIV.label
+    contentConnector:
+      workspace: architecture-files
+    editor:
+      nodeType:
+        icon: icon-items
+        name: mgnl:support-review-iv
+      form:
+        tabs:
+          - name: fileData
+            label: caar-architecture-files-app.files.support.reviewiv.fileData.label
+            fields:
+              - name: jcrName
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.fileData.jcrName.label
+                required: true
+          - name: platformData
+            label: caar-architecture-files-app.files.support.reviewiv.platformData.label          
+            fields:
+              - name: FS3.1.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.platformData.pieceId.label
+              - name: FS3.1.2
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.reviewiv.platformData.dischargeDate.label
+              - name: FS3.1.3
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                time: false
+                type: Date
+                defaultValue: now
+                label: caar-architecture-files-app.files.support.reviewiv.platformData.lastUpdateDate.label
+              - name: FS3.1.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.platformData.publishedDirectory.label
+          - name: workData
+            label: caar-architecture-files-app.files.support.reviewiv.workData.label
+            fields:
+              - name: FS3.2.1
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.workData.ouvretitle.label
+                i18n: true
+                required: true
+              - name: FS3.2.2
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.workData.title.label
+                i18n: true
+                required: true
+              - name: FS3.2.3
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.workData.Location.label
+                i18n: true
+              - name: FS3.2.4
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.workData.Editor.label
+                i18n: true
+              - name: FS3.2.5
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.workData.Year.label
+                i18n: true
+              - name: FS3.2.6
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.workData.abstract.label
+                i18n: true
+          - name: authorshipData
+            label: caar-architecture-files-app.files.support.reviewiv.authorshipData.label
+            fields:
+              - name: listAuthorship
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.authorshipData.listAuthorship.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+                  layout: vertical
+                  fields:
+                    - name: separator
+                      class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                      label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                      value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                    - name: FS3.3.1
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewiv.authorshipData.authorshipType.label
+                      required: true
+                    - name: FS3.3.2
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewiv.authorshipData.authorshipName.label
+                      i18n: true
+                      required: true
+                    - name: FS3.3.3
+                      class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewiv.authorshipData.authorshipDetails.label
+                      i18n: true
+          - name: notesData
+            label: caar-architecture-files-app.files.support.reviewiv.notesData.label
+            fields:
+              - name: FS3.4
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.notesData.notes.label
+                i18n: true
+          - name: informationData
+            label: caar-architecture-files-app.files.support.reviewiv.informationData.label
+            fields:
+              - name: FS3.5.1
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.label
+                required: true
+                options:
+                  - name: FS3.5.1.1
+                    value: monographs
+                    label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.monographs.label
+                  - name: FS3.5.1.2
+                    value: publishedArticles
+                    label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.publishedArticles.label
+                  - name: FS3.5.1.3
+                    value: awards
+                    label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.awards.label
+          - name: relatedThoughtData
+            label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.label
+            fields:
+              - name: listRelatedThought
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.listRelatedThought.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+                  layout: vertical
+                  fields:
+                    - name: separator
+                      class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                      label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                      value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                    - name: FS3.6
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.relatedThought.label
+          - name: mediaGalleryData
+            label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.label
+            fields:
+              - name: listMedia
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.listMedia.label
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+                field:
+                  name: compositeField
+                  class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                  transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+                  layout: vertical
+                  fields:
+                    - name: separator
+                      class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                      label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                      value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                    - name: FS3.7.1
+                      class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaType.label
+                      options:
+                        - name: video
+                          value: video
+                          label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaType.video.label
+                        - name: image
+                          value: image
+                          label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaType.image.label
+                    - name: FS3.7.2
+                      class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                      targetWorkspace: dam
+                      appName: assets
+                      label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.photoPreview.label
+                      identifierToPathConverter:
+                        class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                      contentPreviewDefinition:
+                        contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                    - name: FS3.7.3
+                      class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaDetails.label
+                      i18n: true
+                    - name: FS3.7.4
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                      label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaTitle.label
                       i18n: true
       actions:
         - name: commit
