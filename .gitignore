@@ -21,3 +21,6 @@ caar-parent/caar-webapp/src/main/webapp/cache
 caar-parent/caar-webapp/src/main/webapp/logs
 caar-parent/caar-webapp/src/main/webapp/repositories
 caar-parent/caar-webapp/src/main/webapp/tmp
+
+# Excluir todo lo relativo a la instancia public para desarrollo local
+caar-parent/caar-public-webapp

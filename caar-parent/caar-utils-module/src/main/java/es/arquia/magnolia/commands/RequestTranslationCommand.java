@@ -5,6 +5,9 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import info.magnolia.commands.CommandsManager;
 import info.magnolia.commands.impl.BaseRepositoryCommand;
 import info.magnolia.context.Context;
@@ -13,6 +16,8 @@ import info.magnolia.module.mail.MailTemplate;
 
 public class RequestTranslationCommand extends BaseRepositoryCommand {
     
+	private static final Logger log = LoggerFactory.getLogger(RequestTranslationCommand.class);
+	
     /** The Constant TEMPLATE_PARAMETER_NAME. */
     private static final String TEMPLATE_PARAM_NAME = "mailTemplate";
     
@@ -38,7 +43,9 @@ public class RequestTranslationCommand extends BaseRepositoryCommand {
     private String mailTemplate;
     
     private String subject;
+    
     private String from;
+    
     private String to;
 	
 	@Inject
@@ -70,7 +77,12 @@ public class RequestTranslationCommand extends BaseRepositoryCommand {
         mailParameters.put(DATA_PARAM_NAME, dataParameters);
         
         // Command call
-		this.commandsManager.executeCommand(this.mailCommandCatalog, this.mailCommand, mailParameters);
+		try {
+			this.commandsManager.executeCommand(this.mailCommandCatalog, this.mailCommand, mailParameters);
+		} catch (Exception e) {
+			// TODO: show message to Magnolia user
+			log.error("Sending request translation email failed: " + this.getPath(), e.getMessage());
+		}
 
 		return true;
 	}
