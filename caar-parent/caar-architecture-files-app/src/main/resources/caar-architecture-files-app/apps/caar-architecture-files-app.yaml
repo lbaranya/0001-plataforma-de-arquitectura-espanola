@@ -371,6 +371,17 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      addSupportReviewIIIWrapper:
+        icon: icon-add-folder
+        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+        nodeType: mgnl:support-review-iii-wrapper
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIIIWrapper.label
+        availability:
+          nodeTypes:
+            - mgnl:support-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       addSupportBusinessWrapper:
         icon: icon-add-folder
         class: info.magnolia.ui.framework.action.AddNodeActionDefinition
@@ -435,6 +446,34 @@ subApps:
         availability:
           nodeTypes:
             - mgnl:support-review-i
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+# Support Review III
+      addSupportReviewIII:
+        subAppId: detailSupportReviewIII
+        icon: icon-add-item
+        nodeType: mgnl:support-review-iii
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewIII.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-iii-wrapper
+            - mgnl:support-review-iii-folder-wrapper
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      editSupportReviewIII:
+        subAppId: detailSupportReviewIII
+        icon: icon-edit-wo
+        nodeType: mgnl:support-review-iii
+        appName: caar-architecture-files-app
+        class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+        label: caar-architecture-files-app.subapp.browser.actions.editSupportReviewIII.label
+        availability:
+          nodeTypes:
+            - mgnl:support-review-iii
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -579,6 +618,7 @@ subApps:
               items:
                 - name: addSupportArchitectWrapper
                 - name: addSupportReviewIWrapper
+                - name: addSupportReviewIIIWrapper
                 - name: addSupportBusinessWrapper
             - name: editActions
               items:
@@ -610,6 +650,7 @@ subApps:
               items:
                 - name: addSupportArchitectWrapper
                 - name: addSupportReviewIWrapper
+                - name: addSupportReviewIIIWrapper
                 - name: addSupportBusinessWrapper
             - name: editActions
               items:
@@ -964,6 +1005,173 @@ subApps:
           availability:
             nodeTypes:
               - mgnl:support-review-i
+        # Support Review III
+        # Wrapper
+        # Section if review iii wrapper is marked for deletion
+        - name: supportReviewIIIWrapperDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIIIWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addFolderSupportReviewIII
+                - name: addSupportReviewIII
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: activateRecursive
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iii-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if review iii wrapper is not deleted
+        - name: supportReviewIIIWrapper
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIIIWrapper.label
+          groups:
+            - name: addActions
+              items:
+                - name: addFolderSupportReviewIII
+                - name: addSupportReviewIII
+            - name: editActions
+              items:
+                - name: editWrapper
+                - name: confirmDelete 
+            - name: importExportActions
+              items:
+                - name: import
+                - name: export
+            - name: activationActions
+              items:
+                - name: activate
+                - name: activateRecursive
+                - name: deactivate
+            - name: deletedActions
+              items:
+                - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-i-wrapper
+        # Support review iii wrapper 2
+        # Section if review iii folder is marked for deletion
+        - name: supportReviewIIIFolderActionsDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIIIWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportReviewIII
+            - name: addSupportReviewIII
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iii-folder-wrapper
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if review iii folder is not deleted
+        - name: supportReviewIIIFolderActions
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIIIWrapper.label
+          groups:
+          - name: addActions
+            items:
+            - name: addFolderSupportReviewIII
+            - name: addSupportReviewIII
+          - name: editActions
+            items:
+            - name: editFolder
+            - name: confirmDelete
+          - name: importExportActions
+            items:
+            - name: import
+            - name: export
+          - name: activationsActions
+            items:
+            - name: activate
+            - name: activateRecursive
+            - name: deactivate
+          - name: deletedActions
+            items:
+            - name: restorePreviousVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iii-folder-wrapper
+        # Node actions
+        # Section if node review iii is marked for deletion
+        - name: supportReviewIIIDeleted
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIII.label
+          groups:
+            - name: editActions
+              items:
+                - name: editSupportReviewIII
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activateDeleted
+                - name: activateRecursive
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsReviewIII
+                - name: restoreVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iii
+            rules:
+              IsDeletedRule:
+                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        # Section if node review iii is not deleted
+        - name: supportReviewIII
+          label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportReviewIII.label
+          groups:
+            - name: editActions
+              items:
+                - name: editSupportReviewIII
+                - name: confirmDelete
+            - name: activationActions
+              items:
+                - name: activate
+                - name: activateRecursive
+                - name: deactivate
+            - name: importExportActions
+              items:
+                - name: export
+            - name: versionsActions
+              items:
+                - name: showVersionsReviewIII
+                - name: restoreVersion
+          availability:
+            nodeTypes:
+              - mgnl:support-review-iii
         # Support business
         # Wrapper
         # Section if business wrapper is marked for deletion
