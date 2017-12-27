@@ -1,0 +1,25 @@
+name: supportArchitectDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitect.label
+groups:
+  - name: editActions
+    items:
+     - name: editSupportArchitect
+     - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activateDeleted
+      - name: activateRecursive
+      - name: deactivate
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsArchitect
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:support-architect
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
