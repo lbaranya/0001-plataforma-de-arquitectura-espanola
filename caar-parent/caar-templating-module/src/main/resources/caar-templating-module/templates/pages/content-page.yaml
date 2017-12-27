@@ -32,6 +32,8 @@ areas:
             id: caar-templating-module:components/detail-news-component
           bienales-header-component:
             id: caar-templating-module:components/bienials-header-component
+          news-related-component:
+            id: caar-templating-module:components/related-news-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:

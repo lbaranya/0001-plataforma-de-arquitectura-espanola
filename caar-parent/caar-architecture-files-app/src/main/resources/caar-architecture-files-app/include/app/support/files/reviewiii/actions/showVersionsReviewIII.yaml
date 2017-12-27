@@ -1,0 +1,7 @@
+class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+icon: icon-show-versions
+subAppId: detailSupportReviewIII
+availability: 
+  rules: 
+    HasVersionsRule: 
+      implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule

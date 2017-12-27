@@ -1,0 +1,13 @@
+subAppId: detailSupportReviewII
+icon: icon-add-item
+nodeType: mgnl:support-review-ii
+appName: caar-architecture-files-app
+class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+label: caar-architecture-files-app.subapp.browser.actions.addSupportReviewII.label
+availability:
+  nodeTypes:
+    - mgnl:support-review-ii-wrapper
+    - mgnl:support-review-ii-folder-wrapper
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
