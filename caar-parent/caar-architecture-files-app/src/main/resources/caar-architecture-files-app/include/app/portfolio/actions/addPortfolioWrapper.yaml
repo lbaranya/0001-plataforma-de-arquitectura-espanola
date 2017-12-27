@@ -1,0 +1,9 @@
+icon: icon-add-folder
+class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+nodeType: mgnl:portfolio-wrapper
+label: caar-architecture-files-app.subapp.browser.actions.addPortfolioWrapper.label
+availability:
+  root: true
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

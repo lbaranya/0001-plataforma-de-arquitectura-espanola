@@ -1,0 +1,33 @@
+name: supportWrapperDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportWrapper.label
+groups:
+  - name: addActions
+    items:
+      - name: addSupportArchitectWrapper
+      - name: addSupportReviewIWrapper
+      - name: addSupportReviewIIWrapper
+      - name: addSupportReviewIIIWrapper
+      - name: addSupportReviewIVWrapper
+      - name: addSupportBusinessWrapper
+  - name: editActions
+    items:
+      - name: editWrapper
+      - name: confirmDelete 
+  - name: importExportActions
+    items:
+      - name: import
+      - name: export
+  - name: activationActions
+    items:
+      - name: activateDeleted
+      - name: activateRecursive
+      - name: deactivate
+  - name: deletedActions
+    items:
+      - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:support-wrapper
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
