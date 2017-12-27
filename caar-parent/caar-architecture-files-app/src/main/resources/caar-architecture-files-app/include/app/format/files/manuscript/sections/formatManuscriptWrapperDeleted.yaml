@@ -1,9 +1,10 @@
-name: formatWrapperDeleted
-label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
+name: formatManuscriptWrapperDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatManuscriptWrapper.label
 groups:
   - name: addActions
     items:
-      - name: addFormatManuscriptWrapper
+      - name: addFolderFormatManuscript
+      - name: addFormatManuscript
   - name: editActions
     items:
       - name: editWrapper
@@ -22,7 +23,7 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:format-wrapper
+    - mgnl:format-manuscript-wrapper
   rules:
     IsDeletedRule:
       implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

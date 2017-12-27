@@ -141,6 +141,16 @@
       <supertype>mgnl:content</supertype>
     </supertypes>
   </nodeType>
+  <nodeType name="mgnl:format-manuscript-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-manuscript-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
   <nodeType name="mgnl:format-manuscript" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
