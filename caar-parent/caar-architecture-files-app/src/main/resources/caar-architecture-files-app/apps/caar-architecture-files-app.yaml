@@ -209,25 +209,33 @@ subApps:
           rules: 
             IsDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      
       # showVersions each file type
+      
       # Details architect
       showVersionsArchitects: 
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/showVersionsArchitect.yaml
+        
       # Details Review Type I
       showVersionsReviewI: 
         !include:/caar-architecture-files-app/include/app/support/files/reviewi/actions/showVersionsReviewI.yaml
+        
       # Details Review Type II
       showVersionsReviewII: 
         !include:/caar-architecture-files-app/include/app/support/files/reviewii/actions/showVersionsReviewII.yaml
+        
        # Details Review Type III
       showVersionsReviewIII: 
         !include:/caar-architecture-files-app/include/app/support/files/reviewiii/actions/showVersionsReviewIII.yaml
+        
       # Details Review Type IV
       showVersionsReviewIV: 
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/showVersionsReviewIV.yaml
+        
       # Details Business
       showVersionsBusiness: 
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/showVersionsBusiness.yaml
+        
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
         icon: icon-retrieve-versions
@@ -236,28 +244,37 @@ subApps:
           rules: 
             HasVersionsRule: 
               implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+              
       # Folder
+      
       # Architect folder
       addFolderSupportArchitect:
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/addFolderSupportArchitect.yaml
+      
       # Review I folder
       addFolderSupportReviewI:
         !include:/caar-architecture-files-app/include/app/support/files/reviewi/actions/addFolderSupportReviewI.yaml
+      
       # Review II folder
       addFolderSupportReviewII:
         !include:/caar-architecture-files-app/include/app/support/files/reviewii/actions/addFolderSupportReviewII.yaml
+      
       # Review III folder
       addFolderSupportReviewIII:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiii/actions/addFolderSupportReviewIII.yaml
+      
       # Review IV folder
       addFolderSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addFolderSupportReviewIV.yaml
+      
       # Business folder
       addFolderSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addFolderSupportBusiness.yaml
+      
       # Portfolio folder
       addFolderPortfolio:
         !include:/caar-architecture-files-app/include/app/portfolio/actions/addFolderPortfolio.yaml
+      
       # Edit any folder
       editFolder:
         icon: icon-edit
@@ -283,15 +300,7 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/actions/addSupportWrapper.yaml
       # Format
       addFormatWrapper:
-        icon: icon-add-folder
-        class: info.magnolia.ui.framework.action.AddNodeActionDefinition
-        nodeType: mgnl:format-wrapper
-        label: caar-architecture-files-app.subapp.browser.actions.addFormatWrapper.label
-        availability:
-          root: true
-          rules: 
-            IsNotDeletedRule: 
-              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+        !include:/caar-architecture-files-app/include/app/format/actions/addFormatWrapper.yaml
       editWrapper:
         icon: icon-edit
         dialogName: ui-framework:folder
@@ -311,7 +320,10 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      # Support
+      
       # Support wrappers
+      
       # Add
       addSupportArchitectWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/addSupportArchitectWrapper.yaml
@@ -325,41 +337,49 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIVWrapper.yaml
       addSupportBusinessWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusinessWrapper.yaml
+      
       # Support Architect
       addSupportArchitect:
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/addSupportArchitect.yaml
       editSupportArchitect:
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/editSupportArchitect.yaml
+      
       # Support Review I
       addSupportReviewI:
         !include:/caar-architecture-files-app/include/app/support/files/reviewi/actions/addSupportReviewI.yaml
       editSupportReviewI:
         !include:/caar-architecture-files-app/include/app/support/files/reviewi/actions/editSupportReviewI.yaml
+      
       # Support Review II
       addSupportReviewII:
         !include:/caar-architecture-files-app/include/app/support/files/reviewii/actions/addSupportReviewII.yaml
       editSupportReviewII:
         !include:/caar-architecture-files-app/include/app/support/files/reviewii/actions/editSupportReviewII.yaml
+      
       # Support Review III
       addSupportReviewIII:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiii/actions/addSupportReviewIII.yaml
       editSupportReviewIII:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiii/actions/editSupportReviewIII.yaml
+      
       # Support Review IV
       addSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIV.yaml
       editSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/editSupportReviewIV.yaml
+      
       # Support Business
       addSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusiness.yaml
       editSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/editSupportBusiness.yaml
+      
       # Portfolio
       addPortfolio:
         !include:/caar-architecture-files-app/include/app/portfolio/actions/addPortfolio.yaml
       editPortfolio:
         !include:/caar-architecture-files-app/include/app/portfolio/actions/editPortfolio.yaml
+      
     # Sections
     actionbar:
       defaultAction: addFolder
@@ -379,166 +399,146 @@ subApps:
           availability:
             nodes: false
             root: true
+            
         # Portfolio group
+        
         # Section if portfolio wrapper is marked for deletion
-        - name: portfolioWrapperDeleted
-          label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolioWrapper.label
-          groups:
-            - name: addActions
-              items:
-                - name: addFolderPortfolio
-                - name: addPortfolio
-            - name: editActions
-              items:
-                - name: editWrapper
-                - name: confirmDelete 
-            - name: importExportActions
-              items:
-                - name: import
-                - name: export
-            - name: activationActions
-              items:
-                - name: activateDeleted
-                - name: activateRecursive
-                - name: deactivate
-            - name: deletedActions
-              items:
-                - name: restorePreviousVersion
-          availability:
-            nodeTypes:
-              - mgnl:portfolio-wrapper
-            rules:
-              IsDeletedRule:
-                implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+        - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolioWrapperDeleted.yaml
+        
         # Section if portfolio wrapper is not deleted
-        - name: portfolioWrapper
-          label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolioWrapper.label
-          groups:
-            - name: addActions
-              items:
-                - name: addFolderPortfolio
-                - name: addPortfolio
-            - name: editActions
-              items:
-                - name: editWrapper
-                - name: confirmDelete 
-            - name: importExportActions
-              items:
-                - name: import
-                - name: export
-            - name: activationActions
-              items:
-                - name: activate
-                - name: activateRecursive
-                - name: deactivate
-            - name: deletedActions
-              items:
-                - name: restorePreviousVersion
-          availability:
-            nodeTypes:
-              - mgnl:portfolio-wrapper
+        - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolioWrapper.yaml
+        
         # Support group
+        
         # Section if support wrapper is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/sections/supportWrapperDeleted.yaml
+        
         # Section if support wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/support/sections/supportWrapper.yaml
+        
         # Support Architect
+        
         # Wrapper
         # Section if architect wrapper is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/architect/sections/supportArchitectWrapperDeleted.yaml
         # Section if architect wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/architect/sections/supportArchitectWrapper.yaml
-        # Support architect wrapper 2
+        
+        # Support architect folder
         # Section if architect folder is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/architect/sections/supportArchitectFolderDeleted.yaml
         # Section if architect folder is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/architect/sections/supportArchitectFolder.yaml
+        
         # Node actions
         # Section if architect is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/architect/sections/supportArchitectDeleted.yaml
         # Section if architect is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/architect/sections/supportArchitect.yaml
+        
         # Support Review I
+        
         # Wrapper
         # Section if review i wrapper is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewi/sections/supportReviewIWrapperDeleted.yaml
         # Section if review i wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewi/sections/supportReviewIWrapper.yaml
-        # Support review i wrapper 2
+        
+        # Support review i folder
         # Section if review i folder is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewi/sections/supportReviewIFolderDeleted.yaml
         # Section if review i folder is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewi/sections/supportReviewIFolder.yaml
+        
         # Node actions
         # Section if node review i is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewi/sections/supportReviewIDeleted.yaml
         # Section if node review i is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewi/sections/supportReviewI.yaml
+        
         # Support Review II
+        
         # Wrapper
         # Section if review ii wrapper is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewii/sections/supportReviewIIWrapperDeleted.yaml
         # Section if review ii wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewii/sections/supportReviewIIWrapper.yaml
-        # Support review ii wrapper 2
+        
+        # Support review ii folder
         # Section if review ii folder is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewii/sections/supportReviewIIFolderDeleted.yaml
         # Section if review ii folder is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewii/sections/supportReviewIIFolder.yaml
+        
         # Node actions
         # Section if node review ii is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewii/sections/supportReviewIIDeleted.yaml
         # Section if node review ii is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewii/sections/supportReviewII.yaml
+        
         # Support Review III
+        
         # Wrapper
         # Section if review iii wrapper is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiii/sections/supportReviewIIIWrapperDeleted.yaml
         # Section if review iii wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiii/sections/supportReviewIIIWrapper.yaml
-        # Support review iii wrapper 2
+        
+        # Support review iii folder
         # Section if review iii folder is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiii/sections/supportReviewIIIFolderDeleted.yaml
         # Section if review iii folder is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiii/sections/supportReviewIIIFolder.yaml
+        
         # Node actions
         # Section if node review iii is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiii/sections/supportReviewIIIDeleted.yaml
         # Section if node review iii is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiii/sections/supportReviewIII.yaml
+        
         # Support Review IV
+        
         # Wrapper
         # Section if review iv wrapper is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIVWrapperDeleted.yaml
         # Section if review iv wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIVWrapper.yaml
-        # Support review iv wrapper 2
+        
+        # Support review iv folder
         # Section if review iv folder is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIVFolderDeleted.yaml
         # Section if review iv folder is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIVFolder.yaml
+        
         # Node actions
         # Section if node review iv is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIVDeleted.yaml
         # Section if node review iv is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIV.yaml
+        
         # Support business
+        
         # Wrapper
         # Section if business wrapper is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusinessWrapperDeleted.yaml
         # Section if business wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusinessWrapper.yaml
-        # Support architect wrapper 2
+        
+        # Support architect folder
         # Section if business folder is marked for deletion
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusinessFolderDeleted.yaml
         # Section if business folder is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusinessFolder.yaml
+        
         # Node actions
         # Support Business Deleted
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusinessDeleted.yaml
         # Support Business Not Deleted
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusiness.yaml
+        
         # Format group
+        
+        # Wrapper
         - !include:/caar-architecture-files-app/include/app/format/sections/formatWrapperDeleted.yaml
         - !include:/caar-architecture-files-app/include/app/format/sections/formatWrapper.yaml
     imageProvider:
