@@ -11,9 +11,12 @@ import org.kie.api.runtime.process.WorkItemManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import es.arquia.magnolia.messages.magnoliaUI.MessagesUI;
 import info.magnolia.commands.CommandsManager;
 import info.magnolia.i18nsystem.SimpleTranslator;
 import info.magnolia.module.mail.MailTemplate;
+import info.magnolia.ui.api.action.ActionExecutionException;
+import info.magnolia.ui.api.message.MessageType;
 
 public class EmailWorkItemHandler implements WorkItemHandler {
 	
@@ -37,6 +40,10 @@ public class EmailWorkItemHandler implements WorkItemHandler {
     private static final String MAIL_PARAMETER_SEPARATOR = "\r\n";
     
     private static final String PUBLICATION_NOTIFICATION_SUBJECT = "caar-utils-module.templates.email.reviewForPublication.subject";
+    private static final String PUBLICATION_COMMAND_FAILED_SUBJECT = "caar-utils-module.templates.email.reviewForPublication.commandFailed.subject";
+    private static final String PUBLICATION_COMMAND_FAILED_MESSAGE = "caar-utils-module.templates.email.reviewForPublication.commandFailed.message";
+    private static final String REJECTED_PUBLICATION_COMMAND_FAILED_SUBJECT = "caar-utils-module.templates.email.rejectedPublication.commandFailed.subject";
+    private static final String REJECTED_PUBLICATION_COMMAND_FAILED_MESSAGE = "caar-utils-module.templates.email.rejectedPublication.commandFailed.message";
     private static final String REJECTED_PUBLICATION_NOTIFICATION_SUBJECT = "caar-utils-module.templates.email.rejectedPublication.subject";
     
     /** The definition. */
@@ -44,14 +51,17 @@ public class EmailWorkItemHandler implements WorkItemHandler {
     
     private final SimpleTranslator i18n;
     
+    private final MessagesUI messagesUI;
+    
     /** The commands manager. */
     private final CommandsManager commandsManager;
 
 	@Inject
-	public EmailWorkItemHandler(final EmailWorkItemHandlerDefinition definition, final CommandsManager commandsManager, final SimpleTranslator i18n) {
+	public EmailWorkItemHandler(final EmailWorkItemHandlerDefinition definition, final CommandsManager commandsManager, final SimpleTranslator i18n, final MessagesUI messagesUI) {
         this.definition = definition;
         this.commandsManager = commandsManager;
 		this.i18n = i18n;
+		this.messagesUI = messagesUI;
 	}
 
 	@Override
@@ -69,13 +79,7 @@ public class EmailWorkItemHandler implements WorkItemHandler {
 		
 		this.addEMailParams(publicationRejected, mailCommandParameters);
         
-        // Command call
-		try {
-			this.commandsManager.executeCommand(this.definition.getMailCommandCatalog(), this.definition.getMailCommand(), mailCommandParameters);
-		} catch (Exception e) {
-			// TODO: show message to Magnolia user
-			log.error("Sending publication request email failed: " + "Repository: " + workflowData.get("repository") + " Path: " + workflowData.get("path"), e.getMessage());
-		}
+        this.commandCall(mailCommandParameters, workflowData, publicationRejected);
 		
 		// We must complete the workItem, if not, the workflow won´t continue
 		manager.completeWorkItem(workItem.getId(), mailCommandParameters);
@@ -83,8 +87,7 @@ public class EmailWorkItemHandler implements WorkItemHandler {
 
 	@Override
 	public void abortWorkItem(WorkItem workItem, WorkItemManager manager) {
-		// TODO Auto-generated method stub
-		
+		// Nothing to do
 	}
 	
 	/**
@@ -156,6 +159,46 @@ public class EmailWorkItemHandler implements WorkItemHandler {
 	    mailCommandParameters.put(MailTemplate.MAIL_PARAMETERS, sbParameters.toString());
 		
 	    return mailCommandParameters;
+	}
+	
+	/**
+	 * @param mailCommandParameters
+	 * @param workflowData
+	 * @throws ActionExecutionException 
+	 */
+	private void commandCall(Map<String, Object> mailCommandParameters, Map<String, Object> workflowData, boolean publicationRejected) {
+		
+		boolean notifyErrorToUser = false;
+		String repositoryDataParam = "repository";
+		String pathDataParam = "path";
+		
+		try {
+			
+			// Method executeCommand returns an inverse logic result: true if failed...
+			if (this.commandsManager.executeCommand(this.definition.getMailCommandCatalog(), this.definition.getMailCommand(), mailCommandParameters)) {
+				
+				notifyErrorToUser = true;
+				log.error(this.i18n.translate(PUBLICATION_COMMAND_FAILED_MESSAGE, workflowData.get(repositoryDataParam), workflowData.get(pathDataParam)));
+			}
+			
+		} catch (Exception e) {
+			
+			notifyErrorToUser = true;
+			log.error(this.i18n.translate(PUBLICATION_COMMAND_FAILED_MESSAGE, workflowData.get(repositoryDataParam), workflowData.get(pathDataParam)), e.getMessage());
+		}
+		
+		if (notifyErrorToUser) {
+			
+			String subject = this.i18n.translate(PUBLICATION_COMMAND_FAILED_SUBJECT);
+			String messsageBody = this.i18n.translate(PUBLICATION_COMMAND_FAILED_MESSAGE, workflowData.get(repositoryDataParam), workflowData.get(pathDataParam));
+			
+			if (publicationRejected) {
+				subject = this.i18n.translate(REJECTED_PUBLICATION_COMMAND_FAILED_SUBJECT, workflowData.get(repositoryDataParam), workflowData.get(pathDataParam));
+				messsageBody = this.i18n.translate(REJECTED_PUBLICATION_COMMAND_FAILED_MESSAGE, workflowData.get(repositoryDataParam), workflowData.get(pathDataParam));
+			}
+			
+			this.messagesUI.sendToCurrentUser(MessageType.ERROR, subject, messsageBody);
+		}
 	}
 
 }

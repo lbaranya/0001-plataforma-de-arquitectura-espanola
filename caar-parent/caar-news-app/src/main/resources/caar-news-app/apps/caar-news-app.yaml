@@ -163,9 +163,12 @@ subApps:
             HasVersionsRule: 
               implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
       requestTranslation:
-        command: requestTranslation
-        icon: icon-content-translation-app
         catalog: translations
+        command: requestTranslation
+        asynchronous: true
+        parallel: false
+        notifyUser: false
+        icon: icon-content-translation-app
         class: es.arquia.magnolia.contentApps.actions.RequestTranslationActionDefinition
         label: caar-news-app.browser.actions.requestTranslation.label
       # Folder
