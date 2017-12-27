@@ -171,6 +171,10 @@ subApps:
         icon: icon-content-translation-app
         class: es.arquia.magnolia.contentApps.actions.RequestTranslationActionDefinition
         label: caar-news-app.browser.actions.requestTranslation.label
+        availability:
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
       # Folder
       addFolder:
         icon: icon-add-folder
@@ -301,6 +305,7 @@ subApps:
                 - name: activateDeleted
                 - name: activateRecursive
                 - name: deactivate
+                - name: requestTranslation
             - name: importExportActions
               items:
                 - name: export

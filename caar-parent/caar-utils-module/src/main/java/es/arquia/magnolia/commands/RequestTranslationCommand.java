@@ -24,10 +24,12 @@ public class RequestTranslationCommand extends BaseRepositoryCommand {
     
     /** Email data parameters names */
     private static final String DATA_PATH_TO_TRANSLATABLE_NODE_PARAM_NAME = "pathToTranslatableNode";
+    private static final String DATA_REPOSITORY_OF_TRANSLATABLE_NODE_PARAM_NAME = "repositoryOfTranslatableNode";
     
     private static final String MAIL_PARAMETER_SEPARATOR = "\r\n";
     
-    private static final String ACTION_FAILED_I18N_KEY = "caar-utils-module.templates.email.requestTranslation.actionFailed";
+    private static final String ACTION_FAILED_SUBJECT_I18N_KEY = "caar-utils-module.templates.email.requestTranslation.actionFailedSubject";
+    private static final String ACTION_FAILED_BODY_MESSAGE_I18N_KEY = "caar-utils-module.templates.email.requestTranslation.actionFailedMessage";
     private static final String ACTION_COMPLETED_SUBJECT_I18N_KEY = "caar-utils-module.templates.email.requestTranslation.actionCompletedSubject";
     private static final String ACTION_COMPLETED_BODY_MESSAGE_I18N_KEY = "caar-utils-module.templates.email.requestTranslation.actionCompletedMessage";
 	
@@ -100,6 +102,7 @@ public class RequestTranslationCommand extends BaseRepositoryCommand {
         
 		    Map<String, Object> dataParameters = new HashMap<>();
 		    dataParameters.put(DATA_PATH_TO_TRANSLATABLE_NODE_PARAM_NAME, this.getPath());
+		    dataParameters.put(DATA_REPOSITORY_OF_TRANSLATABLE_NODE_PARAM_NAME, this.getRepository());
         mailCommandParameters.put(DATA_PARAM_NAME, dataParameters);
         
         return mailCommandParameters;
@@ -130,17 +133,18 @@ public class RequestTranslationCommand extends BaseRepositoryCommand {
 	private void commandCall(Map<String, Object> mailCommandParameters) throws ActionExecutionException {
         
         // Command call
-        String commandExecutionFailedMessage = this.i18n.translate(ACTION_FAILED_I18N_KEY, this.getPath());
+        String commandExecutionFailedSubject = this.i18n.translate(ACTION_FAILED_SUBJECT_I18N_KEY);
+        String commandExecutionFailedMessage = this.i18n.translate(ACTION_FAILED_BODY_MESSAGE_I18N_KEY, this.getPath());
 		try {
 			
 			// Method executeCommand returns an inverse logic result: true if failed...
 			if (this.commandsManager.executeCommand(this.mailCommandCatalog, this.mailCommand, mailCommandParameters)) {
-				throw new ActionExecutionException(commandExecutionFailedMessage);
+				this.notifyActionExecutionErrorResult(commandExecutionFailedSubject, commandExecutionFailedMessage);
 			}
 			
 		} catch (Exception e) {
 			
-			throw new ActionExecutionException(commandExecutionFailedMessage);
+			this.notifyActionExecutionErrorResult(commandExecutionFailedSubject, commandExecutionFailedMessage);
 		}
 	}
 	
@@ -150,6 +154,20 @@ public class RequestTranslationCommand extends BaseRepositoryCommand {
 	private void notifySuccessResult() {
 		
 		this.messagesUI.sendToCurrentUser(MessageType.INFO, this.i18n.translate(ACTION_COMPLETED_SUBJECT_I18N_KEY), this.i18n.translate(ACTION_COMPLETED_BODY_MESSAGE_I18N_KEY));
+	}
+	
+	/**
+	 * Notify action execution error result to current Magnolia user
+	 * 
+	 * @param subject
+	 * @param message
+	 * @throws ActionExecutionException 
+	 */
+	private void notifyActionExecutionErrorResult(String subject, String message) throws ActionExecutionException {
+		
+		this.messagesUI.sendToCurrentUser(MessageType.ERROR, subject, message);
+		
+		throw new ActionExecutionException(message);
 	}
 	
 	

@@ -10,6 +10,7 @@ groups:
       - name: activate
       - name: activateRecursive
       - name: deactivate
+      - name: requestTranslation
   - name: importExportActions
     items:
       - name: export
