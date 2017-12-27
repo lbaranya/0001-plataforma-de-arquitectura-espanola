@@ -626,7 +626,7 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
-      editSupportReviewI:
+      editSupportReviewIV:
         subAppId: detailSupportReviewIV
         icon: icon-edit-wo
         nodeType: mgnl:support-review-iv
