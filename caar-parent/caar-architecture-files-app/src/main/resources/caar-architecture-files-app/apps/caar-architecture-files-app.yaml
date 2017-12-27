@@ -238,7 +238,7 @@ subApps:
             HasVersionsRule: 
               implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
       # Details Review Type IV
-      showVersionsReviewII: 
+      showVersionsReviewIV: 
         class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
         icon: icon-show-versions
         subAppId: detailSupportReviewIV
@@ -555,7 +555,7 @@ subApps:
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
-# Support Review III
+      # Support Review III
       addSupportReviewIII:
         subAppId: detailSupportReviewIII
         icon: icon-add-item
