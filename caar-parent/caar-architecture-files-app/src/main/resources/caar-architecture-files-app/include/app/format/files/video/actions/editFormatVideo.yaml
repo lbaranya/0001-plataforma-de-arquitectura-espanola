@@ -1,0 +1,12 @@
+subAppId: detailFormatVideo
+icon: icon-edit-wo
+nodeType: mgnl:format-video
+appName: caar-architecture-files-app
+class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+label: caar-architecture-files-app.subapp.browser.actions.editFormatVideo.label
+availability:
+  nodeTypes:
+    - mgnl:format-video
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

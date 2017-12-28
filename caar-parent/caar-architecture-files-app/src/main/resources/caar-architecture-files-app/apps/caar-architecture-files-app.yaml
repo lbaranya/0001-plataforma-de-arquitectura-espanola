@@ -60,6 +60,10 @@ subApps:
           icon: icon-items
         - name: mgnl:format-wrapper
           icon: icon-folder
+        - name: mgnl:format-video-wrapper
+          icon: icon-folder
+        - name: mgnl:format-video-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-video
           icon: icon-items
         - name: mgnl:format-three-dimensional
@@ -236,6 +240,10 @@ subApps:
       showVersionsBusiness: 
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/showVersionsBusiness.yaml
         
+      # Details Folder
+      showVersionsFolder: 
+        !include:/caar-architecture-files-app/include/app/format/files/video/actions/showVersionsVideo.yaml
+        
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
         icon: icon-retrieve-versions
@@ -274,6 +282,10 @@ subApps:
       # Portfolio folder
       addFolderPortfolio:
         !include:/caar-architecture-files-app/include/app/portfolio/actions/addFolderPortfolio.yaml
+        
+      # Video folder
+      addFolderFormatVideo:
+        !include:/caar-architecture-files-app/include/app/format/files/video/actions/addFolderFormatVideo.yaml
       
       # Edit any folder
       editFolder:
@@ -288,6 +300,7 @@ subApps:
             - mgnl:support-review-iv-folder-wrapper
             - mgnl:support-review-iii-folder-wrapper
             - mgnl:support-business-folder-wrapper
+            - mgnl:format-video-folder-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -379,6 +392,20 @@ subApps:
         !include:/caar-architecture-files-app/include/app/portfolio/actions/addPortfolio.yaml
       editPortfolio:
         !include:/caar-architecture-files-app/include/app/portfolio/actions/editPortfolio.yaml
+        
+      # Format
+      
+      # Format wrappers
+      
+      # Add
+      addFormatVideoWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/video/actions/addFormatVideoWrapper.yaml
+       
+      # Format Video
+      addFormatVideo:
+        !include:/caar-architecture-files-app/include/app/format/files/video/actions/addFormatVideo.yaml
+      editFormatVideo:
+        !include:/caar-architecture-files-app/include/app/format/files/video/actions/editFormatVideo.yaml
       
     # Sections
     actionbar:
@@ -538,9 +565,29 @@ subApps:
         
         # Format group
         
-        # Wrapper
+        # Section if format wrapper is marked for deletion
         - !include:/caar-architecture-files-app/include/app/format/sections/formatWrapperDeleted.yaml
+        
+        # Section if format wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/format/sections/formatWrapper.yaml
+        
+        # Format video
+        
+        # Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/video/sections/formatVideoWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/video/sections/formatVideoWrapper.yaml
+        
+        # Format video folder
+        # Section if video folder is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/format/files/video/sections/formatVideoFolderDeleted.yaml
+        # Section if video folder is not deleted
+        - !include:/caar-architecture-files-app/include/app/format/files/video/sections/formatVideoFolder.yaml
+        
+        # Node actions
+        # Section if node video is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/format/files/video/sections/formatVideoDeleted.yaml
+        # Section if node video is not deleted
+        - !include:/caar-architecture-files-app/include/app/format/files/video/sections/formatVideo.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -559,6 +606,9 @@ subApps:
   # Support review iv sub app
   detailSupportReviewIV:
     !include:/caar-architecture-files-app/include/app/support/files/reviewiv/subapp/detailSupportReviewIV.yaml
-  # Suppor business sub app
+  # Support business sub app
   detailSupportBusiness:
     !include:/caar-architecture-files-app/include/app/support/files/business/subapp/detailSupportBusiness.yaml
+  # Format video sub app
+  detailFormatVideo:
+    !include:/caar-architecture-files-app/include/app/format/files/video/subapp/detailFormatVideo.yaml

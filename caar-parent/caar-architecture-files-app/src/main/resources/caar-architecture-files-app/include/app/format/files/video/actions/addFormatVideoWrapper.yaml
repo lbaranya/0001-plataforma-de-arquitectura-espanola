@@ -1,0 +1,10 @@
+icon: icon-add-folder
+class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+nodeType: mgnl:format-video-wrapper
+label: caar-architecture-files-app.subapp.browser.actions.addFormatVideoWrapper.label
+availability:
+  nodeTypes:
+    - mgnl:format-wrapper
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
