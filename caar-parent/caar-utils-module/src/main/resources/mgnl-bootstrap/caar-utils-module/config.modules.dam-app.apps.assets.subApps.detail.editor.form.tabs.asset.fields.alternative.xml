@@ -12,5 +12,8 @@
   <sv:property sv:name="required" sv:type="String">
     <sv:value>true</sv:value>
   </sv:property>
+  <sv:property sv:name="i18n" sv:type="String">
+    <sv:value>true</sv:value>
+  </sv:property>
 </sv:node>
 
