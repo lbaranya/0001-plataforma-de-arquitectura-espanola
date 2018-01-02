@@ -213,6 +213,8 @@ subApps:
           rules: 
             IsDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      requestTranslation:
+        !include:/caar-architecture-files-app/include/app/common/actions/requestTranslation.yaml
       
       # showVersions each file type
       
