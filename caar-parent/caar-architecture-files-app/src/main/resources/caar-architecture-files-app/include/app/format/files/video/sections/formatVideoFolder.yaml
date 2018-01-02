@@ -1,0 +1,26 @@
+name: formatVideoFolder
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatVideoWrapper.label
+groups:
+- name: addActions
+  items:
+  - name: addFolderFormatVideo
+  - name: addFormatVideo
+- name: editActions
+  items:
+  - name: editFolder
+  - name: confirmDelete
+- name: importExportActions
+  items:
+  - name: import
+  - name: export
+- name: activationsActions
+  items:
+  - name: activate
+  - name: activateRecursive
+  - name: deactivate
+- name: deletedActions
+  items:
+  - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:format-video-folder-wrapper

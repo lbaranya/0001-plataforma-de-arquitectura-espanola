@@ -1,0 +1,25 @@
+name: formatVideoDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatVideo.label
+groups:
+  - name: editActions
+    items:
+      - name: editFormatVideo
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activateDeleted
+      - name: activateRecursive
+      - name: deactivate
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsVideo
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:format-video
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

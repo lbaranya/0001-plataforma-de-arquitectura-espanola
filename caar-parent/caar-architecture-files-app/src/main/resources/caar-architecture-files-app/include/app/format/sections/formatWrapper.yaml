@@ -3,6 +3,7 @@ label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapp
 groups:
   - name: addActions
     items:
+      - name: addFormatVideoWrapper
       - name: addFormatManuscriptWrapper
   - name: editActions
     items:

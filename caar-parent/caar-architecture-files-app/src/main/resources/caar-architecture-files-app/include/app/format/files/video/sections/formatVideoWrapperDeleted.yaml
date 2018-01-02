@@ -1,10 +1,10 @@
-name: formatWrapperDeleted
-label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
+name: formatVideoWrapperDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatVideoWrapper.label
 groups:
   - name: addActions
     items:
-      - name: addFormatVideoWrapper
-      - name: addFormatManuscriptWrapper
+      - name: addFolderFormatVideo
+      - name: addFormatVideo
   - name: editActions
     items:
       - name: editWrapper
@@ -23,7 +23,7 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:format-wrapper
+    - mgnl:format-video-wrapper
   rules:
     IsDeletedRule:
       implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
