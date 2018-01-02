@@ -74,6 +74,10 @@ subApps:
           icon: icon-items
         - name: mgnl:format-book
           icon: icon-items
+        - name: mgnl:format-manuscript-wrapper
+          icon: icon-folder
+        - name: mgnl:format-manuscript-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-manuscript
           icon: icon-items
         - name: mgnl:format-graphic
@@ -213,6 +217,8 @@ subApps:
           rules: 
             IsDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      requestTranslation:
+        !include:/caar-architecture-files-app/include/app/common/actions/requestTranslation.yaml
       
       # showVersions each file type
       
@@ -243,6 +249,10 @@ subApps:
       # Details Folder
       showVersionsFolder: 
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/showVersionsVideo.yaml
+
+      # Details Manuscript
+      showVersionsManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/showVersionsManuscript.yaml
         
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
@@ -278,6 +288,10 @@ subApps:
       # Business folder
       addFolderSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addFolderSupportBusiness.yaml
+        
+      # Manuscript folder
+      addFolderFormatManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFolderFormatManuscript.yaml
       
       # Portfolio folder
       addFolderPortfolio:
@@ -301,6 +315,7 @@ subApps:
             - mgnl:support-review-iii-folder-wrapper
             - mgnl:support-business-folder-wrapper
             - mgnl:format-video-folder-wrapper
+            - mgnl:format-manuscript-folder-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -351,6 +366,12 @@ subApps:
       addSupportBusinessWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusinessWrapper.yaml
       
+      # Format wrappers
+      
+      # Add
+      addFormatManuscriptWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscriptWrapper.yaml
+      
       # Support Architect
       addSupportArchitect:
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/addSupportArchitect.yaml
@@ -386,6 +407,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusiness.yaml
       editSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/editSupportBusiness.yaml
+        
+      # Format Manuscript
+      addFormatManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscript.yaml
+      editFormatManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/editFormatManuscript.yaml
       
       # Portfolio
       addPortfolio:
@@ -588,6 +615,20 @@ subApps:
         - !include:/caar-architecture-files-app/include/app/format/files/video/sections/formatVideoDeleted.yaml
         # Section if node video is not deleted
         - !include:/caar-architecture-files-app/include/app/format/files/video/sections/formatVideo.yaml
+
+        # Format Manuscript
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscriptWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscriptWrapper.yaml
+        
+        # Format Manuscript folder
+        - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscriptFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscriptFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscriptDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscript.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -612,3 +653,6 @@ subApps:
   # Format video sub app
   detailFormatVideo:
     !include:/caar-architecture-files-app/include/app/format/files/video/subapp/detailFormatVideo.yaml
+  # Format manuscript sub app
+  detailFormatManuscript:
+    !include:/caar-architecture-files-app/include/app/format/files/manuscript/subapp/detailFormatManuscript.yaml

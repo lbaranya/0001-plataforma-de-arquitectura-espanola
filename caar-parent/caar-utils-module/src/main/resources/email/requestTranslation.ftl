@@ -1,9 +1,13 @@
 <html>
     <body>
-        <p>${i18n['caar-utils-module.templates.email.requestTranslation.header']!"Solicitud de traducci&oacute;n"}</p>
+        <p>${i18n['caar-utils-module.templates.email.requestTranslation.header']!"Request translation"}</p>
         <dl>
-        	[#if emailData['pathToTranslatableNode']?? && emailData['pathToTranslatableNode']?has_content]
-	        	<dt>${i18n['caar-utils-module.templates.email.requestTranslation.body']!"Se ha solicitado la traducci&oacute;n de la noticia: "}${emailData['pathToTranslatableNode']}</dt>
+        	[#assign repository = emailData['repositoryOfTranslatableNode']!"Unknown repository"]
+        	[#assign path = emailData['pathToTranslatableNode']!"Unknown path"]
+        	[#if repository?? && repository?has_content && path?? && path?has_content]
+        		[#assign body1 = i18n['caar-utils-module.templates.email.requestTranslation.body1']!"It is necessary to translate the following content: Repository: "]
+        		[#assign body2 = i18n['caar-utils-module.templates.email.requestTranslation.body2']!" Path: "]
+	        	<dt>${body1 + repository + '. ' + body2 + path}</dt>
 	        [/#if]
         </dl>
     </body>

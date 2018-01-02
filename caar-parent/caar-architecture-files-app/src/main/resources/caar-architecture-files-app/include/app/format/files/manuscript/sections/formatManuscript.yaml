@@ -1,23 +1,22 @@
-name: supportArchitect
-label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportArquitect.label
+name: formatManuscript
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatManuscript.label
 groups:
   - name: editActions
     items:
-     - name: editSupportArchitect
+     - name: editFormatManuscript
      - name: confirmDelete
   - name: activationActions
     items:
       - name: activate
       - name: activateRecursive
       - name: deactivate
-      - name: requestTranslation
   - name: importExportActions
     items:
       - name: export
   - name: versionsActions
     items:
-      - name: showVersionsArchitect
+      - name: showVersionsManuscript
       - name: restoreVersion
 availability:
   nodeTypes:
-    - mgnl:support-architect
+    - mgnl:format-manuscript
