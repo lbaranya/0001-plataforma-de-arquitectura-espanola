@@ -37,6 +37,10 @@
 			<name>dam-app</name>
 			<version>2.3/*</version>
 		</dependency>
+		<dependency>
+			<name>pages</name>
+			<version>5.6/*</version>
+		</dependency>
 		<!-- Add other dependencies here, e.g the mte (magnolia templating essentials). 
 			<dependency> <name>mte</name> <version>0.7/*</version> </dependency> -->
 	</dependencies>
