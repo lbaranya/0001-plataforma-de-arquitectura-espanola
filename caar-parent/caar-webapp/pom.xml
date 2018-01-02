@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>es.arquia.magnolia</groupId>
 		<artifactId>caar-parent</artifactId>
-		<version>0.12-SNAPSHOT</version>
+		<version>0.12</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	
@@ -74,31 +74,31 @@
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-architecture-files-app</artifactId>
-			<version>0.12-SNAPSHOT</version>
+			<version>0.12</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-news-app</artifactId>
-			<version>0.12-SNAPSHOT</version>
+			<version>0.12</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-templating-module</artifactId>
-			<version>0.12-SNAPSHOT</version>
+			<version>0.12</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-theme-module</artifactId>
-			<version>0.12-SNAPSHOT</version>
+			<version>0.12</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-utils-module</artifactId>
-			<version>0.12-SNAPSHOT</version>
+			<version>0.12</version>
 		</dependency>
 
 		<!-- Solr -->
