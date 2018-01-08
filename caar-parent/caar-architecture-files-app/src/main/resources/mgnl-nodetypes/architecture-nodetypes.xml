@@ -6,6 +6,11 @@
       <supertype>mgnl:content</supertype>
     </supertypes>
   </nodeType>
+  <nodeType name="mgnl:portfolio-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
   <nodeType name="mgnl:portfolio" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>

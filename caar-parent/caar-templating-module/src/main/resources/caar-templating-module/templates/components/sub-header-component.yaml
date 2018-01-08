@@ -1,4 +1,4 @@
-title: Componente de Cabecera de segundo nivel    
+title: caar-templating-module.components.sub-header.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/sub-header-component.ftl    
 dialog: caar-templating-module:components/sub-header-component-properties    

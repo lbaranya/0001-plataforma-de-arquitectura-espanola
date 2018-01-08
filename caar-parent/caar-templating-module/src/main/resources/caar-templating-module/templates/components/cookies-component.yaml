@@ -1,4 +1,4 @@
-title: Cookies component
+title: caar-templating-module.components.cookies.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/cookies-component.ftl
 dialog: caar-templating-module:components/cookies-component-properties

@@ -16,6 +16,8 @@ subApps:
       nodeTypes:
         - name: mgnl:portfolio-wrapper
           icon: icon-folder
+        - name: mgnl:portfolio-folder-wrapper
+          icon: icon-folder
         - name: mgnl:portfolio
           icon: icon-items
         - name: mgnl:support-wrapper
@@ -223,7 +225,7 @@ subApps:
       # showVersions each file type
       
       # Details architect
-      showVersionsArchitects: 
+      showVersionsArchitect: 
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/showVersionsArchitect.yaml
         
       # Details Review Type I
@@ -246,8 +248,8 @@ subApps:
       showVersionsBusiness: 
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/showVersionsBusiness.yaml
         
-      # Details Folder
-      showVersionsFolder: 
+      # Details Video
+      showVersionsVideo: 
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/showVersionsVideo.yaml
 
       # Details Manuscript
@@ -316,6 +318,7 @@ subApps:
             - mgnl:support-business-folder-wrapper
             - mgnl:format-video-folder-wrapper
             - mgnl:format-manuscript-folder-wrapper
+            - mgnl:portfolio-folder-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
