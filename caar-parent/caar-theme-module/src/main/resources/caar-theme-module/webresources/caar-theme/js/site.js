@@ -45,73 +45,91 @@ $(document).ready(function () {
     $('.menu-link').on('click', function (e) {
         e.preventDefault();
 
-        var datamenu = $(this).attr('data-submenu');
-        //Compruebo si cmp-exist-home existe
-        if ($(".cmp-exist-home").length) {
-            $('.submenu-container').removeClass('clicked');
-            $('.submenu-container').addClass('clicked');
-        } else {
-            $('.submenu-container').removeClass("clicked-nh");
-            $('.submenu-container').addClass("clicked-nh");
-        }
-        $('.submenu').css('display', 'none');
-        $(".menu-link").removeClass('active-item');
-        $(".menu-item-icon").removeClass('active-item');
-        $(".logo").removeClass('active-item');
-        $('.search-icon').attr('src', iconsURL + 'search-icon.svg');
-        $('.user-icon').attr('src', iconsURL + 'usuario-icon.svg');
+        var comprobacion = $(this).hasClass("active-item");
 
-        if ($(this).hasClass("menu-item-icon")) {
-            datamenu = $(this).find(".icon-link").attr('data-submenu');
-        }
+        if (comprobacion != true) {
 
 
-        if (datamenu != 'search') {
 
-            $('.' + datamenu).css('display', 'flex');
-
-            if (datamenu == 'signin') {
-
-                $(this).find('.user-icon').attr('src', iconsURL + 'usuario-icon-blanco.svg');
-                $('.search-icon').attr('src', iconsURL + 'search-icon.svg');
-                $(".menu-item-icon").removeClass('active-item');
-                $(this).addClass('active-item');
-
+            var datamenu = $(this).attr('data-submenu');
+            //Compruebo si cmp-exist-home existe
+            if ($(".cmp-exist-home").length) {
+                $('.submenu-container').removeClass('clicked');
+                $('.submenu-container').addClass('clicked');
             } else {
-
-                $(".menu-link").removeClass('active-item');
-                $(this).addClass('active-item');
-
+                $('.submenu-container').removeClass("clicked-nh");
+                $('.submenu-container').addClass("clicked-nh");
             }
-        } else {
 
-            $('.' + datamenu).css('display', 'block');
-            $(this).find('.search-icon').attr('src', iconsURL + 'search-icon-blanco.svg');
+            $('.submenu').css('display', 'none');
+            $('.menu-link').removeClass('active-item');
+            $('.menu-item-icon').removeClass('active-item');
+            $('.logo').removeClass('active-item');
+            $('.search-icon').attr('src', iconsURL + 'search-icon.svg');
             $('.user-icon').attr('src', iconsURL + 'usuario-icon.svg');
-            $(".menu-item-icon").removeClass('active-item');
-            $(this).addClass('active-item');
 
+            if ($(this).hasClass('menu-item-icon')) {
+                datamenu = $(this)
+                    .find('.icon-link')
+                    .attr('data-submenu');
+            }
+
+            if (datamenu != 'search') {
+                $('.' + datamenu).css('display', 'flex');
+
+                if (datamenu == 'signin') {
+                    $(this)
+                        .find('.user-icon')
+                        .attr('src', iconsURL + 'usuario-icon-blanco.svg');
+                    $('.search-icon').attr('src', iconsURL + 'search-icon.svg');
+                    $('.menu-item-icon').removeClass('active-item');
+                    $(this).addClass('active-item');
+                } else {
+                    $('.menu-link').removeClass('active-item');
+                    $(this).addClass('active-item');
+                }
+            } else {
+                $('.' + datamenu).css('display', 'block');
+                $(this)
+                    .find('.search-icon')
+                    .attr('src', iconsURL + 'search-icon-blanco.svg');
+                $('.user-icon').attr('src', iconsURL + 'usuario-icon.svg');
+                $('.menu-item-icon').removeClass('active-item');
+                $(this).addClass('active-item');
+            }
+            $('html, body').animate({
+                    scrollTop: 0
+                },
+                600
+            );
+            $('.cmp-menu').removeClass('fixed-menu');
+        } else {
+            $('.submenu').css('display', 'none');
+            $('.menu-link').removeClass('active-item');
+            $('.menu-item-icon').removeClass('active-item');
+            $('.logo').removeClass('active-item');
+            $('.submenu-container').removeClass('clicked');
+            $('.submenu-container').removeClass('clicked-nh');
+            $('.search-icon').attr('src', iconsURL + 'search-icon.svg');
+            $('.user-icon').attr('src', iconsURL + 'usuario-icon.svg');
         }
-        $("html, body").animate({
-            scrollTop: 0
-        }, 600);
-        $(".cmp-menu").removeClass("fixed-menu");
     });
 
     $('.logo').on('click', function (e) {
-        var datamenu = $(this).attr('data-submenu');
-        $('.submenu').css('display', 'none');
-        $('.' + datamenu).css('display', 'flex');
-        if ($(".cmp-exist-home").length) {
+        var comprobacion = $(this).hasClass("active-item");
+
+        if (comprobacion != true) {
+            var datamenu = $(this).attr('data-submenu');
+            $('.submenu').css('display', 'none');
+            $('.' + datamenu).css('display', 'flex');
             $('.submenu-container').removeClass('clicked');
             $('.submenu-container').addClass('clicked');
+            $('.menu-link').removeClass('active-item');
+            $(this).addClass('active-item');
         } else {
-            $('.submenu-container').removeClass("clicked-nh");
-            $('.submenu-container').addClass("clicked-nh");
+            $('.submenu-container').removeClass('clicked');
+            $('.logo').removeClass('active-item');
         }
-        $(".menu-link").removeClass('active-item');
-        $(this).addClass('active-item');
-
     });
 
     $('.close-btn').on('click', function (e) {
