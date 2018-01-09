@@ -52,12 +52,7 @@ form:
                   class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
                 contentPreviewDefinition:      
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent      
-                label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.image.label      
-                description: Subir un fichero de imagen.     
-              - name: altImage      
-                label: Alt de la imagen      
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-                i18n: true     
+                label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.image.label
     - name: tabEnlaces1    
       label: Enlaces bloque 1    
       fields:      

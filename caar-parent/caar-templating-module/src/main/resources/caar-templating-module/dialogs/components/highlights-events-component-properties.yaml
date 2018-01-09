@@ -1,17 +1,18 @@
 form:        
   tabs:        
-    - name: tabMain        
+    - name: tabMain
+      label: caar-templating-module.components.highlights-events-component-properties.tabMain.label      
       fields:      
         - name: eventsListPageLink      
           required: true      
-          label: Enlace a página general de eventos       
+          label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.eventsListPageLink.label
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition        
           targetWorkspace: website        
           appName: pages    
           identifierToPathConverter:          
             class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
         - name: elements        
-          label: Eventos        
+          label: caar-templating-module.components.highlights-events-component-properties.tabMain.elements.label       
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition        
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer        
           field:        
@@ -19,11 +20,10 @@ form:
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition        
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer        
             layout: vertical        
-            required: true        
+            required: true
             fields:        
               - name: separator1      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
               - name: separator2      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition         
                 label: Evento      
@@ -32,10 +32,9 @@ form:
                 label: Enlace a evento      
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition        
                 targetWorkspace: architecture-files        
-                appName: architecture-files-app  
+                appName: caar-architecture-files-app  
                 identifierToPathConverter:        
                   class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter       
-                targetTreeRootPath: /soporte/review/type-i        
 actions:        
   commit:        
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition        
