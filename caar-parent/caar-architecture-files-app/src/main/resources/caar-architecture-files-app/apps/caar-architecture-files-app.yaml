@@ -345,6 +345,8 @@ subApps:
             - mgnl:support-business-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
+            - mgnl:format-video-wrapper
+            - mgnl:format-manuscript-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
