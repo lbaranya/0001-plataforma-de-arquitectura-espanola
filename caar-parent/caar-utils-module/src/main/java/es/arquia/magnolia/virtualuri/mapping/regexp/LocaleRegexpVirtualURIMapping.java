@@ -6,24 +6,16 @@ import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import info.magnolia.context.MgnlContext;
 import info.magnolia.virtualuri.mapping.RegexpVirtualUriMapping;
 
 public class LocaleRegexpVirtualURIMapping extends RegexpVirtualUriMapping {
-	private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(LocaleRegexpVirtualURIMapping.class);
+	private static final Logger log = LoggerFactory.getLogger(LocaleRegexpVirtualURIMapping.class);
 
     private Pattern regexp;
-
-    @Override
-    public void setFromUri(String fromUri) {
-        setInternalFromUri(fromUri);
-
-        if (StringUtils.isNotEmpty(fromUri)) {
-            this.regexp = Pattern.compile(fromUri);
-        }
-    }
 
     @Override
     public Optional<Result> mapUri(URI uri) {
