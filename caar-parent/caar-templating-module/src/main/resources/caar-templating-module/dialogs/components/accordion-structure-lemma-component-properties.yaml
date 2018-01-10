@@ -30,8 +30,8 @@ form:
           label: caar-templating-module.templates.components.accordion-structure-lemma-component.tabMain.architectFileLink.label
           required: true
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-          targetWorkspace: website      
-          appName: pages
+          targetWorkspace: architecture-files      
+          appName: caar-architecture-files-app
         - name: info_preview
           class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
           transformerClass:  info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
