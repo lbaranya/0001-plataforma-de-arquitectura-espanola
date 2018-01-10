@@ -54,7 +54,8 @@ public class LocaleRegexpVirtualURIMapping extends RegexpVirtualUriMapping {
 		Locale locale = MgnlContext.getAggregationState().getLocale();
 		if (locale != null) {
 		  language = locale.getLanguage();
+		  return this.getToUri().replace(":", ":/"+language);
 		}
-		return this.getToUri().replace(":", ":/"+language);
+		return this.getToUri();
     }
 }
