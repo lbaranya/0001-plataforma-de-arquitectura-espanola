@@ -29,6 +29,9 @@ import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
 
+import static es.arquia.magnolia.constants.NewsConstants.*;
+import static es.arquia.magnolia.constants.UtilsConstants.*;
+
 public class NewsListModel <RD extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	
 	private static final Logger log = LoggerFactory.getLogger(NewsListModel.class);
@@ -43,12 +46,6 @@ public class NewsListModel <RD extends ConfiguredTemplateDefinition> extends Ren
 	private static String important = "N1.8";
 	private static String files = "N1.9";
 	private static String relatedNews = "N1.10";
-	
-	private static String newsNodeType = "mgnl:news";
-	
-	private static String newsWorkspace = "news";
-	
-	private static String newsDateFormat = "dd MMMM YYYY";
 	
 	public NewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent) throws PathNotFoundException, RepositoryException {
         super(content, definition, parent);
@@ -162,7 +159,7 @@ public class NewsListModel <RD extends ConfiguredTemplateDefinition> extends Ren
 	public String getDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
 		Calendar calendar = node.getProperty(dateTime).getDate();
 		Locale locale = MgnlContext.getLocale();
-		DateFormat formatter = new SimpleDateFormat(newsDateFormat, locale);
+		DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 		return formatter.format(calendar.getTime());
 	}
 	
