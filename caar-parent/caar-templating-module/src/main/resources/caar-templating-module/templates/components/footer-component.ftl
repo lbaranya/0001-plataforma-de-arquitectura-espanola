@@ -83,8 +83,18 @@
 				<ul class="footer-logos-list">
 				[#if content.logoElements?has_content]
 				[#list cmsfn.children(content.logoElements) as logoElement]
-				[#assign image = damfn.getAssetLink(logoElement.image)!]
-					<li class="logo-item"><a href="#" class="footer-logo"><img src="${image}" width="175" height="40" alt="${logoElement.altImage!""}"></a></li>
+					[#assign imgItemKey = logoElement.image!]
+	            	[#if imgItemKey??]
+	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "175")!]
+	            		[#if imgMediaRendition??]
+	            			[#assign imageAlternativeText = "imagen de banner en la cabecera"]
+	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+	            			[#if imageAlt?has_content]
+	            				[#assign imageAlternativeText = imageAlt.alternative!""]
+	            			[/#if]
+						<li class="logo-item"><a href="#" class="footer-logo"><img src="${imgMediaRendition.getLink()}" width="175" height="40" alt="${imageAlternativeText!""}"></a></li>
+						[/#if]
+					[/#if]
 				[/#list]
 				[/#if]
 				</ul>

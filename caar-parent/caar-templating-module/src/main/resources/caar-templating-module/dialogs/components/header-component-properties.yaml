@@ -3,12 +3,13 @@ form:
     - name: tabMain      
       fields:      
         - name: elements      
-          label: caar-templating-module.templates.components.header-component.tabMain.elements.label      
+          label: caar-templating-module.templates.components.header-component.tabMain.elements.label    
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
           field:      
             name: compositeField      
-            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            label: caar-templating-module.templates.components.header-component.tabMain.elements.compositeField.label
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
             layout: vertical      
             required: true      

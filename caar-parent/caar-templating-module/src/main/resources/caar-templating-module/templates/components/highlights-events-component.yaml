@@ -1,4 +1,4 @@
-title: Componente Eventos Destacados    
+title: caar-templating-module.components.highlights-events.dialog.title    
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/highlights-events-component.ftl    
 dialog: caar-templating-module:components/highlights-events-component-properties    

@@ -3,21 +3,15 @@ package es.arquia.magnolia.components.news;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
-import javax.jcr.LoginException;
 import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.PathNotFoundException;
+import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.ValueFormatException;
@@ -25,9 +19,11 @@ import javax.jcr.ValueFormatException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import info.magnolia.cms.i18n.AbstractI18nContentSupport;
+import info.magnolia.cms.i18n.DefaultI18nContentSupport;
+import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
-import info.magnolia.jcr.util.NodeTypes;
 import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
@@ -71,6 +67,14 @@ public class NewsListModel <RD extends ConfiguredTemplateDefinition> extends Ren
             return false;
         }
     };
+    
+    private String getLocalizedSuffix(String currentLanguage) {
+    	if(!MgnlContext.getLocale().getLanguage().equals(currentLanguage))
+			currentLanguage = "_" + currentLanguage;
+		else
+			currentLanguage = "";
+    	return currentLanguage;
+    }
 	
 	public List<Node> getNewsList() throws Exception{
 		List<Node> newsList = new ArrayList<>();
@@ -103,20 +107,56 @@ public class NewsListModel <RD extends ConfiguredTemplateDefinition> extends Ren
 		return newsList;
 	}
 	
-	public String getHeadline(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
-		return node.getProperty(headTitle).getString();
+	public String getHeadline(Node node, String currentLanguage) throws ValueFormatException, PathNotFoundException, RepositoryException {
+		try{
+			Property tmp = node.getProperty(headTitle + getLocalizedSuffix(currentLanguage));
+			return tmp.getString();
+		}catch(Exception e) {
+			try {
+				return node.getProperty(headTitle).getString();
+			}catch(Exception ex) {
+				return "";
+			}
+		}
 	}
 	
-	public String getLongTitle(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
-		return node.getProperty(longTitle).getString();
+	public String getLongTitle(Node node, String currentLanguage) throws ValueFormatException, PathNotFoundException, RepositoryException {
+		try{
+			Property tmp = node.getProperty(longTitle + getLocalizedSuffix(currentLanguage));
+			return tmp.getString();
+		}catch(Exception e) {
+			try {
+				return node.getProperty(longTitle).getString();
+			}catch(Exception ex) {
+				return "";
+			}
+		}
 	}
 	
-	public String getDescription(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
-		return node.getProperty(descriptionShort).getString();
+	public String getDescription(Node node, String currentLanguage) throws ValueFormatException, PathNotFoundException, RepositoryException{
+		try{
+			Property tmp = node.getProperty(descriptionShort + getLocalizedSuffix(currentLanguage));
+			return tmp.getString();
+		}catch(Exception e) {
+			try {
+				return node.getProperty(descriptionShort).getString();
+			}catch(Exception ex) {
+				return "";
+			}
+		}
 	}
 	
-	public String getLongDescription(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
-		return node.getProperty(descriptionLong).getString();
+	public String getLongDescription(Node node, String currentLanguage) throws ValueFormatException, PathNotFoundException, RepositoryException{
+		try{
+			Property tmp = node.getProperty(descriptionLong + getLocalizedSuffix(currentLanguage));
+			return tmp.getString();
+		}catch(Exception e) {
+			try {
+				return node.getProperty(descriptionLong).getString();
+			}catch(Exception ex) {
+				return "";
+			}
+		}
 	}
 	
 	public String getDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
@@ -127,22 +167,47 @@ public class NewsListModel <RD extends ConfiguredTemplateDefinition> extends Ren
 	}
 	
 	public String getImage(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
-		return node.getProperty(image).getString();
+		try{
+			Property tmp = node.getProperty(image);
+			return tmp.getString();
+		}catch(Exception e) {
+			return "";
+		}
 	}
 	
 	public String getCategories(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
-		return node.getProperty(category).getValues().toString();
+		try{
+			Property tmp = node.getProperty(category);
+			return tmp.getValues().toString();
+		}catch(Exception e) {
+			return "";
+		}
 	}
 	
 	public String getImportant(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
-		return node.getProperty(important).getString();
+		try{
+			Property tmp = node.getProperty(important);
+			return tmp.getString();
+		}catch(Exception e) {
+			return "";
+		}
 	}
 	
 	public String getArchitectLinks(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
-		return node.getProperty(files).getValues().toString();
+		try{
+			Property tmp = node.getProperty(files);
+			return tmp.getValues().toString();
+		}catch(Exception e) {
+			return "";
+		}
 	}
 	
 	public String getRelatedNews(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
-		return node.getProperty(relatedNews).getValues().toString();
+		try{
+			Property tmp = node.getProperty(relatedNews);
+			return tmp.getValues().toString();
+		}catch(Exception e) {
+			return "";
+		}
 	}
-	}
+}

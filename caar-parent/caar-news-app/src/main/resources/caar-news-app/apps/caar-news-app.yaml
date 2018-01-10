@@ -394,6 +394,7 @@ subApps:
                 label: caar-news-app.newsData.dateTime.label
                 defaultValue: now
               - name: N1.6
+                required: true
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
                 targetWorkspace: dam
                 appName: assets

@@ -1,4 +1,4 @@
-title: caar-templating-module.templates.components.related-news-component.label
+title: caar-templating-module.components.related-news.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/related-news-component.ftl
 dialog: caar-templating-module:components/related-news-component-properties

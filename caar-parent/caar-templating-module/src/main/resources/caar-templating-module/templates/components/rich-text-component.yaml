@@ -1,4 +1,4 @@
-title: Componente de Texto Enriquecido    
+title: caar-templating-module.components.rich-text.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/rich-text-component.ftl    
 dialog: caar-templating-module:components/rich-text-component-properties    

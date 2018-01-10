@@ -1,90 +1,82 @@
 form:        
   tabs:        
-    - name: tabMain        
+    - name: tabMain
+      label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.label    
       fields:        
         - name: elements        
-          label: Destacados        
+          label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition        
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer        
           field:        
             name: compositeField        
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition        
-            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer        
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.label
             layout: vertical        
             required: true        
             fields:        
               - name: separator1      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
               - name: separator2      
-                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition        
-                label: Destacado      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
               - name: title        
-                label: Título corto        
+                label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.title.label       
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition        
                 i18n: true    
                 required: true    
               - name: longTitle        
-                label: Título largo        
+                label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.longTitle.label        
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition        
                 i18n: true    
                 required: true    
               - name: typeFile        
-                label: Tipo ficha        
+                label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.typeFile.label       
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition        
                 i18n: true    
                 required: true    
               - name: description        
-                label: Descripción        
+                label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.description.label       
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition     
                 i18n: true    
                 required: true    
               - name: link        
-                label: Ficha Soporte       
+                label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.link.label      
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition        
                 targetWorkspace: architecture-files        
-                appName: architecture-files-app        
+                appName: caar-architecture-files-app        
                 identifierToPathConverter:        
-                  class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter       
-                targetTreeRootPath: /soporte/excellence   
+                  class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
               - name: multimedia        
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition        
                 required: true    
-                label: Elemento multimedia       
+                label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.multimedia.label
                 options:        
                   - name: imageLink        
-                    label: Imagen representativa        
+                    label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.multimedia.imageLink.label
                     selected: true        
                     value: imageLink        
                   - name: videoLink        
-                    label: Video representativo            
+                    label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.multimedia.videoLink.label
                     value: videoLink        
                 fields:        
                   - name: imageLink        
-                    label: Imagen representativa       
+                    label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.multimedia.imageLink.label
                     class: info.magnolia.ui.form.field.definition.LinkFieldDefinition        
                     targetWorkspace: dam        
                     appName: assets        
                     identifierToPathConverter:        
                       class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter    
                     contentPreviewDefinition:        
-                      contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent       
-                    description: Enlazar imagen desde Assets.      
+                      contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
                   - name: videoLink        
-                    label: Video representativo        
+                    label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.multimedia.videoLink.label
                     class: info.magnolia.ui.form.field.definition.LinkFieldDefinition        
                     targetWorkspace: dam        
                     appName: assets        
                     identifierToPathConverter:        
                       class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter       
                     contentPreviewDefinition:        
-                      contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent    
-                    description: Enlazar vídeo desde Assets.                           
-              - name: altImage        
-                label: Alt de la imagen/video        
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition       
-                required: true     
-                i18n: true       
+                      contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
 actions:        
   commit:        
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition        

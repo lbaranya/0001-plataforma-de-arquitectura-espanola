@@ -30,6 +30,10 @@
 			<groupId>info.magnolia</groupId>
   			<artifactId>magnolia-rendering</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>info.magnolia.core</groupId>
+  			<artifactId>magnolia-virtual-uri</artifactId>
+		</dependency>
 
 		<!-- TEST -->
 		<dependency>

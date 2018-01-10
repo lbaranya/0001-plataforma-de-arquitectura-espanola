@@ -1,17 +1,18 @@
 form:      
   tabs:      
-    - name: tabMain      
+    - name: tabMain
+      label: caar-templating-module.components.highlights-news-component-properties.tabMain.label  
       fields:    
         - name: newsListPageLink    
           required: true    
-          label: Enlace a página general de noticias     
+          label: caar-templating-module.components.highlights-news-component-properties.tabMain.newsListPageLink.label    
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: website      
           appName: pages  
           identifierToPathConverter:        
             class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter               
         - name: elements      
-          label: Noticias      
+          label: caar-templating-module.components.highlights-news-component-properties.tabMain.elements.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
           field:      
@@ -23,16 +24,14 @@ form:
             fields:      
               - name: separator1      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
               - name: separator2      
-                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition       
-                label: Noticia    
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
               - name: newsLink  
                 required: true      
-                label: Enlace a noticia    
+                label: caar-templating-module.components.highlights-news-component-properties.tabMain.elements.compositeField.newsLink.label
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                 targetWorkspace: news      
-                appName: news-app       
+                appName: caar-news-app       
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
