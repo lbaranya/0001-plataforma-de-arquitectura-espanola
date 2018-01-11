@@ -1,0 +1,255 @@
+subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+label: caar-architecture-files-app.subapp.detailSupportProject.label
+contentConnector:
+  workspace: architecture-files
+editor:
+  nodeType:
+    icon: icon-items
+    name: mgnl:support-project
+  form:
+    tabs:
+      - name: fileData
+        label: caar-architecture-files-app.files.support.project.fileData.label
+        fields:
+          - name: jcrName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.fileData.jcrName.label
+            required: true
+      - name: platformData
+        label: caar-architecture-files-app.files.support.project.platformData.label          
+        fields:
+          - name: FS2.1.1
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.platformData.projectId.label
+          - name: FS2.1.2
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: false
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.project.platformData.dischargeDate.label
+          - name: FS2.1.3
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: false
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.project.platformData.lastUpdateDate.label
+          - name: FS2.1.4
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.platformData.publishedDirectory.label
+      - name: workData
+        label: caar-architecture-files-app.files.support.project.workData.label
+        fields:
+          - name: FS2.2.1
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.workData.projectTitle.label
+            i18n: true
+            required: true
+          - name: FS2.2.2
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.workData.otherReferencies.label
+            i18n: true
+            required: true
+          - name: FS2.2.3
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: false
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.project.workData.projectStartDate.label
+            i18n: true
+          - name: FS2.2.4
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: false
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.project.workData.workStartDate.label
+            i18n: true
+          - name: FS2.2.5
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: false
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.project.workData.projectFinishDate.label
+            i18n: true
+          - name: FS2.2.6
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.workData.squareMetersBuilded.label
+            validators:
+                  - name: onlyNumber
+                    class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                    pattern: ^[0-9]+
+                    errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
+          - name: FS2.2.7
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.workData.squareMetersCost.label
+            validators:
+                  - name: onlyNumber
+                    class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                    pattern: ^[0-9]+
+                    errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
+          - name: FS2.2.8
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.workData.awards.label
+            required: true
+      - name: localizationData
+        label: caar-architecture-files-app.files.support.project.localizationData.label
+        fields:
+          - name: FS2.3.1
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.kindVia.label
+          - name: FS2.3.2
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.via.label
+          - name: FS2.3.3
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.number.label
+          - name: FS2.3.4
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.postalCode.label
+          - name: FS2.3.5
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.location.label
+          - name: FS2.3.6
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.poblation.label
+          - name: FS2.3.7
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.province.label
+          - name: FS2.3.8
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.autonomousCommunity.label
+          - name: FS2.3.9
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+            repository: category
+            path: caar/caar-countries
+            label: caar-architecture-files-app.files.support.project.localizationData.country.label
+          - name: FS2.3.10
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.lattitude.label
+          - name: FS2.3.11
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.project.localizationData.longitude.label
+      - name: authorshipData
+        label: caar-architecture-files-app.files.support.project.authorshipData.label
+        fields:
+          - name: listAuthorship
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.project.authorshipData.listAuthorship.label
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+            field:
+              name: compositeField
+              class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+              layout: vertical
+              fields:
+                - name: separator
+                  class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                  label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                  value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                - name: FS2.4.1
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-architecture-files-app.files.support.project.authorshipData.authorshipType.label
+                  required: true
+                - name: FS2.4.2
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-architecture-files-app.files.support.project.authorshipData.authorshipName.label
+                  i18n: true
+                  required: true
+                - name: FS2.4.3
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-architecture-files-app.files.support.project.authorshipData.authorshipSurname.label
+                  i18n: true
+                  required: true
+                - name: FS2.4.4
+                  class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                  label: caar-architecture-files-app.files.support.project.authorshipData.authorshipDetails.label
+                  i18n: true
+      - name: informationData
+        label: caar-architecture-files-app.files.support.project.informationData.label
+        fields:
+          - name: FS2.5.1
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+            label: caar-architecture-files-app.files.support.project.informationData.typology.label
+            required: true
+            options:
+              - name: FS3.5.1.1
+                value: monographs
+                label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.monographs.label
+              - name: FS3.5.1.2
+                value: publishedArticles
+                label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.publishedArticles.label
+              - name: FS3.5.1.3
+                value: awards
+                label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.awards.label
+      - name: relatedThoughtData
+        label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.label
+        fields:
+          - name: listRelatedThought
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.listRelatedThought.label
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            field:
+              name: compositeField
+              class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              layout: vertical
+              fields:
+                - name: separator
+                  class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                  label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                  value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                - name: FS3.6
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.relatedThought.label
+      - name: mediaGalleryData
+        label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.label
+        fields:
+          - name: listMedia
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.listMedia.label
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            field:
+              name: compositeField
+              class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              layout: vertical
+              fields:
+                - name: separator
+                  class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                  label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                  value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                - name: FS3.7.1
+                  class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                  label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaType.label
+                  options:
+                    - name: video
+                      value: video
+                      label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaType.video.label
+                    - name: image
+                      value: image
+                      label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaType.image.label
+                - name: FS3.7.2
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                  targetWorkspace: dam
+                  appName: assets
+                  label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.photoPreview.label
+                  identifierToPathConverter:
+                    class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                  contentPreviewDefinition:
+                    contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                - name: FS3.7.3
+                  class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                  label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaDetails.label
+                  i18n: true
+                - name: FS3.7.4
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaTitle.label
+                  i18n: true
+  actions:
+    - name: commit
+    - name: cancel
+actions:
+  commit:
+    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+  cancel:
+    class: info.magnolia.ui.form.action.CancelFormActionDefinition

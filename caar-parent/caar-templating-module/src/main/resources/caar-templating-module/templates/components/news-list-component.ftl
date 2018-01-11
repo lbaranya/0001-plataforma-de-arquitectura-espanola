@@ -1,4 +1,5 @@
 [#assign currentLanguage = cmsfn.language()!""]
+[#assign news = model.getInstance()!""]
 [#assign listNews = model.getNewsList()]
 [#if listNews?has_content]
 [#list listNews as newNode]
