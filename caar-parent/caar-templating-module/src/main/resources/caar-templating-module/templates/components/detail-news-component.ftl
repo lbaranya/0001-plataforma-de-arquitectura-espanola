@@ -1,6 +1,5 @@
 [#assign currentLanguage = cmsfn.language()!""]
 [#assign nodeJcrPath = ctx.getParameter('newsPath')!?html]
-${currentLanguage!""}
 [#if nodeJcrPath?has_content]
 [#assign newsContent = cmsfn.contentByPath(nodeJcrPath, "news")]
 [#assign newsContentNode = cmsfn.asJCRNode(newsContent)]
