@@ -16,6 +16,7 @@ import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeTypes;
 
 import info.magnolia.module.categorization.CategorizationNodeTypes;
+import static es.arquia.magnolia.constants.UtilsConstants.*;
 
 public class CountryCommand {
 
@@ -41,14 +42,14 @@ public class CountryCommand {
 		coll.setStrength(Collator.PRIMARY);
 		Collections.sort(countryNames, coll);
 
-		Session session = MgnlContext.getJCRSession("category");
+		Session session = MgnlContext.getJCRSession(categoryWorkspaceName);
 		Node caarCategoryRootNode = null;
 		Node subFolderCountriesNode = null;
-		if (!session.getRootNode().hasNode("caar")) {
+		if (!session.getRootNode().hasNode(caarCountriesRootFolderName)) {
 
-			caarCategoryRootNode = session.getRootNode().addNode("caar", NodeTypes.Folder.NAME);
-			if (!caarCategoryRootNode.hasNode("caar-countries")) {
-				subFolderCountriesNode = caarCategoryRootNode.addNode("caar-countries", NodeTypes.Folder.NAME);
+			caarCategoryRootNode = session.getRootNode().addNode(caarCountriesRootFolderName, NodeTypes.Folder.NAME);
+			if (!caarCategoryRootNode.hasNode(caarCountriesFolderName)) {
+				subFolderCountriesNode = caarCategoryRootNode.addNode(caarCountriesFolderName, NodeTypes.Folder.NAME);
 			}
 
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
@@ -59,10 +60,10 @@ public class CountryCommand {
 
 		} else {
 			log.debug("Exists node \"caar\", creating node \"caar-countries-tmp\"...");
-			caarCategoryRootNode = session.getRootNode().getNode("caar");
-			if (!caarCategoryRootNode.hasNode("caar-countries-tmp")) {
+			caarCategoryRootNode = session.getRootNode().getNode(caarCountriesRootFolderName);
+			if (!caarCategoryRootNode.hasNode(tmpCaarCountiesFolderName)) {
 				log.debug("Creating \"caar-countries-tmp\" node...");
-				subFolderCountriesNode = caarCategoryRootNode.addNode("caar-countries-tmp", NodeTypes.Folder.NAME);
+				subFolderCountriesNode = caarCategoryRootNode.addNode(tmpCaarCountiesFolderName, NodeTypes.Folder.NAME);
 			}
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
 				for (int i = 0; i < countryNames.size(); ++i) {
@@ -71,10 +72,10 @@ public class CountryCommand {
 			}
 			
 			log.debug("Rename old node \"caar-countries\" to \"caar-contries-old\", and rename \"caar-countries-tmp\" to \"caar-countries\"...");
-			Node oldNode = session.getRootNode().getNode("caar").getNode("caar-countries");
-			Node newNode = session.getRootNode().getNode("caar").getNode("caar-countries-tmp");
-			oldNode.getSession().move(oldNode.getPath(), oldNode.getParent().getPath() + "/caar-countries-old");
-			newNode.getSession().move(newNode.getPath(), newNode.getParent().getPath() + "/caar-countries");
+			Node oldNode = session.getRootNode().getNode(caarCountriesRootFolderName).getNode(caarCountriesFolderName);
+			Node newNode = session.getRootNode().getNode(caarCountriesRootFolderName).getNode(tmpCaarCountiesFolderName);
+			oldNode.getSession().move(oldNode.getPath(), oldNode.getParent().getPath() + "/" + caarCountriesOldFolderName);
+			newNode.getSession().move(newNode.getPath(), newNode.getParent().getPath() + "/" + caarCountriesFolderName);
 			
 			log.debug("Remove old node renamed to \"caar-countries-old\"...");
 			oldNode.remove();
