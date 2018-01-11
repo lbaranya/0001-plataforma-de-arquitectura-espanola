@@ -34,6 +34,24 @@
 			<groupId>info.magnolia.core</groupId>
   			<artifactId>magnolia-virtual-uri</artifactId>
 		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-architecture-files-app</artifactId>
+			<version>0.13-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-utils-module</artifactId>
+			<version>0.13-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-news-app</artifactId>
+			<version>0.13-SNAPSHOT</version>
+		</dependency>
 
 		<!-- TEST -->
 		<dependency>
