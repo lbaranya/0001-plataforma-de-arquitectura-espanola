@@ -156,7 +156,7 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
 	
 	public String getDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
 		Calendar calendar = node.getProperty(dateTime).getDate();
-		Locale locale = MgnlContext.getLocale();
+		Locale locale = MgnlContext.getAggregationState().getLocale();
 		DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 		return formatter.format(calendar.getTime());
 	}
