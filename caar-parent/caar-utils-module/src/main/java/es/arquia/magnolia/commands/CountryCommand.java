@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeTypes;
 
+import info.magnolia.module.categorization.CategorizationNodeTypes;
+
 public class CountryCommand {
 
 	private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
@@ -28,7 +30,7 @@ public class CountryCommand {
 	public boolean execute() throws Exception {
 
 		String[] locales = Locale.getISOCountries();
-		List<String> countryNames = new ArrayList<String>();
+		List<String> countryNames = new ArrayList<>();
 		for (String countryCode : locales) {
 			Locale obj2 = new Locale(userLocale.getLanguage(), countryCode);
 			countryNames.add(obj2.getDisplayCountry(userLocale));
@@ -51,34 +53,31 @@ public class CountryCommand {
 
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
 				for (int i = 0; i < countryNames.size(); ++i) {
-					subFolderCountriesNode.addNode(countryNames.get(i), "mgnl:category");
+					subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
 				}
 			}
 
 		} else {
-			
-			log.debug("Exists node \"caar\", creating node \"tmp-caar\"...");
-			if (!session.getRootNode().hasNode("tmp-caar")) {
-				caarCategoryRootNode = session.getRootNode().addNode("tmp-caar", NodeTypes.Folder.NAME);
-				if (!caarCategoryRootNode.hasNode("caar-countries")) {
-					log.debug("Creating \"caar-countries\" node...");
-					subFolderCountriesNode = caarCategoryRootNode.addNode("caar-countries", NodeTypes.Folder.NAME);
-				}
-				if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
-					for (int i = 0; i < countryNames.size(); ++i) {
-						subFolderCountriesNode.addNode(countryNames.get(i), "mgnl:category");
-					}
-				}
-				
-				log.debug("Rename old node \"caar\" to \"caar-r\", and rename \"tmp-caar\" to \"caar\"...");
-				Node oldNode = session.getRootNode().getNode("caar");
-				Node newNode = session.getRootNode().getNode("tmp-caar");
-				oldNode.getSession().move(oldNode.getPath(), oldNode.getParent().getPath() + "caar-2");
-				newNode.getSession().move(newNode.getPath(), newNode.getParent().getPath() + "caar");
-				
-				log.debug("Remove old node renamed to \"caar-2\"...");
-				oldNode.remove();
+			log.debug("Exists node \"caar\", creating node \"caar-countries-tmp\"...");
+			caarCategoryRootNode = session.getRootNode().getNode("caar");
+			if (!caarCategoryRootNode.hasNode("caar-countries-tmp")) {
+				log.debug("Creating \"caar-countries-tmp\" node...");
+				subFolderCountriesNode = caarCategoryRootNode.addNode("caar-countries-tmp", NodeTypes.Folder.NAME);
 			}
+			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
+				for (int i = 0; i < countryNames.size(); ++i) {
+					subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+				}
+			}
+			
+			log.debug("Rename old node \"caar-countries\" to \"caar-contries-old\", and rename \"caar-countries-tmp\" to \"caar-countries\"...");
+			Node oldNode = session.getRootNode().getNode("caar").getNode("caar-countries");
+			Node newNode = session.getRootNode().getNode("caar").getNode("caar-countries-tmp");
+			oldNode.getSession().move(oldNode.getPath(), oldNode.getParent().getPath() + "/caar-countries-old");
+			newNode.getSession().move(newNode.getPath(), newNode.getParent().getPath() + "/caar-countries");
+			
+			log.debug("Remove old node renamed to \"caar-countries-old\"...");
+			oldNode.remove();
 		}
 		if (caarCategoryRootNode != null)
 			caarCategoryRootNode.getSession().save();
