@@ -1,5 +1,7 @@
 package es.arquia.magnolia.components.architectureFiles.support.architect;
 
+import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,19 +16,11 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Value;
 import javax.jcr.ValueFormatException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import info.magnolia.context.MgnlContext;
-
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
-import static es.arquia.magnolia.constants.UtilsConstants.*;
 
 
 public class ArchitectureFilesSupportArchitect {
 	
-	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportArchitect.class);
-
 	private static String name = "FS1.1.1";
 	private static String firstSurname = "FS1.1.2";
 	private static String secondSurname = "FS1.1.3";
@@ -90,8 +84,6 @@ public class ArchitectureFilesSupportArchitect {
 	
 	private static String aditionalInfo = "FS1.8.1";
 	private static String annexes = "FS1.8.2";
-	
-	public ArchitectureFilesSupportArchitect() {}
 	
 	public String getName(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
 		return node.getProperty(name).getString();
