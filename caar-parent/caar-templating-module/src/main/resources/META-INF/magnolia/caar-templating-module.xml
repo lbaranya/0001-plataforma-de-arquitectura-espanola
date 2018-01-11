@@ -7,6 +7,14 @@
   <class>es.arquia.magnolia.CaarTemplatingModule</class>
   <versionHandler>es.arquia.magnolia.setup.CaarTemplatingModuleVersionHandler</versionHandler>
   <version>${project.version}</version>
+  
+	<components>
+		<id>main</id>
+		<component>
+			<type>es.arquia.magnolia.components.news.manager.NewsManager</type>
+			<implementation>es.arquia.magnolia.components.news.manager.NewsManagerImpl</implementation>
+		</component>
+	</components>
 
   <dependencies>
     <dependency>

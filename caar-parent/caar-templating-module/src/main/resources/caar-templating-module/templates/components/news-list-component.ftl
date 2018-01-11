@@ -1,5 +1,6 @@
 [#assign currentLanguage = cmsfn.language()!""]
-[#assign listNews = model.getNewsList()]
+[#assign news = model.getInstance()!""]
+[#assign listNews = news.getNewsList()]
 [#if listNews?has_content]
 [#list listNews as newNode]
 <section class="cmp-noticias">
@@ -9,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-12 imagen-destacada-new">
                         <div>
-                        	[#assign imgItemKey = model.getImage(newNode)]
+                        	[#assign imgItemKey = news.getImage(newNode)]
                         	[#if imgItemKey??]
                         		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "414")]
                         		[#if imgMediaRendition??]
@@ -23,9 +24,9 @@
                             [/#if]
                         </div>
                         <div class="noticia">
-                        [#assign headLine = model.getHeadline(newNode, currentLanguage)!""]
-                        [#assign date = model.getDate(newNode)!""]
-                        [#assign description = model.getDescription(newNode, currentLanguage)!""]
+                        [#assign headLine = news.getHeadline(newNode, currentLanguage)!""]
+                        [#assign date = news.getDate(newNode)!""]
+                        [#assign description = news.getDescription(newNode, currentLanguage)!""]
                             <h4>${headLine!""}</h4>
                             <span>${date!""}</span>
                             <p>${description!""}</p>
