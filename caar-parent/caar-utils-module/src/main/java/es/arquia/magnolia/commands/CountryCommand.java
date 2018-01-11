@@ -16,6 +16,7 @@ import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeTypes;
 
 import info.magnolia.module.categorization.CategorizationNodeTypes;
+import info.magnolia.module.categorization.CategorizationModule;
 import static es.arquia.magnolia.constants.UtilsConstants.*;
 
 public class CountryCommand {
@@ -42,7 +43,7 @@ public class CountryCommand {
 		coll.setStrength(Collator.PRIMARY);
 		Collections.sort(countryNames, coll);
 
-		Session session = MgnlContext.getJCRSession(categoryWorkspaceName);
+		Session session = MgnlContext.getJCRSession(CategorizationModule.CATEGORIZATION_WORKSPACE);
 		Node caarCategoryRootNode = null;
 		Node subFolderCountriesNode = null;
 		if (!session.getRootNode().hasNode(caarCountriesRootFolderName)) {
