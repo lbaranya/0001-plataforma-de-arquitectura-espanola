@@ -72,11 +72,11 @@ editor:
           - name: listAuthorship
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.authorshipData.listAuthorship.label
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
             field:
               name: compositeField
               class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
               layout: vertical
               fields:
                 - name: separator
@@ -126,11 +126,11 @@ editor:
           - name: listRelatedThought
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.listRelatedThought.label
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
             field:
               name: compositeField
               class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
               layout: vertical
               fields:
                 - name: separator
@@ -146,11 +146,11 @@ editor:
           - name: listMedia
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.listMedia.label
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
             field:
               name: compositeField
               class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
               layout: vertical
               fields:
                 - name: separator

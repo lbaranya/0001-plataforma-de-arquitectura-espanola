@@ -28,6 +28,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:support-architect
           icon: icon-items
+        - name: mgnl:support-project-wrapper
+          icon: icon-folder
+        - name: mgnl:support-project-folder-wrapper
+          icon: icon-folder
         - name: mgnl:support-project
           icon: icon-items
         - name: mgnl:support-review-i-wrapper
@@ -316,6 +320,7 @@ subApps:
             - mgnl:support-review-iv-folder-wrapper
             - mgnl:support-review-iii-folder-wrapper
             - mgnl:support-business-folder-wrapper
+            - mgnl:support-project-folder-wrapper
             - mgnl:format-video-folder-wrapper
             - mgnl:format-manuscript-folder-wrapper
             - mgnl:portfolio-folder-wrapper
@@ -346,6 +351,7 @@ subApps:
             - mgnl:support-review-iii-wrapper
             - mgnl:support-review-iv-wrapper
             - mgnl:support-business-wrapper
+            - mgnl:support-project-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
             - mgnl:format-video-wrapper
