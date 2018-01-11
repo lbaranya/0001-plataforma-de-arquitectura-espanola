@@ -1,5 +1,9 @@
 package es.arquia.magnolia.components.news;
 
+import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
+import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
+import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -19,9 +23,6 @@ import javax.jcr.ValueFormatException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import info.magnolia.cms.i18n.AbstractI18nContentSupport;
-import info.magnolia.cms.i18n.DefaultI18nContentSupport;
-import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
 import info.magnolia.jcr.util.NodeUtil;
@@ -29,10 +30,7 @@ import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
 
-import static es.arquia.magnolia.constants.NewsConstants.*;
-import static es.arquia.magnolia.constants.UtilsConstants.*;
-
-public class NewsListModel <RD extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
+public class NewsListModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	
 	private static final Logger log = LoggerFactory.getLogger(NewsListModel.class);
 	
