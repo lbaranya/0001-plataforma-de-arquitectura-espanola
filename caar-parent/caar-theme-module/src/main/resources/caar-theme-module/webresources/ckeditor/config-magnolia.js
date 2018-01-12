@@ -95,7 +95,7 @@ CKEDITOR.editorConfig = function( config ) {
 	
 	config.enterMode = CKEDITOR.ENTER_P;
 
-	config.baseFloatZIndex = 1500;
+	config.baseFloatZIndex = 150;
 	config.resize_enabled = false;
 	config.toolbar = "Magnolia";
 	config.toolbar_Magnolia = [
