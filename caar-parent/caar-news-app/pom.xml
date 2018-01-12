@@ -28,6 +28,12 @@
       <artifactId>javax.servlet-api</artifactId>
       <scope>provided</scope>
     </dependency>
+    
+    <dependency>
+		<groupId>es.arquia.magnolia</groupId>
+		<artifactId>caar-utils-module</artifactId>
+		<version>0.14-SNAPSHOT</version>
+	</dependency>
 
     <!-- TEST -->
     <dependency>

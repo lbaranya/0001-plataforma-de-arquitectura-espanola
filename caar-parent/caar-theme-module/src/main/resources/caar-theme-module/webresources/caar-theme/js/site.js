@@ -49,8 +49,6 @@ $(document).ready(function () {
 
         if (comprobacion != true) {
 
-
-
             var datamenu = $(this).attr('data-submenu');
             //Compruebo si cmp-exist-home existe
             if ($(".cmp-exist-home").length) {
@@ -117,9 +115,17 @@ $(document).ready(function () {
 
     $('.logo').on('click', function (e) {
         var comprobacion = $(this).hasClass("active-item");
-
         if (comprobacion != true) {
+            
             var datamenu = $(this).attr('data-submenu');
+            //Compruebo si cmp-exist-home existe
+            if ($(".cmp-exist-home").length) {
+                $('.submenu-container').removeClass('clicked');
+                $('.submenu-container').addClass('clicked');
+            } else {
+                $('.submenu-container').removeClass("clicked-nh");
+                $('.submenu-container').addClass("clicked-nh");
+            }
             $('.submenu').css('display', 'none');
             $('.' + datamenu).css('display', 'flex');
             $('.submenu-container').removeClass('clicked');
@@ -127,8 +133,14 @@ $(document).ready(function () {
             $('.menu-link').removeClass('active-item');
             $(this).addClass('active-item');
         } else {
-            $('.submenu-container').removeClass('clicked');
+        	$('.submenu').css('display', 'none');
+            $('.menu-link').removeClass('active-item');
+            $('.menu-item-icon').removeClass('active-item');
             $('.logo').removeClass('active-item');
+            $('.submenu-container').removeClass('clicked');
+            $('.submenu-container').removeClass('clicked-nh');
+            $('.search-icon').attr('src', iconsURL + 'search-icon.svg');
+            $('.user-icon').attr('src', iconsURL + 'usuario-icon.svg');
         }
     });
 

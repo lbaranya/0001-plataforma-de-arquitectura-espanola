@@ -11,8 +11,8 @@
 	<components>
 		<id>main</id>
 		<component>
-			<type>es.arquia.magnolia.components.news.manager.NewsManager</type>
-			<implementation>es.arquia.magnolia.components.news.manager.NewsManagerImpl</implementation>
+			<type>es.arquia.magnolia.news.manager.NewsManager</type>
+			<implementation>es.arquia.magnolia.news.manager.NewsManagerImpl</implementation>
 		</component>
 	</components>
 

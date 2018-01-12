@@ -295,6 +295,10 @@ subApps:
       addFolderSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addFolderSupportBusiness.yaml
         
+      # Project folder
+      addFolderSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addFolderSupportProject.yaml
+        
       # Manuscript folder
       addFolderFormatManuscript:
         !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFolderFormatManuscript.yaml
@@ -376,6 +380,8 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIVWrapper.yaml
       addSupportBusinessWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusinessWrapper.yaml
+      addSupportProjectWrapper:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addSupportProjectWrapper.yaml
       
       # Format wrappers
       
@@ -418,6 +424,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusiness.yaml
       editSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/editSupportBusiness.yaml
+        
+      # Support Project
+      addSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addSupportProject.yaml
+      editSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/editSupportProject.yaml
         
       # Format Manuscript
       addFormatManuscript:
@@ -601,6 +613,26 @@ subApps:
         # Support Business Not Deleted
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusiness.yaml
         
+        # Support project
+        
+        # Wrapper
+        # Section if project wrapper is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectWrapperDeleted.yaml
+        # Section if project wrapper is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectWrapper.yaml
+        
+        # Support project folder
+        # Section if project folder is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectFolderDeleted.yaml
+        # Section if project folder is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectFolder.yaml
+        
+        # Node actions
+        # Support Project Deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectDeleted.yaml
+        # Support Project Not Deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProject.yaml
+        
         # Format group
         
         # Section if format wrapper is marked for deletion
@@ -661,6 +693,9 @@ subApps:
   # Support business sub app
   detailSupportBusiness:
     !include:/caar-architecture-files-app/include/app/support/files/business/subapp/detailSupportBusiness.yaml
+  # Support project sub app
+  detailSupportProject:
+    !include:/caar-architecture-files-app/include/app/support/files/project/subapp/detailSupportProject.yaml
   # Format video sub app
   detailFormatVideo:
     !include:/caar-architecture-files-app/include/app/format/files/video/subapp/detailFormatVideo.yaml
