@@ -1,4 +1,4 @@
-package es.arquia.magnolia.components.news.manager;
+package es.arquia.magnolia.news.manager;
 
 import static es.arquia.magnolia.constants.NewsConstants.*;
 
@@ -15,15 +15,14 @@ import javax.jcr.ValueFormatException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.components.news.News;
-import es.arquia.magnolia.components.news.NewsListModel;
+import es.arquia.magnolia.news.News;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
 import info.magnolia.jcr.util.NodeUtil;
 
 public class NewsManagerImpl implements NewsManager{
 	
-	private static final Logger log = LoggerFactory.getLogger(NewsListModel.class);
+	private static final Logger log = LoggerFactory.getLogger(NewsManagerImpl.class);
 	
 	private static AbstractPredicate<Node> MAGNOLIA_NEWS_FILTER = new AbstractPredicate<Node>() {
 

@@ -5,7 +5,8 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.jcr.Node;
 
-import es.arquia.magnolia.components.news.manager.NewsManager;
+import es.arquia.magnolia.news.News;
+import es.arquia.magnolia.news.manager.NewsManager;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
