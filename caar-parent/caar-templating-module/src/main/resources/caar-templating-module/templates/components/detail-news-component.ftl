@@ -1,14 +1,14 @@
 [#assign currentLanguage = cmsfn.language()!""]
 [#assign nodeJcrPath = ctx.getParameter('newsPath')!?html]
-${currentLanguage!""}
 [#if nodeJcrPath?has_content]
 [#assign newsContent = cmsfn.contentByPath(nodeJcrPath, "news")]
 [#assign newsContentNode = cmsfn.asJCRNode(newsContent)]
+[#assign news = model.getInstance()!""]
 <section class="cmp-detalle-noticia">
     <div class="row-imagen-video">
         <div class="container">
             <div class="imagen-video">
-                [#assign imgItemKey = model.getImage(newsContentNode)]
+                [#assign imgItemKey = news.getImage(newsContentNode)]
             	[#if imgItemKey??]
             		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1024")]
             		[#if imgMediaRendition??]
@@ -27,11 +27,11 @@ ${currentLanguage!""}
         <div class="container">
             <div class="noticia">
                 <div class="header">
-                    <h3>${model.getLongTitle(newsContentNode, currentLanguage)!""}</h3>
-                    <p>${model.getDate(newsContentNode)!""} <span>/ AE</span></p>
+                    <h3>${news.getLongTitle(newsContentNode, currentLanguage)!""}</h3>
+                    <p>${news.getDate(newsContentNode)!""} <span>/ AE</span></p>
                 </div>
                 <div class="info-noticia">
-                    ${model.getLongDescription(newsContentNode, currentLanguage)!""}
+                    ${news.getLongDescription(newsContentNode, currentLanguage)!""}
                 </div>
             </div>
         </div>

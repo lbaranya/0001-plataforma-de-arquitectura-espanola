@@ -6,6 +6,7 @@ form:
         - name: title          
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           label: caar-templating-module.templates.components.related-news-component.tabMain.title.label
+          i18n: true
         - name: news
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
           label: caar-templating-module.templates.components.related-news-component.tabMain.news.label
