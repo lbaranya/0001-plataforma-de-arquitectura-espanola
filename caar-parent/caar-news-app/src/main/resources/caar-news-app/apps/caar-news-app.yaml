@@ -446,6 +446,7 @@ subApps:
               - name: N1.11
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-news-app.informativeMedium.label
+                required: true
       actions:
         - name: commit
         - name: cancel
