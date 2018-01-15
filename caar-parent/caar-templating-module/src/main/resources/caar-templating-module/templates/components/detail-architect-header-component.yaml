@@ -1,0 +1,4 @@
+title: Cabecera de detalle de arquitecto
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/detail-architect-header-component.ftl
+modelClass: es.arquia.magnolia.components.architectureFiles.support.architect.ArchitectureFilesSupportArchitectModel
