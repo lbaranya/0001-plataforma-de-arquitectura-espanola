@@ -16,6 +16,8 @@ subApps:
       nodeTypes:
         - name: mgnl:portfolio-wrapper
           icon: icon-folder
+        - name: mgnl:portfolio-folder-wrapper
+          icon: icon-folder
         - name: mgnl:portfolio
           icon: icon-items
         - name: mgnl:support-wrapper
@@ -26,6 +28,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:support-architect
           icon: icon-items
+        - name: mgnl:support-project-wrapper
+          icon: icon-folder
+        - name: mgnl:support-project-folder-wrapper
+          icon: icon-folder
         - name: mgnl:support-project
           icon: icon-items
         - name: mgnl:support-review-i-wrapper
@@ -223,7 +229,7 @@ subApps:
       # showVersions each file type
       
       # Details architect
-      showVersionsArchitects: 
+      showVersionsArchitect: 
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/showVersionsArchitect.yaml
         
       # Details Review Type I
@@ -246,8 +252,8 @@ subApps:
       showVersionsBusiness: 
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/showVersionsBusiness.yaml
         
-      # Details Folder
-      showVersionsFolder: 
+      # Details Video
+      showVersionsVideo: 
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/showVersionsVideo.yaml
 
       # Details Manuscript
@@ -289,6 +295,10 @@ subApps:
       addFolderSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addFolderSupportBusiness.yaml
         
+      # Project folder
+      addFolderSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addFolderSupportProject.yaml
+        
       # Manuscript folder
       addFolderFormatManuscript:
         !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFolderFormatManuscript.yaml
@@ -314,8 +324,10 @@ subApps:
             - mgnl:support-review-iv-folder-wrapper
             - mgnl:support-review-iii-folder-wrapper
             - mgnl:support-business-folder-wrapper
+            - mgnl:support-project-folder-wrapper
             - mgnl:format-video-folder-wrapper
             - mgnl:format-manuscript-folder-wrapper
+            - mgnl:portfolio-folder-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -343,6 +355,7 @@ subApps:
             - mgnl:support-review-iii-wrapper
             - mgnl:support-review-iv-wrapper
             - mgnl:support-business-wrapper
+            - mgnl:support-project-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
             - mgnl:format-video-wrapper
@@ -367,6 +380,8 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIVWrapper.yaml
       addSupportBusinessWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusinessWrapper.yaml
+      addSupportProjectWrapper:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addSupportProjectWrapper.yaml
       
       # Format wrappers
       
@@ -409,6 +424,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusiness.yaml
       editSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/editSupportBusiness.yaml
+        
+      # Support Project
+      addSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addSupportProject.yaml
+      editSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/editSupportProject.yaml
         
       # Format Manuscript
       addFormatManuscript:
@@ -592,6 +613,26 @@ subApps:
         # Support Business Not Deleted
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusiness.yaml
         
+        # Support project
+        
+        # Wrapper
+        # Section if project wrapper is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectWrapperDeleted.yaml
+        # Section if project wrapper is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectWrapper.yaml
+        
+        # Support project folder
+        # Section if project folder is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectFolderDeleted.yaml
+        # Section if project folder is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectFolder.yaml
+        
+        # Node actions
+        # Support Project Deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectDeleted.yaml
+        # Support Project Not Deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProject.yaml
+        
         # Format group
         
         # Section if format wrapper is marked for deletion
@@ -652,6 +693,9 @@ subApps:
   # Support business sub app
   detailSupportBusiness:
     !include:/caar-architecture-files-app/include/app/support/files/business/subapp/detailSupportBusiness.yaml
+  # Support project sub app
+  detailSupportProject:
+    !include:/caar-architecture-files-app/include/app/support/files/project/subapp/detailSupportProject.yaml
   # Format video sub app
   detailFormatVideo:
     !include:/caar-architecture-files-app/include/app/format/files/video/subapp/detailFormatVideo.yaml

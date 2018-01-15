@@ -40,6 +40,9 @@ imaging:
     "375":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 375
+    "175":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 175
     "414":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 414

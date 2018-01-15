@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>caar-parent</artifactId>
 		<groupId>es.arquia.magnolia</groupId>
-		<version>0.13-SNAPSHOT</version>
+		<version>0.14-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>caar-utils-module</artifactId>
@@ -39,6 +39,11 @@
 		<dependency>
 		    <groupId>info.magnolia.workflow</groupId>
 		    <artifactId>magnolia-module-workflow-jbpm</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>info.magnolia.categorization</groupId>
+			<artifactId>magnolia-categorization</artifactId>
 		</dependency>
 
 		<!-- TEST -->

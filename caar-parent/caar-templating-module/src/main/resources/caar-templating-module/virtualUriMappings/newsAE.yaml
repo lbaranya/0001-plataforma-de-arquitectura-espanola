@@ -1,3 +1,3 @@
-class: info.magnolia.cms.beans.config.RegexpVirtualURIMapping
-fromURI: /news/(.*).html
-toURI: forward:/caar-home/arquitectura-espanola/newsAE/newsDetailsAE?newsPath=/$1
+class: es.arquia.magnolia.virtualuri.mapping.regexp.LocaleRegexpVirtualURIMapping
+fromUri: /news/(.*).html
+toUri: forward:/caar-home/arquitectura-espanola/newsAE/newsDetailsAE?newsPath=/$1

@@ -1,33 +1,22 @@
 package es.arquia.magnolia.components.architectureFiles.support.architect;
 
+import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Comparator;
-import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
-import javax.jcr.LoginException;
 import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.PathNotFoundException;
-import javax.jcr.Property;
-import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
-import javax.jcr.Session;
 import javax.jcr.Value;
 import javax.jcr.ValueFormatException;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.files.ArchitectureFile;
 import es.arquia.magnolia.files.RelatedFile;
@@ -131,6 +120,7 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
         }
     };
 	
+
 	public String getName(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
 		try {
 			return node.getProperty(name).getString();
@@ -355,6 +345,11 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		}
 	}
 	
+	public String getWorkingExperienceStartDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
+		Calendar calendar = node.getProperty(workingExperienceStartDate).getDate();
+		Locale locale = MgnlContext.getLocale();
+		DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+
 	public List<Node> getWorkExperienceList(Node node) throws Exception{
 		List<Node> list = new ArrayList<>();
 		try {
@@ -368,7 +363,6 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 			}
 		} catch(Exception e) {}
 		return list;
-	}
 	
 	public String getWorkExperienceStartDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
 		try {
@@ -379,7 +373,6 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		} catch(Exception e) {
 			return "";
 		}
-	}
 	
 	public String getWorkExperienceEndingDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
 		try {

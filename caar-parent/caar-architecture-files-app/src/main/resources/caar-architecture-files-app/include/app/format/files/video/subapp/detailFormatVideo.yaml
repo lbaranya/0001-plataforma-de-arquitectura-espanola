@@ -95,7 +95,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.collectionNumber.label
       - name: notes
-        label: ccaar-architecture-files-app.files.format.video.notes.label
+        label: caar-architecture-files-app.files.format.video.notes.label
         fields:
           - name: m21_500$a
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition

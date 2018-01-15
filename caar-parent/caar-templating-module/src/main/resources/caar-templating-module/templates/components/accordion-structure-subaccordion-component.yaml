@@ -1,4 +1,4 @@
-title: Accordion Subaccordion Structure
+title: caar-templating-module.components.accordion-structure-subaccordion.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/accordion-structure-subaccordion-component.ftl
 dialog: caar-templating-module:components/accordion-structure-subaccordion-component-properties

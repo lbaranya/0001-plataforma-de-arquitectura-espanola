@@ -1,0 +1,29 @@
+name: supportProjectWrapperDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportProjectWrapper.label
+groups:
+  - name: addActions
+    items:
+      - name: addFolderSupportProject
+      - name: addSupportProject
+  - name: editActions
+    items:
+      - name: editWrapper
+      - name: confirmDelete 
+  - name: importExportActions
+    items:
+      - name: import
+      - name: export
+  - name: activationActions
+    items:
+      - name: activateDeleted
+      - name: activateRecursive
+      - name: deactivate
+  - name: deletedActions
+    items:
+      - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:support-project-wrapper
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

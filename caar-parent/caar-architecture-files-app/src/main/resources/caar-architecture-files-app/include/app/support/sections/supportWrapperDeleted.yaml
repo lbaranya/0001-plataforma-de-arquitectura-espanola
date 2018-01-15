@@ -9,6 +9,7 @@ groups:
       - name: addSupportReviewIIIWrapper
       - name: addSupportReviewIVWrapper
       - name: addSupportBusinessWrapper
+      - name: addSupportProjectWrapper
   - name: editActions
     items:
       - name: editWrapper

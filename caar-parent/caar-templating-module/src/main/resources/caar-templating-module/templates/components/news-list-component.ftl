@@ -1,4 +1,7 @@
+[#assign currentLanguage = cmsfn.language()!""]
+[#assign news = model.getInstance()!""]
 [#assign listNews = model.getNewsList()]
+[#if listNews?has_content]
 [#list listNews as newNode]
 <section class="cmp-noticias">
 	<div class="noticia-destacada">
@@ -7,7 +10,7 @@
                 <div class="row">
                     <div class="col-md-12 imagen-destacada-new">
                         <div>
-                        	[#assign imgItemKey = model.getImage(newNode)]
+                        	[#assign imgItemKey = news.getImage(newNode)]
                         	[#if imgItemKey??]
                         		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "414")]
                         		[#if imgMediaRendition??]
@@ -16,22 +19,26 @@
                         			[#if imageAlt?has_content]
                         				[#assign imageAlternativeText = imageAlt.alternative!""]
                         			[/#if]
-                            		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+                            		<img src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
                             	[/#if]
                             [/#if]
                         </div>
                         <div class="noticia">
-                            <h4>${model.getHeadline(newNode)!""}</h4>
-                            <span>${model.getDate(newNode)!""}</span>
-                            <p>${model.getDescription(newNode)!""}</p>
+                        [#assign headLine = news.getHeadline(newNode, currentLanguage)!""]
+                        [#assign date = news.getDate(newNode)!""]
+                        [#assign description = news.getDescription(newNode, currentLanguage)!""]
+                            <h4>${headLine!""}</h4>
+                            <span>${date!""}</span>
+                            <p>${description!""}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 row-info">
-                    <a href="${cmsfn.link(newNode)!"algo"}"><div><i class="fa fa-file" aria-hidden="true"></i> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</div></a>
+                    <a href='${cmsfn.link(newNode)!"algo"}'><div><i class="fa fa-file" aria-hidden="true"></i> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</div></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 [/#list]
+[/#if]
