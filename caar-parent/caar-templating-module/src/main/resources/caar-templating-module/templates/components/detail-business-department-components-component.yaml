@@ -1,0 +1,4 @@
+title: Componentes del Despacho
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/detail-business-department-components-component.ftl
+modelClass: es.arquia.magnolia.components.architectureFiles.support.business.ArchitectureFilesSupportBusinessModel

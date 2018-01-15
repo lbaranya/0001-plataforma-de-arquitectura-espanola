@@ -60,13 +60,14 @@ editor:
           - name: FS4.1.8
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.departmentComponents.label
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
             field:
               name: picker
               class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
               label: caar-architecture-files-app.files.support.business.businessData.departmentComponents.picker.label
               appName: caar-architecture-files-app
               targetWorkspace: architecture-files
+              identifierToPathConverter:
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter 
           - name: FS4.1.9
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.biographicReview.label
