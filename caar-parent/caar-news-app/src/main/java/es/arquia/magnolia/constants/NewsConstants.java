@@ -15,4 +15,5 @@ public interface NewsConstants {
 	String important = "N1.8";
 	String files = "N1.9";
 	String relatedNews = "N1.10";
+	String informativeMedium = "N1.11";
 }
