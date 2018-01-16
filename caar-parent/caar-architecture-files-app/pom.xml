@@ -28,6 +28,10 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
+			<groupId>info.magnolia.ui</groupId>
+			<artifactId>magnolia-ui-workbench</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-utils-module</artifactId>
 			<version>0.14-SNAPSHOT</version>

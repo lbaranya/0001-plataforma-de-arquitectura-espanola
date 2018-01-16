@@ -1,6 +1,7 @@
 package es.arquia.magnolia.components.models.architectureFiles;
 
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -15,7 +16,6 @@ import info.magnolia.context.MgnlContext;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
 
 public class RelatedFilesModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 

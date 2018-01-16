@@ -95,7 +95,7 @@ subApps:
         - name: mgnl:folder
           icon: icon-folder
     workbench:
-      dropConstraintClass: info.magnolia.ui.workbench.tree.drop.AlwaysTrueDropConstraint
+      dropConstraintClass: es.arquia.magnolia.ui.workbench.tree.drop.ArchitectureFilesJcrContentDropConstraint
       editable: false
       contentViews:
         - name: tree
