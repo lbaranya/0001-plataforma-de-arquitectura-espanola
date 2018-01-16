@@ -1579,7 +1579,10 @@ a:focus {
         float: right; }
         .noticias-container .noticias-item .noticias-links .evento-footer-rrss .rrss-link {
           font-size: 15px;
-          color: #D0021B; }
+          color: #D0021B;
+          display: flex;
+          align-items: center;
+        }
           .noticias-container .noticias-item .noticias-links .evento-footer-rrss .rrss-link .rrss-icon {
             vertical-align: sub; }
 
@@ -1642,7 +1645,9 @@ a:focus {
       border: 1px solid #D0021B; }
       .evento-contenedor .evento-item .evento-footer-rrss .rrss-link {
         font-size: 15px;
-        color: #D0021B; }
+        color: #D0021B;
+        display: flex;
+        align-items: center; }
         .evento-contenedor .evento-item .evento-footer-rrss .rrss-link .rrss-icon {
           vertical-align: sub; }
 
