@@ -1,4 +1,4 @@
-package es.arquia.magnolia.news.manager;
+package es.arquia.magnolia.manager;
 
 import static es.arquia.magnolia.constants.NewsConstants.*;
 
@@ -16,7 +16,7 @@ import javax.jcr.ValueFormatException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.news.News;
+import es.arquia.magnolia.beans.News;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
 import info.magnolia.jcr.util.NodeUtil;

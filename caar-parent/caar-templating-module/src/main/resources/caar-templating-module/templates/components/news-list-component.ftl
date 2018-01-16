@@ -2,14 +2,17 @@
 [#assign news = model.getInstance()!""]
 [#assign listNews = model.getNewsList()]
 [#if listNews?has_content]
-[#list listNews as newNode]
-<section class="cmp-noticias">
-	<div class="noticia-destacada">
-        <div class="row-new">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 imagen-destacada-new">
-                        <div>
+<section class="cmp-last-news">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-md-12 title">
+                    <span class="categoria">noticias</span>
+                </div> -->
+				[#list listNews as newNode]
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="noticias-container">
+                        <div class="noticias-item">
+                            <div class="container-destacado">
                         	[#assign imgItemKey = news.getImage(newNode)]
                         	[#if imgItemKey??]
                         		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "414")]
@@ -19,26 +22,36 @@
                         			[#if imageAlt?has_content]
                         				[#assign imageAlternativeText = imageAlt.alternative!""]
                         			[/#if]
-                            		<img src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
+                            		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
                             	[/#if]
                             [/#if]
-                        </div>
-                        <div class="noticia">
-                        [#assign headLine = news.getHeadline(newNode, currentLanguage)!""]
-                        [#assign date = news.getDate(newNode)!""]
-                        [#assign description = news.getDescription(newNode, currentLanguage)!""]
-                            <h4>${headLine!""}</h4>
-                            <span>${date!""}</span>
+                        	</div>
+                        	[#assign headLine = news.getHeadline(newNode, currentLanguage)!""]
+                        	[#assign description = news.getDescription(newNode, currentLanguage)!""]
+                            <h4 class="title">${headLine!""}</h4>
                             <p>${description!""}</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 row-info">
-                    <a href='${cmsfn.link(newNode)!"algo"}'><div><i class="fa fa-file" aria-hidden="true"></i> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</div></a>
-                </div>
-            </div>
+                            <div class="noticias-links">
+		                    	<a href='${cmsfn.link(newNode)!"algo"}'><span class="more-link" alt="leer más"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
+			                </div>
+			                <div class="evento-footer-rrss">
+			                    <a href="#" class="rrss-link">
+			                        <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
+			                    </a>
+			                    <a href="#" class="rrss-link">
+			                        <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
+			                    </a>
+			                    <a href="#" class="rrss-link">
+			                        <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
+			                    </a>
+			                    <a href="#" class="rrss-link">
+			                        <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
+			                    </a>
+			                </div>
+	                    </div>
+	                </div>
+	            </div>
+	            [/#list]
         </div>
     </div>
 </section>
-[/#list]
 [/#if]

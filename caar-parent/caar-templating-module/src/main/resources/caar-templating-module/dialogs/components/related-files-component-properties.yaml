@@ -1,0 +1,14 @@
+form:
+  tabs:
+    - name: tabMain
+      label: caar-templating-module.templates.components.related-files-component.tabMain.label
+      fields:
+        - name: title
+          required: true
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.related-files-component.tabMain.title.label
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

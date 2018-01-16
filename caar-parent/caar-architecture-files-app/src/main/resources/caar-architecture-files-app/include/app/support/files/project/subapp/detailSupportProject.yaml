@@ -97,11 +97,11 @@ editor:
         fields:
           - name: FS2.3.1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.support.project.localizationData.kindVia.label
+            label: caar-architecture-files-app.files.support.project.localizationData.typeOfRoad.label
             required: true
           - name: FS2.3.2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.support.project.localizationData.via.label
+            label: caar-architecture-files-app.files.support.project.localizationData.road.label
             required: true
           - name: FS2.3.3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -117,7 +117,7 @@ editor:
             required: true
           - name: FS2.3.6
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.support.project.localizationData.poblation.label
+            label: caar-architecture-files-app.files.support.project.localizationData.town.label
             required: true
           - name: FS2.3.7
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
