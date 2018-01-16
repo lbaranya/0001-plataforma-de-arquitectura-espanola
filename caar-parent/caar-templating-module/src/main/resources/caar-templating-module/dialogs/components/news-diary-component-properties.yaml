@@ -1,0 +1,24 @@
+form:
+  tabs:
+    - name: tabMain
+      label: caar-templating-module.templates.components.news-diary-component.tabMain.label
+      fields:
+        - name: allNewsLink          
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.news-diary-component.tabMain.allNewsLink.label
+          i18n: true
+        - name: dummyImage      
+          required: true       
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+          label: caar-templating-module.templates.components.news-diary-component.tabMain.dummyImage.label   
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
