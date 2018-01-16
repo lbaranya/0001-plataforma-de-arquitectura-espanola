@@ -33,6 +33,7 @@ subApps:
             - name: value
               editable: true
               sortable: true
+              width: 50
               propertyName: value
               class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
             - name: status
@@ -40,6 +41,11 @@ subApps:
               displayInChooseDialog: false
               formatterClass: info.magnolia.ui.workbench.column.StatusColumnFormatter
               class: info.magnolia.ui.workbench.column.definition.StatusColumnDefinition
+            - name: N1.8
+              sortable: true
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+              propertyName: N1.8
+              width: 100
             - name: moddate
               width: 160
               sortable: true
@@ -436,7 +442,11 @@ subApps:
                   targetWorkspace: news
                   appName: caar-news-app
                   identifierToPathConverter:
-                    class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter 
+                    class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+              - name: N1.11
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-news-app.informativeMedium.label
+                required: true
       actions:
         - name: commit
         - name: cancel
