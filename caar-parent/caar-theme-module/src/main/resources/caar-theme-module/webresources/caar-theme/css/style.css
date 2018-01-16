@@ -1702,4 +1702,200 @@ a:focus {
           .cmp-last-news .noticias-container .noticias-item .evento-footer-rrss .rrss-link .rrss-icon {
             vertical-align: sub; }
 
+/* Empresa Detalle */
 
+.cmp-empresa-detalle {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  border-bottom: 3px solid #D0021B; }
+  .cmp-empresa-detalle .logo-emp {
+    width: 355px; }
+  .cmp-empresa-detalle .descript-emp p {
+    font-size: 14px;
+    font-family: "National-Book", "Helvetica", "sans-serif"; }
+    .cmp-empresa-detalle .descript-emp p span {
+      font-weight: bold; }
+    .cmp-empresa-detalle .descript-emp p .text-important {
+      color: #D0021B; }
+
+.cmp-empresa-info-despacho {
+  border-bottom: none;
+  font-family: "National-Book", "Helvetica", "sans-serif"; }
+  .cmp-empresa-info-despacho .map iframe {
+    width: 100%;
+    height: 234px; }
+  .cmp-empresa-info-despacho h3 {
+    color: #D0021B;
+    font-size: 24px; }
+  .cmp-empresa-info-despacho span {
+    font-weight: bold; }
+  .cmp-empresa-info-despacho .descript-emp .info {
+    margin-bottom: 30px; }
+    .cmp-empresa-info-despacho .descript-emp .info div {
+      display: inline-block;
+      margin-right: 20px; }
+      .cmp-empresa-info-despacho .descript-emp .info div a {
+        text-decoration: none;
+        color: #D0021B;
+        font-weight: bold; }
+      .cmp-empresa-info-despacho .descript-emp .info div .fa-mobile {
+        font-size: 19px; }
+
+.cmp-despacho {
+  font-family: "National-Book", "Helvetica", "sans-serif";
+  font-size: 14px;
+  background-color: #f9f7f3;
+  margin-bottom: 20px; }
+  .cmp-despacho h3 {
+    color: #D0021B;
+    font-size: 24px; }
+  .cmp-despacho .col-despacho {
+    background-color: #fff;
+    border-bottom: 3px solid #D0021B;
+    margin-bottom: 20px;
+    float: left; }
+    .cmp-despacho .col-despacho .img-despacho {
+      padding-left: 0; }
+      .cmp-despacho .col-despacho .img-despacho img {
+        width: 100%;
+        height: 274px; }
+    .cmp-despacho .col-despacho .title {
+      color: #4a4a4a;
+      font-size: 20px; }
+    .cmp-despacho .col-despacho .subtitle {
+      color: #4a4a4a;
+      font-weight: bold; }
+    .cmp-despacho .col-despacho .download {
+      text-align: right;
+      margin-top: 50px; }
+      .cmp-despacho .col-despacho .download a {
+        text-decoration: none;
+        color: #4a4a4a;
+        font-weight: bold; }
+
+.cmp-info-complementaria {
+  font-family: "National-Book", "Helvetica", "sans-serif";
+  font-size: 14px;
+  color: #4a4a4a; }
+  .cmp-info-complementaria h3 {
+    color: #D0021B;
+    font-size: 24px; }
+  .cmp-info-complementaria .descript .text-important {
+    font-size: 18px;
+    font-family: "National-Bold", "Helvetica", "sans-serif"; }
+  .cmp-info-complementaria .descript span {
+    font-weight: bold; }
+  .cmp-info-complementaria .descript .text-important-red {
+    color: #D0021B; }
+
+/* Empresa Detalle: Termina */
+
+
+/* Arquitecto Detalle */
+
+.cmp-ficha-detalle-arquitecto {
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #D0021B; }
+  .cmp-ficha-detalle-arquitecto .header-img {
+    float: left;
+    width: 70%;
+    position: relative; }
+    .cmp-ficha-detalle-arquitecto .header-img img {
+      width: 100%;
+      height: 627px; }
+    .cmp-ficha-detalle-arquitecto .header-img .text {
+      position: absolute;
+      bottom: 45px;
+      font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif";
+      font-size: 48px;
+      text-align: center;
+      color: #fff; }
+  .cmp-ficha-detalle-arquitecto .descrip-header {
+    float: left;
+    width: 30%;
+    padding: 0 25px 0 25px; }
+    .cmp-ficha-detalle-arquitecto .descrip-header h2 {
+      margin: 0;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      font-size: 30px;
+      text-transform: uppercase; }
+    .cmp-ficha-detalle-arquitecto .descrip-header span {
+      font-family: "National-Bold", "Helvetica", "sans-serif";
+      font-size: 14px; }
+    .cmp-ficha-detalle-arquitecto .descrip-header p {
+      margin-top: 50px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      font-size: 20px; }
+
+.cmp-ficha-arquitecto {
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .cmp-ficha-arquitecto h3 {
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    font-size: 24px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #D0021B; }
+  .cmp-ficha-arquitecto ul li {
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    font-size: 14px;
+    list-style: inside; }
+    .cmp-ficha-arquitecto ul li span {
+      font-weight: bold; }
+  .cmp-ficha-arquitecto p {
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    font-size: 14px; }
+    .cmp-ficha-arquitecto p .important-word {
+      color: #D0021B; }
+    .cmp-ficha-arquitecto p .bold-text {
+      font-weight: bold;
+      font-size: 18px; }
+
+.cmp-arquitectos-realacionados {
+  background-color: #f9f7f3;
+  float: left;
+  width: 100%;
+  margin-top: 20px;
+  padding-bottom: 20px; }
+  .cmp-arquitectos-realacionados .title {
+    color: #D0021B;
+    font-size: 24px;
+    font-family: "National-Book", "Helvetica", "sans-serif"; }
+  .cmp-arquitectos-realacionados .arquitecto h4 {
+    font-family: "National-BookItalic", "Helvetica", "sans-serif";
+    font-size: 15px; }
+  .cmp-arquitectos-realacionados .arquitecto .container-img {
+    position: relative; }
+    .cmp-arquitectos-realacionados .arquitecto .container-img img {
+      width: 100%;
+      height: 445px;
+      border-bottom: 3px solid #D0021B; }
+    .cmp-arquitectos-realacionados .arquitecto .container-img:hover img {
+      border: none; }
+    .cmp-arquitectos-realacionados .arquitecto .container-img:hover .texto {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    .cmp-arquitectos-realacionados .arquitecto .container-img .texto {
+      display: none;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      height: 445px;
+      color: #fff;
+      background-color: rgba(208, 2, 27, 0.7); }
+      .cmp-arquitectos-realacionados .arquitecto .container-img .texto h2 {
+        margin: 0;
+        text-align: center;
+        font-size: 45px;
+        font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
+  .cmp-arquitectos-realacionados .separator {
+    margin-top: 50px;
+    margin-bottom: 50px; }
+    .cmp-arquitectos-realacionados .separator hr {
+      border-bottom: 3px solid #979797; }
+
+      /* Arquitecto Detalle: termina */

@@ -1,12 +1,12 @@
-package es.arquia.magnolia.components.news;
+package es.arquia.magnolia.components.models.news;
 
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
 
-import es.arquia.magnolia.news.News;
-import es.arquia.magnolia.news.manager.NewsManager;
+import es.arquia.magnolia.beans.News;
+import es.arquia.magnolia.manager.NewsManager;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
