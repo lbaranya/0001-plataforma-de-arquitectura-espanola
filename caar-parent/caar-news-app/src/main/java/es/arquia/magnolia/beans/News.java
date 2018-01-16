@@ -1,4 +1,4 @@
-package es.arquia.magnolia.news;
+package es.arquia.magnolia.beans;
 
 import static es.arquia.magnolia.constants.NewsConstants.*;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;

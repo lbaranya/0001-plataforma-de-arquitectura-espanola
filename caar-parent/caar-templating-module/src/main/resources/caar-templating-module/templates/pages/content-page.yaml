@@ -34,6 +34,18 @@ areas:
             id: caar-templating-module:components/bienials-header-component
           news-related-component:
             id: caar-templating-module:components/related-news-component
+          detail-business-department-info-component:
+            id: caar-templating-module:components/detail-business-department-info-component
+          detail-business-department-components-component:
+            id: caar-templating-module:components/detail-business-department-components-component
+          detail-business-complementary-info-component:
+            id: caar-templating-module:components/detail-business-complementary-info-component
+          detail-architect-header-component:
+            id: caar-templating-module:components/detail-architect-header-component
+          detail-architect-body-component:
+            id: caar-templating-module:components/detail-architect-body-component
+          related-files-component:
+            id: caar-templating-module:components/related-files-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:
