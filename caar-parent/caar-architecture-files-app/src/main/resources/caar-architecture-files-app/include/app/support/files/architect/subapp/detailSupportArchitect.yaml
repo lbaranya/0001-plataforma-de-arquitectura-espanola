@@ -141,8 +141,9 @@ editor:
               appName: caar-architecture-files-app
               targetWorkspace: architecture-files
           - name: FS1.3.6
-            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.architect.professionalData.biographicReview.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
           - name: FS1.3.7
             class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
@@ -178,11 +179,11 @@ editor:
           - name: listExperience
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.architect.workExperienceData.listExperience.label
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
             field:
               name: compositeField
               class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
               layout: vertical
               fields:
                 - name: separator
@@ -223,11 +224,11 @@ editor:
           - name: listEducation
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.architect.educationListData.listEducation.label
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
             field:
               name: compositeField
               class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
               layout: vertical
               fields:
                 - name: separator
@@ -347,13 +348,25 @@ editor:
         label: caar-architecture-files-app.files.support.architect.additonalInfoData.label
         fields:
           - name: FS1.8.1
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.architect.additonalInfoData.additionalInformation.label
             i18n: true
           - name: FS1.8.2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.architect.additonalInfoData.annexes.label
             i18n: true
+      - name: relatedFilesTab
+        label: Related files Tab
+        fields:
+          - name: relatedFiles
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: Related files
+            field:
+              name: fileLink
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              label: caar-architecture-files-app.files.support.architect.professionalData.officeComponents.picker.label
+              appName: caar-architecture-files-app
+              targetWorkspace: architecture-files
   actions:
     - name: commit
     - name: cancel
