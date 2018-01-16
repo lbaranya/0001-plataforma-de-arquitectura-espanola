@@ -1671,36 +1671,59 @@ a:focus {
   .cmp-noticias-eventos .cmp-agenda {
     width: 70%;
     padding-left: 63px; }
+    
+/*		ULTIMAS NOTICIAS Y LISTADO DE NOTICIAS		*/
 
 .cmp-last-news {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  background-color: #f9f7f3; }
-  .cmp-last-news .title .categoria {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #f9f7f3;
+}
+.cmp-last-news .title .categoria {
     font-size: 35px;
     font-family: "National-Book", "Helvetica", "sans-serif";
-    padding: 0; }
-  .cmp-last-news .noticias-container {
-    padding: 0; }
-    .cmp-last-news .noticias-container .noticias-item {
-      border-bottom: 3px solid #D0021B;
-      height: 445px;
-      position: relative; }
-      .cmp-last-news .noticias-container .noticias-item .evento-footer-rrss {
-        position: absolute;
-        bottom: 20px;
-        right: 10px;
-        width: 114px;
-        height: 28px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border: 1px solid #D0021B; }
-        .cmp-last-news .noticias-container .noticias-item .evento-footer-rrss .rrss-link {
-          font-size: 15px;
-          color: #D0021B; }
-          .cmp-last-news .noticias-container .noticias-item .evento-footer-rrss .rrss-link .rrss-icon {
-            vertical-align: sub; }
+    padding: 0;
+}
+.cmp-last-news .noticias-container {
+    padding: 0;
+}
+.cmp-last-news .noticias-container .noticias-item {
+    border-bottom: 3px solid #D0021B;
+    height: 580px;
+    position: relative;
+}
+.cmp-last-news .noticias-container .noticias-item .container-destacado {
+    width: 100%;
+}
+.cmp-last-news .noticias-container .noticias-item .container-destacado .imagen-destacada {
+    width: 100%;
+}
+.cmp-last-news .noticias-container .noticias-item .evento-footer-rrss {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    width: 114px;
+    height: 28px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #D0021B;
+}
+.cmp-last-news .noticias-container .noticias-item .evento-footer-rrss .rrss-link {
+	display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #D0021B;
+}
+.cmp-last-news .noticias-container .noticias-item .evento-footer-rrss .rrss-link .rrss-icon {
+    vertical-align: sub;
+}
+@media screen and (max-width: 768px) {
+    .cmp-last-news .noticias-container .noticias-item .container-destacado {
+        width: 100%;
+        max-height: 347px;
+        overflow: hidden;
+    }
+}
 
 /* Empresa Detalle */
 
