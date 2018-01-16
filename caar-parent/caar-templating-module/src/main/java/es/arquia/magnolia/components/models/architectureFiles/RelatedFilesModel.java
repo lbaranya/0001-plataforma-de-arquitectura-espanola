@@ -1,4 +1,4 @@
-package es.arquia.magnolia.files;
+package es.arquia.magnolia.components.models.architectureFiles;
 
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessNodeType;
 
@@ -8,7 +8,9 @@ import java.util.List;
 
 import javax.jcr.Node;
 
-import es.arquia.magnolia.components.architectureFiles.support.architect.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.beans.ArchitectureFile;
+import es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.beans.RelatedFile;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;

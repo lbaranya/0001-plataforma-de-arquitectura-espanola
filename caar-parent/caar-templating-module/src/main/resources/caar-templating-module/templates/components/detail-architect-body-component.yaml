@@ -1,4 +1,4 @@
 title: Cuerpo de detalle de arquitecto
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/detail-architect-body-component.ftl
-modelClass: es.arquia.magnolia.components.architectureFiles.support.architect.ArchitectureFilesSupportArchitectModel
+modelClass: es.arquia.magnolia.components.models.architectureFiles.support.architect.ArchitectureFilesSupportArchitectModel

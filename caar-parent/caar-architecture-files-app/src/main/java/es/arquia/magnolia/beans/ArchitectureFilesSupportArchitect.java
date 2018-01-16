@@ -1,5 +1,7 @@
-package es.arquia.magnolia.components.architectureFiles.support.architect;
+package es.arquia.magnolia.beans;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 
 import java.text.DateFormat;
@@ -7,30 +9,24 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
+import javax.jcr.Property;
+import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 import javax.jcr.Value;
 import javax.jcr.ValueFormatException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.files.ArchitectureFile;
-import es.arquia.magnolia.files.RelatedFile;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
-import info.magnolia.jcr.util.NodeTypes;
 import info.magnolia.jcr.util.NodeUtil;
-import info.magnolia.jcr.util.PropertyUtil;
-import info.magnolia.rendering.model.RenderingModel;
-import info.magnolia.rendering.model.RenderingModelImpl;
-import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
-import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
-import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 
 public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 	
@@ -165,7 +161,7 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		try {
 			Calendar calendar = node.getProperty(birthDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
-			DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
 		} catch(Exception e) {
 			return "";
@@ -192,7 +188,7 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		try {
 			Calendar calendar = node.getProperty(deathDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
-			DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
 		} catch(Exception e) {
 			return "";
@@ -346,9 +342,11 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 	}
 	
 	public String getWorkingExperienceStartDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
-		Calendar calendar = node.getProperty(workingExperienceStartDate).getDate();
+		Calendar calendar = node.getProperty(workExperienceStartDate).getDate();
 		Locale locale = MgnlContext.getLocale();
-		DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+		DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
+		return formatter.format(calendar.getTime());
+	}
 
 	public List<Node> getWorkExperienceList(Node node) throws Exception{
 		List<Node> list = new ArrayList<>();
@@ -363,22 +361,24 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 			}
 		} catch(Exception e) {}
 		return list;
+	}
 	
 	public String getWorkExperienceStartDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
 		try {
 			Calendar calendar = node.getProperty(workExperienceStartDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
-			DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
 		} catch(Exception e) {
 			return "";
 		}
+	}
 	
 	public String getWorkExperienceEndingDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
 		try {
 			Calendar calendar = node.getProperty(workExperienceEndingDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
-			DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
 		} catch(Exception e) {
 			return "";
@@ -436,7 +436,7 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		try {
 			Calendar calendar = node.getProperty(educationStartDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
-			DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
 		} catch(Exception e) {
 			return "";
@@ -447,7 +447,7 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		try {
 			Calendar calendar = node.getProperty(educationEndingDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
-			DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
 		} catch(Exception e) {
 			return "";
@@ -661,9 +661,6 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 			Property prop = (Property) iterator.next();
 			try {
 				if (Integer.valueOf(prop.getName()) != null) {
-					System.out.println("Prop. type: " + PropertyUtil.getJCRPropertyType(prop) + "\n");
-					System.out.println("Prop. name: " + prop.getName() + "\n");
-					System.out.println("Prop. value: " + prop.getString() + "\n");
 					validProperties.add(prop);
 				}
 			} catch (NumberFormatException e) {

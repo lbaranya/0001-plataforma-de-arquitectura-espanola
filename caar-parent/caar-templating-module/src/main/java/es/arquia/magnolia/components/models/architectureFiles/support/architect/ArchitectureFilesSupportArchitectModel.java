@@ -1,4 +1,4 @@
-package es.arquia.magnolia.components.architectureFiles.support.architect;
+package es.arquia.magnolia.components.models.architectureFiles.support.architect;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -28,7 +28,7 @@ import javax.jcr.ValueFormatException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.components.architectureFiles.support.architect.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
 import info.magnolia.jcr.util.NodeTypes;

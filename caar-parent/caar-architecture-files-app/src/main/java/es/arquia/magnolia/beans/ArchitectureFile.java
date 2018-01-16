@@ -1,4 +1,4 @@
-package es.arquia.magnolia.files;
+package es.arquia.magnolia.beans;
 
 import javax.jcr.Node;
 

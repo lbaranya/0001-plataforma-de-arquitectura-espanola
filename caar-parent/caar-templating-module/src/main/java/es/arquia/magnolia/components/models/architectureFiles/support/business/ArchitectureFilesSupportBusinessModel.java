@@ -1,42 +1,33 @@
-package es.arquia.magnolia.components.architectureFiles.support.business;
+package es.arquia.magnolia.components.models.architectureFiles.support.business;
+
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
+import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import javax.jcr.LoginException;
 import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.PathNotFoundException;
-import javax.jcr.Property;
-import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
-import javax.jcr.Session;
 import javax.jcr.Value;
 import javax.jcr.ValueFormatException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.components.architectureFiles.support.architect.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect;
 import info.magnolia.context.MgnlContext;
-import info.magnolia.jcr.predicate.AbstractPredicate;
-import info.magnolia.jcr.util.NodeTypes;
 import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
 
 public class ArchitectureFilesSupportBusinessModel <RD extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	
@@ -80,7 +71,7 @@ public class ArchitectureFilesSupportBusinessModel <RD extends ConfiguredTemplat
 	public String getConstitutionDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
 		Calendar calendar = node.getProperty(constitutionDate).getDate();
 		Locale locale = MgnlContext.getLocale();
-		DateFormat formatter = new SimpleDateFormat(architectureFilesDateFormat, locale);
+		DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 		return formatter.format(calendar.getTime());
 	}
 	
