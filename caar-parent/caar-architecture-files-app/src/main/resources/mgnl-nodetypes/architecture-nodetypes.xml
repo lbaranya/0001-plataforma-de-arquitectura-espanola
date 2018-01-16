@@ -131,11 +131,6 @@
       <supertype>mgnl:content</supertype>
     </supertypes>
   </nodeType>
-  <nodeType name="mgnl:format-video" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
-    <supertypes>
-      <supertype>mgnl:content</supertype>
-    </supertypes>
-  </nodeType>
   <nodeType name="mgnl:format-video-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
@@ -146,22 +141,7 @@
       <supertype>mgnl:content</supertype>
     </supertypes>
   </nodeType>
-  <nodeType name="mgnl:format-three-dimensional" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
-    <supertypes>
-      <supertype>mgnl:content</supertype>
-    </supertypes>
-  </nodeType>
-  <nodeType name="mgnl:format-cartographic" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
-    <supertypes>
-      <supertype>mgnl:content</supertype>
-    </supertypes>
-  </nodeType>
-  <nodeType name="mgnl:format-audio" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
-    <supertypes>
-      <supertype>mgnl:content</supertype>
-    </supertypes>
-  </nodeType>
-  <nodeType name="mgnl:format-book" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+  <nodeType name="mgnl:format-video" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
     </supertypes>
@@ -181,12 +161,102 @@
       <supertype>mgnl:content</supertype>
     </supertypes>
   </nodeType>
+  <nodeType name="mgnl:format-three-dimensional-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-three-dimensional-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-three-dimensional" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-cartographic-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-cartographic-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-cartographic" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-audio-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-audio-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-audio" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-book-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-book-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-book" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-graphic-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-graphic-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
   <nodeType name="mgnl:format-graphic" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
     </supertypes>
   </nodeType>
+  <nodeType name="mgnl:format-continuous-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-continuous-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
   <nodeType name="mgnl:format-continuous" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-electronic-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+    <supertypes>
+      <supertype>mgnl:content</supertype>
+    </supertypes>
+  </nodeType>
+  <nodeType name="mgnl:format-electronic-folder-wrapper" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
     </supertypes>

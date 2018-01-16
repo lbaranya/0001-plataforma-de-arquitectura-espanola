@@ -1,10 +1,10 @@
-package es.arquia.magnolia.news.manager;
+package es.arquia.magnolia.manager;
 
 import java.util.List;
 
 import javax.jcr.Node;
 
-import es.arquia.magnolia.news.News;
+import es.arquia.magnolia.beans.News;
 
 public interface NewsManager {
 	
