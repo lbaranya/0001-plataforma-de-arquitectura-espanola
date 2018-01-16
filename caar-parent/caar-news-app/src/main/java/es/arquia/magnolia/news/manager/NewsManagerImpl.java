@@ -10,6 +10,7 @@ import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.Value;
 import javax.jcr.ValueFormatException;
 
 import org.slf4j.Logger;
@@ -67,6 +68,18 @@ public class NewsManagerImpl implements NewsManager{
 			
 		});
 		
+		return newsList;
+	}
+	
+	@Override
+	public List<Node> getImportantNewsList() throws Exception{
+		List<Node> newsList = new ArrayList<>();
+		List<Node> auxNewsList = getNewsList();
+		
+		for(Node iterator : auxNewsList) {
+			if (newsList.size() < 2 && iterator.getProperty(important) != null)
+				newsList.add(iterator);
+		}
 		return newsList;
 	}
 

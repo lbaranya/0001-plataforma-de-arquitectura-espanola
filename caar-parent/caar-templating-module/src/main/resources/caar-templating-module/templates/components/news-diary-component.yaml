@@ -1,0 +1,4 @@
+title: caar-templating-module.components.news-diary.dialog.title
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/news-diary-component.ftl
+modelClass: es.arquia.magnolia.components.news.NewsDiaryModel
