@@ -28,7 +28,7 @@
 	                        	<span>${architect.getDepartmentCity(architectContentNode)!""}, ${architect.getDepartmentCountry(architectContentNode)!""}</span></br>
 	                        	<span>${i18n['caar-templating-module.templates.components.detail-architect-body-component.components']}: ${architect.getConcatenatedDepartmentComponents(architectContentNode)!""}</span></br>
 	                        	<span>${i18n['caar-templating-module.templates.components.detail-architect-body-component.biographic-news']}: ${architect.getBiographicNews(architectContentNode)!""}</span></br>
-	                        	<span>${i18n['caar-templating-module.templates.components.detail-architect-body-component.curriculum']}: <a href="#">Descargar PDF</a></span></br>
+	                        	<span>${i18n['caar-templating-module.templates.components.detail-architect-body-component.curriculum']}: <a href="#">${i18n['caar-templating-module.templates.components.detail-architect-body-component.download']}</a></span></br>
 	                        	<span>${i18n['caar-templating-module.templates.components.detail-architect-body-component.awards-and-distinctions']}: ${architect.getAwardsAndDistinctions(architectContentNode)!""}</span>
 	                        </p>
 	                	</div>
