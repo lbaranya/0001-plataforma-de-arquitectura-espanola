@@ -4,6 +4,7 @@ import static es.arquia.magnolia.constants.NewsConstants.*;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.jcr.Node;
@@ -73,13 +74,18 @@ public class NewsManagerImpl implements NewsManager{
 	
 	@Override
 	public List<Node> getImportantNewsList() throws Exception{
+		final int maxNewsToShow = 2;
 		List<Node> newsList = new ArrayList<>();
 		List<Node> auxNewsList = getNewsList();
 		
-		for(Node iterator : auxNewsList) {
-			if (newsList.size() < 2 && iterator.getProperty(important) != null)
-				newsList.add(iterator);
+		Iterator<Node> iterator = auxNewsList.iterator();
+		while((newsList.size() < maxNewsToShow) && (iterator.hasNext())) { 
+			Node auxNode = iterator.next();
+			
+			if (auxNode.getProperty(important) != null)
+				newsList.add(auxNode);
 		}
+		
 		return newsList;
 	}
 
