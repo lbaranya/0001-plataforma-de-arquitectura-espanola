@@ -82,8 +82,9 @@ public class NewsManagerImpl implements NewsManager{
 		while((newsList.size() < maxNewsToShow) && (iterator.hasNext())) { 
 			Node auxNode = iterator.next();
 			
-			if (auxNode.getProperty(important) != null)
+			if (auxNode.getProperty(important) != null) {
 				newsList.add(auxNode);
+			}
 		}
 		
 		return newsList;
