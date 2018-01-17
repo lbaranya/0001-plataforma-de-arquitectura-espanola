@@ -523,7 +523,7 @@ a:focus {
   .cmp-menu .col-sm-12.banner-menu {
     width: 100%;
     height: 410px;
-    background-image: url("../../../img/banner-menu.jpg");
+    background-image: url("../../img/banner-menu.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom; }
@@ -1773,3 +1773,281 @@ a:focus {
       border-bottom: 3px solid #979797; }
 
       /* Arquitecto Detalle: termina */
+      
+/* COMPONENTE SUSTITUTO DE ACORDEON */
+
+@font-face {
+  font-family: 'FreightDispBlack';
+  src: url("../fonts/FreightDispBlack.eot");
+  src: url("../fonts/FreightDispBlack.woff") format("woff"), url("../fonts/FreightDispBlack.ttf") format("truetype");
+  font-weight: 900;
+  font-style: bold; }
+
+@font-face {
+  font-family: 'FreightDispBlackItalic';
+  src: url("../fonts/FreightDispBlackItalic.eot");
+  src: url("../fonts/FreightDispBlackItalic.woff") format("woff"), url("../fonts/FreightDispBlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'FreightTextBook';
+  src: url("../fonts/FreightTextBook.eot");
+  src: url("../fonts/FreightTextBook.woff") format("woff"), url("../fonts/FreightTextBook.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'FreightTextBookItalic';
+  src: url("../fonts/FreightTextBookItalic.eot");
+  src: url("../fonts/FreightTextBookItalic.woff") format("woff"), url("../fonts/FreightTextBookItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'National-Black';
+  src: url("../fonts/National-Black.eot");
+  src: url("../fonts/National-Black.woff") format("woff"), url("../fonts/National-Black.otf") format("opentype"), url("../fonts/National-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'National-BlackItalic';
+  src: url("../fonts/National-BlackItalic.eot");
+  src: url("../fonts/National-BlackItalic.woff") format("woff"), url("../fonts/National-BlackItalic.otf") format("opentype"), url("../fonts/National-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'National-Bold';
+  src: url("../fonts/National-Bold.eot");
+  src: url("../fonts/National-Bold.woff") format("woff"), url("../fonts/National-Bold.otf") format("opentype"), url("../fonts/National-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'National-BoldItalic';
+  src: url("../fonts/National-BoldItalic.eot");
+  src: url("../fonts/National-BoldItalic.woff") format("woff"), url("../fonts/National-BoldItalic.otf") format("opentype"), url("../fonts/National-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'National-Book';
+  src: url("../fonts/National-Book.eot");
+  src: url("../fonts/National-Book.woff") format("woff"), url("../fonts/National-Book.otf") format("opentype"), url("../fonts/National-Book.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'National-BookItalic';
+  src: url("../fonts/National-BookItalic.eot");
+  src: url("../fonts/National-BookItalic.woff") format("woff"), url("../fonts/National-BookItalic.otf") format("opentype"), url("../fonts/National-BookItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'National-Regular';
+  src: url("../fonts/National-Regular.eot");
+  src: url("../fonts/National-Regular.woff") format("woff"), url("../fonts/National-Regular.otf") format("opentype"), url("../fonts/National-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'National-RegularItalic';
+  src: url("../fonts/National-RegularItalic.eot");
+  src: url("../fonts/National-RegularItalic.woff") format("woff"), url("../fonts/National-RegularItalic.otf") format("opentype"), url("../fonts/National-RegularItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic; }
+
+/*Freight Display Font*/
+/*National Font*/
+.cmp-distribuidor-convocatoria {
+  padding-top: 20px;
+  background-color: #f9f7f3; }
+  .cmp-distribuidor-convocatoria .row {
+    margin-bottom: 20px; }
+    .cmp-distribuidor-convocatoria .row a {
+      text-decoration: none;
+      color: #000; }
+      .cmp-distribuidor-convocatoria .row a .title {
+        font-size: 15px;
+        font-family: "National-BookItalic", "Helvetica", "sans-serif"; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia {
+        position: relative; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia img {
+          width: 100%;
+          height: 445px;
+          border-bottom: 3px solid #D0021B; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia:hover img {
+          border: none; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia:hover .text {
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia .text {
+          display: none;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          height: 445px;
+          color: #fff;
+          background-color: rgba(208, 2, 27, 0.7);
+          -webkit-animation: fadein 1s;
+          /* Safari, Chrome and Opera > 12.1 */
+          -moz-animation: fadein 1s;
+          /* Firefox < 16 */
+          -ms-animation: fadein 1s;
+          /* Internet Explorer */
+          -o-animation: fadein 1s; }
+          .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
+            margin: 0;
+            text-align: center;
+            font-size: 55px;
+            font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
+      .cmp-distribuidor-convocatoria .row a .descrip-arquia {
+        font-size: 14px;
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        padding-top: 20px; }
+      .cmp-distribuidor-convocatoria .row a .new-links {
+        margin-top: 10px; }
+        .cmp-distribuidor-convocatoria .row a .new-links .more-link {
+          font-family: "National-Book", "Helvetica", "sans-serif";
+          font-size: 15px;
+          color: #D0021B;
+          vertical-align: -webkit-baseline-middle; }
+          .cmp-distribuidor-convocatoria .row a .new-links .more-link::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #D0021B;
+            margin-right: 10px; }
+  @media screen and (max-width: 1400px) {
+    .cmp-distribuidor-convocatoria .row a .img-arquia img {
+      width: 100%;
+      height: 445px; }
+    .cmp-distribuidor-convocatoria .row a .img-arquia .text {
+      width: 100%;
+      height: 445px; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
+        font-size: 45px; }
+    .cmp-distribuidor-convocatoria .row a .descrip-arquia {
+      font-size: 14px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      width: 100%; } }
+  @media screen and (max-width: 1200px) {
+    .cmp-distribuidor-convocatoria .row a .img-arquia img {
+      width: 100%;
+      height: 300px; }
+    .cmp-distribuidor-convocatoria .row a .img-arquia .text {
+      width: 100%;
+      height: 300px; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
+        font-size: 40px; }
+    .cmp-distribuidor-convocatoria .row a .descrip-arquia {
+      font-size: 14px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      width: 100%; } }
+  @media screen and (max-width: 992px) {
+    .cmp-distribuidor-convocatoria .row a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia img {
+        width: 100%;
+        height: 300px; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia .text {
+        width: 100%;
+        height: 300px; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
+          font-size: 55px; }
+      .cmp-distribuidor-convocatoria .row a .descrip-arquia {
+        font-size: 14px;
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        width: 100%; } }
+
+.cmp-distribuidor-general-content {
+  display: none; }
+  .cmp-distribuidor-general-content .cmp-distruidor-content-title {
+    margin-top: 50px; }
+    .cmp-distribuidor-general-content .cmp-distruidor-content-title .content-title {
+      font-size: 30px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      color: #4a4a4a;
+      font-weight: bold; }
+    .cmp-distribuidor-general-content .cmp-distruidor-content-title .text-contenido {
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      font-size: 14px;
+      color: #4a4a4a; }
+  .cmp-distribuidor-general-content .cmp-distruidor-contenido {
+    margin-bottom: 30px; }
+    .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info {
+      background-color: #f9f7f3;
+      margin-left: 15px;
+      margin-right: 15px;
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-bottom: 50px;
+      padding-top: 30px; }
+      .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .content-title {
+        font-size: 18px;
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        color: #D0021B; }
+      .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .text-contenido {
+        color: #4a4a4a;
+        font-size: 14px;
+        font-family: "National-Book", "Helvetica", "sans-serif"; }
+        .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .text-contenido i {
+          color: #979797; }
+        .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .text-contenido.document {
+          width: 60%;
+          border-bottom: 1px dashed #D0021B; }
+
+.cmp-volver {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 35px;
+  color: #D0021B; }
+
+@keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+    
+/* FIN COMPONENTE SUSTITUTO DE ACORDEON */
