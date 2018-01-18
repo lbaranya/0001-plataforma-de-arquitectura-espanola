@@ -1,4 +1,4 @@
-package es.arquia.magnolia.components.news;
+package es.arquia.magnolia.components.models.newsDiary;
 
 import java.util.List;
 
