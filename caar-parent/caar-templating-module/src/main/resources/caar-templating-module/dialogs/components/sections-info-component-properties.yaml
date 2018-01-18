@@ -5,7 +5,7 @@ form:
       fields:
         - name: listElements
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          label: listElements
+          label: caar-templating-module.templates.components.sections-info.tabMain.listElements.label
           transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
           field:
             name: compositeField
@@ -14,10 +14,10 @@ form:
             layout: vertical
             fields:  
               - name: idAnchor
-                label: Anchor
+                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.idAnchor.label
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
               - name: anchorImage
-                label: Anchor image
+                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.imageAnchor.label
                 required: true
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                 targetWorkspace: dam      
@@ -28,15 +28,15 @@ form:
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
               - name: title
                 i18n: true
-                label: Title
+                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.title.label
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
               - name: abtract
                 i18n: true
-                label: Abstract
+                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.abstract.label
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
               - name: richText
                 i18n: true
-                label: RichText
+                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.richText.label
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
 actions:      

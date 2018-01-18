@@ -28,7 +28,7 @@
                         <h2>${element.title!""}</h2></div>
                 </div>
                 <div class="new-links">
-                    <span class="more-link" alt="leer más">Leer</span>
+                    <span class="more-link" alt="leer más">${i18n['caar-templating-module.templates.components.sections-info.read.label']!""}</span>
                 </div>
             </a>
         [#if rowCount%4 == 0]
