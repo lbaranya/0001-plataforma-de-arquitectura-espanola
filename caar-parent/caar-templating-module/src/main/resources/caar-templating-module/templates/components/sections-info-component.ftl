@@ -66,33 +66,3 @@
 </section>
 [/#list]
 [/#if]
-
-<script>
-    $('.anchor-distribuidor').click(function(event) {
-        event.preventDefault();
-        $(".cmp-distribuidor-general-content").hide();
-        var strAncla = $(this).attr('href');
-        $(strAncla).show();
-        $('html, body').stop(true, true).animate({
-            scrollTop: $(strAncla).offset().top
-        }, 500);
-    });
-
-    $(".cmp-distribuidor-convocatoria .cmp-volver").click(function(e) {
-        $('html,body').animate({
-            scrollTop: '0px'
-        }, 500);
-
-        $('html,body').animate({
-            scrollTop: '0px'
-        }, {
-            duration: 500,
-            complete: function() {
-                $(".cmp-distribuidor-general-content").hide();
-            }
-        });
-
-        
-    });
-
-</script>
