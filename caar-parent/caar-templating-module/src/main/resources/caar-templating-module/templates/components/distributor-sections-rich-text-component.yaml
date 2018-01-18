@@ -1,4 +1,4 @@
 title: caar-templating-module.components.distributor-sections-rich-text.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/distributor-sections-rich-text-component.ftl
-dialog: caar-templating-module:components/distributor-sections-rich-text-component-properties   
+dialog: caar-templating-module:components/distributor-sections-rich-text-component-properties

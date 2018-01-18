@@ -5,7 +5,7 @@ form:
       fields:
         - name: listElements
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          label: caar-templating-module.templates.components.sections-info.tabMain.listElements.label
+          label: caar-templating-module.templates.components.distributor-sections-rich-text.tabMain.listElements.label
           transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
           field:
             name: compositeField
@@ -14,10 +14,10 @@ form:
             layout: vertical
             fields:  
               - name: idAnchor
-                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.idAnchor.label
+                label: caar-templating-module.templates.components.distributor-sections-rich-text.tabMain.listElements.idAnchor.label
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
               - name: anchorImage
-                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.imageAnchor.label
+                label: caar-templating-module.templates.components.distributor-sections-rich-text.tabMain.listElements.imageAnchor.label
                 required: true
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                 targetWorkspace: dam      
@@ -28,15 +28,21 @@ form:
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
               - name: title
                 i18n: true
-                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.title.label
+                label: caar-templating-module.templates.components.distributor-sections-rich-text.tabMain.listElements.title.label
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
               - name: abtract
                 i18n: true
-                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.abstract.label
+                label: caar-templating-module.templates.components.distributor-sections-rich-text.tabMain.listElements.abstract.label
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              #- name: switchType
+              #  class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
+              #  options:
+              #    - name: richTextOption
+              #      label: richText
+              #      value: richTextOption
               - name: richText
                 i18n: true
-                label: caar-templating-module.templates.components.sections-info.tabMain.listElements.richText.label
+                label: caar-templating-module.templates.components.distributor-sections-rich-text.tabMain.listElements.richText.label
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
 actions:      

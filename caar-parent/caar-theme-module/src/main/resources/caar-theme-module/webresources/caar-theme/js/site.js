@@ -2,6 +2,7 @@ var booleanmouse = true;
 var scroll;
 
 $(document).ready(function () {
+	
 	// Resources URL
 	var resourcesURL = $("#resources").val();
 	// Icons URL
@@ -100,7 +101,23 @@ $(document).ready(function () {
                 },
                 600
             );
-            $('.cmp-menu').removeClass('fixed-menu');
+            $('.cmp-menu').re$.fn.scrollBottom = function() { 
+                return $(document).height() - this.scrollTop() - this.height(); 
+            };
+            
+            window.onscroll = function () {
+                
+                var scrollbottom = $(window).scrollBottom();
+                
+                console.log(scrollbottom);
+            
+                if(scrollbottom < -400){
+                    $(".cmp-volver").css("color","#fff");
+                }else{
+                    $(".cmp-volver").css("color","#D0021B");
+                }
+                
+            };moveClass('fixed-menu');
         } else {
             $('.submenu').css('display', 'none');
             $('.menu-link').removeClass('active-item');
@@ -245,7 +262,24 @@ $(document).ready(function () {
 
         
     });
-
+    
+    $.fn.scrollBottom = function() {
+        return -(window.innerHeight + this.scrollTop()); 
+    };
+    
+    window.onscroll = function () {
+        
+        var scrollbottom = $(window).scrollBottom();
+        
+        var heightfooter = $(".cmp-footer").height();
+        if(scrollbottom < -($(document).height()-heightfooter)+53){
+            $(".cmp-volver").css("color","#fff");
+        }else{
+            $(".cmp-volver").css("color","#D0021B");
+        }
+        
+    };
+    
 });
 
 /**Funcion para Banner-header**/
