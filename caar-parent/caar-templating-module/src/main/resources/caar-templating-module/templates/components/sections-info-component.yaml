@@ -1,4 +1,0 @@
-title: caar-templating-module.components.sections-info.dialog.title
-renderType: freemarker    
-templateScript: /caar-templating-module/templates/components/sections-info-component.ftl
-dialog: caar-templating-module:components/sections-info-component-properties   
