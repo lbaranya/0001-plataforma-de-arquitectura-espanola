@@ -229,12 +229,13 @@ $(document).ready(function () {
     });
 
     $(".cmp-distribuidor-convocatoria .cmp-volver").click(function(e) {
+    	var parentPosition = $(".cmp-distribuidor-convocatoria").position();
         $('html,body').animate({
-            scrollTop: '0px'
+            scrollTop: parentPosition.top
         }, 500);
 
         $('html,body').animate({
-            scrollTop: '0px'
+            scrollTop: parentPosition.top
         }, {
             duration: 500,
             complete: function() {
