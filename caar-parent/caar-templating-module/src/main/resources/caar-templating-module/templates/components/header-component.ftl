@@ -305,7 +305,7 @@
                         <li class="menu-item-logo">
                         	[#assign hrefLink = "#"]
                         	[#if element.linkexternalLink??]
-								[#assign hrefLink = element.linkexternalLink]                        		
+								[#assign hrefLink = cmsfn.externalLink(element, "linkexternalLink")]                        		
                         	[/#if]
                         	[#if element.linkinternalLink??]
                         		[#assign hrefLink = cmsfn.link(element.linkinternalLink)]
