@@ -1,0 +1,90 @@
+form:
+  tabs:
+    - name: tabRichText
+      fields:
+        - name: richTextOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: richTextOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+                # Common fields
+              - name: richTextOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: richTextOptionIdAnchor
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: richTextOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+              - name: richTextOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: richTextOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                # End common fields
+                # Specific fields
+              - name: richTextOptionRichText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+    - name: tabJury
+      fields:
+        - name: juryOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+          field:
+            name: juryOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            fields:
+                # Common fields
+              - name: juryOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: juryOptionIdAnchor
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: juryOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+              - name: juryOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              - name: juryOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                # End common fields
+              - name: juryOptionJudgeList
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+                field:
+                  - name: juryOptionJudgeCompositeField
+                    class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+                    transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+                    fields:
+                      - name: juryOptionJudgeRichText
+                        i18n: true
+                        label: caar-templating-module.templates.components.distributor-sections-rich-text.tabMain.listElements.richText.label
+                        class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                        configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                      - name: juryOptionJudgeName
+                        class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                        label: Name 
+actions:        
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition 

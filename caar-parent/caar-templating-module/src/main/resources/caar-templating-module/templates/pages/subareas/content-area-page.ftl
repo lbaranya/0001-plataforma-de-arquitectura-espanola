@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
 		[#list components as component]
 		    [@cms.component content=component /]

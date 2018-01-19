@@ -1928,5 +1928,166 @@ a:focus {
   cursor: pointer;
   font-size: 35px;
   color: #D0021B; }
+  
+.inscripcion a {
+  border-radius: 0;
+  border: 2px solid #D0021B;
+  color: #fff;
+  background-color: #D0021B;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  float: right;
+  padding: 10px 40px 10px 40px; }
     
 /* FIN COMPONENTE SUSTITUTO DE ACORDEON */
+
+/* ESTILOS DE JURADO AISLADOS */
+.col-jurado {
+	display: flex;
+	width: 49%;
+	background-color: #fff;
+	border-bottom: 3px solid #D0021B;
+	position: relative;
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.col-jurado .img-jurado {
+	float: left;
+}
+
+.col-jurado .img-jurado img {
+	width: 265px;
+	height: 258px;
+}
+
+.col-jurado .info-jurado {
+	float: left;
+	width: 48%;
+	margin-left: 15px;
+}
+
+.col-jurado .info-jurado h4 {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.col-jurado .info-jurado span {
+	font-family: "National-Bold", "Helvetica", "sans-serif";
+}
+
+.col-jurado .info-jurado p {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .jurado .col-jurado .ficha-jurado
+	{
+	text-decoration: none;
+	color: #fff;
+}
+
+.col-jurado .ficha-jurado div {
+	border-radius: 100%;
+	background-color: #D0021B;
+	color: #fff;
+	width: 38px;
+	height: 38px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 50%;
+	bottom: 5%;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.ficha-jurado div i {
+	font-size: 22px;
+	line-height: 20px;
+}
+
+.col-jurado .pdf {
+	position: absolute;
+	bottom: 5px;
+	right: 24px;
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+}
+
+.col-jurado:first-child {
+	padding-left: 0;
+	margin-right: 22px;
+}
+
+/* ESTILOS DE LEMA AISLADOS */
+
+.preview {
+	float: left;
+	width: 100%;
+	min-height: 300px;
+}
+
+.preview h4 {
+	width: 100%;
+	float: left;
+	color: #D0021B;
+	font-size: 30px;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.preview .descript {
+	width: 100%;
+	float: left;
+}
+
+.col-info-preview {
+	position: relative;
+	float: left;
+	min-height: 280px;
+}
+
+.col-info-preview .info-preview {
+	position: absolute;
+	width: 260px;
+	bottom: 0;
+}
+
+.col-info-preview .info-preview span {
+	width: 100%;
+	float: left;
+	font-size: 17px;
+}
+
+.col-info-preview .info-preview .year {
+	color: #000;
+	float: left;
+	width: auto;
+	font-size: 16px;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.col-info-preview a {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	text-decoration: none;
+	color: #000;
+}
+
+.col-info-preview a img {
+	float: left;
+	width: 260px;
+	height: 230px;
+}
+
+.info-basica {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	float: left;
+	width: 75%;
+	padding-right: 20px;
+	padding-left: 20px;
+}

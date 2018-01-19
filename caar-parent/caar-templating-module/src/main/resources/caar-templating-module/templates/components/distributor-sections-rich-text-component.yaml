@@ -2,3 +2,4 @@ title: caar-templating-module.components.distributor-sections-rich-text.dialog.t
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/distributor-sections-rich-text-component.ftl
 dialog: caar-templating-module:components/distributor-sections-rich-text-component-properties
+modelClass: es.arquia.magnolia.components.models.sections.DistributorSectionsModel
