@@ -15,12 +15,12 @@ form:
             fields:      
               - name: separator1      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                value: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.value
-                label: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.label
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: separator2      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                value: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.value
-                label: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.label
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                 label: caar-templating-module.common.field.text.link.label
@@ -55,21 +55,7 @@ form:
                 label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.image.label
     - name: tabEnlaces1    
       label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.label   
-      fields:      
-        - name: cookiesLink      
-          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.cookiesLink.label      
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-          targetWorkspace: website      
-          appName: pages      
-          identifierToPathConverter:      
-            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter      
-        - name: legalLink      
-          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.legalLink.label    
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-          targetWorkspace: website      
-          appName: pages      
-          identifierToPathConverter:      
-            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter      
+      fields:
         - name: linkElements1      
           label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.listElements1.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
@@ -82,9 +68,12 @@ form:
             fields:      
               - name: separator3      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: separator4      
-                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
-                label: Logo      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                label: caar-templating-module.components.separator.label
+                value: caar-templating-module.components.separator.value
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                 label: caar-templating-module.common.field.text.link.label
@@ -126,8 +115,12 @@ form:
             fields:      
               - name: separator5      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: separator6      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                 label: caar-templating-module.common.field.text.link.label      
@@ -154,6 +147,23 @@ form:
                 label: caar-templating-module.common.field.text.linkText.label      
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
                 i18n: true
+    - name: tabEnlaces3
+      label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.label   
+      fields:      
+        - name: cookiesLink      
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.cookiesLink.label      
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: website      
+          appName: pages      
+          identifierToPathConverter:      
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter      
+        - name: legalLink      
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.legalLink.label    
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: website      
+          appName: pages      
+          identifierToPathConverter:      
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
     - name: tabRRSS
       label: caar-templating-module.templates.components.dialog.footer-component.tabRRSS.label
       fields:

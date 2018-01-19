@@ -42,6 +42,8 @@ areas:
             id: caar-templating-module:components/detail-architect-body-component
           related-files-component:
             id: caar-templating-module:components/related-files-component
+          distributor-sections-rich-text-component:
+            id: caar-templating-module:components/distributor-sections-rich-text-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:
