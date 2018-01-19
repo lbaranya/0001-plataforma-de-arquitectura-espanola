@@ -303,7 +303,14 @@
                     [#if content.elements?has_content]
                     [#list cmsfn.children(content.elements) as element]
                         <li class="menu-item-logo">
-                            <a href="${element.internalLink!""}" class="">
+                        	[#assign hrefLink = "#"]
+                        	[#if element.linkexternalLink??]
+								[#assign hrefLink = element.linkexternalLink]                        		
+                        	[/#if]
+                        	[#if element.linkinternalLink??]
+                        		[#assign hrefLink = cmsfn.link(element.linkinternalLink)]
+                        	[/#if]
+                            <a href="${hrefLink!""}" class="">
                             	[#assign image = damfn.getAssetLink(element.image)!]
                             	[#assign imageAlternativeText = ""]
                     			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(element.image!"").getPath(),"dam")!]
