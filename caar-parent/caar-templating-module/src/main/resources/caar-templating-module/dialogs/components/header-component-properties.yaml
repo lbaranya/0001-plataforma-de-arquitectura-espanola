@@ -11,16 +11,18 @@ form:
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
             label: caar-templating-module.templates.components.header-component.tabMain.elements.compositeField.label
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
-            layout: vertical      
-            required: true      
+            layout: vertical
             fields:      
               - name: separator1      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                label: caar-templating-module.components.separator.label
               - name: separator2      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-              - name: link      
+                label: caar-templating-module.components.separator.label
+              - name: link
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                 label: caar-templating-module.common.field.text.link.label      
+                required: true      
                 options:      
                   - name: internalLink      
                     label: caar-templating-module.common.field.text.internal.label     
@@ -39,7 +41,7 @@ form:
                       class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                          
                   - name: externalLink      
                     label: caar-templating-module.common.field.text.externalLink.label      
-                    class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+                    class: info.magnolia.ui.form.field.definition.TextFieldDefinition
               - name: image      
                 required: true      
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
@@ -55,7 +57,7 @@ form:
       fields:
         - name: subMenu1
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-          label: Spanish architecture header menu links
+          label: caar-templating-module.templates.components.header-component.dialog.ae.label
         - name: aboutAE
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
@@ -78,10 +80,10 @@ form:
           label: caar-templating-module.templates.components.header-component.dialog.ae.itineraries.label
         - name: separator3      
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
+          label: caar-templating-module.components.separator.label
         - name: separator4      
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-          label: Exploring architecture header menu links
+          label: caar-templating-module.templates.components.header-component.dialog.explore.label
         - name: aboutExAr
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
@@ -121,10 +123,11 @@ form:
         
         - name: separator5      
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          label: caar-templating-module.components.separator.label
                 
         - name: separator6      
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-          label: Biennials and Awards header menu links
+          label: caar-templating-module.templates.components.header-component.dialog.biennals.label
           
         - name: aboutBA
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
