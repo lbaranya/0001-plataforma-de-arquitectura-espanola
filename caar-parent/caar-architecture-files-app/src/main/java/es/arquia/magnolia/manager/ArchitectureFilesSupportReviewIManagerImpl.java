@@ -1,7 +1,12 @@
 package es.arquia.magnolia.manager;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewINodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportReviewIConstants.presentationDate;
+
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.jcr.Node;
@@ -10,13 +15,19 @@ import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.ValueFormatException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
 import info.magnolia.jcr.util.NodeUtil;
 
 public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureFilesSupportReviewIManager {
 	
-	private static AbstractPredicate<Node> MAGNOLIA_EVENTS_FILTER = new AbstractPredicate<Node>() {
+	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportReviewIManagerImpl.class);
+	
+	private static AbstractPredicate<Node> MAGNOLIA_REVIEW_I_FILTER = new AbstractPredicate<Node>() {
 
         @Override
         public boolean evaluateTyped(Node node) {
@@ -31,22 +42,22 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
     };
     
 	@Override
-	public List<Node> getEventsList() throws Exception{
-		List<Node> newsList = new ArrayList<>();
+	public List<Node> getArchitectureFilesSupportReviewIList() throws Exception{
+		List<Node> eventsList = new ArrayList<>();
 		
-		Session session = MgnlContext.getJCRSession(architectureFilesSupportReviewINodeType);
+		Session session = MgnlContext.getJCRSession(architectureFilesWorkspace);
 		Node parentNewsNodeFolder = session.getRootNode();
 		if(parentNewsNodeFolder.hasNodes()) {
-			Iterable<Node> childList = NodeUtil.collectAllChildren(parentNewsNodeFolder, MAGNOLIA_EVENTS_FILTER);
-			newsList = NodeUtil.asList(childList);
+			Iterable<Node> childList = NodeUtil.collectAllChildren(parentNewsNodeFolder, MAGNOLIA_REVIEW_I_FILTER);
+			eventsList = NodeUtil.asList(childList);
 		}
 		// Dates comparison
-		newsList.sort(new Comparator<Node>() {
+		eventsList.sort(new Comparator<Node>() {
 
 			@Override
 			public int compare(Node arg0, Node arg1) {
 				try {
-					return arg1.getProperty(dateTime).getDate().compareTo(arg0.getProperty(dateTime).getDate());
+					return arg1.getProperty(presentationDate).getDate().compareTo(arg0.getProperty(presentationDate).getDate());
 				} catch (ValueFormatException e) {
 					e.printStackTrace();
 				} catch (PathNotFoundException e) {
@@ -59,7 +70,12 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 			
 		});
 		
-		return newsList;
+		return eventsList;
+	}
+	
+	@Override
+	public ArchitectureFilesSupportReviewI getInstance() {
+		return new ArchitectureFilesSupportReviewI();
 	}
 
 }

@@ -28,6 +28,7 @@ public interface ArchitectureFilesSupportReviewIConstants {
 	
 	String relatedThought = "FS3.6";
 	
+	String listMedia = "listMedia";
 	String mediaType = "FS3.7.1";
 	String previewPhoto = "FS3.7.2";
 	String mediaDetail = "FS3.7.3";

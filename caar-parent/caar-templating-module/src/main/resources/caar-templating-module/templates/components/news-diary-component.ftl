@@ -1,6 +1,4 @@
-[#assign news = model.getInstance()!""]
 [#assign language = cmsfn.language()!""]
-[#assign newsList = model.getImportantNewsList()!""]
 	<section class="cmp-noticias-eventos">
         <div class="container-fluid">
             <div class="row row-noticias">
@@ -8,12 +6,15 @@
                     <!-- Aqui va el componente de NOTICIAS estilo footer-->
                     <span class="categoria">${i18n['caar-templating-module.templates.components.news-diary-component.categoria.label']}</span>
                     <section class="cmp-noticias-footer">
-                  	  [#list newsList as newsNode]
+                    	[#assign newsInstance = model.getNewsInstance()!""]
+						[#assign newsList = model.getImportantNewsList()!""]
+						
+                  		[#list newsList as newsNode]
 	                    	<div class="row">
 	                            <div class="col-md-12">
                     				<div class="noticias-container">
 	                                    <div class="noticias-item">
-	                                        <h4 class="title">${news.getHeadline(newsNode, language)}</h4>
+	                                        <h4 class="title">${newsInstance.getHeadline(newsNode, language)}</h4>
 	                                        <div class="noticias-links">
 	                                            <a class="more-link" href="${cmsfn.link(newsNode)}">${i18n['caar-templating-module.templates.components.news-diary-component.read.label']}</a>
 	                                            <div class="evento-footer-rrss">
@@ -38,25 +39,12 @@
 	                    [/#list]
                         
                         <div class="ver-todo">
-                            <a href="${content.allNewsLink}" class="ver-todo-link">${i18n['caar-templating-module.templates.components.news-diary-component.all.label']}
+                            <a href="${content.allNewsLink}" class="ver-todo-link">${i18n['caar-templating-module.templates.components.news-diary-component.allNews.label']}
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>
                     </section>
                 </div>
-                
-                [#assign imgItemKey = content.dummyImage!]
-	            	[#if imgItemKey??]
-                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "130x115")]
-	            		[#if imgMediaRendition??]
-	            			[#assign imageAlternativeText = "logo de bienal"]
-	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-	            			[#if imageAlt?has_content]
-	            				[#assign imageAlternativeText = imageAlt.alternative!""]
-	            			[/#if]
-                    	[/#if]
-                    [/#if]
-                
                 <div class="col-md-9 cmp-agenda">
                     <!-- Aqui va el componente de EVENTOS estilo footer-->
                     <section class="cmp-agenda-footer">
@@ -66,130 +54,62 @@
                             </div>
                         </div>
                         <div class="row eventos-row">
-                            <div class="col-md-3 evento-contenedor">
-                                <div class="evento-item">
-                                    <a href="#" class="evento-link">
-                                        <div class="evento-header">
-                                            <span class="categoria">Exposiciones</span>
-                                            <span class="evento-fecha">MAR.</span>
-                                            <span class="evento-fecha">12.02.2016</span>
-                                        </div>
-                                        <div class="evento-contenido">
-                                            <img class="img-evento" src="${imgMediaRendition.getLink()}" width="130" height="115" alt="${imageAlternativeText}" />
-                                            <h4 class="title">Ser lost pre quo</h4>
-                                            <span class="more-link" alt="leer más">Leer</span>
-                                        </div>
-                                    </a>
-                                    <div class="evento-footer-rrss">
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 evento-contenedor">
-                                <div class="evento-item">
-                                    <a href="#" class="evento-link">
-                                        <div class="evento-header">
-                                            <span class="categoria">Evento</span>
-                                            <span class="evento-fecha">MIE.</span>
-                                            <span class="evento-fecha">13.02.2016</span>
-                                        </div>
-                                        <div class="evento-contenido">
-                                            <img class="img-evento" src="${imgMediaRendition.getLink()}" width="130" height="115" alt="${imageAlternativeText}" />
-                                            <h4 class="title">Ser lost pre quo</h4>
-                                            <span class="more-link" alt="leer más">Leer</span>
-                                        </div>
-                                    </a>
-                                    <div class="evento-footer-rrss">
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 evento-contenedor">
-                                <div class="evento-item">
-                                    <a href="#" class="evento-link">
-                                        <div class="evento-header">
-                                            <span class="categoria">Conferencias</span>
-                                            <span class="evento-fecha">JUE.</span>
-                                            <span class="evento-fecha">14.02.2016</span>
-                                        </div>
-                                        <div class="evento-contenido">
-                                            <img class="img-evento" src="${imgMediaRendition.getLink()}" width="130" height="115" alt="${imageAlternativeText}" />
-                                            <h4 class="title">Ser lost pre quo</h4>
-                                            <span class="more-link" alt="leer más">Leer</span>
-                                        </div>
-                                    </a>
-                                    <div class="evento-footer-rrss">
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 evento-contenedor">
-                                <div class="evento-item">
-                                    <a href="#" class="evento-link">
-                                        <div class="evento-header">
-                                            <span class="categoria">Exposición</span>
-                                            <span class="evento-fecha">VIE.</span>
-                                            <span class="evento-fecha">15.02.2016</span>
-                                        </div>
-                                        <div class="evento-contenido">
-                                            <img class="img-evento" src="${imgMediaRendition.getLink()}" width="130" height="115" alt="${imageAlternativeText}" />
-                                            <h4 class="title">Ser lost pre quo</h4>
-                                            <span class="more-link" alt="leer más">Leer</span>
-                                        </div>
-                                    </a>
-                                    <div class="evento-footer-rrss">
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                        <a href="#" class="rrss-link" alt="">
-                                            <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        
+	                        [#assign eventsInstance = model.getArchitectureFilesSupportReviewIInstance()!""]
+							[#assign eventsList = model.getArchitectureFilesSupportReviewIList()!""]
+							[#assign counter = 0][#assign eventsToShow = 4]
+                        	[#list eventsList as eventsNode]
+                        		[#if counter < eventsToShow]
+                        			[#assign counter = counter + 1]
+		                            <div class="col-md-3 evento-contenedor">
+		                                <div class="evento-item">
+		                                    <a href="${cmsfn.link(eventsNode)}" class="evento-link">
+		                                        <div class="evento-header">
+		                                            <span class="categoria">${i18n['caar-templating-module.templates.components.news-diary-component.'+eventsInstance.getTypology(eventsNode, language)+'.label']!""}</span>
+		                                            [#-- En lugar de imprimir el value del campo, lo usamos como parte del nombre de una traducción que contiene un texto presentable y traducido --]
+		                                            <span class="evento-fecha">${eventsInstance.getPresentationDateDayOfWeek(eventsNode)!""}</span>
+		                                            <span class="evento-fecha">${eventsInstance.getPresentationDate(eventsNode)!""}</span>
+		                                        </div>
+		                                        <div class="evento-contenido">
+			                                        [#assign firstMediaImage = eventsInstance.getFirstMediaImage(eventsNode)!""]
+			                                       	[#assign imgItemKey = eventsInstance.getPreviewPhoto(firstMediaImage)!""]
+										            	[#if imgItemKey??]
+									                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "130x115")]
+										            		[#if imgMediaRendition??]
+										            			[#assign imageAlternativeText = "logo de evento"]
+										            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+										            			[#if imageAlt?has_content]
+										            				[#assign imageAlternativeText = imageAlt.alternative!""]
+										            				<img class="img-evento" src="${imgMediaRendition.getLink()}" width="130" height="115" alt="${imageAlternativeText}" />
+										            			[/#if]
+									                    	[/#if]
+									                    [/#if]
+		                                            <h4 class="title">${eventsInstance.getOuvreTitle(eventsNode,language)!""}</h4>
+		                                            <span class="more-link">${i18n['caar-templating-module.templates.components.news-diary-component.read.label']}</span>
+		                                        </div>
+		                                    </a>
+		                                    <div class="evento-footer-rrss">
+		                                        <a href="" class="rrss-link">
+		                                            <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
+		                                        </a>
+		                                        <a href="#" class="rrss-link">
+		                                            <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
+		                                        </a>
+		                                        <a href="#" class="rrss-link">
+		                                            <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
+		                                        </a>
+		                                        <a href="#" class="rrss-link">
+		                                            <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
+		                                        </a>
+		                                    </div>
+		                                </div>
+		                            </div>
+	                            [/#if]
+                            
+                            [/#list]
                         </div>
-
                         <div class="ver-todo">
-                            <a href="#" class="ver-todo-link eventos">VER TODOS LOS EVENTOS
+                            <a href="${content.allEventsLink}" class="ver-todo-link eventos">${i18n['caar-templating-module.templates.components.news-diary-component.allEvents.label']}
                                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                             </a>
                         </div>

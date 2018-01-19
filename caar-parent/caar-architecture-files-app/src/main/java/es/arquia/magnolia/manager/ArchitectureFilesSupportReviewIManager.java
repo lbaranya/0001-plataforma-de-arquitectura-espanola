@@ -8,6 +8,7 @@ import es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI;
 
 public interface ArchitectureFilesSupportReviewIManager {
 	
-	public List<Node> getEventsList() throws Exception;
-
+	public List<Node> getArchitectureFilesSupportReviewIList() throws Exception;
+	
+	public ArchitectureFilesSupportReviewI getInstance();
 }

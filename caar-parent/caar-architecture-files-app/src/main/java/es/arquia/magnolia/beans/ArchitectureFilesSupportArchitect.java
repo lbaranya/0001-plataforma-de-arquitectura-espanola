@@ -117,191 +117,191 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
     };
 	
 
-	public String getName(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getName(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(name).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getFirstSurname(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getFirstSurname(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(firstSurname).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getSecondSurname(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getSecondSurname(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(secondSurname).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getOtherNames(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getOtherNames(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(otherNames).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getPhoto(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getPhoto(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(photo).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getBirthDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
+	public String getBirthDate(Node node) throws RepositoryException {
 		try {
 			Calendar calendar = node.getProperty(birthDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
 			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getBirthCity(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getBirthCity(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(birthCity).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getBirthCountry(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getBirthCountry(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(birthCountry).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDeathDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
+	public String getDeathDate(Node node) throws RepositoryException {
 		try {
 			Calendar calendar = node.getProperty(deathDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
 			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDeathCity(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getDeathCity(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(deathCity).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDeathCountry(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getDeathCountry(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(deathCountry).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getCertification(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getCertification(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(certification).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getCertificationCenter(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getCertificationCenter(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(certificationCenter).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getCertificatoinCountry(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getCertificatoinCountry(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(certificationCountry).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getCertificationYear(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getCertificationYear(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(certificationYear).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getOtherStudies(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getOtherStudies(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(otherStudies).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDoctorate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getDoctorate(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(doctorate).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDepartmentName(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getDepartmentName(Node node) throws RepositoryException {
 		try {	
 			return node.getProperty(departmentName).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDepartmentWebSite(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getDepartmentWebSite(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(departmentWebSite).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDepartmentCity(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getDepartmentCity(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(departmentCity).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDepartmentCountry(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getDepartmentCountry(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(departmentCountry).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public List<String> getDepartmentComponents(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public List<String> getDepartmentComponents(Node node) throws RepositoryException {
 		List<String> list = new ArrayList<>();
 		try {
 			for(Value iterator : node.getProperty(departmentComponents).getValues()) {
 				list.add(iterator.getString());
 			}
-		} catch(Exception e) {}
+		} catch(RepositoryException e) {}
 		return list;
 	}
 	
-	public String getConcatenatedDepartmentComponents(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getConcatenatedDepartmentComponents(Node node) throws RepositoryException {
 		try {
 			String result = "";
 			List<Property> properties = validProperties(node, departmentComponents);
@@ -312,43 +312,47 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 				result += getName(componentNode) + " " + getFirstSurname(componentNode) + " " + getSecondSurname(componentNode) + ", ";
 			}
 			return result.substring(0, result.length()-2);
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getBiographicNews(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getBiographicNews(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(biographicNews).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getCurriculum(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getCurriculum(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(curriculum).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getAwardsAndDistinctions(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getAwardsAndDistinctions(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(awardsAndDistinctions).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getWorkingExperienceStartDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
-		Calendar calendar = node.getProperty(workExperienceStartDate).getDate();
-		Locale locale = MgnlContext.getLocale();
-		DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
-		return formatter.format(calendar.getTime());
+	public String getWorkingExperienceStartDate(Node node) throws RepositoryException {
+		try {
+			Calendar calendar = node.getProperty(workExperienceStartDate).getDate();
+			Locale locale = MgnlContext.getLocale();
+			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
+			return formatter.format(calendar.getTime());
+		} catch(RepositoryException e) {
+			return "";
+		}
 	}
 
-	public List<Node> getWorkExperienceList(Node node) throws Exception{
+	public List<Node> getWorkExperienceList(Node node) throws RepositoryException {
 		List<Node> list = new ArrayList<>();
 		try {
 			if (node.getNode(workExperienceList) != null)
@@ -359,49 +363,49 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 					list = NodeUtil.asList(childList);
 				}
 			}
-		} catch(Exception e) {}
+		} catch(RepositoryException e) {}
 		return list;
 	}
 	
-	public String getWorkExperienceStartDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
+	public String getWorkExperienceStartDate(Node node) throws RepositoryException {
 		try {
 			Calendar calendar = node.getProperty(workExperienceStartDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
 			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getWorkExperienceEndingDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
+	public String getWorkExperienceEndingDate(Node node) throws RepositoryException {
 		try {
 			Calendar calendar = node.getProperty(workExperienceEndingDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
 			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getWorkExperiencePositionOccupied(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getWorkExperiencePositionOccupied(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(workExperiencePositionOccupied).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getWorkExperienceMainFunctions(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getWorkExperienceMainFunctions(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(workExperienceMainFunctions).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getWorkExperienceBusinessName(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getWorkExperienceBusinessName(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(workExperienceBusinessName).getString();
 		} catch(Exception e) {
@@ -409,15 +413,15 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		}
 	}
 	
-	public String getWorkExperienceBusinessType(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getWorkExperienceBusinessType(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(workExperienceBusinessType).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public List<Node> getEducationList(Node node) throws Exception{
+	public List<Node> getEducationList(Node node) throws RepositoryException {
 		List<Node> list = new ArrayList<>();
 		try {
 			if (node.getNode(educationList) != null)
@@ -428,215 +432,215 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 					list = NodeUtil.asList(childList);
 				}
 			}
-		} catch(Exception e) {}
+		} catch(RepositoryException e) {}
 		return list;
 	}
 	
-	public String getEducationStartDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
+	public String getEducationStartDate(Node node) throws RepositoryException {
 		try {
 			Calendar calendar = node.getProperty(educationStartDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
 			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getEducationEndingDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
+	public String getEducationEndingDate(Node node) throws RepositoryException {
 		try {
 			Calendar calendar = node.getProperty(educationEndingDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
 			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 			return formatter.format(calendar.getTime());
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getEducationQualification(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getEducationQualification(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(educationQualification).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getEducationSubjects(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getEducationSubjects(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(educationSubjects).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getEducationCenter(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getEducationCenter(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(educationCenter).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getEducationCenterType(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getEducationCenterType(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(educationCenterType).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getEducationLevel(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getEducationLevel(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(educationLevel).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getLanguage(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getLanguage(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(language).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getOtherLanguages(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getOtherLanguages(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(otherLanguages).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getMotherLanguage(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getMotherLanguage(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(motherLanguage).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getListening(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getListening(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(listening).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getReading(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getReading(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(reading).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getSpeakingInteraction(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getSpeakingInteraction(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(speakingInteraction).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getSpeakingExpression(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getSpeakingExpression(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(speakingExpression).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getWritting(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getWritting(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(writting).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getSocialSkills(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getSocialSkills(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(socialSkills).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getOrganizationalSkills(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getOrganizationalSkills(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(organizationalSkills).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getTechnicalSkills(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getTechnicalSkills(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(technicalSkills).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getComputerSkills(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getComputerSkills(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(computerSkills).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getArtisticSkills(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getArtisticSkills(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(artisticSkills).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getOtherSkills(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getOtherSkills(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(otherSkills).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getDrivingLicense(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
+	public String getDrivingLicense(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(drivingLicense).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 
-	public String getAditionalInfo(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getAditionalInfo(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(aditionalInfo).getString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getAnnexes(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getAnnexes(Node node) throws RepositoryException {
 		try {
 			return node.getProperty(annexes).getValues().toString();
-		} catch(Exception e) {
+		} catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public List<String> getRelatedFiles(Node node)  throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public List<String> getRelatedFiles(Node node)  throws RepositoryException {
 		List<String> list = new ArrayList<String>();
 		try {
 			for(Value iterator : node.getProperty(relatedFiles).getValues()) {
 				list.add(iterator.getString());
 			}
-		} catch(Exception e) {}
+		} catch(RepositoryException e) {}
 		return list;
 	}
 
@@ -654,7 +658,7 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		return departmentWebSite;
 	}
 	
-	public List<Property> validProperties(Node node, String field) throws PathNotFoundException, RepositoryException {
+	public List<Property> validProperties(Node node, String field) throws RepositoryException {
 		List<Property> validProperties = new ArrayList<>();
 		for (PropertyIterator iterator = node.getNode(field).getProperties(); iterator.hasNext();)
 		{

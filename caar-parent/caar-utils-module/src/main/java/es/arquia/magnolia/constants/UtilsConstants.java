@@ -2,6 +2,8 @@ package es.arquia.magnolia.constants;
 
 public interface UtilsConstants {
 	String dateFormat = "dd MMMM YYYY";
+	String dateFormatNumeric = "dd.MM.YYYY";
+	String dateFormatDayOfWeek = "EEE.";
 	
 	// Countries
 	String caarCountriesRootFolderName = "caar";
