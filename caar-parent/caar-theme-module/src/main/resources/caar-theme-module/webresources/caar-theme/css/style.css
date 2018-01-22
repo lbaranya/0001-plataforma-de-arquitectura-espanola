@@ -1816,7 +1816,7 @@ a:focus {
           .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
             margin: 0;
             text-align: center;
-            font-size: 55px;
+            font-size: 38px;
             font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
       .cmp-distribuidor-convocatoria .row a .descrip-arquia {
         font-size: 14px;
@@ -1892,7 +1892,11 @@ a:focus {
       font-size: 30px;
       font-family: "National-Book", "Helvetica", "sans-serif";
       color: #4a4a4a;
-      font-weight: bold; }
+      font-weight: bold;
+    }
+    .cmp-distribuidor-general-content .cmp-distruidor-content-title .content-title h3 {
+        padding-left: 20px;
+    }
     .cmp-distribuidor-general-content .cmp-distruidor-content-title .text-contenido {
       font-family: "National-Book", "Helvetica", "sans-serif";
       font-size: 14px;
@@ -1920,6 +1924,9 @@ a:focus {
         .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .text-contenido.document {
           width: 60%;
           border-bottom: 1px dashed #D0021B; }
+    .cmp-distribuidor-general-content .cmp-distruidor-content-title .cmp-distruidor-contenido .contenido p{
+        padding-left: 15px;
+    }
 
 .cmp-volver {
   position: fixed;
