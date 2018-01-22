@@ -1,0 +1,4 @@
+title: caar-templating-module.components.award-news-list.dialog.title   
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/award-news-list-component.ftl
+modelClass: es.arquia.magnolia.components.models.news.AwardNewsListModel

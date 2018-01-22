@@ -4,6 +4,7 @@ import static es.arquia.magnolia.constants.NewsConstants.*;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.jcr.Node;
@@ -66,6 +67,23 @@ public class NewsManagerImpl implements NewsManager{
 			}
 			
 		});
+		
+		return newsList;
+	}
+	
+	@Override
+	public List<Node> getAwardNewsList() throws Exception{
+		List<Node> newsList = new ArrayList<>();
+		List<Node> auxNewsList = getNewsList();
+		
+		Iterator<Node> iterator = auxNewsList.iterator();
+		while(iterator.hasNext()) { 
+			Node auxNode = iterator.next();
+			
+			if ((auxNode.getProperty(category) != null) && (auxNode.getProperty(category).equals(""))) {
+				newsList.add(auxNode);
+			}
+		}
 		
 		return newsList;
 	}

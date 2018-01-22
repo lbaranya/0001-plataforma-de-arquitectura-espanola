@@ -10,6 +10,8 @@ public interface NewsManager {
 	
 	public List<Node> getNewsList() throws Exception;
 	
+	public List<Node> getAwardNewsList() throws Exception;
+	
 	public News getInstance();
 
 }
