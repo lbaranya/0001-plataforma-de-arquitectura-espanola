@@ -4,7 +4,7 @@
             <div class="row row-noticias">
                 <div class="col-md-3 cmp-noticias">
                     <!-- Aqui va el componente de NOTICIAS estilo footer-->
-                    <span class="categoria">${i18n['caar-templating-module.templates.components.news-diary-component.categoria.label']}</span>
+                    <span class="categoria">${i18n['caar-templating-module.templates.components.news-diary-component.categoryNews.label']}</span>
                     <section class="cmp-noticias-footer">
                     	[#assign newsInstance = model.getNewsInstance()!""]
 						[#assign newsList = model.getImportantNewsList()!""]
@@ -50,7 +50,7 @@
                     <section class="cmp-agenda-footer">
                         <div class="row">
                             <div class="col-md-12">
-                                <span class="categoria">eventos</span>
+                                <span class="categoria">${i18n['caar-templating-module.templates.components.news-diary-component.categoryEvents.label']}</span>
                             </div>
                         </div>
                         <div class="row eventos-row">
@@ -66,7 +66,7 @@
 		                                    <a href="${cmsfn.link(eventsNode)}" class="evento-link">
 		                                        <div class="evento-header">
 		                                            <span class="categoria">${i18n['caar-templating-module.templates.components.news-diary-component.'+eventsInstance.getTypology(eventsNode, language)+'.label']!""}</span>
-		                                            [#-- En lugar de imprimir el value del campo, lo usamos como parte del nombre de una traducción que contiene un texto presentable y traducido --]
+		                                            [#-- Instead of printing the field value, we use it as part of the name of a translation which contains a good-looking and internationaliced text --]
 		                                            <span class="evento-fecha">${eventsInstance.getPresentationDateDayOfWeek(eventsNode)!""}</span>
 		                                            <span class="evento-fecha">${eventsInstance.getPresentationDate(eventsNode)!""}</span>
 		                                        </div>

@@ -10,4 +10,6 @@ public interface UtilsConstants {
 	String caarCountriesFolderName = "caar-countries";
 	String caarCountriesOldFolderName = "caar-countries-old";
 	String tmpCaarCountiesFolderName = "caar-countries-tmp";
+	
+	String jcrLanguage = "JCR-SQL2";
 }
