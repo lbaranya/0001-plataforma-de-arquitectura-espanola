@@ -1,0 +1,265 @@
+form:
+  tabs:
+    - name: tabRichText
+      label: Sección texto enriquecido
+      fields:
+        - name: richTextOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          label: Lista de secciones texto enriquecido
+          field:
+            name: richTextOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            layout: vertical
+            fields:
+                # Common fields
+              - name: type
+                class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+                defaultValue: richText
+              - name: richTextOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Peso
+              - name: richTextOptionIdAnchor
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Id ancla
+              - name: richTextOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: Imagen ancla
+              - name: richTextOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Título de la sección
+              - name: richTextOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Resumen de la sección
+                # End common fields
+                # Specific fields
+              - name: richTextOptionRichText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: Texto enriquecido de la sección
+    - name: tabJury
+      label: Sección de jurado
+      fields:
+        - name: juryOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          label: Listado de secciones de jurado
+          field:
+            name: juryOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            layout: vertical
+            fields:
+                # Common fields
+              - name: type
+                class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+                defaultValue: jury
+              - name: juryOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Peso de la sección
+              - name: juryOptionIdAnchor
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Id ancla
+              - name: juryOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: Imagen del ancla
+              - name: juryOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Título de la sección
+              - name: juryOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Resumen de la sección
+                # End common fields
+              - name: juryOptionCategory
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                repository: category
+                path: caar/
+                label: Categoría del premio
+    - name: tabEnrollment
+      label: Sección de inscripción
+      fields:
+        - name: enrollmentOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          label: Listado de secciones de inscripción
+          field:
+            name: enrollmentOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            layout: vertical
+            fields:
+                # Common fields
+              - name: type
+                class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+                defaultValue: enrollment
+              - name: enrollmentOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Peso
+              - name: enrollmentOptionIdAnchor
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Id ancla
+              - name: enrollmentOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: Imagen ancla
+              - name: enrollmentOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Título de la sección
+              - name: enrollmentOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Resumen de la sección
+                # End common fields
+                # Specific fields
+              - name: enrollmentOptionRichText
+                i18n: true
+                label: caar-templating-module.templates.components.distributor-sections-rich-text.tabMain.listElements.richText.label
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: Texto enriquecido de la inscripción
+              - name: enrollmentOptionButtonText
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Texto del botón de inscripción
+              - name: enrollmentOptionButtonLink
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: website      
+                appName: pages
+                label: Enlace a página de inscripción
+                # End specific fields
+    - name: tabLemma
+      label: Sección de lema
+      fields:
+        - name: lemmaOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          label: Listado de secciones de lema
+          field:
+            name: lemmaOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            layout: vertical
+            fields:
+                # Common fields
+              - name: type
+                class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+                defaultValue: lemma
+              - name: lemmaOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Peso
+              - name: lemmaOptionIdAnchor
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Id ancla
+              - name: lemmaOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: Imagen del ancla
+              - name: lemmaOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Título de la sección
+              - name: lemmaOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Resumen de la sección
+                # End common fields
+                # Specific fields
+              - name: lemmaOptionRichText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: Texto enriquecido del lema
+              - name: lemmaOptionLink
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                targetWorkspace: architecture-files      
+                appName: caar-architecture-files-app
+                label: Enlace a ficha
+              - name: lemmaOptionPhotoPreview
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: Imagen preview
+                # End specific fields
+    - name: tabJudgeList
+      label: Jueces
+      fields:
+        - name: judgeList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          label: Listado de jueces
+          field:
+            name: judgeComposite
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            layout: vertical
+            fields:
+              - name: judgeName
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Nombre del juez
+              - name: judgePhoto
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: Foto del juez
+              - name: judgeFileLink
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: architecture-files      
+                appName: caar-architecture-files-app
+                label: Enlace a su ficha
+              - name: judgeText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: Texto adicional
+              - name: judgeCategory
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                repository: category
+                path: caar/
+                label: Categoría del premio (debe coindicidir con un listado de jurado)
+actions:        
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition 

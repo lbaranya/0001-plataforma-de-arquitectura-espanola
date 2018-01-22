@@ -523,7 +523,7 @@ a:focus {
   .cmp-menu .col-sm-12.banner-menu {
     width: 100%;
     height: 410px;
-    background-image: url("../../../img/banner-menu.jpg");
+    background-image: url("../../img/banner-menu.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom; }
@@ -1777,7 +1777,326 @@ a:focus {
     .cmp-arquitectos-realacionados .separator hr {
       border-bottom: 3px solid #979797; }
 
-/* Arquitecto Detalle: termina */
+      /* Arquitecto Detalle: termina */
+      
+/* COMPONENTE SUSTITUTO DE ACORDEON */
+
+.cmp-distribuidor-convocatoria {
+  padding-top: 20px;
+  background-color: #f9f7f3; }
+  .cmp-distribuidor-convocatoria .row {
+    margin-bottom: 20px; }
+    .cmp-distribuidor-convocatoria .row a {
+      text-decoration: none;
+      color: #000; }
+      .cmp-distribuidor-convocatoria .row a .title {
+        font-size: 15px;
+        font-family: "National-BookItalic", "Helvetica", "sans-serif"; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia {
+        position: relative; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia img {
+          width: 100%;
+          height: 445px;
+          border-bottom: 3px solid #D0021B; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia:hover img {
+          border: none; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia:hover .text {
+          opacity: 1; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia .text {
+          opacity: 0;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          height: 445px;
+          color: #fff;
+          background-color: rgba(208, 2, 27, 0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          -o-transition: all .5s ease-in-out;
+          -ms-transition: all .5s ease-in-out;
+          -moz-transition: all .5s ease-in-out;
+          -webkit-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out; }
+          .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
+            margin: 0;
+            text-align: center;
+            font-size: 55px;
+            font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
+      .cmp-distribuidor-convocatoria .row a .descrip-arquia {
+        font-size: 14px;
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        padding-top: 20px; }
+      .cmp-distribuidor-convocatoria .row a .new-links {
+        margin-top: 10px; }
+        .cmp-distribuidor-convocatoria .row a .new-links .more-link {
+          font-family: "National-Book", "Helvetica", "sans-serif";
+          font-size: 15px;
+          color: #D0021B;
+          vertical-align: -webkit-baseline-middle; }
+          .cmp-distribuidor-convocatoria .row a .new-links .more-link::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #D0021B;
+            margin-right: 10px; }
+  @media screen and (max-width: 1400px) {
+    .cmp-distribuidor-convocatoria .row a .img-arquia img {
+      width: 100%;
+      height: 445px; }
+    .cmp-distribuidor-convocatoria .row a .img-arquia .text {
+      width: 100%;
+      height: 445px; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
+        font-size: 45px; }
+    .cmp-distribuidor-convocatoria .row a .descrip-arquia {
+      font-size: 14px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      width: 100%; } }
+  @media screen and (max-width: 1200px) {
+    .cmp-distribuidor-convocatoria .row a .img-arquia img {
+      width: 100%;
+      height: 300px; }
+    .cmp-distribuidor-convocatoria .row a .img-arquia .text {
+      width: 100%;
+      height: 300px; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
+        font-size: 40px; }
+    .cmp-distribuidor-convocatoria .row a .descrip-arquia {
+      font-size: 14px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      width: 100%; } }
+  @media screen and (max-width: 992px) {
+    .cmp-distribuidor-convocatoria .row a {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia img {
+        width: 100%;
+        height: 300px; }
+      .cmp-distribuidor-convocatoria .row a .img-arquia .text {
+        width: 100%;
+        height: 300px; }
+        .cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
+          font-size: 55px; }
+      .cmp-distribuidor-convocatoria .row a .descrip-arquia {
+        font-size: 14px;
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        width: 100%; } }
+
+.cmp-distribuidor-general-content {
+  display: none; }
+  .cmp-distribuidor-general-content .cmp-distruidor-content-title {
+    margin-top: 50px; }
+    .cmp-distribuidor-general-content .cmp-distruidor-content-title .content-title {
+      font-size: 30px;
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      color: #4a4a4a;
+      font-weight: bold; }
+    .cmp-distribuidor-general-content .cmp-distruidor-content-title .text-contenido {
+      font-family: "National-Book", "Helvetica", "sans-serif";
+      font-size: 14px;
+      color: #4a4a4a; }
+  .cmp-distribuidor-general-content .cmp-distruidor-contenido {
+    margin-bottom: 30px; }
+    .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info {
+      background-color: #f9f7f3;
+      margin-left: 15px;
+      margin-right: 15px;
+      padding-left: 45px;
+      padding-right: 45px;
+      padding-bottom: 50px;
+      padding-top: 30px; }
+      .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .content-title {
+        font-size: 18px;
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        color: #D0021B; }
+      .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .text-contenido {
+        color: #4a4a4a;
+        font-size: 14px;
+        font-family: "National-Book", "Helvetica", "sans-serif"; }
+        .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .text-contenido i {
+          color: #979797; }
+        .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .text-contenido.document {
+          width: 60%;
+          border-bottom: 1px dashed #D0021B; }
+
+.cmp-volver {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 35px;
+  color: #D0021B; }
+  
+.inscripcion a {
+  border-radius: 0;
+  border: 2px solid #D0021B;
+  color: #fff;
+  background-color: #D0021B;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0.2px;
+  float: right;
+  padding: 10px 40px 10px 40px; }
+    
+/* FIN COMPONENTE SUSTITUTO DE ACORDEON */
+
+/* ESTILOS DE JURADO AISLADOS */
+.col-jurado {
+	display: flex;
+	width: 49%;
+	background-color: #fff;
+	border-bottom: 3px solid #D0021B;
+	position: relative;
+	float: left;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.col-jurado .img-jurado {
+	float: left;
+}
+
+.col-jurado .img-jurado img {
+	width: 265px;
+	height: 258px;
+}
+
+.col-jurado .info-jurado {
+	float: left;
+	width: 48%;
+	margin-left: 15px;
+}
+
+.col-jurado .info-jurado h4 {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.col-jurado .info-jurado span {
+	font-family: "National-Bold", "Helvetica", "sans-serif";
+}
+  
+.col-jurado .info-jurado p {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .jurado .col-jurado .ficha-jurado
+	{
+	text-decoration: none;
+	color: #fff;
+}
+
+.col-jurado .ficha-jurado div {
+	border-radius: 100%;
+	background-color: #D0021B;
+	color: #fff;
+	width: 38px;
+	height: 38px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 50%;
+	bottom: 5%;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.ficha-jurado div i {
+	font-size: 22px;
+	line-height: 20px;
+}
+
+.col-jurado .pdf {
+	position: absolute;
+	bottom: 5px;
+	right: 24px;
+	text-decoration: none;
+	color: #000;
+	font-weight: bold;
+}
+
+.col-jurado:first-child {
+	padding-left: 0;
+	margin-right: 22px;
+}
+
+/* ESTILOS DE LEMA AISLADOS */
+
+.preview {
+	float: left;
+	width: 100%;
+	min-height: 300px;
+}
+
+.preview h4 {
+	width: 100%;
+	float: left;
+	color: #D0021B;
+	font-size: 30px;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.preview .descript {
+	width: 100%;
+	float: left;
+}
+
+.col-info-preview {
+	position: relative;
+	float: left;
+	min-height: 280px;
+}
+
+.col-info-preview .info-preview {
+	position: absolute;
+	width: 260px;
+	bottom: 0;
+}
+
+.col-info-preview .info-preview span {
+	width: 100%;
+	float: left;
+	font-size: 17px;
+}
+
+.col-info-preview .info-preview .year {
+	color: #000;
+	float: left;
+	width: auto;
+	font-size: 16px;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.col-info-preview a {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	text-decoration: none;
+	color: #000;
+}
+
+.col-info-preview a img {
+	float: left;
+	width: 260px;
+	height: 230px;
+}
+
+.info-basica {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	float: left;
+	width: 75%;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
 
 /* Noticias y Agenda */
 
@@ -2012,4 +2331,3 @@ a:focus {
     padding-left: 63px; }
     
 	/* Noticias y Agenda: Termina */
-      

@@ -20,6 +20,8 @@ areas:
             id: caar-templating-module:components/breadcrum-component
           rich-text-video-component:
             id: caar-templating-module:components/rich-text-video-component
+          rich-text-image-component:
+            id: caar-templating-module:components/rich-text-image-component
           rich-text-component:    
             id: caar-templating-module:components/rich-text-component
           child-list-component:
@@ -36,18 +38,14 @@ areas:
             id: caar-templating-module:components/news-diary-component
           news-related-component:
             id: caar-templating-module:components/related-news-component
-          detail-business-department-info-component:
-            id: caar-templating-module:components/detail-business-department-info-component
-          detail-business-department-components-component:
-            id: caar-templating-module:components/detail-business-department-components-component
-          detail-business-complementary-info-component:
-            id: caar-templating-module:components/detail-business-complementary-info-component
           detail-architect-header-component:
             id: caar-templating-module:components/detail-architect-header-component
           detail-architect-body-component:
             id: caar-templating-module:components/detail-architect-body-component
           related-files-component:
             id: caar-templating-module:components/related-files-component
+          distributor-sections-rich-text-component:
+            id: caar-templating-module:components/distributor-sections-rich-text-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:

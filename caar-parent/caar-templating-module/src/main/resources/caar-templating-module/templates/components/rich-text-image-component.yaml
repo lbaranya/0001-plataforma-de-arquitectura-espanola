@@ -1,0 +1,4 @@
+title: caar-templating-module.components.rich-text-image.dialog.title
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/rich-text-image-component.ftl
+dialog: caar-templating-module:components/rich-text-image-component-properties   
