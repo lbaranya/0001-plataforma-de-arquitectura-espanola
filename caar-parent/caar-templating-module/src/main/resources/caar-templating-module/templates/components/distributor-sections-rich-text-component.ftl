@@ -212,41 +212,41 @@
 				        <div class="container-sub-info">
 				            <div class="row">
 				                <div class="col-md-12 contenido">
-				                	[#if content.judgeList??]
-				                		[#if content.judgeList?has_content]
-				                			[#list cmsfn.children(content.judgeList) as judge]
-				                				[#if contentItem.juryOptionCategory == judge.judgeCategory]
-				                				<div class="col-jurado">
-                									<div class="img-jurado">
-                										[#assign imgItemKey = judge.judgePhoto!]
-										            	[#if imgItemKey??]
-										            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
-										            		[#if imgMediaRendition??]
-										            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
-										            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-										            			[#if imageAlt?has_content]
-										            				[#assign imageAlternativeText = imageAlt.alternative!""]
-										            			[/#if]
-										                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
-										                	[/#if]
-										                [/#if]
-                									</div>
-                									<div class="info-jurado">
-                										<h4>${judge.judgeName!""}</h4>
-                										${cmsfn.decode(judge).judgeText!""}
-                									</div>
-                									[#assign hrefLink = "#"]
-									                [#if judge.judgeFileLink??]
-										               	[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeFileLink))]
-	                									<a href="${hrefLink}" class="ficha-jurado">
-										                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
-										                </a>
+				                	[#assign judgeListTmp = model.getJuryList(cmsfn.asJCRNode(content))]
+				                	[#assign judgeList = cmsfn.asContentMapList(judgeListTmp)]
+			                		[#if judgeList?has_content]
+			                			[#list judgeList as judge]
+			                				[#if contentItem.juryOptionCategory == judge.judgeCategory]
+			                				<div class="col-jurado">
+            									<div class="img-jurado">
+            										[#assign imgItemKey = judge.judgePhoto!]
+									            	[#if imgItemKey??]
+									            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
+									            		[#if imgMediaRendition??]
+									            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
+									            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+									            			[#if imageAlt?has_content]
+									            				[#assign imageAlternativeText = imageAlt.alternative!""]
+									            			[/#if]
+									                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+									                	[/#if]
 									                [/#if]
-                								</div>
-                								[/#if]
-				                			[/#list]
-				                		[/#if]
-				                	[/#if]
+            									</div>
+            									<div class="info-jurado">
+            										<h4>${judge.judgeName!""}</h4>
+            										${cmsfn.decode(judge).judgeText!""}
+            									</div>
+            									[#assign hrefLink = "#"]
+								                [#if judge.judgeFileLink??]
+									               	[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeFileLink))]
+                									<a href="${hrefLink}" class="ficha-jurado">
+									                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
+									                </a>
+								                [/#if]
+            								</div>
+            								[/#if]
+			                			[/#list]
+			                		[/#if]
 				                </div>
 				           	</div>
 				        </div>
@@ -382,58 +382,3 @@
 	[/#if]
 	
 [/#list]
-
-[#-- 
-[#list cmsfn.children(content.listElements) as element]
-[#assign type = element.switchType!""]
-<section class="cmp-distribuidor-general-content" id="${element.idAnchor!""}">
-    <div class="cmp-distruidor-content-title">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12 content-title">
-                    <h3>${element.title!""}</h3>
-                </div>
-                <div class="col-md-12 text-contenido">
-                    <p>${element.text!""}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-        <div class="cmp-distruidor-contenido">
-        <div class="container-sub-info">
-            <div class="row">
-                <div class="col-md-12 contenido">
-                	[#if type.switchType == "lemmaOption"]
-                		[#assign lemma = type.lemmaOption]
-                		${cmsfn.decode(lemma).lemmaRichText!""}
-                	[/#if]
-                	[#if type.switchType == "enrollmentOption"]
-                		<div class="inscripcion">
-	                		[#assign enrollment = type.enrollmentOption!""]
-	                		${cmsfn.decode(enrollment).enrollmentRichText!""}
-				            [#assign hrefLink="#"]
-				            [#if enrollment.buttonLink??]
-				            	[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(enrollment.buttonLink))]
-				            [/#if]
-				            <a href="${hrefLink}" class="btn">${enrollment.buttonText!""}</a>
-			            </div>
-                	[/#if]
-                	[#if type.switchType == "judgeOption"]
-                		[#assign judge = cmsfn.children(content.judgeList)]
-                		[#list judge as judgee]
-                			${judgee.judgeName!""}
-                		[/#list]
-                	[/#if]
-                	[#if type.switchType == "richTextOption"]
-                		[#assign rich = type.richTextOption]
-                		${cmsfn.decode(rich).richText!""}
-                	[/#if]
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-[/#list]
-[/#if]
-
- --]
