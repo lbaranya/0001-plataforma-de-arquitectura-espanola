@@ -212,41 +212,41 @@
 				        <div class="container-sub-info">
 				            <div class="row">
 				                <div class="col-md-12 contenido">
-				                	[#if content.judgeList??]
-				                		[#if content.judgeList?has_content]
-				                			[#list cmsfn.children(content.judgeList) as judge]
-				                				[#if contentItem.juryOptionCategory == judge.judgeCategory]
-				                				<div class="col-jurado">
-                									<div class="img-jurado">
-                										[#assign imgItemKey = judge.judgePhoto!]
-										            	[#if imgItemKey??]
-										            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
-										            		[#if imgMediaRendition??]
-										            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
-										            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-										            			[#if imageAlt?has_content]
-										            				[#assign imageAlternativeText = imageAlt.alternative!""]
-										            			[/#if]
-										                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
-										                	[/#if]
-										                [/#if]
-                									</div>
-                									<div class="info-jurado">
-                										<h4>${judge.judgeName!""}</h4>
-                										${cmsfn.decode(judge).judgeText!""}
-                									</div>
-                									[#assign hrefLink = "#"]
-									                [#if judge.judgeFileLink??]
-										               	[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeFileLink))]
-	                									<a href="${hrefLink}" class="ficha-jurado">
-										                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
-										                </a>
+				                	[#assign judgeListTmp = model.getJuryList(cmsfn.asJCRNode(content))]
+				                	[#assign judgeList = cmsfn.asContentMapList(judgeListTmp)]
+			                		[#if judgeList?has_content]
+			                			[#list judgeList as judge]
+			                				[#if contentItem.juryOptionCategory == judge.judgeCategory]
+			                				<div class="col-jurado">
+            									<div class="img-jurado">
+            										[#assign imgItemKey = judge.judgePhoto!]
+									            	[#if imgItemKey??]
+									            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
+									            		[#if imgMediaRendition??]
+									            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
+									            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+									            			[#if imageAlt?has_content]
+									            				[#assign imageAlternativeText = imageAlt.alternative!""]
+									            			[/#if]
+									                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+									                	[/#if]
 									                [/#if]
-                								</div>
-                								[/#if]
-				                			[/#list]
-				                		[/#if]
-				                	[/#if]
+            									</div>
+            									<div class="info-jurado">
+            										<h4>${judge.judgeName!""}</h4>
+            										${cmsfn.decode(judge).judgeText!""}
+            									</div>
+            									[#assign hrefLink = "#"]
+								                [#if judge.judgeFileLink??]
+									               	[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeFileLink))]
+                									<a href="${hrefLink}" class="ficha-jurado">
+									                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
+									                </a>
+								                [/#if]
+            								</div>
+            								[/#if]
+			                			[/#list]
+			                		[/#if]
 				                </div>
 				           	</div>
 				        </div>

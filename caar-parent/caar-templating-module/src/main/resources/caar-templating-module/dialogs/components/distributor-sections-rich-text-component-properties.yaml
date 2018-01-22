@@ -5,12 +5,12 @@ form:
       fields:
         - name: richTextOptionList
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
           label: Lista de secciones texto enriquecido
           field:
             name: richTextOptionCompositeField
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
             layout: vertical
             fields:
                 # Common fields
@@ -53,12 +53,12 @@ form:
       fields:
         - name: juryOptionList
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
           label: Listado de secciones de jurado
           field:
             name: juryOptionCompositeField
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
             layout: vertical
             fields:
                 # Common fields
@@ -100,12 +100,12 @@ form:
       fields:
         - name: enrollmentOptionList
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
           label: Listado de secciones de inscripción
           field:
             name: enrollmentOptionCompositeField
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
             layout: vertical
             fields:
                 # Common fields
@@ -158,12 +158,12 @@ form:
       fields:
         - name: lemmaOptionList
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
           label: Listado de secciones de lema
           field:
             name: lemmaOptionCompositeField
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
             layout: vertical
             fields:
                 # Common fields
@@ -222,12 +222,12 @@ form:
       fields:
         - name: judgeList
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
           label: Listado de jueces
           field:
             name: judgeComposite
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
             layout: vertical
             fields:
               - name: judgeName
