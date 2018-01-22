@@ -1,6 +1,7 @@
 package es.arquia.magnolia.components.models.sections;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 
@@ -21,7 +22,6 @@ public class DistributorSectionsModel <T extends ConfiguredTemplateDefinition> e
 
 	public DistributorSectionsModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent) {
 		super(content, definition, parent);
-		// TODO Auto-generated constructor stub
 		nodeArray = new ArrayList<>();
 	}
 	
@@ -35,28 +35,16 @@ public class DistributorSectionsModel <T extends ConfiguredTemplateDefinition> e
 		// Include sub nodes list into a general sortable array
 		for(Node iterator: nodeArray) {
 			if(NodeUtil.getName(iterator).contains("richText")) {
-				NodeIterator iteratorRich = iterator.getNodes();
-				while(iteratorRich.hasNext()) {
-					generalSortArray.add(iteratorRich.nextNode());
-				}
+					generalSortArray.add(iterator);
 			}
 			if(NodeUtil.getName(iterator).contains("jury")) {
-				NodeIterator iteratorJury = iterator.getNodes();
-				while(iteratorJury.hasNext()) {
-					generalSortArray.add(iteratorJury.nextNode());
-				}
+					generalSortArray.add(iterator);
 			}
 			if(NodeUtil.getName(iterator).contains("lemma")) {
-				NodeIterator iteratorLemma = iterator.getNodes();
-				while(iteratorLemma.hasNext()) {
-					generalSortArray.add(iteratorLemma.nextNode());
-				}
+					generalSortArray.add(iterator);
 			}
 			if(NodeUtil.getName(iterator).contains("enrollment")) {
-				NodeIterator iteratorEnrollment = iterator.getNodes();
-				while(iteratorEnrollment.hasNext()) {
-					generalSortArray.add(iteratorEnrollment.nextNode());
-				}
+					generalSortArray.add(iterator);
 			}
 		}
 		// Sort the general sortable array
@@ -105,6 +93,18 @@ public class DistributorSectionsModel <T extends ConfiguredTemplateDefinition> e
 			
 		});
 		return generalSortArray;
+	}
+	
+	public List<Node> getJuryList(Node content) throws RepositoryException{
+		List<Node> juryList = new ArrayList<>();
+		NodeIterator iterator = content.getNodes();
+		while(iterator.hasNext()) {
+			Node currentNode = iterator.nextNode();
+			if(currentNode.getName().contains("judge")) {
+				juryList.add(currentNode);
+			}
+		}
+		return juryList;
 	}
 
 }
