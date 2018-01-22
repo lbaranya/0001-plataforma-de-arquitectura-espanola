@@ -1,0 +1,18 @@
+form:
+  tabs:
+    - name: tabMain
+      label: caar-templating-module.templates.components.news-diary-component.tabMain.label
+      fields:
+        - name: allNewsLink          
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.news-diary-component.tabMain.allNewsLink.label
+          i18n: true
+        - name: allEventsLink          
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.news-diary-component.tabMain.allEventsLink.label
+          i18n: true
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
