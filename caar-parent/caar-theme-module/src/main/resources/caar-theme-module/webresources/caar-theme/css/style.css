@@ -127,6 +127,29 @@ a:focus {
 
 /*National Font*/
 
+/**ck-editor**/
+.ckeditor.title {
+    font-size: 60px;
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    color: #fff;
+}
+.ckeditor.frase, .ckeditor.autor {
+    font-size: 30px;
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    color: #fff;
+}
+.ckeditor.content-title {
+    font-size: 18px;
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    color: #D0021B;
+}
+.ckeditor.text-contenido {
+    color: #4a4a4a;
+    font-size: 14px;
+    font-family: "National-Book", "Helvetica", "sans-serif";
+}
+/**termina ck-editor**/
+
 /**Banner: cmp-banner-header**/
 .cmp-banner-header {
   font-family: "National-Book", "Helvetica", "sans-serif";
@@ -2098,3 +2121,4 @@ a:focus {
 	padding-right: 20px;
 	padding-left: 20px;
 }
+
