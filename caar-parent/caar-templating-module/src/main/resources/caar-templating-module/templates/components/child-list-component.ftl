@@ -25,9 +25,6 @@
                     [/#if]
                     <div class="texto"><h2>${child.title!""}</h2></div>
                 </div>
-                <div class="descrip-arquia">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, necessitatibus, soluta. Maxime corrupti, nihil repellat odio nulla doloribus quasi non optio recusandae nemo voluptate ipsa, qui, deserunt, veritatis! Laboriosam, magnam.</p>
-                </div>
 			</a>
 			[#if countRow%2==0]
 		</div>
