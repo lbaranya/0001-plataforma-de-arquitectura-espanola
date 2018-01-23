@@ -338,11 +338,14 @@
 					         [#assign currentLang = ""]
 					         [#if !current]
 					         	[#assign currentLang = lang]
+					         	<a id="currentLanguage" href="${localizedLinks[lang]!'#'}">${lang!}</a>
+					         [#elseif current]
+					         	<a>${lang!}</a>					         
 					         [/#if]
+					         
 					         <input type="hidden" id="contextPathInput" value="${contextPath!}" />
 					         <input type="hidden" id="currentLanguageInput" value="${currentLang!}" />
-					         [#if current]<a>${lang!}</a>[/#if]
-					         [#if !current]<a id="currentLanguage" href="${localizedLinks[lang]!'#'}">${lang!}</a>[/#if]
+					         
 					      [/@compress]</li>
 					      [/#list]
 					   </ul>
