@@ -335,8 +335,14 @@
 					      [#-- Use "compress" to put "li" and "a" on one line to prevent white spaces. --]
 					      <li class="menu-item-idioma">[@compress single_line=true]
 					         [#-- Current locale should not be linked. --]
+					         [#assign currentLang = ""]
+					         [#if !current]
+					         	[#assign currentLang = lang]
+					         [/#if]
+					         <input type="hidden" id="contextPathInput" value="${contextPath!}" />
+					         <input type="hidden" id="currentLanguageInput" value="${currentLang!}" />
 					         [#if current]<a>${lang!}</a>[/#if]
-					         [#if !current]<a href="${localizedLinks[lang]!'#'}">${lang!}</a>[/#if]
+					         [#if !current]<a id="currentLanguage" href="${localizedLinks[lang]!'#'}">${lang!}</a>[/#if]
 					      [/@compress]</li>
 					      [/#list]
 					   </ul>

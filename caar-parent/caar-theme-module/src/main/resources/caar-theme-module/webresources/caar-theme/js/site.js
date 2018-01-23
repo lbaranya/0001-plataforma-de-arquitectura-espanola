@@ -3,6 +3,8 @@ var scroll;
 
 $(document).ready(function () {
 	
+	adaptCurrentURLToNewLanguage();
+	
 	// Resources URL
 	var resourcesURL = $("#resources").val();
 	// Icons URL
@@ -281,6 +283,22 @@ $(document).ready(function () {
     };
     
 });
+
+/* We adapt the url of the header component so that it always gets the url of the page in which we are, with the language injected */
+function adaptCurrentURLToNewLanguage(){
+	var currentURL = window.location.href;
+	var replacement = $("#currentLanguageInput").val();
+	
+	var contextPath = $("#contextPathInput").val();
+	
+	if(replacement){
+		replacement = "/"+replacement;
+	}
+	var newString = contextPath+replacement;
+	var regexp = new RegExp(contextPath +"(\/en|\/es)*","i");
+	var newURL = currentURL.replace(regexp, newString);
+	$("#currentLanguage").attr('href', newURL);
+}
 
 /**Funcion para Banner-header**/
 
