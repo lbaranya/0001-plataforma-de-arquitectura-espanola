@@ -149,11 +149,11 @@ editor:
           - name: listMedia
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.listMedia.label
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
             field:
               name: compositeField
               class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
               layout: vertical
               fields:
                 - name: separator

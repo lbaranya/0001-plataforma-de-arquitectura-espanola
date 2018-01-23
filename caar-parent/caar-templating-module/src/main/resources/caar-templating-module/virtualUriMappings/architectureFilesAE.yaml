@@ -1,0 +1,3 @@
+class: info.magnolia.cms.beans.config.RegexpVirtualURIMapping
+fromURI: /architecture-files/support-reviewi/(.*).html
+toURI: forward:/caar-home/arquitectura-espanola/architectureFilesAE/architectureFilesSupportReviewIDetailsAE?path=/$1
