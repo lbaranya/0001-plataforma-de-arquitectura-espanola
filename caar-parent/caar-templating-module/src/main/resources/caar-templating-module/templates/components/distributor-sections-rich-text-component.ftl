@@ -27,14 +27,16 @@
                 <div class="img-arquia">
                 	[#assign imgItemKey = contentItem.richTextOptionImageAnchor!]
                 	[#if imgItemKey??]
-                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
-                		[#if imgMediaRendition??]
-                			[#assign imageAlternativeText = "imagen del ancla"]
-                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-                			[#if imageAlt?has_content]
-                				[#assign imageAlternativeText = imageAlt.alternative!""]
-                			[/#if]
-                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+                		[#if imgItemKey?has_content]
+	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
+	                		[#if imgMediaRendition??]
+	                			[#assign imageAlternativeText = "imagen del ancla"]
+	                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+	                			[#if imageAlt?has_content]
+	                				[#assign imageAlternativeText = imageAlt.alternative!""]
+	                			[/#if]
+	                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+	                    	[/#if]
                     	[/#if]
                     [/#if]
                     <div class="text">
@@ -54,14 +56,16 @@
                 <div class="img-arquia">
                 	[#assign imgItemKey = contentItem.juryOptionImageAnchor!]
                 	[#if imgItemKey??]
-                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
-                		[#if imgMediaRendition??]
-                			[#assign imageAlternativeText = "imagen del ancla"]
-                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-                			[#if imageAlt?has_content]
-                				[#assign imageAlternativeText = imageAlt.alternative!""]
-                			[/#if]
-                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+                		[#if imgItemKey?has_content]
+	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
+	                		[#if imgMediaRendition??]
+	                			[#assign imageAlternativeText = "imagen del ancla"]
+	                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+	                			[#if imageAlt?has_content]
+	                				[#assign imageAlternativeText = imageAlt.alternative!""]
+	                			[/#if]
+	                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+	                    	[/#if]
                     	[/#if]
                     [/#if]
                     <div class="text">
