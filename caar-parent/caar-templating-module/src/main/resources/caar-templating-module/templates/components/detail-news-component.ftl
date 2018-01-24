@@ -10,14 +10,16 @@
             <div class="imagen-video">
                 [#assign imgItemKey = news.getImage(newsContentNode)]
             	[#if imgItemKey??]
-            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1024")]
-            		[#if imgMediaRendition??]
-            			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
-            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-            			[#if imageAlt?has_content]
-            				[#assign imageAlternativeText = imageAlt.alternative!""]
-            			[/#if]
-                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+            		[#if imgItemKey?has_content]
+	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1024")]
+	            		[#if imgMediaRendition??]
+	            			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
+	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+	            			[#if imageAlt?has_content]
+	            				[#assign imageAlternativeText = imageAlt.alternative!""]
+	            			[/#if]
+	                		<img src='${imgMediaRendition.getLink()}' alt='${imageAlternativeText!""}' />
+	                	[/#if]
                 	[/#if]
                 [/#if]
             </div>
