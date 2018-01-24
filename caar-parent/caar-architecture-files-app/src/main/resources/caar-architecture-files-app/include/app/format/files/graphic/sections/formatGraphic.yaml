@@ -1,0 +1,22 @@
+name: formatGraphic
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatGraphic.label
+groups:
+  - name: editActions
+    items:
+      - name: editFormatGraphic
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsVideo
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:format-graphic
