@@ -3,7 +3,7 @@ label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatGraph
 groups:
   - name: editActions
     items:
-      - name: editFormatVideo
+      - name: editFormatGraphic
       - name: confirmDelete
   - name: activationActions
     items:
@@ -15,7 +15,7 @@ groups:
       - name: export
   - name: versionsActions
     items:
-      - name: showVersionsVideo
+      - name: showVersionsGraphic
       - name: restoreVersion
 availability:
   nodeTypes:

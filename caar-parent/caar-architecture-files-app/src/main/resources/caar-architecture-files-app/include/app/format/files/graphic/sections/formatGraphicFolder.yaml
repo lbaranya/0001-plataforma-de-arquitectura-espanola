@@ -3,8 +3,8 @@ label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatGraph
 groups:
 - name: addActions
   items:
-  - name: addFolderFormatVideo
-  - name: addFormatVideo
+  - name: addFolderFormatGraphic
+  - name: addFormatGraphic
 - name: editActions
   items:
   - name: editFolder
@@ -23,4 +23,4 @@ groups:
   - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:format-video-folder-wrapper
+    - mgnl:format-graphic-folder-wrapper
