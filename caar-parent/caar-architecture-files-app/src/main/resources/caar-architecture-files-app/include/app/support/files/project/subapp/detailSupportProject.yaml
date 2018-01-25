@@ -265,7 +265,7 @@ editor:
             label: caar-architecture-files-app.files.support.project.projectNotesData.projectActualUse.label
       - name: searchTagsData
         label: caar-architecture-files-app.files.support.project.searchTagsData.label
-        field:
+        fields:
           - name: FS2.9.1
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.label

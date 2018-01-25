@@ -141,7 +141,7 @@ editor:
               appName: caar-architecture-files-app
               targetWorkspace: architecture-files
           - name: FS1.3.6
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.architect.professionalData.biographicReview.label
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true

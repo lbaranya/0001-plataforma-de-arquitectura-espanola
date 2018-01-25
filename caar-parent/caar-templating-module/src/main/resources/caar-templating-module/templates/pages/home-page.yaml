@@ -16,9 +16,9 @@ areas:
   main:
     templateScript: /caar-templating-module/templates/pages/home-page.ftl
     availableComponents:
-      highlights-excellence-component:
-        id: caar-templating-module:components/highlights-excellence-component
-      highlights-news-component:
-        id: caar-templating-module:components/highlights-news-component
-      highlights-events-component:
-        id: caar-templating-module:components/highlights-events-component
+      #highlights-excellence-component:
+        #id: caar-templating-module:components/highlights-excellence-component
+      #highlights-news-component:
+        #id: caar-templating-module:components/highlights-news-component
+      #highlights-events-component:
+        #id: caar-templating-module:components/highlights-events-component

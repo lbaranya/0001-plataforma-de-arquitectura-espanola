@@ -12,14 +12,16 @@
                 <div class="contendor-logo">
                     [#assign imgItemKey = content.image!]
 	            	[#if imgItemKey??]
-                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "181x181")]
-	            		[#if imgMediaRendition??]
-	            			[#assign imageAlternativeText = "logo de bienal"]
-	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-	            			[#if imageAlt?has_content]
-	            				[#assign imageAlternativeText = imageAlt.alternative!""]
-	            			[/#if]
-                    		<img class="logo-premio" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText}" />
+	            		[#if imgItemKey?has_content]
+	                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "181x181")]
+		            		[#if imgMediaRendition??]
+		            			[#assign imageAlternativeText = "logo de bienal"]
+		            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+		            			[#if imageAlt?has_content]
+		            				[#assign imageAlternativeText = imageAlt.alternative!""]
+		            			[/#if]
+	                    		<img class="logo-premio" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText}" />
+	                    	[/#if]
                     	[/#if]
                     [/#if]
                 </div>
