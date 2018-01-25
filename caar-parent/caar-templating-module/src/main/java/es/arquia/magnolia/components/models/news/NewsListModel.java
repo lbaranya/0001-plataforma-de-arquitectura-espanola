@@ -28,6 +28,10 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
 		return newsManager.getNewsList();
 	}
 	
+	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
+		return newsManager.getCategorizedNewsList(categoriesList);
+	}
+	
 	public News getInstance() {
 		return newsManager.getInstance();
 	}

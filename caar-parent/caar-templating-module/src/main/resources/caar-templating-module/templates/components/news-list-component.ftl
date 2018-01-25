@@ -1,6 +1,10 @@
 [#assign currentLanguage = cmsfn.language()!""]
 [#assign news = model.getInstance()!""]
-[#assign listNews = model.getNewsList()]
+[#if content.categories?has_content]
+	[#assign listNews = model.getCategorizedNewsList(content.categories)]
+[#else]
+	[#assign listNews = model.getNewsList()]
+[/#if]
 [#if listNews?has_content]
 <section class="cmp-last-news">
         <div class="container">

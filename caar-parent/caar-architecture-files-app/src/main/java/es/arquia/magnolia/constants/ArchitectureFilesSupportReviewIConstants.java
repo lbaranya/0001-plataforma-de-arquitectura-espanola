@@ -2,36 +2,36 @@ package es.arquia.magnolia.constants;
 
 public interface ArchitectureFilesSupportReviewIConstants {
 	
-	String idOuvre = "FS3.1.1";
-	String startDate = "FS3.1.2";
-	String lastUpdateDate = "FS3.1.3";
-	String publishedInDirectory = "FS3.1.4";
+	String idOuvre = "FS3_1_1";
+	String startDate = "FS3_1_2";
+	String lastUpdateDate = "FS3_1_3";
+	String publishedInDirectory = "FS3_1_4";
 	
-	String ouvreTitle = "FS3.2.1";
-	String presentationDate = "FS3.2.2";
-	String presentationLocation = "FS3.2.3";
-	String presentationEntity = "FS3.2.4";
-	String ouvreAbstract = "FS3.2.5";
+	String ouvreTitle = "FS3_2_1";
+	String presentationDate = "FS3_2_2";
+	String presentationLocation = "FS3_2_3";
+	String presentationEntity = "FS3_2_4";
+	String ouvreAbstract = "FS3_2_5";
 	
-	String authorshipType = "FS3.3.1";
-	String authorshipName = "FS3.3.2";
-	String authorshipDetail = "FS3.3.3";
+	String authorshipType = "FS3_3_1";
+	String authorshipName = "FS3_3_2";
+	String authorshipDetail = "FS3_3_3";
 	
-	String notes = "FS3.4";
+	String notes = "FS3_4";
 	
-	String typology = "FS3.5.1";
-	String conferences = "FS3.5.1.1";
-	String discussions = "FS3.5.1.2";
-	String poster = "FS3.5.1.3";
-	String courses = "FS3.5.1.4";
-	String awardsAndDistinctions = "FS3.5.1.5";
+	String typology = "FS3_5_1";
+	String conferences = "FS3_5_1_1";
+	String discussions = "FS3_5_1_2";
+	String poster = "FS3_5_1_3";
+	String courses = "FS3_5_1_4";
+	String awardsAndDistinctions = "FS3_5_1_5";
 	
-	String relatedThought = "FS3.6";
+	String relatedThought = "FS3_6";
 	
 	String listMedia = "listMedia";
-	String mediaType = "FS3.7.1";
-	String previewPhoto = "FS3.7.2";
-	String mediaDetail = "FS3.7.3";
-	String mediaTitle = "FS3.7.4";
+	String mediaType = "FS3_7_1";
+	String previewPhoto = "FS3_7_2";
+	String mediaDetail = "FS3_7_3";
+	String mediaTitle = "FS3_7_4";
 	
 }
