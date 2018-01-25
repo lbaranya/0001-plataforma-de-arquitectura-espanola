@@ -160,5 +160,6 @@
 		<module>caar-utils-module</module>
 		<module>caar-news-app</module>
 		<module>caar-architecture-files-app</module>
+		<module>caar-awards-app</module>
 	</modules>
 </project>

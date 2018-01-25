@@ -1,0 +1,80 @@
+subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+label: caar-awards-app.subapp.detailAwardsSubApp.label
+contentConnector:
+  workspace: awards
+editor:
+  nodeType:
+    icon: icon-items
+    name: mgnl:award
+  form:
+    tabs:
+      - name: fileData
+        label: caar-awards-app.files.award.fileData.label
+        fields:
+          - name: jcrName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.award.fileData.jcrName.label
+            required: true
+      - name: awardData
+        label: caar-awards-app.awardData.label
+        fields:
+          - name: type
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+            label: caar-awards-app.awardData.type.label
+            options:
+              - name: Biennial
+                label: caar-awards-app.awardData.type.biennial.label
+                value: biennial
+              - name: Standard
+                label: caar-awards-app.awardData.type.standard.label
+                value: standard
+          - name: awardName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.awardData.awardName.label
+          - name: awardDescription
+            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+            label: caar-awards-app.awardData.awardDescription.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+          - name: awardLogo
+            label: caar-awards-app.awardData.awardLogo.label
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            targetWorkspace: dam
+            appName: assets
+            identifierToPathConverter:
+              class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+            contentPreviewDefinition:
+              contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+          - name: awardExternalURL
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.awardData.awardExternalURL.label
+          - name: awardHeaderBackground
+            label: caar-awards-app.awardData.awardHeaderBackground.label
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            targetWorkspace: dam
+            appName: assets
+            identifierToPathConverter:
+              class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+            contentPreviewDefinition:
+              contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+          - name: awardAboutText
+            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+            label: caar-awards-app.awardData.awardAboutText.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+          - name: categoriesList
+            label: caar-awards-app.awardData.categoriesList.label
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueTransformer
+            field:
+              name: category
+              class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+              repository: category
+              path: caar/awards/
+  actions:
+    - name: commit
+    - name: cancel
+actions:
+  commit:
+    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+  cancel:
+    class: info.magnolia.ui.form.action.CancelFormActionDefinition
