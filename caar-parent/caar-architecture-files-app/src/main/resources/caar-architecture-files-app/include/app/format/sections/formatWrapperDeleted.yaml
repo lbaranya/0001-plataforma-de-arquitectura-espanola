@@ -5,6 +5,7 @@ groups:
     items:
       - name: addFormatVideoWrapper
       - name: addFormatManuscriptWrapper
+      - name: addFormatGraphicWrapper
   - name: editActions
     items:
       - name: editWrapper
