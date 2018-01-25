@@ -8,7 +8,10 @@ import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
+import javax.jcr.RepositoryException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,13 +22,19 @@ import es.arquia.magnolia.functions.QueryUtils;
 public class NewsManagerImpl implements NewsManager{
 	
 	private static final Logger log = LoggerFactory.getLogger(NewsManagerImpl.class);
+	private QueryUtils queryUtils;
+	
+	@Inject
+	public NewsManagerImpl(final QueryUtils queryUtils) throws PathNotFoundException, RepositoryException {
+        this.queryUtils = queryUtils;
+    }
     
 	@Override
 	public List<Node> getNewsList() throws Exception{
 		final int limit = 4;
 		int offset = 0;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [" + dateTime + "] DESC";
-		return QueryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 	}
 	
 	@Override
@@ -33,7 +42,7 @@ public class NewsManagerImpl implements NewsManager{
 		final int limit = 4;
 		int offset = 0;
 		String sqlQuery = categorizedNewsListQuery(categoriesList);
-		return QueryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 	}
 	
 	@Override
@@ -41,7 +50,7 @@ public class NewsManagerImpl implements NewsManager{
 		final int limit = 2;
 		final int offset = 0;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
-		return QueryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 	}
 
 	@Override
