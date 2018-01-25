@@ -1,6 +1,10 @@
 [#assign currentLanguage = cmsfn.language()!""]
 [#assign news = model.getInstance()!""]
-[#assign listNews = model.getNewsList()]
+[#if content.categories?has_content]
+	[#assign listNews = model.getCategorizedNewsList(content.categories)]
+[#else]
+	[#assign listNews = model.getNewsList()]
+[/#if]
 [#if listNews?has_content]
 <section class="cmp-last-news">
         <div class="container">
@@ -33,7 +37,7 @@
                             <h4 class="title">${headLine!""}</h4>
                             <p>${description!""}</p>
                             <div class="noticias-links">
-		                    	<a href='${cmsfn.link(newNode)!"algo"}'><span class="more-link" alt="leer más"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
+		                    	<a href='${cmsfn.link(newNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
 			                </div>
 			                <div class="evento-footer-rrss">
 			                    <a href="#" class="rrss-link">
