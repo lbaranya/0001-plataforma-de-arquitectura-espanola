@@ -11,7 +11,7 @@
       <supertype>mgnl:content</supertype>
     </supertypes>
   </nodeType>
-  <nodeType name="mgnl:convocation" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
+  <nodeType name="mgnl:announcement" isMixin="false" hasOrderableChildNodes="true" primaryItemName="">
     <supertypes>
       <supertype>mgnl:content</supertype>
     </supertypes>

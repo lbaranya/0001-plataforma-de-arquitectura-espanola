@@ -1,4 +1,4 @@
-package es.arquia.magnolia.ui.workbench.drop;
+package es.arquia.magnolia.ui.workbench.tree.drop;
 
 import javax.inject.Inject;
 
@@ -42,6 +42,29 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
         }
 
         return movable;
+	}
+
+	@Override
+	protected boolean allowedSibling(Item source, Item target) {
+		boolean movable = super.allowedSibling(source, target) && source.isNode();
+		if(movable) {
+			try {
+				
+				Node sourceNode = (Node) source;
+				Node targetNode = (Node) target;
+				if(!this.isAllowedAsSibling(sourceNode, targetNode)) {
+					log.debug("Could not move a node type '{}' as sibling as node type '{}'", sourceNode.getPrimaryNodeType().getName(), targetNode.getPrimaryNodeType().getName());
+					return false;
+				}
+			}catch(RepositoryException e) {
+				
+			}
+		}
+		return movable;
+	}
+
+	private boolean isAllowedAsSibling(Node sourceNode, Node targetNode) throws RepositoryException {
+		return sourceNode.getPrimaryNodeType().getName().equals(targetNode.getPrimaryNodeType().getName());
 	}
 
 	private boolean isAllowedAsChild(Node sourceNode, Node targetNode) throws RepositoryException {

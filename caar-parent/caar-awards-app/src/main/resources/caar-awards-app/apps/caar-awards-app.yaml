@@ -18,7 +18,7 @@ subApps:
           icon: icon-items
         - name: mgnl:edition
           icon: icon-items
-        - name: mgnl:convocation
+        - name: mgnl:announcement
           icon: icon-items
         - name: mgnl:program
           icon: icon-items 
