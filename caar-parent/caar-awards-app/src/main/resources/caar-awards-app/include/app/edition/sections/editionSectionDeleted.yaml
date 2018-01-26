@@ -1,12 +1,9 @@
-name: awardSection
-label: caar-awards-app.subapp.browser.actionbar.sections.awardSection.label
+name: editionSectionDeleted
+label: caar-awards-app.subapp.browser.actionbar.sections.editionSection.label
 groups:
-  - name: addActions
-    items:
-      - name: addEdition
   - name: editActions
     items:
-      - name: editAward
+      - name: editEdition
       - name: confirmDelete 
   - name: importExportActions
     items:
@@ -14,7 +11,7 @@ groups:
       - name: export
   - name: activationActions
     items:
-      - name: activate
+      - name: activateDeleted
       - name: activateRecursive
       - name: deactivate
   - name: deletedActions
@@ -22,4 +19,7 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:award
+    - mgnl:edition
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

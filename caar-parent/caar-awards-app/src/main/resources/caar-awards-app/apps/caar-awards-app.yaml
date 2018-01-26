@@ -41,7 +41,7 @@ subApps:
         - name: mgnl:folder
           icon: icon-folder
     workbench:
-      dropConstraintClass: es.arquia.magnolia.ui.workbench.tree.drop.ArchitectureFilesJcrContentDropConstraint
+      dropConstraintClass: es.arquia.magnolia.ui.workbench.tree.drop.AwardsJcrContentDropConstraint
       editable: false
       contentViews:
         - name: tree
@@ -178,6 +178,10 @@ subApps:
       showVersionsAward: 
         !include:/caar-awards-app/include/app/awards/actions/showVersionsAward.yaml
         
+      # Edition versions
+      showVersionsEdition: 
+        !include:/caar-awards-app/include/app/edition/actions/showVersionsEdition.yaml
+        
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
         icon: icon-retrieve-versions
@@ -194,6 +198,14 @@ subApps:
       # Award edit
       editAward: 
         !include:/caar-awards-app/include/app/awards/actions/editAward.yaml
+        
+      # Edition add
+      addEdition: 
+        !include:/caar-awards-app/include/app/edition/actions/addEdition.yaml
+        
+      # Edition edit
+      editEdition: 
+        !include:/caar-awards-app/include/app/edition/actions/editEdition.yaml
               
       # Folder
       
@@ -221,9 +233,17 @@ subApps:
         # Award section
         - !include:/caar-awards-app/include/app/awards/sections/awardSectionDeleted.yaml
         - !include:/caar-awards-app/include/app/awards/sections/awardSection.yaml
+        
+        # Edition section
+        - !include:/caar-awards-app/include/app/edition/sections/editionSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/edition/sections/editionSection.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
   # Award sub app
   detailAwardSubApp:
     !include:/caar-awards-app/include/app/awards/subapp/detailAwardSubApp.yaml
+    
+  # Edition sub app
+  detailEditionSubApp:
+    !include:/caar-awards-app/include/app/edition/subapp/detailEditionSubApp.yaml

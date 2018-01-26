@@ -1,12 +1,9 @@
-name: awardSection
-label: caar-awards-app.subapp.browser.actionbar.sections.awardSection.label
+name: editionSection
+label: caar-awards-app.subapp.browser.actionbar.sections.editionSection.label
 groups:
-  - name: addActions
-    items:
-      - name: addEdition
   - name: editActions
     items:
-      - name: editAward
+      - name: editEdition
       - name: confirmDelete 
   - name: importExportActions
     items:
@@ -22,4 +19,4 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:award
+    - mgnl:edition

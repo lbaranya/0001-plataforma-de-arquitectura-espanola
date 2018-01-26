@@ -1,0 +1,47 @@
+subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+label: caar-awards-app.subapp.detailEditionSubApp.label
+contentConnector:
+  workspace: awards
+editor:
+  nodeType:
+    icon: icon-items
+    name: mgnl:edition
+  form:
+    tabs:
+      - name: fileData
+        label: caar-awards-app.files.edition.fileData.label
+        fields:
+          - name: jcrName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.edition.fileData.jcrName.label
+            required: true
+      - name: editionData
+        label: caar-awards-app.files.edition.editionData.label
+        fields:
+          - name: state
+            label: caar-awards-app.files.edition.editionData.state.label
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+            options:
+              - name: open
+                value: open
+                label: caar-awards-app.files.edition.editionData.state.open.label
+                selected: true
+              - name: progress
+                value: progress
+                label: caar-awards-app.files.edition.editionData.state.progress.label
+              - name: closed
+                value: closed
+                label: caar-awards-app.files.edition.editionData.state.closed.label
+          - name: name
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.edition.editionData.name.label
+            i18n: true
+  actions:
+    - name: commit
+    - name: cancel
+actions:
+  commit:
+    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+  cancel:
+    class: info.magnolia.ui.form.action.CancelFormActionDefinition

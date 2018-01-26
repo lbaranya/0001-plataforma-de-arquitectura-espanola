@@ -32,10 +32,12 @@ editor:
           - name: awardName
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.awardData.awardName.label
+            i18n: true
           - name: awardDescription
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-awards-app.awardData.awardDescription.label
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+            i18n: true
           - name: awardLogo
             label: caar-awards-app.awardData.awardLogo.label
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
@@ -61,6 +63,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-awards-app.awardData.awardAboutText.label
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+            i18n: true
           - name: categoriesList
             label: caar-awards-app.awardData.categoriesList.label
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
