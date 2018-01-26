@@ -1,0 +1,26 @@
+name: supportEventDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportEvent.label
+groups:
+  - name: editActions
+    items:
+      - name: editSupportEvent
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activateDeleted
+      - name: activateRecursive
+      - name: deactivate
+      - name: requestTranslation
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsEvent
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:support-event
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

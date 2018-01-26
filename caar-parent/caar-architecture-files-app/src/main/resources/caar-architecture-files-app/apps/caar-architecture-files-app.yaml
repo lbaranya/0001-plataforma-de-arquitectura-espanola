@@ -58,6 +58,12 @@ subApps:
           icon: icon-folder
         - name: mgnl:support-review-iv
           icon: icon-items
+        - name: mgnl:support-event-wrapper
+          icon: icon-folder
+        - name: mgnl:support-event-folder-wrapper
+          icon: icon-folder
+        - name: mgnl:support-event
+          icon: icon-items
         - name: mgnl:support-business-wrapper
           icon: icon-folder
         - name: mgnl:support-business-folder-wrapper
@@ -252,6 +258,10 @@ subApps:
       showVersionsReviewIV: 
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/showVersionsReviewIV.yaml
         
+      # Details Event
+      showVersionsEvent: 
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/showVersionsEvent.yaml
+        
       # Details Business
       showVersionsBusiness: 
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/showVersionsBusiness.yaml
@@ -298,6 +308,10 @@ subApps:
       # Review IV folder
       addFolderSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addFolderSupportReviewIV.yaml
+        
+      # Event folder
+      addFolderSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addFolderSupportEvent.yaml
       
       # Business folder
       addFolderSupportBusiness:
@@ -333,8 +347,9 @@ subApps:
             - mgnl:support-architect-folder-wrapper
             - mgnl:support-review-i-folder-wrapper
             - mgnl:support-review-ii-folder-wrapper
-            - mgnl:support-review-iv-folder-wrapper
             - mgnl:support-review-iii-folder-wrapper
+            - mgnl:support-review-iv-folder-wrapper
+            - mgnl:support-event-folder-wrapper
             - mgnl:support-business-folder-wrapper
             - mgnl:support-project-folder-wrapper
             - mgnl:format-video-folder-wrapper
@@ -367,6 +382,7 @@ subApps:
             - mgnl:support-review-ii-wrapper
             - mgnl:support-review-iii-wrapper
             - mgnl:support-review-iv-wrapper
+            - mgnl:support-event-wrapper
             - mgnl:support-business-wrapper
             - mgnl:support-project-wrapper
             - mgnl:portfolio-wrapper
@@ -392,6 +408,8 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiii/actions/addSupportReviewIIIWrapper.yaml
       addSupportReviewIVWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIVWrapper.yaml
+      addSupportEventWrapper:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addSupportEventWrapper.yaml
       addSupportBusinessWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusinessWrapper.yaml
       addSupportProjectWrapper:
@@ -426,6 +444,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIV.yaml
       editSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/editSupportReviewIV.yaml
+        
+      # Support Event
+      addSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addSupportEvent.yaml
+      editSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/editSupportEvent.yaml
       
       # Support Business
       addSupportBusiness:
@@ -611,6 +635,26 @@ subApps:
         # Section if node review iv is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIV.yaml
         
+        # Support Event
+        
+        # Wrapper
+        # Section if event wrapper is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventWrapperDeleted.yaml
+        # Section if event wrapper is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventWrapper.yaml
+        
+        # Support event folder
+        # Section if event folder is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventFolderDeleted.yaml
+        # Section if event folder is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventFolder.yaml
+        
+        # Node actions
+        # Section if node event is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventDeleted.yaml
+        # Section if node event is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEvent.yaml
+        
         # Support business
         
         # Wrapper
@@ -722,6 +766,9 @@ subApps:
   # Support review iv sub app
   detailSupportReviewIV:
     !include:/caar-architecture-files-app/include/app/support/files/reviewiv/subapp/detailSupportReviewIV.yaml
+  # Support event sub app
+  detailSupportEvent:
+    !include:/caar-architecture-files-app/include/app/support/files/event/subapp/detailSupportEvent.yaml
   # Support business sub app
   detailSupportBusiness:
     !include:/caar-architecture-files-app/include/app/support/files/business/subapp/detailSupportBusiness.yaml
