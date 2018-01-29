@@ -12,6 +12,9 @@ import javax.jcr.RepositoryException;
 import info.magnolia.ui.vaadin.integration.contentconnector.ContentConnector;
 import info.magnolia.ui.workbench.tree.drop.JcrDropConstraint;
 
+import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
+
 public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 	private static final Logger log = LoggerFactory.getLogger(AwardsJcrContentDropConstraint.class);
 
@@ -77,14 +80,14 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 
 	private boolean targetNodeAllowSourceNode(Node sourceNode, Node targetNode) throws RepositoryException {
 		boolean ret = false;
-		if(!ret &&  targetNode.isNodeType("mgnl:award")) {
-			ret = sourceNode.isNodeType("mgnl:edition");
+		if(!ret &&  targetNode.isNodeType(awardNodeType)) {
+			ret = sourceNode.isNodeType(editionNodeType);
 		}
 		return ret;
 	}
 
 	private boolean isAward(Node targetNode) throws RepositoryException {
-		return targetNode.isNodeType("mgnl:award");
+		return targetNode.isNodeType(awardNodeType);
 	}
     
     
