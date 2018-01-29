@@ -55,8 +55,8 @@
                         </div>
                         <div class="row eventos-row">
                         
-	                        [#assign eventsInstance = model.getArchitectureFilesSupportReviewIInstance()!""]
-							[#assign eventsList = model.getArchitectureFilesSupportReviewIList()!""]
+	                        [#assign eventsInstance = model.getArchitectureFilesSupportEventInstance()!""]
+							[#assign eventsList = model.getArchitectureFilesSupportEventList()!""]
 							[#assign counter = 0][#assign eventsToShow = 4]
                         	[#list eventsList as eventsNode]
                         		[#if counter < eventsToShow]
@@ -65,14 +65,13 @@
 		                                <div class="evento-item">
 		                                    <a href="${cmsfn.link(eventsNode)}" class="evento-link">
 		                                        <div class="evento-header">
-		                                            <span class="categoria">${i18n['caar-templating-module.templates.components.news-diary-component.'+eventsInstance.getTypology(eventsNode, language)+'.label']!""}</span>
+		                                            <span class="categoria">[#--${i18n['caar-templating-module.templates.components.news-diary-component.'+eventsInstance.getTypology(eventsNode, language)+'.label']!""}--]</span>
 		                                            [#-- Instead of printing the field value, we use it as part of the name of a translation which contains a good-looking and internationaliced text --]
-		                                            <span class="evento-fecha">${eventsInstance.getPresentationDateDayOfWeek(eventsNode)!""}</span>
-		                                            <span class="evento-fecha">${eventsInstance.getPresentationDate(eventsNode)!""}</span>
+		                                            <span class="evento-fecha">${eventsInstance.getStartDayOfWeek(eventsNode)!""}</span>
+		                                            <span class="evento-fecha">${eventsInstance.getPresentationStartDate(eventsNode)!""}</span>
 		                                        </div>
 		                                        <div class="evento-contenido">
-			                                        [#assign firstMediaImage = eventsInstance.getFirstMediaImage(eventsNode)!""]
-			                                       	[#assign imgItemKey = eventsInstance.getPreviewPhoto(firstMediaImage)!""]
+			                                       	[#assign imgItemKey = eventsInstance.getPreviewPhoto(eventsNode)!""]
 										            	[#if imgItemKey??]
 										            		[#if imgItemKey?has_content]
 										                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "130x115")]

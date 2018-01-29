@@ -1,19 +1,21 @@
 package es.arquia.magnolia.beans;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipDetail;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipInfo;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipName;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipType;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.listMedia;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.ouvreAbstract;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.ouvreTitle;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationEndingDate;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationLocation;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationStartDate;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.previewPhoto;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.price;
-import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.title;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.website;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
+import static es.arquia.magnolia.constants.UtilsConstants.dateFormatDayOfWeek;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -24,7 +26,9 @@ import java.util.Locale;
 
 import javax.jcr.Node;
 import javax.jcr.Property;
+import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 
 import info.magnolia.context.MgnlContext;
 
@@ -38,12 +42,16 @@ public class ArchitectureFilesSupportEvent {
     	return currentLanguage;
     }
 	
-	public String getTitle(Node node) throws RepositoryException {
+	public String getOuvreTitle(Node node, String currentLanguage) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(title);
+			Property tmp = node.getProperty(ouvreTitle + getLocalizedSuffix(currentLanguage));
 			return tmp.getString();
 		}catch(RepositoryException e) {
-			return "";
+			try {
+				return node.getProperty(ouvreTitle).getString();
+			}catch(RepositoryException ex) {
+				return "";
+			}
 		}
 	}
 	
@@ -52,6 +60,17 @@ public class ArchitectureFilesSupportEvent {
 			Calendar calendar = node.getProperty(presentationStartDate).getDate();
 			Locale locale = MgnlContext.getAggregationState().getLocale();
 			DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
+			return formatter.format(calendar.getTime());
+		} catch(RepositoryException e) {
+			return "";
+		}
+	}
+	
+	public String getStartDayOfWeek(Node node) throws RepositoryException {
+		try {
+			Calendar calendar = node.getProperty(presentationStartDate).getDate();
+			Locale locale = MgnlContext.getAggregationState().getLocale();
+			DateFormat formatter = new SimpleDateFormat(dateFormatDayOfWeek, locale);
 			return formatter.format(calendar.getTime());
 		} catch(RepositoryException e) {
 			return "";
@@ -173,10 +192,22 @@ public class ArchitectureFilesSupportEvent {
 	
 	public String getPreviewPhoto(Node node) throws RepositoryException{
 		try{
-			Property tmp = node.getProperty(previewPhoto);
-			return tmp.getString();
+			for (PropertyIterator iterator = node.getNode(listMedia).getProperties(); iterator.hasNext();)
+			{
+				Property prop = (Property) iterator.next();
+				try {
+					// If property name is an integer, that means it's not a Magnolia property but a list element
+					if (Integer.valueOf(prop.getName()) != null) {
+						String nodeId = prop.getValue().getString();
+						return nodeId;
+					}
+				} catch (NumberFormatException e) {
+					
+				}
+			}
+			return null;
 		}catch(RepositoryException e) {
-			return "";
+			return null;
 		}
-	}	
+	}
 }

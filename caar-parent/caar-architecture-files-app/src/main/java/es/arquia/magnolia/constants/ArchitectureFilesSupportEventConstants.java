@@ -2,7 +2,7 @@ package es.arquia.magnolia.constants;
 
 public interface ArchitectureFilesSupportEventConstants {
 	
-	String title = "FS3_2_1";
+	String ouvreTitle = "FS3_2_1";
 	String presentationStartDate = "FS3_2_2";
 	String presentationLocation = "FS3_2_3";
 	String ouvreAbstract = "FS3_2_5";
@@ -15,6 +15,6 @@ public interface ArchitectureFilesSupportEventConstants {
 	String authorshipDetail = "FS3_3_3";
 	String authorshipInfo = "FS3_3_4";
 	
-	String listMedia = "FS3_7";
+	String listMedia = "listMedia";
 	String previewPhoto = "FS3_7_2";
 }
