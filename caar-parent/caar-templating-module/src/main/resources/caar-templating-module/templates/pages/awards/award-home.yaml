@@ -1,0 +1,8 @@
+title: AwardHome
+renderType: site
+visible: true
+dialog: caar-templating-module:pages/award-home-page-properties
+modelClass: es.arquia.magnolia.pages.models.AwardHomeModel
+areas:
+  main:
+    templateScript: /caar-templating-module/templates/pages/awards/award-home.ftl
