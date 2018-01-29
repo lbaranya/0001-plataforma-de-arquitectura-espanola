@@ -76,7 +76,7 @@
 										            	[#if imgItemKey??]
 										            		[#if imgItemKey?has_content]
 										                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "130x115")]
-											            		[#if imgMediaRendition??]
+											            		[#if imgMediaRendition?has_content]
 											            			[#assign imageAlternativeText = "logo de evento"]
 											            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
 											            			[#if imageAlt?has_content]

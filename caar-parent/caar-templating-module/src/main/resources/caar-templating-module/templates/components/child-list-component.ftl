@@ -15,7 +15,7 @@
 	            	[#if imgItemKey??]
 	            		[#if imgItemKey?has_content]
 		            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "555x400")]
-		            		[#if imgMediaRendition??]
+		            		[#if imgMediaRendition?has_content]
 		            			[#assign imageAlternativeText = "imagen de fondo para enlace de noticias"]
 	                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
 	                			[#if imageAlt?has_content]
