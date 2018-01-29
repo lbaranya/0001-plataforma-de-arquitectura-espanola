@@ -215,7 +215,7 @@ subApps:
       
     # Sections
     actionbar:
-      defaultAction: addFolder
+      defaultAction: editAward
       sections:
         # Root section
         - name: root
