@@ -52,6 +52,12 @@
 			<artifactId>caar-news-app</artifactId>
 			<version>0.16-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-awards-app</artifactId>
+			<version>0.16-SNAPSHOT</version>
+		</dependency>
 
 		<!-- TEST -->
 		<dependency>

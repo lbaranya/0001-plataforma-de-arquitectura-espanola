@@ -18,6 +18,10 @@
 			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManager</type>
 			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManagerImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.AwardManager</type>
+			<implementation>es.arquia.magnolia.manager.AwardManagerImpl</implementation>
+		</component>
 	</components>
 
   <dependencies>
