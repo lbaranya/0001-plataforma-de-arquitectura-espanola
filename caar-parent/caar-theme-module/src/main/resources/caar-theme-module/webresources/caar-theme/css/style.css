@@ -1269,7 +1269,8 @@ a:focus {
   background-repeat: no-repeat;
   background-size: 100% 100%; }
   .cmp-banner-bienales .header .row {
-    margin-left: 10px; }
+    margin-left: 10px;
+    padding-top: 60px; }
     .cmp-banner-bienales .header .row .title {
       font-family: "National-Book", "Helvetica", "sans-serif";
       font-size: 36px;

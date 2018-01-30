@@ -6,3 +6,11 @@ modelClass: es.arquia.magnolia.pages.models.AwardHomeModel
 areas:
   main:
     templateScript: /caar-templating-module/templates/pages/awards/award-home.ftl
+    enabled: true
+    type: noComponent
+    areas:
+      content:
+        type: single
+        availableComponents:
+          breadcrum-component:
+            id: caar-templating-module:components/breadcrum-component
