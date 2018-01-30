@@ -34,6 +34,14 @@ public class AwardHomeModel <T extends ConfiguredTemplateDefinition> extends Ren
 		return awardManager.getStandardAwardList();
 	}
 	
+	public Node getEditionStateOpen(Node node) throws RepositoryException{
+		return awardManager.getEditionStateOpen(node);
+	}
+	
+	public Node getEditionStateInProgress(Node node) throws RepositoryException{
+		return awardManager.getEditionStateInProgress(node);
+	}
+	
 	
 
 }

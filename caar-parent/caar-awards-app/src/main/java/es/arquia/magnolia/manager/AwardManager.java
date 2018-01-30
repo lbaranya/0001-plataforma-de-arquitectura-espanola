@@ -15,6 +15,10 @@ public interface AwardManager {
 	
 	public List<Node> getStandardAwardList() throws RepositoryException;
 	
+	public Node getEditionStateOpen(Node node) throws RepositoryException;
+	
+	public Node getEditionStateInProgress(Node node) throws RepositoryException;
+	
 	public Award getInstance();
 
 }

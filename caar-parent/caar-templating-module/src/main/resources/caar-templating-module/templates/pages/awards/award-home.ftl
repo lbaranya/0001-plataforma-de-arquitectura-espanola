@@ -19,48 +19,40 @@
     <nav class="submenu-convocatoria" data-menu="menu">
         <div class="contenedor-menu">
             <ul class="">
+            	[#assign openEdition = model.parent.getEditionStateOpen(awardsContentNode)!""]
+                [#if openEdition?has_content]
                 <li class="menu-first">
                     <a href="javascript:void(0)">
-                        <span>edición actual</span>
+                        <span>${i18n['caar-templating-module.award.home.actualEdition.label']}</span>
                         <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
+                    <!--
                     <ul class="menu-second">
                         <li class="menu-second-item">
-                            <a href="#"><span>convocatoria</span>
-                        </a>
-                        </li>
-                        <li class="menu-second-item">
-                            <a href="#">
-                                <span>resultados</span>
-                                <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                            </a>
-                        </li>
-                        <li class="menu-second-item">
-                            <a href="javascript:void(0)">
-                                <span>programa</span>
-                                <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                            </a>
-                            <!-- NIVEL 2 DE HIJOS "PROGRAMA", "RESULTADO", "DIFUSION"
-                            <ul class="menu-third">
-                                <li class="menu-third-item">
-                                    <a href="#">
-                                        <span>actos centrales</span>
-                                    </a>
-                                </li>
-                            </ul>
-                            -->
-                        </li>
-                        <li class="menu-second-item">
-                            <a href="#">
-                                <span>difusión</span>
-                                <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
-                            </a>
+                            <a href="#"><span>convocatoria</span></a>
                         </li>
                     </ul>
+                    -->
+                </li>
+                [/#if]
+                [#assign inProgressEdition = model.parent.getEditionStateInProgress(awardsContentNode)!""]
+                [#if inProgressEdition?has_content]
+                <li class="menu-first">
+                    <a href="javascript:void(0)">
+                        <span>${i18n['caar-templating-module.award.home.inProgressEdition.label']}</span>
+                        <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                    </a>
+                </li>
+                [/#if]
+                <li class="menu-first">
+                    <a href="#">
+                        <span>${i18n['caar-templating-module.award.home.awardAbout.label']}</span>
+                        <div class="icon hidden"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                    </a>
                 </li>
                 <li class="menu-first">
                     <a href="#">
-                        <span>noticias</span>
+                        <span>${i18n['caar-templating-module.award.home.awardNews.label']}</span>
                         <div class="icon hidden"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
                 </li>
@@ -135,6 +127,14 @@
             </div>
 
         </div>
-
 </section>
+<section class="cmp-texto-premio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 descripcion">
+                    ${awards.getAwardDescription(awardsContentNode)!""}
+                </div>
+            </div>
+        </div>
+    </section>
 [/#if]

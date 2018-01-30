@@ -53,7 +53,8 @@ form:
               class: info.magnolia.ui.form.field.definition.TextFieldDefinition
         - name: announcementButtonText
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-          label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.announcementButtonText.lab
+          label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.announcementButtonText.label
+          i18n: true
         - name: enrollmentButtonLink
           class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
           label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.enrollmentButtonLink.label
@@ -81,6 +82,7 @@ form:
         - name: enrollmentButtonText
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.enrollmentButtonText.label
+          i18n: true
     - name: tabMeta  
       label: caar-templating-module.templates.pages.home-page.tabMeta.label
       fields:  
