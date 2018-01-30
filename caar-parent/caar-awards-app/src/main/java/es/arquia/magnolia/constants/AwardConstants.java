@@ -24,7 +24,7 @@ public interface AwardConstants {
 	
 	String editionNodeType="mgnl:edition";
 	
-	String editionStatePropertyName = "state";
+	String editionState = "state";
 	
 	String editionStateOpen = "open";
 	

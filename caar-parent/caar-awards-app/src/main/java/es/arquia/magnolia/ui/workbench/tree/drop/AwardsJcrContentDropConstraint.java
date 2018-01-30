@@ -1,19 +1,22 @@
 package es.arquia.magnolia.ui.workbench.tree.drop;
 
+import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.editionState;
+import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
+import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
+
 import javax.inject.Inject;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import javax.jcr.Item;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import info.magnolia.ui.vaadin.integration.contentconnector.ContentConnector;
 import info.magnolia.ui.workbench.tree.drop.JcrDropConstraint;
-
-import static es.arquia.magnolia.constants.AwardConstants.*;
 
 public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 	private static final Logger log = LoggerFactory.getLogger(AwardsJcrContentDropConstraint.class);
@@ -68,15 +71,15 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 
 	private boolean isAllowedAsSibling(Node sourceNode, Node targetNode) throws RepositoryException {
 		if(sourceNode.isNodeType(editionNodeType)) {
-			String newEditionState = sourceNode.getProperty("state").getValue().getString();
+			String newEditionState = sourceNode.getProperty(editionState).getValue().getString();
 			boolean existState = false;
-			if(newEditionState.equalsIgnoreCase("open")||newEditionState.equalsIgnoreCase("progress")) {
+			if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {
 				Node parentNode = targetNode.getParent();
 				NodeIterator parentIterator = parentNode.getNodes();
 				while(parentIterator.hasNext() && !existState) {
 					Node childNode = parentIterator.nextNode();
-					String stateString = childNode.getProperty("state").getValue().getString();
-					if((stateString.equalsIgnoreCase("open") || stateString.equalsIgnoreCase("progress")) && stateString.equalsIgnoreCase(newEditionState)) {
+					String stateString = childNode.getProperty(editionState).getValue().getString();
+					if((stateString.equalsIgnoreCase(editionStateOpen) || stateString.equalsIgnoreCase(editionStateInProgress)) && stateString.equalsIgnoreCase(newEditionState)) {
 						existState = true;
 					}else{
 						existState = false;

@@ -1,5 +1,9 @@
 package es.arquia.magnolia.ui.form.action;
 
+import static es.arquia.magnolia.constants.AwardConstants.editionState;
+import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
+import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
+
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.Property;
@@ -77,16 +81,16 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
     
     private boolean validateEditionState(Node node) {
     	try {
-			String newEditionState = node.getProperty("state").getValue().getString();
-			if(newEditionState.equalsIgnoreCase("open")||newEditionState.equalsIgnoreCase("progress")) {
+			String newEditionState = node.getProperty(editionState).getValue().getString();
+			if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {
 				Node parentNode = node.getParent();
 				NodeIterator parentIterator = parentNode.getNodes();
 				boolean existState = false;
 				while(parentIterator.hasNext() && !existState) {
 					Node childNode = parentIterator.nextNode();
 					if(!childNode.isSame(node)) {
-						String stateString = childNode.getProperty("state").getValue().getString();
-						if((stateString.equalsIgnoreCase("open") || stateString.equalsIgnoreCase("progress")) && stateString.equalsIgnoreCase(newEditionState)) {
+						String stateString = childNode.getProperty(editionState).getValue().getString();
+						if((stateString.equalsIgnoreCase(editionStateOpen) || stateString.equalsIgnoreCase(editionStateInProgress)) && stateString.equalsIgnoreCase(newEditionState)) {
 							existState = true;
 						}else{
 							existState = false;
