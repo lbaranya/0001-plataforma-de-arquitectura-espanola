@@ -7,23 +7,23 @@ import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI;
+import es.arquia.magnolia.beans.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.manager.NewsManager;
-import es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManager;
+import es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
 
 public class NewsDiaryModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	private NewsManager newsManager;
-	private ArchitectureFilesSupportReviewIManager architectureFilesSupportReviewIManager;
+	private ArchitectureFilesSupportEventManager architectureFilesSupportEventManager;
 	
 	@Inject
-	public NewsDiaryModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ArchitectureFilesSupportReviewIManager architectureFilesSupportReviewIManager) throws PathNotFoundException, RepositoryException {
+	public NewsDiaryModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ArchitectureFilesSupportEventManager architectureFilesSupportEventManager) throws PathNotFoundException, RepositoryException {
         super(content, definition, parent);
         this.newsManager = newsManager;
-        this.architectureFilesSupportReviewIManager = architectureFilesSupportReviewIManager;
+        this.architectureFilesSupportEventManager = architectureFilesSupportEventManager;
     }
 	
 	public List<Node> getImportantNewsList() throws Exception{
@@ -34,11 +34,11 @@ public class NewsDiaryModel <T extends ConfiguredTemplateDefinition> extends Ren
 		return newsManager.getInstance();
 	}
 	
-	public List<Node> getArchitectureFilesSupportReviewIList() throws Exception{
-		return architectureFilesSupportReviewIManager.getArchitectureFilesSupportReviewIList();
+	public List<Node> getArchitectureFilesSupportEventList() throws Exception{
+		return architectureFilesSupportEventManager.getArchitectureFilesSupportEventList();
 	}
 	
-	public ArchitectureFilesSupportReviewI getArchitectureFilesSupportReviewIInstance() {
-		return architectureFilesSupportReviewIManager.getInstance();
+	public ArchitectureFilesSupportEvent getArchitectureFilesSupportEventInstance() {
+		return architectureFilesSupportEventManager.getInstance();
 	}
 }

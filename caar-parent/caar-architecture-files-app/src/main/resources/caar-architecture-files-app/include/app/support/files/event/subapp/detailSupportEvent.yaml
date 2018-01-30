@@ -23,6 +23,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.title.label
             required: true
+            i18n: true
           - name: FS3_2_2
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: true
@@ -92,17 +93,17 @@ editor:
           - name: listMedia
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.event.mediaGalleryData.listMedia.label
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
             field:
-              - name: FS3_7_2
-                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-                targetWorkspace: dam
-                appName: assets
-                label: caar-architecture-files-app.files.support.event.mediaGalleryData.photoPreview.label
-                identifierToPathConverter:
-                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
-                contentPreviewDefinition:
-                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+              name: FS3_7_2
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              targetWorkspace: dam
+              appName: assets
+              label: caar-architecture-files-app.files.support.event.mediaGalleryData.photoPreview.label
+              identifierToPathConverter:
+                class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+              contentPreviewDefinition:
+                contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
   actions:
     - name: commit
     - name: cancel

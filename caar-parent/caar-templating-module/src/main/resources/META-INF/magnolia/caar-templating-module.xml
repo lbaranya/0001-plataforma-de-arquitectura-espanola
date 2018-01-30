@@ -15,8 +15,8 @@
 			<implementation>es.arquia.magnolia.manager.NewsManagerImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManager</type>
-			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManagerImpl</implementation>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManagerImpl</implementation>
 		</component>
 	</components>
 
