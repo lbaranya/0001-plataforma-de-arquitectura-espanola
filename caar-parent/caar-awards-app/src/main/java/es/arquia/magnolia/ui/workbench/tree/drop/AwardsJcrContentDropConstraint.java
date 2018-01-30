@@ -7,13 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import javax.jcr.Item;
 import javax.jcr.Node;
+import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
 import info.magnolia.ui.vaadin.integration.contentconnector.ContentConnector;
 import info.magnolia.ui.workbench.tree.drop.JcrDropConstraint;
 
-import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
-import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.*;
 
 public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 	private static final Logger log = LoggerFactory.getLogger(AwardsJcrContentDropConstraint.class);
@@ -67,7 +67,31 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 	}
 
 	private boolean isAllowedAsSibling(Node sourceNode, Node targetNode) throws RepositoryException {
-		return sourceNode.getPrimaryNodeType().getName().equals(targetNode.getPrimaryNodeType().getName());
+		if(sourceNode.isNodeType(editionNodeType)) {
+			String newEditionState = sourceNode.getProperty("state").getValue().getString();
+			boolean existState = false;
+			if(newEditionState.equalsIgnoreCase("open")||newEditionState.equalsIgnoreCase("progress")) {
+				Node parentNode = targetNode.getParent();
+				NodeIterator parentIterator = parentNode.getNodes();
+				while(parentIterator.hasNext() && !existState) {
+					Node childNode = parentIterator.nextNode();
+					String stateString = childNode.getProperty("state").getValue().getString();
+					if((stateString.equalsIgnoreCase("open") || stateString.equalsIgnoreCase("progress")) && stateString.equalsIgnoreCase(newEditionState)) {
+						existState = true;
+					}else{
+						existState = false;
+					}
+				}
+			}
+			return sourceNode.getPrimaryNodeType().getName().equals(targetNode.getPrimaryNodeType().getName()) && !existState;
+		}else {
+			if(sourceNode.isNodeType(awardNodeType)) {
+				return sourceNode.getPrimaryNodeType().getName().equals(targetNode.getPrimaryNodeType().getName());
+			}else {
+				return false;
+			}
+		}
+		
 	}
 
 	private boolean isAllowedAsChild(Node sourceNode, Node targetNode) throws RepositoryException {

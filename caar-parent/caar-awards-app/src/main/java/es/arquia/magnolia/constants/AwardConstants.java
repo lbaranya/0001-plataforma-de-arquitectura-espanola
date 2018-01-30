@@ -23,5 +23,13 @@ public interface AwardConstants {
 	String categoriesList="categoriesList";
 	
 	String editionNodeType="mgnl:edition";
+	
+	String editionStatePropertyName = "state";
+	
+	String editionStateOpen = "open";
+	
+	String editionStateInProgress = "progress";
+	
+	String editionStateClosed = "closed";
 
 }
