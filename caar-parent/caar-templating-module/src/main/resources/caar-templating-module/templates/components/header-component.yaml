@@ -2,3 +2,4 @@ title: caar-templating-module.components.header.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/header-component.ftl    
 dialog: caar-templating-module:components/header-component-properties
+modelClass: es.arquia.magnolia.components.models.header.HeaderModel

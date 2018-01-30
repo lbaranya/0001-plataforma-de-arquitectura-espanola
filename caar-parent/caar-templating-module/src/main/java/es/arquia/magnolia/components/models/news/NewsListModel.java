@@ -12,7 +12,6 @@ import es.arquia.magnolia.manager.NewsManager;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
-import static es.arquia.magnolia.constants.NewsConstants.*;
 
 public class NewsListModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	

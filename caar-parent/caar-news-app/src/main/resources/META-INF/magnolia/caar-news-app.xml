@@ -9,12 +9,12 @@
   <version>${project.version}</version>
   
   <components>
-		<id>main</id>
-		<component>
-			<type>es.arquia.magnolia.functions.QueryUtils</type>
-			<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
-		</component>
-	</components>
+	<id>main</id>
+	<component>
+		<type>es.arquia.magnolia.functions.QueryUtils</type>
+		<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
+	</component>
+  </components>
 
   <dependencies>
     <dependency>
