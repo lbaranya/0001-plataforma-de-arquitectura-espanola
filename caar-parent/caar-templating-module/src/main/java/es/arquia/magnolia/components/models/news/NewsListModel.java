@@ -32,6 +32,10 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
 		return newsManager.getCategorizedNewsList(categoriesList);
 	}
 	
+	public boolean isLastRowOfNews() {
+		return newsManager.isLastRowOfNews();
+	}
+	
 	public News getInstance() {
 		return newsManager.getInstance();
 	}

@@ -14,6 +14,8 @@ public interface NewsManager {
 	
 	public List<Node> getImportantNewsList() throws Exception;
 	
+	public boolean isLastRowOfNews();
+	
 	public News getInstance();
 
 }

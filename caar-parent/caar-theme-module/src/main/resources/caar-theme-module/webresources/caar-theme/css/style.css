@@ -26,6 +26,18 @@ a:focus {
 .cmp-dummy img {
   width: 100%;
 }
+/**Nuevo pagination**/
+.cmp-more {
+  margin-top: 30px;
+  margin-bottom: 30px; 
+}
+  .cmp-more span {
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    font-size: 25px;
+    color: #D0021B;
+    cursor: pointer;
+ }
+/**Termina pagination**/
 
 @font-face {
   font-family: 'FreightDispBlack';
