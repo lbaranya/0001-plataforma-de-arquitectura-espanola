@@ -1,0 +1,249 @@
+appClass: info.magnolia.ui.contentapp.ContentApp
+class: info.magnolia.ui.contentapp.ContentAppDescriptor
+i18nBasename: caar-awards-app.i18n.module-caar-awards-app-messages
+icon: icon-content-item
+label: caar-awards-app.appLauncherLayout.awards.label
+subApps:
+  browser:
+    subAppClass: info.magnolia.ui.contentapp.browser.BrowserSubApp
+    class: info.magnolia.ui.contentapp.browser.BrowserSubAppDescriptor
+    label: caar-awards-app.subapp.browser.label
+    contentConnector:
+      includeProperties: false
+      workspace: awards
+      rootPath: /
+      defaultOrder: jcrName
+      nodeTypes:
+        - name: mgnl:award
+          icon: icon-items
+        - name: mgnl:edition
+          icon: icon-items
+        - name: mgnl:announcement
+          icon: icon-items
+        - name: mgnl:program
+          icon: icon-items 
+        - name: mgnl:event-wrapper
+          icon: icon-items
+        - name: mgnl:standard-event
+          icon: icon-items
+        - name: mgnl:live-event
+          icon: icon-items
+        - name: mgnl:diffusion
+          icon: icon-items
+        - name: mgnl:result-wrapper
+          icon: icon-items
+        - name: mgnl:subresult-wrapper
+          icon: icon-items
+        - name: mgnl:result
+          icon: icon-items
+        - name: mgnl:awarded
+          icon: icon-items
+        - name: mgnl:folder
+          icon: icon-folder
+    workbench:
+      dropConstraintClass: es.arquia.magnolia.ui.workbench.tree.drop.AwardsJcrContentDropConstraint
+      editable: false
+      contentViews:
+        - name: tree
+          class: info.magnolia.ui.workbench.tree.TreePresenterDefinition
+          columns: &defaultColumns
+            - name: name
+              editable: true
+              sortable: true
+              propertyName: jcrName
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+            - name: value
+              editable: true
+              sortable: true
+              propertyName: value
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+            - name: status
+              width: 45
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.StatusColumnFormatter
+              class: info.magnolia.ui.workbench.column.definition.StatusColumnDefinition
+            - name: moddate
+              width: 160
+              sortable: true
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.DateColumnFormatter
+              propertyName: mgnl:lastModified
+              class: info.magnolia.ui.workbench.column.definition.MetaDataColumnDefinition
+        - name: list
+          class: info.magnolia.ui.workbench.list.ListPresenterDefinition
+          columns: *defaultColumns
+        - name: search
+          class: info.magnolia.ui.workbench.search.SearchPresenterDefinition
+          columns: *defaultColumns
+    actions:
+      # Common actions
+      export: 
+        class: info.magnolia.ui.framework.action.ExportActionDefinition
+        command: export
+        icon: icon-export
+        availability: 
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      import: 
+        class: info.magnolia.ui.framework.action.OpenCreateDialogActionDefinition
+        dialogName: ui-admincentral:import
+        icon: icon-import
+        name: import
+        availability: 
+          root: true
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      activate: 
+        catalog: workflow
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        icon: icon-publish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      activateRecursive:
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        catalog: workflow
+        command: activate
+        asynchronous: true
+        icon: icon-publish-incl-sub
+        recursive: true
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+      deactivate: 
+        catalog: workflow
+        class: info.magnolia.ui.framework.action.DeactivationActionDefinition
+        command: deactivate
+        icon: icon-unpublish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+            IsPublishedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsPublishedRule
+      confirmDelete: 
+        class: info.magnolia.module.dependencies.action.DependencyAwareConfirmationActionDefinition
+        icon: icon-trash
+        label: caar-awards-app.browser.actions.confirmDelete.label
+        successActionName: delete
+        availability: 
+          multiple: true
+          writePermissionRequired: true
+          rules: 
+            IsNotDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
+        # TODO: add necessary references
+        references: 
+          - name: website
+            nodeType: mgnl:page
+            workspace: website
+      delete: 
+        class: info.magnolia.ui.framework.action.MarkNodeAsDeletedActionDefinition
+        command: markAsDeleted
+        availability: 
+          writePermissionRequired: true
+      activateDeleted: 
+        catalog: versioned
+        class: info.magnolia.ui.framework.action.ActivationActionDefinition
+        command: activate
+        icon: icon-publish
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      restorePreviousVersion: 
+        class: info.magnolia.ui.contentapp.detail.action.RestorePreviousVersionActionDefinition
+        icon: icon-undo
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            IsDeletedRule: 
+              implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+      requestTranslation:
+        !include:/caar-awards-app/include/app/common/actions/requestTranslation.yaml
+      
+      # showVersions each file type
+      
+      # Award versions
+      showVersionsAward: 
+        !include:/caar-awards-app/include/app/awards/actions/showVersionsAward.yaml
+        
+      # Edition versions
+      showVersionsEdition: 
+        !include:/caar-awards-app/include/app/edition/actions/showVersionsEdition.yaml
+        
+      restoreVersion: 
+        class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
+        icon: icon-retrieve-versions
+        availability: 
+          writePermissionRequired: true
+          rules: 
+            HasVersionsRule: 
+              implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule
+              
+      # Award add
+      addAward: 
+        !include:/caar-awards-app/include/app/awards/actions/addAward.yaml
+        
+      # Award edit
+      editAward: 
+        !include:/caar-awards-app/include/app/awards/actions/editAward.yaml
+        
+      # Edition add
+      addEdition: 
+        !include:/caar-awards-app/include/app/edition/actions/addEdition.yaml
+        
+      # Edition edit
+      editEdition: 
+        !include:/caar-awards-app/include/app/edition/actions/editEdition.yaml
+              
+      # Folder
+      
+      # Architect folder
+      #addFolderSupportArchitect:
+        #!include:/caar-architecture-files-app/include/app/support/files/architect/actions/addFolderSupportArchitect.yaml
+      
+    # Sections
+    actionbar:
+      defaultAction: editAward
+      sections:
+        # Root section
+        - name: root
+          label: caar-awards-app.subapp.browser.actionbar.sections.root.label
+          groups:
+            - name: addActions
+              items:
+                - name: addAward
+            - name: importExportActions
+              items:
+                - name: import
+          availability:
+            nodes: false
+            root: true
+        # Award section
+        - !include:/caar-awards-app/include/app/awards/sections/awardSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/awards/sections/awardSection.yaml
+        
+        # Edition section
+        - !include:/caar-awards-app/include/app/edition/sections/editionSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/edition/sections/editionSection.yaml
+    imageProvider:
+       class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
+       damLinkPropertyName: image
+  # Award sub app
+  detailAwardSubApp:
+    !include:/caar-awards-app/include/app/awards/subapp/detailAwardSubApp.yaml
+    
+  # Edition sub app
+  detailEditionSubApp:
+    !include:/caar-awards-app/include/app/edition/subapp/detailEditionSubApp.yaml

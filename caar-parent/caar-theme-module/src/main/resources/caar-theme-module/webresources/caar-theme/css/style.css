@@ -745,8 +745,7 @@ a:focus {
 .cmp-acerca-de-ae .info-acerca {
   font-family: "National-Book", "Helvetica", "sans-serif";
   font-size: 19px;
-  text-align: left;
-  font-weight: bold; }
+  text-align: left; }
 
 .cmp-acerca-de-ae .video-img-acerca {
   overflow: hidden; }
