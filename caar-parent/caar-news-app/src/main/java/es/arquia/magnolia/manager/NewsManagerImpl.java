@@ -18,11 +18,13 @@ import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.functions.QueryUtils;
+import info.magnolia.context.MgnlContext;
 
 public class NewsManagerImpl implements NewsManager{
 	
 	private static final Logger log = LoggerFactory.getLogger(NewsManagerImpl.class);
 	private QueryUtils queryUtils;
+	private boolean lastRowOfNews = false;
 	
 	@Inject
 	public NewsManagerImpl(final QueryUtils queryUtils) throws PathNotFoundException, RepositoryException {
@@ -31,18 +33,35 @@ public class NewsManagerImpl implements NewsManager{
     
 	@Override
 	public List<Node> getNewsList() throws Exception{
-		final int limit = 4;
+		final int limit = 5;
+		final int lastNewsListElement = 4;
 		int offset = 0;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [" + dateTime + "] DESC";
-		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		if (newsList.size() < limit) {
+			lastRowOfNews = true;
+		}
+		else {
+			newsList.remove(lastNewsListElement);
+		}
+		return newsList;
 	}
 	
 	@Override
 	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
-		final int limit = 4;
-		int offset = 0;
+		String rowsFromAjax = MgnlContext.getAttribute("rows");
+		final int limit = 5;
+		final int lastNewsListElement = 4;
+		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
 		String sqlQuery = categorizedNewsListQuery(categoriesList);
-		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		if (newsList.size() < limit) {
+			lastRowOfNews = true;
+		}
+		else {
+			newsList.remove(lastNewsListElement);
+		}
+		return newsList;
 	}
 	
 	@Override
@@ -51,6 +70,10 @@ public class NewsManagerImpl implements NewsManager{
 		final int offset = 0;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
 		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+	}
+	
+	public boolean isLastRowOfNews() {
+		return lastRowOfNews;
 	}
 
 	@Override
