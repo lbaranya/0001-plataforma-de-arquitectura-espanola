@@ -5,15 +5,15 @@ public interface NewsConstants {
 	String newsNodeType = "mgnl:news";
 	String newsWorkspace = "news";
 	
-	String headTitle = "N1.1";
-	String longTitle = "N1.2";
-	String descriptionShort = "N1.3";
-	String descriptionLong = "N1.4";
-	String dateTime = "N1.5";
-	String image = "N1.6";
-	String category = "N1.7";
-	String important = "N1.8";
-	String files = "N1.9";
-	String relatedNews = "N1.10";
-	String informativeMedium = "N1.11";
+	String headTitle = "N1_1";
+	String longTitle = "N1_2";
+	String descriptionShort = "N1_3";
+	String descriptionLong = "N1_4";
+	String dateTime = "N1_5";
+	String image = "N1_6";
+	String category = "N1_7";
+	String important = "N1_8";
+	String files = "N1_9";
+	String relatedNews = "N1_10";
+	String informativeMedium = "N1_11";
 }

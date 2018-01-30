@@ -34,6 +34,8 @@ areas:
             id: caar-templating-module:components/detail-news-component
           bienales-header-component:
             id: caar-templating-module:components/bienials-header-component
+          news-diary-component:
+            id: caar-templating-module:components/news-diary-component
           news-related-component:
             id: caar-templating-module:components/related-news-component
           detail-architect-header-component:
@@ -42,8 +44,8 @@ areas:
             id: caar-templating-module:components/detail-architect-body-component
           related-files-component:
             id: caar-templating-module:components/related-files-component
-          award-news-list-component:
-            id: caar-templating-module:components/award-news-list-component
+          distributor-sections-rich-text-component:
+            id: caar-templating-module:components/distributor-sections-rich-text-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:

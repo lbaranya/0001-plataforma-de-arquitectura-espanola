@@ -14,6 +14,14 @@
 			<type>es.arquia.magnolia.manager.NewsManager</type>
 			<implementation>es.arquia.magnolia.manager.NewsManagerImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.AwardsManager</type>
+			<implementation>es.arquia.magnolia.manager.AwardsManagerImpl</implementation>
+		</component>
 	</components>
 
   <dependencies>

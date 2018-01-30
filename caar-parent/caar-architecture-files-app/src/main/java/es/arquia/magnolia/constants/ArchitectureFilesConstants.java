@@ -37,6 +37,10 @@ public interface ArchitectureFilesConstants {
 	String architectureFilesSupportReviewIVFolderWrapperNodeType = "mgnl:support-review-iv-folder-wrapper";
 	String architectureFilesSupportReviewIVNodeType = "mgnl:support-review-iv";
 	
+	String architectureFilesSupportEventWrapperNodeType = "mgnl:support-event-wrapper";
+	String architectureFilesSupportEventFolderWrapperNodeType = "mgnl:support-event-folder-wrapper";
+	String architectureFilesSupportEventNodeType = "mgnl:support-event";
+	
 	String architectureFilesSupportBusinessWrapperNodeType = "mgnl:support-business-wrapper";
 	String architectureFilesSupportBusinessFolderWrapperNodeType = "mgnl:support-business-folder-wrapper";
 	String architectureFilesSupportBusinessNodeType = "mgnl:support-business";
@@ -91,6 +95,7 @@ public interface ArchitectureFilesConstants {
 			architectureFilesSupportReviewIIWrapperNodeType, architectureFilesSupportReviewIIFolderWrapperNodeType, architectureFilesSupportReviewIINodeType, 
 			architectureFilesSupportReviewIIIWrapperNodeType, architectureFilesSupportReviewIIIFolderWrapperNodeType, architectureFilesSupportReviewIIINodeType, 
 			architectureFilesSupportReviewIVWrapperNodeType, architectureFilesSupportReviewIVFolderWrapperNodeType, architectureFilesSupportReviewIVNodeType, 
+			architectureFilesSupportEventWrapperNodeType, architectureFilesSupportEventFolderWrapperNodeType, architectureFilesSupportEventNodeType, 
 			architectureFilesSupportBusinessWrapperNodeType, architectureFilesSupportBusinessFolderWrapperNodeType, architectureFilesSupportBusinessNodeType 
 	};
 	

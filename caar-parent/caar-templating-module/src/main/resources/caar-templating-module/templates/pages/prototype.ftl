@@ -1,6 +1,7 @@
 [#assign theme = sitefn.theme(sitefn.site())]
 
 [#-- Este resourcesURL esta asi para los iconos en caliente que tenemos repartidos en las paginas --]
+[#assign contextPath = ctx.contextPath!""]
 [#assign resourcesURL = "${ctx.contextPath}/.resources/caar-theme-module/webresources/" + theme.name]
 
 <html>

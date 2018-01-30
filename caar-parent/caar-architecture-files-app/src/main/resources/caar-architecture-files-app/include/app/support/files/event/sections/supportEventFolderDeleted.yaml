@@ -1,0 +1,29 @@
+name: supportEventFolderDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.supportEventWrapper.label
+groups:
+- name: addActions
+  items:
+  - name: addFolderSupportEvent
+  - name: addSupportEvent
+- name: editActions
+  items:
+  - name: editFolder
+  - name: confirmDelete
+- name: importExportActions
+  items:
+  - name: import
+  - name: export
+- name: activationsActions
+  items:
+  - name: activate
+  - name: activateRecursive
+  - name: deactivate
+- name: deletedActions
+  items:
+  - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:support-event-folder-wrapper
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

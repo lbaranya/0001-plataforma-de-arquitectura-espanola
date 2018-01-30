@@ -17,14 +17,16 @@
 	                    <div class="container-img">
 		                    [#assign imgItemKey = node.getPhoto()!""]
 			            	[#if imgItemKey??]
-		                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440")]
-			            		[#if imgMediaRendition??]
-			            			[#assign imageAlternativeText = "ficha de arquitectura"]
-			            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-			            			[#if imageAlt?has_content]
-			            				[#assign imageAlternativeText = imageAlt.alternative!""]
-			            			[/#if]
-		                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+			            		[#if imgItemKey?has_content]
+			                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440")!]
+				            		[#if imgMediaRendition?has_content]
+				            			[#assign imageAlternativeText = "ficha de arquitectura"]
+				            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+				            			[#if imageAlt?has_content]
+				            				[#assign imageAlternativeText = imageAlt.alternative!""]
+				            			[/#if]
+			                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+			                    	[/#if]
 		                    	[/#if]
 		                    [/#if]
 	                        <div class="texto">

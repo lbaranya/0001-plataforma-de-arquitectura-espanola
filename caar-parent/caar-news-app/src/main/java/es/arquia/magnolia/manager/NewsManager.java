@@ -10,7 +10,11 @@ public interface NewsManager {
 	
 	public List<Node> getNewsList() throws Exception;
 	
-	public List<Node> getAwardNewsList() throws Exception;
+	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception;
+	
+	public List<Node> getImportantNewsList() throws Exception;
+	
+	public boolean isLastRowOfNews();
 	
 	public News getInstance();
 

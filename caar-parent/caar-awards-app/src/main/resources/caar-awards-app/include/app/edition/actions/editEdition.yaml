@@ -1,0 +1,12 @@
+subAppId: detailEditionSubApp
+icon: icon-edit-wo
+nodeType: mgnl:edition
+appName: caar-awards-app
+class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+label: caar-awards-app.subapp.browser.actions.editEdition.label
+availability:
+  nodeTypes:
+    - mgnl:edition
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

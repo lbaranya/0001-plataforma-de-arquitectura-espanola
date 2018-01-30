@@ -1,4 +1,5 @@
 title: caar-templating-module.components.news-list.dialog.title   
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/news-list-component.ftl
+dialog: caar-templating-module:components/news-list-component-properties
 modelClass: es.arquia.magnolia.components.models.news.NewsListModel

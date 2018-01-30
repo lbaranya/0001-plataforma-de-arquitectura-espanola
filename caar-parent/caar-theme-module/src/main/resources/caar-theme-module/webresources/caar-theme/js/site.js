@@ -2,6 +2,9 @@ var booleanmouse = true;
 var scroll;
 
 $(document).ready(function () {
+	
+	adaptCurrentURLToNewLanguage();
+	
 	// Resources URL
 	var resourcesURL = $("#resources").val();
 	// Icons URL
@@ -100,7 +103,23 @@ $(document).ready(function () {
                 },
                 600
             );
-            $('.cmp-menu').removeClass('fixed-menu');
+            $('.cmp-menu').re$.fn.scrollBottom = function() { 
+                return $(document).height() - this.scrollTop() - this.height(); 
+            };
+            
+            window.onscroll = function () {
+                
+                var scrollbottom = $(window).scrollBottom();
+                
+                console.log(scrollbottom);
+            
+                if(scrollbottom < -400){
+                    $(".cmp-volver").css("color","#fff");
+                }else{
+                    $(".cmp-volver").css("color","#D0021B");
+                }
+                
+            };moveClass('fixed-menu');
         } else {
             $('.submenu').css('display', 'none');
             $('.menu-link').removeClass('active-item');
@@ -116,7 +135,6 @@ $(document).ready(function () {
     $('.logo').on('click', function (e) {
         var comprobacion = $(this).hasClass("active-item");
         if (comprobacion != true) {
-            
             var datamenu = $(this).attr('data-submenu');
             //Compruebo si cmp-exist-home existe
             if ($(".cmp-exist-home").length) {
@@ -128,8 +146,6 @@ $(document).ready(function () {
             }
             $('.submenu').css('display', 'none');
             $('.' + datamenu).css('display', 'flex');
-            $('.submenu-container').removeClass('clicked');
-            $('.submenu-container').addClass('clicked');
             $('.menu-link').removeClass('active-item');
             $(this).addClass('active-item');
         } else {
@@ -218,8 +234,71 @@ $(document).ready(function () {
         accept_cookies();
     });
     /**Termina funcion politica de cookies**/
+    
+    /* COMPONENTE DE SECCIONES / SUSTITUTO DE ACORDEON -> COMPORTAMIENTO */
+    
+    $('.anchor-distribuidor').click(function(event) {
+        event.preventDefault();
+        $(".cmp-distribuidor-general-content").hide();
+        var strAncla = $(this).attr('href');
+        $(strAncla).show();
+        $('html, body').stop(true, true).animate({
+            scrollTop: $(strAncla).offset().top
+        }, 500);
+    });
 
+    $(".cmp-distribuidor-convocatoria .cmp-volver").click(function(e) {
+    	var parentPosition = $(".cmp-distribuidor-convocatoria").position();
+        $('html,body').animate({
+            scrollTop: parentPosition.top
+        }, 500);
+
+        $('html,body').animate({
+            scrollTop: parentPosition.top
+        }, {
+            duration: 500,
+            complete: function() {
+                $(".cmp-distribuidor-general-content").hide();
+            }
+        });
+
+        
+    });
+    
+    $.fn.scrollBottom = function() {
+        return -(window.innerHeight + this.scrollTop()); 
+    };
+    
+    window.onscroll = function () {
+        
+        var scrollbottom = $(window).scrollBottom();
+        
+        var heightfooter = $(".cmp-footer").height();
+        if(scrollbottom < -($(document).height()-heightfooter)+53){
+            $(".cmp-volver").css("color","#fff");
+        }else{
+            $(".cmp-volver").css("color","#D0021B");
+        }
+        
+    };
+    
 });
+
+/* We adapt the url of the header component so that it always gets the url of the page in which we are, with the language injected */
+function adaptCurrentURLToNewLanguage(){
+	var currentURL = window.location.href;
+	var replacement = $("#currentLanguageInput").val();
+	
+	var contextPath = $("#contextPathInput").val();
+	
+	if(replacement){
+		replacement = "/"+replacement;
+	}
+	var newString = contextPath+replacement;
+	var regexp = new RegExp(contextPath +"(\/en|\/es)*","i");
+	var newURL = currentURL.replace(regexp, newString);
+	$("#currentLanguage").attr('href', newURL);
+}
 
 /**Funcion para Banner-header**/
 

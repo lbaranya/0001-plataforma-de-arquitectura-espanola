@@ -6,13 +6,11 @@
  * CKEDITOR.plugins.addExternal("abbr", CKEDITOR.vaadinDirUrl + "js/abbr/");
  */
 CKEDITOR.stylesSet.add( 'mystyles', [
-    { name: 'Titulo cabecera', element: 'h2', attributes: { 'class': 'title' } },
-    { name: 'Frase', element: 'p', attributes: {'class':'frase'}},
-    {name:'Autor', element: 'p', attributes: {'class': 'autor'}}
-    //{ name: 'Texto naranja',  element: 'span', attributes: { 'class': 'title-normal-orange'} },
-//    { name: 'Texto normal', element: 'p', styles: {'font-family': 'Ubuntu, sans-serif', 'color':'#333','font-size':'13pt' } },
-//    { name: 'Titulo secundario', element: 'h3', styles: { 'font-family': 'exo , sans-serif','text-align':'center' } },
-//    { name: 'Titulo big', element: 'h3', attributes: { 'class': 'title-big' } }
+    { name: 'Titulo cabecera', element: 'h2', attributes: { 'class': 'ckeditor title' } },
+    { name: 'Frase', element: 'p', attributes: {'class':'ckeditor frase'}},
+    {name:'Autor', element: 'p', attributes: {'class': 'ckeditor autor'}},
+    {name:'Section title', element: 'h4', attributes: {'class': 'ckeditor content-title'}},
+    {name:'Section default text', element: 'p', attributes: {'class': 'ckeditor text-contenido'}}
 ]);
 
 CKEDITOR.editorConfig = function( config ) {

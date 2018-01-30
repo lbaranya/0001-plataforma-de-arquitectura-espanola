@@ -1,0 +1,114 @@
+subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+label: caar-architecture-files-app.subapp.detailSupportEvent.label
+contentConnector:
+  workspace: architecture-files
+editor:
+  nodeType:
+    icon: icon-items
+    name: mgnl:support-event
+  form:
+    tabs:
+      - name: fileData
+        label: caar-architecture-files-app.files.support.event.fileData.label
+        fields:
+          - name: jcrName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.fileData.jcrName.label
+            required: true
+      - name: ouvrePresentationData
+        label: caar-architecture-files-app.files.support.event.ouvrePresentation.label          
+        fields:
+          - name: FS3_2_1
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.title.label
+            required: true
+            i18n: true
+          - name: FS3_2_2
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: true
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.presentationStartDate.label
+            required: true
+          - name: FS3_2_3
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.presentationLocation.label
+            required: true
+          - name: FS3_2_5
+            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.abstract.label
+            required: true
+            i18n: true
+          - name: FS3_2_6
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: true
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.presentationEndingDate.label
+          - name: FS3_2_7
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.price.label
+          - name: FS3_2_8
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.website.label
+      - name: authorshipData
+        label: caar-architecture-files-app.files.support.event.authorshipData.label
+        fields:
+          - name: listAuthorship
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.event.authorshipData.listAuthorship.label
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+            field:
+              name: compositeField
+              class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+              layout: vertical
+              fields:
+                - name: separator
+                  class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                  label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                  value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                - name: FS3_3_1
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-architecture-files-app.files.support.event.authorshipData.authorshipType.label
+                  required: true
+                - name: FS3_3_2
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-architecture-files-app.files.support.event.authorshipData.authorshipName.label
+                  i18n: true
+                  required: true
+                - name: FS3_3_3
+                  class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                  label: caar-architecture-files-app.files.support.event.authorshipData.authorshipDetails.label
+                  required: true
+                  i18n: true
+                - name: FS3_3_4
+                  class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                  label: caar-architecture-files-app.files.support.event.authorshipData.authorshipInfo.label
+                  i18n: true
+      - name: mediaGalleryData
+        label: caar-architecture-files-app.files.support.event.mediaGalleryData.label
+        fields:
+          - name: listMedia
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.event.mediaGalleryData.listMedia.label
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
+            field:
+              name: FS3_7_2
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              targetWorkspace: dam
+              appName: assets
+              label: caar-architecture-files-app.files.support.event.mediaGalleryData.photoPreview.label
+              identifierToPathConverter:
+                class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+              contentPreviewDefinition:
+                contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+  actions:
+    - name: commit
+    - name: cancel
+actions:
+  commit:
+    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+  cancel:
+    class: info.magnolia.ui.form.action.CancelFormActionDefinition

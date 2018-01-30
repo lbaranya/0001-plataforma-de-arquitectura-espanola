@@ -7,6 +7,14 @@
 	<class>es.arquia.magnolia.CaarArquitectureFilesApp</class>
 	<versionHandler>es.arquia.magnolia.setup.CaarArquitectureFilesAppVersionHandler</versionHandler>
 	<version>${project.version}</version>
+	
+	<components>
+		<id>main</id>
+		<component>
+			<type>es.arquia.magnolia.functions.QueryUtils</type>
+			<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
+		</component>
+	</components>
 
 	<dependencies>
 		<dependency>

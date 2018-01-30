@@ -58,6 +58,12 @@ subApps:
           icon: icon-folder
         - name: mgnl:support-review-iv
           icon: icon-items
+        - name: mgnl:support-event-wrapper
+          icon: icon-folder
+        - name: mgnl:support-event-folder-wrapper
+          icon: icon-folder
+        - name: mgnl:support-event
+          icon: icon-items
         - name: mgnl:support-business-wrapper
           icon: icon-folder
         - name: mgnl:support-business-folder-wrapper
@@ -86,6 +92,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:format-manuscript
           icon: icon-items
+        - name: mgnl:format-graphic-wrapper
+          icon: icon-folder
+        - name: mgnl:format-graphic-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-graphic
           icon: icon-items
         - name: mgnl:format-continuous
@@ -248,6 +258,10 @@ subApps:
       showVersionsReviewIV: 
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/showVersionsReviewIV.yaml
         
+      # Details Event
+      showVersionsEvent: 
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/showVersionsEvent.yaml
+        
       # Details Business
       showVersionsBusiness: 
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/showVersionsBusiness.yaml
@@ -259,6 +273,10 @@ subApps:
       # Details Manuscript
       showVersionsManuscript:
         !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/showVersionsManuscript.yaml
+        
+      # Details Graphic
+      showVersionsGraphic:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/showVersionsGraphic.yaml
         
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
@@ -290,6 +308,10 @@ subApps:
       # Review IV folder
       addFolderSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addFolderSupportReviewIV.yaml
+        
+      # Event folder
+      addFolderSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addFolderSupportEvent.yaml
       
       # Business folder
       addFolderSupportBusiness:
@@ -302,6 +324,10 @@ subApps:
       # Manuscript folder
       addFolderFormatManuscript:
         !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFolderFormatManuscript.yaml
+        
+      # Graphic folder
+      addFolderFormatGraphic:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFolderFormatGraphic.yaml
       
       # Portfolio folder
       addFolderPortfolio:
@@ -321,11 +347,13 @@ subApps:
             - mgnl:support-architect-folder-wrapper
             - mgnl:support-review-i-folder-wrapper
             - mgnl:support-review-ii-folder-wrapper
-            - mgnl:support-review-iv-folder-wrapper
             - mgnl:support-review-iii-folder-wrapper
+            - mgnl:support-review-iv-folder-wrapper
+            - mgnl:support-event-folder-wrapper
             - mgnl:support-business-folder-wrapper
             - mgnl:support-project-folder-wrapper
             - mgnl:format-video-folder-wrapper
+            - mgnl:format-graphic-folder-wrapper
             - mgnl:format-manuscript-folder-wrapper
             - mgnl:portfolio-folder-wrapper
           rules: 
@@ -354,12 +382,14 @@ subApps:
             - mgnl:support-review-ii-wrapper
             - mgnl:support-review-iii-wrapper
             - mgnl:support-review-iv-wrapper
+            - mgnl:support-event-wrapper
             - mgnl:support-business-wrapper
             - mgnl:support-project-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
             - mgnl:format-video-wrapper
             - mgnl:format-manuscript-wrapper
+            - mgnl:format-graphic-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -378,16 +408,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiii/actions/addSupportReviewIIIWrapper.yaml
       addSupportReviewIVWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIVWrapper.yaml
+      addSupportEventWrapper:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addSupportEventWrapper.yaml
       addSupportBusinessWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusinessWrapper.yaml
       addSupportProjectWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/project/actions/addSupportProjectWrapper.yaml
-      
-      # Format wrappers
-      
-      # Add
-      addFormatManuscriptWrapper:
-        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscriptWrapper.yaml
       
       # Support Architect
       addSupportArchitect:
@@ -418,6 +444,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIV.yaml
       editSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/editSupportReviewIV.yaml
+        
+      # Support Event
+      addSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addSupportEvent.yaml
+      editSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/editSupportEvent.yaml
       
       # Support Business
       addSupportBusiness:
@@ -431,12 +463,6 @@ subApps:
       editSupportProject:
         !include:/caar-architecture-files-app/include/app/support/files/project/actions/editSupportProject.yaml
         
-      # Format Manuscript
-      addFormatManuscript:
-        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscript.yaml
-      editFormatManuscript:
-        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/editFormatManuscript.yaml
-      
       # Portfolio
       addPortfolio:
         !include:/caar-architecture-files-app/include/app/portfolio/actions/addPortfolio.yaml
@@ -448,14 +474,30 @@ subApps:
       # Format wrappers
       
       # Add
+      addFormatManuscriptWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscriptWrapper.yaml
       addFormatVideoWrapper:
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/addFormatVideoWrapper.yaml
+      addFormatGraphicWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFormatGraphicWrapper.yaml
        
       # Format Video
       addFormatVideo:
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/addFormatVideo.yaml
       editFormatVideo:
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/editFormatVideo.yaml
+        
+      # Format Manuscript
+      addFormatManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscript.yaml
+      editFormatManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/editFormatManuscript.yaml
+        
+      # Format Graphic
+      addFormatGraphic:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFormatGraphic.yaml
+      editFormatManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/editFormatGraphic.yaml
       
     # Sections
     actionbar:
@@ -593,6 +635,26 @@ subApps:
         # Section if node review iv is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIV.yaml
         
+        # Support Event
+        
+        # Wrapper
+        # Section if event wrapper is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventWrapperDeleted.yaml
+        # Section if event wrapper is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventWrapper.yaml
+        
+        # Support event folder
+        # Section if event folder is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventFolderDeleted.yaml
+        # Section if event folder is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventFolder.yaml
+        
+        # Node actions
+        # Section if node event is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventDeleted.yaml
+        # Section if node event is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEvent.yaml
+        
         # Support business
         
         # Wrapper
@@ -672,6 +734,20 @@ subApps:
         # Node actions
         - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscriptDeleted.yaml
         - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscript.yaml
+        
+        # Format Graphic
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicWrapper.yaml
+        
+        # Format Graphic folder
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphic.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -690,6 +766,9 @@ subApps:
   # Support review iv sub app
   detailSupportReviewIV:
     !include:/caar-architecture-files-app/include/app/support/files/reviewiv/subapp/detailSupportReviewIV.yaml
+  # Support event sub app
+  detailSupportEvent:
+    !include:/caar-architecture-files-app/include/app/support/files/event/subapp/detailSupportEvent.yaml
   # Support business sub app
   detailSupportBusiness:
     !include:/caar-architecture-files-app/include/app/support/files/business/subapp/detailSupportBusiness.yaml
@@ -702,3 +781,6 @@ subApps:
   # Format manuscript sub app
   detailFormatManuscript:
     !include:/caar-architecture-files-app/include/app/format/files/manuscript/subapp/detailFormatManuscript.yaml
+  # Format graphic sub app
+  detailFormatGraphic:
+    !include:/caar-architecture-files-app/include/app/format/files/graphic/subapp/detailFormatGraphic.yaml

@@ -1,96 +1,102 @@
 package es.arquia.magnolia.manager;
 
-import static es.arquia.magnolia.constants.NewsConstants.*;
+import static es.arquia.magnolia.constants.NewsConstants.category;
+import static es.arquia.magnolia.constants.NewsConstants.dateTime;
+import static es.arquia.magnolia.constants.NewsConstants.important;
+import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
+import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-import javax.jcr.ValueFormatException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.beans.News;
+import es.arquia.magnolia.functions.QueryUtils;
 import info.magnolia.context.MgnlContext;
-import info.magnolia.jcr.predicate.AbstractPredicate;
-import info.magnolia.jcr.util.NodeUtil;
 
 public class NewsManagerImpl implements NewsManager{
 	
 	private static final Logger log = LoggerFactory.getLogger(NewsManagerImpl.class);
+	private QueryUtils queryUtils;
+	private boolean lastRowOfNews = false;
 	
-	private static AbstractPredicate<Node> MAGNOLIA_NEWS_FILTER = new AbstractPredicate<Node>() {
-
-        @Override
-        public boolean evaluateTyped(Node node) {
-
-            try {
-                return node.isNodeType(newsNodeType);
-            } catch (RepositoryException e) {
-                log.error("Unable to read nodeType for node {}", NodeUtil.getNodePathIfPossible(node));
-            }
-            return false;
-        }
-    };
+	@Inject
+	public NewsManagerImpl(final QueryUtils queryUtils) throws PathNotFoundException, RepositoryException {
+        this.queryUtils = queryUtils;
+    }
     
 	@Override
 	public List<Node> getNewsList() throws Exception{
-		List<Node> newsList = new ArrayList<>();
-		
-		Session session = MgnlContext.getJCRSession(newsWorkspace);
-		Node parentNewsNodeFolder = session.getRootNode();
-		if(parentNewsNodeFolder.hasNodes()) {
-			Iterable<Node> childList = NodeUtil.collectAllChildren(parentNewsNodeFolder, MAGNOLIA_NEWS_FILTER);
-			newsList = NodeUtil.asList(childList);
+		final int limit = 5;
+		final int lastNewsListElement = 4;
+		int offset = 0;
+		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [" + dateTime + "] DESC";
+		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		if (newsList.size() < limit) {
+			lastRowOfNews = true;
 		}
-		// Dates comparison
-		newsList.sort(new Comparator<Node>() {
-
-			@Override
-			public int compare(Node arg0, Node arg1) {
-				try {
-					return arg1.getProperty(dateTime).getDate().compareTo(arg0.getProperty(dateTime).getDate());
-				} catch (ValueFormatException e) {
-					e.printStackTrace();
-				} catch (PathNotFoundException e) {
-					e.printStackTrace();
-				} catch (RepositoryException e) {
-					e.printStackTrace();
-				}
-				return 0;
-			}
-			
-		});
-		
+		else {
+			newsList.remove(lastNewsListElement);
+		}
 		return newsList;
 	}
 	
 	@Override
-	public List<Node> getAwardNewsList() throws Exception{
-		List<Node> newsList = new ArrayList<>();
-		List<Node> auxNewsList = getNewsList();
-		
-		Iterator<Node> iterator = auxNewsList.iterator();
-		while(iterator.hasNext()) { 
-			Node auxNode = iterator.next();
-			
-			if ((auxNode.getProperty(category) != null) && (auxNode.getProperty(category).equals(""))) {
-				newsList.add(auxNode);
-			}
+	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
+		String rowsFromAjax = MgnlContext.getAttribute("rows");
+		final int limit = 5;
+		final int lastNewsListElement = 4;
+		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
+		String sqlQuery = categorizedNewsListQuery(categoriesList);
+		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		if (newsList.size() < limit) {
+			lastRowOfNews = true;
 		}
-		
+		else {
+			newsList.remove(lastNewsListElement);
+		}
 		return newsList;
+	}
+	
+	@Override
+	public List<Node> getImportantNewsList() throws Exception {
+		final int limit = 2;
+		final int offset = 0;
+		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
+		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+	}
+	
+	public boolean isLastRowOfNews() {
+		return lastRowOfNews;
 	}
 
 	@Override
 	public News getInstance() {
 		return new News();
 	}
-
+	
+	private String categorizedNewsListQuery(List<String> categoriesList) {
+		boolean ctrlCondition = false;
+		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ";
+		for(String iterator : categoriesList) {
+			
+			if (!ctrlCondition) {
+				sqlQuery += "WHERE ";
+				ctrlCondition = true;
+			}
+			else {
+				sqlQuery += "OR ";
+			}
+			sqlQuery += "CONTAINS([" + category + "], '" + iterator + "') ";
+		}
+		sqlQuery += "ORDER BY [" + dateTime + "] DESC";
+		
+		return sqlQuery;
+	}
 }

@@ -1,6 +1,16 @@
 package es.arquia.magnolia.beans;
 
-import static es.arquia.magnolia.constants.NewsConstants.*;
+import static es.arquia.magnolia.constants.NewsConstants.category;
+import static es.arquia.magnolia.constants.NewsConstants.dateTime;
+import static es.arquia.magnolia.constants.NewsConstants.descriptionLong;
+import static es.arquia.magnolia.constants.NewsConstants.descriptionShort;
+import static es.arquia.magnolia.constants.NewsConstants.files;
+import static es.arquia.magnolia.constants.NewsConstants.headTitle;
+import static es.arquia.magnolia.constants.NewsConstants.image;
+import static es.arquia.magnolia.constants.NewsConstants.important;
+import static es.arquia.magnolia.constants.NewsConstants.informativeMedium;
+import static es.arquia.magnolia.constants.NewsConstants.longTitle;
+import static es.arquia.magnolia.constants.NewsConstants.relatedNews;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 
 import java.text.DateFormat;

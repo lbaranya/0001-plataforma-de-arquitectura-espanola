@@ -1,0 +1,25 @@
+name: awardSection
+label: caar-awards-app.subapp.browser.actionbar.sections.awardSection.label
+groups:
+  - name: addActions
+    items:
+      - name: addEdition
+  - name: editActions
+    items:
+      - name: editAward
+      - name: confirmDelete 
+  - name: importExportActions
+    items:
+      - name: import
+      - name: export
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: deletedActions
+    items:
+      - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:award
