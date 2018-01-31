@@ -4,32 +4,33 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.Awards;
-import es.arquia.magnolia.manager.AwardsManager;
+import es.arquia.magnolia.beans.Award;
+import es.arquia.magnolia.manager.AwardManager;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
 
 public class HeaderModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	
-	private AwardsManager awardsManager;
+	private AwardManager awardsManager;
 
 	@Inject
-	public HeaderModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final AwardsManager awardsManager) {
+	public HeaderModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final AwardManager awardsManager) {
 		super(content, definition, parent);
 		this.awardsManager = awardsManager;
 	}
 	
-	public List<Node> getAwardsList() throws Exception{
-		return awardsManager.getAwardsList();
+	public List<Node> getAwardsList() throws RepositoryException {
+		return awardsManager.getAwardList();
 	}
 	
-	public List<Node> getBiennialsList() throws Exception{
-		return awardsManager.getBiennialsList();
+	public List<Node> getBiennialsList() throws RepositoryException{
+		return awardsManager.getBiennialList();
 	}
 	
-	public Awards getInstance() {
+	public Award getInstance() {
 		return awardsManager.getInstance();
 	}
 
