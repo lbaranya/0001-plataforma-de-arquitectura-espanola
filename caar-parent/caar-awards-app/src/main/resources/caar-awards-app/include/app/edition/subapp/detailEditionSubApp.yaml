@@ -42,6 +42,6 @@ editor:
     - name: cancel
 actions:
   commit:
-    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+    class: es.arquia.magnolia.ui.form.action.SaveEditionFormActionDefinition
   cancel:
     class: info.magnolia.ui.form.action.CancelFormActionDefinition
