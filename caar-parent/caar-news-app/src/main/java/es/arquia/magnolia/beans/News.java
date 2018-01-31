@@ -89,14 +89,14 @@ public class News {
 		}
 	}
 	
-	public String getDate(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException, ParseException{
+	public String getDate(Node node) throws RepositoryException {
 		Calendar calendar = node.getProperty(dateTime).getDate();
 		Locale locale = MgnlContext.getAggregationState().getLocale();
 		DateFormat formatter = new SimpleDateFormat(dateFormat, locale);
 		return formatter.format(calendar.getTime());
 	}
 	
-	public String getImage(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getImage(Node node) throws RepositoryException{
 		try{
 			Property tmp = node.getProperty(image);
 			return tmp.getString();
@@ -105,7 +105,7 @@ public class News {
 		}
 	}
 	
-	public String getCategories(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getCategories(Node node) throws RepositoryException{
 		try{
 			Property tmp = node.getProperty(category);
 			return tmp.getValues().toString();
@@ -114,7 +114,7 @@ public class News {
 		}
 	}
 	
-	public String getImportant(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException{
+	public String getImportant(Node node) throws RepositoryException{
 		try{
 			Property tmp = node.getProperty(important);
 			return tmp.getString();

@@ -2,7 +2,7 @@
 [#assign currentLanguage = cmsfn.language()!""]
 [#assign news = model.getInstance()!""]
 [#if content.categories?has_content]
-	[#assign listNews = model.getCategorizedNewsList(content.categories)]
+	[#assign listNews = model.getCategorizedNewsList(content.categories, 4)]
 [#else]
 	[#assign listNews = model.getNewsList()]
 [/#if]

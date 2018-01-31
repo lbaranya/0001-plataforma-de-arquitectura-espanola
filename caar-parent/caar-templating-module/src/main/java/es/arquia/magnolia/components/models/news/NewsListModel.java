@@ -27,8 +27,8 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
 		return newsManager.getNewsList();
 	}
 	
-	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
-		return newsManager.getCategorizedNewsList(categoriesList);
+	public List<Node> getCategorizedNewsList(List<String> categoriesList, int numberOfNews) throws Exception{
+		return newsManager.getCategorizedNewsList(categoriesList, numberOfNews);
 	}
 	
 	public boolean isLastRowOfNews() {

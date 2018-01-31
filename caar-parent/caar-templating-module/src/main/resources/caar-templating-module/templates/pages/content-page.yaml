@@ -46,6 +46,8 @@ areas:
             id: caar-templating-module:components/related-files-component
           distributor-sections-rich-text-component:
             id: caar-templating-module:components/distributor-sections-rich-text-component
+          award-news-list-component:
+            id: caar-templating-module:components/award-news-list-component
       accordion:
         templateScript: /caar-templating-module/templates/pages/subareas/accordion-area-page.ftl
         availableComponents:
