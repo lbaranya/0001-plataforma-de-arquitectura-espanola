@@ -4,8 +4,9 @@
 	[#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 	[#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 	[#assign awards = model.parent.getInstance()!""]
+	[@cms.area name="breadcrum" /]
 	[#include "submenu-award.ftl"]
-	[@cms.area name="content" /]
+	[@cms.area name="subheader" /]
 	<section class="cmp-nota-legal">
 		<div class="container">
 		    <div class="row">
@@ -16,5 +17,6 @@
 		</div>
 	</section>
 [#else]
-	[@cms.area name="content" /]
+	[@cms.area name="breadcrum" /]
+	[@cms.area name="subheader" /]
 [/#if]

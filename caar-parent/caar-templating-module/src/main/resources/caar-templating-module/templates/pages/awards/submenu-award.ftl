@@ -38,7 +38,9 @@
                 </li>
                 [/#if]
                 <li class="menu-first">
-                    <a href="#">
+                	[#assign hrefLink = cmsfn.link(awardsContentNode)]
+                	[#assign hrefLink = hrefLink?replace("/awards/","/awards/about/")]
+                    <a href="${hrefLink}">
                         <span>${i18n['caar-templating-module.award.home.awardAbout.label']}</span>
                         <div class="icon hidden"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>

@@ -9,7 +9,12 @@ areas:
     enabled: true
     type: noComponent
     areas:
-      content:
+      breadcrum:
+        type: single
+        availableComponents:
+          breadcrum-awards-component:
+            id: caar-templating-module:components/breadcrum-awards-component
+      subheader:
         type: single
         availableComponents:
           sub-header-component:
