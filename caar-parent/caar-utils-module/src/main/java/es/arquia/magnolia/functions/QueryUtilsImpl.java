@@ -5,8 +5,10 @@ import static es.arquia.magnolia.constants.UtilsConstants.jcrLanguage;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jcr.LoginException;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.query.Query;
 import javax.jcr.query.QueryManager;
@@ -16,7 +18,7 @@ import info.magnolia.context.MgnlContext;
 
 public class QueryUtilsImpl implements QueryUtils {
 	
-	public List<Node> executeSelectQuery(String sqlQuery, String workspace, int limit, int offset) throws Exception {
+	public List<Node> executeSelectQuery(String sqlQuery, String workspace, int limit, int offset) throws LoginException, RepositoryException {
 		List<Node> nodeList = new ArrayList<>();
 		
 		Session session = MgnlContext.getJCRSession(workspace);

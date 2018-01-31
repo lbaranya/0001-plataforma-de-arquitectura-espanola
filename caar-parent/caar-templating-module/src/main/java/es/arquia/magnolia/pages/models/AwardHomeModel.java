@@ -30,10 +30,6 @@ public class AwardHomeModel <T extends ConfiguredTemplateDefinition> extends Ren
 		return awardManager.getBiennialList();
 	}
 	
-	public List<Node> getStandardAwardList() throws RepositoryException{
-		return awardManager.getStandardAwardList();
-	}
-	
 	public Node getEditionStateOpen(Node node) throws RepositoryException{
 		return awardManager.getEditionStateOpen(node);
 	}
