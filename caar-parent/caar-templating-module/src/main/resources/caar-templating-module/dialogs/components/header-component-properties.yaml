@@ -143,46 +143,10 @@ form:
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
           label: caar-templating-module.templates.components.header-component.dialog.biennals.biennials.label
-        - name: beauBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.biennials.BEAU.label
-        - name: biauBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.biennials.BIAU.label
-        - name: biennaleBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.biennials.biennale.label
         - name: awardsBA
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           appName: pages
           label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.label
-        - name: nationalBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.national.label
-        - name: mvrBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.MVR.label
-        - name: etBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.ET.label
-        - name: arquiaNextBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.arquiaNext.label
-        - name: arquiaThesisBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.arquiaThesis.label
-        - name: europanBA
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          appName: pages
-          label: caar-templating-module.templates.components.header-component.dialog.biennals.awards.europan.label
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      

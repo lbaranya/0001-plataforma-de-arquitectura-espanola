@@ -7,6 +7,14 @@
   <class>es.arquia.magnolia.CaarAwardsApp</class>
   <versionHandler>es.arquia.magnolia.setup.CaarAwardsAppVersionHandler</versionHandler>
   <version>${project.version}</version>
+  
+  <components>
+	<id>main</id>
+	<component>
+		<type>es.arquia.magnolia.functions.QueryUtils</type>
+		<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
+	</component>
+  </components>
 
   <dependencies>
     <dependency>

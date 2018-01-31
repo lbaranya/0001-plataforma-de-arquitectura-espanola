@@ -3,6 +3,7 @@
 [#assign navigationRootPage = navfn.rootPage(content)!]
  
 [@navigation navParentItem=navigationRootPage depth=1 expandAll=true /] --]
+[#assign awardsInstance = model.getInstance()!""]
 <!--Menu: cmp-menu-->
 <section class="cmp-menu">
     <div class="container-fluid">
@@ -74,38 +75,23 @@
                         <li class="submenu-link">
                             <a href="${cmsfn.link(cmsfn.contentByPath(content.biennialsBA!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.label']!"bienales"}</a>
                             <ul class="menu-level3">
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.beauBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.BEAU.label']!"BEAU"}</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.biauBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.BIAU.label']!"BIAU"}</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.biennaleBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.biennials.biennale.label']!"Biennale"}</a>
-                                </li>
+                            	[#assign biennialsList = model.getBiennialsList()!]
+                            	[#list biennialsList as biennialNode]
+	                                <li class="level3-item">
+	                                    <a href="${cmsfn.externalLink(biennialNode,"awardExternalURL")!"#"}" class="level3-link">${awardsInstance.getAwardName(biennialNode)!""}</a>
+	                                </li>
+                                [/#list]
                             </ul>
                         </li>
                         <li class="submenu-link">
                             <a href="${cmsfn.link(cmsfn.contentByPath(content.awardsBA!"/")!"/")!"#"}">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.label']!"premios"}</a>
                             <ul class="menu-level3">
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.nationalBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.national.label']!"premio Nacional"}</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.mvrBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.MVR.label']!"premio Mies Van der Rohe"}</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.etBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.ET.label']!"premio Eduardo Torroja"}</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.arquiaNextBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.arquiaNext.label']!"premio Arquia próxima"}</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.arquiaThesisBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.arquiaThesis.label']!"premio Arquia tesis"}</a>
-                                </li>
-                                <li class="level3-item">
-                                    <a href="${cmsfn.link(cmsfn.contentByPath(content.europanBA!"/")!"/")!"#"}" class="level3-link">${i18n['caar-templating-module.templates.components.header-component.biennals.awards.europan.label']!"Europan"}</a>
-                                </li>
+                            	[#assign awardsList = model.getAwardsList()!]
+                            	[#list awardsList as awardNode]
+	                                <li class="level3-item">
+                                    <a href="${cmsfn.externalLink(awardNode,"awardExternalURL")!"#"}" class="level3-link">${awardsInstance.getAwardName(awardNode)!""}</a>
+                                	</li>
+                                [/#list]
                             </ul>
                         </li>
                     </ul>

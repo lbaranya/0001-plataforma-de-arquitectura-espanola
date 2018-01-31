@@ -19,8 +19,8 @@
 			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManagerImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.manager.AwardManager</type>
-			<implementation>es.arquia.magnolia.manager.AwardManagerImpl</implementation>
+			<type>es.arquia.magnolia.manager.AwardsManager</type>
+			<implementation>es.arquia.magnolia.manager.AwardsManagerImpl</implementation>
 		</component>
 	</components>
 
