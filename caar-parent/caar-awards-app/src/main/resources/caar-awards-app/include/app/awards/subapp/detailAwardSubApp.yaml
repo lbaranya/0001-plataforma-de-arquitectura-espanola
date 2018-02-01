@@ -22,6 +22,7 @@ editor:
           - name: type
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-awards-app.awardData.type.label
+            required: true
             options:
               - name: Biennial
                 label: caar-awards-app.awardData.type.biennial.label
@@ -33,6 +34,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.awardData.awardName.label
             i18n: true
+            required: true
           - name: awardDescription
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-awards-app.awardData.awardDescription.label
@@ -41,6 +43,7 @@ editor:
           - name: awardLogo
             label: caar-awards-app.awardData.awardLogo.label
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            required: true
             targetWorkspace: dam
             appName: assets
             identifierToPathConverter:
@@ -53,6 +56,7 @@ editor:
           - name: awardHeaderBackground
             label: caar-awards-app.awardData.awardHeaderBackground.label
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            required: true
             targetWorkspace: dam
             appName: assets
             identifierToPathConverter:

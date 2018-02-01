@@ -22,6 +22,7 @@ editor:
           - name: state
             label: caar-awards-app.files.edition.editionData.state.label
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+            required: true
             options:
               - name: open
                 value: open
