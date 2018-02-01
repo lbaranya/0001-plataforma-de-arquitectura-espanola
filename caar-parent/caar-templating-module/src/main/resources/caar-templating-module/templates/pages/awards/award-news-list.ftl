@@ -1,13 +1,15 @@
-[@cms.area name="content" /]
 [#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
 [#if nodeJcrPath?has_content]
 	[#assign currentLanguage = cmsfn.language()!""]
 	[#assign awardContent = cmsfn.contentByPath(nodeJcrPath, "awards")!""]
-	[#assign awardContentNode = cmsfn.asJCRNode(awardContent)!""]
+	[#assign awardsContentNode = cmsfn.asJCRNode(awardContent)!""]
 	[#assign awards = model.parent.getAwardInstance()!""]
-	[#assign categoriesList = awards.getAwardCategoriesList(awardContentNode)!""]
+	[#assign categoriesList = awards.getAwardCategoriesList(awardsContentNode)!""]
 	[#assign listNews = model.parent.getCategorizedNewsList(categoriesList)!""]
 	[#assign news = model.parent.getNewsInstance()!""]
+	[@cms.area name="content" contextAttributes={"awardHomeName" : awards.getAwardName(awardsContentNode)}/]
+	[@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
+	[@cms.area name="subheader" /]
 	<section class="cmp-last-news">
         <div class="container">
 	        <div class="row">
@@ -36,20 +38,6 @@
 	                            <div class="noticias-links">
 			                    	<a href='${cmsfn.link(newsNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
 				                </div>
-				                <div class="evento-footer-rrss">
-				                    <a href="#" class="rrss-link">
-				                        <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
-				                    </a>
-				                    <a href="#" class="rrss-link">
-				                        <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
-				                    </a>
-				                    <a href="#" class="rrss-link">
-				                        <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
-				                    </a>
-				                    <a href="#" class="rrss-link">
-				                        <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
-				                    </a>
-				                </div>
 		                    </div>
 		                </div>
 			        </div>
@@ -57,4 +45,8 @@
             </div>
 	    </div>
 	</section>
+[#else]
+	[@cms.area name="content" /]
+	[@cms.area name="submenu-award" /]
+	[@cms.area name="subheader" /]
 [/#if]

@@ -1,10 +1,10 @@
-[@cms.area name="content" /]
 [#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
 [#if nodeJcrPath?has_content]
 [#assign currentLanguage = cmsfn.language()!""]
 [#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 [#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 [#assign awards = model.parent.getInstance()!""]
+[@cms.area name="content" contextAttributes={"awardHomeName":awards.getAwardName(awardsContentNode)}/]
 [@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
 <section class="cmp-banner-bienales">
 	[#assign imageBackground = "#"]
@@ -68,5 +68,6 @@
         </div>
     </section>
 [#else]
+	[@cms.area naem="content" /]
 	[@cms.area name="submenu-award" /]
 [/#if]

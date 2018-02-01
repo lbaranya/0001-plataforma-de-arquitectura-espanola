@@ -11,5 +11,15 @@ areas:
       content:
         type: single
         availableComponents:
-          breadcrum-component:
-            id: caar-templating-module:components/breadcrum-component
+          breadcrum-awards-component:
+            id: caar-templating-module:components/breadcrum-awards-component
+      subheader:
+        type: single
+        availableComponents:
+          sub-header-component:
+            id: caar-templating-module:components/sub-header-component
+      submenu-award:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/submenu-award
