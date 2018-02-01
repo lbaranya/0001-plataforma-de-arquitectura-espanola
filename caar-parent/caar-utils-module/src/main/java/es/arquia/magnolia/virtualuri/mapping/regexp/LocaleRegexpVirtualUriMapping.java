@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.virtualuri.mapping.RegexpVirtualUriMapping;
 
-public class LocaleRegexpVirtualURIMapping extends RegexpVirtualUriMapping {
-	private static final Logger log = LoggerFactory.getLogger(LocaleRegexpVirtualURIMapping.class);
+public class LocaleRegexpVirtualUriMapping extends RegexpVirtualUriMapping {
+	private static final Logger log = LoggerFactory.getLogger(LocaleRegexpVirtualUriMapping.class);
 
     private Pattern regexp;
 

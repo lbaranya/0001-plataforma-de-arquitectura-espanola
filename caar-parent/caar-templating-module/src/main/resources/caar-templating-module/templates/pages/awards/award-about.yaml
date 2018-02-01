@@ -1,0 +1,21 @@
+title: AwardAbout
+renderType: site
+visible: true
+dialog: caar-templating-module:pages/award-about-page-properties
+modelClass: es.arquia.magnolia.pages.models.AwardAboutModel
+areas:
+  main:
+    templateScript: /caar-templating-module/templates/pages/awards/award-about.ftl
+    enabled: true
+    type: noComponent
+    areas:
+      breadcrum:
+        type: single
+        availableComponents:
+          breadcrum-awards-component:
+            id: caar-templating-module:components/breadcrum-awards-component
+      subheader:
+        type: single
+        availableComponents:
+          sub-header-component:
+            id: caar-templating-module:components/sub-header-component
