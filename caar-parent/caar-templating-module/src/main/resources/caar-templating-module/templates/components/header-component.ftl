@@ -78,7 +78,7 @@
                             	[#assign biennialsList = model.getBiennialsList()!]
                             	[#list biennialsList as biennialNode]
 	                                <li class="level3-item">
-	                                    <a href="${cmsfn.externalLink(biennialNode,"awardExternalURL")!"#"}" class="level3-link">${awardsInstance.getAwardName(biennialNode)!""}</a>
+	                                    <a href="${cmsfn.link(biennialNode)!"#"}" class="level3-link">${awardsInstance.getAwardName(biennialNode)!""}</a>
 	                                </li>
                                 [/#list]
                             </ul>
@@ -89,7 +89,7 @@
                             	[#assign awardsList = model.getAwardsList()!]
                             	[#list awardsList as awardNode]
 	                                <li class="level3-item">
-                                    <a href="${cmsfn.externalLink(awardNode,"awardExternalURL")!"#"}" class="level3-link">${awardsInstance.getAwardName(awardNode)!""}</a>
+                                    <a href="${cmsfn.link(awardNode)!"#"}" class="level3-link">${awardsInstance.getAwardName(awardNode)!""}</a>
                                 	</li>
                                 [/#list]
                             </ul>
