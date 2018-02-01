@@ -9,8 +9,14 @@ import static es.arquia.magnolia.constants.AwardConstants.awardName;
 import static es.arquia.magnolia.constants.AwardConstants.categoriesList;
 import static es.arquia.magnolia.constants.AwardConstants.type;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import javax.jcr.Node;
+import javax.jcr.Property;
 import javax.jcr.RepositoryException;
+import javax.jcr.Value;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -75,11 +81,16 @@ public class Award {
 		}
 	}
 	
-	public String getAwardCategoriesList(Node node) throws RepositoryException{
-		try {
-			return node.getProperty(categoriesList).getValues().toString();
-		}catch(RepositoryException e) {
-			return "";
+	public List<String> getAwardCategoriesList(Node node) throws RepositoryException{
+		try{
+			List<String> finalList = new ArrayList<>();
+			Value[] valuesList = node.getProperty(categoriesList).getValues();
+			for (Value value : valuesList) {
+				finalList.add(value.getString());
+			}
+			return finalList;
+		}catch(Exception e) {
+			return null;
 		}
 	}
 
