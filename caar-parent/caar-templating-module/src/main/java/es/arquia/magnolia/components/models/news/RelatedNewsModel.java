@@ -1,10 +1,12 @@
 package es.arquia.magnolia.components.models.news;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.jcr.Node;
-import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 
+import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.manager.NewsManager;
 import info.magnolia.rendering.model.RenderingModel;
@@ -16,13 +18,18 @@ public class RelatedNewsModel <T extends ConfiguredTemplateDefinition> extends R
 	private NewsManager newsManager;
 	
 	@Inject
-	public RelatedNewsModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager) throws PathNotFoundException, RepositoryException {
+	public RelatedNewsModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager){
         super(content, definition, parent);
         this.newsManager = newsManager;
     }
 	
 	public News getInstance() {
 		return newsManager.getInstance();
+	}
+	
+	public List<Node> getCategorizedImportantNewsList(Node node) throws RepositoryException{
+		Award tmpAward = new Award();
+		return newsManager.getCategorizedImportantNewsList(tmpAward.getAwardCategoriesList(node), 4);
 	}
 	
 }

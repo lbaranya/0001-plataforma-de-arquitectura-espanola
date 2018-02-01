@@ -7,6 +7,7 @@ import static es.arquia.magnolia.constants.AwardConstants.awardHeaderBackground;
 import static es.arquia.magnolia.constants.AwardConstants.awardLogo;
 import static es.arquia.magnolia.constants.AwardConstants.awardName;
 import static es.arquia.magnolia.constants.AwardConstants.categoriesList;
+import static es.arquia.magnolia.constants.AwardConstants.relatedNewsList;
 import static es.arquia.magnolia.constants.AwardConstants.type;
 
 import java.util.ArrayList;

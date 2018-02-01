@@ -19,3 +19,8 @@ areas:
         availableComponents:
           submenu-award:
             id: caar-templating-module:components/submenu-award
+      relatedNews:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/related-news-component

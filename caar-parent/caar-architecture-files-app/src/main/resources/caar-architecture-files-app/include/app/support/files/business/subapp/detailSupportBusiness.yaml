@@ -19,16 +19,16 @@ editor:
       - name: businessData
         label: caar-architecture-files-app.files.support.business.businessData.label
         fields:
-          - name: FS4.1.1
+          - name: FS4_1_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.businessType.label
             i18n: true
             required: true
-          - name: FS4.1.2
+          - name: FS4_1_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.businessLegalName.label
             required: true
-          - name: FS4.1.3
+          - name: FS4_1_3
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
             targetWorkspace: dam
             appName: assets
@@ -37,27 +37,27 @@ editor:
               class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
             contentPreviewDefinition:
               contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-          - name: FS4.1.4
+          - name: FS4_1_4
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.business.businessData.constitutionDate.label
-          - name: FS4.1.5
+          - name: FS4_1_5
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.departmentWebPage.label
-          - name: FS4.1.6
+          - name: FS4_1_6
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.departmentCity.label
             required: true
-          - name: FS4.1.7
+          - name: FS4_1_7
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
             label: caar-architecture-files-app.files.support.business.businessData.departmentCountry.label
             required: true
           # user picker
-          - name: FS4.1.8
+          - name: FS4_1_8
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.departmentComponents.label
             transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
@@ -67,11 +67,11 @@ editor:
               label: caar-architecture-files-app.files.support.business.businessData.departmentComponents.picker.label
               appName: caar-architecture-files-app
               targetWorkspace: architecture-files
-          - name: FS4.1.9
+          - name: FS4_1_9
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.biographicReview.label
             i18n: true
-          - name: FS4.1.10
+          - name: FS4_1_10
             class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.CV.label
             options:
@@ -96,22 +96,22 @@ editor:
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 label: caar-architecture-files-app.files.support.business.businessData.richTextMessage.label
                 i18n: true
-          - name: FS4.1.11
+          - name: FS4_1_11
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.awards.label
             required: true
       - name: additionalInfoData
         label: caar-architecture-files-app.files.support.business.additionalInfoData.label
         fields:
-          - name: FS4.2.1
+          - name: FS4_2_1
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.business.additionalInfoData.additionalInfo.label
             i18n: true
-          - name: FS4.2.2
+          - name: FS4_2_2
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.business.additionalInfoData.annexes.label
             i18n: true
-          - name: FS4.2.3
+          - name: FS4_2_3
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.business.additionalInfoData.dossier.label
             i18n: true
