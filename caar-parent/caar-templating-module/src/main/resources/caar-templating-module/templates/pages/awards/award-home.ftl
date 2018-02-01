@@ -5,7 +5,7 @@
 [#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 [#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 [#assign awards = model.parent.getInstance()!""]
-[#include "submenu-award.ftl"]
+[@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
 <section class="cmp-banner-bienales">
 	[#assign imageBackground = "#"]
 	[#assign imgItemKey = awards.getAwardHeaderBackground(awardsContentNode)!]
@@ -67,4 +67,6 @@
             </div>
         </div>
     </section>
+[#else]
+	[@cms.area name="submenu-award" /]
 [/#if]

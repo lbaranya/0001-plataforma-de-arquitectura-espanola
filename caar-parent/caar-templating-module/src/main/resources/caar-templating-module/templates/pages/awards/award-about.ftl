@@ -5,7 +5,9 @@
 	[#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 	[#assign awards = model.parent.getInstance()!""]
 	[@cms.area name="breadcrum" /]
-	[#include "submenu-award.ftl"]
+	[#-- [@cms.component content=content template="submenu-award" /] --]
+	[#--  [#include "submenu-award.ftl"]--]
+	[@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
 	[@cms.area name="subheader" /]
 	<section class="cmp-nota-legal">
 		<div class="container">
@@ -18,5 +20,6 @@
 	</section>
 [#else]
 	[@cms.area name="breadcrum" /]
+	[@cms.area name="submenu-award" /]
 	[@cms.area name="subheader" /]
 [/#if]

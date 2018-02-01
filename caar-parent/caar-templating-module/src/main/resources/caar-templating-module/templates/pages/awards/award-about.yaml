@@ -19,3 +19,8 @@ areas:
         availableComponents:
           sub-header-component:
             id: caar-templating-module:components/sub-header-component
+      submenu-award:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/submenu-award

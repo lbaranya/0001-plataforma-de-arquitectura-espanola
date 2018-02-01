@@ -14,3 +14,8 @@ areas:
         availableComponents:
           breadcrum-component:
             id: caar-templating-module:components/breadcrum-component
+      submenu-award:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/submenu-award
