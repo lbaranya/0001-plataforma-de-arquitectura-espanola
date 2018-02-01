@@ -17,20 +17,6 @@
 	                                        <h4 class="title">${newsInstance.getHeadline(newsNode, language)}</h4>
 	                                        <div class="noticias-links">
 	                                            <a class="more-link" href="${cmsfn.link(newsNode)}">${i18n['caar-templating-module.templates.components.news-diary-component.read.label']}</a>
-	                                            <div class="evento-footer-rrss">
-	                                                <a href="#" class="rrss-link">
-	                                                    <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
-	                                                </a>
-	                                                <a href="#" class="rrss-link">
-	                                                    <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
-	                                                </a>
-	                                                <a href="#" class="rrss-link">
-	                                                    <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
-	                                                </a>
-	                                                <a href="#" class="rrss-link">
-	                                                    <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
-	                                                </a>
-	                                            </div>
 	                                        </div>
 	                                    </div>
 									</div>
@@ -89,20 +75,6 @@
 		                                            <span class="more-link">${i18n['caar-templating-module.templates.components.news-diary-component.read.label']}</span>
 		                                        </div>
 		                                    </a>
-		                                    <div class="evento-footer-rrss">
-		                                        <a href="" class="rrss-link">
-		                                            <i class="fa fa-facebook rrss-icon" aria-hidden="true"></i>
-		                                        </a>
-		                                        <a href="#" class="rrss-link">
-		                                            <i class="fa fa-twitter rrss-icon" aria-hidden="true"></i>
-		                                        </a>
-		                                        <a href="#" class="rrss-link">
-		                                            <i class="fa fa-pinterest rrss-icon" aria-hidden="true"></i>
-		                                        </a>
-		                                        <a href="#" class="rrss-link">
-		                                            <i class="fa fa-google-plus rrss-icon" aria-hidden="true"></i>
-		                                        </a>
-		                                    </div>
 		                                </div>
 		                            </div>
 	                            [/#if]
