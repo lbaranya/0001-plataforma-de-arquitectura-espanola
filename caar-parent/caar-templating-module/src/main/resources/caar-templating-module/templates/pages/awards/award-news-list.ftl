@@ -16,23 +16,25 @@
 	                    <div class="noticias-container">
 	                        <div class="noticias-item">
 	                            <div class="container-destacado">
-		                         [#assign imgItemKey = news.getImage(newsNode)]
-		                        	[#if imgItemKey?has_content]
-		                        		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "414")]
-		                        		[#if imgMediaRendition??]
-		                        			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
-		                        			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-		                        			[#if imageAlt?has_content]
-		                        				[#assign imageAlternativeText = imageAlt.alternative!""]
-		                        			[/#if]
-		                            		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
-		                            	[/#if]
+		                         [#assign imgItemKey = news.getImage(newsNode)!]
+		                         	[#if imgItemKey??]
+			                        	[#if imgItemKey?has_content]
+			                        		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "414")!]
+			                        		[#if imgMediaRendition?has_content]
+			                        			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
+			                        			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+			                        			[#if imageAlt?has_content]
+			                        				[#assign imageAlternativeText = imageAlt.alternative!""]
+			                        			[/#if]
+			                            		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
+			                            	[/#if]
+			                            [/#if]
 		                            [/#if]
 	                        	</div>
 	                            <h4 class="title">${news.getHeadline(newsNode, currentLanguage)!""}</h4>
 	                            <p>${news.getDescription(newsNode, currentLanguage)!""}</p>
 	                            <div class="noticias-links">
-			                    	<a href='${cmsfn.link(newsNode)!"#"}'><span class="more-link" alt="leer más"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
+			                    	<a href='${cmsfn.link(newsNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
 				                </div>
 				                <div class="evento-footer-rrss">
 				                    <a href="#" class="rrss-link">
