@@ -1,6 +1,6 @@
 renderType: site
 dialog: caar-templating-module:pages/home-page-properties
-title: Portada
+title: caar-templating-module.pages.home-page.dialog.title
 visible: true
 areas:
   top-banner:

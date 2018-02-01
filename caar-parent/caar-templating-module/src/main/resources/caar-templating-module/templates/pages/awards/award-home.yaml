@@ -1,4 +1,4 @@
-title: AwardHome
+title: caar-templating-module.pages.award-home.dialog.title
 renderType: site
 visible: true
 dialog: caar-templating-module:pages/award-home-page-properties

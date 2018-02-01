@@ -1,4 +1,4 @@
-title: caar-templating-module.components.award-news-list.dialog.title   
+title: caar-templating-module.pages.award-news-list.dialog.title  
 renderType: site
 visible: true
 modelClass: es.arquia.magnolia.pages.models.AwardNewsListModel
