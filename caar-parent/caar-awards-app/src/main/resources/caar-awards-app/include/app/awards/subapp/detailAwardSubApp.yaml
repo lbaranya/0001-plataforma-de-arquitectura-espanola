@@ -73,10 +73,12 @@ editor:
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueTransformer
             field:
-              name: category
-              class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
-              repository: category
-              path: caar/awards/
+              name: linkField
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              targetWorkspace: category
+              appName: categories
+              identifierToPathConverter:
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
   actions:
     - name: commit
     - name: cancel
