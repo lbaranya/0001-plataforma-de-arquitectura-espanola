@@ -37,6 +37,8 @@
                     </a>
                 </li>
                 [/#if]
+                [#assign aboutText = awards.getAwardAboutText(awardsContentNode)]
+                [#if aboutText?has_content]
                 <li class="menu-first">
                 	[#assign hrefLink = cmsfn.link(awardsContentNode)]
                 	[#assign hrefLink = hrefLink?replace("/awards/","/awards/about/")]
@@ -45,6 +47,7 @@
                         <div class="icon hidden"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
                 </li>
+                [/#if]
                 <li class="menu-first">
                     <a href="#">
                         <span>${i18n['caar-templating-module.award.home.awardNews.label']}</span>
