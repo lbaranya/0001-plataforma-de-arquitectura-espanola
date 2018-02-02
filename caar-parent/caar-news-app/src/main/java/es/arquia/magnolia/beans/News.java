@@ -24,67 +24,47 @@ import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.functions.LocalizedSuffixUtils;
+import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
 public class News {
 
-	private LocalizedSuffixUtils localizedSuffix;
+	private I18nContentSupport i18nContentSupport;
 	
 	@Inject
-	public News(final LocalizedSuffixUtils localizedSuffix) {
-		this.localizedSuffix = localizedSuffix;
+	public News(final I18nContentSupport i18nContentSupport) {
+		this.i18nContentSupport = i18nContentSupport;
 	}
 
-	public String getHeadline(Node node, String currentLanguage) throws RepositoryException {
+	public String getHeadline(Node node) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(headTitle + localizedSuffix.getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, headTitle).getString();
 		}catch(Exception e) {
-			try {
-				return node.getProperty(headTitle).getString();
-			}catch(Exception ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 
-	public String getLongTitle(Node node, String currentLanguage) throws RepositoryException {
+	public String getLongTitle(Node node) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(longTitle + localizedSuffix.getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, longTitle).getString();
 		}catch(Exception e) {
-			try {
-				return node.getProperty(longTitle).getString();
-			}catch(Exception ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 
-	public String getDescription(Node node, String currentLanguage) throws RepositoryException{
+	public String getDescription(Node node) throws RepositoryException{
 		try{
-			Property tmp = node.getProperty(descriptionShort + localizedSuffix.getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, descriptionShort).getString();
 		}catch(Exception e) {
-			try {
-				return node.getProperty(descriptionShort).getString();
-			}catch(Exception ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 
-	public String getLongDescription(Node node, String currentLanguage) throws RepositoryException{
+	public String getLongDescription(Node node) throws RepositoryException{
 		try{
-			Property tmp = node.getProperty(descriptionLong + localizedSuffix.getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, descriptionLong).getString();
 		}catch(Exception e) {
-			try {
-				return node.getProperty(descriptionLong).getString();
-			}catch(Exception ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 
@@ -142,14 +122,9 @@ public class News {
 
 	public String getMedium(Node node, String currentLanguage) throws RepositoryException{
 		try{
-			Property tmp = node.getProperty(informativeMedium + localizedSuffix.getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, informativeMedium).getString();
 		}catch(Exception e) {
-			try {
-				return node.getProperty(informativeMedium).getString();
-			}catch(Exception ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 

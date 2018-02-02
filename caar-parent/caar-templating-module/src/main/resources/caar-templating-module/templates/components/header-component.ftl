@@ -4,7 +4,7 @@
  
 [@navigation navParentItem=navigationRootPage depth=1 expandAll=true /] --]
 [#assign awardsInstance = model.getInstance()!""]
-[#assign currentLanguage = cmsfn.language()!""]
+
 <!--Menu: cmp-menu-->
 <section class="cmp-menu">
     <div class="container-fluid">
@@ -79,7 +79,7 @@
                             	[#assign biennialsList = model.getBiennialsList()!]
                             	[#list biennialsList as biennialNode]
 	                                <li class="level3-item">
-	                                    <a href="${cmsfn.link(biennialNode)!"#"}" class="level3-link">${awardsInstance.getAwardName(biennialNode, currentLanguage)!""}</a>
+	                                    <a href="${cmsfn.link(biennialNode)!"#"}" class="level3-link">${awardsInstance.getAwardName(biennialNode)!""}</a>
 	                                </li>
                                 [/#list]
                             </ul>
@@ -90,7 +90,7 @@
                             	[#assign awardsList = model.getAwardsList()!]
                             	[#list awardsList as awardNode]
 	                                <li class="level3-item">
-                                    <a href="${cmsfn.link(awardNode)!"#"}" class="level3-link">${awardsInstance.getAwardName(awardNode, currentLanguage)!""}</a>
+                                    <a href="${cmsfn.link(awardNode)!"#"}" class="level3-link">${awardsInstance.getAwardName(awardNode)!""}</a>
                                 	</li>
                                 [/#list]
                             </ul>

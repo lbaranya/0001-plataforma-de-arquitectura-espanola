@@ -18,7 +18,7 @@
                <div class="col-md-3 col-sm-6 col-xs-12">
                    <div class="noticias-container">
                        <div class="noticias-item">
-                           <h4 class="title">${news.getHeadline(relatedNews, language)}</h4>
+                           <h4 class="title">${news.getHeadline(relatedNews)}</h4>
                            <div class="container-destacado">
                            	[#assign imgItemKey = news.getImage(relatedNews)!]
 			            	[#if imgItemKey??]
@@ -35,7 +35,7 @@
 		                    	[/#if]
 		                    [/#if]
 		                    </div>
-		                    <p>${news.getDescription(relatedNews, language)!}</p>
+		                    <p>${news.getDescription(relatedNews)!}</p>
                            <div class="noticias-links">
                                <a href="${cmsfn.link(relatedNews)}"><span class="more-link">${i18n['caar-templating-module.templates.components.related-news-component.read.label']}</span></a>
                            </div>

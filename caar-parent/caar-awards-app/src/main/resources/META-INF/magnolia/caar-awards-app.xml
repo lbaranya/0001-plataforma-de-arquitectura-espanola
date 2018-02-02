@@ -14,10 +14,6 @@
 		<type>es.arquia.magnolia.functions.QueryUtils</type>
 		<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
 	</component>
-	<component>
-		<type>es.arquia.magnolia.functions.LocalizedSuffixUtils</type>
-		<implementation>es.arquia.magnolia.functions.LocalizedSuffixUtilsImpl</implementation>
-	</component>
   </components>
 
   <dependencies>

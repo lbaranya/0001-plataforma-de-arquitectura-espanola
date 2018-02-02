@@ -1,6 +1,6 @@
 [#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
 [#if nodeJcrPath?has_content]
-	[#assign currentLanguage = cmsfn.language()!""]
+	
 	[#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 	[#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 	[#assign awards = model.parent.getInstance()!""]
@@ -13,7 +13,7 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-md-12">
-						${awards.getAwardAboutText(awardsContentNode, currentLanguage)!}
+						${awards.getAwardAboutText(awardsContentNode)!}
 				</div>
 			</div>
 		</div>

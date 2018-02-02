@@ -1,4 +1,4 @@
-[#assign currentLanguage = cmsfn.language()!""]
+
 [#assign nodeJcrPath = ctx.getParameter('newsPath')!?html]
 [#if nodeJcrPath?has_content]
 [#assign newsContent = cmsfn.contentByPath(nodeJcrPath, "news")]
@@ -29,11 +29,11 @@
         <div class="container">
             <div class="noticia">
                 <div class="header">
-                    <h3>${news.getLongTitle(newsContentNode, currentLanguage)!""}</h3>
+                    <h3>${news.getLongTitle(newsContentNode)!""}</h3>
                     <p>${news.getDate(newsContentNode)!""} <span>/ AE</span></p>
                 </div>
                 <div class="info-noticia">
-                    ${news.getLongDescription(newsContentNode, currentLanguage)!""}
+                    ${news.getLongDescription(newsContentNode)!""}
                 </div>
             </div>
         </div>

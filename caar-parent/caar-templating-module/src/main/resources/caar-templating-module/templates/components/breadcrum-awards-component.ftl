@@ -3,7 +3,7 @@
   --]
 [#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
 [#if nodeJcrPath?has_content]
-	[#assign currentLanguage = cmsfn.language()!""]
+	
 	[#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 	[#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 	[#assign awards = model.getInstance()!""]

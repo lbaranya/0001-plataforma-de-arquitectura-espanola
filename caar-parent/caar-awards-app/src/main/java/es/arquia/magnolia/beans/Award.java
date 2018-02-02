@@ -23,15 +23,15 @@ import javax.jcr.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.functions.LocalizedSuffixUtils;
+import info.magnolia.cms.i18n.I18nContentSupport;
 
 public class Award {
 	
-	private LocalizedSuffixUtils localizedSuffix;
+	private I18nContentSupport i18nContentSupport;
 	
 	@Inject
-	public Award(final LocalizedSuffixUtils localizedSuffix) {
-		this.localizedSuffix = localizedSuffix;
+	public Award(final I18nContentSupport i18nContentSupport) {
+		this.i18nContentSupport = i18nContentSupport;
 	}
 	
 	private static final Logger log = LoggerFactory.getLogger(Award.class);
@@ -44,27 +44,19 @@ public class Award {
 		}
 	}
 	
-	public String getAwardName(Node node, String currentLanguage) throws RepositoryException{
+	public String getAwardName(Node node) throws RepositoryException{
 		try {
-			return node.getProperty(awardName + localizedSuffix.getLocalizedSuffix(currentLanguage)).getString();
+			return i18nContentSupport.getProperty(node, awardName).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(awardName).getString();
-			}catch(RepositoryException e2) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
-	public String getAwardDescription(Node node, String currentLanguage) throws RepositoryException{
+	public String getAwardDescription(Node node) throws RepositoryException{
 		try {
-			return node.getProperty(awardDescription + localizedSuffix.getLocalizedSuffix(currentLanguage)).getString();
+			return i18nContentSupport.getProperty(node, awardDescription).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(awardDescription).getString();
-			}catch(RepositoryException e2) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
@@ -92,15 +84,11 @@ public class Award {
 		}
 	}
 	
-	public String getAwardAboutText(Node node, String currentLanguage) throws RepositoryException{
+	public String getAwardAboutText(Node node) throws RepositoryException{
 		try {
-			return node.getProperty(awardAboutText + localizedSuffix.getLocalizedSuffix(currentLanguage)).getString();
+			return i18nContentSupport.getProperty(node, awardAboutText).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(awardAboutText).getString();
-			}catch(RepositoryException e2) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
@@ -117,32 +105,24 @@ public class Award {
 		}
 	}
 	
-	public String getEditionAnnouncementButtonText(Node node, String currentLanguage) throws RepositoryException{
+	public String getEditionAnnouncementButtonText(Node node) throws RepositoryException{
 		if(node.isNodeType(editionNodeType)) {
 			try {
-				return node.getProperty(editionAnnouncementButtonText + localizedSuffix.getLocalizedSuffix(currentLanguage)).getString();
+				return i18nContentSupport.getProperty(node, editionAnnouncementButtonText).getString();
 			}catch(RepositoryException e) {
-				try {
-					return node.getProperty(editionAnnouncementButtonText).getString();
-				}catch(RepositoryException e2) {
-					return "";
-				}
+				return "";
 			}
 		}else {
 			return "";
 		}
 	}
 	
-	public String getEditionEnrollmentButtonText(Node node, String currentLanguage) throws RepositoryException{
+	public String getEditionEnrollmentButtonText(Node node) throws RepositoryException{
 		if(node.isNodeType(editionNodeType)) {
 			try {
-				return node.getProperty(editionEnrollmentButtonText + localizedSuffix.getLocalizedSuffix(currentLanguage)).getString();
+				return i18nContentSupport.getProperty(node, editionEnrollmentButtonText).getString();
 			}catch(RepositoryException e) {
-				try {
-					return node.getProperty(editionEnrollmentButtonText).getString();
-				}catch(RepositoryException e2) {
-					return "";
-				}
+				return "";
 			}
 		}else {
 			return "";
