@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
+import es.arquia.magnolia.beans.AwardImpl;
 import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.manager.AwardManager;
 import info.magnolia.rendering.model.RenderingModel;

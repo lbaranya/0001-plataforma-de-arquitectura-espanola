@@ -16,6 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.beans.News;
+import es.arquia.magnolia.beans.NewsImpl;
 import es.arquia.magnolia.functions.QueryUtils;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
@@ -24,13 +25,13 @@ public class NewsManagerImpl implements NewsManager{
 
 	private static final Logger log = LoggerFactory.getLogger(NewsManagerImpl.class);
 	private QueryUtils queryUtils;
-	private I18nContentSupport i18nContentSupport;
+	private News news;
 	private boolean lastRowOfNews = false;
 
 	@Inject
-	public NewsManagerImpl(final QueryUtils queryUtils, final I18nContentSupport i18nContentSupport) {
+	public NewsManagerImpl(final QueryUtils queryUtils, final News news) {
 		this.queryUtils = queryUtils;
-		this.i18nContentSupport = i18nContentSupport;
+		this.news = news;
 	}
 
 	@Override
@@ -90,7 +91,7 @@ public class NewsManagerImpl implements NewsManager{
 
 	@Override
 	public News getInstance() {
-		return new News(i18nContentSupport);
+		return this.news;
 	}
 
 	private String categorizedNewsListQuery(List<String> categoriesList) {

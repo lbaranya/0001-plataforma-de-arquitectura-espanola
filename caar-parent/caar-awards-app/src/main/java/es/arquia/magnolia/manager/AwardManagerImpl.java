@@ -16,18 +16,17 @@ import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.functions.QueryUtils;
-import info.magnolia.cms.i18n.I18nContentSupport;
 
 public class AwardManagerImpl implements AwardManager{
 	
 	private QueryUtils queryUtils;
 	
-	private I18nContentSupport i18nContentSupport;
+	private Award award;
 	
 	@Inject
-	public AwardManagerImpl(final QueryUtils queryUtils, final I18nContentSupport i18nContentSupport) {
+	public AwardManagerImpl(final QueryUtils queryUtils, final Award award) {
         this.queryUtils = queryUtils;
-        this.i18nContentSupport = i18nContentSupport;
+        this.award = award;
     }
 
 	@Override
@@ -48,7 +47,7 @@ public class AwardManagerImpl implements AwardManager{
 
 	@Override
 	public Award getInstance() {
-		return new Award(i18nContentSupport);
+		return this.award;
 	}
 
 	@Override
