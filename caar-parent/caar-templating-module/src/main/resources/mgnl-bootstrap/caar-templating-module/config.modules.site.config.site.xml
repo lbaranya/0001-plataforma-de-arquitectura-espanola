@@ -111,7 +111,7 @@
             <sv:value>caar-templating-module:pages/content-page</sv:value>
           </sv:property>
         </sv:node>
-        <sv:node sv:name="awardsHome">
+        <sv:node sv:name="awards">
           <sv:property sv:name="jcr:primaryType" sv:type="Name">
             <sv:value>mgnl:contentNode</sv:value>
           </sv:property>
