@@ -10,9 +10,11 @@
             <div class="col-md-12 title">
                 <span class="categoria">${content.title!""}</span>
             </div>
-  [#assign relatedNewsNodeList = model.getCategorizedImportantNewsList(awardsContentNode)]
+  [#assign relatedNewsNodeList = cmsfn.children(content.newsPicker)!]
   [#if relatedNewsNodeList?has_content]
-		[#list relatedNewsNodeList as relatedNews]
+		[#list relatedNewsNodeList as relatedNewsContent]
+			[#assign relatedNewsContentMap = cmsfn.contentByPath(relatedNewsContent.newsPicker, "news")!]
+			[#assign relatedNews = cmsfn.asJCRNode(relatedNewsContentMap)!]
                <div class="col-md-3 col-sm-6 col-xs-12">
                    <div class="noticias-container">
                        <div class="noticias-item">
