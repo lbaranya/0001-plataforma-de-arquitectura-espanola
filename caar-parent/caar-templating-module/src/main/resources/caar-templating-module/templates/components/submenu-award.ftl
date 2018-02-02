@@ -1,3 +1,8 @@
+[#assign nodeJcrContext = ctx.currentAward!""]
+[#if nodeJcrContext?has_content]
+	[#assign currentLanguage = cmsfn.language()!""]
+	[#assign awardsContentNode = nodeJcrContext!""]
+	[#assign awards = model.getInstance()!""]
 <section class="cmp-convocatoria">
     <div class="header-comun">
         <div class="container-fluid">
@@ -12,7 +17,7 @@
     <nav class="submenu-convocatoria" data-menu="menu">
         <div class="contenedor-menu">
             <ul class="">
-            	[#assign openEdition = model.parent.getEditionStateOpen(awardsContentNode)!""]
+            	[#assign openEdition = model.getEditionStateOpen(awardsContentNode)!""]
                 [#if openEdition?has_content]
                 <li class="menu-first">
                     <a href="javascript:void(0)">
@@ -28,7 +33,7 @@
                     -->
                 </li>
                 [/#if]
-                [#assign inProgressEdition = model.parent.getEditionStateInProgress(awardsContentNode)!""]
+                [#assign inProgressEdition = model.getEditionStateInProgress(awardsContentNode)!""]
                 [#if inProgressEdition?has_content]
                 <li class="menu-first">
                     <a href="javascript:void(0)">
@@ -40,20 +45,24 @@
                 [#assign aboutText = awards.getAwardAboutText(awardsContentNode)]
                 [#if aboutText?has_content]
                 <li class="menu-first">
-                	[#assign hrefLink = cmsfn.link(awardsContentNode)]
-                	[#assign hrefLink = hrefLink?replace("/awards/","/awards/about/")]
-                    <a href="${hrefLink}">
+                	[#assign currentUrl = cmsfn.link(awardsContentNode)]
+                	[#assign hrefLinkAbout = model.getAboutLink(currentUrl)]
+                    <a href="${hrefLinkAbout}">
                         <span>${i18n['caar-templating-module.award.home.awardAbout.label']}</span>
                         <div class="icon hidden"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
                 </li>
                 [/#if]
+                [#if awards.getAwardCategoriesList(awardsContentNode)?has_content]
+                [#assign currentUrl = cmsfn.link(awardsContentNode)]
+                [#assign hrefLinkNewsList = model.getNewsListLink(currentUrl)]
                 <li class="menu-first">
-                    <a href="#">
+                    <a href="${hrefLinkNewsList}">
                         <span>${i18n['caar-templating-module.award.home.awardNews.label']}</span>
                         <div class="icon hidden"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
                 </li>
+                [/#if]
             </ul>
             <div class="logo-convacotoria">
                 [#assign imgItemKey = awards.getAwardLogo(awardsContentNode)!]
@@ -74,3 +83,4 @@
         </div>
     </nav>
 </section>
+[/#if]

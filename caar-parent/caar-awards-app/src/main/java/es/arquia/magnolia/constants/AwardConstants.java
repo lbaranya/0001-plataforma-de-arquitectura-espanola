@@ -22,6 +22,8 @@ public interface AwardConstants {
 	
 	String categoriesList="categoriesList";
 	
+	String relatedNewsList="relatedNewsList";
+	
 	String editionNodeType="mgnl:edition";
 	
 	String editionState = "state";

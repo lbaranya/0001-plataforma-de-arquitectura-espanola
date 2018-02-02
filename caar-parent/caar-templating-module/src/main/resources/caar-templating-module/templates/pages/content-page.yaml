@@ -1,4 +1,4 @@
-title: Contenido         
+title: caar-templating-module.pages.content-page.dialog.title
 renderType: site      
 dialog: caar-templating-module:pages/content-page-properties      
 visible: true      

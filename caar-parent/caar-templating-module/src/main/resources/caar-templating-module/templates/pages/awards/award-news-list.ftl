@@ -1,13 +1,15 @@
-[@cms.area name="content" /]
 [#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
 [#if nodeJcrPath?has_content]
 	[#assign currentLanguage = cmsfn.language()!""]
 	[#assign awardContent = cmsfn.contentByPath(nodeJcrPath, "awards")!""]
-	[#assign awardContentNode = cmsfn.asJCRNode(awardContent)!""]
+	[#assign awardsContentNode = cmsfn.asJCRNode(awardContent)!""]
 	[#assign awards = model.parent.getAwardInstance()!""]
-	[#assign categoriesList = awards.getAwardCategoriesList(awardContentNode)!""]
+	[#assign categoriesList = awards.getAwardCategoriesList(awardsContentNode)!""]
 	[#assign listNews = model.parent.getCategorizedNewsList(categoriesList)!""]
 	[#assign news = model.parent.getNewsInstance()!""]
+	[@cms.area name="content" contextAttributes={"awardHomeName" : awards.getAwardName(awardsContentNode)}/]
+	[@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
+	[@cms.area name="subheader" /]
 	<section class="cmp-last-news">
         <div class="container">
 	        <div class="row">
@@ -43,4 +45,8 @@
             </div>
 	    </div>
 	</section>
+[#else]
+	[@cms.area name="content" /]
+	[@cms.area name="submenu-award" /]
+	[@cms.area name="subheader" /]
 [/#if]

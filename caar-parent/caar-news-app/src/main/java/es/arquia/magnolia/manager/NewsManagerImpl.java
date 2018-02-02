@@ -21,21 +21,21 @@ import es.arquia.magnolia.functions.QueryUtils;
 import info.magnolia.context.MgnlContext;
 
 public class NewsManagerImpl implements NewsManager{
-	
+
 	private static final Logger log = LoggerFactory.getLogger(NewsManagerImpl.class);
 	private QueryUtils queryUtils;
 	private boolean lastRowOfNews = false;
-	
+
 	@Inject
-	public NewsManagerImpl(final QueryUtils queryUtils) throws PathNotFoundException, RepositoryException {
-        this.queryUtils = queryUtils;
-    }
-    
+	public NewsManagerImpl(final QueryUtils queryUtils) {
+		this.queryUtils = queryUtils;
+	}
+
 	@Override
 	public List<Node> getNewsList() throws Exception{
 		return getNewsList(0);
 	}
-    
+
 	@Override
 	public List<Node> getNewsList(int numberOfNews) throws Exception{
 		final int limit = (numberOfNews > 0) ? (numberOfNews + 1) : 0;
@@ -51,12 +51,12 @@ public class NewsManagerImpl implements NewsManager{
 		}
 		return newsList;
 	}
-	
+
 	@Override
 	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
 		return getCategorizedNewsList(categoriesList, 0);
 	}
-	
+
 	@Override
 	public List<Node> getCategorizedNewsList(List<String> categoriesList, int numberOfNews) throws Exception{
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
@@ -73,7 +73,7 @@ public class NewsManagerImpl implements NewsManager{
 		}
 		return newsList;
 	}
-	
+
 	@Override
 	public List<Node> getImportantNewsList() throws Exception {
 		final int limit = 2;
@@ -81,7 +81,7 @@ public class NewsManagerImpl implements NewsManager{
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
 		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 	}
-	
+
 	public boolean isLastRowOfNews() {
 		return lastRowOfNews;
 	}
@@ -90,12 +90,12 @@ public class NewsManagerImpl implements NewsManager{
 	public News getInstance() {
 		return new News();
 	}
-	
+
 	private String categorizedNewsListQuery(List<String> categoriesList) {
 		boolean ctrlCondition = false;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ";
 		for(String iterator : categoriesList) {
-			
+
 			if (!ctrlCondition) {
 				sqlQuery += "WHERE ";
 				ctrlCondition = true;
@@ -106,7 +106,43 @@ public class NewsManagerImpl implements NewsManager{
 			sqlQuery += "CONTAINS([" + category + "], '" + iterator + "') ";
 		}
 		sqlQuery += "ORDER BY [" + dateTime + "] DESC";
-		
+
+		return sqlQuery;
+	}
+
+	@Override
+	public List<Node> getCategorizedImportantNewsList(List<String> categoriesList, int numberOfNews) throws RepositoryException {
+		String rowsFromAjax = MgnlContext.getAttribute("rows");
+		final int limit = (numberOfNews > 0) ? (numberOfNews + 1) : 0;
+		final int lastNewsListElement = numberOfNews;
+		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
+		String sqlQuery = categorizedImportantNewsListQuery(categoriesList);
+		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
+		if (newsList.size() < limit) {
+			lastRowOfNews = true;
+		}
+		else if (limit > 0) {
+			newsList.remove(lastNewsListElement);
+		}
+		return newsList;
+	}
+
+	private String categorizedImportantNewsListQuery(List<String> categoriesList) {
+		boolean ctrlCondition = false;
+		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ";
+		for(String iterator : categoriesList) {
+
+			if (!ctrlCondition) {
+				sqlQuery += "WHERE (";
+				ctrlCondition = true;
+			}
+			else {
+				sqlQuery += "OR ";
+			}
+			sqlQuery += "CONTAINS([" + category + "], '" + iterator + "') ";
+		}
+		sqlQuery += ") AND [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
+
 		return sqlQuery;
 	}
 }

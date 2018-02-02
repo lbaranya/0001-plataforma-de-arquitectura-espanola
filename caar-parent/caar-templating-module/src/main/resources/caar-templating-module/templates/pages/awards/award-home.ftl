@@ -1,11 +1,11 @@
-[@cms.area name="content" /]
 [#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
 [#if nodeJcrPath?has_content]
 [#assign currentLanguage = cmsfn.language()!""]
 [#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 [#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 [#assign awards = model.parent.getInstance()!""]
-[#include "submenu-award.ftl"]
+[@cms.area name="content" contextAttributes={"awardHomeName":awards.getAwardName(awardsContentNode)}/]
+[@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
 <section class="cmp-banner-bienales">
 	[#assign imageBackground = "#"]
 	[#assign imgItemKey = awards.getAwardHeaderBackground(awardsContentNode)!]
@@ -21,7 +21,7 @@
                     [#assign imgItemKey = awards.getAwardLogo(awardsContentNode)!]
 	            	[#if imgItemKey??]
 	            		[#if imgItemKey?has_content]
-	                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "181x181")]
+	                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "181x181")!]
 		            		[#if imgMediaRendition?has_content]
 		            			[#assign imageAlternativeText = "logo de bienal"]
 		            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -59,12 +59,17 @@
         </div>
 </section>
 <section class="cmp-texto-premio">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 descripcion">
-                    ${awards.getAwardDescription(awardsContentNode)!""}
-                </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 descripcion">
+                ${awards.getAwardDescription(awardsContentNode)!""}
             </div>
         </div>
-    </section>
+    </div>
+</section>
+[@cms.area name="relatedNews" /]
+[#else]
+	[@cms.area name="content" /]
+	[@cms.area name="submenu-award" /]
+	[@cms.area name="relatedNews" /]
 [/#if]

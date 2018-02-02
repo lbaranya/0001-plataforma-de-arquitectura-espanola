@@ -19,52 +19,52 @@ editor:
       - name: platformData
         label: caar-architecture-files-app.files.support.project.platformData.label          
         fields:
-          - name: FS2.1.1
+          - name: FS2_1_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.platformData.projectId.label
-          - name: FS2.1.2
+          - name: FS2_1_2
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.project.platformData.dischargeDate.label
-          - name: FS2.1.3
+          - name: FS2_1_3
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.project.platformData.lastUpdateDate.label
-          - name: FS2.1.4
+          - name: FS2_1_4
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.platformData.publishedDirectory.label
       - name: workData
         label: caar-architecture-files-app.files.support.project.workData.label
         fields:
-          - name: FS2.2.1
+          - name: FS2_2_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.workData.projectTitle.label
             i18n: true
             required: true
-          - name: FS2.2.2
+          - name: FS2_2_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.workData.otherReferencies.label
             i18n: true
             required: true
-          - name: FS2.2.3
+          - name: FS2_2_3
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.project.workData.projectStartDate.label
             i18n: true
-          - name: FS2.2.4
+          - name: FS2_2_4
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.project.workData.workStartDate.label
             i18n: true
-          - name: FS2.2.5
+          - name: FS2_2_5
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
@@ -72,7 +72,7 @@ editor:
             label: caar-architecture-files-app.files.support.project.workData.projectFinishDate.label
             i18n: true
             required: true
-          - name: FS2.2.6
+          - name: FS2_2_6
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.workData.squareMetersBuilded.label
             validators:
@@ -80,7 +80,7 @@ editor:
                     class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
                     pattern: ^[0-9]+
                     errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
-          - name: FS2.2.7
+          - name: FS2_2_7
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.workData.squareMetersCost.label
             validators:
@@ -88,56 +88,56 @@ editor:
                     class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
                     pattern: ^[0-9]+
                     errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
-          - name: FS2.2.8
+          - name: FS2_2_8
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.workData.awards.label
             required: true
       - name: localizationData
         label: caar-architecture-files-app.files.support.project.localizationData.label
         fields:
-          - name: FS2.3.1
+          - name: FS2_3_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.typeOfRoad.label
             required: true
-          - name: FS2.3.2
+          - name: FS2_3_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.road.label
             required: true
-          - name: FS2.3.3
+          - name: FS2_3_3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.number.label
             required: true
-          - name: FS2.3.4
+          - name: FS2_3_4
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.postalCode.label
             required: true
-          - name: FS2.3.5
+          - name: FS2_3_5
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.location.label
             required: true
-          - name: FS2.3.6
+          - name: FS2_3_6
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.town.label
             required: true
-          - name: FS2.3.7
+          - name: FS2_3_7
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.province.label
             required: true
-          - name: FS2.3.8
+          - name: FS2_3_8
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.autonomousCommunity.label
             required: true
-          - name: FS2.3.9
+          - name: FS2_3_9
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
             label: caar-architecture-files-app.files.support.project.localizationData.country.label
             required: true
-          - name: FS2.3.10
+          - name: FS2_3_10
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.lattitude.label
             required: true
-          - name: FS2.3.11
+          - name: FS2_3_11
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.localizationData.longitude.label
             required: true
@@ -158,21 +158,21 @@ editor:
                   class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
                   label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
                   value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
-                - name: FS2.4.1
+                - name: FS2_4_1
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.authorshipData.authorshipType.label
                   required: true
-                - name: FS2.4.2
+                - name: FS2_4_2
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.authorshipData.authorshipName.label
                   i18n: true
                   required: true
-                - name: FS2.4.3
+                - name: FS2_4_3
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.authorshipData.authorshipSurname.label
                   i18n: true
                   required: true
-                - name: FS2.4.4
+                - name: FS2_4_4
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.authorshipData.authorshipDetails.label
                   i18n: true
@@ -180,27 +180,27 @@ editor:
       - name: informationData
         label: caar-architecture-files-app.files.support.project.informationData.label
         fields:
-          - name: FS2.5.1
+          - name: FS2_5_1
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.informationData.supportTypology.label
             required: true
             options:
-              - name: FS2.5.1.1
+              - name: FS2_5_1_1
                 value: municipialFile
                 label: caar-architecture-files-app.files.support.project.informationData.supportTypology.municipialFile.label
-              - name: FS2.5.1.2
+              - name: FS2_5_1_2
                 value: officeProject
                 label: caar-architecture-files-app.files.support.project.informationData.supportTypology.officeProject.label
-              - name: FS2.5.1.3
+              - name: FS2_5_1_3
                 value: caseFile
                 label: caar-architecture-files-app.files.support.project.informationData.supportTypology.caseFile.label
-          - name: FS2.5.2
+          - name: FS2_5_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.informationData.linkExternalPage.label
       - name: authorOwnershipData
         label: caar-architecture-files-app.files.support.project.authorOwnershipData.label
         fields:
-          - name: FS2.6.1
+          - name: FS2_6_1
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.ableToGetResource.label
             options:
@@ -210,34 +210,34 @@ editor:
               - name: no
                 value: no
                 label: caar-architecture-files-app.files.support.project.authorOwnershipData.ableToGetResource.no.label
-          - name: FS2.6.2
+          - name: FS2_6_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.contactEmail.label
-          - name: FS2.6.3
+          - name: FS2_6_3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.contactPhone.label
-          - name: FS2.6.4
+          - name: FS2_6_4
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.typeOfRoad.label
-          - name: FS2.6.5
+          - name: FS2_6_5
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.road.label
-          - name: FS2.6.6
+          - name: FS2_6_6
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.number.label
-          - name: FS2.6.7
+          - name: FS2_6_7
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.town.label
-          - name: FS2.6.8
+          - name: FS2_6_8
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.postalCode.label
-          - name: FS2.6.9
+          - name: FS2_6_9
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.province.label
-          - name: FS2.6.10
+          - name: FS2_6_10
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.autonomousCommunity.label
-          - name: FS2.3.11
+          - name: FS2_3_11
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
@@ -245,7 +245,7 @@ editor:
       - name: relatedThoughtsData
         label: caar-architecture-files-app.files.support.project.relatedThoughtsData.label
         fields:
-          - name: FS2.7.1
+          - name: FS2_7_1
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
             label: caar-architecture-files-app.files.support.project.relatedThoughtsData.relatedThoughts.label
             appName: caar-architecture-files-app
@@ -254,50 +254,50 @@ editor:
       - name: projectNotesData
         label: caar-architecture-files-app.files.support.project.projectNotesData.label
         fields:
-          - name: FS2.8.1
+          - name: FS2_8_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.projectNotesData.buildedBy.label
-          - name: FS2.8.2
+          - name: FS2_8_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.projectNotesData.projectActualState.label
-          - name: FS2.8.3
+          - name: FS2_8_3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.projectNotesData.projectActualUse.label
       - name: searchTagsData
         label: caar-architecture-files-app.files.support.project.searchTagsData.label
         fields:
-          - name: FS2.9.1
+          - name: FS2_9_1
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.label
             required: true
             options:
-              - name: FS2.9.1.1
+              - name: FS2_9_1_1
                 value: newProject
                 label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.newProject.label
-              - name: FS2.9.1.2
+              - name: FS2_9_1_2
                 value: extension
                 label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.extension.label
-              - name: FS2.9.1.3
+              - name: FS2_9_1_3
                 value: improvement
                 label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.improvement.label
-          - name: FS2.9.2
+          - name: FS2_9_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainTheme.label
-          - name: FS2.9.3
+          - name: FS2_9_3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.temporalScope.label
-          - name: FS2.9.4
+          - name: FS2_9_4
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.territorialScope.label
-          - name: FS2.9.5
+          - name: FS2_9_5
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainArchitect.label
             appName: caar-architecture-files-app
             targetWorkspace: architecture-files
-          - name: FS2.9.6
+          - name: FS2_9_6
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainArchitecturalStyle.label
-          - name: FS2.9.7
+          - name: FS2_9_7
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainArchitecturalUse.label
       - name: mediaGalleryData
@@ -317,10 +317,10 @@ editor:
                   class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
                   label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
                   value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
-                - name: FS2.10.1
+                - name: FS2_10_1
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.mediaGalleryData.galleryTitle.label
-                - name: FS2.10.2
+                - name: FS2_10_2
                   class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
                   label: caar-architecture-files-app.files.support.project.mediaGalleryData.mediaType.label
                   options:
@@ -330,7 +330,7 @@ editor:
                     - name: image
                       value: image
                       label: caar-architecture-files-app.files.support.project.mediaGalleryData.mediaType.image.label
-                - name: FS2.10.3
+                - name: FS2_10_3
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
                   targetWorkspace: dam
                   appName: assets
@@ -339,11 +339,11 @@ editor:
                     class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
                   contentPreviewDefinition:
                     contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-                - name: FS2.10.4
+                - name: FS2_10_4
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.mediaGalleryData.mediaDetails.label
                   i18n: true
-                - name: FS2.10.5
+                - name: FS2_10_5
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.mediaGalleryData.mediaTitle.label
                   i18n: true

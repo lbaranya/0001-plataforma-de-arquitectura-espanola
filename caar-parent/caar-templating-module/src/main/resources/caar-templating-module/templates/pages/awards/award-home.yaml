@@ -1,4 +1,4 @@
-title: AwardHome
+title: caar-templating-module.pages.award-home.dialog.title
 renderType: site
 visible: true
 dialog: caar-templating-module:pages/award-home-page-properties
@@ -14,3 +14,13 @@ areas:
         availableComponents:
           breadcrum-component:
             id: caar-templating-module:components/breadcrum-component
+      submenu-award:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/submenu-award
+      relatedNews:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/related-news-component

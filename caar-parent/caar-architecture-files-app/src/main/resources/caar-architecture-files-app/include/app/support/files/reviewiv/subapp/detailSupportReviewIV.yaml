@@ -19,50 +19,50 @@ editor:
       - name: platformData
         label: caar-architecture-files-app.files.support.reviewiv.platformData.label          
         fields:
-          - name: FS3.1.1
+          - name: FS3_1_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.platformData.pieceId.label
-          - name: FS3.1.2
+          - name: FS3_1_2
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.reviewiv.platformData.dischargeDate.label
-          - name: FS3.1.3
+          - name: FS3_1_3
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.reviewiv.platformData.lastUpdateDate.label
-          - name: FS3.1.4
+          - name: FS3_1_4
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.platformData.publishedDirectory.label
       - name: workData
         label: caar-architecture-files-app.files.support.reviewiv.workData.label
         fields:
-          - name: FS3.2.1
+          - name: FS3_2_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.workData.ouvretitle.label
             i18n: true
             required: true
-          - name: FS3.2.2
+          - name: FS3_2_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.workData.title.label
             i18n: true
             required: true
-          - name: FS3.2.3
+          - name: FS3_2_3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.workData.Location.label
             i18n: true
-          - name: FS3.2.4
+          - name: FS3_2_4
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.workData.Editor.label
             i18n: true
-          - name: FS3.2.5
+          - name: FS3_2_5
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.workData.Year.label
             i18n: true
-          - name: FS3.2.6
+          - name: FS3_2_6
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.workData.abstract.label
             i18n: true
@@ -83,16 +83,16 @@ editor:
                   class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
                   label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
                   value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
-                - name: FS3.3.1
+                - name: FS3_3_1
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.authorshipData.authorshipType.label
                   required: true
-                - name: FS3.3.2
+                - name: FS3_3_2
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.authorshipData.authorshipName.label
                   i18n: true
                   required: true
-                - name: FS3.3.3
+                - name: FS3_3_3
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.authorshipData.authorshipDetails.label
                   i18n: true
@@ -106,18 +106,18 @@ editor:
       - name: informationData
         label: caar-architecture-files-app.files.support.reviewiv.informationData.label
         fields:
-          - name: FS3.5.1
+          - name: FS3_5_1
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.label
             required: true
             options:
-              - name: FS3.5.1.1
+              - name: FS3_5_1_1
                 value: monographs
                 label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.monographs.label
-              - name: FS3.5.1.2
+              - name: FS3_5_1_2
                 value: publishedArticles
                 label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.publishedArticles.label
-              - name: FS3.5.1.3
+              - name: FS3_5_1_3
                 value: awards
                 label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.awards.label
       - name: relatedThoughtData
@@ -157,7 +157,7 @@ editor:
                   class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
                   label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
                   value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
-                - name: FS3.7.1
+                - name: FS3_7_1
                   class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaType.label
                   options:
@@ -167,7 +167,7 @@ editor:
                     - name: image
                       value: image
                       label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaType.image.label
-                - name: FS3.7.2
+                - name: FS3_7_2
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
                   targetWorkspace: dam
                   appName: assets
@@ -176,11 +176,11 @@ editor:
                     class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
                   contentPreviewDefinition:
                     contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-                - name: FS3.7.3
+                - name: FS3_7_3
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaDetails.label
                   i18n: true
-                - name: FS3.7.4
+                - name: FS3_7_4
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaTitle.label
                   i18n: true

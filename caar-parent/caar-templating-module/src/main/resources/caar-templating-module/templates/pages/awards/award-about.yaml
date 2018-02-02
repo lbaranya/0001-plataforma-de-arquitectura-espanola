@@ -1,4 +1,4 @@
-title: AwardAbout
+title: caar-templating-module.pages.award-about.dialog.title
 renderType: site
 visible: true
 dialog: caar-templating-module:pages/award-about-page-properties
@@ -19,3 +19,8 @@ areas:
         availableComponents:
           sub-header-component:
             id: caar-templating-module:components/sub-header-component
+      submenu-award:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/submenu-award
