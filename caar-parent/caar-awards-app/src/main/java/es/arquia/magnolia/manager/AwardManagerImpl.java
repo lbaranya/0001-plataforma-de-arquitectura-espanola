@@ -15,7 +15,6 @@ import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.beans.Award;
-import es.arquia.magnolia.functions.LocalizedSuffixUtils;
 import es.arquia.magnolia.functions.QueryUtils;
 import info.magnolia.cms.i18n.I18nContentSupport;
 
