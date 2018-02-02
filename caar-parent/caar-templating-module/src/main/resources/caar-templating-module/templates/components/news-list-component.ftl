@@ -1,5 +1,5 @@
 [#assign loadMoreElement = "<div class='col-md-12 text-center cmp-more'><span  onclick='loadMoreItems()'>${i18n['caar-templating-module.templates.components.news-list-component.loadMore.label']}</span></div>"]
-[#assign currentLanguage = cmsfn.language()!""]
+
 [#assign news = model.getInstance()!""]
 [#if content.categories?has_content]
 	[#assign listNews = model.getCategorizedNewsList(content.categories, 4)]
@@ -30,8 +30,8 @@
 		                            	[/#if]
 		                            [/#if]
 	                        	</div>
-	                        	[#assign headLine = news.getHeadline(newNode, currentLanguage)!""]
-	                        	[#assign description = news.getDescription(newNode, currentLanguage)!""]
+	                        	[#assign headLine = news.getHeadline(newNode)!""]
+	                        	[#assign description = news.getDescription(newNode)!""]
 	                            <h4 class="title">${headLine!""}</h4>
 	                            <p>${description!""}</p>
 	                            <div class="noticias-links">

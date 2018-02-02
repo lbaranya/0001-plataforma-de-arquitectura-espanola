@@ -1,6 +1,6 @@
 [#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
 [#if nodeJcrPath?has_content]
-	[#assign currentLanguage = cmsfn.language()!""]
+	
 	[#assign awardContent = cmsfn.contentByPath(nodeJcrPath, "awards")!""]
 	[#assign awardsContentNode = cmsfn.asJCRNode(awardContent)!""]
 	[#assign awards = model.parent.getAwardInstance()!""]
@@ -33,8 +33,8 @@
 			                            [/#if]
 		                            [/#if]
 	                        	</div>
-	                            <h4 class="title">${news.getHeadline(newsNode, currentLanguage)!""}</h4>
-	                            <p>${news.getDescription(newsNode, currentLanguage)!""}</p>
+	                            <h4 class="title">${news.getHeadline(newsNode)!""}</h4>
+	                            <p>${news.getDescription(newsNode)!""}</p>
 	                            <div class="noticias-links">
 			                    	<a href='${cmsfn.link(newsNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
 				                </div>

@@ -1,6 +1,6 @@
 [#assign nodeJcrContext = ctx.currentAward!""]
 [#if nodeJcrContext?has_content]
-	[#assign currentLanguage = cmsfn.language()!""]
+	
 	[#assign awardsContentNode = nodeJcrContext!""]
 	[#assign awards = model.getInstance()!""]
 <section class="cmp-convocatoria">

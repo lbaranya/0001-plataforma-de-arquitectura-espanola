@@ -21,9 +21,12 @@ public class AwardManagerImpl implements AwardManager{
 	
 	private QueryUtils queryUtils;
 	
+	private Award award;
+	
 	@Inject
-	public AwardManagerImpl(final QueryUtils queryUtils) {
+	public AwardManagerImpl(final QueryUtils queryUtils, final Award award) {
         this.queryUtils = queryUtils;
+        this.award = award;
     }
 
 	@Override
@@ -44,7 +47,7 @@ public class AwardManagerImpl implements AwardManager{
 
 	@Override
 	public Award getInstance() {
-		return new Award();
+		return this.award;
 	}
 
 	@Override

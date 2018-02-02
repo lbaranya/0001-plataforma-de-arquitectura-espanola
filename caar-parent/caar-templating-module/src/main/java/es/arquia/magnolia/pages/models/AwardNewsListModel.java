@@ -7,8 +7,10 @@ import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.Award;
+import es.arquia.magnolia.beans.AwardImpl;
 import es.arquia.magnolia.beans.News;
+import es.arquia.magnolia.beans.Award;
+import es.arquia.magnolia.beans.NewsImpl;
 import es.arquia.magnolia.manager.AwardManager;
 import es.arquia.magnolia.manager.NewsManager;
 import info.magnolia.rendering.model.RenderingModel;

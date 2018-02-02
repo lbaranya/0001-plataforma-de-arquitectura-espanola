@@ -9,6 +9,7 @@ import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.beans.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.beans.News;
+import es.arquia.magnolia.beans.NewsImpl;
 import es.arquia.magnolia.manager.NewsManager;
 import es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager;
 import info.magnolia.rendering.model.RenderingModel;

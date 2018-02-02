@@ -38,6 +38,44 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.edition.editionData.name.label
             i18n: true
+      - name: tabAwardHome
+        label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.label
+        fields:
+          - name: announcementButtonLink
+            class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
+            label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.announcementButtonLink.label
+            required: true
+            layout: vertical
+            options:      
+              - name: internalLink      
+                label: caar-templating-module.common.field.text.internal.label
+                selected: true      
+                value: internalLink      
+              - name: externalLink      
+                label: caar-templating-module.common.field.text.external.label
+                value: externalLink      
+            fields:      
+              - name: internalLink      
+                label: caar-templating-module.common.field.text.internalLink.label      
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                          
+              - name: externalLink      
+                label: caar-templating-module.common.field.text.externalLink.label
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          - name: announcementButtonText
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.announcementButtonText.label
+            i18n: true
+          - name: enrollmentButtonLink  
+            label: caar-templating-module.common.field.text.externalLink.label
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          - name: enrollmentButtonText
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.enrollmentButtonText.label
+            i18n: true
   actions:
     - name: commit
     - name: cancel

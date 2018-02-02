@@ -33,5 +33,9 @@ public interface AwardConstants {
 	String editionStateInProgress = "progress";
 	
 	String editionStateClosed = "closed";
+	
+	String editionAnnouncementButtonText = "announcementButtonText";
+	
+	String editionEnrollmentButtonText = "enrollmentButtonText";
 
 }

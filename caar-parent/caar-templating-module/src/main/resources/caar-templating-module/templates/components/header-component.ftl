@@ -4,6 +4,7 @@
  
 [@navigation navParentItem=navigationRootPage depth=1 expandAll=true /] --]
 [#assign awardsInstance = model.getInstance()!""]
+
 <!--Menu: cmp-menu-->
 <section class="cmp-menu">
     <div class="container-fluid">
