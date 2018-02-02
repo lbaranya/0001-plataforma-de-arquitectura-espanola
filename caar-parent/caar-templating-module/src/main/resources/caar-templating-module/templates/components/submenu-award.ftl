@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row col-row">
                 <div class="col-header">
-                    <h3 data-ref="menu">${awards.getAwardName(awardsContentNode)!""}<i class="fa fa-chevron-up" aria-hidden="true"></i></h3>
+                    <h3 data-ref="menu">${awards.getAwardName(awardsContentNode, currentLanguage)!""}<i class="fa fa-chevron-up" aria-hidden="true"></i></h3>
                     <p>Fase: Descriptivo</p>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                     </a>
                 </li>
                 [/#if]
-                [#assign aboutText = awards.getAwardAboutText(awardsContentNode)]
+                [#assign aboutText = awards.getAwardAboutText(awardsContentNode, currentLanguage)]
                 [#if aboutText?has_content]
                 <li class="menu-first">
                 	[#assign currentUrl = cmsfn.link(awardsContentNode)]

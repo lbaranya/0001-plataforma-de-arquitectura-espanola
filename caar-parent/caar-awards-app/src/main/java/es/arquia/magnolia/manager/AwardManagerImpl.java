@@ -15,15 +15,19 @@ import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.beans.Award;
+import es.arquia.magnolia.functions.LocalizedSuffixUtils;
 import es.arquia.magnolia.functions.QueryUtils;
 
 public class AwardManagerImpl implements AwardManager{
 	
 	private QueryUtils queryUtils;
 	
+	private LocalizedSuffixUtils localizedSuffix;
+	
 	@Inject
-	public AwardManagerImpl(final QueryUtils queryUtils) {
+	public AwardManagerImpl(final QueryUtils queryUtils, final LocalizedSuffixUtils localizedSuffix) {
         this.queryUtils = queryUtils;
+        this.localizedSuffix = localizedSuffix;
     }
 
 	@Override
@@ -44,7 +48,7 @@ public class AwardManagerImpl implements AwardManager{
 
 	@Override
 	public Award getInstance() {
-		return new Award();
+		return new Award(localizedSuffix);
 	}
 
 	@Override

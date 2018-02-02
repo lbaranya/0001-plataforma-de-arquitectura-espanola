@@ -19,25 +19,26 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Locale;
 
+import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 
+import es.arquia.magnolia.functions.LocalizedSuffixUtils;
 import info.magnolia.context.MgnlContext;
 
 public class News {
 
-	private String getLocalizedSuffix(String currentLanguage) {
-		if(!MgnlContext.getLocale().getLanguage().equals(currentLanguage))
-			currentLanguage = "_" + currentLanguage;
-		else
-			currentLanguage = "";
-		return currentLanguage;
+	private LocalizedSuffixUtils localizedSuffix;
+	
+	@Inject
+	public News(final LocalizedSuffixUtils localizedSuffix) {
+		this.localizedSuffix = localizedSuffix;
 	}
 
 	public String getHeadline(Node node, String currentLanguage) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(headTitle + getLocalizedSuffix(currentLanguage));
+			Property tmp = node.getProperty(headTitle + localizedSuffix.getLocalizedSuffix(currentLanguage));
 			return tmp.getString();
 		}catch(Exception e) {
 			try {
@@ -50,7 +51,7 @@ public class News {
 
 	public String getLongTitle(Node node, String currentLanguage) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(longTitle + getLocalizedSuffix(currentLanguage));
+			Property tmp = node.getProperty(longTitle + localizedSuffix.getLocalizedSuffix(currentLanguage));
 			return tmp.getString();
 		}catch(Exception e) {
 			try {
@@ -63,7 +64,7 @@ public class News {
 
 	public String getDescription(Node node, String currentLanguage) throws RepositoryException{
 		try{
-			Property tmp = node.getProperty(descriptionShort + getLocalizedSuffix(currentLanguage));
+			Property tmp = node.getProperty(descriptionShort + localizedSuffix.getLocalizedSuffix(currentLanguage));
 			return tmp.getString();
 		}catch(Exception e) {
 			try {
@@ -76,7 +77,7 @@ public class News {
 
 	public String getLongDescription(Node node, String currentLanguage) throws RepositoryException{
 		try{
-			Property tmp = node.getProperty(descriptionLong + getLocalizedSuffix(currentLanguage));
+			Property tmp = node.getProperty(descriptionLong + localizedSuffix.getLocalizedSuffix(currentLanguage));
 			return tmp.getString();
 		}catch(Exception e) {
 			try {
@@ -141,7 +142,7 @@ public class News {
 
 	public String getMedium(Node node, String currentLanguage) throws RepositoryException{
 		try{
-			Property tmp = node.getProperty(informativeMedium + getLocalizedSuffix(currentLanguage));
+			Property tmp = node.getProperty(informativeMedium + localizedSuffix.getLocalizedSuffix(currentLanguage));
 			return tmp.getString();
 		}catch(Exception e) {
 			try {

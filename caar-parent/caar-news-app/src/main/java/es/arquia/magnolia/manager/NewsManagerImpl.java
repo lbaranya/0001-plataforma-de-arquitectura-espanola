@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.beans.News;
+import es.arquia.magnolia.functions.LocalizedSuffixUtils;
 import es.arquia.magnolia.functions.QueryUtils;
 import info.magnolia.context.MgnlContext;
 
@@ -24,11 +25,13 @@ public class NewsManagerImpl implements NewsManager{
 
 	private static final Logger log = LoggerFactory.getLogger(NewsManagerImpl.class);
 	private QueryUtils queryUtils;
+	private LocalizedSuffixUtils localizedSuffix;
 	private boolean lastRowOfNews = false;
 
 	@Inject
-	public NewsManagerImpl(final QueryUtils queryUtils) {
+	public NewsManagerImpl(final QueryUtils queryUtils, final LocalizedSuffixUtils localizedSuffix) {
 		this.queryUtils = queryUtils;
+		this.localizedSuffix = localizedSuffix;
 	}
 
 	@Override
@@ -88,7 +91,7 @@ public class NewsManagerImpl implements NewsManager{
 
 	@Override
 	public News getInstance() {
-		return new News();
+		return new News(localizedSuffix);
 	}
 
 	private String categorizedNewsListQuery(List<String> categoriesList) {

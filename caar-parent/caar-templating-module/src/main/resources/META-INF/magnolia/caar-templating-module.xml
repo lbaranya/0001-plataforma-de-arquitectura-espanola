@@ -26,6 +26,10 @@
 			<type>es.arquia.magnolia.utils.breadcrum.award.UtilsBreadcrumAward</type>
 			<implementation>es.arquia.magnolia.utils.breadcrum.award.UtilsBreadcrumAwardImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.functions.LocalizedSuffixUtils</type>
+			<implementation>es.arquia.magnolia.functions.LocalizedSuffixUtilsImpl</implementation>
+		</component>
 	</components>
 
   <dependencies>

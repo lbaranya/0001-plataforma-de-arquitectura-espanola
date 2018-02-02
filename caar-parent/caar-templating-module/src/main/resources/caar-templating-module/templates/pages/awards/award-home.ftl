@@ -4,7 +4,7 @@
 [#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 [#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 [#assign awards = model.parent.getInstance()!""]
-[@cms.area name="content" contextAttributes={"awardHomeName":awards.getAwardName(awardsContentNode)}/]
+[@cms.area name="content" contextAttributes={"awardHomeName":awards.getAwardName(awardsContentNode, currentLanguage)}/]
 [@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
 <section class="cmp-banner-bienales">
 	[#assign imageBackground = "#"]
@@ -36,22 +36,26 @@
             </div>
             <div class="row">
                 <div class="title-big">
-                    <h2>${awards.getAwardName(awardsContentNode)!""}</h2>
+                    <h2>${awards.getAwardName(awardsContentNode, currentLanguage)!""}</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="contendor-btn">
                     <div class="botonera">
                     	[#assign hrefLink = "#"]
-                    	[#if cmsfn.parent(content).announcementButtonLinkexternalLink??]
-							[#assign hrefLink = cmsfn.externalLink(cmsfn.parent(content), "announcementButtonLink")]                        		
-                    	[/#if]
-                    	[#if cmsfn.parent(content).linkinternalLink??]
-                    		[#assign hrefLink = cmsfn.link(cmsfn.contentById(cmsfn.parent(content).linkinternalLink, "website"))]
-                    	[/#if]
-                        <a class="btn" href="#">${cmsfn.parent(content).announcementButtonText!""}</a>
-                        <a class="btn" href="#">${cmsfn.parent(content).enrollmentButtonText!""}</a>
+                    	[#assign openEditionNode = model.parent.getEditionStateOpen(awardsContentNode)!""]
+                    	[#if openEditionNode?has_content]
+                    		[#assign openEditionContentMap = cmsfn.asContentMap(openEditionNode)!""]
+	                    	[#if openEditionContentMap.announcementButtonLinkexternalLink?has_content]
+								[#assign hrefLink = cmsfn.externalLink(openEditionContentMap, "announcementButtonLinkexternalLink")]                        		
+	                    	[/#if]
+	                    	[#if openEditionContentMap.announcementButtonLinkinternalLink?has_content]
+	                    		[#assign hrefLink = cmsfn.link(cmsfn.contentById(openEditionContentMap.announcementButtonLinkinternalLink, "dam"))]
+	                    	[/#if]
+                    	<a class="btn" href="${hrefLink}">${awards.getEditionAnnouncementButtonText(openEditionNode, currentLanguage)}</a>
+                        <a class="btn" href="${cmsfn.externalLink(openEditionContentMap, "enrollmentButtonLink")}">${awards.getEditionEnrollmentButtonText(openEditionNode, currentLanguage)}</a>
                         <a href="${cmsfn.externalLink(awardsContentNode,"awardExternalURL")!""}">${awards.getAwardExternalURL(awardsContentNode)!""}</a>
+                        [/#if]
                     </div>
                 </div>
             </div>
@@ -62,7 +66,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 descripcion">
-                ${awards.getAwardDescription(awardsContentNode)!""}
+                ${awards.getAwardDescription(awardsContentNode, currentLanguage)!""}
             </div>
         </div>
     </div>
