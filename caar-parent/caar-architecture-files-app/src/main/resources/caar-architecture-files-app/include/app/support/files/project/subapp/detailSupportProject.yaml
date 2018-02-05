@@ -234,7 +234,7 @@ editor:
           - name: FS2_6_10
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.autonomousCommunity.label
-          - name: FS2_3_11
+          - name: FS2_6_11
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
