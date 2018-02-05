@@ -5,6 +5,7 @@ import javax.jcr.ImportUUIDBehavior;
 import info.magnolia.module.DefaultModuleVersionHandler;
 import info.magnolia.module.delta.BootstrapSingleModuleResource;
 import info.magnolia.module.delta.DeltaBuilder;
+import info.magnolia.module.delta.IsAdminInstanceDelegateTask;
 
 /**
  * This class is optional and lets you manage the versions of your module,
@@ -35,6 +36,11 @@ public class CaarUtilsModuleVersionHandler extends DefaultModuleVersionHandler {
 				.addTask(new BootstrapSingleModuleResource("Request translation action: Assets app", "Action for request translation into Assets app", "config.modules.dam-app.apps.assets.subApps.browser.actions.requestTranslation.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				.addTask(new BootstrapSingleModuleResource("Request translation section action: Assets app", "Add request translation action into correct section of Assets app", "config.modules.dam-app.apps.assets.subApps.browser.actionbar.sections.asset.groups.activationActions.items.requestTranslation.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				.addTask(new BootstrapSingleModuleResource("Alt asset text", "Alternative text field for all assets", "config.modules.dam-app.apps.assets.subApps.detail.editor.form.tabs.asset.fields.alternative.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				);
+		
+		register(DeltaBuilder.update("0.17", "")
+				.addTask(new IsAdminInstanceDelegateTask("Solr indexers", "Indexation configuration fields for Solr in public instance", null, 
+							new BootstrapSingleModuleResource("Solr indexers", "Indexation configuration fields for Solr", "config.modules.content-indexer.config.indexers.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING)))
 				);
 	}
 	
