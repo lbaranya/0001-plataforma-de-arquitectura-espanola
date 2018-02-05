@@ -1,0 +1,3004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="indexers">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>mgnl:content</sv:value>
+  </sv:property>
+  <sv:node sv:name="websiteIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>website</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>website</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="lastModified" sv:type="String">
+        <sv:value>date_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified1" sv:type="String">
+        <sv:value>date_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified2" sv:type="String">
+        <sv:value />
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified3" sv:type="String">
+        <sv:value>date_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified4" sv:type="String">
+        <sv:value />
+      </sv:property>
+      <sv:property sv:name="text" sv:type="String">
+        <sv:value>content_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="title" sv:type="String">
+        <sv:value>title_s</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="websiteIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>website_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>website</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="lastModified" sv:type="String">
+        <sv:value>date_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+      <sv:property sv:name="text_en" sv:type="String">
+        <sv:value>content_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="title_en" sv:type="String">
+        <sv:value>title_s</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="damIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:asset</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>media</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>dam</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="abstract" sv:type="String">
+        <sv:value>abstract</sv:value>
+      </sv:property>
+      <sv:property sv:name="date" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+      <sv:property sv:name="text" sv:type="String">
+        <sv:value>content</sv:value>
+      </sv:property>
+      <sv:property sv:name="title" sv:type="String">
+        <sv:value>title</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="newsIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:news</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>news</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>news</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_1" sv:type="String">
+        <sv:value>N1.1_headline_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_10" sv:type="String">
+        <sv:value>N1.10_relatedNews_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_11" sv:type="String">
+        <sv:value>N1_11_informativeMedium_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_2" sv:type="String">
+        <sv:value>N1.2_longTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_3" sv:type="String">
+        <sv:value>N1.3_description_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_4" sv:type="String">
+        <sv:value>N1.4_longDescription_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_5" sv:type="String">
+        <sv:value>N1.5_dateTime_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_6" sv:type="String">
+        <sv:value>N1.6_image_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_7" sv:type="String">
+        <sv:value>N1.7_categories_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_8" sv:type="String">
+        <sv:value>N1.8_important_b</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_9" sv:type="String">
+        <sv:value>N1.9_files_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="newsIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:news</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>news_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>news</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_10" sv:type="String">
+        <sv:value>N1.10_relatedNews_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_11" sv:type="String">
+        <sv:value>N1_11_informativeMedium_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_1_en" sv:type="String">
+        <sv:value>N1.1_headline_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_2_en" sv:type="String">
+        <sv:value>N1.2_longTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_3_en" sv:type="String">
+        <sv:value>N1.3_description_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_4_en" sv:type="String">
+        <sv:value>N1.4_longDescription_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_5" sv:type="String">
+        <sv:value>N1.5_dateTime_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_6" sv:type="String">
+        <sv:value>N1.6_image_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_7" sv:type="String">
+        <sv:value>N1.7_categories_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_8" sv:type="String">
+        <sv:value>N1.8_important_b</sv:value>
+      </sv:property>
+      <sv:property sv:name="N1_9" sv:type="String">
+        <sv:value>N1.9_files_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportArchitectIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-architect</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-architect</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_1" sv:type="String">
+        <sv:value>FS1.1.1_personalDataName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_2" sv:type="String">
+        <sv:value>FS1.1.2_personalDataFirstSurname_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_3" sv:type="String">
+        <sv:value>FS1.1.3_personalDataSecondSurname_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_4" sv:type="String">
+        <sv:value>FS1.1.4_personalDataOtherNames_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_5" sv:type="String">
+        <sv:value>FS1.1.5_personalDataPhoto_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_6" sv:type="String">
+        <sv:value>FS1.1.6_personalDataBirthDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_7" sv:type="String">
+        <sv:value>FS1.1.7_personalDataBirthCity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_8" sv:type="String">
+        <sv:value>FS1.1.8_personalDataBirthCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_9" sv:type="String">
+        <sv:value>FS1.1.9_personalDataDeath_b</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_9_1" sv:type="String">
+        <sv:value>FS1.1.9.1_personalDataDeathDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_9_2" sv:type="String">
+        <sv:value>FS1.1.9.2_personalDataDeathCity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_9_3" sv:type="String">
+        <sv:value>FS1.1.9.3_personalDataDeathCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_1" sv:type="String">
+        <sv:value>FS1.2.1_educationDataCertification_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_2" sv:type="String">
+        <sv:value>FS1.2.2_educationDataCertificationCenter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_3" sv:type="String">
+        <sv:value>FS1.2.3_educationDataCertificationCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_4" sv:type="String">
+        <sv:value>FS1.2.4_educationDataCertificationYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_5" sv:type="String">
+        <sv:value>FS1.2.5_educationDataOtherStudies_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_6" sv:type="String">
+        <sv:value>FS1.2.6_educationDataDoctorate_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_1" sv:type="String">
+        <sv:value>FS1.3.1_professionalDataOfficeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_2" sv:type="String">
+        <sv:value>FS1.3.2_professionalDataOfficeWebUrl_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_3" sv:type="String">
+        <sv:value>FS1.3.3_professionalDataOfficeCity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_4" sv:type="String">
+        <sv:value>FS1.3.4_professionalDataOfficeCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_5" sv:type="String">
+        <sv:value>FS1.3.5_professionalDataOfficeComponents_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_6" sv:type="String">
+        <sv:value>FS1.3.6_professionalDataBiographicReview_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_7" sv:type="String">
+        <sv:value>FS1.3.7_professionalDataCV_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_8" sv:type="String">
+        <sv:value>FS1.3.8_professionalDataAwardsDistinctions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_1" sv:type="String">
+        <sv:value>FS1.4.1_workExperienceDataStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_2" sv:type="String">
+        <sv:value>FS1.4.2_workExperienceDataEndDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_3" sv:type="String">
+        <sv:value>FS1.4.3_workExperienceDataPosition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_4" sv:type="String">
+        <sv:value>FS1.4.4_workExperienceDataFunctionsResponsibilities_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_5" sv:type="String">
+        <sv:value>FS1.4.5_workExperienceDataCompanyName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_6" sv:type="String">
+        <sv:value>FS1.4.6_workExperienceDataCompanyType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_1" sv:type="String">
+        <sv:value>FS1.5.1_educationListDataStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_2" sv:type="String">
+        <sv:value>FS1.5.2_educationListDataEndDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_3" sv:type="String">
+        <sv:value>FS1.5.3_educationListDataQualification_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_4" sv:type="String">
+        <sv:value>FS1.5.4_educationListDataSubjectsProfessionalCompetence_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_5" sv:type="String">
+        <sv:value>FS1.5.5_educationListDataEducationalCenter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_6" sv:type="String">
+        <sv:value>FS1.5.6_educationListDataEducationalCenterType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_7" sv:type="String">
+        <sv:value>FS1.5.7_educationListDataNationalLevel_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_1" sv:type="String">
+        <sv:value>FS1.6.1_languagesDataLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_2" sv:type="String">
+        <sv:value>FS1.6.2_languagesDataOtherLanguages_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_3" sv:type="String">
+        <sv:value>FS1.6.3_languagesDataFirstLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_4" sv:type="String">
+        <sv:value>FS1.6.4_languagesDataAuditiveComprehension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_5" sv:type="String">
+        <sv:value>FS1.6.5_languagesDataReadingComprehension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_6" sv:type="String">
+        <sv:value>FS1.6.6_languagesDataOralInteraction_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_7" sv:type="String">
+        <sv:value>FS1.6.7_languagesDataOralExpression_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_8" sv:type="String">
+        <sv:value>FS1.6.8_languagesDataWritting_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_1" sv:type="String">
+        <sv:value>FS1.7.1_personalCapabilitiesDataSocialAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_2" sv:type="String">
+        <sv:value>FS1.7.2_personalCapabilitiesDataOrganizationalAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_3" sv:type="String">
+        <sv:value>FS1.7.3_personalCapabilitiesDataTechnicalAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_4" sv:type="String">
+        <sv:value>FS1.7.4_personalCapabilitiesDataComputerAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_5" sv:type="String">
+        <sv:value>FS1.7.5_personalCapabilitiesDataArtAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_6" sv:type="String">
+        <sv:value>FS1.7.6_personalCapabilitiesDataOtherAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_7" sv:type="String">
+        <sv:value>FS1.7.7_personalCapabilitiesDataDriveLicense_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_8_1" sv:type="String">
+        <sv:value>FS1.8.1_additonalInfoDataAdditionalInformation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_8_2" sv:type="String">
+        <sv:value>FS1.8.2_additonalInfoDataAnnexes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportArchitectIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-architect</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-architect_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_1" sv:type="String">
+        <sv:value>FS1.1.1_personalDataName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_2" sv:type="String">
+        <sv:value>FS1.1.2_personalDataFirstSurname_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_3" sv:type="String">
+        <sv:value>FS1.1.3_personalDataSecondSurname_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_4" sv:type="String">
+        <sv:value>FS1.1.4_personalDataOtherNames_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_5" sv:type="String">
+        <sv:value>FS1.1.5_personalDataPhoto_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_6" sv:type="String">
+        <sv:value>FS1.1.6_personalDataBirthDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_7" sv:type="String">
+        <sv:value>FS1.1.7_personalDataBirthCity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_8" sv:type="String">
+        <sv:value>FS1.1.8_personalDataBirthCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_9" sv:type="String">
+        <sv:value>FS1.1.9_personalDataDeath_b</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_9_1" sv:type="String">
+        <sv:value>FS1.1.9.1_personalDataDeathDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_9_2" sv:type="String">
+        <sv:value>FS1.1.9.2_personalDataDeathCity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_1_9_3" sv:type="String">
+        <sv:value>FS1.1.9.3_personalDataDeathCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_1" sv:type="String">
+        <sv:value>FS1.2.1_educationDataCertification_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_2" sv:type="String">
+        <sv:value>FS1.2.2_educationDataCertificationCenter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_3" sv:type="String">
+        <sv:value>FS1.2.3_educationDataCertificationCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_4" sv:type="String">
+        <sv:value>FS1.2.4_educationDataCertificationYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_5" sv:type="String">
+        <sv:value>FS1.2.5_educationDataOtherStudies_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_2_6" sv:type="String">
+        <sv:value>FS1.2.6_educationDataDoctorate_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_1" sv:type="String">
+        <sv:value>FS1.3.1_professionalDataOfficeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_2" sv:type="String">
+        <sv:value>FS1.3.2_professionalDataOfficeWebUrl_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_3" sv:type="String">
+        <sv:value>FS1.3.3_professionalDataOfficeCity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_4" sv:type="String">
+        <sv:value>FS1.3.4_professionalDataOfficeCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_5" sv:type="String">
+        <sv:value>FS1.3.5_professionalDataOfficeComponents_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_6_en" sv:type="String">
+        <sv:value>FS1.3.6_professionalDataBiographicReview_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_7_en" sv:type="String">
+        <sv:value>FS1.3.7_professionalDataCV_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_3_8" sv:type="String">
+        <sv:value>FS1.3.8_professionalDataAwardsDistinctions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_1" sv:type="String">
+        <sv:value>FS1.4.1_workExperienceDataStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_2" sv:type="String">
+        <sv:value>FS1.4.2_workExperienceDataEndDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_3_en" sv:type="String">
+        <sv:value>FS1.4.3_workExperienceDataPosition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_4_en" sv:type="String">
+        <sv:value>FS1.4.4_workExperienceDataFunctionsResponsibilities_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_5" sv:type="String">
+        <sv:value>FS1.4.5_workExperienceDataCompanyName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_4_6" sv:type="String">
+        <sv:value>FS1.4.6_workExperienceDataCompanyType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_1" sv:type="String">
+        <sv:value>FS1.5.1_educationListDataStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_2" sv:type="String">
+        <sv:value>FS1.5.2_educationListDataEndDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_3" sv:type="String">
+        <sv:value>FS1.5.3_educationListDataQualification_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_4_en" sv:type="String">
+        <sv:value>FS1.5.4_educationListDataSubjectsProfessionalCompetence_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_5_en" sv:type="String">
+        <sv:value>FS1.5.5_educationListDataEducationalCenter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_6_en" sv:type="String">
+        <sv:value>FS1.5.6_educationListDataEducationalCenterType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_5_7" sv:type="String">
+        <sv:value>FS1.5.7_educationListDataNationalLevel_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_1" sv:type="String">
+        <sv:value>FS1.6.1_languagesDataLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_2" sv:type="String">
+        <sv:value>FS1.6.2_languagesDataOtherLanguages_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_3" sv:type="String">
+        <sv:value>FS1.6.3_languagesDataFirstLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_4" sv:type="String">
+        <sv:value>FS1.6.4_languagesDataAuditiveComprehension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_5" sv:type="String">
+        <sv:value>FS1.6.5_languagesDataReadingComprehension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_6" sv:type="String">
+        <sv:value>FS1.6.6_languagesDataOralInteraction_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_7" sv:type="String">
+        <sv:value>FS1.6.7_languagesDataOralExpression_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_6_8" sv:type="String">
+        <sv:value>FS1.6.8_languagesDataWritting_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_1_en" sv:type="String">
+        <sv:value>FS1.7.1_personalCapabilitiesDataSocialAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_2_en" sv:type="String">
+        <sv:value>FS1.7.2_personalCapabilitiesDataOrganizationalAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_3_en" sv:type="String">
+        <sv:value>FS1.7.3_personalCapabilitiesDataTechnicalAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_4_en" sv:type="String">
+        <sv:value>FS1.7.4_personalCapabilitiesDataComputerAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_5_en" sv:type="String">
+        <sv:value>FS1.7.5_personalCapabilitiesDataArtAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_6_en" sv:type="String">
+        <sv:value>FS1.7.6_personalCapabilitiesDataOtherAptitudes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_7_7" sv:type="String">
+        <sv:value>FS1.7.7_personalCapabilitiesDataDriveLicense_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_8_1_en" sv:type="String">
+        <sv:value>FS1.8.1_additonalInfoDataAdditionalInformation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS1_8_2_en" sv:type="String">
+        <sv:value>FS1.8.2_additonalInfoDataAnnexes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportBusinessIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-business</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-business</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_1" sv:type="String">
+        <sv:value>FS4.1.1_businessDataType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_10" sv:type="String">
+        <sv:value>FS4.1.10_businessDataCV_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_11" sv:type="String">
+        <sv:value>FS4.1.11_businessDataAwards_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_2" sv:type="String">
+        <sv:value>FS4.1.2_businessLegalName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_3" sv:type="String">
+        <sv:value>FS4.1.3_businessDataLogo_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_4" sv:type="String">
+        <sv:value>FS4.1.4_businessConstitutionDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_5" sv:type="String">
+        <sv:value>FS4.1.5_businessDepartmentWebPage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_6" sv:type="String">
+        <sv:value>FS4.1.6_businessDepartmentCity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_7" sv:type="String">
+        <sv:value>FS4.1.7_personalDepartmentCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_8" sv:type="String">
+        <sv:value>FS4.1.8_businessDepartmentComponents_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_9" sv:type="String">
+        <sv:value>FS4.1.9_businessBiographicReview_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_2_1" sv:type="String">
+        <sv:value>FS4.2.1_businessAdditionalInfo_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_2_2" sv:type="String">
+        <sv:value>FS4.2.2_businessAdditionalInfoDataAnnexes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_2_3" sv:type="String">
+        <sv:value>FS4.2.3_businessAdditionalInfoDataDossier_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportBusinessIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-business</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-business_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_10" sv:type="String">
+        <sv:value>FS4.1.10_businessDataCV_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_11" sv:type="String">
+        <sv:value>FS4.1.11_businessDataAwards_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_1_en" sv:type="String">
+        <sv:value>FS4.1.1_businessDataType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_2" sv:type="String">
+        <sv:value>FS4.1.2_businessLegalName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_3" sv:type="String">
+        <sv:value>FS4.1.3_businessDataLogo_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_4" sv:type="String">
+        <sv:value>FS4.1.4_businessConstitutionDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_5" sv:type="String">
+        <sv:value>FS4.1.5_businessDepartmentWebPage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_6" sv:type="String">
+        <sv:value>FS4.1.6_businessDepartmentCity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_7" sv:type="String">
+        <sv:value>FS4.1.7_personalDepartmentCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_8" sv:type="String">
+        <sv:value>FS4.1.8_businessDepartmentComponents_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_1_9_en" sv:type="String">
+        <sv:value>FS4.1.9_businessBiographicReview_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_2_1_en" sv:type="String">
+        <sv:value>FS4.2.1_businessAdditionalInfo_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_2_2_en" sv:type="String">
+        <sv:value>FS4.2.2_businessAdditionalInfoDataAnnexes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS4_2_3_en" sv:type="String">
+        <sv:value>FS4.2.3_businessAdditionalInfoDataDossier_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportEventIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-event</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-event</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1" sv:type="String">
+        <sv:value>FS3_2_1_ouvrePresentationTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3_2_2_ouvrePresentationPresentationStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3" sv:type="String">
+        <sv:value>FS3_2_3_ouvrePresentationPresentationLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5" sv:type="String">
+        <sv:value>FS3_2_5_ouvrePresentationAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_6" sv:type="String">
+        <sv:value>FS3_2_6_ouvrePresentationPresentationEndingDate_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_7" sv:type="String">
+        <sv:value>FS3_2_7_ouvrePresentationPrice_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_8" sv:type="String">
+        <sv:value>FS3_2_8_ouvrePresentationWebsite_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3_3_1_authorshipDataAuthorshipType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2" sv:type="String">
+        <sv:value>FS3_3_2_authorshipDataAuthorshipName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3" sv:type="String">
+        <sv:value>FS3_3_3_authorshipData.authorshipDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_4" sv:type="String">
+        <sv:value>FS3_3_4_authorshipDataAuthorshipInfo_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3_7_2_mediaGalleryDataPhotoPreview_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportEventIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-event</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-event_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1_en" sv:type="String">
+        <sv:value>FS3_2_1_ouvrePresentationTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3_2_2_ouvrePresentationPresentationStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3" sv:type="String">
+        <sv:value>FS3_2_3_ouvrePresentationPresentationLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5_en" sv:type="String">
+        <sv:value>FS3_2_5_ouvrePresentationAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_6" sv:type="String">
+        <sv:value>FS3_2_6_ouvrePresentationPresentationEndingDate_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_7" sv:type="String">
+        <sv:value>FS3_2_7_ouvrePresentationPrice_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_8" sv:type="String">
+        <sv:value>FS3_2_8_ouvrePresentationWebsite_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3_3_1_authorshipDataAuthorshipType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2_en" sv:type="String">
+        <sv:value>FS3_3_2_authorshipDataAuthorshipName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3_en" sv:type="String">
+        <sv:value>FS3_3_3_authorshipData.authorshipDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_4_en" sv:type="String">
+        <sv:value>FS3_3_4_authorshipDataAuthorshipInfo_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3_7_2_mediaGalleryDataPhotoPreview_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportProjectIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-project</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-project</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2.1.1" sv:type="String">
+        <sv:value>FS2.1.1_platformDataProjectId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2.1.2" sv:type="String">
+        <sv:value>FS2.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2.1.3" sv:type="String">
+        <sv:value>FS2.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2.1.4" sv:type="String">
+        <sv:value>FS2.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_1" sv:type="String">
+        <sv:value>FS2_10_1_mediaGalleryDataGalleryTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_2" sv:type="String">
+        <sv:value>FS2_10_2_mediaGalleryDataMediaType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_3" sv:type="String">
+        <sv:value>FS2_10_3_mediaGalleryDataPhotoPreview_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_4" sv:type="String">
+        <sv:value>FS2_10_4_mediaGalleryDataMediaDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_5" sv:type="String">
+        <sv:value>FS2_10_5_mediaGalleryDataMediaTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_1" sv:type="String">
+        <sv:value>FS2_2_1_workDataProjectTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_2" sv:type="String">
+        <sv:value>FS2_2_2_workDataOtherReferencies_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_3" sv:type="String">
+        <sv:value>FS2_2_3_workDataProjectStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_4" sv:type="String">
+        <sv:value>FS2_2_4_workDataWorkStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_5" sv:type="String">
+        <sv:value>FS2_2_5_workDataProjectFinishDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_6" sv:type="String">
+        <sv:value>FS2_2_6_workDataSquareMetersBuilded_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_7" sv:type="String">
+        <sv:value>FS2_2_7_workDataSquareMetersCost_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_8" sv:type="String">
+        <sv:value>FS2_2_8_workDataAwards_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_1" sv:type="String">
+        <sv:value>FS2_3_1_localizationDataTypeOfRoad_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_10" sv:type="String">
+        <sv:value>FS2_3_10_localizationDataLattitude_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_11" sv:type="String">
+        <sv:value>FS2_3_11_localizationDataLongitude_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_2" sv:type="String">
+        <sv:value>FS2_3_2_localizationDataRoad_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_3" sv:type="String">
+        <sv:value>FS2_3_3_localizationDataNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_4" sv:type="String">
+        <sv:value>FS2_3_4_localizationDataPostalCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_5" sv:type="String">
+        <sv:value>FS2_3_5_localizationDataLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_6" sv:type="String">
+        <sv:value>FS2_3_6_localizationDataTown_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_7" sv:type="String">
+        <sv:value>FS2_3_7_localizationDataProvince_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_8" sv:type="String">
+        <sv:value>FS2_3_8_localizationDataAutonomousCommunity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_9" sv:type="String">
+        <sv:value>FS2_3_9_localizationDataCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_4_1" sv:type="String">
+        <sv:value>FS2_4_1_authorshipDataAuthorshipType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_4_2" sv:type="String">
+        <sv:value>FS2_4_2_authorshipDataAuthorshipName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_4_3" sv:type="String">
+        <sv:value>FS2_4_3_authorshipDataAuthorshipSurname_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_4_4" sv:type="String">
+        <sv:value>FS2_4_4_authorshipDataAuthorshipDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_5_1" sv:type="String">
+        <sv:value>FS2_5_1_informationDataSupportTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_5_2" sv:type="String">
+        <sv:value>FS2_5_2_informationDataLinkExternalPage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_1" sv:type="String">
+        <sv:value>FS2_6_1_authorOwnershipDataAbleToGetResource_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_10" sv:type="String">
+        <sv:value>FS2_6_10_authorOwnershipDataAutonomousCommunity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_11" sv:type="String">
+        <sv:value>FS2_6_11_authorOwnershipDataCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_2" sv:type="String">
+        <sv:value>FS2_6_2_authorOwnershipDataContactEmail_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_3" sv:type="String">
+        <sv:value>FS2_6_3_authorOwnershipDataContactPhone_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_4" sv:type="String">
+        <sv:value>FS2_6_4_authorOwnershipDataTypeOfRoad_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_5" sv:type="String">
+        <sv:value>FS2_6_5_authorOwnershipDataRoad_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_6" sv:type="String">
+        <sv:value>FS2_6_6_authorOwnershipDataNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_7" sv:type="String">
+        <sv:value>FS2_6_7_authorOwnershipDataTown_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_8" sv:type="String">
+        <sv:value>FS2_6_8_authorOwnershipDataPostalCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_9" sv:type="String">
+        <sv:value>FS2_6_9_authorOwnershipDataProvince_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_7_1" sv:type="String">
+        <sv:value>FS2_7_1_relatedThoughtsDataRelatedThoughts_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_8_1" sv:type="String">
+        <sv:value>FS2_8_1_projectNotesDataBuildedBy_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_8_2" sv:type="String">
+        <sv:value>FS2_8_2_projectNotesDataProjectActualState_S</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_8_3" sv:type="String">
+        <sv:value>FS2_8_3_projectNotesDataProjectActualUse_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_1" sv:type="String">
+        <sv:value>FS2_9_1_searchTagsDataProjectType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_2" sv:type="String">
+        <sv:value>FS2_9_2_searchTagsDataMainTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_3" sv:type="String">
+        <sv:value>FS2_9_3_searchTagsDataTemporalScope_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_4" sv:type="String">
+        <sv:value>FS2_9_4_searchTagsDataTerritorialScope_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_5" sv:type="String">
+        <sv:value>FS2_9_5_searchTagsDataMainArchitect_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_6" sv:type="String">
+        <sv:value>FS2_9_6_searchTagsDataMainArchitecturalStyle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_7" sv:type="String">
+        <sv:value>FS2_9_7_searchTagsDataMainArchitecturalUse_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportProjectIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-project</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-project_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2.1.1" sv:type="String">
+        <sv:value>FS2.1.1_platformDataProjectId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2.1.2" sv:type="String">
+        <sv:value>FS2.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2.1.3" sv:type="String">
+        <sv:value>FS2.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2.1.4" sv:type="String">
+        <sv:value>FS2.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_1" sv:type="String">
+        <sv:value>FS2_10_1_mediaGalleryDataGalleryTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_2" sv:type="String">
+        <sv:value>FS2_10_2_mediaGalleryDataMediaType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_3" sv:type="String">
+        <sv:value>FS2_10_3_mediaGalleryDataPhotoPreview_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_4_en" sv:type="String">
+        <sv:value>FS2_10_4_mediaGalleryDataMediaDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_10_5_en" sv:type="String">
+        <sv:value>FS2_10_5_mediaGalleryDataMediaTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_1_en" sv:type="String">
+        <sv:value>FS2_2_1_workDataProjectTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_2_en" sv:type="String">
+        <sv:value>FS2_2_2_workDataOtherReferencies_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_3" sv:type="String">
+        <sv:value>FS2_2_3_workDataProjectStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_4" sv:type="String">
+        <sv:value>FS2_2_4_workDataWorkStartDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_5" sv:type="String">
+        <sv:value>FS2_2_5_workDataProjectFinishDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_6" sv:type="String">
+        <sv:value>FS2_2_6_workDataSquareMetersBuilded_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_7" sv:type="String">
+        <sv:value>FS2_2_7_workDataSquareMetersCost_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_2_8" sv:type="String">
+        <sv:value>FS2_2_8_workDataAwards_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_1" sv:type="String">
+        <sv:value>FS2_3_1_localizationDataTypeOfRoad_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_10" sv:type="String">
+        <sv:value>FS2_3_10_localizationDataLattitude_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_11" sv:type="String">
+        <sv:value>FS2_3_11_localizationDataLongitude_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_2" sv:type="String">
+        <sv:value>FS2_3_2_localizationDataRoad_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_3" sv:type="String">
+        <sv:value>FS2_3_3_localizationDataNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_4" sv:type="String">
+        <sv:value>FS2_3_4_localizationDataPostalCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_5" sv:type="String">
+        <sv:value>FS2_3_5_localizationDataLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_6" sv:type="String">
+        <sv:value>FS2_3_6_localizationDataTown_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_7" sv:type="String">
+        <sv:value>FS2_3_7_localizationDataProvince_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_8" sv:type="String">
+        <sv:value>FS2_3_8_localizationDataAutonomousCommunity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_3_9" sv:type="String">
+        <sv:value>FS2_3_9_localizationDataCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_4_1" sv:type="String">
+        <sv:value>FS2_4_1_authorshipDataAuthorshipType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_4_2_en" sv:type="String">
+        <sv:value>FS2_4_2_authorshipDataAuthorshipName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_4_3_en" sv:type="String">
+        <sv:value>FS2_4_3_authorshipDataAuthorshipSurname_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_4_4_en" sv:type="String">
+        <sv:value>FS2_4_4_authorshipDataAuthorshipDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_5_1" sv:type="String">
+        <sv:value>FS2_5_1_informationDataSupportTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_5_2" sv:type="String">
+        <sv:value>FS2_5_2_informationDataLinkExternalPage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_1" sv:type="String">
+        <sv:value>FS2_6_1_authorOwnershipDataAbleToGetResource_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_10" sv:type="String">
+        <sv:value>FS2_6_10_authorOwnershipDataAutonomousCommunity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_11" sv:type="String">
+        <sv:value>FS2_6_11_authorOwnershipDataCountry_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_2" sv:type="String">
+        <sv:value>FS2_6_2_authorOwnershipDataContactEmail_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_3" sv:type="String">
+        <sv:value>FS2_6_3_authorOwnershipDataContactPhone_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_4" sv:type="String">
+        <sv:value>FS2_6_4_authorOwnershipDataTypeOfRoad_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_5" sv:type="String">
+        <sv:value>FS2_6_5_authorOwnershipDataRoad_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_6" sv:type="String">
+        <sv:value>FS2_6_6_authorOwnershipDataNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_7" sv:type="String">
+        <sv:value>FS2_6_7_authorOwnershipDataTown_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_8" sv:type="String">
+        <sv:value>FS2_6_8_authorOwnershipDataPostalCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_6_9" sv:type="String">
+        <sv:value>FS2_6_9_authorOwnershipDataProvince_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_7_1" sv:type="String">
+        <sv:value>FS2_7_1_relatedThoughtsDataRelatedThoughts_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_8_1" sv:type="String">
+        <sv:value>FS2_8_1_projectNotesDataBuildedBy_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_8_2" sv:type="String">
+        <sv:value>FS2_8_2_projectNotesDataProjectActualState_S</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_8_3" sv:type="String">
+        <sv:value>FS2_8_3_projectNotesDataProjectActualUse_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_1" sv:type="String">
+        <sv:value>FS2_9_1_searchTagsDataProjectType_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_2" sv:type="String">
+        <sv:value>FS2_9_2_searchTagsDataMainTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_3" sv:type="String">
+        <sv:value>FS2_9_3_searchTagsDataTemporalScope_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_4" sv:type="String">
+        <sv:value>FS2_9_4_searchTagsDataTerritorialScope_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_5" sv:type="String">
+        <sv:value>FS2_9_5_searchTagsDataMainArchitect_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_6" sv:type="String">
+        <sv:value>FS2_9_6_searchTagsDataMainArchitecturalStyle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS2_9_7" sv:type="String">
+        <sv:value>FS2_9_7_searchTagsDataMainArchitecturalUse_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportReviewIIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-review-i</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-review-i</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_1" sv:type="String">
+        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_2" sv:type="String">
+        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_3" sv:type="String">
+        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_4" sv:type="String">
+        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1" sv:type="String">
+        <sv:value>FS3.2.1_workDataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3.2.2_workDataPresentationDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3" sv:type="String">
+        <sv:value>FS3.2.3_workDataPresentationLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_4" sv:type="String">
+        <sv:value>FS3.2.4_workDataPresentationEntity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5" sv:type="String">
+        <sv:value>FS3.2.5_workDataAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3.3.1_authorshipDataAuthorshipType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2" sv:type="String">
+        <sv:value>FS3.3.2_authorshipDataAuthorshipName_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3" sv:type="String">
+        <sv:value>FS3.3.3_authorshipDataAuthorshipDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_4" sv:type="String">
+        <sv:value>FS3.4_notesDataNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_5_1" sv:type="String">
+        <sv:value>FS3.5.1_informationDataTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_6" sv:type="String">
+        <sv:value>FS3.6_relatedThoughtDataRelatedThought_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_1" sv:type="String">
+        <sv:value>FS3.7.1_mediaGalleryDataMediaType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3.7.2_mediaGalleryDataPhotoPreview_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_3" sv:type="String">
+        <sv:value>FS3.7.3_mediaGalleryDataMediaDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_4" sv:type="String">
+        <sv:value>FS3.7.4_mediaGalleryDataMediaTitle_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportReviewIIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-review-i</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-review-i_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_1" sv:type="String">
+        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_2" sv:type="String">
+        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_3" sv:type="String">
+        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_4" sv:type="String">
+        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1_en" sv:type="String">
+        <sv:value>FS3.2.1_workDataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3.2.2_workDataPresentationDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3_en" sv:type="String">
+        <sv:value>FS3.2.3_workDataPresentationLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_4" sv:type="String">
+        <sv:value>FS3.2.4_workDataPresentationEntity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5_en" sv:type="String">
+        <sv:value>FS3.2.5_workDataAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3.3.1_authorshipDataAuthorshipType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2_en" sv:type="String">
+        <sv:value>FS3.3.2_authorshipDataAuthorshipName_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3_en" sv:type="String">
+        <sv:value>FS3.3.3_authorshipDataAuthorshipDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_4_en" sv:type="String">
+        <sv:value>FS3.4_notesDataNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_5_1" sv:type="String">
+        <sv:value>FS3.5.1_informationDataTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_6" sv:type="String">
+        <sv:value>FS3.6_relatedThoughtDataRelatedThought_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_1" sv:type="String">
+        <sv:value>FS3.7.1_mediaGalleryDataMediaType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3.7.2_mediaGalleryDataPhotoPreview_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_3_en" sv:type="String">
+        <sv:value>FS3.7.3_mediaGalleryDataMediaDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_4_en" sv:type="String">
+        <sv:value>FS3.7.4_mediaGalleryDataMediaTitle_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportReviewIIIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-review-ii</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-review-ii</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_1" sv:type="String">
+        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_2" sv:type="String">
+        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_3" sv:type="String">
+        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_4" sv:type="String">
+        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1" sv:type="String">
+        <sv:value>FS3.2.1_workDataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3.2.2_workDataPresentationDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3" sv:type="String">
+        <sv:value>FS3.2.3_workDataPresentationLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_4" sv:type="String">
+        <sv:value>FS3.2.4_workDataPresentationEntity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5" sv:type="String">
+        <sv:value>FS3.2.5_workDataAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3.3.1_authorshipDataAuthorshipType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2" sv:type="String">
+        <sv:value>FS3.3.2_authorshipDataAuthorshipName_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3" sv:type="String">
+        <sv:value>FS3.3.3_authorshipDataAuthorshipDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_4" sv:type="String">
+        <sv:value>FS3.4_notesDataNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_5_1" sv:type="String">
+        <sv:value>FS3.5.1_informationDataTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_6" sv:type="String">
+        <sv:value>FS3.6_relatedThoughtDataRelatedThought_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_1" sv:type="String">
+        <sv:value>FS3.7.1_mediaGalleryDataMediaType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3.7.2_mediaGalleryDataPhotoPreview_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_3" sv:type="String">
+        <sv:value>FS3.7.3_mediaGalleryDataMediaDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_4" sv:type="String">
+        <sv:value>FS3.7.4_mediaGalleryDataMediaTitle_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportReviewIIIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-review-ii</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-review-ii_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_1" sv:type="String">
+        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_2" sv:type="String">
+        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_3" sv:type="String">
+        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_4" sv:type="String">
+        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1_en" sv:type="String">
+        <sv:value>FS3.2.1_workDataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3.2.2_workDataPresentationDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3_en" sv:type="String">
+        <sv:value>FS3.2.3_workDataPresentationLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_4" sv:type="String">
+        <sv:value>FS3.2.4_workDataPresentationEntity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5_en" sv:type="String">
+        <sv:value>FS3.2.5_workDataAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3.3.1_authorshipDataAuthorshipType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2_en" sv:type="String">
+        <sv:value>FS3.3.2_authorshipDataAuthorshipName_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3_en" sv:type="String">
+        <sv:value>FS3.3.3_authorshipDataAuthorshipDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_4_en" sv:type="String">
+        <sv:value>FS3.4_notesDataNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_5_1" sv:type="String">
+        <sv:value>FS3.5.1_informationDataTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_6" sv:type="String">
+        <sv:value>FS3.6_relatedThoughtDataRelatedThought_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_1" sv:type="String">
+        <sv:value>FS3.7.1_mediaGalleryDataMediaType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3.7.2_mediaGalleryDataPhotoPreview_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_3_en" sv:type="String">
+        <sv:value>FS3.7.3_mediaGalleryDataMediaDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_4_en" sv:type="String">
+        <sv:value>FS3.7.4_mediaGalleryDataMediaTitle_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportReviewIIIIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-review-iii</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-review-iii</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_1" sv:type="String">
+        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_2" sv:type="String">
+        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_3" sv:type="String">
+        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_4" sv:type="String">
+        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1" sv:type="String">
+        <sv:value>FS3.2.1_workDataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3.2.2_workDataPresentationDatePeriod_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3" sv:type="String">
+        <sv:value>FS3.2.3_workDataPresentationLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_4" sv:type="String">
+        <sv:value>FS3.2.4_workDataPresentationEntity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5" sv:type="String">
+        <sv:value>FS3.2.5_workDataAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3.3.1_authorshipDataAuthorshipType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2" sv:type="String">
+        <sv:value>FS3.3.2_authorshipDataAuthorshipName_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3" sv:type="String">
+        <sv:value>FS3.3.3_authorshipDataAuthorshipDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_4" sv:type="String">
+        <sv:value>FS3.4_notesDataNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_5_1" sv:type="String">
+        <sv:value>FS3.5.1_informationDataTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_6" sv:type="String">
+        <sv:value>FS3.6_relatedThoughtDataRelatedThought_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_1" sv:type="String">
+        <sv:value>FS3.7.1_mediaGalleryDataMediaType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3.7.2_mediaGalleryDataPhotoPreview_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_3" sv:type="String">
+        <sv:value>FS3.7.3_mediaGalleryDataMediaDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_4" sv:type="String">
+        <sv:value>FS3.7.4_mediaGalleryDataMediaTitle_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportReviewIIIIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-review-iii</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-review-iii_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_1" sv:type="String">
+        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_2" sv:type="String">
+        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_3" sv:type="String">
+        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_4" sv:type="String">
+        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1_en" sv:type="String">
+        <sv:value>FS3.2.1_workDataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3.2.2_workDataPresentationDatePeriod_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3_en" sv:type="String">
+        <sv:value>FS3.2.3_workDataPresentationLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_4" sv:type="String">
+        <sv:value>FS3.2.4_workDataPresentationEntity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5_en" sv:type="String">
+        <sv:value>FS3.2.5_workDataAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3.3.1_authorshipDataAuthorshipType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2_en" sv:type="String">
+        <sv:value>FS3.3.2_authorshipDataAuthorshipName_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3_en" sv:type="String">
+        <sv:value>FS3.3.3_authorshipDataAuthorshipDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_4_en" sv:type="String">
+        <sv:value>FS3.4_notesDataNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_5_1" sv:type="String">
+        <sv:value>FS3.5.1_informationDataTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_6" sv:type="String">
+        <sv:value>FS3.6_relatedThoughtDataRelatedThought_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_1" sv:type="String">
+        <sv:value>FS3.7.1_mediaGalleryDataMediaType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3.7.2_mediaGalleryDataPhotoPreview_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_3_en" sv:type="String">
+        <sv:value>FS3.7.3_mediaGalleryDataMediaDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_4_en" sv:type="String">
+        <sv:value>FS3.7.4_mediaGalleryDataMediaTitle_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportReviewIVIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-review-iv</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-review-iv</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_1" sv:type="String">
+        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_2" sv:type="String">
+        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_3" sv:type="String">
+        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_4" sv:type="String">
+        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1" sv:type="String">
+        <sv:value>FS3.2.1_workDataOuvretitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2" sv:type="String">
+        <sv:value>FS3.2.2_workDataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3" sv:type="String">
+        <sv:value>FS3.2.3_workDataLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_4" sv:type="String">
+        <sv:value>FS3.2.4_workDataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5" sv:type="String">
+        <sv:value>FS3.2.5_workDataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_6" sv:type="String">
+        <sv:value>FS3.2.6_workDataAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3.3.1_authorshipDataAuthorshipType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2" sv:type="String">
+        <sv:value>FS3.3.2_authorshipDataAuthorshipName_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3" sv:type="String">
+        <sv:value>FS3.3.3_authorshipDataAuthorshipDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_4" sv:type="String">
+        <sv:value>FS3.4_notesDataNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_5_1" sv:type="String">
+        <sv:value>FS3.5.1_informationDataTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_6" sv:type="String">
+        <sv:value>FS3.6_relatedThoughtDataRelatedThought_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_1" sv:type="String">
+        <sv:value>FS3.7.1_mediaGalleryDataMediaType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3.7.2_mediaGalleryDataPhotoPreview_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_3" sv:type="String">
+        <sv:value>FS3.7.3_mediaGalleryDataMediaDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_4" sv:type="String">
+        <sv:value>FS3.7.4_mediaGalleryDataMediaTitle_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="supportReviewIVIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:support-review-iv</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>support-review-iv_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_1" sv:type="String">
+        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_2" sv:type="String">
+        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_3" sv:type="String">
+        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_1_4" sv:type="String">
+        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_1_en" sv:type="String">
+        <sv:value>FS3.2.1_workDataOuvretitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_2_en" sv:type="String">
+        <sv:value>FS3.2.2_workDataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_3_en" sv:type="String">
+        <sv:value>FS3.2.3_workDataLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_4_en" sv:type="String">
+        <sv:value>FS3.2.4_workDataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_5_en" sv:type="String">
+        <sv:value>FS3.2.5_workDataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_2_6_en" sv:type="String">
+        <sv:value>FS3.2.6_workDataAbstract_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_1" sv:type="String">
+        <sv:value>FS3.3.1_authorshipDataAuthorshipType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_2_en" sv:type="String">
+        <sv:value>FS3.3.2_authorshipDataAuthorshipName_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_3_3_en" sv:type="String">
+        <sv:value>FS3.3.3_authorshipDataAuthorshipDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_4_en" sv:type="String">
+        <sv:value>FS3.4_notesDataNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_5_1" sv:type="String">
+        <sv:value>FS3.5.1_informationDataTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_6" sv:type="String">
+        <sv:value>FS3.6_relatedThoughtDataRelatedThought_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_1" sv:type="String">
+        <sv:value>FS3.7.1_mediaGalleryDataMediaType_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_2" sv:type="String">
+        <sv:value>FS3.7.2_mediaGalleryDataPhotoPreview_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_3_en" sv:type="String">
+        <sv:value>FS3.7.3_mediaGalleryDataMediaDetails_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="FS3_7_4_en" sv:type="String">
+        <sv:value>FS3.7.4_mediaGalleryDataMediaTitle_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatManuscriptIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-manuscript</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-manuscript</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b" sv:type="String">
+        <sv:value>m21_245$b_dataSubTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_500$a" sv:type="String">
+        <sv:value>m21_500$a_notesNature_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506" sv:type="String">
+        <sv:value>m21_506_notesAccess_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506$a" sv:type="String">
+        <sv:value>m21_506$a_notesTerms_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506$b" sv:type="String">
+        <sv:value>m21_506$b_notesJurisdiction_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506$c" sv:type="String">
+        <sv:value>m21_506$c_notesRequiredProvisions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506$d" sv:type="String">
+        <sv:value>m21_506$d_notesAuthorizedUsers_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a" sv:type="String">
+        <sv:value>m21_530$a_notesOtherPhysicalFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentaLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561" sv:type="String">
+        <sv:value>m21_561_notesSource_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$a" sv:type="String">
+        <sv:value>m21_561$a_notesStory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$b" sv:type="String">
+        <sv:value>m21_561$b_notesDates_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a" sv:type="String">
+        <sv:value>m21_590$a_notesLocalNote_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a" sv:type="String">
+        <sv:value>m21_651$a_notesGeoNameTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a" sv:type="String">
+        <sv:value>m21_700$a_notesSecondAuthorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e" sv:type="String">
+        <sv:value>m21_700$e_notesSecondAuthorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondAuthorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatManuscriptIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-manuscript</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-manuscript_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a_en" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b_en" sv:type="String">
+        <sv:value>m21_245$b_dataSubTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c_en" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a_en" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b_en" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i_en" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a_en" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b_en" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b_en" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_500$a_en" sv:type="String">
+        <sv:value>m21_500$a_notesNature_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a_en" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a_en" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506" sv:type="String">
+        <sv:value>m21_506_notesAccess_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506$a_en" sv:type="String">
+        <sv:value>m21_506$a_notesTerms_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506$b_en" sv:type="String">
+        <sv:value>m21_506$b_notesJurisdiction_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506$c_en" sv:type="String">
+        <sv:value>m21_506$c_notesRequiredProvisions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_506$d" sv:type="String">
+        <sv:value>m21_506$d_notesAuthorizedUsers_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a_en" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a_en" sv:type="String">
+        <sv:value>m21_530$a_notesOtherPhysicalFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a_en" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentaLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$a_en" sv:type="String">
+        <sv:value>m21_561$a_notesStory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$b" sv:type="String">
+        <sv:value>m21_561$b_notesDates_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561_en" sv:type="String">
+        <sv:value>m21_561_notesSource_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a_en" sv:type="String">
+        <sv:value>m21_590$a_notesLocalNote_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a_en" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a_en" sv:type="String">
+        <sv:value>m21_651$a_notesGeoNameTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a_en" sv:type="String">
+        <sv:value>m21_700$a_notesSecondAuthorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e_en" sv:type="String">
+        <sv:value>m21_700$e_notesSecondAuthorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondAuthorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatVideoIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-video</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-video</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_022$a" sv:type="String">
+        <sv:value>m21_022$a_dataIssn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_500$a" sv:type="String">
+        <sv:value>m21_500$a_notesGeneralNotes_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_508$a" sv:type="String">
+        <sv:value>m21_508$a_notesCredits_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_511$a" sv:type="String">
+        <sv:value>m21_511$a_notesParticipants_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_521$a" sv:type="String">
+        <sv:value>m21_521$a_notesRecipients_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a" sv:type="String">
+        <sv:value>m21_530$a_notesOtherFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a" sv:type="String">
+        <sv:value>m21_590$a_notesLocal_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a" sv:type="String">
+        <sv:value>m21_700$a_notesSecondaryActorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e" sv:type="String">
+        <sv:value>m21_700$e_notesSecondaryActorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondaryActorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatVideoIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-video</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-video_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_022$a" sv:type="String">
+        <sv:value>m21_022$a_dataIssn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a_en" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b_en" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c_en" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a_en" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b_en" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i_en" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a_en" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b_en" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a_en" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b_en" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c_en" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e_en" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a_en" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v_en" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_500$a_en" sv:type="String">
+        <sv:value>m21_500$a_notesGeneralNotes_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a_en" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a_en" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_508$a_en" sv:type="String">
+        <sv:value>m21_508$a_notesCredits_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_511$a_en" sv:type="String">
+        <sv:value>m21_511$a_notesParticipants_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a_en" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_521$a_en" sv:type="String">
+        <sv:value>m21_521$a_notesRecipients_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a_en" sv:type="String">
+        <sv:value>m21_530$a_notesOtherFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a_en" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a_en" sv:type="String">
+        <sv:value>m21_590$a_notesLocal_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a_en" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a_en" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a_en" sv:type="String">
+        <sv:value>m21_700$a_notesSecondaryActorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e_en" sv:type="String">
+        <sv:value>m21_700$e_notesSecondaryActorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondaryActorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatGraphicIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-graphic</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-graphic</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_500$a" sv:type="String">
+        <sv:value>m21_500$a_notesGeneralNotes_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_511$a" sv:type="String">
+        <sv:value>m21_511$a_notesParticipants_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a" sv:type="String">
+        <sv:value>m21_530$a_notesOtherFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561" sv:type="String">
+        <sv:value>m21_561_notesSource_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$a" sv:type="String">
+        <sv:value>m21_561$a_notesHistory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$b" sv:type="String">
+        <sv:value>m21_561$b_notesDates_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a" sv:type="String">
+        <sv:value>m21_590$a_notesLocal_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a" sv:type="String">
+        <sv:value>m21_700$a_notesSecondaryActorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e" sv:type="String">
+        <sv:value>m21_700$e_notesSecondaryActorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondaryActorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatGraphicIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-graphic</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-graphic_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a_en" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b_en" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c_en" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a_en" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b_en" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i_en" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a_en" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b_en" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a_en" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b_en" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c_en" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a_en" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_500$a_en" sv:type="String">
+        <sv:value>m21_500$a_notesGeneralNotes_ss</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a_en" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a_en" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_511$a" sv:type="String">
+        <sv:value>m21_511$a_notesParticipants_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a_en" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a_en" sv:type="String">
+        <sv:value>m21_530$a_notesOtherFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a_en" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561" sv:type="String">
+        <sv:value>m21_561_notesSource_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$a_en" sv:type="String">
+        <sv:value>m21_561$a_notesHistory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$b" sv:type="String">
+        <sv:value>m21_561$b_notesDates_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a_en" sv:type="String">
+        <sv:value>m21_590$a_notesLocal_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a_en" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a_en" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a_en" sv:type="String">
+        <sv:value>m21_700$a_notesSecondaryActorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e_en" sv:type="String">
+        <sv:value>m21_700$e_notesSecondaryActorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondaryActorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+</sv:node>
+
