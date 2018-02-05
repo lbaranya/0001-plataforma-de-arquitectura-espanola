@@ -108,45 +108,59 @@ editor:
               layout: vertical
               fields:
                 - name: generalNote
+                  i18n: true
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.format.video.notes.generalNotes.compositeField.generalNote.label
           - name: m21_546$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.documentLanguage.label
           - name: m21_508$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.credits.label
           - name: m21_511$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.participants.label
           - name: m21_502$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.thesis.label
           - name: m21_521$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.recipients.label
           - name: m21_530$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.otherFormats.label
           - name: m21_520$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.summary.label
           - name: m21_505$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.content.label
           - name: m21_590$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.local.label
           - name: m21_650$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.theme.label
           - name: m21_651$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.geoThemeName.label
           - name: m21_700$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.secondaryActorName.label
           - name: m21_700$e
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.notes.secondaryActorTypology.label
           - name: m21_710$a
