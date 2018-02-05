@@ -56,21 +56,18 @@ editor:
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.project.workData.projectStartDate.label
-            i18n: true
           - name: FS2_2_4
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.project.workData.workStartDate.label
-            i18n: true
           - name: FS2_2_5
             class: info.magnolia.ui.form.field.definition.DateFieldDefinition
             time: false
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.project.workData.projectFinishDate.label
-            i18n: true
             required: true
           - name: FS2_2_6
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition

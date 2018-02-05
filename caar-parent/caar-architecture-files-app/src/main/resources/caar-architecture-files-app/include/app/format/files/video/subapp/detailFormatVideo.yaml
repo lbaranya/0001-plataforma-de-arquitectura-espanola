@@ -35,27 +35,35 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.localeCode.label
           - name: m21_245$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.title.label
           - name: m21_245$b
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.subTitle.label
           - name: m21_245$c
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.mentions.label
           - name: m21_246$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.titleVariant.label
           - name: m21_246$b
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.continueTitle.label
           - name: m21_246$i
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.displayText.label
           - name: m21_250$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.edition.label
           - name: m21_250$b
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.mentionsEdition.label
           - name: m21_260$a
@@ -77,21 +85,27 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.printingYear.label
           - name: m21_300$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.documentExtension.label
           - name: m21_300$b
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.otherPhysicalDetails.label
           - name: m21_300$c
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.dimensions.label
           - name: m21_300$e
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.accompanyingMaterial.label
           - name: m21_440$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.collectionTitle.label
           - name: m21_440$v
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.video.data.collectionNumber.label
       - name: notes
