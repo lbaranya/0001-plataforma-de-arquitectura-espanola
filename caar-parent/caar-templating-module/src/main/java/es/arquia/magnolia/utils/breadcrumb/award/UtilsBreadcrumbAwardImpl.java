@@ -1,6 +1,6 @@
-package es.arquia.magnolia.utils.breadcrum.award;
+package es.arquia.magnolia.utils.breadcrumb.award;
 
-public class UtilsBreadcrumAwardImpl implements UtilsBreadcrumAward{
+public class UtilsBreadcrumbAwardImpl implements UtilsBreadcrumbAward{
 
 	@Override
 	public String getAwardAboutPageLink(String currentUrl) {

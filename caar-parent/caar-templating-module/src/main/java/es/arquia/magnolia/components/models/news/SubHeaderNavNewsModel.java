@@ -9,6 +9,9 @@ import java.util.List;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+
 import es.arquia.magnolia.functions.I18nURLFunctions;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;
@@ -75,11 +78,11 @@ public class SubHeaderNavNewsModel <T extends ConfiguredTemplateDefinition> exte
 	}
 	
 	public boolean listEmpty() {
-		return navigationNewsList == null;
+		return CollectionUtils.isEmpty(navigationNewsList);
 	}
 	
 	public boolean paramsEmpty() {
-		return this.listEmpty() && parentPath == null;
+		return this.listEmpty() && StringUtils.isEmpty(parentPath);
 	}
 
 }

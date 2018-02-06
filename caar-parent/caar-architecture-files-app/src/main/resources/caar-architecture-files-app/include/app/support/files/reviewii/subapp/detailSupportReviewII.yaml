@@ -107,16 +107,8 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.reviewii.informationData.typology.label
             required: true
-            options:
-              - name: FS3_5_1.1
-                value: thesis
-                label: caar-architecture-files-app.files.support.reviewii.informationData.typology.thesis.label
-              - name: FS3_5_1.2
-                value: theses
-                label: caar-architecture-files-app.files.support.reviewii.informationData.typology.theses.label
-              - name: FS3_5_1.3
-                value: nonPublishedWrittings
-                label: caar-architecture-files-app.files.support.reviewii.informationData.typology.nonPublishedWrittings.label
+            repository: category
+            path: caar/support-reviewii/typology
       - name: relatedThoughtData
         label: caar-architecture-files-app.files.support.reviewii.relatedThoughtData.label
         fields:

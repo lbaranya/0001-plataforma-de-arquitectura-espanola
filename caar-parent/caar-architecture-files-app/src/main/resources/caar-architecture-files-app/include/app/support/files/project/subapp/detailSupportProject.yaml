@@ -267,19 +267,13 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.label
             required: true
-            options:
-              - name: FS2_9_1_1
-                value: newProject
-                label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.newProject.label
-              - name: FS2_9_1_2
-                value: extension
-                label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.extension.label
-              - name: FS2_9_1_3
-                value: improvement
-                label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.improvement.label
+            repository: category
+            path: caar/support-project/project-type
           - name: FS2_9_2
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainTheme.label
+            repository: category
+            path: caar/support-project/main-theme
           - name: FS2_9_3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.temporalScope.label
@@ -292,11 +286,15 @@ editor:
             appName: caar-architecture-files-app
             targetWorkspace: architecture-files
           - name: FS2_9_6
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainArchitecturalStyle.label
+            repository: category
+            path: caar/support-project/main-architectural-style
           - name: FS2_9_7
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainArchitecturalUse.label
+            repository: category
+            path: caar/support-project/main-architectural-use
       - name: mediaGalleryData
         label: caar-architecture-files-app.files.support.project.mediaGalleryData.label
         fields:

@@ -1,0 +1,3 @@
+title: caar-templating-module.components.breadcrumb.dialog.title
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/breadcrumb-component.ftl

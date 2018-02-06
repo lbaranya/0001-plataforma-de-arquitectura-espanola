@@ -107,22 +107,8 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.reviewi.informationData.typology.label
             required: true
-            options:
-              - name: FS3_5_1_1
-                value: conference
-                label: caar-architecture-files-app.files.support.reviewi.informationData.typology.conference.label
-              - name: FS3_5_1_2
-                value: roundTable
-                label: caar-architecture-files-app.files.support.reviewi.informationData.typology.roundTable.label
-              - name: FS3_5_1_3
-                value: poster
-                label: caar-architecture-files-app.files.support.reviewi.informationData.typology.poster.label
-              - name: FS3_5_1_4
-                value: course
-                label: caar-architecture-files-app.files.support.reviewi.informationData.typology.course.label
-              - name: FS3_5_1_5
-                value: awards
-                label: caar-architecture-files-app.files.support.reviewi.informationData.typology.awards.label
+            repository: category
+            path: caar/support-reviewi/typology
       - name: relatedThoughtData
         label: caar-architecture-files-app.files.support.reviewi.relatedThoughtData.label
         fields:

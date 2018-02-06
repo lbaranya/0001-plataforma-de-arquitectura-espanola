@@ -11,7 +11,7 @@
 <section class="cmp-acerca-de-ae cmp-breadcrumb-info-video">
 	[#assign ancestor = navfn.ancestorPageAtLevel(content, 2)!]
 	<ul class="breadcrumb">
-		<li><a href="${cmsfn.link(navfn.rootPage(content))!"#"}">${i18n['caar-templating-module.templates.components.breadcrum-awards-component.label']}</a></li>
+		<li><a href="${cmsfn.link(navfn.rootPage(content))!"#"}">${i18n['caar-templating-module.templates.components.breadcrumb-awards-component.label']}</a></li>
 		<li><a href="${cmsfn.link(ancestor)!"#"}">${ancestor.title!""}</a></li>
 	[#if ancestorsList?has_content]
 		[#list ancestorsList as ancestor]
