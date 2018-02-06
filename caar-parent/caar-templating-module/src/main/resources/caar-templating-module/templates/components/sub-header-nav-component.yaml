@@ -1,4 +1,5 @@
 title: caar-templating-module.components.sub-header-nav.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/sub-header-nav-component.ftl    
-dialog: caar-templating-module:components/sub-header-component-properties    
+dialog: caar-templating-module:components/sub-header-component-properties
+modelClass: es.arquia.magnolia.components.models.news.SubHeaderNavNewsModel
