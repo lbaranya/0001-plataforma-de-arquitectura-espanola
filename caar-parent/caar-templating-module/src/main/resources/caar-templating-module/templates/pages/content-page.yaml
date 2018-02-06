@@ -34,8 +34,6 @@ areas:
             id: caar-templating-module:components/detail-news-component
           bienales-header-component:
             id: caar-templating-module:components/bienials-header-component
-          news-diary-component:
-            id: caar-templating-module:components/news-diary-component
           news-related-component:
             id: caar-templating-module:components/related-news-component
           detail-architect-header-component:

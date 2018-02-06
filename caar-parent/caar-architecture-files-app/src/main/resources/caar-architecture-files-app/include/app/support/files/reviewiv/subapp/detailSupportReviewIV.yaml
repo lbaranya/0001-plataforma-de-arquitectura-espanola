@@ -110,16 +110,8 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.label
             required: true
-            options:
-              - name: FS3_5_1_1
-                value: monographs
-                label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.monographs.label
-              - name: FS3_5_1_2
-                value: publishedArticles
-                label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.publishedArticles.label
-              - name: FS3_5_1_3
-                value: awards
-                label: caar-architecture-files-app.files.support.reviewiv.informationData.typology.awards.label
+            repository: category
+            path: caar/support-reviewiv/typology
       - name: relatedThoughtData
         label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.label
         fields:
