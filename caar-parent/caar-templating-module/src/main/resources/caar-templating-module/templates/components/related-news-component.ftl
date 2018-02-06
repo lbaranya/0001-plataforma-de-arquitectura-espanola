@@ -1,7 +1,6 @@
 [#assign news = model.getInstance()!""]
 [#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
 [#if nodeJcrPath?has_content]
-[#assign language = cmsfn.language()!""]
 [#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 [#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 <section class="cmp-last-news">

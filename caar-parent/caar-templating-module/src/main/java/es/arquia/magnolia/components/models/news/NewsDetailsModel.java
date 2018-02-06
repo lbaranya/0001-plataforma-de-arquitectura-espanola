@@ -6,7 +6,6 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 
 import es.arquia.magnolia.beans.News;
-import es.arquia.magnolia.beans.NewsImpl;
 import es.arquia.magnolia.manager.NewsManager;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
