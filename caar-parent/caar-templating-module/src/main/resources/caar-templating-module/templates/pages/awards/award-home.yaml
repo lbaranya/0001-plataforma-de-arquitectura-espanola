@@ -12,8 +12,8 @@ areas:
       content:
         type: single
         availableComponents:
-          breadcrum-component:
-            id: caar-templating-module:components/breadcrum-component
+          breadcrumb-component:
+            id: caar-templating-module:components/breadcrumb-component
       submenu-award:
         type: single
         availableComponents:

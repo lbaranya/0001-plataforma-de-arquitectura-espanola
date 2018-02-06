@@ -1,4 +1,0 @@
-title: caar-templating-module.components.breadcrum.dialog.title
-renderType: freemarker    
-templateScript: /caar-templating-module/templates/components/breadcrum-awards-component.ftl
-modelClass: es.arquia.magnolia.pages.models.AwardAboutModel

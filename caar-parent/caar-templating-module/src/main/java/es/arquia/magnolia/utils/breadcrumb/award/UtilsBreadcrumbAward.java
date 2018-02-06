@@ -1,6 +1,6 @@
-package es.arquia.magnolia.utils.breadcrum.award;
+package es.arquia.magnolia.utils.breadcrumb.award;
 
-public interface UtilsBreadcrumAward {
+public interface UtilsBreadcrumbAward {
 	
 	String URIRepositoryAward = "/awards/";
 	

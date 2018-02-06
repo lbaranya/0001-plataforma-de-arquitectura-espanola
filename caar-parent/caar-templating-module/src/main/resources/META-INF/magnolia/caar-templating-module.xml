@@ -23,8 +23,8 @@
 			<implementation>es.arquia.magnolia.manager.AwardManagerImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.utils.breadcrum.award.UtilsBreadcrumAward</type>
-			<implementation>es.arquia.magnolia.utils.breadcrum.award.UtilsBreadcrumAwardImpl</implementation>
+			<type>es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAward</type>
+			<implementation>es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAwardImpl</implementation>
 		</component>
 		<component>
 			<type>es.arquia.magnolia.templates.bean.ContextBean</type>
