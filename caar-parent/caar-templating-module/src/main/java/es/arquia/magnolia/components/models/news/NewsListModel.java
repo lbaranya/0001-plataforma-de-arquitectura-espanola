@@ -34,14 +34,14 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
 	
 	public List<Node> getNewsList() throws Exception{
 		contextBean.setListResultNews(newsManager.getNewsList());
-		contextBean.setParentPath(MgnlContext.getAggregationState().getCurrentURI());
+		contextBean.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
 		setContextValuesFromNewsList(contextBean);
 		return contextBean.getListResultNews();
 	}
 	
 	public List<Node> getCategorizedNewsList(List<String> categoriesList, int numberOfNews) throws Exception{
 		contextBean.setListResultNews(newsManager.getCategorizedNewsList(categoriesList, numberOfNews));
-		contextBean.setParentPath(MgnlContext.getAggregationState().getCurrentURI());
+		contextBean.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
 		setContextValuesFromNewsList(contextBean);
 		return contextBean.getListResultNews();
 	}
