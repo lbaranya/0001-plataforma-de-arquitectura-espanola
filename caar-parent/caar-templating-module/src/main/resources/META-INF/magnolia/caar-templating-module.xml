@@ -26,6 +26,14 @@
 			<type>es.arquia.magnolia.utils.breadcrum.award.UtilsBreadcrumAward</type>
 			<implementation>es.arquia.magnolia.utils.breadcrum.award.UtilsBreadcrumAwardImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.templates.bean.ContextBean</type>
+			<implementation>es.arquia.magnolia.templates.bean.ContextBeanImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.functions.I18nURLFunctions</type>
+			<implementation>es.arquia.magnolia.functions.I18nURLFunctionsImpl</implementation>
+		</component>
 	</components>
 
   <dependencies>

@@ -496,7 +496,7 @@ subApps:
       # Format Graphic
       addFormatGraphic:
         !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFormatGraphic.yaml
-      editFormatManuscript:
+      editFormatGraphic:
         !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/editFormatGraphic.yaml
       
     # Sections

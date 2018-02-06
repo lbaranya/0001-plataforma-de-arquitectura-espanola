@@ -1,5 +1,4 @@
-
-[#assign nodeJcrPath = ctx.getParameter('newsPath')!?html]
+[#assign nodeJcrPath = ctx.getParameter('path')!?html]
 [#if nodeJcrPath?has_content]
 [#assign newsContent = cmsfn.contentByPath(nodeJcrPath, "news")]
 [#assign newsContentNode = cmsfn.asJCRNode(newsContent)]
