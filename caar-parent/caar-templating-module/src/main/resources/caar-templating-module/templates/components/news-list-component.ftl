@@ -4,7 +4,7 @@
 [#if content.categories?has_content]
 	[#assign listNews = model.getCategorizedNewsList(content.categories, 4)]
 [#else]
-	[#assign listNews = model.getNewsList()]
+	[#assign listNews = model.getNewsList(4)]
 [/#if]
 [#if listNews?has_content]
 	<section class="cmp-last-news">
@@ -34,7 +34,8 @@
 	                        	[#assign description = news.getDescription(newNode)!""]
 	                            <h4 class="title">${headLine!""}</h4>
 	                            <div class="info">
-	                            	<p>${description!""}</p>
+	                            	[#assign descriptionTruncated = cmsfn.abbreviateString(description, 401)!""]
+	                            	<p>${descriptionTruncated!""}</p>
 	                            </div>
 	                            <div class="noticias-links">
 			                    	<a href='${cmsfn.link(newNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
@@ -73,21 +74,5 @@
             }
         });
     }
-
-           
-	    function ellipsis_box(elemento, max_chars) {
-        var limite_text = "";
-            limite_text += $(elemento).text();
-            if (limite_text.length > max_chars) {
-                limite = limite_text.substr(0, max_chars) + " ...";
-                $(elemento).text(limite);
-            }
-    }
-    $(function() {
-        $(".cmp-last-news .info").each(function(e) {
-            ellipsis_box(this, 401);
-        });
-    });
-
 	</script>
 [/#if]
