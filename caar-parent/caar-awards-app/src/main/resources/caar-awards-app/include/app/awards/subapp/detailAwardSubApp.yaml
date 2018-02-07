@@ -79,6 +79,16 @@ editor:
               appName: categories
               identifierToPathConverter:
                 class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          - name: relatedNewsList
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-awards-app.awardData.relatedNewsList.label
+            field:
+              name: linkNews
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              targetWorkspace: news
+              appName: caar-news-app
+              identifierToPathConverter:
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
   actions:
     - name: commit
     - name: cancel

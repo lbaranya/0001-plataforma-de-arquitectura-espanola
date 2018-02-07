@@ -42,7 +42,7 @@
 		            </div>
             	[/#list]
 	        </div>
-	        ${loadMoreElement!""}
+	        [#if model.isLastRowOfNews() == false]${loadMoreElement!""}[/#if]
 	    </div>
 	</section>
 	<script>

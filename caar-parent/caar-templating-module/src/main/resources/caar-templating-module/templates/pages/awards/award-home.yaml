@@ -22,5 +22,7 @@ areas:
       relatedNews:
         type: single
         availableComponents:
-          submenu-award:
+          relatedNews:
             id: caar-templating-module:components/related-news-component
+          relatedElements:
+            id: caar-templating-module:components/related-elements-component

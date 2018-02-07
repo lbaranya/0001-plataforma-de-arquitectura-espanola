@@ -1,15 +1,15 @@
 package es.arquia.magnolia.beans;
 
-public class RelatedFile {
+public class RelatedElement {
 	
 	private String title;
 	private String photo;
 	
-	public RelatedFile() {
+	public RelatedElement() {
 		super();
 	}
 	
-	public RelatedFile(String title, String photo) {
+	public RelatedElement(String title, String photo) {
 		this.title = title;
 		this.photo = photo;
 	}

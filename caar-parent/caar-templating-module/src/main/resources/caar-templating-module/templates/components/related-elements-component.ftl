@@ -1,8 +1,9 @@
 [#assign nodeJcrPath = ctx.getParameter('path')!?html]
+[#assign nodeWorkspace = ctx.getParameter('workspace')!?html]
 [#if nodeJcrPath?has_content]
-	[#assign fileContent = cmsfn.contentByPath(nodeJcrPath, "architecture-files")!""]
+	[#assign fileContent = cmsfn.contentByPath(nodeJcrPath, nodeWorkspace)!""]
 	[#assign fileContentNode = cmsfn.asJCRNode(fileContent)!""]
-	[#assign nodes = model.getNodes(fileContentNode)]
+	[#assign nodes = model.getRelatedElements(fileContentNode)]
 	<section class="cmp-arquitectos-realacionados">
     	<div class="container-fluid">
             <div class="row">

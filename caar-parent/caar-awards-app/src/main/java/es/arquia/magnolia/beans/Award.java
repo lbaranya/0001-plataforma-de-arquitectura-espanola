@@ -27,4 +27,6 @@ public interface Award {
 	
 	public String getEditionEnrollmentButtonText(Node node) throws RepositoryException;
 
+	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException;
+
 }

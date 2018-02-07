@@ -37,5 +37,5 @@ public interface AwardConstants {
 	String editionAnnouncementButtonText = "announcementButtonText";
 	
 	String editionEnrollmentButtonText = "enrollmentButtonText";
-
+	
 }

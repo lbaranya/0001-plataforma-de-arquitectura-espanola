@@ -14,6 +14,14 @@
 			<type>es.arquia.magnolia.functions.QueryUtils</type>
 			<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.beans.ArchitectureFile</type>
+			<implementation>es.arquia.magnolia.beans.ArchitectureFileImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</type>
+			<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</implementation>
+		</component>
 	</components>
 
 	<dependencies>
