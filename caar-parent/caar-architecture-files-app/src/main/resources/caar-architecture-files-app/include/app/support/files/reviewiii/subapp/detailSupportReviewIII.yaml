@@ -117,6 +117,7 @@ editor:
             label: caar-architecture-files-app.files.support.reviewiii.informationData.typology.label
             required: true
             repository: category
+            labelProperty: displayName
             path: caar/support-reviewiii/typology
       - name: relatedThoughtData
         label: caar-architecture-files-app.files.support.reviewiii.relatedThoughtData.label
