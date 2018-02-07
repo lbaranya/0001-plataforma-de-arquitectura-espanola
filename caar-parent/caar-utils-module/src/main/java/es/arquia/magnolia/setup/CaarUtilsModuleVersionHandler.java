@@ -42,6 +42,11 @@ public class CaarUtilsModuleVersionHandler extends DefaultModuleVersionHandler {
 				.addTask(new IsAdminInstanceDelegateTask("Solr indexers", "Indexation configuration fields for Solr in public instance", null, 
 							new BootstrapSingleModuleResource("Solr indexers", "Indexation configuration fields for Solr", "config.modules.content-indexer.config.indexers.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING)))
 				);
+		
+		register(DeltaBuilder.update("0.18", "")
+				.addTask(new BootstrapSingleModuleResource("Category displayName i18n", "Add i18n property to displayName Textfield", "config.modules.categorization.apps.categories.subApps.detail.editor.form.tabs.category.fields.displayName.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				.addTask(new BootstrapSingleModuleResource("Arquia apps", "Add arquia custom apps to main layout", "config.modules.ui-admincentral.config.appLauncherLayout.groups.arquia.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				);
 	}
 	
 }

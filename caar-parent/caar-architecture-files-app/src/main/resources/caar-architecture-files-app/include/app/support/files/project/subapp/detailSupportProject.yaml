@@ -268,11 +268,13 @@ editor:
             label: caar-architecture-files-app.files.support.project.searchTagsData.projectType.label
             required: true
             repository: category
+            labelProperty: displayName
             path: caar/support-project/project-type
           - name: FS2_9_2
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainTheme.label
             repository: category
+            labelProperty: displayName
             path: caar/support-project/main-theme
           - name: FS2_9_3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -289,11 +291,13 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainArchitecturalStyle.label
             repository: category
+            labelProperty: displayName
             path: caar/support-project/main-architectural-style
           - name: FS2_9_7
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainArchitecturalUse.label
             repository: category
+            labelProperty: displayName
             path: caar/support-project/main-architectural-use
       - name: mediaGalleryData
         label: caar-architecture-files-app.files.support.project.mediaGalleryData.label
