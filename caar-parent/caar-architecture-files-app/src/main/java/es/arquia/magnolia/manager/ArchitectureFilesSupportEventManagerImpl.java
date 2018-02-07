@@ -16,15 +16,18 @@ import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.beans.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.functions.QueryUtils;
+import info.magnolia.cms.i18n.I18nContentSupport;
 
 public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFilesSupportEventManager {
 	
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportEventManagerImpl.class);
 	private QueryUtils queryUtils;
+	private I18nContentSupport i18nContentSupport;
 	
 	@Inject
-	public ArchitectureFilesSupportEventManagerImpl(final QueryUtils queryUtils) throws PathNotFoundException, RepositoryException {
+	public ArchitectureFilesSupportEventManagerImpl(final QueryUtils queryUtils, final I18nContentSupport i18nContentSupport) throws PathNotFoundException, RepositoryException {
         this.queryUtils = queryUtils;
+        this.i18nContentSupport = i18nContentSupport;
     }
 	
 	@Override
@@ -37,7 +40,7 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 	
 	@Override
 	public ArchitectureFilesSupportEvent getInstance() {
-		return new ArchitectureFilesSupportEvent();
+		return new ArchitectureFilesSupportEvent(i18nContentSupport);
 	}
 
 }

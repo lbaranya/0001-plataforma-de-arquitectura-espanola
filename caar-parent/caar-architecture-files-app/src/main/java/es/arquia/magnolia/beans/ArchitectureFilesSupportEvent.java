@@ -1,6 +1,5 @@
 package es.arquia.magnolia.beans;
 
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipDetail;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipInfo;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipName;
@@ -11,7 +10,6 @@ import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstant
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationEndingDate;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationLocation;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationStartDate;
-import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.previewPhoto;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.price;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.website;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
@@ -24,34 +22,29 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
-import javax.jcr.Session;
 
+import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
 public class ArchitectureFilesSupportEvent {
 	
-	private String getLocalizedSuffix(String currentLanguage) {
-    	if(!MgnlContext.getLocale().getLanguage().equals(currentLanguage))
-			currentLanguage = "_" + currentLanguage;
-		else
-			currentLanguage = "";
-    	return currentLanguage;
-    }
+	private I18nContentSupport i18nContentSupport;
 	
-	public String getOuvreTitle(Node node, String currentLanguage) throws RepositoryException {
+	@Inject
+	public ArchitectureFilesSupportEvent(final I18nContentSupport i18nContentSupport) {
+		this.i18nContentSupport = i18nContentSupport;
+	}
+	
+	public String getOuvreTitle(Node node) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(ouvreTitle + getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, ouvreTitle).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(ouvreTitle).getString();
-			}catch(RepositoryException ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
@@ -86,16 +79,11 @@ public class ArchitectureFilesSupportEvent {
 		}
 	}
 	
-	public String getOuvreAbstract(Node node, String currentLanguage) throws RepositoryException {
+	public String getOuvreAbstract(Node node) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(ouvreAbstract + getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, ouvreAbstract).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(ouvreAbstract).getString();
-			}catch(RepositoryException ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
@@ -128,55 +116,35 @@ public class ArchitectureFilesSupportEvent {
 		}
 	}
 	
-	public String getAuthorshipType(Node node, String currentLanguage) throws RepositoryException {
+	public String getAuthorshipType(Node node) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(authorshipType + getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, authorshipType).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(authorshipType).getString();
-			}catch(RepositoryException ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
-	public String getAuthorshipName(Node node, String currentLanguage) throws RepositoryException {
+	public String getAuthorshipName(Node node) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(authorshipName + getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, authorshipName).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(authorshipName).getString();
-			}catch(RepositoryException ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
-	public String getAuthorshipDetail(Node node, String currentLanguage) throws RepositoryException {
+	public String getAuthorshipDetail(Node node) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(authorshipDetail + getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, authorshipDetail).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(authorshipDetail).getString();
-			}catch(RepositoryException ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
-	public String getAuthorshipInfo(Node node, String currentLanguage) throws RepositoryException {
+	public String getAuthorshipInfo(Node node) throws RepositoryException {
 		try{
-			Property tmp = node.getProperty(authorshipInfo + getLocalizedSuffix(currentLanguage));
-			return tmp.getString();
+			return i18nContentSupport.getProperty(node, authorshipInfo).getString();
 		}catch(RepositoryException e) {
-			try {
-				return node.getProperty(authorshipInfo).getString();
-			}catch(RepositoryException ex) {
-				return "";
-			}
+			return "";
 		}
 	}
 	
