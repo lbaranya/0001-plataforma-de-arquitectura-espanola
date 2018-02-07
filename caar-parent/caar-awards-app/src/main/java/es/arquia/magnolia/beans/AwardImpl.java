@@ -1,5 +1,6 @@
 package es.arquia.magnolia.beans;
 
+import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.awardAboutText;
 import static es.arquia.magnolia.constants.AwardConstants.awardDescription;
 import static es.arquia.magnolia.constants.AwardConstants.awardExternalURL;
@@ -20,10 +21,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
-import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
-import javax.jcr.ValueFormatException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -152,6 +151,8 @@ public class AwardImpl implements Award{
 		
 		related.setTitle(this.getAwardName(node));
 		related.setPhoto(this.getAwardLogo(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(awardWorkspace);
 		
 		return related;
 	}

@@ -30,7 +30,6 @@ import static es.arquia.magnolia.constants.UtilsConstants.dateFormatDayOfWeek;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormatNumeric;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,10 +38,8 @@ import java.util.Locale;
 
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
-import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
-import javax.jcr.ValueFormatException;
 
 import info.magnolia.context.MgnlContext;
 

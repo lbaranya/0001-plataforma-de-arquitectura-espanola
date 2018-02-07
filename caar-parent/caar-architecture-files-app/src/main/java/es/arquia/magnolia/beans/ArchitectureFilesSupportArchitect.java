@@ -654,6 +654,8 @@ public class ArchitectureFilesSupportArchitect {
 
 		related.setTitle(this.getName(node) + " " + this.getFirstSurname(node) + " " + this.getSecondSurname(node));
 		related.setPhoto(this.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
 		
 		return related;
 	}
