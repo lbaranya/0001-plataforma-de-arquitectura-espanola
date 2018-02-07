@@ -297,6 +297,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.support.project.searchTagsData.mainArchitecturalUse.label
             repository: category
+            labelProperty: displayName
             path: caar/support-project/main-architectural-use
       - name: mediaGalleryData
         label: caar-architecture-files-app.files.support.project.mediaGalleryData.label
