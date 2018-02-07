@@ -39,9 +39,10 @@ public class NewsManagerImpl implements NewsManager{
 
 	@Override
 	public List<Node> getNewsList(int numberOfNews) throws Exception{
+		String rowsFromAjax = MgnlContext.getAttribute("rows");
 		final int limit = (numberOfNews > 0) ? (numberOfNews + 1) : 0;
 		final int lastNewsListElement = numberOfNews;
-		int offset = 0;
+		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [" + dateTime + "] DESC";
 		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 		if (newsList.size() < limit) {

@@ -32,8 +32,8 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
         this.contextBean = contextBean;
     }
 	
-	public List<Node> getNewsList() throws Exception{
-		contextBean.setListResultNews(newsManager.getNewsList());
+	public List<Node> getNewsList(int numberOfNews) throws Exception{
+		contextBean.setListResultNews(newsManager.getNewsList(numberOfNews));
 		contextBean.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
 		setContextValuesFromNewsList(contextBean);
 		return contextBean.getListResultNews();
