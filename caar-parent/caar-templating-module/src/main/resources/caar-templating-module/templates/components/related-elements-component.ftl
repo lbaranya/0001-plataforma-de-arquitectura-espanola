@@ -31,7 +31,7 @@
 		                    	[/#if]
 		                    [/#if]
 	                        <div class="texto">
-	                            <h2>${node.getTitle()!""}</h2>
+	                            <a style="color:#fff" href="${cmsfn.link(cmsfn.nodeByPath(node.getPath(), node.getWorkspace()))!"#"}"><h2>${node.getTitle()!""}</h2></a>
 	                        </div>
 	                    </div>
 	                </div>

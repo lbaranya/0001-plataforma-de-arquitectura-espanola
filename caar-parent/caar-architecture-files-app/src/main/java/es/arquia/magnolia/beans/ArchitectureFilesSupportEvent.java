@@ -1,6 +1,5 @@
 package es.arquia.magnolia.beans;
 
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipDetail;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipInfo;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipName;
@@ -11,7 +10,6 @@ import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstant
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationEndingDate;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationLocation;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationStartDate;
-import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.previewPhoto;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.price;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.website;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
@@ -28,7 +26,6 @@ import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
-import javax.jcr.Session;
 
 import info.magnolia.context.MgnlContext;
 

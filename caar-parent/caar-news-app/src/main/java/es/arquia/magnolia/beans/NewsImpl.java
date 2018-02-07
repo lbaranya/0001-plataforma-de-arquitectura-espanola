@@ -148,6 +148,8 @@ public class NewsImpl implements News{
 		
 		related.setTitle(this.getHeadline(node));
 		related.setPhoto(this.getImage(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(newsWorkspace);
 		
 		return related;
 	}

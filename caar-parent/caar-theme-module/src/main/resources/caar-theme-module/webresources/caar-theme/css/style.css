@@ -2543,6 +2543,7 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-arquitectos-realacionados .arquitecto h4 {
 	font-family: "National-BookItalic", "Helvetica", "sans-serif";
 	font-size: 15px;
+	height: 30px;
 }
 
 .cmp-arquitectos-realacionados .arquitecto .container-img {
