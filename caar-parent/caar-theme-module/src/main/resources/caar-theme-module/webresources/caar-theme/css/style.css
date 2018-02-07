@@ -271,6 +271,8 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-footer {
 	background-color: #D0021B;
 	padding: 35px 0px 56px 0px;
+	float: left;
+	width: 100%;
 }
 
 .cmp-footer .footer .footer-title {
