@@ -1,0 +1,5 @@
+title: caar-templating-module.templates.components.related-elements-component.label
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/related-elements-component.ftl
+modelClass: es.arquia.magnolia.components.models.relatedElements.RelatedElementsModel
+dialog: caar-templating-module:components/related-elements-component-properties

@@ -10,24 +10,32 @@ import static es.arquia.magnolia.constants.AwardConstants.categoriesList;
 import static es.arquia.magnolia.constants.AwardConstants.editionAnnouncementButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionEnrollmentButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.relatedNewsList;
 import static es.arquia.magnolia.constants.AwardConstants.type;
+import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
+import javax.jcr.ValueFormatException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import info.magnolia.cms.i18n.I18nContentSupport;
+import info.magnolia.context.MgnlContext;
 
 public class AwardImpl implements Award{
 	
 	private I18nContentSupport i18nContentSupport;
+	@Inject
+	private News news;
 	
 	@Inject
 	public AwardImpl(final I18nContentSupport i18nContentSupport) {
@@ -128,5 +136,37 @@ public class AwardImpl implements Award{
 			return "";
 		}
 	}
+	
+	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException {
+		List<RelatedElement> ret = new LinkedList<>();
 
+		// TODO: crear metodos iguales por cada tipo de elemento que pueda asociarse a un premio
+		ret.addAll(this.getRelatedElementsFromNewsList(node));
+		
+		return ret;
+	}
+
+	public RelatedElement getRelatedElement(Node node) throws RepositoryException {
+		
+		RelatedElement related = new RelatedElement();
+		
+		related.setTitle(this.getAwardName(node));
+		related.setPhoto(this.getAwardLogo(node));
+		
+		return related;
+	}
+	
+	public List<RelatedElement> getRelatedElementsFromNewsList(Node node) throws RepositoryException {
+		
+		List<RelatedElement> ret = new LinkedList<>();
+		
+		Value[] relatedNewsValues = node.getProperty(relatedNewsList).getValues();
+		for (Value currentValue : relatedNewsValues) {
+			
+			Node tmpNode = MgnlContext.getJCRSession(newsWorkspace).getNodeByIdentifier(currentValue.getString());
+			ret.add(this.news.getRelatedElement(tmpNode));
+		}
+		
+		return ret;
+	}
 }

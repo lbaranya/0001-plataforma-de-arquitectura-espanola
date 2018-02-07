@@ -40,8 +40,8 @@ areas:
             id: caar-templating-module:components/detail-architect-header-component
           detail-architect-body-component:
             id: caar-templating-module:components/detail-architect-body-component
-          related-files-component:
-            id: caar-templating-module:components/related-files-component
+          related-elements-component:
+            id: caar-templating-module:components/related-elements-component
           distributor-sections-rich-text-component:
             id: caar-templating-module:components/distributor-sections-rich-text-component
       accordion:

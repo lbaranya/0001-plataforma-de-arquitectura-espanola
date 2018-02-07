@@ -5,7 +5,6 @@ import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectu
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -13,13 +12,11 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.jcr.Node;
-import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 import javax.jcr.Value;
-import javax.jcr.ValueFormatException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,75 +25,75 @@ import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
 import info.magnolia.jcr.util.NodeUtil;
 
-public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
+public class ArchitectureFilesSupportArchitect {
 	
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportArchitect.class);
 
-	private static String name = "FS1.1.1";
-	private static String firstSurname = "FS1.1.2";
-	private static String secondSurname = "FS1.1.3";
-	private static String otherNames = "FS1.1.4";
-	private static String photo = "FS1.1.5";
-	private static String birthDate = "FS1.1.6";
-	private static String birthCity = "FS1.1.7";
-	private static String birthCountry = "FS1.1.8";
+	private static String name = "FS1_1_1";
+	private static String firstSurname = "FS1_1_2";
+	private static String secondSurname = "FS1_1_3";
+	private static String otherNames = "FS1_1_4";
+	private static String photo = "FS1_1_5";
+	private static String birthDate = "FS1_1_6";
+	private static String birthCity = "FS1_1_7";
+	private static String birthCountry = "FS1_1_8";
 	
-	private static String deathDate = "FS1.1.9.1";
-	private static String deathCity = "FS1.1.9.2";
-	private static String deathCountry = "FS1.1.9.3";
+	private static String deathDate = "FS1_1_9_1";
+	private static String deathCity = "FS1_1_9_2";
+	private static String deathCountry = "FS1_1_9_3";
 	
-	private static String certification = "FS1.2.1";
-	private static String certificationCenter = "FS1.2.2";
-	private static String certificationCountry = "FS1.2.3";
-	private static String certificationYear = "FS1.2.4";
-	private static String otherStudies = "FS1.2.5";
-	private static String doctorate = "FS1.2.6";
+	private static String certification = "FS1_2_1";
+	private static String certificationCenter = "FS1_2_2";
+	private static String certificationCountry = "FS1_2_3";
+	private static String certificationYear = "FS1_2_4";
+	private static String otherStudies = "FS1_2_5";
+	private static String doctorate = "FS1_2_6";
 	
-	private static String departmentName = "FS1.3.1";
-	private static String departmentWebSite = "FS1.3.2";
-	private static String departmentCity = "FS1.3.3";
-	private static String departmentCountry = "FS1.3.4";
-	private static String departmentComponents = "FS1.3.5";
-	private static String biographicNews = "FS1.3.6";
-	private static String curriculum = "FS1.3.7";
-	private static String awardsAndDistinctions = "FS1.3.8";
+	private static String departmentName = "FS1_3_1";
+	private static String departmentWebSite = "FS1_3_2";
+	private static String departmentCity = "FS1_3_3";
+	private static String departmentCountry = "FS1_3_4";
+	private static String departmentComponents = "FS1_3_5";
+	private static String biographicNews = "FS1_3_6";
+	private static String curriculum = "FS1_3_7";
+	private static String awardsAndDistinctions = "FS1_3_8";
 	
 	private static String workExperienceList = "listExperience";
-	private static String workExperienceStartDate = "FS1.4.1";
-	private static String workExperienceEndingDate = "FS1.4.2";
-	private static String workExperiencePositionOccupied = "FS1.4.3";
-	private static String workExperienceMainFunctions = "FS1.4.4";
-	private static String workExperienceBusinessName = "FS1.4.5";
-	private static String workExperienceBusinessType = "FS1.4.6";
+	private static String workExperienceStartDate = "FS1_4_1";
+	private static String workExperienceEndingDate = "FS1_4_2";
+	private static String workExperiencePositionOccupied = "FS1_4_3";
+	private static String workExperienceMainFunctions = "FS1_4_4";
+	private static String workExperienceBusinessName = "FS1_4_5";
+	private static String workExperienceBusinessType = "FS1_4_6";
 	
 	private static String educationList = "listEducation";
-	private static String educationStartDate = "FS1.5.1";
-	private static String educationEndingDate = "FS1.5.2";
-	private static String educationQualification = "FS1.5.3";
-	private static String educationSubjects = "FS1.5.4";
-	private static String educationCenter = "FS1.5.5";
-	private static String educationCenterType = "FS1.5.6";
-	private static String educationLevel = "FS1.5.7";
+	private static String educationStartDate = "FS1_5_1";
+	private static String educationEndingDate = "FS1_5_2";
+	private static String educationQualification = "FS1_5_3";
+	private static String educationSubjects = "FS1_5_4";
+	private static String educationCenter = "FS1_5_5";
+	private static String educationCenterType = "FS1_5_6";
+	private static String educationLevel = "FS1_5_7";
 	
-	private static String language = "FS1.6.1";
-	private static String otherLanguages = "FS1.6.2";
-	private static String motherLanguage = "FS1.6.3";
-	private static String listening = "FS1.6.4";
-	private static String reading = "FS1.6.5";
-	private static String speakingInteraction = "FS1.6.6";
-	private static String speakingExpression = "FS1.6.7";
-	private static String writting = "FS1.6.8";
+	private static String language = "FS1_6_1";
+	private static String otherLanguages = "FS1_6_2";
+	private static String motherLanguage = "FS1_6_3";
+	private static String listening = "FS1_6_4";
+	private static String reading = "FS1_6_5";
+	private static String speakingInteraction = "FS1_6_6";
+	private static String speakingExpression = "FS1_6_7";
+	private static String writting = "FS1_6_8";
 	
-	private static String socialSkills = "FS1.7.1";
-	private static String organizationalSkills = "FS1.7.2";
-	private static String technicalSkills = "FS1.7.3";
-	private static String computerSkills = "FS1.7.4";
-	private static String artisticSkills = "FS1.7.5";
-	private static String otherSkills = "FS1.7.6";
-	private static String drivingLicense = "FS1.7.7";
+	private static String socialSkills = "FS1_7_1";
+	private static String organizationalSkills = "FS1_7_2";
+	private static String technicalSkills = "FS1_7_3";
+	private static String computerSkills = "FS1_7_4";
+	private static String artisticSkills = "FS1_7_5";
+	private static String otherSkills = "FS1_7_6";
+	private static String drivingLicense = "FS1_7_7";
 	
-	private static String aditionalInfo = "FS1.8.1";
-	private static String annexes = "FS1.8.2";
+	private static String aditionalInfo = "FS1_8_1";
+	private static String annexes = "FS1_8_2";
 	
 	private static String relatedFiles = "relatedFiles";
 	
@@ -311,7 +308,11 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 				Node componentNode = session.getNode(iterator.getValue().getString());
 				result += getName(componentNode) + " " + getFirstSurname(componentNode) + " " + getSecondSurname(componentNode) + ", ";
 			}
-			return result.substring(0, result.length()-2);
+			if (result.equals("")) {
+				return "";
+			} else {
+				return result.substring(0, result.length()-2);
+			}
 		} catch(RepositoryException e) {
 			return "";
 		}
@@ -634,23 +635,26 @@ public class ArchitectureFilesSupportArchitect implements ArchitectureFile{
 		}
 	}
 	
-	public List<String> getRelatedFiles(Node node)  throws RepositoryException {
-		List<String> list = new ArrayList<String>();
-		try {
-			for(Value iterator : node.getProperty(relatedFiles).getValues()) {
-				list.add(iterator.getString());
-			}
-		} catch(RepositoryException e) {}
+	public List<RelatedElement> getRelatedElements(Node node)  throws RepositoryException {
+		
+		List<RelatedElement> list = new ArrayList<>();
+		Value[] relatedValues = node.getProperty(relatedFiles).getValues();
+		for (Value currentValue : relatedValues) {
+			
+			Node tmpNode = MgnlContext.getJCRSession(architectureFilesWorkspace).getNode(currentValue.getString());
+			list.add(this.getRelatedElement(tmpNode));
+		}
+		
 		return list;
 	}
 
-	@Override
-	public RelatedFile getRelatedFile(Node node) throws Exception{
-		RelatedFile related = new RelatedFile();
-		try {
-			related.setTitle(this.getName(node) + " " + this.getFirstSurname(node) + " " + this.getSecondSurname(node));
-			related.setPhoto(this.getPhoto(node));
-		} catch(Exception e) {}
+	public RelatedElement getRelatedElement(Node node) throws RepositoryException {
+		
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(this.getName(node) + " " + this.getFirstSurname(node) + " " + this.getSecondSurname(node));
+		related.setPhoto(this.getPhoto(node));
+		
 		return related;
 	}
 	

@@ -34,6 +34,12 @@
 			<artifactId>caar-utils-module</artifactId>
 			<version>0.18-SNAPSHOT</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>es.arquia.magnolia</groupId>
+			<artifactId>caar-news-app</artifactId>
+			<version>0.18-SNAPSHOT</version>
+		</dependency>
 
 		<!-- TEST -->
 		<dependency>
