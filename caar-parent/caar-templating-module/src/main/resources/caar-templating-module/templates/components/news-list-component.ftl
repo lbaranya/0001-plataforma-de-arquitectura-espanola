@@ -32,7 +32,8 @@
 	                        	</div>
 	                        	[#assign headLine = news.getHeadline(newNode)!""]
 	                        	[#assign description = news.getDescription(newNode)!""]
-	                            <h4 class="title">${headLine!""}</h4>
+	                        	[#assign headLineTruncated = cmsfn.abbreviateString(headLine, 80)!""]
+	                            <h4 class="title">${headLineTruncated!""}</h4>
 	                            <div class="info">
 	                            	[#assign descriptionTruncated = cmsfn.abbreviateString(description, 401)!""]
 	                            	<p>${descriptionTruncated!""}</p>
