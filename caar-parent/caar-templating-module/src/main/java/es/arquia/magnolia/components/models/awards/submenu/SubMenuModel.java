@@ -6,10 +6,9 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.AwardImpl;
 import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.manager.AwardManager;
-import es.arquia.magnolia.utils.breadcrum.award.UtilsBreadcrumAward;
+import es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAward;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
@@ -18,13 +17,13 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	
 	private AwardManager awardManager;
 	
-	private UtilsBreadcrumAward utilsBreadcrumAward;
+	private UtilsBreadcrumbAward utilsBreadcrumbAward;
 
 	@Inject
-	public SubMenuModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final AwardManager awardManager, final UtilsBreadcrumAward utilsBreadcrumAward) {
+	public SubMenuModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final AwardManager awardManager, final UtilsBreadcrumbAward utilsBreadcrumbAward) {
 		super(content, definition, parent);
 		this.awardManager = awardManager;
-		this.utilsBreadcrumAward = utilsBreadcrumAward;
+		this.utilsBreadcrumbAward = utilsBreadcrumbAward;
 	}
 	
 	public Award getInstance() {
@@ -44,11 +43,11 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	}
 	
 	public String getAboutLink(String currentUrl) {
-		return utilsBreadcrumAward.getAwardAboutPageLink(currentUrl);
+		return utilsBreadcrumbAward.getAwardAboutPageLink(currentUrl);
 	}
 	
 	public String getNewsListLink(String currentUrl) {
-		return utilsBreadcrumAward.getAwardNewsListPageLink(currentUrl);
+		return utilsBreadcrumbAward.getAwardNewsListPageLink(currentUrl);
 	}
 
 

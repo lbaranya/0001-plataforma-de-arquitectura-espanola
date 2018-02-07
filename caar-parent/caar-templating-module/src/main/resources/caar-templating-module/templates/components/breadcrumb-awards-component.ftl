@@ -1,7 +1,7 @@
 [#-- 
 	It is necessary to make a modification of the component to contemplate the nodes of "edition" (current and in progress), "result", "program" and "diffusion" that do not have pages, and therefore, can not be clickable elements
   --]
-[#assign nodeJcrPath = ctx.getParameter('awardsPath')!?html]
+[#assign nodeJcrPath = ctx.getParameter('path')!?html]
 [#if nodeJcrPath?has_content]
 	
 	[#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
@@ -11,7 +11,7 @@
 <section class="cmp-acerca-de-ae cmp-breadcrumb-info-video">
 	[#assign ancestor = navfn.ancestorPageAtLevel(content, 2)!]
 	<ul class="breadcrumb">
-		<li><a href="${cmsfn.link(navfn.rootPage(content))!"#"}">${i18n['caar-templating-module.templates.components.breadcrum-awards-component.label']}</a></li>
+		<li><a href="${cmsfn.link(navfn.rootPage(content))!"#"}">${i18n['caar-templating-module.templates.components.breadcrumb-awards-component.label']}</a></li>
 		<li><a href="${cmsfn.link(ancestor)!"#"}">${ancestor.title!""}</a></li>
 	[#if ancestorsList?has_content]
 		[#list ancestorsList as ancestor]

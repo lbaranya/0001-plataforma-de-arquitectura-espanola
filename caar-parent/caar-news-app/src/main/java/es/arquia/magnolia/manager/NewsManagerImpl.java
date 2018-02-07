@@ -16,9 +16,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.beans.News;
-import es.arquia.magnolia.beans.NewsImpl;
 import es.arquia.magnolia.functions.QueryUtils;
-import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
 public class NewsManagerImpl implements NewsManager{

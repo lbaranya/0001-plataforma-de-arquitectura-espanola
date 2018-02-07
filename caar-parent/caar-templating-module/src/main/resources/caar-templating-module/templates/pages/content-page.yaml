@@ -16,8 +16,8 @@ areas:
       content:
         templateScript: /caar-templating-module/templates/pages/subareas/content-area-page.ftl
         availableComponents:
-          breadcrum-component:
-            id: caar-templating-module:components/breadcrum-component
+          breadcrumb-component:
+            id: caar-templating-module:components/breadcrumb-component
           rich-text-video-component:
             id: caar-templating-module:components/rich-text-video-component
           rich-text-image-component:
@@ -34,8 +34,6 @@ areas:
             id: caar-templating-module:components/detail-news-component
           bienales-header-component:
             id: caar-templating-module:components/bienials-header-component
-          news-diary-component:
-            id: caar-templating-module:components/news-diary-component
           news-related-component:
             id: caar-templating-module:components/related-news-component
           detail-architect-header-component:

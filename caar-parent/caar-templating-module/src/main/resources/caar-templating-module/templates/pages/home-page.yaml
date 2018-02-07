@@ -16,6 +16,8 @@ areas:
   main:
     templateScript: /caar-templating-module/templates/pages/home-page.ftl
     availableComponents:
+      news-diary-component:
+        id: caar-templating-module:components/news-diary-component
       #highlights-excellence-component:
         #id: caar-templating-module:components/highlights-excellence-component
       #highlights-news-component:

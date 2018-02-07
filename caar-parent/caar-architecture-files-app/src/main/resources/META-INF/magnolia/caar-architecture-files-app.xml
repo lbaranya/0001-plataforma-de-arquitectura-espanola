@@ -5,7 +5,7 @@
 	<displayName>${project.name}</displayName>
 	<description>${project.description}</description>
 	<class>es.arquia.magnolia.CaarArquitectureFilesApp</class>
-	<versionHandler>es.arquia.magnolia.setup.CaarArquitectureFilesAppVersionHandler</versionHandler>
+	<versionHandler>es.arquia.magnolia.setup.CaarArchitectureFilesAppVersionHandler</versionHandler>
 	<version>${project.version}</version>
 	
 	<components>

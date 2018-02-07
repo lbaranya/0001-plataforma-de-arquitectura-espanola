@@ -9,11 +9,11 @@ areas:
     enabled: true
     type: noComponent
     areas:
-      breadcrum:
+      breadcrumb:
         type: single
         availableComponents:
-          breadcrum-awards-component:
-            id: caar-templating-module:components/breadcrum-awards-component
+          breadcrumb-awards-component:
+            id: caar-templating-module:components/breadcrumb-awards-component
       subheader:
         type: single
         availableComponents:
