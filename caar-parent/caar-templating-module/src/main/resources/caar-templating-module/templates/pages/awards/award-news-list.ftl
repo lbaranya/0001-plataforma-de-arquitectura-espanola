@@ -34,7 +34,9 @@
 		                            [/#if]
 	                        	</div>
 	                            <h4 class="title">${news.getHeadline(newsNode)!""}</h4>
-	                            <p>${news.getDescription(newsNode)!""}</p>
+	                            <div class="info">
+	                            	<p>${news.getDescription(newsNode)!""}</p>
+	                            </div>
 	                            <div class="noticias-links">
 			                    	<a href='${cmsfn.link(newsNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
 				                </div>
@@ -50,3 +52,19 @@
 	[@cms.area name="submenu-award" /]
 	[@cms.area name="subheader" /]
 [/#if]
+<script>
+function ellipsis_box(elemento, max_chars) {
+    var limite_text = "";
+        limite_text += $(elemento).text();
+        if (limite_text.length > max_chars) {
+            limite = limite_text.substr(0, max_chars) + " ...";
+            $(elemento).text(limite);
+        }
+}
+$(function() {
+    $(".cmp-last-news .info").each(function(e) {
+        ellipsis_box(this, 401);
+    });
+});
+</script>
+
