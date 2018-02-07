@@ -24,7 +24,7 @@
                     [/#list]
                     
                     <div class="ver-todo">
-                        <a href="${content.allNewsLink}" class="ver-todo-link">${i18n['caar-templating-module.templates.components.news-diary-component.allNews.label']}
+                        <a href="${cmsfn.link(cmsfn.nodeByPath(content.allNewsLink))}" class="ver-todo-link">${i18n['caar-templating-module.templates.components.news-diary-component.allNews.label']}
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
@@ -81,7 +81,7 @@
                         [/#list]
                     </div>
                     <div class="ver-todo">
-                        <a href="${content.allEventsLink}" class="ver-todo-link eventos">${i18n['caar-templating-module.templates.components.news-diary-component.allEvents.label']}
+                        <a href="${cmsfn.link(cmsfn.nodeByPath(content.allEventsLink))}" class="ver-todo-link eventos">${i18n['caar-templating-module.templates.components.news-diary-component.allEvents.label']}
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                         </a>
                     </div>
