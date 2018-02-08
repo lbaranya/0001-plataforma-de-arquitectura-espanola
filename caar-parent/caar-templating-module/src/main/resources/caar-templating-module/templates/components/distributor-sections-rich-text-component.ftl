@@ -20,7 +20,7 @@
 	[#if contentItem.type?has_content]
 	
 		[#if contentItem.type == "richText"]
-			[#assign richTextOptionIdAnchor = model.getAnchorFromString(contentItem.richTextOptionTitle)!""]
+			[#assign richTextOptionIdAnchor = model.getAnchorFromString(contentItem.richTextOptionTitle)?lower_case!""]
 			<a href="#${richTextOptionIdAnchor!""}" class="col-md-3 anchor-distribuidor">
                 <div class="title">
                     <p>${contentItem.richTextOptionTitle!""}</p>
