@@ -248,6 +248,7 @@ $(document).ready(function () {
 	});
 
 	$(".cmp-distribuidor-convocatoria .cmp-volver").click(function(e) {
+		$(".cmp-distribuidor-general-content").fadeOut();
 		var parentPosition = $(".cmp-distribuidor-convocatoria").position();
 		$('html,body').animate({
 			scrollTop: parentPosition.top
@@ -256,10 +257,7 @@ $(document).ready(function () {
 		$('html,body').animate({
 			scrollTop: parentPosition.top
 		}, {
-			duration: 500,
-			complete: function() {
-				$(".cmp-distribuidor-general-content").hide();
-			}
+			duration: 500
 		});
 
 
