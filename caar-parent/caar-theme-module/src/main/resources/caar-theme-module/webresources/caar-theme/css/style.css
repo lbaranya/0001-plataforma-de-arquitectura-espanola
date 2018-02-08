@@ -3027,6 +3027,10 @@ a:hover, a:active, a:visited, a:focus {
 	width: 360px;
 }
 
+.cmp-last-news .noticias-container{
+	width: auto;
+}
+
 .noticias-container .noticias-item {
 	padding-bottom: 0px;
 	padding-bottom: 25px;
