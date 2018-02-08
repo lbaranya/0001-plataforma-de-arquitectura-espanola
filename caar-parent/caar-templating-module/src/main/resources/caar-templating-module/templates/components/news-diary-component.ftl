@@ -35,7 +35,7 @@
                 <section class="cmp-agenda-footer">
                     <div class="row">
                         <div class="col-md-12">
-                            <span class="categoria">${i18n['caar-templating-module.templates.components.news-diary-component.categoryEvents.label']}</span>
+                            <span class="categoria title">${i18n['caar-templating-module.templates.components.news-diary-component.categoryEvents.label']}</span>
                         </div>
                     </div>
                     <div class="row eventos-row">
@@ -59,7 +59,7 @@
 		                                       	[#assign imgItemKey = eventsInstance.getPreviewPhoto(eventsNode)!""]
 									            	[#if imgItemKey??]
 									            		[#if imgItemKey?has_content]
-									                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "130x115")]
+									                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "206x182")]
 										            		[#if imgMediaRendition?has_content]
 										            			[#assign imageAlternativeText = "logo de evento"]
 										            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -80,7 +80,7 @@
                         
                         [/#list]
                     </div>
-                    <div class="ver-todo">
+                    <div class="ver-todo ver-eventos">
                         <a href="${cmsfn.link(cmsfn.nodeByPath(content.allEventsLink))}" class="ver-todo-link eventos">${i18n['caar-templating-module.templates.components.news-diary-component.allEvents.label']}
                             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                         </a>

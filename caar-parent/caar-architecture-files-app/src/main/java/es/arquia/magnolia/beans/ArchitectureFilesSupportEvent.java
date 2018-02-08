@@ -33,12 +33,8 @@ import info.magnolia.context.MgnlContext;
 
 public class ArchitectureFilesSupportEvent {
 	
-	private I18nContentSupport i18nContentSupport;
-	
 	@Inject
-	public ArchitectureFilesSupportEvent(final I18nContentSupport i18nContentSupport) {
-		this.i18nContentSupport = i18nContentSupport;
-	}
+	private I18nContentSupport i18nContentSupport;
 	
 	public String getOuvreTitle(Node node) throws RepositoryException {
 		try{
