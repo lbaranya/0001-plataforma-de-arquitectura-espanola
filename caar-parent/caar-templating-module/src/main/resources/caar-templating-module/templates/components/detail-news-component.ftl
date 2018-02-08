@@ -28,11 +28,11 @@
         <div class="container">
             <div class="noticia">
                 <div class="header">
-                    <h3>${news.getLongTitle(newsContentNode)!""}</h3>
+                    <h3>${news.getHeadline(newsContentNode)!""}</h3>
                     <p>${news.getDate(newsContentNode)!""} <span>/ AE</span></p>
                 </div>
                 <div class="info-noticia">
-                    ${news.getLongDescription(newsContentNode)!""}
+                    ${news.getDescription(newsContentNode)!""}
                 </div>
             </div>
         </div>
