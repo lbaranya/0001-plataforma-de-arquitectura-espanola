@@ -22,6 +22,10 @@
 			<type>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</type>
 			<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</type>
+			<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</implementation>
+		</component>
 	</components>
 
 	<dependencies>

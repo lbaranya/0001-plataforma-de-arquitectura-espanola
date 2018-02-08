@@ -378,18 +378,9 @@ subApps:
                 label: caar-news-app.newsData.headline.label
                 required: true
                 i18n: true
-              - name: N1_2
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-                label: caar-news-app.newsData.longTitle.label
-                required: true
-                i18n: true
               - name: N1_3
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition 
                 label: caar-news-app.newsData.description.label
-                i18n: true
-              - name: N1_4
-                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition 
-                label: caar-news-app.newsData.longDescription.label
                 i18n: true
               - name: N1_5
                 class: info.magnolia.ui.form.field.definition.DateFieldDefinition

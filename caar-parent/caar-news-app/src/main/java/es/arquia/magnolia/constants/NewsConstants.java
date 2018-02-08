@@ -6,9 +6,7 @@ public interface NewsConstants {
 	String newsWorkspace = "news";
 	
 	String headTitle = "N1_1";
-	String longTitle = "N1_2";
-	String descriptionShort = "N1_3";
-	String descriptionLong = "N1_4";
+	String description = "N1_3";
 	String dateTime = "N1_5";
 	String image = "N1_6";
 	String category = "N1_7";
