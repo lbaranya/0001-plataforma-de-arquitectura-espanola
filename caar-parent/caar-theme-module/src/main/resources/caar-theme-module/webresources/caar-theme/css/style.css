@@ -3005,16 +3005,37 @@ a:hover, a:active, a:visited, a:focus {
 	padding-left: 16px;
 }
 
+.cmp-noticias-eventos .cmp-noticias .categoria{
+	font-size: 35px;
+	width: 100%;
+	text-align: center;
+}
+
+.cmp-noticias-eventos .row-noticias .cmp-agenda .col-md-12{
+	float: left;
+}
+.cmp-noticias-eventos .cmp-agenda .categoria.title{
+	font-size: 35px;
+	width: 100%;
+	text-align: center;
+}
+
 .noticias-container {
 	padding-left: 62px;
 	padding-right: 56px;
 	margin-top: 27px;
+	width: 360px;
+}
+
+.cmp-last-news .noticias-container{
+	width: auto;
 }
 
 .noticias-container .noticias-item {
-	padding-bottom: 40px;
+	padding-bottom: 0px;
+	padding-bottom: 25px;
 	border-bottom: 1px solid #979797;
-	margin-bottom: 32px;
+	margin-bottom: 0px;
 }
 
 .noticias-container .noticias-item:nth-child(2) {
@@ -3231,6 +3252,17 @@ a:hover, a:active, a:visited, a:focus {
 .evento-contenedor .evento-item .evento-contenido {
 	margin-bottom: 22px;
 }
+.evento-contenedor .evento-item .evento-contenido img{
+	width: 206px;
+	height: 182px
+}
+
+.cmp-noticias-eventos .evento-contenedor{
+	border-right: solid 1px #979797;
+}
+.cmp-noticias-eventos .evento-contenedor:last-child{
+	border:none;
+}
 
 .evento-contenedor .evento-item .evento-contenido .title {
 	font-family: "National-Black", "Helvetica", "sans-serif";
@@ -3299,6 +3331,12 @@ a:hover, a:active, a:visited, a:focus {
 
 .cmp-noticias-eventos .ver-todo {
 	margin-left: 62px;
+	margin-top: 32px;
+}
+.cmp-noticias-eventos .ver-eventos{
+	position: absolute;
+	right: 0;
+	bottom: 0;
 }
 
 .cmp-noticias-eventos .ver-todo .ver-todo-link {
@@ -3326,6 +3364,7 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-noticias-eventos .cmp-agenda {
 	width: 70%;
 	padding-left: 63px;
+	position: relative;
 }
 
 /* Noticias y Agenda: Termina */

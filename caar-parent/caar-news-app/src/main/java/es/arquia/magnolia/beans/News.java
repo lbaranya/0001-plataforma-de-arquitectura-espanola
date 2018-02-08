@@ -9,11 +9,7 @@ public interface News {
 	
 	public String getHeadline(Node node) throws RepositoryException;
 
-	public String getLongTitle(Node node) throws RepositoryException;
-
 	public String getDescription(Node node) throws RepositoryException;
-
-	public String getLongDescription(Node node) throws RepositoryException;
 
 	public String getDate(Node node) throws RepositoryException;
 

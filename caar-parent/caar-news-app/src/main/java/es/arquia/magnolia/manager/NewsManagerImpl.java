@@ -78,7 +78,7 @@ public class NewsManagerImpl implements NewsManager{
 
 	@Override
 	public List<Node> getImportantNewsList() throws Exception {
-		final int limit = 2;
+		final int limit = 3;
 		final int offset = 0;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
 		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);

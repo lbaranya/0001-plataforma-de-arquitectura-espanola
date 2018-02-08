@@ -2,14 +2,12 @@ package es.arquia.magnolia.beans;
 
 import static es.arquia.magnolia.constants.NewsConstants.category;
 import static es.arquia.magnolia.constants.NewsConstants.dateTime;
-import static es.arquia.magnolia.constants.NewsConstants.descriptionLong;
-import static es.arquia.magnolia.constants.NewsConstants.descriptionShort;
+import static es.arquia.magnolia.constants.NewsConstants.description;
 import static es.arquia.magnolia.constants.NewsConstants.files;
 import static es.arquia.magnolia.constants.NewsConstants.headTitle;
 import static es.arquia.magnolia.constants.NewsConstants.image;
 import static es.arquia.magnolia.constants.NewsConstants.important;
 import static es.arquia.magnolia.constants.NewsConstants.informativeMedium;
-import static es.arquia.magnolia.constants.NewsConstants.longTitle;
 import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 import static es.arquia.magnolia.constants.NewsConstants.relatedNews;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
@@ -48,25 +46,9 @@ public class NewsImpl implements News{
 		}
 	}
 
-	public String getLongTitle(Node node) throws RepositoryException {
-		try{
-			return i18nContentSupport.getProperty(node, longTitle).getString();
-		}catch(RepositoryException e) {
-			return "";
-		}
-	}
-
 	public String getDescription(Node node) throws RepositoryException{
 		try{
-			return i18nContentSupport.getProperty(node, descriptionShort).getString();
-		}catch(RepositoryException e) {
-			return "";
-		}
-	}
-
-	public String getLongDescription(Node node) throws RepositoryException{
-		try{
-			return i18nContentSupport.getProperty(node, descriptionLong).getString();
+			return i18nContentSupport.getProperty(node, description).getString();
 		}catch(RepositoryException e) {
 			return "";
 		}
