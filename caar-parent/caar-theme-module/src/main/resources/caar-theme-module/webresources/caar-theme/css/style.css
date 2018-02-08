@@ -24,17 +24,17 @@ a:hover, a:active, a:visited, a:focus {
 }
 /**Nuevo pagination**/
 .cmp-more {
-  margin-top: 30px;
-  margin-bottom: 30px; 
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
-  .cmp-more span {
-    font-family: "National-Book", "Helvetica", "sans-serif";
-    font-size: 25px;
-    color: #D0021B;
-    cursor: pointer;
- }
-/**Termina pagination**/
 
+.cmp-more span {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	font-size: 25px;
+	color: #D0021B;
+	cursor: pointer;
+}
+/**Termina pagination**/
 @font-face {
 	font-family: 'FreightDispBlack';
 	src: url("../fonts/FreightDispBlack.eot");
@@ -2240,9 +2240,11 @@ a:hover, a:active, a:visited, a:focus {
 	background-color: #f9f7f3;
 }
 
-.cmp-last-news .noticias-container .noticias-item .container-destacado .imagen-destacada {
-          width: 100%;
-          height: 160px; }
+.cmp-last-news .noticias-container .noticias-item .container-destacado .imagen-destacada
+	{
+	width: 100%;
+	height: 160px;
+}
 
 .cmp-last-news .title .categoria {
 	font-size: 35px;
@@ -2614,6 +2616,7 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-distribuidor-convocatoria .row a .title {
 	font-size: 15px;
 	font-family: "National-BookItalic", "Helvetica", "sans-serif";
+	height: 50px;
 }
 
 .cmp-distribuidor-convocatoria .row a .img-arquia {
