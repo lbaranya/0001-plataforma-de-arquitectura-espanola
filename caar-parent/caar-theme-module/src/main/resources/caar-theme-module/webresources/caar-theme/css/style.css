@@ -3597,3 +3597,7 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-convocatoria .active-menu-item {
 	display: block !important;
 }
+
+.cmp-convocatoria .header-comun .fa {
+	padding-left: 10px;
+}
