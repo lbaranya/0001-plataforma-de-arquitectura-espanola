@@ -7,7 +7,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
-import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.beans.News;
@@ -26,7 +25,7 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
 	private ContextBean contextBean;
 	
 	@Inject
-	public NewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ContextBean contextBean) throws PathNotFoundException, RepositoryException {
+	public NewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ContextBean contextBean) throws RepositoryException {
         super(content, definition, parent);
         this.newsManager = newsManager;
         this.contextBean = contextBean;

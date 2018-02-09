@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.beans.ArchitectureFileImpl;
 import es.arquia.magnolia.beans.Award;
@@ -30,20 +31,23 @@ public class RelatedElementsModel <T extends ConfiguredTemplateDefinition> exten
 		this.award = award;
 	}
 
-	public List<RelatedElement> getRelatedElements(Node node) throws Exception{
+	public List<RelatedElement> getRelatedElements(Node node){
 		List<RelatedElement> relatedElements = new LinkedList<>();
-		
-		if (node.isNodeType(newsNodeType)) {
+		try {
+			if (node.isNodeType(newsNodeType)) {
+				
+				relatedElements.addAll(this.news.getRelatedElements(node));
+				
+			} else if (node.isNodeType(awardNodeType)) {
+				
+				relatedElements.addAll(this.award.getRelatedElements(node));
+				
+			} else {
+				
+				relatedElements.addAll(this.architectureFileImpl.getRelatedElements(node));
+			}
+		}catch(RepositoryException e) {
 			
-			relatedElements.addAll(this.news.getRelatedElements(node));
-			
-		} else if (node.isNodeType(awardNodeType)) {
-			
-			relatedElements.addAll(this.award.getRelatedElements(node));
-			
-		} else {
-			
-			relatedElements.addAll(this.architectureFileImpl.getRelatedElements(node));
 		}
 		return relatedElements;
 	}
