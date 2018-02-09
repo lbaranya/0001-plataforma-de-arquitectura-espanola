@@ -41,10 +41,10 @@ subApps:
               displayInChooseDialog: false
               formatterClass: info.magnolia.ui.workbench.column.StatusColumnFormatter
               class: info.magnolia.ui.workbench.column.definition.StatusColumnDefinition
-            - name: N1.8
+            - name: N1_8
               sortable: true
               class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
-              propertyName: N1.8
+              propertyName: N1_8
               width: 100
             - name: moddate
               width: 160
