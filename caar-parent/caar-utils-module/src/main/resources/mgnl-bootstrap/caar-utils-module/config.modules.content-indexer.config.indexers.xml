@@ -176,14 +176,8 @@
       <sv:property sv:name="N1_11" sv:type="String">
         <sv:value>N1_11_informativeMedium_s</sv:value>
       </sv:property>
-      <sv:property sv:name="N1_2" sv:type="String">
-        <sv:value>N1.2_longTitle_s</sv:value>
-      </sv:property>
       <sv:property sv:name="N1_3" sv:type="String">
         <sv:value>N1.3_description_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="N1_4" sv:type="String">
-        <sv:value>N1.4_longDescription_s</sv:value>
       </sv:property>
       <sv:property sv:name="N1_5" sv:type="String">
         <sv:value>N1.5_dateTime_dt</sv:value>
@@ -243,14 +237,8 @@
       <sv:property sv:name="N1_1_en" sv:type="String">
         <sv:value>N1.1_headline_s</sv:value>
       </sv:property>
-      <sv:property sv:name="N1_2_en" sv:type="String">
-        <sv:value>N1.2_longTitle_s</sv:value>
-      </sv:property>
       <sv:property sv:name="N1_3_en" sv:type="String">
         <sv:value>N1.3_description_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="N1_4_en" sv:type="String">
-        <sv:value>N1.4_longDescription_s</sv:value>
       </sv:property>
       <sv:property sv:name="N1_5" sv:type="String">
         <sv:value>N1.5_dateTime_dt</sv:value>
