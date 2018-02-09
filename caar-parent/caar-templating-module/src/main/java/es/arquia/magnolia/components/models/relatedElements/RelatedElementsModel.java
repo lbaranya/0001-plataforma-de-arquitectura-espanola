@@ -25,6 +25,7 @@ public class RelatedElementsModel <T extends ConfiguredTemplateDefinition> exten
 	@Inject
 	private ArchitectureFileImpl architectureFileImpl;
 
+	@Inject
 	public RelatedElementsModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final News news, final Award award) {
 		super(content, definition, parent);
 		this.news = news;

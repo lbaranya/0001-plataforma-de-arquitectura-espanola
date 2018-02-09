@@ -6,6 +6,7 @@
         	[#if countRow%2==1]
         <div class="row">
         	[/#if]
+        	[#if !navfn.isHiddenInNav(child)]
 			<a href="${cmsfn.link(child)}" class="col-md-6">
 				<div class="title">
 					<p>${child.title!""}</p>
@@ -32,6 +33,7 @@
 		</div>
 			[/#if]
 			[#assign countRow = countRow + 1]
+			[/#if]
 		[/#list]
 	</div>
 </section>
