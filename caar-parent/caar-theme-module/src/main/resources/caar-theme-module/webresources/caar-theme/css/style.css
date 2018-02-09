@@ -3271,6 +3271,7 @@ a:hover, a:active, a:visited, a:focus {
 	font-family: "National-Black", "Helvetica", "sans-serif";
 	font-size: 22px;
 	margin: 20px 0px 10x 0px;
+	height: 60px;
 }
 
 .evento-contenedor .evento-item .evento-contenido .texto-info {
