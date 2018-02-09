@@ -3,7 +3,8 @@
 [#if nodeJcrPath?has_content]
 	[#assign fileContent = cmsfn.contentByPath(nodeJcrPath, nodeWorkspace)!""]
 	[#assign fileContentNode = cmsfn.asJCRNode(fileContent)!""]
-	[#assign nodes = model.getRelatedElements(fileContentNode)]
+	[#assign nodes = model.getRelatedElements(fileContentNode)!""]
+	[#if nodes?has_content]
 	<section class="cmp-arquitectos-realacionados">
     	<div class="container-fluid">
             <div class="row">
@@ -39,4 +40,5 @@
             </div>
         </div>
     </section>
+    [/#if]
 [/#if]
