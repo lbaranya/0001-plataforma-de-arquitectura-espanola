@@ -33,9 +33,13 @@
 			                            [/#if]
 		                            [/#if]
 	                        	</div>
-	                            <h4 class="title">${news.getHeadline(newsNode)!""}</h4>
+	                        	[#assign headLine = news.getHeadline(newNode)!""]
+	                        	[#assign description = news.getDescription(newNode)!""]
+	                        	[#assign headLineTruncated = cmsfn.abbreviateString(headLine, 80)!""]
+	                            <h4 class="title">${headLineTruncated!""}</h4>
 	                            <div class="info">
-	                            	<p>${news.getDescription(newsNode)!""}</p>
+	                            	[#assign descriptionTruncated = cmsfn.abbreviateString(description, 401)!""]
+	                            	<p>${descriptionTruncated!""}</p>
 	                            </div>
 	                            <div class="noticias-links">
 			                    	<a href='${cmsfn.link(newsNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
