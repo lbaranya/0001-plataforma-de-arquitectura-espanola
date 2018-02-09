@@ -8,13 +8,11 @@ form:
           targetWorkspace: website
           appName: pages
           label: caar-templating-module.templates.components.news-diary-component.tabMain.allNewsLink.label
-          i18n: true
         - name: allEventsLink          
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
           targetWorkspace: website
           appName: pages
           label: caar-templating-module.templates.components.news-diary-component.tabMain.allEventsLink.label
-          i18n: true
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
