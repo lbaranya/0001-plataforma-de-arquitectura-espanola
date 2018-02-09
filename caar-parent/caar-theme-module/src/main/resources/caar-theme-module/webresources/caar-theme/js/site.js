@@ -284,7 +284,7 @@ $(document).ready(function () {
 	/**Menú de Convocatoria**/
 	//Activar Menu
 	$(".col-header h3").on("click", function (e) {
-		$(this).find("i").toggleClass("fa-chevron-up , fa-chevron-down");
+		$(this).find("i").toggleClass("fa-chevron-down , fa-chevron-right");
 		var data_menu = $(this).attr("data-ref");
 		$(".menu-second").removeClass("active-menu-item");
 		$(".menu-third").removeClass("active-menu-item");

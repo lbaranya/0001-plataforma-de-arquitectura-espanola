@@ -8,7 +8,7 @@
         <div class="container-fluid">
             <div class="row col-row">
                 <div class="col-header">
-                    <h3 data-ref="menu">${awards.getAwardName(awardsContentNode)!""}<i class="fa fa-chevron-up" aria-hidden="true"></i></h3>
+                    <h3 data-ref="menu">${awards.getAwardName(awardsContentNode)!""}<i class="fa fa-chevron-down" aria-hidden="true"></i></h3>
                     <p>Fase: Descriptivo</p>
                 </div>
             </div>
