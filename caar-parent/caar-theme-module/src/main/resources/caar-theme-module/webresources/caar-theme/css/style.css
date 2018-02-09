@@ -2136,7 +2136,7 @@ a:hover, a:active, a:visited, a:focus {
 	display: inline-block;
 	width: 100%;
 	font-family: "National-Black", "Helvetica", "sans-serif";
-	font-size: 33px;
+	font-size: 30px;
 	line-height: 25px;
 }
 
@@ -3008,19 +3008,24 @@ a:hover, a:active, a:visited, a:focus {
 	padding-left: 16px;
 }
 
-.cmp-noticias-eventos .cmp-noticias .categoria{
+.cmp-noticias-eventos .cmp-noticias .categoria {
 	font-size: 35px;
 	width: 100%;
 	text-align: center;
 }
 
-.cmp-noticias-eventos .row-noticias .cmp-agenda .col-md-12{
+.cmp-noticias-eventos .row-noticias .cmp-agenda .col-md-12 {
 	float: left;
 }
-.cmp-noticias-eventos .cmp-agenda .categoria.title{
+
+.cmp-noticias-eventos .cmp-agenda .categoria.title {
 	font-size: 35px;
 	width: 100%;
 	text-align: center;
+}
+
+.cmp-agenda-footer {
+	margin-bottom: 45px;
 }
 
 .noticias-container {
@@ -3030,7 +3035,7 @@ a:hover, a:active, a:visited, a:focus {
 	width: 360px;
 }
 
-.cmp-last-news .noticias-container{
+.cmp-last-news .noticias-container {
 	width: auto;
 }
 
@@ -3248,23 +3253,25 @@ a:hover, a:active, a:visited, a:focus {
 	display: inline-block;
 	width: 100%;
 	font-family: "National-Black", "Helvetica", "sans-serif";
-	font-size: 33px;
+	font-size: 30px;
 	line-height: 25px;
 }
 
 .evento-contenedor .evento-item .evento-contenido {
 	margin-bottom: 22px;
 }
-.evento-contenedor .evento-item .evento-contenido img{
+
+.evento-contenedor .evento-item .evento-contenido img {
 	width: 206px;
 	height: 182px
 }
 
-.cmp-noticias-eventos .evento-contenedor{
+.cmp-noticias-eventos .evento-contenedor {
 	border-right: solid 1px #979797;
 }
-.cmp-noticias-eventos .evento-contenedor:last-child{
-	border:none;
+
+.cmp-noticias-eventos .evento-contenedor:last-child {
+	border: none;
 }
 
 .evento-contenedor .evento-item .evento-contenido .title {
@@ -3325,18 +3332,27 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-noticias-eventos .row-noticias [class*="col-"] {
 	display: table-cell;
 	float: none;
+	vertical-align: top;
 }
 
 .cmp-noticias-eventos .cmp-noticias {
 	border-right: 3px solid #d0021b;
 	width: 28%;
+	position: relative;
+}
+
+.cmp-noticias-eventos .cmp-noticias .ver-todo {
+	position: absolute;
+	bottom: 0;
+	right: 45px;
 }
 
 .cmp-noticias-eventos .ver-todo {
 	margin-left: 62px;
 	margin-top: 32px;
 }
-.cmp-noticias-eventos .ver-eventos{
+
+.cmp-noticias-eventos .ver-eventos {
 	position: absolute;
 	right: 0;
 	bottom: 0;

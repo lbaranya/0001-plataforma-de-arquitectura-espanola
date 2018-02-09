@@ -59,7 +59,7 @@
 		                                       	[#assign imgItemKey = eventsInstance.getPreviewPhoto(eventsNode)!""]
 									            	[#if imgItemKey??]
 									            		[#if imgItemKey?has_content]
-									                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "206x182")]
+									                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "206x182")!]
 										            		[#if imgMediaRendition?has_content]
 										            			[#assign imageAlternativeText = "logo de evento"]
 										            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
