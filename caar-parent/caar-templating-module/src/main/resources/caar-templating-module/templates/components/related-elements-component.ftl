@@ -18,7 +18,7 @@
 	                    <h4>${node.getTitle()!""}</h4>
 	                    <div class="container-img">
 		                    [#assign imgItemKey = node.getPhoto()!""]
-			            	[#if imgItemKey?has_content]
+			            	[#if imgItemKey??]
 			            		[#if imgItemKey?has_content]
 			                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440")!]
 				            		[#if imgMediaRendition?has_content]
