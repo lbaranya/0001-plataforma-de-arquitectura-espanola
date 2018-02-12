@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>caar-parent</artifactId>
 		<groupId>es.arquia.magnolia</groupId>
-		<version>0.23-SNAPSHOT</version>
+		<version>0.23</version>
 	</parent>
 
 	<artifactId>caar-templating-module</artifactId>
@@ -38,25 +38,25 @@
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-architecture-files-app</artifactId>
-			<version>0.23-SNAPSHOT</version>
+			<version>0.23</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-utils-module</artifactId>
-			<version>0.23-SNAPSHOT</version>
+			<version>0.23</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-news-app</artifactId>
-			<version>0.23-SNAPSHOT</version>
+			<version>0.23</version>
 		</dependency>
 		
 		<dependency>
 			<groupId>es.arquia.magnolia</groupId>
 			<artifactId>caar-awards-app</artifactId>
-			<version>0.23-SNAPSHOT</version>
+			<version>0.23</version>
 		</dependency>
 
 		<!-- TEST -->
