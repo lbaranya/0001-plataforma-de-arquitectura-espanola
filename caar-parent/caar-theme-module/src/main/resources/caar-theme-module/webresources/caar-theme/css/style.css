@@ -2038,6 +2038,7 @@ a:hover, a:active, a:visited, a:focus {
 	margin-top: 27px;
 }
 
+
 .noticias-container .noticias-item {
 	padding-bottom: 40px;
 	border-bottom: 1px solid #979797;
@@ -2140,10 +2141,6 @@ a:hover, a:active, a:visited, a:focus {
 	line-height: 25px;
 }
 
-.evento-contenedor .evento-item .evento-contenido {
-	margin-bottom: 22px;
-}
-
 .evento-contenedor .evento-item .evento-contenido .title {
 	font-family: "National-Black", "Helvetica", "sans-serif";
 	font-size: 22px;
@@ -2159,6 +2156,8 @@ a:hover, a:active, a:visited, a:focus {
 	font-family: "National-Book", "Helvetica", "sans-serif";
 	font-size: 15px;
 	color: #D0021B;
+	position: absolute;
+	bottom: 0;
 }
 
 .evento-contenedor .evento-item .evento-contenido .more-link::before {
@@ -3257,10 +3256,6 @@ a:hover, a:active, a:visited, a:focus {
 	line-height: 25px;
 }
 
-.evento-contenedor .evento-item .evento-contenido {
-	margin-bottom: 22px;
-}
-
 .evento-contenedor .evento-item .evento-contenido img {
 	width: 206px;
 	height: 182px
@@ -3268,6 +3263,9 @@ a:hover, a:active, a:visited, a:focus {
 
 .cmp-noticias-eventos .evento-contenedor {
 	border-right: solid 1px #979797;
+	max-width: 253px;
+	position: relative;
+	max-height: 495px;
 }
 
 .cmp-noticias-eventos .evento-contenedor:last-child {
@@ -3278,11 +3276,16 @@ a:hover, a:active, a:visited, a:focus {
 	font-family: "National-Black", "Helvetica", "sans-serif";
 	font-size: 22px;
 	margin: 20px 0px 10x 0px;
+	word-break: break-all;
 }
 
 .evento-contenedor .evento-item .evento-contenido .texto-info {
 	font-family: "National-Book", "Helvetica", "sans-serif";
 	font-size: 16px;
+}
+.evento-contenedor .evento-item .evento-contenido p{
+	font-family: "National-Regular", "Helvetica", "sans-serif";
+	font-size: 14px;
 }
 
 .evento-contenedor .evento-item .evento-contenido .more-link {
@@ -3360,7 +3363,7 @@ a:hover, a:active, a:visited, a:focus {
 
 .cmp-noticias-eventos .ver-todo .ver-todo-link {
 	font-family: "National-Book", "Helvetica", "sans-serif";
-	font-size: 22px;
+	font-size: 20px;
 	color: #D0021B;
 	line-height: 1;
 	letter-spacing: 0.9px;
@@ -3378,6 +3381,9 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-noticias-eventos .cmp-noticias-footer .noticias-container .noticias-item:nth-child(2)
 	{
 	border: none;
+}
+.cmp-noticias-eventos .cmp-noticias .cmp-noticias-footer{
+	padding-bottom: 50px;
 }
 
 .cmp-noticias-eventos .cmp-agenda {
