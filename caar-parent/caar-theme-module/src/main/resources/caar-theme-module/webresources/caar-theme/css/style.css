@@ -3463,6 +3463,7 @@ a:hover, a:active, a:visited, a:focus {
 	width: 75%;
 	float: left;
 	margin-left: 30px;
+	font-size: 22px;
 }
 
 .cmp-convocatoria .submenu-convocatoria .contenedor-menu ul .menu-first a .icon
