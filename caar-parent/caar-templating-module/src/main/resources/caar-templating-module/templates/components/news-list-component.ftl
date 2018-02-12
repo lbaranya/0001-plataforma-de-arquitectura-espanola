@@ -2,9 +2,9 @@
 
 [#assign news = model.getInstance()!""]
 [#if content.categories?has_content]
-	[#assign listNews = model.getCategorizedNewsList(content.categories, 4)]
+	[#assign listNews = model.getCategorizedNewsList(content.categories, 8)]
 [#else]
-	[#assign listNews = model.getNewsList(4)]
+	[#assign listNews = model.getNewsList(8)]
 [/#if]
 [#if listNews?has_content]
 	<section class="cmp-last-news">
