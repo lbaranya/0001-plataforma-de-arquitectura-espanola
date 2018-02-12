@@ -51,8 +51,7 @@
 	                                    [#-- <a href="${cmsfn.link(eventsNode)}" class="evento-link">  --]
 	                                    <a href="${cmsfn.link(navfn.rootPage(content))}" class="evento-link"> 
 	                                        <div class="evento-header">
-	                                            <span class="categoria">[#--${i18n['caar-templating-module.templates.components.news-diary-component.'+eventsInstance.getTypology(eventsNode, language)+'.label']!""}--]</span>
-	                                            [#-- Instead of printing the field value, we use it as part of the name of a translation which contains a good-looking and internationaliced text --]
+	                                            <span class="categoria">${eventsInstance.getEventType(eventsNode)!""}</span>
 	                                            <span class="evento-fecha">${eventsInstance.getStartDayOfWeek(eventsNode)!""}</span>
 	                                            <span class="evento-fecha">${eventsInstance.getPresentationStartDate(eventsNode)!""}</span>
 	                                        </div>
