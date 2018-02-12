@@ -48,7 +48,8 @@
                     			[#assign counter = counter + 1]
 	                            <div class="col-md-3 evento-contenedor">
 	                                <div class="evento-item">
-	                                    <a href="${cmsfn.link(eventsNode)}" class="evento-link">
+	                                    [#-- <a href="${cmsfn.link(eventsNode)}" class="evento-link">  --]
+	                                    <a href="${cmsfn.link(navfn.rootPage(content))}" class="evento-link"> 
 	                                        <div class="evento-header">
 	                                            <span class="categoria">[#--${i18n['caar-templating-module.templates.components.news-diary-component.'+eventsInstance.getTypology(eventsNode, language)+'.label']!""}--]</span>
 	                                            [#-- Instead of printing the field value, we use it as part of the name of a translation which contains a good-looking and internationaliced text --]
