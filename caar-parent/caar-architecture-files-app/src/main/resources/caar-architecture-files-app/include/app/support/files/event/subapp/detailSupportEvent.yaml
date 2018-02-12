@@ -78,6 +78,7 @@ editor:
           - name: FS3_2_9
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.preview.label
+            required: true
             targetWorkspace: dam
             appName: assets
             label: caar-architecture-files-app.files.support.event.mediaGalleryData.photoPreview.label
