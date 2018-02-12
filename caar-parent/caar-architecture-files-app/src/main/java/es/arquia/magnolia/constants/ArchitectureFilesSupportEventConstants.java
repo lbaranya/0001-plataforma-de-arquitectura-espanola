@@ -22,4 +22,10 @@ public interface ArchitectureFilesSupportEventConstants {
 	
 	String startTime = "FS3_2_11";
 	String endTime = "FS3_2_12";
+	
+	String catPath = "caar/support-events/typology/";
+	
+	String catWorkspace = "category";
+	
+	String catProperty = "displayName";
 }

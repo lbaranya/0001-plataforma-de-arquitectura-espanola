@@ -4,6 +4,9 @@ import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstant
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipInfo;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipName;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipType;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.catPath;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.catProperty;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.catWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.endTime;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.eventType;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.listMedia;
@@ -49,7 +52,9 @@ public class ArchitectureFilesSupportEvent {
 	
 	public String getEventType(Node node) throws RepositoryException {
 		try{
-			return i18nContentSupport.getProperty(node, eventType).getString();
+			String type = i18nContentSupport.getProperty(node, eventType).getString();
+			Node catNode = MgnlContext.getJCRSession(catWorkspace).getRootNode().getNode(catPath+type);
+			return i18nContentSupport.getProperty(catNode, catProperty).getString();
 		}catch(RepositoryException e) {
 			return "";
 		}
