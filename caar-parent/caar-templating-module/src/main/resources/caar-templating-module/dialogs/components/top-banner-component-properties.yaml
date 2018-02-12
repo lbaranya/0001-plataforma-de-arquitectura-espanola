@@ -7,12 +7,12 @@ form:
           label: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.label
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer
+          description: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.compositeField.image.description
           field:
             name: compositeField      
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
-            layout: vertical      
-            required: true      
+            layout: vertical   
             fields:
               - name: image      
                 required: true       
@@ -24,7 +24,6 @@ form:
                 contentPreviewDefinition:      
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent      
                 label: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.compositeField.image.label     
-                description: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.compositeField.image.description       
               - name: text
                 label: caar-templating-module.templates.components.top-banner-component.tabMain.bannerElements.compositeField.texto.label
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition

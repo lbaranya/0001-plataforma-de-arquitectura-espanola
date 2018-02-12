@@ -24,6 +24,10 @@ editor:
             required: true
             i18n: true
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.type.label
+          - name: FS3_2_13
+            class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.important.label
+            buttonLabel: caar-architecture-files-app.files.support.event.ouvrePresentation.important.button.label
           - name: FS3_2_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.title.label
@@ -104,9 +108,13 @@ editor:
                   label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
                   value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
                 - name: FS3_3_1
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.event.authorshipData.authorshipType.label
                   required: true
+                  class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                  required: true
+                  repository: category
+                  labelProperty: displayName
+                  path: caar/support-events/authorship-type
                 - name: FS3_3_2
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.event.authorshipData.authorshipName.label
