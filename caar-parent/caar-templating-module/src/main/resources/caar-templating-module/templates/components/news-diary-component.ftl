@@ -13,7 +13,7 @@
                             <div class="col-md-12">
                 				<div class="noticias-container">
                                     <div class="noticias-item">
-                                        <h4 class="title">${newsInstance.getHeadline(newsNode)}</h4>
+                                        <h4 class="title">${cmsfn.abbreviateString(newsInstance.getHeadline(newsNode),100)}</h4>
                                         <div class="noticias-links">
                                             <a class="more-link" href="${cmsfn.link(newsNode)}">${i18n['caar-templating-module.templates.components.news-diary-component.read.label']}</a>
                                         </div>
@@ -71,7 +71,8 @@
 									                    	[/#if]
 								                    	[/#if]
 								                    [/#if]
-	                                            <h4 class="title">${eventsInstance.getOuvreTitle(eventsNode)!""}</h4>
+	                                            <h4 class="title">${cmsfn.abbreviateString(eventsInstance.getOuvreTitle(eventsNode)!"", 45)!""}</h4>
+	                                            <p>${cmsfn.abbreviateString(eventsInstance.getOuvreAbstract(eventsNode)!"", 183)!""}</p>
 	                                            <span class="more-link">${i18n['caar-templating-module.templates.components.news-diary-component.read.label']}</span>
 	                                        </div>
 	                                    </a>
