@@ -52,9 +52,7 @@ public class ArchitectureFilesSupportEvent {
 	
 	public String getEventType(Node node) throws RepositoryException {
 		try{
-			String type = i18nContentSupport.getProperty(node, eventType).getString();
-			Node catNode = MgnlContext.getJCRSession(catWorkspace).getRootNode().getNode(catPath+type);
-			return i18nContentSupport.getProperty(catNode, catProperty).getString();
+			return i18nContentSupport.getProperty(node, eventType).getString();
 		}catch(RepositoryException e) {
 			return "";
 		}

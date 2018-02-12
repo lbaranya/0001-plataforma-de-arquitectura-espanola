@@ -20,11 +20,9 @@ editor:
         label: caar-architecture-files-app.files.support.event.ouvrePresentation.label          
         fields:
           - name: FS3_2_10
-            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             required: true
-            repository: category
-            labelProperty: displayName
-            path: caar/support-events/typology
+            i18n: true
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.type.label
           - name: FS3_2_1
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
