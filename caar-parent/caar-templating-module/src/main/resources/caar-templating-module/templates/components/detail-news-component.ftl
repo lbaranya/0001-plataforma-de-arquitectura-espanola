@@ -29,7 +29,7 @@
             <div class="noticia">
                 <div class="header">
                     <h3>${news.getHeadline(newsContentNode)!""}</h3>
-                    <p>${news.getDate(newsContentNode)!""} <span>/ AE</span></p>
+                    <p>${news.getDate(newsContentNode)!""} <span>/ ${news.getMedium(newsContentNode)!""}</span></p>
                 </div>
                 <div class="info-noticia">
                     ${news.getDescription(newsContentNode)!""}
