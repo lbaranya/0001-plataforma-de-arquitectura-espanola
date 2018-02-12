@@ -106,7 +106,7 @@ public class NewsImpl implements News{
 		}
 	}
 
-	public String getMedium(Node node, String currentLanguage) throws RepositoryException{
+	public String getMedium(Node node) throws RepositoryException{
 		try{
 			return i18nContentSupport.getProperty(node, informativeMedium).getString();
 		}catch(RepositoryException e) {

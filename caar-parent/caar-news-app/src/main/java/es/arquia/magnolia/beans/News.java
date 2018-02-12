@@ -23,7 +23,7 @@ public interface News {
 
 	public String getRelatedNews(Node node) throws RepositoryException;
 
-	public String getMedium(Node node, String currentLanguage) throws RepositoryException;
+	public String getMedium(Node node) throws RepositoryException;
 	
 	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException;
 	
