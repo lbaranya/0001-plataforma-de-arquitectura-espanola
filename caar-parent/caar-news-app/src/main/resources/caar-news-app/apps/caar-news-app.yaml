@@ -403,6 +403,7 @@ subApps:
               - name: N1_7
                 class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
                 label: caar-news-app.newsData.categories.label
+                required: true
                 field:
                   name: linkField
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
