@@ -1,11 +1,16 @@
 form:      
   tabs:      
     - name: tabLogos    
-      label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logo.label      
-      fields:      
-        - name: logoElements      
+      label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logo.label
+      fields:
+        - name: columnNameTab
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.columnNameTab.label
+        - name: logoElements
           label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.label      
-          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          description: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.description.label
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
           field:      
             name: compositeField      
@@ -56,6 +61,10 @@ form:
     - name: tabEnlaces1    
       label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.label   
       fields:
+        - name: columnNameTab1
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.columnNameTab1.label
         - name: linkElements1      
           label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.listElements1.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
@@ -65,7 +74,7 @@ form:
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
             layout: vertical 
-            fields:      
+            fields:
               - name: separator3      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
                 value: caar-templating-module.components.separator.value
@@ -102,7 +111,11 @@ form:
                 i18n: true      
     - name: tabEnlaces2    
       label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces2.label   
-      fields:      
+      fields:
+        - name: columnNameTab2
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces2.columnNameTab2.label 
         - name: linkElements2      
           label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.listElements2.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
@@ -112,7 +125,7 @@ form:
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
             layout: vertical 
-            fields:      
+            fields:
               - name: separator5      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
                 value: caar-templating-module.components.separator.value
@@ -149,7 +162,11 @@ form:
                 i18n: true
     - name: tabEnlaces3
       label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.label   
-      fields:      
+      fields:
+        - name: columnNameTab3
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.columnNameTab3.label
         - name: cookiesLink      
           label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.cookiesLink.label      
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
@@ -167,6 +184,10 @@ form:
     - name: tabRRSS
       label: caar-templating-module.templates.components.dialog.footer-component.tabRRSS.label
       fields:
+        - name: columnNameTab4
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabRRSS.columnNameTab4.label
         - name: listElementsRRSS
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer
