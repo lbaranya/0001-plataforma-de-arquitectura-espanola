@@ -2,7 +2,7 @@
         <div class="container footer">
             <div class="row footer-row">
                 <div class="col-sm-2 col-xs-12">
-                    <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.webMap.label']!"mapa web"}</h4>
+                    <h4 class="footer-title">${content.columnNameTab1!"mapa web"}</h4>
                     <ul>
                     	[#if content.linkElements1?has_content]
                     	[#list cmsfn.children(content.linkElements1) as element]
@@ -24,7 +24,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-2 col-xs-12">
-                    <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.about.label']!"sobre nosotros"}</h4>
+                    <h4 class="footer-title">${content.columnNameTab2!"sobre nosotros"}</h4>
                     <ul>
                         [#if content.linkElements2?has_content]
                     	[#list cmsfn.children(content.linkElements2) as element]
@@ -46,7 +46,7 @@
                     </ul>
                 </div>
                 <div class="col-sm-2 col-xs-12">
-                    <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.legalNote.label']!"nota legal"}</h4>
+                    <h4 class="footer-title">${content.columnNameTab3!"nota legal"}</h4>
                     <li class="footer-global-link">
                     	[#assign hrefLegalLink = "#"]
                 		[#if content.legalLink?has_content]
@@ -63,7 +63,7 @@
                      </li>
                 </div>
                 <div class="col-sm-2 col-xs-12">
-                    <h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.followUs.label']!"siguenos en"}</h4>
+                    <h4 class="footer-title">${content.columnNameTab4!"siguenos en"}</h4>
                     <ul class="rrss-list">
                     [#if content.listElementsRRSS?has_content]
                     [#list cmsfn.children(content.listElementsRRSS) as element]
@@ -79,7 +79,7 @@
             </div>
 		<div class="row">
 			<div class="col-sm-8 colaboradores">
-				<h4 class="footer-title">${i18n['caar-templating-module.templates.components.footer-component.collaborators.label']!"colaboradores"}</h4>
+				<h4 class="footer-title">${content.columnNameTab!"colaboradores"}</h4>
 				<ul class="footer-logos-list">
 				[#if content.logoElements?has_content]
 				[#list cmsfn.children(content.logoElements) as logoElement]
