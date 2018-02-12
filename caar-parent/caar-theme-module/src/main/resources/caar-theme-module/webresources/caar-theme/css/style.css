@@ -169,14 +169,14 @@ a:hover, a:active, a:visited, a:focus {
 }
 
 .ckeditor.content-title {
-	font-size: 18px;
+	font-size: 27px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
 	color: #D0021B;
 }
 
 .ckeditor.text-contenido {
 	color: #4a4a4a;
-	font-size: 14px;
+	font-size: 25px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
 }
 /**termina ck-editor**/
@@ -1048,7 +1048,7 @@ a:hover, a:active, a:visited, a:focus {
 
 .cmp-acerca-de-ae .info-acerca {
 	font-family: "National-Book", "Helvetica", "sans-serif";
-	font-size: 19px;
+	font-size: 25px;
 	text-align: left;
 }
 
@@ -2798,7 +2798,7 @@ a:hover, a:active, a:visited, a:focus {
 
 .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .content-title
 	{
-	font-size: 18px;
+	font-size: 27px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
 	color: #D0021B;
 }
@@ -2806,7 +2806,7 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-distribuidor-general-content .cmp-distruidor-contenido .container-sub-info .contenido .text-contenido
 	{
 	color: #4a4a4a;
-	font-size: 14px;
+	font-size: 25px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
 }
 

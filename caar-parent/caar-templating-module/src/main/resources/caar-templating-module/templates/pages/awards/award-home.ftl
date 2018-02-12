@@ -54,8 +54,8 @@
 	                    	[/#if]
                     	<a class="btn" href="${hrefLink}">${awards.getEditionAnnouncementButtonText(openEditionNode)}</a>
                         <a class="btn" href="${cmsfn.externalLink(openEditionContentMap, "enrollmentButtonLink")}">${awards.getEditionEnrollmentButtonText(openEditionNode)}</a>
-                        <a href="${cmsfn.externalLink(awardsContentNode,"awardExternalURL")!""}">${awards.getAwardExternalURL(awardsContentNode)!""}</a>
                         [/#if]
+                        <a href="${cmsfn.externalLink(awardsContentNode,"awardExternalURL")!""}">${awards.getAwardExternalURL(awardsContentNode)!""}</a>
                     </div>
                 </div>
             </div>

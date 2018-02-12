@@ -16,5 +16,10 @@ public interface ArchitectureFilesSupportEventConstants {
 	String authorshipInfo = "FS3_3_4";
 	
 	String listMedia = "listMedia";
-	String previewPhoto = "FS3_7_2";
+	String previewPhoto = "FS3_2_9";
+	
+	String eventType = "FS3_2_10";
+	
+	String startTime = "FS3_2_11";
+	String endTime = "FS3_2_12";
 }
