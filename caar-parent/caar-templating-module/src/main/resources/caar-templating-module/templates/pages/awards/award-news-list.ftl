@@ -33,8 +33,8 @@
 			                            [/#if]
 		                            [/#if]
 	                        	</div>
-	                        	[#assign headLine = news.getHeadline(newNode)!""]
-	                        	[#assign description = news.getDescription(newNode)!""]
+	                        	[#assign headLine = news.getHeadline(newsNode)!""]
+	                        	[#assign description = news.getDescription(newsNode)!""]
 	                        	[#assign headLineTruncated = cmsfn.abbreviateString(headLine, 80)!""]
 	                            <h4 class="title">${headLineTruncated!""}</h4>
 	                            <div class="info">
