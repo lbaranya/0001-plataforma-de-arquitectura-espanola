@@ -16,6 +16,7 @@ import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstant
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.price;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.startTime;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.website;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.important;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormatDayOfWeek;
 
@@ -50,6 +51,15 @@ public class ArchitectureFilesSupportEvent {
 	public String getEventType(Node node) throws RepositoryException {
 		try{
 			return i18nContentSupport.getProperty(node, eventType).getString();
+		}catch(RepositoryException e) {
+			return "";
+		}
+	}
+	
+	public String getImportant(Node node) throws RepositoryException{
+		try{
+			Property tmp = node.getProperty(important);
+			return tmp.getString();
 		}catch(RepositoryException e) {
 			return "";
 		}

@@ -22,4 +22,6 @@ public interface ArchitectureFilesSupportEventConstants {
 	
 	String startTime = "FS3_2_11";
 	String endTime = "FS3_2_12";
+	
+	String important = "FS3_2_13";
 }

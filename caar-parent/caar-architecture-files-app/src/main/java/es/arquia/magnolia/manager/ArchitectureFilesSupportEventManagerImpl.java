@@ -3,6 +3,7 @@ package es.arquia.magnolia.manager;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationStartDate;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.important;
 
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 	public List<Node> getArchitectureFilesSupportEventList() throws RepositoryException {
 		final int limit = 4;
 		final int offset = 0;
-		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportEventNodeType + "] ORDER BY [" + presentationStartDate + "] DESC";
+		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportEventNodeType + "] WHERE [" + important + "] IS NOT NULL AND [" + important + "] = true ORDER BY [" + presentationStartDate + "] DESC";
 		return queryUtils.executeSelectQuery(sqlQuery, architectureFilesWorkspace, limit, offset);
 	}
 	
