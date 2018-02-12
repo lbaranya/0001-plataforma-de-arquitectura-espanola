@@ -10,7 +10,7 @@ form:
         - name: logoElements
           label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-          description: 'Se recomienda subir logos con un tamaño mínimo de: 175x40 píxeles'
+          description: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.description.label
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
           field:      
             name: compositeField      
