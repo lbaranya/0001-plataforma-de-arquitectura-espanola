@@ -149,6 +149,7 @@ subApps:
       delete: 
         class: info.magnolia.ui.framework.action.MarkNodeAsDeletedActionDefinition
         command: markAsDeleted
+        icon: icon-trash
         availability: 
           writePermissionRequired: true
       activateDeleted: 

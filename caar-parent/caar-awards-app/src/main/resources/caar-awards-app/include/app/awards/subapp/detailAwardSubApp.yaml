@@ -40,6 +40,7 @@ editor:
             label: caar-awards-app.awardData.awardDescription.label
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
+            required: true
           - name: awardLogo
             label: caar-awards-app.awardData.awardLogo.label
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
@@ -68,10 +69,12 @@ editor:
             label: caar-awards-app.awardData.awardAboutText.label
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
+            required: true
           - name: categoriesList
             label: caar-awards-app.awardData.categoriesList.label
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueTransformer
+            required: true
             field:
               name: linkField
               class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
