@@ -814,7 +814,7 @@ a:hover, a:active, a:visited, a:focus {
 	text-decoration: none;
 }
 
-.cmp-menu .menu-row .main-container .menu-list .menu-item .menu-link,
+/* .cmp-menu .menu-row .main-container .menu-list .menu-item .menu-link,
 	.cmp-menu .menu-row .main-container .menu-logos .menu-item .menu-link {
 	color: #D0021B;
 	padding: 17px;
@@ -826,7 +826,21 @@ a:hover, a:active, a:visited, a:focus {
 	.cmp-menu .menu-row .main-container .menu-logos .menu-item .menu-link:hover
 	{
 	text-decoration: none;
-}
+} */
+.cmp-menu .menu-row .main-container .menu-list .menu-item .menu-link, .cmp-menu .menu-row .main-container .menu-list .menu-item .menu-home,
+          .cmp-menu .menu-row .main-container .menu-logos .menu-item .menu-link,
+          .cmp-menu .menu-row .main-container .menu-logos .menu-item .menu-home {
+            color: #D0021B;
+            padding: 17px 12px 17px 12px;
+            display: inline-block;
+            font-size: 25px; }
+            .cmp-menu .menu-row .main-container .menu-list .menu-item .menu-home {
+            	padding-top: 23px;
+            }
+            .cmp-menu .menu-row .main-container .menu-list .menu-item .menu-link:hover, .cmp-menu .menu-row .main-container .menu-list .menu-item .menu-home:hover,
+            .cmp-menu .menu-row .main-container .menu-logos .menu-item .menu-link:hover,
+            .cmp-menu .menu-row .main-container .menu-logos .menu-item .menu-home:hover {
+              text-decoration: none; }
 
 .cmp-menu .menu-row .main-container .menu-list .menu-item .active-item,
 	.cmp-menu .menu-row .main-container .menu-logos .menu-item .active-item
