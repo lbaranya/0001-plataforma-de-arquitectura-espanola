@@ -54,6 +54,9 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
+            textInputAllowed: true
+            filteringMode: startswith
+            pageLength: 5
             label: caar-architecture-files-app.files.support.business.businessData.departmentCountry.label
             required: true
           # user picker

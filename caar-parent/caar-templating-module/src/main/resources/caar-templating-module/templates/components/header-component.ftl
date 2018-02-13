@@ -373,9 +373,12 @@
             <div class="main-container">
                 <div class="col-sm-7 col-menu-list">
                     <ul class="menu-list">
+                    	${content}
+                    	[#if true]
                     	<li class="menu-item">
                                 <a href="${cmsfn.link(navfn.rootPage(content))!"#"}" class="menu-home"><i class="fa fa-arrow-left"></i></a>
                             </li>
+                        [/#if]
                         <li class="menu-item">
                             <a href="#" data-submenu="ae" class="logo" alt="arquitectura_española_logotipo" title="arquitectura_española_logotipo">${i18n['caar-templating-module.templates.components.header-component.ae.label']!"A.E."}</a>
                         </li>
