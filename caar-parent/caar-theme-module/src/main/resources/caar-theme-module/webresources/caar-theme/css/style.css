@@ -299,6 +299,7 @@ a:hover, a:active, a:visited, a:focus {
 .cmp-footer {
 	background-color: #D0021B;
 	padding: 35px 0px 56px 0px;
+	margin-top: 15px;
 	float: left;
 	width: 100%;
 }
@@ -1794,26 +1795,26 @@ a:hover, a:active, a:visited, a:focus {
 	color: #fff;
 }
 
-.cmp-detalle-noticia .header-comun .container .row h3 {
+.cmp-detalle-noticia .header-comun .container-margin .row h3 {
 	margin-bottom: 20px;
 	float: left;
 }
 
-.cmp-detalle-noticia .header-comun .container .row .botonera {
+.cmp-detalle-noticia .header-comun .container-margin .row .botonera {
 	float: right;
 	height: 66px;
 	display: flex;
 	align-items: center;
 }
 
-.cmp-detalle-noticia .header-comun .container .row .botonera a {
+.cmp-detalle-noticia .header-comun .container-margin .row .botonera a {
 	color: #fff;
 	float: left;
 	border-right: 1px solid #fff;
 	padding: 0px 5px 0px 5px;
 }
 
-.cmp-detalle-noticia .header-comun .container .row .botonera a:last-child
+.cmp-detalle-noticia .header-comun .container-margin .row .botonera a:last-child
 	{
 	padding-right: 0;
 	border: none;

@@ -4,7 +4,7 @@
 [#assign newsContentNode = cmsfn.asJCRNode(newsContent)]
 <section class="cmp-detalle-noticia">
     <div class="header-comun">
-        <div class="container">
+        <div class="container-margin">
             <div class="row">
                 <h3>${content.subHeaderTitle!"Empty header"}</h3>
                 [#assign isEmpty = model.paramsEmpty()!""]
