@@ -10,7 +10,7 @@
 [#assign rowCount = 1]
 
 <section class="cmp-distribuidor-convocatoria">
-    <div class="container-fluid">
+    <div>
 [#list sortedList as item]
 	[#if rowCount%4 == 1]
     	<div class="row">
@@ -170,7 +170,7 @@
 			[/#if]
 		<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">
 		    <div class="cmp-distruidor-content-title">
-		        <div class="container-fluid">
+		        <div>
 		            <div class="row">
 		                <div class="col-md-12 content-title">
 		                    <h3>${title!""}</h3>
@@ -205,7 +205,7 @@
 			[/#if]
 		<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">
 		    <div class="cmp-distruidor-content-title">
-		        <div class="container-fluid">
+		        <div>
 		            <div class="row">
 		                <div class="col-md-12 content-title">
 		                    <h3>${title!""}</h3>
@@ -284,7 +284,7 @@
 			[/#if]
 		<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">
 		    <div class="cmp-distruidor-content-title">
-		        <div class="container-fluid">
+		        <div>
 		            <div class="row">
 		                <div class="col-md-12 content-title">
 		                    <h3>${title!""}</h3>
@@ -353,7 +353,7 @@
 			[/#if]
 		<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">
 		    <div class="cmp-distruidor-content-title">
-		        <div class="container-fluid">
+		        <div>
 		            <div class="row">
 		                <div class="col-md-12 content-title">
 		                    <h3>${title!""}</h3>

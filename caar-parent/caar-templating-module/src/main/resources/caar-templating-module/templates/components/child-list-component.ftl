@@ -1,6 +1,6 @@
 [#-- <a href="${cmsfn.link(cmsfn.page(cmsfn.root(content, "mgnl:page")))}">${cmsfn.page(cmsfn.root(content, "mgnl:page")).title!""}</a>  --]
 <section class="cmp-distribuidor">
-    <div class="container">
+    <div class="container-fluid">
     	[#assign countRow = 1]
         [#list cmsfn.children(cmsfn.page(content), "mgnl:page") as child]
         	[#if countRow%2==1]

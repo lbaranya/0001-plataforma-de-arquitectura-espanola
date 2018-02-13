@@ -6,7 +6,7 @@
 	[#assign nodes = model.getRelatedElements(fileContentNode)!""]
 	[#if nodes?has_content]
 	<section class="cmp-arquitectos-realacionados">
-    	<div class="container-fluid">
+    	<div class="container-margin">
             <div class="row">
                 <div class="col-md-12">
                     <h3 class="title">${content.title!""}</h3>

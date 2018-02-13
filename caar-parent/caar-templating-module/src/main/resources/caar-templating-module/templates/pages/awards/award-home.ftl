@@ -63,7 +63,7 @@
         </div>
 </section>
 <section class="cmp-texto-premio">
-    <div class="container">
+    <div class="container-margin">
         <div class="row">
             <div class="col-md-12 descripcion">
                 ${awards.getAwardDescription(awardsContentNode)!""}
