@@ -76,6 +76,12 @@ editor:
           - name: FS3_2_7
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.price.label
+            description: caar-architecture-files-app.files.support.event.ouvrePresentation.price.description.label
+            validators:
+              - name: onlyNumbers
+                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                pattern: '^(([0-9]([0-9,])*)(\.\d{2})?|([0-9]([0-9,]))(\.\d{2})?([pcm]|bn| [mb]illion))[£€$]?$'
+                errorMessage: caar-architecture-files-app.files.support.event.ouvrePresentation.price.errorMessage.label
           - name: FS3_2_8
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.website.label
