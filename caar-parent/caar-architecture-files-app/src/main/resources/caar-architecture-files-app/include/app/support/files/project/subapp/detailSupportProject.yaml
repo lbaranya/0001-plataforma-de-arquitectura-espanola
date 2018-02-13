@@ -128,6 +128,9 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
+            textInputAllowed: true
+            filteringMode: startswith
+            pageLength: 5
             label: caar-architecture-files-app.files.support.project.localizationData.country.label
             required: true
           - name: FS2_3_10
@@ -238,6 +241,9 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
+            textInputAllowed: true
+            filteringMode: startswith
+            pageLength: 5
             label: caar-architecture-files-app.files.support.project.authorOwnershipData.country.label
       - name: relatedThoughtsData
         label: caar-architecture-files-app.files.support.project.relatedThoughtsData.label

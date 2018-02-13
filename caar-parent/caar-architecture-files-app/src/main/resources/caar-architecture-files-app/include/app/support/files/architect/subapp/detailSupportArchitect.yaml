@@ -58,6 +58,12 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
+            textInputAllowed: true
+            filteringMode: startswith
+            pageLength: 5
+            textInputAllowed: true
+            filteringMode: startswith
+            pageLength: 5
             label: caar-architecture-files-app.files.support.architect.personalData.birthCountry.label
           - name: FS1_1_9
             class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
@@ -76,6 +82,9 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
+            textInputAllowed: true
+            filteringMode: startswith
+            pageLength: 5
             label: caar-architecture-files-app.files.support.architect.personalData.deathCountry.label
       - name: educationData
         label: caar-architecture-files-app.files.support.architect.educationData.label
@@ -94,6 +103,9 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
+            textInputAllowed: true
+            filteringMode: startswith
+            pageLength: 5
             label: caar-architecture-files-app.files.support.architect.educationData.certificationCountry.label
           - name: FS1_2_4
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -127,6 +139,9 @@ editor:
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             repository: category
             path: caar/caar-countries
+            textInputAllowed: true
+            filteringMode: startswith
+            pageLength: 5
             label: caar-architecture-files-app.files.support.architect.professionalData.officeCountry.label
             required: true
           - name: FS1_3_5
