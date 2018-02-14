@@ -7,6 +7,7 @@ form:
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
           label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.label
+          description: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.description
           field:
             name: richTextOptionCompositeField
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
