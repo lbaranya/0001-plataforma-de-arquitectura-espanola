@@ -1,0 +1,13 @@
+subAppId: detailFormatThreeDimensional
+icon: icon-add-item
+nodeType: mgnl:format-three-dimensional
+appName: caar-architecture-files-app
+class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+label: caar-architecture-files-app.subapp.browser.actions.addFormatThreeDimensional.label
+availability:
+  nodeTypes:
+    - mgnl:format-three-dimensional-wrapper
+    - mgnl:format-three-dimensional-folder-wrapper
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

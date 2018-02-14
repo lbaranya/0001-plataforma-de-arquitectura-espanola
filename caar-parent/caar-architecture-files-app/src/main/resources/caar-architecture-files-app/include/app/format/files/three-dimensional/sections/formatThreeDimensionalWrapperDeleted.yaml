@@ -1,12 +1,10 @@
-name: formatWrapperDeleted
-label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
+name: formatThreeDimensionalWrapperDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatThreeDimensionalWrapper.label
 groups:
   - name: addActions
     items:
-      - name: addFormatVideoWrapper
-      - name: addFormatManuscriptWrapper
-      - name: addFormatGraphicWrapper
-      - name: addFormatThreeDimensionalWrapper
+      - name: addFolderFormatThreeDimensional
+      - name: addFormatThreeDimensional
   - name: editActions
     items:
       - name: editWrapper
@@ -25,7 +23,7 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:format-wrapper
+    - mgnl:format-three-dimensional-wrapper
   rules:
     IsDeletedRule:
       implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
