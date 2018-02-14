@@ -1,0 +1,11 @@
+subAppId: detailAnnouncementSubApp
+icon: icon-add-item
+class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+nodeType: mgnl:announcement
+appName: caar-awards-app
+label: caar-awards-app.subapp.browser.actions.addAnnouncement.label
+availability:
+  root: true
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

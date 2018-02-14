@@ -1,12 +1,9 @@
-name: editionSectionDeleted
-label: caar-awards-app.subapp.browser.actionbar.sections.editionSection.label
+name: announcementSectionDeleted
+label: caar-awards-app.subapp.browser.actionbar.sections.announcementSection.label
 groups:
-  - name: addActions
-    items:
-      - name: addAnnouncement
   - name: editActions
     items:
-      - name: editEdition
+      - name: editAnnouncement
       - name: confirmDelete 
   - name: importExportActions
     items:
@@ -22,7 +19,7 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:edition
+    - mgnl:announcement
   rules:
     IsDeletedRule:
       implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

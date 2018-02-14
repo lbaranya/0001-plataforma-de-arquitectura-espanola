@@ -183,6 +183,10 @@ subApps:
       showVersionsEdition: 
         !include:/caar-awards-app/include/app/edition/actions/showVersionsEdition.yaml
         
+      # Announcement versions
+      showVersionsAnnouncement: 
+        !include:/caar-awards-app/include/app/announcement/actions/showVersionsAnnouncement.yaml
+        
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
         icon: icon-retrieve-versions
@@ -207,6 +211,14 @@ subApps:
       # Edition edit
       editEdition: 
         !include:/caar-awards-app/include/app/edition/actions/editEdition.yaml
+        
+      # Announcement add
+      addAnnouncement: 
+        !include:/caar-awards-app/include/app/announcement/actions/addAnnouncement.yaml
+        
+      # Announcement edit
+      editAnnouncement: 
+        !include:/caar-awards-app/include/app/announcement/actions/editAnnouncement.yaml
               
       # Folder
       
@@ -238,6 +250,10 @@ subApps:
         # Edition section
         - !include:/caar-awards-app/include/app/edition/sections/editionSectionDeleted.yaml
         - !include:/caar-awards-app/include/app/edition/sections/editionSection.yaml
+        
+        # Announcement section
+        - !include:/caar-awards-app/include/app/announcement/sections/announcementSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/announcement/sections/announcementSection.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -248,3 +264,7 @@ subApps:
   # Edition sub app
   detailEditionSubApp:
     !include:/caar-awards-app/include/app/edition/subapp/detailEditionSubApp.yaml
+    
+  # Announcement sub app
+  detailAnnouncementSubApp:
+    !include:/caar-awards-app/include/app/announcement/subapp/detailAnnouncementSubApp.yaml
