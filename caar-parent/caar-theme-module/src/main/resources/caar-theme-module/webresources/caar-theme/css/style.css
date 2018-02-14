@@ -3545,6 +3545,7 @@ a:hover, a:active, a:visited, a:focus {
 	width: auto;
 	position: absolute;
 	right: 8px;
+	margin-top: 9px;
 }
 
 .cmp-convocatoria .submenu-convocatoria .contenedor-menu ul .menu-first.active
@@ -3593,6 +3594,7 @@ a:hover, a:active, a:visited, a:focus {
 	width: auto;
 	position: absolute;
 	right: 8px;
+	margin-top: 9px;
 }
 
 .cmp-convocatoria .submenu-convocatoria .contenedor-menu ul .menu-first .menu-second .menu-second-item.active

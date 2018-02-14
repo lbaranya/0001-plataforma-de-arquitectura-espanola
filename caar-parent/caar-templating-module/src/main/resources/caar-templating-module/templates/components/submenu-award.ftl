@@ -24,6 +24,15 @@
                         <span>${i18n['caar-templating-module.award.home.actualEdition.label']}</span>
                         <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
+                    <ul class="menu-second">
+                    	[#list cmsfn.children(openEdition) as childItem]
+                        <li class="menu-second-item">
+                        	[#if childItem.isNodeType("mgnl:announcement")]
+                            <a href="#"><span>convocatoria</span></a>
+                            [/#if]
+                        </li>
+                        [/#list]
+                    </ul>
                     <!--
                     <ul class="menu-second">
                         <li class="menu-second-item">
