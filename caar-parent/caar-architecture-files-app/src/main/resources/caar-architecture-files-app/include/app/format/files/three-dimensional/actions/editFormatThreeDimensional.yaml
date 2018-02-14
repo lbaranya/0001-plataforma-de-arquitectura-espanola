@@ -1,0 +1,12 @@
+subAppId: detailFormatThreeDimensional
+icon: icon-edit-wo
+nodeType: mgnl:format-three-dimensional
+appName: caar-architecture-files-app
+class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+label: caar-architecture-files-app.subapp.browser.actions.editFormatThreeDimensional.label
+availability:
+  nodeTypes:
+    - mgnl:format-three-dimensional
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
