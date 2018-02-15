@@ -15,7 +15,6 @@ import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.manager.AwardManager;
 import es.arquia.magnolia.manager.NewsManager;
 import es.arquia.magnolia.templates.bean.ContextBean;
-import es.arquia.magnolia.templates.bean.ContextBeanImpl;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.rendering.model.RenderingModel;
@@ -27,14 +26,14 @@ public class AwardNewsListModel <T extends ConfiguredTemplateDefinition> extends
 	private NewsManager newsManager;
 	private AwardManager awardManager;
 	
-	private ContextBeanImpl contextBean;
+	private ContextBean contextBean;
 	
 	@Inject
-	public AwardNewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final AwardManager awardManager) throws PathNotFoundException, RepositoryException {
+	public AwardNewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final AwardManager awardManager, final ContextBean contextBean) throws PathNotFoundException, RepositoryException {
         super(content, definition, parent);
         this.newsManager = newsManager;
         this.awardManager = awardManager;
-        this.contextBean = new ContextBeanImpl();
+        this.contextBean = contextBean;
     }
 	
 	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
