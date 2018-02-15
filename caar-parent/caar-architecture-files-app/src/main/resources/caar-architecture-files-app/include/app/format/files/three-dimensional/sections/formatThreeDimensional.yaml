@@ -1,0 +1,22 @@
+name: formatManuscript
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatThreeDimensional.label
+groups:
+  - name: editActions
+    items:
+     - name: editFormatThreeDimensional
+     - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsThreeDimensional
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:format-three-dimensional
