@@ -28,7 +28,9 @@
                     	[#list cmsfn.children(openEdition) as childItem]
                         <li class="menu-second-item">
                         	[#if childItem.isNodeType("mgnl:announcement")]
-                            <a href="#"><span>convocatoria</span></a>
+                        	[#assign currentUrl = cmsfn.link(childItem)]
+                        	[#assign href = model.getSecondLevelMenuLink(currentUrl, childItem)!"#"]
+                            <a href="${href}"><span>convocatoria</span></a>
                             [/#if]
                         </li>
                         [/#list]

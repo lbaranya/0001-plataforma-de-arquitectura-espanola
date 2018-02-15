@@ -14,6 +14,7 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
+import es.arquia.magnolia.beans.Announcement;
 import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.functions.QueryUtils;
 
@@ -23,10 +24,13 @@ public class AwardManagerImpl implements AwardManager{
 	
 	private Award award;
 	
+	private Announcement announcement;
+	
 	@Inject
-	public AwardManagerImpl(final QueryUtils queryUtils, final Award award) {
+	public AwardManagerImpl(final QueryUtils queryUtils, final Award award, final Announcement announcement) {
         this.queryUtils = queryUtils;
         this.award = award;
+        this.announcement = announcement;
     }
 
 	@Override
@@ -48,6 +52,11 @@ public class AwardManagerImpl implements AwardManager{
 	@Override
 	public Award getInstance() {
 		return this.award;
+	}
+	
+	@Override
+	public Announcement getAnnouncementInstance() {
+		return this.announcement;
 	}
 
 	@Override

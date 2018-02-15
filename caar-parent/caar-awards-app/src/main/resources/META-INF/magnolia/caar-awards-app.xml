@@ -19,6 +19,10 @@
 		<implementation>es.arquia.magnolia.beans.AwardImpl</implementation>
 	</component>
 	<component>
+		<type>es.arquia.magnolia.beans.Announcement</type>
+		<implementation>es.arquia.magnolia.beans.AnnouncementImpl</implementation>
+	</component>
+	<component>
 		<type>es.arquia.magnolia.beans.News</type>
 		<implementation>es.arquia.magnolia.beans.NewsImpl</implementation>
 	</component>

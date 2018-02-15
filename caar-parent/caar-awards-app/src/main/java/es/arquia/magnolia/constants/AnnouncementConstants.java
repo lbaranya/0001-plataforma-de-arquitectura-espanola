@@ -32,7 +32,7 @@ public interface AnnouncementConstants {
 	
 	String richTextOptionList = "richTextOptionList";
 	
-	String richTextOptionType = "type";
+	String OptionType = "type";
 	
 	String richTextOptionWeight = "richTextOptionWeight";
 	
@@ -43,8 +43,6 @@ public interface AnnouncementConstants {
 	String richTextOptionAbstract = "richTextOptionAbstract";
 	
 	String richTextOptionRichText = "richTextOptionRichText";
-	
-	String juryOptionType = "type";
 	
 	String juryOptionWeight = "juryOptionWeight";
 	
@@ -66,8 +64,6 @@ public interface AnnouncementConstants {
 	
 	String enrollmentOptionList = "enrollmentOptionList";
 	
-	String enrollmentOptionType = "type";
-	
 	String enrollmentOptionWeight = "enrollmentOptionWeight";
 	
 	String enrollmentOptionImageAnchor = "enrollmentOptionImageAnchor";
@@ -83,8 +79,6 @@ public interface AnnouncementConstants {
 	String enrollmentOptionButtonLink = "enrollmentOptionButtonLink";
 	
 	String lemmaOptionList = "lemmaOptionList";
-	
-	String lemmaOptionType = "type";
 	
 	String lemmaOptionWeight = "lemmaOptionWeight";
 	

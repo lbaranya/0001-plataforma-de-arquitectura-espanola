@@ -244,11 +244,11 @@ $(document).ready(function () {
 		$(".cmp-distribuidor-general-content").fadeOut();
 		var parentPosition = $(".cmp-distribuidor-convocatoria").position();
 		$('html,body').animate({
-			scrollTop: parentPosition.top
+			scrollTop: parentPosition.top - 50
 		}, 500);
 
 		$('html,body').animate({
-			scrollTop: parentPosition.top
+			scrollTop: parentPosition.top - 50
 		}, {
 			duration: 500
 		});

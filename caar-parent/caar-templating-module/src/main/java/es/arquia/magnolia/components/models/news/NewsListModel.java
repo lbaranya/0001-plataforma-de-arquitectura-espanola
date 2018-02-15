@@ -12,6 +12,7 @@ import javax.jcr.RepositoryException;
 import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.manager.NewsManager;
 import es.arquia.magnolia.templates.bean.ContextBean;
+import es.arquia.magnolia.templates.bean.ContextBeanImpl;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.rendering.model.RenderingModel;
@@ -22,13 +23,13 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
 	
 	private NewsManager newsManager;
 	
-	private ContextBean contextBean;
+	private ContextBeanImpl contextBean;
 	
 	@Inject
-	public NewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ContextBean contextBean) throws RepositoryException {
+	public NewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager) throws RepositoryException {
         super(content, definition, parent);
         this.newsManager = newsManager;
-        this.contextBean = contextBean;
+        contextBean = new ContextBeanImpl();
     }
 	
 	public List<Node> getNewsList(int numberOfNews) throws Exception{

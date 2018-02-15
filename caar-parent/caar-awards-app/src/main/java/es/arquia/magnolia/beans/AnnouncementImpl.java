@@ -34,110 +34,69 @@ import info.magnolia.jcr.util.NodeTypes;
 import info.magnolia.jcr.util.NodeUtil;
 
 public class AnnouncementImpl implements Announcement {
-	
+	@Inject
 	private I18nContentSupport i18nContentSupport;
 	
-	@Inject
-	public AnnouncementImpl(final I18nContentSupport i18nContentSupport) {
-		this.i18nContentSupport = i18nContentSupport;
-	}
-	
-	public String getAnnouncementState(Node node) throws RepositoryException{
+	private String getPropertyAsString(Node node, String property) {
 		try {
-			return i18nContentSupport.getProperty(node, state).getString();
+			return i18nContentSupport.getProperty(node, property).getString();
 		}catch(RepositoryException e) {
 			return "";
 		}
 	}
 	
-	public String getAnnouncementTitle(Node node) throws RepositoryException{
-		try {
-			return i18nContentSupport.getProperty(node, title).getString();
-		}catch(RepositoryException e) {
-			return "";
-		}
-	}
-	
-	public String getAnnouncementText(Node node)throws RepositoryException{
-		try {
-			return i18nContentSupport.getProperty(node, text).getString();
-		}catch(RepositoryException e) {
-			return "";
-		}
-	}
-	
-	public String getAnnouncementMediaType(Node node)throws RepositoryException{
-		try {
-			return i18nContentSupport.getProperty(node, media).getString();
-		}catch(RepositoryException e) {
-			return "";
-		}
-	}
-	
-	public String getAnnouncementMediaImage(Node node)throws RepositoryException{
-		try {
-			return i18nContentSupport.getProperty(node, mediaImage).getString();
-		}catch(RepositoryException e) {
-			return "";
-		}
-	}
-	
-	public String getAnnouncementMediaVideo(Node node)throws RepositoryException{
-		try {
-			return i18nContentSupport.getProperty(node, mediaVideo).getString();
-		}catch(RepositoryException e) {
-			return "";
-		}
-	}
-	
-	public String getAnnouncementMediaPosition(Node node)throws RepositoryException{
-		try {
-			return i18nContentSupport.getProperty(node, mediaPosition).getString();
-		}catch(RepositoryException e) {
-			return "";
-		}
-	}
-	
-	public List<Node> getAnnouncementRichTextSections(Node node) throws RepositoryException{
-		List<Node> richTextSectionsList = new ArrayList<>();
-		
-		NodeIterator iterator = node.getNodes();
-		while(iterator.hasNext()) {
-			Node iteratorTmp = iterator.nextNode();
-			if(iteratorTmp.getName().contains("rich")) {
-				richTextSectionsList.add(iteratorTmp);
-			}
-		}
-		
-		return richTextSectionsList;
-	}
-	
-	public List<Node> getAnnouncementEnrollmentSections(Node node) throws RepositoryException{
-		List<Node> enrollmentSectionsList = new ArrayList<>();
-		
-		NodeIterator iterator = node.getNodes();
-		while(iterator.hasNext()) {
-			Node iteratorTmp = iterator.nextNode();
-			if(iteratorTmp.getName().contains("enrollment")) {
-				enrollmentSectionsList.add(iteratorTmp);
-			}
-		}
-		
-		return enrollmentSectionsList;
-	}
-	
-	public List<Node> getAnnouncementLemmaSections(Node node) throws RepositoryException{
+	private List<Node> getSectionList(Node node, String sectionType) throws RepositoryException {
 		List<Node> lemmaSectionsList = new ArrayList<>();
 		
 		NodeIterator iterator = node.getNodes();
 		while(iterator.hasNext()) {
 			Node iteratorTmp = iterator.nextNode();
-			if(iteratorTmp.getName().contains("lemma")) {
+			if(iteratorTmp.getName().contains(sectionType)) {
 				lemmaSectionsList.add(iteratorTmp);
 			}
 		}
 		
 		return lemmaSectionsList;
+	}
+	
+	public String getAnnouncementState(Node node){
+		return getPropertyAsString(node, state);
+	}
+	
+	public String getAnnouncementTitle(Node node){
+		return getPropertyAsString(node, title);
+	}
+	
+	public String getAnnouncementText(Node node){
+		return getPropertyAsString(node, text);
+	}
+	
+	public String getAnnouncementMediaType(Node node){
+		return getPropertyAsString(node, media);
+	}
+	
+	public String getAnnouncementMediaImage(Node node){
+		return getPropertyAsString(node, mediaImage);
+	}
+	
+	public String getAnnouncementMediaVideo(Node node){
+		return getPropertyAsString(node, mediaVideo);
+	}
+	
+	public String getAnnouncementMediaPosition(Node node){
+		return getPropertyAsString(node, mediaPosition);
+	}
+	
+	public List<Node> getAnnouncementRichTextSections(Node node) throws RepositoryException{
+		return getSectionList(node, "rich");
+	}
+	
+	public List<Node> getAnnouncementEnrollmentSections(Node node) throws RepositoryException{
+		return getSectionList(node, "enrollment");
+	}
+	
+	public List<Node> getAnnouncementLemmaSections(Node node) throws RepositoryException{
+		return getSectionList(node, "lemma");
 	}
 	
 	public Node createJuryNode(Node node) {
@@ -174,6 +133,4 @@ public class AnnouncementImpl implements Announcement {
 		return juryTmp;
 	}
 	
-	// TODO: Metodos para obtener las propiedades de cada seccion
-
 }

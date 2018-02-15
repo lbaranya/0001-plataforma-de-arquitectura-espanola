@@ -27,6 +27,10 @@ a:hover, a:active, a:visited, a:focus {
 	padding-right: 15px;
 }
 
+section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
+    margin-top: 15px;
+}
+
 @media screen and (max-width: 1442px) {
 	.container-margin {
 		width: 1342px;

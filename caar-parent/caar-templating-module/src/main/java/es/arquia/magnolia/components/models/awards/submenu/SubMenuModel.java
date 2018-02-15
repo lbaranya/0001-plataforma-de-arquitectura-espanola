@@ -49,6 +49,10 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	public String getNewsListLink(String currentUrl) {
 		return utilsBreadcrumbAward.getAwardNewsListPageLink(currentUrl);
 	}
+	
+	public String getSecondLevelMenuLink(String currentUrl, Node node) {
+		return utilsBreadcrumbAward.getAwardSeconLevelMenuLink(currentUrl, node);
+	}
 
 
 }

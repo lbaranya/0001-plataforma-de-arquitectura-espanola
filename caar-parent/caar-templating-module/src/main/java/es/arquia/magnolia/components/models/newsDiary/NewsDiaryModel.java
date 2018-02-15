@@ -15,6 +15,7 @@ import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager;
 import es.arquia.magnolia.manager.NewsManager;
 import es.arquia.magnolia.templates.bean.ContextBean;
+import es.arquia.magnolia.templates.bean.ContextBeanImpl;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.rendering.model.RenderingModel;
@@ -25,14 +26,14 @@ public class NewsDiaryModel <T extends ConfiguredTemplateDefinition> extends Ren
 	private NewsManager newsManager;
 	private ArchitectureFilesSupportEventManager architectureFilesSupportEventManager;
 	
-	private ContextBean contextBean;
+	private ContextBeanImpl contextBean;
 	
 	@Inject
-	public NewsDiaryModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ArchitectureFilesSupportEventManager architectureFilesSupportEventManager, final ContextBean contextBean) throws PathNotFoundException, RepositoryException {
+	public NewsDiaryModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ArchitectureFilesSupportEventManager architectureFilesSupportEventManager) throws PathNotFoundException, RepositoryException {
         super(content, definition, parent);
         this.newsManager = newsManager;
         this.architectureFilesSupportEventManager = architectureFilesSupportEventManager;
-        this.contextBean = contextBean;
+        this.contextBean = new ContextBeanImpl();
     }
 	
 	public List<Node> getImportantNewsList() throws Exception{
