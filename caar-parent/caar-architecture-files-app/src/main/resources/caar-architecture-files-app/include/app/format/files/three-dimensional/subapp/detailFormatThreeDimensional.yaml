@@ -85,6 +85,7 @@ editor:
             label: caar-architecture-files-app.files.format.three-dimensional.data.printingYear.label
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           - name: m21_300$a
+            i18n: true
             label: caar-architecture-files-app.files.format.three-dimensional.data.documentExtension.label
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           - name: m21_300$b
@@ -95,9 +96,11 @@ editor:
             label: caar-architecture-files-app.files.format.three-dimensional.data.dimensions.label
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           - name: m21_300$e
+            i18n: true
             label: caar-architecture-files-app.files.format.three-dimensional.data.accompanyingMaterial.label
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           - name: m21_400$a
+            i18n: true
             label: caar-architecture-files-app.files.format.three-dimensional.data.collectionTitle.label
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           - name: m21_440$v
@@ -143,7 +146,6 @@ editor:
             label: caar-architecture-files-app.files.format.three-dimensional.notes.geoThemeName.label
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           - name: m21_700$a
-            i18n: true
             label: caar-architecture-files-app.files.format.three-dimensional.notes.secondAuthorName.label
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           - name: m21_700$e
