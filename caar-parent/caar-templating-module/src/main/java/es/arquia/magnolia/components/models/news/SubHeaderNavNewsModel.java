@@ -1,7 +1,6 @@
 package es.arquia.magnolia.components.models.news;
 
-import static es.arquia.magnolia.templates.constants.ContextBeanConstants.contextBeanNewsNodeList;
-import static es.arquia.magnolia.templates.constants.ContextBeanConstants.contextBeanParentPathString;
+import static es.arquia.magnolia.templates.constants.ContextNewsNavConstants.contextNewsNavObject;
 
 import java.util.Iterator;
 import java.util.List;
@@ -13,6 +12,7 @@ import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import es.arquia.magnolia.functions.I18nURLFunctions;
+import es.arquia.magnolia.templates.bean.ContextNewsNav;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.rendering.model.RenderingModel;
@@ -26,11 +26,14 @@ public class SubHeaderNavNewsModel <T extends ConfiguredTemplateDefinition> exte
 	private String parentPath;
 	
 	private I18nURLFunctions i18nURLFunctions;
+	
+	private ContextNewsNav contextNewsNav;
 
 	public SubHeaderNavNewsModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final I18nURLFunctions i18nURLFunctions) {
 		super(content, definition, parent);
-		navigationNewsList = MgnlContext.getAttribute(contextBeanNewsNodeList, Context.SESSION_SCOPE);
-		parentPath = MgnlContext.getAttribute(contextBeanParentPathString, Context.SESSION_SCOPE);
+		contextNewsNav = MgnlContext.getAttribute(contextNewsNavObject, Context.SESSION_SCOPE);
+		navigationNewsList = contextNewsNav.getListResultNews();
+		parentPath = contextNewsNav.getParentPath();
 		this.i18nURLFunctions = i18nURLFunctions;
 	}
 	

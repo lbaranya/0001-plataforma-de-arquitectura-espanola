@@ -6,8 +6,8 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.manager.AwardManager;
+import es.arquia.magnolia.utils.AwardNodeUtil;
 import es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAward;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
@@ -26,7 +26,7 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 		this.utilsBreadcrumbAward = utilsBreadcrumbAward;
 	}
 	
-	public Award getInstance() {
+	public AwardNodeUtil getInstance() {
 		return awardManager.getInstance();
 	}
 	

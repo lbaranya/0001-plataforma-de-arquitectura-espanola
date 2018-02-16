@@ -1,4 +1,4 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import static es.arquia.magnolia.constants.AnnouncementConstants.OptionType;
 import static es.arquia.magnolia.constants.AnnouncementConstants.enrollmentOptionAbstract;
@@ -35,7 +35,7 @@ import javax.jcr.RepositoryException;
 
 import info.magnolia.cms.i18n.I18nContentSupport;
 
-public class AnnouncementSectionsImpl implements AnnouncementSections {
+public class AnnouncementSectionsNodeUtilImpl implements AnnouncementSectionsNodeUtil {
 	
 	@Inject
 	private I18nContentSupport i18nContentSupport;

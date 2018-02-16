@@ -1,4 +1,4 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgeFileLink;
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgeListNameContains;
@@ -33,7 +33,7 @@ import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeTypes;
 import info.magnolia.jcr.util.NodeUtil;
 
-public class AnnouncementImpl implements Announcement {
+public class AnnouncementNodeUtilImpl implements AnnouncementNodeUtil {
 	@Inject
 	private I18nContentSupport i18nContentSupport;
 	

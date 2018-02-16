@@ -5,8 +5,8 @@ import java.util.List;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.News;
-import es.arquia.magnolia.beans.NewsImpl;
+import es.arquia.magnolia.utils.NewsNodeUtil;
+import es.arquia.magnolia.utils.NewsNodeUtilImpl;
 
 public interface NewsManager {
 	
@@ -24,6 +24,6 @@ public interface NewsManager {
 	
 	public boolean isLastRowOfNews();
 	
-	public News getInstance();
+	public NewsNodeUtil getInstance();
 
 }

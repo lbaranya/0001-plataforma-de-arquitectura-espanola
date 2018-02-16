@@ -1,7 +1,6 @@
 package es.arquia.magnolia.components.models.news;
 
-import static es.arquia.magnolia.templates.constants.ContextBeanConstants.contextBeanNewsNodeList;
-import static es.arquia.magnolia.templates.constants.ContextBeanConstants.contextBeanParentPathString;
+import static es.arquia.magnolia.templates.constants.ContextNewsNavConstants.*;
 
 import java.util.List;
 
@@ -9,9 +8,9 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.manager.NewsManager;
-import es.arquia.magnolia.templates.bean.ContextBean;
+import es.arquia.magnolia.templates.bean.ContextNewsNav;
+import es.arquia.magnolia.utils.NewsNodeUtil;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.rendering.model.RenderingModel;
@@ -22,39 +21,38 @@ public class NewsListModel <T extends ConfiguredTemplateDefinition> extends Rend
 	
 	private NewsManager newsManager;
 	
-	private ContextBean contextBean;
+	private ContextNewsNav contextNewsNav;
 	
 	@Inject
-	public NewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ContextBean contextBean) throws RepositoryException {
+	public NewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final ContextNewsNav contextBean) throws RepositoryException {
         super(content, definition, parent);
         this.newsManager = newsManager;
-        this.contextBean = contextBean;
+        this.contextNewsNav = contextBean;
     }
 	
 	public List<Node> getNewsList(int numberOfNews) throws Exception{
-		contextBean.setListResultNews(newsManager.getNewsList(numberOfNews));
-		contextBean.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
-		setContextValuesFromNewsList(contextBean);
-		return contextBean.getListResultNews();
+		contextNewsNav.setListResultNews(newsManager.getNewsList(numberOfNews));
+		contextNewsNav.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
+		setContextValuesFromNewsList(contextNewsNav);
+		return contextNewsNav.getListResultNews();
 	}
 	
 	public List<Node> getCategorizedNewsList(List<String> categoriesList, int numberOfNews) throws Exception{
-		contextBean.setListResultNews(newsManager.getCategorizedNewsList(categoriesList, numberOfNews));
-		contextBean.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
-		setContextValuesFromNewsList(contextBean);
-		return contextBean.getListResultNews();
+		contextNewsNav.setListResultNews(newsManager.getCategorizedNewsList(categoriesList, numberOfNews));
+		contextNewsNav.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
+		setContextValuesFromNewsList(contextNewsNav);
+		return contextNewsNav.getListResultNews();
 	}
 	
 	public boolean isLastRowOfNews() {
 		return newsManager.isLastRowOfNews();
 	}
 	
-	public News getInstance() {
+	public NewsNodeUtil getInstance() {
 		return newsManager.getInstance();
 	}
 	
-	private void setContextValuesFromNewsList(ContextBean contextBean) {
-		MgnlContext.setAttribute(contextBeanNewsNodeList, contextBean.getListResultNews(), Context.SESSION_SCOPE);
-		MgnlContext.setAttribute(contextBeanParentPathString, contextBean.getParentPath(), Context.SESSION_SCOPE);
+	private void setContextValuesFromNewsList(ContextNewsNav contextNewsNav) {
+		MgnlContext.setAttribute(contextNewsNavObject, contextNewsNav, Context.SESSION_SCOPE);
 	}
 }

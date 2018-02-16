@@ -1,8 +1,8 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import javax.jcr.Node;
 
-public interface AnnouncementSections {
+public interface AnnouncementSectionsNodeUtil {
 	
 	public String getOptionType(Node node);
 	

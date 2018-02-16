@@ -1,11 +1,13 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import java.util.List;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-public interface News {
+import es.arquia.magnolia.beans.RelatedElement;
+
+public interface NewsNodeUtil {
 	
 	public String getHeadline(Node node) throws RepositoryException;
 

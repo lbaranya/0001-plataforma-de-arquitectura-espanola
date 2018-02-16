@@ -31,8 +31,8 @@
 			<implementation>es.arquia.magnolia.functions.I18nURLFunctionsImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.templates.bean.ContextBean</type>
-			<implementation>es.arquia.magnolia.templates.bean.ContextBeanImpl</implementation>
+			<type>es.arquia.magnolia.templates.bean.ContextNewsNav</type>
+			<implementation>es.arquia.magnolia.templates.bean.ContextNewsNavImpl</implementation>
 		</component>
 	</components>
 

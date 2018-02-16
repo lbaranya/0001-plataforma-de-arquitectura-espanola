@@ -6,9 +6,9 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.AwardImpl;
-import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.manager.AwardManager;
+import es.arquia.magnolia.utils.AwardNodeUtil;
+import es.arquia.magnolia.utils.AwardNodeUtilImpl;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
@@ -23,7 +23,7 @@ public class AwardAboutModel <T extends ConfiguredTemplateDefinition> extends Re
 		this.awardManager = awardManager;
 	}
 	
-	public Award getInstance() {
+	public AwardNodeUtil getInstance() {
 		return awardManager.getInstance();
 	}
 	

@@ -1,11 +1,13 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import java.util.List;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-public interface Award {
+import es.arquia.magnolia.beans.RelatedElement;
+
+public interface AwardNodeUtil {
 	
 	public String getType(Node node) throws RepositoryException;
 	

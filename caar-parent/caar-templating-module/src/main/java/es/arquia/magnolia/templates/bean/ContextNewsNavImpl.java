@@ -1,13 +1,19 @@
 package es.arquia.magnolia.templates.bean;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.jcr.Node;
 
-public class ContextBeanImpl implements ContextBean{
+public class ContextNewsNavImpl implements ContextNewsNav, Serializable{
 	
-	public ContextBeanImpl() {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4359187170010027587L;
+
+	public ContextNewsNavImpl() {
 		listResultNews = new ArrayList<>();
 	}
 

@@ -1,11 +1,11 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import java.util.List;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-public interface Announcement {
+public interface AnnouncementNodeUtil {
 	
 	public String getAnnouncementState(Node node);
 	

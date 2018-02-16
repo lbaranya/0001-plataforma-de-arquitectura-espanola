@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.jcr.Node;
 
-public interface ContextBean {
+public interface ContextNewsNav {
 	
 	public List<Node> getListResultNews();
 

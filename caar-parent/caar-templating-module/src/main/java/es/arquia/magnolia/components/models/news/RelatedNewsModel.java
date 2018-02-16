@@ -6,10 +6,10 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.AwardImpl;
-import es.arquia.magnolia.beans.News;
-import es.arquia.magnolia.beans.NewsImpl;
 import es.arquia.magnolia.manager.NewsManager;
+import es.arquia.magnolia.utils.AwardNodeUtilImpl;
+import es.arquia.magnolia.utils.NewsNodeUtil;
+import es.arquia.magnolia.utils.NewsNodeUtilImpl;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
@@ -28,12 +28,12 @@ public class RelatedNewsModel <T extends ConfiguredTemplateDefinition> extends R
         this.i18nContentSupport = i18nContentSupport;
     }
 	
-	public News getInstance() {
+	public NewsNodeUtil getInstance() {
 		return newsManager.getInstance();
 	}
 	
 	public List<Node> getCategorizedImportantNewsList(Node node) throws RepositoryException{
-		AwardImpl tmpAward = new AwardImpl(i18nContentSupport);
+		AwardNodeUtilImpl tmpAward = new AwardNodeUtilImpl(i18nContentSupport);
 		return newsManager.getCategorizedImportantNewsList(tmpAward.getAwardCategoriesList(node), 4);
 	}
 	

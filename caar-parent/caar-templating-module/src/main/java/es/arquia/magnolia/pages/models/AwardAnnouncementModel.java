@@ -9,9 +9,9 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.Announcement;
-import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.manager.AwardManager;
+import es.arquia.magnolia.utils.AnnouncementNodeUtil;
+import es.arquia.magnolia.utils.AwardNodeUtil;
 import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
@@ -31,11 +31,11 @@ public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> ext
 		nodeArray = new ArrayList<>();
 	}
 	
-	public Announcement getAnnouncementInstance() {
+	public AnnouncementNodeUtil getAnnouncementInstance() {
 		return awardManager.getAnnouncementInstance();
 	}
 	
-	public Award getInstance() {
+	public AwardNodeUtil getInstance() {
 		return awardManager.getInstance();
 	}
 	

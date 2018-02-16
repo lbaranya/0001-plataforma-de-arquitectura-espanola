@@ -15,19 +15,19 @@ import javax.jcr.RepositoryException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.functions.QueryUtils;
+import es.arquia.magnolia.utils.NewsNodeUtil;
 import info.magnolia.context.MgnlContext;
 
 public class NewsManagerImpl implements NewsManager{
 
 	private static final Logger log = LoggerFactory.getLogger(NewsManagerImpl.class);
 	private QueryUtils queryUtils;
-	private News news;
+	private NewsNodeUtil news;
 	private boolean lastRowOfNews = false;
 
 	@Inject
-	public NewsManagerImpl(final QueryUtils queryUtils, final News news) {
+	public NewsManagerImpl(final QueryUtils queryUtils, final NewsNodeUtil news) {
 		this.queryUtils = queryUtils;
 		this.news = news;
 	}
@@ -89,7 +89,7 @@ public class NewsManagerImpl implements NewsManager{
 	}
 
 	@Override
-	public News getInstance() {
+	public NewsNodeUtil getInstance() {
 		return this.news;
 	}
 

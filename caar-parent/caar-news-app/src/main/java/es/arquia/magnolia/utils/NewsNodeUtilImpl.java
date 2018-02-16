@@ -1,4 +1,4 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import static es.arquia.magnolia.constants.NewsConstants.category;
 import static es.arquia.magnolia.constants.NewsConstants.dateTime;
@@ -26,15 +26,16 @@ import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
 
+import es.arquia.magnolia.beans.RelatedElement;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
-public class NewsImpl implements News{
+public class NewsNodeUtilImpl implements NewsNodeUtil{
 
 	private I18nContentSupport i18nContentSupport;
 	
 	@Inject
-	public NewsImpl(final I18nContentSupport i18nContentSupport) {
+	public NewsNodeUtilImpl(final I18nContentSupport i18nContentSupport) {
 		this.i18nContentSupport = i18nContentSupport;
 	}
 

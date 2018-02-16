@@ -20,7 +20,7 @@ public class CaarNewsAppVersionHandler extends DefaultModuleVersionHandler {
 	public CaarNewsAppVersionHandler() {
 		
 		register(DeltaBuilder.update("0.10", "")
-				.addTask(new BootstrapSingleModuleResource("News URI2RepositoryMapping", "Add URI2RespositoryMapping to server configuration", "config.server.URI2RepositoryMapping.mappings.news.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				.addTask(new BootstrapSingleModuleResource("NewsNodeUtil URI2RepositoryMapping", "Add URI2RespositoryMapping to server configuration", "config.server.URI2RepositoryMapping.mappings.news.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				);
 	}
 

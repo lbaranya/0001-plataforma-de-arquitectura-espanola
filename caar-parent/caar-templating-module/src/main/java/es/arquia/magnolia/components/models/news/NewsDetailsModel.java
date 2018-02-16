@@ -5,8 +5,8 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.jcr.Node;
 
-import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.manager.NewsManager;
+import es.arquia.magnolia.utils.NewsNodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
@@ -25,7 +25,7 @@ public class NewsDetailsModel <T extends ConfiguredTemplateDefinition> extends R
 		return newsManager.getNewsList();
 	}
 	
-	public News getInstance() {
+	public NewsNodeUtil getInstance() {
 		return newsManager.getInstance();
 	}
 

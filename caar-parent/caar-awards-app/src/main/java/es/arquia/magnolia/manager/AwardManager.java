@@ -5,8 +5,8 @@ import java.util.List;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.Announcement;
-import es.arquia.magnolia.beans.Award;
+import es.arquia.magnolia.utils.AnnouncementNodeUtil;
+import es.arquia.magnolia.utils.AwardNodeUtil;
 
 public interface AwardManager {
 	
@@ -18,8 +18,8 @@ public interface AwardManager {
 	
 	public Node getEditionStateInProgress(Node node) throws RepositoryException;
 	
-	public Award getInstance();
+	public AwardNodeUtil getInstance();
 	
-	public Announcement getAnnouncementInstance();
+	public AnnouncementNodeUtil getAnnouncementInstance();
 
 }

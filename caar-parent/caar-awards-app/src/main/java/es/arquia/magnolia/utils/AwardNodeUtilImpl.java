@@ -1,4 +1,4 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.awardAboutText;
@@ -27,21 +27,23 @@ import javax.jcr.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import es.arquia.magnolia.beans.RelatedElement;
+import es.arquia.magnolia.utils.NewsNodeUtil;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
-public class AwardImpl implements Award{
+public class AwardNodeUtilImpl implements AwardNodeUtil{
 	
 	private I18nContentSupport i18nContentSupport;
 	@Inject
-	private News news;
+	private NewsNodeUtil news;
 	
 	@Inject
-	public AwardImpl(final I18nContentSupport i18nContentSupport) {
+	public AwardNodeUtilImpl(final I18nContentSupport i18nContentSupport) {
 		this.i18nContentSupport = i18nContentSupport;
 	}
 	
-	private static final Logger log = LoggerFactory.getLogger(AwardImpl.class);
+	private static final Logger log = LoggerFactory.getLogger(AwardNodeUtilImpl.class);
 	
 	public String getType(Node node) throws RepositoryException{
 		try {
