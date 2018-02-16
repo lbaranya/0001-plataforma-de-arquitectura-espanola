@@ -1,0 +1,10 @@
+icon: icon-add-folder
+class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+nodeType: mgnl:format-electronic-wrapper
+label: caar-architecture-files-app.subapp.browser.actions.addFormatElectronicWrapper.label
+availability:
+  nodeTypes:
+    - mgnl:format-wrapper
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

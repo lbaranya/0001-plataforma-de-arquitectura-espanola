@@ -1,0 +1,22 @@
+name: formatElectronic
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatElectronic.label
+groups:
+  - name: editActions
+    items:
+      - name: editFormatElectronic
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsElectronic
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:format-electronic

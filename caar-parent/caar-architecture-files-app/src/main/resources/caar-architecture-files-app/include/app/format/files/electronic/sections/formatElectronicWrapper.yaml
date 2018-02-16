@@ -1,0 +1,26 @@
+name: formatElectronicWrapper
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatElectronicWrapper.label
+groups:
+  - name: addActions
+    items:
+      - name: addFolderFormatElectronic
+      - name: addFormatElectronic
+  - name: editActions
+    items:
+      - name: editWrapper
+      - name: confirmDelete 
+  - name: importExportActions
+    items:
+      - name: import
+      - name: export
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: deletedActions
+    items:
+      - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:format-electronic-wrapper
