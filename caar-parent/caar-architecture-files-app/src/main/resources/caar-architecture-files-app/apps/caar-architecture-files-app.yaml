@@ -102,6 +102,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:format-graphic
           icon: icon-items
+        - name: mgnl:format-continuous-wrapper
+          icon: icon-folder
+        - name: mgnl:format-continuous-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-continuous
           icon: icon-items
         - name: mgnl:format-electronic
@@ -286,6 +290,10 @@ subApps:
       showVersionsThreeDimensional:
         !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/showVersionsThreeDimensional.yaml
         
+      # Details Continuous
+      showVersionsContinuous:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/showVersionsContinuous.yaml
+        
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
         icon: icon-retrieve-versions
@@ -348,6 +356,10 @@ subApps:
       # Three-dimensional folder
       addFolderFormatThreeDimensional:
         !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/addFolderFormatThreeDimensional.yaml
+        
+      # Continuous folder
+      addFolderFormatContinuous:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFolderFormatContinuous.yaml
       
       # Edit any folder
       editFolder:
@@ -368,6 +380,7 @@ subApps:
             - mgnl:format-graphic-folder-wrapper
             - mgnl:format-manuscript-folder-wrapper
             - mgnl:format-three-dimensional-folder-wrapper
+            - mgnl:format-continuous-folder-wrapper
             - mgnl:portfolio-folder-wrapper
           rules: 
             IsNotDeletedRule: 
@@ -404,6 +417,7 @@ subApps:
             - mgnl:format-manuscript-wrapper
             - mgnl:format-graphic-wrapper
             - mgnl:format-three-dimensional-wrapper
+            - mgnl:format-continuous-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -496,6 +510,8 @@ subApps:
         !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFormatGraphicWrapper.yaml
       addFormatThreeDimensionalWrapper:
         !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/addFormatThreeDimensionalWrapper.yaml
+      addFormatContinuousWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFormatContinuousWrapper.yaml
        
       # Format Video
       addFormatVideo:
@@ -520,6 +536,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/addFormatThreeDimensional.yaml
       editFormatThreeDimensional:
         !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/editFormatThreeDimensional.yaml
+
+      # Format Continuous
+      addFormatContinuous:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFormatContinuous.yaml
+      editFormatContinuous:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/editFormatContinuous.yaml
       
     # Sections
     actionbar:
@@ -785,6 +807,20 @@ subApps:
         - !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/sections/formatThreeDimensionalDeleted.yaml
         - !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/sections/formatThreeDimensional.yaml
         
+        # Format Continuous
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousWrapper.yaml
+        
+        # Format Continuous folder
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuous.yaml
+        
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -824,3 +860,6 @@ subApps:
   # Format three-dimensional sub app
   detailFormatThreeDimensional:
     !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/subapp/detailFormatThreeDimensional.yaml
+  # Format continuous sub app
+  detailFormatContinuous:
+    !include:/caar-architecture-files-app/include/app/format/files/continuous/subapp/detailFormatContinuous.yaml
