@@ -1,4 +1,4 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
 
@@ -8,6 +8,8 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+
+import es.arquia.magnolia.beans.RelatedElement;
 
 public class ArchitectureFileImpl implements ArchitectureFile {
 

@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.jcr.Node;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI;
 
 public interface ArchitectureFilesSupportReviewIManager {
 	

@@ -15,16 +15,16 @@
 		<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
 	</component>
 	<component>
-		<type>es.arquia.magnolia.beans.Award</type>
-		<implementation>es.arquia.magnolia.beans.AwardImpl</implementation>
+		<type>es.arquia.magnolia.utils.AwardNodeUtil</type>
+		<implementation>es.arquia.magnolia.utils.AwardNodeUtilImpl</implementation>
 	</component>
 	<component>
-		<type>es.arquia.magnolia.beans.Announcement</type>
-		<implementation>es.arquia.magnolia.beans.AnnouncementImpl</implementation>
+		<type>es.arquia.magnolia.utils.AnnouncementNodeUtil</type>
+		<implementation>es.arquia.magnolia.utils.AnnouncementNodeUtilImpl</implementation>
 	</component>
 	<component>
-		<type>es.arquia.magnolia.beans.News</type>
-		<implementation>es.arquia.magnolia.beans.NewsImpl</implementation>
+		<type>es.arquia.magnolia.utils.NewsNodeUtil</type>
+		<implementation>es.arquia.magnolia.utils.NewsNodeUtilImpl</implementation>
 	</component>
   </components>
 

@@ -11,7 +11,7 @@ import javax.jcr.RepositoryException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;

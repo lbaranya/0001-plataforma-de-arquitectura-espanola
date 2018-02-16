@@ -1,4 +1,4 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportReviewIConstants.authorshipDetail;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportReviewIConstants.authorshipName;

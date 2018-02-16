@@ -15,8 +15,8 @@
 		<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
 	</component>
 	<component>
-		<type>es.arquia.magnolia.beans.News</type>
-		<implementation>es.arquia.magnolia.beans.NewsImpl</implementation>
+		<type>es.arquia.magnolia.utils.NewsNodeUtil</type>
+		<implementation>es.arquia.magnolia.utils.NewsNodeUtilImpl</implementation>
 	</component>
   </components>
 

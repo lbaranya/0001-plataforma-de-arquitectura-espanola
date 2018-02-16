@@ -14,8 +14,8 @@ import javax.jcr.RepositoryException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI;
 import es.arquia.magnolia.functions.QueryUtils;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI;
 
 public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureFilesSupportReviewIManager {
 	

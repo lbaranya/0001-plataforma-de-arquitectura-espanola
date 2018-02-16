@@ -10,8 +10,8 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.ArchitectureFileImpl;
 import es.arquia.magnolia.beans.RelatedElement;
+import es.arquia.magnolia.utils.ArchitectureFileImpl;
 import es.arquia.magnolia.utils.AwardNodeUtil;
 import es.arquia.magnolia.utils.NewsNodeUtil;
 import info.magnolia.rendering.model.RenderingModel;

@@ -9,10 +9,10 @@ import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager;
 import es.arquia.magnolia.manager.NewsManager;
 import es.arquia.magnolia.templates.bean.ContextNewsNav;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.utils.NewsNodeUtil;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;

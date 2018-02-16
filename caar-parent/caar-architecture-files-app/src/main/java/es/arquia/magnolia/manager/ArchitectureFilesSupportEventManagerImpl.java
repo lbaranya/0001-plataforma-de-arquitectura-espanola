@@ -14,8 +14,8 @@ import javax.jcr.RepositoryException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.functions.QueryUtils;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
 
 public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFilesSupportEventManager {
 	
