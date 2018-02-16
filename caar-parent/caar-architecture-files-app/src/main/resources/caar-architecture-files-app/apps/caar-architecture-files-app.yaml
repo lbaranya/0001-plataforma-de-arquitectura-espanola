@@ -108,6 +108,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:format-continuous
           icon: icon-items
+        - name: mgnl:format-electronic-wrapper
+          icon: icon-folder
+        - name: mgnl:format-electronic-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-electronic
           icon: icon-items
         - name: mgnl:folder
@@ -294,6 +298,10 @@ subApps:
       showVersionsContinuous:
         !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/showVersionsContinuous.yaml
         
+      # Details Electronic
+      showVersionsElectronic:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/showVersionsElectronic.yaml
+        
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
         icon: icon-retrieve-versions
@@ -360,6 +368,10 @@ subApps:
       # Continuous folder
       addFolderFormatContinuous:
         !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFolderFormatContinuous.yaml
+        
+      # Electronic folder
+      addFolderFormatElectronic:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFolderFormatElectronic.yaml
       
       # Edit any folder
       editFolder:
@@ -381,6 +393,7 @@ subApps:
             - mgnl:format-manuscript-folder-wrapper
             - mgnl:format-three-dimensional-folder-wrapper
             - mgnl:format-continuous-folder-wrapper
+            - mgnl:format-electronic-folder-wrapper
             - mgnl:portfolio-folder-wrapper
           rules: 
             IsNotDeletedRule: 
@@ -418,6 +431,7 @@ subApps:
             - mgnl:format-graphic-wrapper
             - mgnl:format-three-dimensional-wrapper
             - mgnl:format-continuous-wrapper
+            - mgnl:format-electronic-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -512,6 +526,8 @@ subApps:
         !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/addFormatThreeDimensionalWrapper.yaml
       addFormatContinuousWrapper:
         !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFormatContinuousWrapper.yaml
+      addFormatElectronicWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFormatElectronicWrapper.yaml
        
       # Format Video
       addFormatVideo:
@@ -542,6 +558,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFormatContinuous.yaml
       editFormatContinuous:
         !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/editFormatContinuous.yaml
+        
+      # Format Electronic
+      addFormatElectronic:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFormatElectronic.yaml
+      editFormatElectronic:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/editFormatElectronic.yaml
       
     # Sections
     actionbar:
@@ -821,6 +843,20 @@ subApps:
         - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousDeleted.yaml
         - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuous.yaml
         
+        # Format Electronic
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicWrapper.yaml
+        
+        # Format Electronic folder
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronic.yaml
+        
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -863,3 +899,6 @@ subApps:
   # Format continuous sub app
   detailFormatContinuous:
     !include:/caar-architecture-files-app/include/app/format/files/continuous/subapp/detailFormatContinuous.yaml
+  # Format electronic sub app
+  detailFormatElectronic:
+    !include:/caar-architecture-files-app/include/app/format/files/electronic/subapp/detailFormatElectronic.yaml
