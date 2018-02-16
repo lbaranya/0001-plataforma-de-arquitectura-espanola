@@ -98,61 +98,81 @@ editor:
         label: caar-architecture-files-app.files.format.electronic.notes.label
         fields:
           - name: m21_1_500$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.electronic.notes.nature.label
+          - name: m21_538$a
+            i18n: true
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.format.electronic.notes.specifications.label
           - name: m21_546$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.documentLanguage.label
+            label: caar-architecture-files-app.files.format.electronic.notes.documentLanguage.label
+          - name: m21_2_500$a
+            i18n: true
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.format.electronic.notes.titleVariants.label
+          - name: m21_3_500$a
+            i18n: true
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.format.electronic.notes.editionHistory.label            
           - name: m21_502$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.thesis.label
+            label: caar-architecture-files-app.files.format.electronic.notes.thesis.label
           - name: m21_530$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.otherFormats.label
+            label: caar-architecture-files-app.files.format.electronic.notes.otherFormats.label
           - name: m21_520$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.summary.label
+            label: caar-architecture-files-app.files.format.electronic.notes.summary.label
           - name: m21_505$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.content.label
-          - name: m21_561
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.source.label
+            label: caar-architecture-files-app.files.format.electronic.notes.content.label
           - name: m21_561$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.history.label
-          - name: m21_561$b
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.dates.label
+            label: caar-architecture-files-app.files.format.electronic.notes.history.label
           - name: m21_590$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.local.label
+            label: caar-architecture-files-app.files.format.electronic.notes.local.label
+          - name: m21_4_500$a
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            type: Date
+            label: caar-architecture-files-app.files.format.electronic.notes.dateConsultation.label
           - name: m21_650$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.theme.label
+            label: caar-architecture-files-app.files.format.electronic.notes.theme.label
           - name: m21_651$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.geoThemeName.label
+            label: caar-architecture-files-app.files.format.electronic.notes.geoThemeName.label
           - name: m21_700$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.secondaryActorName.label
+            label: caar-architecture-files-app.files.format.electronic.notes.secondaryActorName.label
           - name: m21_700$e
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.secondaryActorTypology.label
+            label: caar-architecture-files-app.files.format.electronic.notes.secondaryActorTypology.label
           - name: m21_710$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.notes.secondaryActorEntityName.label
+            label: caar-architecture-files-app.files.format.electronic.notes.secondaryActorEntityName.label
+          - name: m21_856
+            i18n: true
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.format.electronic.notes.electronicAccessLocation.label
+          - name: m21_7856$u
+            i18n: true
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.format.electronic.notes.uri.label           
   actions:
     - name: commit
     - name: cancel

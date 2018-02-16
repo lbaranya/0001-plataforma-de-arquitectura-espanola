@@ -1,14 +1,10 @@
-name: formatWrapper
-label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
+name: formatContinuousWrapper
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatContinuousWrapper.label
 groups:
   - name: addActions
     items:
-      - name: addFormatVideoWrapper
-      - name: addFormatManuscriptWrapper
-      - name: addFormatGraphicWrapper
-      - name: addFormatThreeDimensionalWrapper
-      - name: addFormatContinuousWrapper
-      - name: addFormatElectronicWrapper
+      - name: addFolderFormatContinuous
+      - name: addFormatContinuous
   - name: editActions
     items:
       - name: editWrapper
@@ -27,4 +23,4 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:format-wrapper
+    - mgnl:format-continuous-wrapper
