@@ -219,6 +219,14 @@ subApps:
       # Announcement edit
       editAnnouncement: 
         !include:/caar-awards-app/include/app/announcement/actions/editAnnouncement.yaml
+        
+      # Program add
+      addProgram: 
+        !include:/caar-awards-app/include/app/program/actions/addProgram.yaml
+        
+      # Program edit
+      editProgram: 
+        !include:/caar-awards-app/include/app/program/actions/editProgram.yaml
               
       # Folder
       
@@ -254,6 +262,10 @@ subApps:
         # Announcement section
         - !include:/caar-awards-app/include/app/announcement/sections/announcementSectionDeleted.yaml
         - !include:/caar-awards-app/include/app/announcement/sections/announcementSection.yaml
+        
+        # Program section
+        - !include:/caar-awards-app/include/app/program/sections/programSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/program/sections/programSection.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -268,3 +280,7 @@ subApps:
   # Announcement sub app
   detailAnnouncementSubApp:
     !include:/caar-awards-app/include/app/announcement/subapp/detailAnnouncementSubApp.yaml
+    
+  # Program sub app
+  detailProgramSubApp:
+    !include:/caar-awards-app/include/app/program/subapp/detailProgramSubApp.yaml

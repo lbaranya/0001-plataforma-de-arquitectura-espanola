@@ -38,4 +38,8 @@ public interface AwardConstants {
 	
 	String editionEnrollmentButtonText = "enrollmentButtonText";
 	
+	String programNodeType = "mgnl:program";
+	
+	String programTitle = "title";
+	
 }

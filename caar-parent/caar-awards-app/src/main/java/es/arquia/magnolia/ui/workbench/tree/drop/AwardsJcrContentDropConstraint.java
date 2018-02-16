@@ -1,10 +1,12 @@
 package es.arquia.magnolia.ui.workbench.tree.drop;
 
+import static es.arquia.magnolia.constants.AnnouncementConstants.announcementNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
+import static es.arquia.magnolia.constants.AwardConstants.programNodeType;
 
 import javax.inject.Inject;
 import javax.jcr.Item;
@@ -98,23 +100,19 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 	}
 
 	private boolean isAllowedAsChild(Node sourceNode, Node targetNode) throws RepositoryException {
-		boolean ret = false;
-		if(!ret && this.isAward(targetNode)) {
-			ret = this.targetNodeAllowSourceNode(sourceNode, targetNode);
-		}
-		return ret;
+		return this.targetNodeAllowSourceNode(sourceNode, targetNode);
 	}
 
 	private boolean targetNodeAllowSourceNode(Node sourceNode, Node targetNode) throws RepositoryException {
 		boolean ret = false;
 		if(!ret &&  targetNode.isNodeType(awardNodeType)) {
 			ret = sourceNode.isNodeType(editionNodeType);
+		}else {
+			if(!ret && targetNode.isNodeType(editionNodeType)) {
+				ret = sourceNode.isNodeType(programNodeType) || sourceNode.isNodeType(announcementNodeType);
+			}
 		}
 		return ret;
-	}
-
-	private boolean isAward(Node targetNode) throws RepositoryException {
-		return targetNode.isNodeType(awardNodeType);
 	}
     
     

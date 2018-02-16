@@ -1,13 +1,9 @@
-name: editionSection
-label: caar-awards-app.subapp.browser.actionbar.sections.editionSection.label
+name: programSection
+label: caar-awards-app.subapp.browser.actionbar.sections.programSection.label
 groups:
-  - name: addActions
-    items:
-      - name: addAnnouncement
-      - name: addProgram
   - name: editActions
     items:
-      - name: editEdition
+      - name: editProgram
       - name: confirmDelete 
   - name: importExportActions
     items:
@@ -23,4 +19,4 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:edition
+    - mgnl:program
