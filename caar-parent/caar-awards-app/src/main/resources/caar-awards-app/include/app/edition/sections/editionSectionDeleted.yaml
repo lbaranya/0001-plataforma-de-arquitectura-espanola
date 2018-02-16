@@ -5,6 +5,7 @@ groups:
     items:
       - name: addAnnouncement
       - name: addProgram
+      - name: addDiffusion
   - name: editActions
     items:
       - name: editEdition

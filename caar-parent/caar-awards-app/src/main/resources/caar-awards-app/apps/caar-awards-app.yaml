@@ -17,11 +17,11 @@ subApps:
         - name: mgnl:award
           icon: icon-items
         - name: mgnl:edition
-          icon: icon-items
+          icon: icon-view-tree
         - name: mgnl:announcement
-          icon: icon-items
+          icon: icon-file-text
         - name: mgnl:program
-          icon: icon-items 
+          icon: icon-files
         - name: mgnl:event-wrapper
           icon: icon-items
         - name: mgnl:standard-event
@@ -29,7 +29,7 @@ subApps:
         - name: mgnl:live-event
           icon: icon-items
         - name: mgnl:diffusion
-          icon: icon-items
+          icon: icon-rssfeed
         - name: mgnl:result-wrapper
           icon: icon-items
         - name: mgnl:subresult-wrapper
@@ -227,6 +227,14 @@ subApps:
       # Program edit
       editProgram: 
         !include:/caar-awards-app/include/app/program/actions/editProgram.yaml
+        
+      # Diffusion add
+      addDiffusion: 
+        !include:/caar-awards-app/include/app/diffusion/actions/addDiffusion.yaml
+        
+      # Diffusion edit
+      editDiffusion: 
+        !include:/caar-awards-app/include/app/diffusion/actions/editDiffusion.yaml
               
       # Folder
       
@@ -266,6 +274,10 @@ subApps:
         # Program section
         - !include:/caar-awards-app/include/app/program/sections/programSectionDeleted.yaml
         - !include:/caar-awards-app/include/app/program/sections/programSection.yaml
+        
+        # Diffusion section
+        - !include:/caar-awards-app/include/app/diffusion/sections/diffusionSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/diffusion/sections/diffusionSection.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -284,3 +296,7 @@ subApps:
   # Program sub app
   detailProgramSubApp:
     !include:/caar-awards-app/include/app/program/subapp/detailProgramSubApp.yaml
+    
+  # Diffusion sub app
+  detailDiffusionSubApp:
+    !include:/caar-awards-app/include/app/diffusion/subapp/detailDiffusionSubApp.yaml

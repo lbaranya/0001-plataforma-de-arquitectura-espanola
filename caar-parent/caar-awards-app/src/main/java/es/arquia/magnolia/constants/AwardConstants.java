@@ -42,4 +42,8 @@ public interface AwardConstants {
 	
 	String programTitle = "title";
 	
+	String diffusionNodeType = "mgnl:diffusion";
+	
+	String diffusionTitle = "title";
+	
 }

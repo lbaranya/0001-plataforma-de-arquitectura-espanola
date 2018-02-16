@@ -1,14 +1,9 @@
-name: editionSection
-label: caar-awards-app.subapp.browser.actionbar.sections.editionSection.label
+name: diffusionSection
+label: caar-awards-app.subapp.browser.actionbar.sections.diffusionSection.label
 groups:
-  - name: addActions
-    items:
-      - name: addAnnouncement
-      - name: addProgram
-      - name: addDiffusion
   - name: editActions
     items:
-      - name: editEdition
+      - name: editDiffusion
       - name: confirmDelete 
   - name: importExportActions
     items:
@@ -24,4 +19,7 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:edition
+    - mgnl:diffusion
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

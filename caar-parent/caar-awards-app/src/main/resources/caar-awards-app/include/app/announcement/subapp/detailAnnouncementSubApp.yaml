@@ -5,7 +5,7 @@ contentConnector:
   workspace: awards
 editor:
   nodeType:
-    icon: icon-items
+    icon: icon-file-text
     name: mgnl:announcement
   form:
     tabs:

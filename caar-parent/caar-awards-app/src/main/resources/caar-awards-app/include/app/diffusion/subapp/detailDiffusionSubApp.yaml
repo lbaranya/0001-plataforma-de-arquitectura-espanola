@@ -1,27 +1,27 @@
 subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
 class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
-label: caar-awards-app.subapp.detailProgramSubApp.label
+label: caar-awards-app.subapp.detailDiffusionSubApp.label
 contentConnector:
   workspace: awards
 editor:
   nodeType:
-    icon: icon-files
-    name: mgnl:program
+    icon: icon-rssfeed
+    name: mgnl:diffusion
   form:
     tabs:
       - name: fileData
-        label: caar-awards-app.files.program.fileData.label
+        label: caar-awards-app.files.diffusion.fileData.label
         fields:
           - name: jcrName
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-awards-app.files.program.fileData.jcrName.label
+            label: caar-awards-app.files.diffusion.fileData.jcrName.label
             required: true
-      - name: programData
-        label: caar-awards-app.subapp.detailProgramSubApp.programData.label
+      - name: diffusionData
+        label: caar-awards-app.subapp.detailDiffusionSubApp.diffusionData.label
         fields:
           - name: title
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-awards-app.files.program.programData.title.label
+            label: caar-awards-app.files.diffusion.diffusionData.title.label
   actions:
     - name: commit
     - name: cancel

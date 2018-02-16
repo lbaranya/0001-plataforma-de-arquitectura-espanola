@@ -7,6 +7,7 @@ import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
 import static es.arquia.magnolia.constants.AwardConstants.programNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.diffusionNodeType;
 
 import javax.inject.Inject;
 import javax.jcr.Item;
@@ -109,7 +110,7 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 			ret = sourceNode.isNodeType(editionNodeType);
 		}else {
 			if(!ret && targetNode.isNodeType(editionNodeType)) {
-				ret = sourceNode.isNodeType(programNodeType) || sourceNode.isNodeType(announcementNodeType);
+				ret = sourceNode.isNodeType(programNodeType) || sourceNode.isNodeType(announcementNodeType) || sourceNode.isNodeType(diffusionNodeType);
 			}
 		}
 		return ret;
