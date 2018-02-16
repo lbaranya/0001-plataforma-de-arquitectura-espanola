@@ -1,3 +1,7 @@
+a, a:hover, a:visited, a:link, a:active a:focus{
+	text-decoration: none !important;
+}
+
 /*Reset*/
 .header-comun {
 	background-color: #D0021B;
@@ -12,10 +16,6 @@
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
-	text-decoration: none;
-}
-
-a:hover, a:active, a:visited, a:focus {
 	text-decoration: none;
 }
 
