@@ -184,6 +184,7 @@ editor:
               - name: richText
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 label: caar-architecture-files-app.files.support.architect.professionalData.richTextMessage.label
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                 i18n: true
           - name: FS1_3_8
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -365,6 +366,7 @@ editor:
           - name: FS1_8_1
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.architect.additonalInfoData.additionalInformation.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
           - name: FS1_8_2
             label: caar-architecture-files-app.files.support.architect.additonalInfoData.annexes.label

@@ -175,6 +175,7 @@ editor:
                 - name: FS2_4_4
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.authorshipData.authorshipDetails.label
+                  configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   i18n: true
                   required: true
       - name: informationData
@@ -347,6 +348,7 @@ editor:
                 - name: FS2_10_4
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.mediaGalleryData.mediaDetails.label
+                  configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   i18n: true
                 - name: FS2_10_5
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition

@@ -10,6 +10,7 @@ form:
         - name: text
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
           label: caar-templating-module.templates.components.accordion-structure-subaccordion-component.tabMain.textAccordion.label
+          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
           i18n: true
           configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
         - name: listSecondLevel

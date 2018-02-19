@@ -73,6 +73,7 @@ editor:
           - name: FS4_1_9
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.biographicReview.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
           - name: FS4_1_10
             class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
@@ -98,6 +99,7 @@ editor:
               - name: richText
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                 label: caar-architecture-files-app.files.support.business.businessData.richTextMessage.label
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                 i18n: true
           - name: FS4_1_11
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -109,13 +111,16 @@ editor:
           - name: FS4_2_1
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.business.additionalInfoData.additionalInfo.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
           - name: FS4_2_2
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.business.additionalInfoData.annexes.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
           - name: FS4_2_3
-            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             label: caar-architecture-files-app.files.support.business.additionalInfoData.dossier.label
             i18n: true
   actions:
