@@ -1,6 +1,9 @@
 name: programSection
 label: caar-awards-app.subapp.browser.actionbar.sections.programSection.label
 groups:
+  - name: addActions 
+    items:
+      - name: addEventWrapper
   - name: editActions
     items:
       - name: editProgram

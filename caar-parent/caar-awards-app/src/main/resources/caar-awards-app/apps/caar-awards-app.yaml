@@ -23,7 +23,7 @@ subApps:
         - name: mgnl:program
           icon: icon-files
         - name: mgnl:event-wrapper
-          icon: icon-items
+          icon: icon-folder
         - name: mgnl:standard-event
           icon: icon-items
         - name: mgnl:live-event
@@ -235,6 +235,14 @@ subApps:
       # Diffusion edit
       editDiffusion: 
         !include:/caar-awards-app/include/app/diffusion/actions/editDiffusion.yaml
+        
+      # Event wrapper add
+      addEventWrapper: 
+        !include:/caar-awards-app/include/app/event-wrapper/actions/addEventWrapper.yaml
+        
+      # Event wrapper edit
+      editEventWrapper: 
+        !include:/caar-awards-app/include/app/event-wrapper/actions/editEventWrapper.yaml
               
       # Folder
       
@@ -278,6 +286,10 @@ subApps:
         # Diffusion section
         - !include:/caar-awards-app/include/app/diffusion/sections/diffusionSectionDeleted.yaml
         - !include:/caar-awards-app/include/app/diffusion/sections/diffusionSection.yaml
+        
+        # Event wrapper section
+        - !include:/caar-awards-app/include/app/event-wrapper/sections/eventWrapperSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/event-wrapper/sections/eventWrapperSection.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -300,3 +312,7 @@ subApps:
   # Diffusion sub app
   detailDiffusionSubApp:
     !include:/caar-awards-app/include/app/diffusion/subapp/detailDiffusionSubApp.yaml
+    
+  # Event wrapper sub app
+  detailEventWrapperSubApp:
+    !include:/caar-awards-app/include/app/event-wrapper/subapp/detailEventWrapperSubApp.yaml

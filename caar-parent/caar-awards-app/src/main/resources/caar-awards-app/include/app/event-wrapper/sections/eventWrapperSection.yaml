@@ -1,12 +1,9 @@
-name: diffusionSection
-label: caar-awards-app.subapp.browser.actionbar.sections.diffusionSection.label
+name: eventWrapperSection
+label: caar-awards-app.subapp.browser.actionbar.sections.eventWrapperSection.label
 groups:
-  - name: addActions 
-    items:
-      - name: addEventWrapper
   - name: editActions
     items:
-      - name: editDiffusion
+      - name: editEventWrapper
       - name: confirmDelete 
   - name: importExportActions
     items:
@@ -22,7 +19,4 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:diffusion
-  rules:
-    IsDeletedRule:
-      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
+    - mgnl:event-wrapper

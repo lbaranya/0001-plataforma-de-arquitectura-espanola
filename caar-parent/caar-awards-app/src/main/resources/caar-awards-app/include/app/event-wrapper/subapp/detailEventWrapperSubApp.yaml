@@ -1,0 +1,32 @@
+subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+label: caar-awards-app.subapp.detailEventWrapperSubApp.label
+contentConnector:
+  workspace: awards
+editor:
+  nodeType:
+    icon: icon-folder
+    name: mgnl:event-wrapper
+  form:
+    tabs:
+      - name: fileData
+        label: caar-awards-app.files.event-wrapper.fileData.label
+        fields:
+          - name: jcrName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.event-wrapper.fileData.jcrName.label
+            required: true
+      - name: eventWrapperData
+        label: caar-awards-app.subapp.detailEventWrapperSubApp.eventWrapperData.label
+        fields:
+          - name: title
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.event-wrapper.eventWrapperData.title.label
+  actions:
+    - name: commit
+    - name: cancel
+actions:
+  commit:
+    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

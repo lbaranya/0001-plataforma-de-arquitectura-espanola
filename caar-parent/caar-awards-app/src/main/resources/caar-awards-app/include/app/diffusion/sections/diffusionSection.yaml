@@ -1,6 +1,9 @@
 name: diffusionSection
 label: caar-awards-app.subapp.browser.actionbar.sections.diffusionSection.label
 groups:
+  - name: addActions 
+    items:
+      - name: addEventWrapper
   - name: editActions
     items:
       - name: editDiffusion
