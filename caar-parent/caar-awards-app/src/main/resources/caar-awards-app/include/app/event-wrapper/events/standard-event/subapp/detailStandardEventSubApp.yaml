@@ -31,7 +31,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
             field:
-              name: formatFileLink
+              name: fileLink
               class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
               label: caar-awards-app.files.standard-event.standardEventData.filesList.fileLink.label
               targetWorkspace: architecture-files
