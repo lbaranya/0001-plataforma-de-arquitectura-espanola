@@ -2,7 +2,7 @@
 				[#assign imageBackground = "#"]
 				[#assign imgItemKey = content.backgroundImage!]
 	            	[#if imgItemKey??]
-                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440")!]
+                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440w")!]
 	            		[#if imgMediaRendition?has_content]
                     		[#assign imageBackground = imgMediaRendition.getLink()!]
                     	[/#if]

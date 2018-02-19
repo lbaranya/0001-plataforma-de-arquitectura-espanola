@@ -20,7 +20,7 @@
 		                    [#assign imgItemKey = node.getPhoto()!""]
 			            	[#if imgItemKey??]
 			            		[#if imgItemKey?has_content]
-			                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440")!]
+			                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
 				            		[#if imgMediaRendition?has_content]
 				            			[#assign imageAlternativeText = "ficha de arquitectura"]
 				            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]

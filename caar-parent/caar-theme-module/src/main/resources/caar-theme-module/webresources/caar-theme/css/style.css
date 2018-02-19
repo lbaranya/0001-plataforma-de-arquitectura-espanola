@@ -1,4 +1,4 @@
-a, a:hover, a:visited, a:link, a:active a:focus{
+a, a:hover, a:visited, a:link, a:active a:focus {
 	text-decoration: none !important;
 }
 
@@ -28,7 +28,7 @@ a, a:hover, a:visited, a:link, a:active a:focus{
 }
 
 section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
-    margin-top: 15px;
+	margin-top: 15px;
 }
 
 @media screen and (max-width: 1442px) {
@@ -2616,12 +2616,21 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 .cmp-arquitectos-realacionados .arquitecto .container-img {
 	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 445px;
 }
 
 .cmp-arquitectos-realacionados .arquitecto .container-img img {
-	width: 100%;
-	height: 445px;
 	border-bottom: 3px solid #D0021B;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 100%;
+	width: auto;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .cmp-arquitectos-realacionados .arquitecto .container-img:hover img {
@@ -2690,12 +2699,21 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 .cmp-distribuidor-convocatoria .row a .img-arquia {
 	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 445px;
 }
 
 .cmp-distribuidor-convocatoria .row a .img-arquia img {
-	width: 100%;
-	height: 445px;
 	border-bottom: 3px solid #D0021B;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 100%;
+	width: auto;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 .cmp-distribuidor-convocatoria .row a .img-arquia:hover img {
