@@ -86,7 +86,7 @@
 					[#assign imgItemKey = logoElement.image!]
 	            	[#if imgItemKey??]
 	            		[#if imgItemKey?has_content]
-		            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "175")!]
+		            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "175w")!]
 		            		[#if imgMediaRendition?has_content]
 		            			[#assign imageAlternativeText = "imagen de banner en la cabecera"]
 		            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -104,7 +104,7 @@
 		                        		[#assign hrefTmp = cmsfn.externalLink(logoElement, "linkexternalLink")]
 		                        	[/#if]
 	                        	[/#if]
-							<li class="logo-item"><a href="${hrefTmp}" class="footer-logo"><img src="${imgMediaRendition.getLink()}" width="175" height="40" alt="${imageAlternativeText!""}"></a></li>
+							<li class="logo-item"><a href="${hrefTmp}" class="footer-logo"><img src="${imgMediaRendition.getLink()}" width="175w" height="40" alt="${imageAlternativeText!""}"></a></li>
 							[/#if]
 						[/#if]
 					[/#if]
