@@ -10,7 +10,7 @@
                 [#assign imgItemKey = news.getImage(newsContentNode)]
             	[#if imgItemKey??]
             		[#if imgItemKey?has_content]
-	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1024")!]
+	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1024w")!]
 	            		[#if imgMediaRendition?has_content]
 	            			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
 	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]

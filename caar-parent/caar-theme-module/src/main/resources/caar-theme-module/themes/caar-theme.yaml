@@ -25,45 +25,45 @@ jsFiles:
 imaging: 
   class:  info.magnolia.templating.imaging.VariationAwareImagingSupport
   variations:
-    "1200":
+    "1200w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 1200
-    "992":
+    "992w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 992
-    "768":
+    "768w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 768
-    "1024":
+    "1024w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 1024
-    "375":
+    "375w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 375
-    "175":
+    "175w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 175
-    "414":
+    "414w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 414
-    "320":
+    "320w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 320
-    "360":
+    "360w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 360
     "555x400":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 555
       height: 400
-    "1520":
+    "1520w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 1520
     "181x181":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 181
       height: 181
-    "1440":
+    "1440w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 1440
     "130x115":
@@ -73,4 +73,7 @@ imaging:
     "206x182":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 206
-      height: 182
+    "445h":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      height: 445
+      

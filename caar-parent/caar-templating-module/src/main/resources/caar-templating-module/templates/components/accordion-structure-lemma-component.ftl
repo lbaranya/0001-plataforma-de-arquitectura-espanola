@@ -18,7 +18,7 @@
                         <a href="${hrefLink}">
                         	[#assign imgItemKey = content.preview_file!]
                         	[#if imgItemKey??]
-                        		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")!]
+                        		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
                         		[#if imgMediaRendition?has_content]
                         			[#assign imageAlternativeText = "imagen del arquitecto del lema"]
                         			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
