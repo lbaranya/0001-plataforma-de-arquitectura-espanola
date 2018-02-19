@@ -14,7 +14,7 @@
 				[#assign imgItemKey = element.image!]
             	[#if imgItemKey??]
             		[#if imgItemKey?has_content]
-	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1200")!]
+	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1200w")!]
 	            		[#if imgMediaRendition?has_content]
 	            			[#assign imageAlternativeText = "imagen de banner en la cabecera"]
 	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]

@@ -30,7 +30,7 @@
                 	[#assign imgItemKey = contentItem.richTextOptionImageAnchor!]
                 	[#if imgItemKey??]
                 		[#if imgItemKey?has_content]
-	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")!]
+	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
 	                		[#if imgMediaRendition?has_content]
 	                			[#assign imageAlternativeText = "imagen del ancla"]
 	                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -60,7 +60,7 @@
                 	[#assign imgItemKey = contentItem.juryOptionImageAnchor!]
                 	[#if imgItemKey??]
                 		[#if imgItemKey?has_content]
-	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")!]
+	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
 	                		[#if imgMediaRendition?has_content]
 	                			[#assign imageAlternativeText = "imagen del ancla"]
 	                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -89,7 +89,7 @@
                 <div class="img-arquia">
                 	[#assign imgItemKey = contentItem.lemmaOptionImageAnchor!]
                 	[#if imgItemKey??]
-                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")!]
+                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
                 		[#if imgMediaRendition?has_content]
                 			[#assign imageAlternativeText = "imagen del ancla"]
                 			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -117,7 +117,7 @@
                 <div class="img-arquia">
                 	[#assign imgItemKey = contentItem.enrollmentOptionImageAnchor!]
                 	[#if imgItemKey??]
-                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")!]
+                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
                 		[#if imgMediaRendition?has_content]
                 			[#assign imageAlternativeText = "imagen del ancla"]
                 			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -225,7 +225,7 @@
             									<div class="img-jurado">
             										[#assign imgItemKey = judge.judgePhoto!]
 									            	[#if imgItemKey??]
-									            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")!]
+									            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
 									            		[#if imgMediaRendition?has_content]
 									            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
 									            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -302,7 +302,7 @@
 				                    	<a href="${lemmaFileLink}">
 				                    		[#assign imgItemKey = lemmaPhotoPreview!]
 				                        	[#if imgItemKey??]
-				                        		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")!]
+				                        		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
 				                        		[#if imgMediaRendition?has_content]
 				                        			[#assign imageAlternativeText = "imagen del arquitecto del lema"]
 				                        			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]

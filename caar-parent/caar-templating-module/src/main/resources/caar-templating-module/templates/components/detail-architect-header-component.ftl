@@ -11,7 +11,7 @@
 	                	[#assign imgItemKey = architect.getPhoto(architectContentNode)!""]
 		            	[#if imgItemKey??]
 		            		[#if imgItemKey?has_content]
-		                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440")!]
+		                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440w")!]
 			            		[#if imgMediaRendition?has_content]
 			            			[#assign imageAlternativeText = "arquitecto"]
 			            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
