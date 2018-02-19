@@ -46,4 +46,8 @@ public interface AwardConstants {
 	
 	String diffusionTitle = "title";
 	
+	String eventWrapperNodeType = "mgnl:event-wrapper";
+	
+	String eventWrapperTitle = "title";
+	
 }

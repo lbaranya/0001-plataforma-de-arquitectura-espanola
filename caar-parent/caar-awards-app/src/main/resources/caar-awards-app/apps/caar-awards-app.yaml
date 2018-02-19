@@ -25,9 +25,9 @@ subApps:
         - name: mgnl:event-wrapper
           icon: icon-folder
         - name: mgnl:standard-event
-          icon: icon-items
+          icon: icon-contents
         - name: mgnl:live-event
-          icon: icon-items
+          icon: icon-rssfeed
         - name: mgnl:diffusion
           icon: icon-rssfeed
         - name: mgnl:result-wrapper
@@ -187,6 +187,26 @@ subApps:
       showVersionsAnnouncement: 
         !include:/caar-awards-app/include/app/announcement/actions/showVersionsAnnouncement.yaml
         
+      # Program versions
+      showVersionsProgram: 
+        !include:/caar-awards-app/include/app/program/actions/showVersionsProgram.yaml
+        
+      # Diffusion versions
+      showVersionsDiffusion: 
+        !include:/caar-awards-app/include/app/diffusion/actions/showVersionsDiffusion.yaml
+      
+      # Event wrapper versions
+      showVersionsEventWrapper: 
+        !include:/caar-awards-app/include/app/event-wrapper/actions/showVersionsEventWrapper.yaml
+        
+      # Live event versions
+      showVersionsLiveEvent: 
+        !include:/caar-awards-app/include/app/event-wrapper/events/live-event/actions/showVersionsLiveEvent.yaml
+        
+      # Standard event versions
+      showVersionsStandardEvent: 
+        !include:/caar-awards-app/include/app/event-wrapper/events/standard-event/actions/showVersionsStandardEvent.yaml
+        
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
         icon: icon-retrieve-versions
@@ -243,6 +263,22 @@ subApps:
       # Event wrapper edit
       editEventWrapper: 
         !include:/caar-awards-app/include/app/event-wrapper/actions/editEventWrapper.yaml
+        
+      # Live event add
+      addLiveEvent: 
+        !include:/caar-awards-app/include/app/event-wrapper/events/live-event/actions/addLiveEvent.yaml
+        
+      # Live event edit
+      editLiveEvent: 
+        !include:/caar-awards-app/include/app/event-wrapper/events/live-event/actions/editLiveEvent.yaml
+        
+      # Standard event add
+      addStandardEvent: 
+        !include:/caar-awards-app/include/app/event-wrapper/events/standard-event/actions/addStandardEvent.yaml
+        
+      # Standadr event edit
+      editStandardEvent: 
+        !include:/caar-awards-app/include/app/event-wrapper/events/standard-event/actions/editStandardEvent.yaml
               
       # Folder
       
@@ -290,6 +326,14 @@ subApps:
         # Event wrapper section
         - !include:/caar-awards-app/include/app/event-wrapper/sections/eventWrapperSectionDeleted.yaml
         - !include:/caar-awards-app/include/app/event-wrapper/sections/eventWrapperSection.yaml
+        
+        # Live event section
+        - !include:/caar-awards-app/include/app/event-wrapper/events/live-event/sections/liveEventSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/event-wrapper/events/live-event/sections/liveEventSection.yaml
+        
+        # Standard event section
+        - !include:/caar-awards-app/include/app/event-wrapper/events/standard-event/sections/standardEventSectionDeleted.yaml
+        - !include:/caar-awards-app/include/app/event-wrapper/events/standard-event/sections/standardEventSection.yaml
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -316,3 +360,11 @@ subApps:
   # Event wrapper sub app
   detailEventWrapperSubApp:
     !include:/caar-awards-app/include/app/event-wrapper/subapp/detailEventWrapperSubApp.yaml
+    
+  # Live event sub app
+  detailLiveEventSubApp:
+    !include:/caar-awards-app/include/app/event-wrapper/events/live-event/subapp/detailLiveEventSubApp.yaml
+    
+  # Standard event sub app
+  detailStandardEventSubApp:
+    !include:/caar-awards-app/include/app/event-wrapper/events/standard-event/subapp/detailStandardEventSubApp.yaml

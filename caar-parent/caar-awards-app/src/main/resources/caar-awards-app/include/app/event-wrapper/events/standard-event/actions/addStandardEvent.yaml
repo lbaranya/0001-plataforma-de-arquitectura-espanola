@@ -1,9 +1,9 @@
-subAppId: detailProgramSubApp
+subAppId: detailStandardEventSubApp
 icon: icon-add-item
 class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
-nodeType: mgnl:program
+nodeType: mgnl:standard-event
 appName: caar-awards-app
-label: caar-awards-app.subapp.browser.actions.addProgram.label
+label: caar-awards-app.subapp.browser.actions.addStandardEvent.label
 availability:
   root: true
   rules: 

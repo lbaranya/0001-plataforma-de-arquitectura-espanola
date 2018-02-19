@@ -1,9 +1,9 @@
-name: programSection
-label: caar-awards-app.subapp.browser.actionbar.sections.programSection.label
+name: standardEventSection
+label: caar-awards-app.subapp.browser.actionbar.sections.standardEventSection.label
 groups:
   - name: editActions
     items:
-      - name: editProgram
+      - name: editStandardEvent
       - name: confirmDelete 
   - name: importExportActions
     items:
@@ -19,7 +19,7 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:program
+    - mgnl:standard-event
   rules:
     IsDeletedRule:
       implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

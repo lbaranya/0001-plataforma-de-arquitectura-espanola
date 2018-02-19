@@ -1,12 +1,12 @@
-subAppId: detailProgramSubApp
+subAppId: detailLiveEventSubApp
 icon: icon-edit-wo
-nodeType: mgnl:program
+nodeType: mgnl:live-event
 appName: caar-awards-app
 class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
-label: caar-awards-app.subapp.browser.actions.editProgram.label
+label: caar-awards-app.subapp.browser.actions.editLiveEvent.label
 availability:
   nodeTypes:
-    - mgnl:program
+    - mgnl:live-event
   rules: 
     IsNotDeletedRule: 
       implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

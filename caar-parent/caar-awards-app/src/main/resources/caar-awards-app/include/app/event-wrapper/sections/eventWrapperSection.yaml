@@ -1,6 +1,10 @@
 name: eventWrapperSection
 label: caar-awards-app.subapp.browser.actionbar.sections.eventWrapperSection.label
 groups:
+  - name: addActions
+    items:
+      - name: addStandardEvent
+      - name: addLiveEvent
   - name: editActions
     items:
       - name: editEventWrapper
