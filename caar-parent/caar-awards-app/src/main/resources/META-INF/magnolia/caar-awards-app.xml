@@ -23,6 +23,10 @@
 		<implementation>es.arquia.magnolia.utils.AnnouncementNodeUtilImpl</implementation>
 	</component>
 	<component>
+		<type>es.arquia.magnolia.utils.EventNodeUtil</type>
+		<implementation>es.arquia.magnolia.utils.EventNodeUtilImpl</implementation>
+	</component>
+	<component>
 		<type>es.arquia.magnolia.utils.NewsNodeUtil</type>
 		<implementation>es.arquia.magnolia.utils.NewsNodeUtilImpl</implementation>
 	</component>

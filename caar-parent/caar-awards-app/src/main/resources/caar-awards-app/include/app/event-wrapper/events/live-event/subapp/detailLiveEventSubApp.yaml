@@ -19,6 +19,9 @@ editor:
       - name: liveEventData
         label: caar-awards-app.subapp.detailLiveEventSubApp.liveEventData.label
         fields:
+          - name: title
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.live-event.liveEventData.title.label
           - name: streamingLink
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.live-event.liveEventData.streamingLink.label

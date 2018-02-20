@@ -1,14 +1,21 @@
 package es.arquia.magnolia.components.models.awards.submenu;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
+import org.apache.jackrabbit.commons.predicate.Predicate;
+
+import com.google.common.collect.Lists;
+
 import es.arquia.magnolia.manager.AwardManager;
 import es.arquia.magnolia.utils.AwardNodeUtil;
+import es.arquia.magnolia.utils.EventNodeUtil;
 import es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAward;
+import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
@@ -52,6 +59,14 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	
 	public String getSecondLevelMenuLink(String currentUrl, Node node) {
 		return utilsBreadcrumbAward.getAwardSeconLevelMenuLink(currentUrl, node);
+	}
+	
+	public EventNodeUtil getEventInstance() {
+		return awardManager.getEventInstance();
+	}
+	
+	public List<Node> getEvents(Node node) throws RepositoryException{
+		return awardManager.getEvents(node);
 	}
 
 

@@ -2,13 +2,15 @@ package es.arquia.magnolia.ui.workbench.tree.drop;
 
 import static es.arquia.magnolia.constants.AnnouncementConstants.announcementNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.diffusionNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
-import static es.arquia.magnolia.constants.AwardConstants.programNodeType;
-import static es.arquia.magnolia.constants.AwardConstants.diffusionNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.eventWrapperNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.liveEventNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.programNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.standardEventNodeType;
 
 import javax.inject.Inject;
 import javax.jcr.Item;
@@ -95,7 +97,15 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 			if(sourceNode.isNodeType(awardNodeType)) {
 				return sourceNode.getPrimaryNodeType().getName().equals(targetNode.getPrimaryNodeType().getName());
 			}else {
-				return false;
+				if(sourceNode.isNodeType(programNodeType) || sourceNode.isNodeType(diffusionNodeType) || sourceNode.isNodeType(announcementNodeType)) {
+					return targetNode.isNodeType(programNodeType) || targetNode.isNodeType(diffusionNodeType) || targetNode.isNodeType(announcementNodeType);
+				}else {
+					if(sourceNode.isNodeType(standardEventNodeType) || sourceNode.isNodeType(liveEventNodeType)) {
+						return targetNode.isNodeType(standardEventNodeType) || targetNode.isNodeType(liveEventNodeType);
+					}else {
+						return false;
+					}
+				}
 			}
 		}
 		

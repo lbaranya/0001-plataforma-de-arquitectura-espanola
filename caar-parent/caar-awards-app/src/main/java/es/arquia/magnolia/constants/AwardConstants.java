@@ -50,4 +50,21 @@ public interface AwardConstants {
 	
 	String eventWrapperTitle = "title";
 	
+	String standardEventNodeType = "mgnl:standard-event";
+	
+	String liveEventNodeType = "mgnl:live-event";
+	
+	String eventTitle = "title";
+		
+	String standardEventText = "text";
+	
+	String filesList = "filesList";
+	
+	String streamingLink = "streamingLink";
+	
+	String facebookHashtagsList = "facebookHashtagsList";
+	
+	String twitterHashtagsList = "twitterHashtagsList";
+	
+	
 }

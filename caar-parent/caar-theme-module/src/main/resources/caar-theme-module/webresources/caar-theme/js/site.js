@@ -344,19 +344,6 @@ $(document).ready(function () {
 			alturamax += 35;
 			$(".submenu-convocatoria").css("height", alturamax);
 			$(this).find(".menu-second").css("top", alturaelement);
-		}else{
-			/**Reseteo de menu**/
-			$(".menu-second").removeClass("active-menu-item");
-			$(".menu-third").removeClass("active-menu-item");
-			$(".menu-second-item").removeClass("active");
-			$(".menu-second-item").attr("data-active", "false");
-			/**Termina el reseteo del menu**/
-
-			/**Desactiva los anteriores items activos**/
-			$(".menu-first").attr("data-active", "false");
-			$(".menu-first").removeClass("active");
-			$(".menu-first").find(".menu-second").removeClass("active-menu-item");
-			/**Termina**/
 		}
 
 	});

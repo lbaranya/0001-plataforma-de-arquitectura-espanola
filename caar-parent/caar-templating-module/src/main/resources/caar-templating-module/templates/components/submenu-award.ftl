@@ -3,6 +3,7 @@
 	
 	[#assign awardsContentNode = nodeJcrContext!""]
 	[#assign awards = model.getInstance()!""]
+	[#assign event = model.getEventInstance()!""]
 <section class="cmp-convocatoria">
     <div class="header-comun">
         <div class="container-fluid">
@@ -31,6 +32,44 @@
                         	[#assign currentUrl = cmsfn.link(childItem)]
                         	[#assign href = model.getSecondLevelMenuLink(currentUrl, childItem)!"#"]
                             <a href="${href}"><span>convocatoria</span></a>
+                            [/#if]
+                            [#if childItem.isNodeType("mgnl:program")]
+                            <a href="javascript:void(0)">
+                            	<span>programa</span>
+                            	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                            </a>
+                            	[#if cmsfn.children(childItem)?has_content]
+                            		<ul class="menu-third">
+                            		[#list model.getEvents(childItem) as thirdLevelItem]
+                            			<li class="menu-third-item">
+                            				[#assign currentUrlThirdLevel = cmsfn.link(thirdLevelItem)]
+                        					[#assign href = model.getSecondLevelMenuLink(currentUrlThirdLevel, thirdLevelItem)!"#"]
+                            				<a href="${href}">
+                            					<span>${event.getTitle(thirdLevelItem)}</span>
+                            				</a>
+                            			</li>
+                            		[/#list]
+                            		</ul>
+                            	[/#if]
+                            [/#if]
+                            [#if childItem.isNodeType("mgnl:diffusion")]
+                            <a href="javascript:void(0)">
+                            	<span>difusion</span>
+                            	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                            </a>
+                            [#if cmsfn.children(childItem)?has_content]
+                            		<ul class="menu-third">
+                            		[#list model.getEvents(childItem) as thirdLevelItem]
+                            			<li class="menu-third-item">
+                            				[#assign currentUrlThirdLevel = cmsfn.link(thirdLevelItem)]
+                        					[#assign href = model.getSecondLevelMenuLink(currentUrlThirdLevel, thirdLevelItem)!"#"]
+                            				<a href="${href}">
+                            					<span>${event.getTitle(thirdLevelItem)}</span>
+                            				</a>
+                            			</li>
+                            		[/#list]
+                            		</ul>
+                            	[/#if]
                             [/#if]
                         </li>
                         [/#list]
