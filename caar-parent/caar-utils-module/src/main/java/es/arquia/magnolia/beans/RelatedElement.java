@@ -4,10 +4,15 @@ public class RelatedElement {
 	
 	private String title;
 	private String photo;
+	private String description;
+	private String eventType;
+	private String dayOfWeek;
+	private String date;
 	
 	private String path;
 	
 	private String workspace;
+	private String nodeType;
 	
 	public RelatedElement() {
 		super();
@@ -46,6 +51,46 @@ public class RelatedElement {
 
 	public void setWorkspace(String workspace) {
 		this.workspace = workspace;
+	}
+
+	public String getNodeType() {
+		return nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getEventType() {
+		return eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getDayOfWeek() {
+		return dayOfWeek;
+	}
+
+	public void setDayOfWeek(String dayOfWeek) {
+		this.dayOfWeek = dayOfWeek;
 	}
 	
 	

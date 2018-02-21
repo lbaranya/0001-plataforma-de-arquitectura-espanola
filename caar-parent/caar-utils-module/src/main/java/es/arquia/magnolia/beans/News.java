@@ -27,6 +27,4 @@ public interface News {
 	
 	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException;
 	
-	public RelatedElement getRelatedElement(Node node) throws RepositoryException;
-
 }
