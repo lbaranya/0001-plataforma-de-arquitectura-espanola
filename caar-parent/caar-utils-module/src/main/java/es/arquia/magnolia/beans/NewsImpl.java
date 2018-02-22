@@ -1,5 +1,6 @@
 package es.arquia.magnolia.beans;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.NewsConstants.category;
 import static es.arquia.magnolia.constants.NewsConstants.dateTime;
 import static es.arquia.magnolia.constants.NewsConstants.description;
@@ -26,10 +27,14 @@ import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
 
+import es.arquia.magnolia.manager.RelatedElementsManagerImpl;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
 public class NewsImpl implements News{
+	
+	@Inject
+	private RelatedElementsManagerImpl relatedElementsManagerImpl;
 
 	private I18nContentSupport i18nContentSupport;
 	
@@ -123,30 +128,27 @@ public class NewsImpl implements News{
 		
 		return ret;
 	}
-
-	public RelatedElement getRelatedElement(Node node) throws RepositoryException {
-		
-		RelatedElement related = new RelatedElement();
-		
-		related.setTitle(this.getHeadline(node));
-		related.setPhoto(this.getImage(node));
-		related.setPath(node.getPath());
-		related.setWorkspace(newsWorkspace);
-		
-		return related;
-	}
 	
 	public List<RelatedElement> getRelatedElementsFromNewsList(Node node) throws RepositoryException {
 		
-		List<RelatedElement> ret = new LinkedList<>();
+		List<RelatedElement> list = new LinkedList<>();
 		Value[] relatedNewsValues = node.getProperty(relatedNews).getValues();
 		for (Value currentValue : relatedNewsValues) {
 			
 			Node tmpNode = MgnlContext.getJCRSession(newsWorkspace).getNodeByIdentifier(currentValue.getString());
-			ret.add(this.getRelatedElement(tmpNode));
+			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
 		}
 		
-		return ret;
+		// This fragment of code is just for testing the different related elements appearance. Delete after.
+		Value[] relatedFilesValues = node.getProperty(files).getValues();
+		for (Value currentValue : relatedFilesValues) {
+			
+			Node tmpNode = MgnlContext.getJCRSession(architectureFilesWorkspace).getNodeByIdentifier(currentValue.getString());
+			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
+		}
+		// Until here
+		
+		return list;
 	}
 
 }

@@ -1,12 +1,12 @@
 package es.arquia.magnolia.beans;
 
-import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.awardAboutText;
 import static es.arquia.magnolia.constants.AwardConstants.awardDescription;
 import static es.arquia.magnolia.constants.AwardConstants.awardExternalURL;
 import static es.arquia.magnolia.constants.AwardConstants.awardHeaderBackground;
 import static es.arquia.magnolia.constants.AwardConstants.awardLogo;
 import static es.arquia.magnolia.constants.AwardConstants.awardName;
+import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.categoriesList;
 import static es.arquia.magnolia.constants.AwardConstants.editionAnnouncementButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionEnrollmentButtonText;
@@ -27,6 +27,7 @@ import javax.jcr.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import es.arquia.magnolia.manager.RelatedElementsManagerImpl;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
@@ -34,7 +35,7 @@ public class AwardImpl implements Award{
 	
 	private I18nContentSupport i18nContentSupport;
 	@Inject
-	private News news;
+	private RelatedElementsManagerImpl relatedElementsManagerImpl;
 	
 	@Inject
 	public AwardImpl(final I18nContentSupport i18nContentSupport) {
@@ -159,15 +160,15 @@ public class AwardImpl implements Award{
 	
 	public List<RelatedElement> getRelatedElementsFromNewsList(Node node) throws RepositoryException {
 		
-		List<RelatedElement> ret = new LinkedList<>();
+		List<RelatedElement> list = new LinkedList<>();
 		
 		Value[] relatedNewsValues = node.getProperty(relatedNewsList).getValues();
 		for (Value currentValue : relatedNewsValues) {
 			
 			Node tmpNode = MgnlContext.getJCRSession(newsWorkspace).getNodeByIdentifier(currentValue.getString());
-			ret.add(this.news.getRelatedElement(tmpNode));
+			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
 		}
 		
-		return ret;
+		return list;
 	}
 }
