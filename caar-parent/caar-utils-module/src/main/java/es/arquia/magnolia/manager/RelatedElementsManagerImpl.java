@@ -9,8 +9,8 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.RelatedElement;
 import es.arquia.magnolia.functions.RelatedElementsTransformers;
+import es.arquia.magnolia.utils.RelatedElement;
 
 public class RelatedElementsManagerImpl implements RelatedElementsManager {
 	

@@ -6,7 +6,6 @@ import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.utils.NewsNodeUtil;
-import es.arquia.magnolia.utils.NewsNodeUtilImpl;
 
 public interface NewsManager {
 	

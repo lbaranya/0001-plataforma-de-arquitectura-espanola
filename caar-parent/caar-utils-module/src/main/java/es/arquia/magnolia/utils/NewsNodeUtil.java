@@ -5,8 +5,6 @@ import java.util.List;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.RelatedElement;
-
 public interface NewsNodeUtil {
 	
 	public String getHeadline(Node node) throws RepositoryException;
@@ -29,6 +27,4 @@ public interface NewsNodeUtil {
 	
 	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException;
 	
-	public RelatedElement getRelatedElement(Node node) throws RepositoryException;
-
 }

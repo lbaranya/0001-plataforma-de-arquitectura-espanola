@@ -6,6 +6,7 @@ import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstant
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipType;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.endTime;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.eventType;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.important;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.listMedia;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.ouvreAbstract;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.ouvreTitle;
@@ -16,7 +17,6 @@ import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstant
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.price;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.startTime;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.website;
-import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.important;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormatDayOfWeek;
 

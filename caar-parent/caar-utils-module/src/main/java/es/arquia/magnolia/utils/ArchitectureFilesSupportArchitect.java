@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
@@ -21,7 +22,7 @@ import javax.jcr.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.beans.RelatedElement;
+import es.arquia.magnolia.manager.RelatedElementsManagerImpl;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.predicate.AbstractPredicate;
 import info.magnolia.jcr.util.NodeUtil;
@@ -97,6 +98,9 @@ public class ArchitectureFilesSupportArchitect {
 	private static String annexes = "FS1_8_2";
 	
 	private static String relatedFiles = "relatedFiles";
+	
+	@Inject
+	private RelatedElementsManagerImpl relatedElementsManagerImpl;
 	
 	public ArchitectureFilesSupportArchitect() {}
 	
@@ -643,22 +647,10 @@ public class ArchitectureFilesSupportArchitect {
 		for (Value currentValue : relatedValues) {
 			
 			Node tmpNode = MgnlContext.getJCRSession(architectureFilesWorkspace).getNode(currentValue.getString());
-			list.add(this.getRelatedElement(tmpNode));
+			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
 		}
 		
 		return list;
-	}
-
-	public RelatedElement getRelatedElement(Node node) throws RepositoryException {
-		
-		RelatedElement related = new RelatedElement();
-
-		related.setTitle(this.getName(node) + " " + this.getFirstSurname(node) + " " + this.getSecondSurname(node));
-		related.setPhoto(this.getPhoto(node));
-		related.setPath(node.getPath());
-		related.setWorkspace(architectureFilesWorkspace);
-		
-		return related;
 	}
 	
 	public String getDepartmentWebSiteFieldName() {

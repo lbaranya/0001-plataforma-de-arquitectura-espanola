@@ -5,7 +5,7 @@ import java.util.List;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.RelatedElement;
+import es.arquia.magnolia.utils.RelatedElement;
 
 public interface AwardNodeUtil {
 	

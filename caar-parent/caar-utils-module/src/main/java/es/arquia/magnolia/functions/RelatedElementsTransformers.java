@@ -12,11 +12,11 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect;
-import es.arquia.magnolia.beans.ArchitectureFilesSupportEvent;
-import es.arquia.magnolia.beans.Award;
-import es.arquia.magnolia.beans.News;
-import es.arquia.magnolia.beans.RelatedElement;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
+import es.arquia.magnolia.utils.AwardNodeUtil;
+import es.arquia.magnolia.utils.NewsNodeUtil;
+import es.arquia.magnolia.utils.RelatedElement;
 
 public class RelatedElementsTransformers {
 	
@@ -25,9 +25,9 @@ public class RelatedElementsTransformers {
 	@Inject
 	private ArchitectureFilesSupportEvent architectureFilesSupportEvent;
 	@Inject
-	private News news;
+	private NewsNodeUtil news;
 	@Inject
-	private Award award;
+	private AwardNodeUtil award;
 	
 	public RelatedElement architectureFilesSupportArchitectTransformer(Node node) throws RepositoryException {
 		RelatedElement related = new RelatedElement();

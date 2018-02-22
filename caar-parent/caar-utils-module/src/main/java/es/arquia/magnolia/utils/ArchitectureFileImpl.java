@@ -9,8 +9,6 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.RelatedElement;
-
 public class ArchitectureFileImpl implements ArchitectureFile {
 
 	@Inject

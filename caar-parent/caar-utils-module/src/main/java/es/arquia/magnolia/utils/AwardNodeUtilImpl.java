@@ -1,12 +1,12 @@
-package es.arquia.magnolia.beans;
+package es.arquia.magnolia.utils;
 
+import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.awardAboutText;
 import static es.arquia.magnolia.constants.AwardConstants.awardDescription;
 import static es.arquia.magnolia.constants.AwardConstants.awardExternalURL;
 import static es.arquia.magnolia.constants.AwardConstants.awardHeaderBackground;
 import static es.arquia.magnolia.constants.AwardConstants.awardLogo;
 import static es.arquia.magnolia.constants.AwardConstants.awardName;
-import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.categoriesList;
 import static es.arquia.magnolia.constants.AwardConstants.editionAnnouncementButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionEnrollmentButtonText;
@@ -28,21 +28,22 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.manager.RelatedElementsManagerImpl;
+import es.arquia.magnolia.utils.RelatedElement;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
-public class AwardImpl implements Award{
+public class AwardNodeUtilImpl implements AwardNodeUtil{
 	
 	private I18nContentSupport i18nContentSupport;
 	@Inject
 	private RelatedElementsManagerImpl relatedElementsManagerImpl;
 	
 	@Inject
-	public AwardImpl(final I18nContentSupport i18nContentSupport) {
+	public AwardNodeUtilImpl(final I18nContentSupport i18nContentSupport) {
 		this.i18nContentSupport = i18nContentSupport;
 	}
 	
-	private static final Logger log = LoggerFactory.getLogger(AwardImpl.class);
+	private static final Logger log = LoggerFactory.getLogger(AwardNodeUtilImpl.class);
 	
 	public String getType(Node node) throws RepositoryException{
 		try {
@@ -145,21 +146,9 @@ public class AwardImpl implements Award{
 		
 		return ret;
 	}
-
-	public RelatedElement getRelatedElement(Node node) throws RepositoryException {
-		
-		RelatedElement related = new RelatedElement();
-		
-		related.setTitle(this.getAwardName(node));
-		related.setPhoto(this.getAwardLogo(node));
-		related.setPath(node.getPath());
-		related.setWorkspace(awardWorkspace);
-		
-		return related;
-	}
 	
 	public List<RelatedElement> getRelatedElementsFromNewsList(Node node) throws RepositoryException {
-		
+			
 		List<RelatedElement> list = new LinkedList<>();
 		
 		Value[] relatedNewsValues = node.getProperty(relatedNewsList).getValues();
