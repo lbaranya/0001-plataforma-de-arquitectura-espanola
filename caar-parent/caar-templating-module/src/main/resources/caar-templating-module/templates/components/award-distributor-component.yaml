@@ -1,0 +1,5 @@
+title: caar-templating-module.components.award-distributor.dialog.title
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/award-distributor-component.ftl
+dialog: caar-templating-module:components/award-distributor-component-properties
+modelClass: es.arquia.magnolia.components.models.awardDistributor.AwardDistributorModel
