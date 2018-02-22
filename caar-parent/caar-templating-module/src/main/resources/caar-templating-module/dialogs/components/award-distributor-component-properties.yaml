@@ -1,0 +1,22 @@
+form:
+  tabs:
+    - name: tabMain
+      label: caar-templating-module.templates.components.award-distributor-component.tabMain.label
+      fields:
+        - name: type      
+          required: true       
+          label: caar-templating-module.templates.components.award-distributor-component.tabMain.type.label
+          class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+          options:
+            - name: awards
+              value: awards
+              selected: true
+              label: caar-templating-module.templates.components.award-distributor-component.tabMain.type.awards.label
+            - name: biennials
+              value: biennials
+              label: caar-templating-module.templates.components.award-distributor-component.tabMain.type.biennials.label
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
