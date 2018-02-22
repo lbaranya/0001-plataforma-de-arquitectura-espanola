@@ -5,7 +5,7 @@
 	[#assign fileContentNode = cmsfn.asJCRNode(fileContent)!""]
 	[#assign nodes = model.getRelatedElements(fileContentNode)!""]
 	[#if nodes?has_content]
-	<section class="cmp-arquitectos-realacionados">
+	<section class="cmp-arquitectos-realacionados cmp-last-news">
     	<div class="container-margin">
             <div class="row">
                 <div class="col-md-12">
