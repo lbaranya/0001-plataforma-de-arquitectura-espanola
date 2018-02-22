@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" sv:name="support-reviewi">
+  <sv:property sv:name="jcr:primaryType" sv:type="Name">
+    <sv:value>mgnl:folder</sv:value>
+  </sv:property>
+  <sv:property sv:name="jcr:uuid" sv:type="String">
+    <sv:value>c81f14e2-cf11-45da-bf58-6fbf3500fdf3</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:created" sv:type="Date">
+    <sv:value>2018-02-07T09:04:17.888+01:00</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:createdBy" sv:type="String">
+    <sv:value>superuser</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+    <sv:value>2018-02-07T09:04:34.040+01:00</sv:value>
+  </sv:property>
+  <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+    <sv:value>superuser</sv:value>
+  </sv:property>
+  <sv:node sv:name="typology">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:folder</sv:value>
+    </sv:property>
+    <sv:property sv:name="jcr:uuid" sv:type="String">
+      <sv:value>193f64c2-9e14-4011-97ad-720f31a27e60</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:created" sv:type="Date">
+      <sv:value>2018-02-07T09:04:34.043+01:00</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:createdBy" sv:type="String">
+      <sv:value>superuser</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+      <sv:value>2018-02-07T09:15:24.195+01:00</sv:value>
+    </sv:property>
+    <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+      <sv:value>superuser</sv:value>
+    </sv:property>
+    <sv:node sv:name="conference">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:category</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>653cf7b8-b633-4306-b8f5-eba856c22836</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName" sv:type="String">
+        <sv:value>Conferencia</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName_en" sv:type="String">
+        <sv:value>Conference</sv:value>
+      </sv:property>
+      <sv:property sv:name="level" sv:type="String">
+        <sv:value>level-1</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:created" sv:type="Date">
+        <sv:value>2018-02-07T09:08:21.072+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:createdBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+        <sv:value>2018-02-07T09:11:16.608+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="name" sv:type="String">
+        <sv:value>conference</sv:value>
+      </sv:property>
+      <sv:node sv:name="relatedUUID">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:uuid" sv:type="String">
+          <sv:value>5b6fe0e4-8c55-4f2d-ba3a-9d7d3752e89f</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:created" sv:type="Date">
+          <sv:value>2018-02-07T09:11:16.608+01:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:createdBy" sv:type="String">
+          <sv:value>superuser</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+          <sv:value>2018-02-07T09:11:16.608+01:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+          <sv:value>superuser</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+    <sv:node sv:name="roundTable">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:category</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>1814d340-202c-4cf8-9b00-693af019c8c3</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName" sv:type="String">
+        <sv:value>Debate y mesa redonda</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName_en" sv:type="String">
+        <sv:value>Debate and round table</sv:value>
+      </sv:property>
+      <sv:property sv:name="level" sv:type="String">
+        <sv:value>level-1</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:created" sv:type="Date">
+        <sv:value>2018-02-07T09:08:40.880+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:createdBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+        <sv:value>2018-02-07T09:11:53.597+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="name" sv:type="String">
+        <sv:value>roundTable</sv:value>
+      </sv:property>
+      <sv:node sv:name="relatedUUID">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+          <sv:value>mgnl:contentNode</sv:value>
+        </sv:property>
+        <sv:property sv:name="jcr:uuid" sv:type="String">
+          <sv:value>e0f3c7c2-bde4-43a9-a290-159841ab18db</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:created" sv:type="Date">
+          <sv:value>2018-02-07T09:11:25.334+01:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:createdBy" sv:type="String">
+          <sv:value>superuser</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+          <sv:value>2018-02-07T09:11:25.334+01:00</sv:value>
+        </sv:property>
+        <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+          <sv:value>superuser</sv:value>
+        </sv:property>
+      </sv:node>
+    </sv:node>
+    <sv:node sv:name="poster">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:category</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>a69ef796-6213-4e42-864d-88cd8809f2de</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName" sv:type="String">
+        <sv:value>Póster</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName_en" sv:type="String">
+        <sv:value>poster</sv:value>
+      </sv:property>
+      <sv:property sv:name="level" sv:type="String">
+        <sv:value>level-1</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:created" sv:type="Date">
+        <sv:value>2018-02-07T09:12:15.457+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:createdBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+        <sv:value>2018-02-07T09:12:15.457+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="name" sv:type="String">
+        <sv:value>poster</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="course">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:category</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>c3a21c87-21d7-4855-a9df-4d26df6c7f42</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName" sv:type="String">
+        <sv:value>Cursos</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName_en" sv:type="String">
+        <sv:value>Courses</sv:value>
+      </sv:property>
+      <sv:property sv:name="level" sv:type="String">
+        <sv:value>level-1</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:created" sv:type="Date">
+        <sv:value>2018-02-07T09:14:40.731+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:createdBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+        <sv:value>2018-02-07T09:14:40.731+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="name" sv:type="String">
+        <sv:value>course</sv:value>
+      </sv:property>
+    </sv:node>
+    <sv:node sv:name="awardsDistinctions">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:category</sv:value>
+      </sv:property>
+      <sv:property sv:name="jcr:uuid" sv:type="String">
+        <sv:value>542f6dfd-6055-42f2-8d9c-daff63cd61c9</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName" sv:type="String">
+        <sv:value>Premios y distinciones</sv:value>
+      </sv:property>
+      <sv:property sv:name="displayName_en" sv:type="String">
+        <sv:value>Awards and distinctions</sv:value>
+      </sv:property>
+      <sv:property sv:name="level" sv:type="String">
+        <sv:value>level-1</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:created" sv:type="Date">
+        <sv:value>2018-02-07T09:15:24.196+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:createdBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified" sv:type="Date">
+        <sv:value>2018-02-07T09:15:24.196+01:00</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModifiedBy" sv:type="String">
+        <sv:value>superuser</sv:value>
+      </sv:property>
+      <sv:property sv:name="name" sv:type="String">
+        <sv:value>awardsDistinctions</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+</sv:node>
+

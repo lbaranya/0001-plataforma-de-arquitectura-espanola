@@ -7,7 +7,7 @@ public class CaarArquitectureFilesAppVersionHandlerTest {
 
 	@Test
 	public void shouldBeOneInstanceClass() {
-		assertNotNull(new CaarArquitectureFilesAppVersionHandler());
+		assertNotNull(new CaarArchitectureFilesAppVersionHandler());
 	}
 	
 }

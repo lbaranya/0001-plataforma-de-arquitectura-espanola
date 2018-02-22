@@ -22,7 +22,7 @@
 					                        <div class="col-md-6 img-despacho">
 					                        	[#assign imgItemKey = model.getArchitect().getPhoto(componentNode)!""]
 								            	[#if imgItemKey??]
-							                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "181x181")]
+							                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "181x181")!]
 								            		[#if imgMediaRendition??]
 								            			[#assign imageAlternativeText = "arquitecto"]
 								            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]

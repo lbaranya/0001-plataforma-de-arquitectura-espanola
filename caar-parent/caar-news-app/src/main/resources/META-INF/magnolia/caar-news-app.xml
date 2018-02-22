@@ -7,6 +7,18 @@
   <class>es.arquia.magnolia.CaarNewsApp</class>
   <versionHandler>es.arquia.magnolia.setup.CaarNewsAppVersionHandler</versionHandler>
   <version>${project.version}</version>
+  
+  <components>
+	<id>main</id>
+	<component>
+		<type>es.arquia.magnolia.functions.QueryUtils</type>
+		<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
+	</component>
+	<component>
+		<type>es.arquia.magnolia.beans.News</type>
+		<implementation>es.arquia.magnolia.beans.NewsImpl</implementation>
+	</component>
+  </components>
 
   <dependencies>
     <dependency>

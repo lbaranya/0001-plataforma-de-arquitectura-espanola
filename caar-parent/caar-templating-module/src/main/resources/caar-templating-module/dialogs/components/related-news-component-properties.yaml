@@ -6,21 +6,17 @@ form:
         - name: title          
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           label: caar-templating-module.templates.components.related-news-component.tabMain.title.label
-        - name: news
+          i18n: true
+        - name: newsPicker
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodeTransformer
           label: caar-templating-module.templates.components.related-news-component.tabMain.news.label
-          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
           field:
-            name: compositeField
-            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
-            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
-            layout: vertical
-            fields:
-              - name: picker
-                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-                label: caar-templating-module.templates.components.related-news-component.tabMain.news.compositeField.picker.label
-                appName: caar-news-app
-                targetWorkspace: news
+            name: newsLink
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            label: caar-templating-module.templates.components.related-news-component.tabMain.news.compositeField.picker.label
+            appName: caar-news-app
+            targetWorkspace: news
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      

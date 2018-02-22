@@ -24,6 +24,7 @@ form:
               - name: judge_name
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.judgeList.judgeName.label
+                required: true
                 i18n: true
               - name: basic_text
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
@@ -44,8 +45,8 @@ form:
                 label: caar-templating-module.templates.components.accordion-structure-judge-component.tabMain.judgeList.architectFileLink.label
                 required: true
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-                targetWorkspace: website      
-                appName: pages
+                targetWorkspace: architecture-files      
+                appName: caar-architecture-files-app
           
 actions:      
   commit:      

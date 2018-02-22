@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module SYSTEM "module.dtd" >
+<module>
+  <name>caar-awards-app</name>
+  <displayName>${project.name}</displayName>
+  <description>${project.description}</description>
+  <class>es.arquia.magnolia.CaarAwardsApp</class>
+  <versionHandler>es.arquia.magnolia.setup.CaarAwardsAppVersionHandler</versionHandler>
+  <version>${project.version}</version>
+  
+  <components>
+	<id>main</id>
+	<component>
+		<type>es.arquia.magnolia.functions.QueryUtils</type>
+		<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
+	</component>
+	<component>
+		<type>es.arquia.magnolia.beans.Award</type>
+		<implementation>es.arquia.magnolia.beans.AwardImpl</implementation>
+	</component>
+	<component>
+		<type>es.arquia.magnolia.beans.News</type>
+		<implementation>es.arquia.magnolia.beans.NewsImpl</implementation>
+	</component>
+  </components>
+
+  <dependencies>
+    <dependency>
+      <name>core</name>
+      <version>5.6/*</version>
+    </dependency>
+    <!--  Add other dependencies here, e.g the mte (magnolia templating essentials).
+    <dependency>
+      <name>mte</name>
+      <version>0.7/*</version>
+    </dependency>
+    -->
+  </dependencies>
+  
+  <repositories>
+		<repository>
+			<name>magnolia</name>
+			<workspaces>
+				<workspace>awards</workspace>
+			</workspaces>
+			<nodeTypeFile>/mgnl-nodetypes/awards-nodetypes.xml</nodeTypeFile>
+		</repository>
+	</repositories>
+</module>

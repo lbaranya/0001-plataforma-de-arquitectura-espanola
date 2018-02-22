@@ -1,0 +1,28 @@
+title: caar-templating-module.pages.award-home.dialog.title
+renderType: site
+visible: true
+dialog: caar-templating-module:pages/award-home-page-properties
+modelClass: es.arquia.magnolia.pages.models.AwardHomeModel
+areas:
+  main:
+    templateScript: /caar-templating-module/templates/pages/awards/award-home.ftl
+    enabled: true
+    type: noComponent
+    areas:
+      content:
+        type: single
+        availableComponents:
+          breadcrumb-component:
+            id: caar-templating-module:components/breadcrumb-component
+      submenu-award:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/submenu-award
+      relatedNews:
+        type: single
+        availableComponents:
+          relatedNews:
+            id: caar-templating-module:components/related-news-component
+          relatedElements:
+            id: caar-templating-module:components/related-elements-component

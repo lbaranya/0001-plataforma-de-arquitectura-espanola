@@ -1,0 +1,44 @@
+form:  
+  label: caar-templating-module.templates.pages.home-page.label
+  tabs:  
+    - name: tabMain  
+      label: caar-templating-module.templates.pages.home-page.tabMain.label
+      fields:  
+        - name: title  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: caar-templating-module.templates.pages.home-page.tabMain.title.label
+          required: true
+        - name: navigationTitle  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: caar-templating-module.templates.pages.home-page.tabMain.navigationTitle.label
+        - name: windowTitle  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: caar-templating-module.templates.pages.home-page.tabMain.windowTitle.label
+        - name: hideInNav  
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition  
+          defaultValue: false  
+          i18n: false  
+          type: Boolean  
+          label: caar-templating-module.templates.pages.home-page.tabMain.hideInNav.label
+          buttonLabel: caar-templating-module.templates.pages.home-page.tabMain.hideInNav.buttonLabel
+    - name: tabMeta  
+      label: caar-templating-module.templates.pages.home-page.tabMeta.label
+      fields:  
+        - name: keywords  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: caar-templating-module.templates.pages.home-page.tabMeta.keywords.label
+          rows: 3  
+        - name: description  
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition  
+          i18n: true  
+          label: caar-templating-module.templates.pages.home-page.tabMeta.description.label
+          rows: 5  
+actions:  
+  commit:  
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition  
+  cancel:  
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

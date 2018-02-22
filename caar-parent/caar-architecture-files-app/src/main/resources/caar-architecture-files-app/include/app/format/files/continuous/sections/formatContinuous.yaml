@@ -1,0 +1,22 @@
+name: formatContinuous
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatContinuous.label
+groups:
+  - name: editActions
+    items:
+      - name: editFormatContinuous
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsContinuous
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:format-continuous

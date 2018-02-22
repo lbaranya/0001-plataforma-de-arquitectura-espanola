@@ -1,0 +1,162 @@
+subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+label: caar-architecture-files-app.subapp.detailSupportEvent.label
+contentConnector:
+  workspace: architecture-files
+editor:
+  nodeType:
+    icon: icon-items
+    name: mgnl:support-event
+  form:
+    tabs:
+      - name: fileData
+        label: caar-architecture-files-app.files.support.event.fileData.label
+        fields:
+          - name: jcrName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.fileData.jcrName.label
+            required: true
+      - name: ouvrePresentationData
+        label: caar-architecture-files-app.files.support.event.ouvrePresentation.label          
+        fields:
+          - name: FS3_2_10
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            required: true
+            i18n: true
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.type.label
+          - name: FS3_2_13
+            class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.important.label
+            buttonLabel: caar-architecture-files-app.files.support.event.ouvrePresentation.important.button.label
+          - name: FS3_2_1
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.title.label
+            required: true
+            i18n: true
+          - name: FS3_2_2
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: true
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.presentationStartDate.label
+            required: true
+          - name: FS3_2_6
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: true
+            type: Date
+            defaultValue: now
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.presentationEndingDate.label
+          - name: FS3_2_11
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.startTime.label
+            description: caar-architecture-files-app.files.support.event.ouvrePresentation.hourFormat.label
+            validators:
+              - name: hourPattern
+                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                pattern: '(([01][0-9])|(2[0-3])):[0-5][0-9]'
+                errorMessage: caar-architecture-files-app.files.support.event.ouvrePresentation.hourTime.errorMessage.label
+          - name: FS3_2_12
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.endTime.label
+            description: caar-architecture-files-app.files.support.event.ouvrePresentation.hourFormat.label
+            validators:
+              - name: hourPattern
+                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                pattern: '(([01][0-9])|(2[0-3])):[0-5][0-9]'
+                errorMessage: caar-architecture-files-app.files.support.event.ouvrePresentation.hourTime.errorMessage.label
+          - name: FS3_2_3
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.presentationLocation.label
+            required: true
+          - name: FS3_2_5
+            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.abstract.label
+            required: true
+            i18n: true
+          - name: FS3_2_7
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.price.label
+            description: caar-architecture-files-app.files.support.event.ouvrePresentation.price.description.label
+            validators:
+              - name: onlyNumbers
+                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                pattern: '^(([0-9]([0-9,])*)(\.\d{2})?|([0-9]([0-9,]))(\.\d{2})?([pcm]|bn| [mb]illion))[£€$]?$'
+                errorMessage: caar-architecture-files-app.files.support.event.ouvrePresentation.price.errorMessage.label
+          - name: FS3_2_8
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.website.label
+          - name: FS3_2_9
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            label: caar-architecture-files-app.files.support.event.ouvrePresentation.preview.label
+            required: true
+            targetWorkspace: dam
+            appName: assets
+            label: caar-architecture-files-app.files.support.event.mediaGalleryData.photoPreview.label
+            identifierToPathConverter:
+              class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+            contentPreviewDefinition:
+              contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+      - name: authorshipData
+        label: caar-architecture-files-app.files.support.event.authorshipData.label
+        fields:
+          - name: listAuthorship
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.event.authorshipData.listAuthorship.label
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+            field:
+              name: compositeField
+              class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+              layout: vertical
+              fields:
+                - name: separator
+                  class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                  label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                  value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                - name: FS3_3_1
+                  label: caar-architecture-files-app.files.support.event.authorshipData.authorshipType.label
+                  required: true
+                  class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                  required: true
+                  repository: category
+                  labelProperty: displayName
+                  path: caar/support-events/authorship-type
+                - name: FS3_3_2
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-architecture-files-app.files.support.event.authorshipData.authorshipName.label
+                  i18n: true
+                  required: true
+                - name: FS3_3_3
+                  class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                  label: caar-architecture-files-app.files.support.event.authorshipData.authorshipDetails.label
+                  required: true
+                  i18n: true
+                - name: FS3_3_4
+                  class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                  label: caar-architecture-files-app.files.support.event.authorshipData.authorshipInfo.label
+                  i18n: true
+      - name: mediaGalleryData
+        label: caar-architecture-files-app.files.support.event.mediaGalleryData.label
+        fields:
+          - name: listMedia
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.event.mediaGalleryData.listMedia.label
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
+            field:
+              name: FS3_7_2
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              targetWorkspace: dam
+              appName: assets
+              label: caar-architecture-files-app.files.support.event.mediaGalleryData.photoPreview.label
+              identifierToPathConverter:
+                class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+              contentPreviewDefinition:
+                contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+  actions:
+    - name: commit
+    - name: cancel
+actions:
+  commit:
+    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+  cancel:
+    class: info.magnolia.ui.form.action.CancelFormActionDefinition

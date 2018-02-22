@@ -1,0 +1,43 @@
+form:
+  tabs:
+    - name: tabMain
+      label: caar-templating-module.templates.components.rich-text-image-component.tabMain.label
+      fields:
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.rich-text-image-component.dialog.title.label
+        - name: text
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition      
+          i18n: true
+          required: true
+          label: caar-templating-module.templates.components.rich-text-image-component.dialog.text.label
+          configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+        - name: imageLink
+          required: true      
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+          label: caar-templating-module.templates.components.rich-text-image-component.dialog.imageLink.label
+        - name: imagePosition
+          class: info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition
+          multiselect: false
+          type: String
+          label: caar-templating-module.templates.components.rich-text-image-component.dialog.imagePosition.label
+          options:
+            - name: leftSide
+              value: left
+              label: caar-templating-module.templates.components.rich-text-image-component.dialog.imagePosition.left.label
+            - name: rightSide
+              value: right
+              label: caar-templating-module.templates.components.rich-text-image-component.dialog.imagePosition.right.label
+              selected: true
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

@@ -111,6 +111,30 @@
             <sv:value>caar-templating-module:pages/content-page</sv:value>
           </sv:property>
         </sv:node>
+        <sv:node sv:name="awards">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+          </sv:property>
+          <sv:property sv:name="id" sv:type="String">
+            <sv:value>caar-templating-module:pages/awards/award-home</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="awardsAbout">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+          </sv:property>
+          <sv:property sv:name="id" sv:type="String">
+            <sv:value>caar-templating-module:pages/awards/award-about</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="awardsNewsList">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+          </sv:property>
+          <sv:property sv:name="id" sv:type="String">
+            <sv:value>caar-templating-module:pages/awards/award-news-list</sv:value>
+          </sv:property>
+        </sv:node>
       </sv:node>
     </sv:node>
   </sv:node>

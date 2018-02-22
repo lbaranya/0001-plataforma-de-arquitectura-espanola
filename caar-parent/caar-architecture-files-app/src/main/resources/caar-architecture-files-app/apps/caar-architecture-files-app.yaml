@@ -16,6 +16,8 @@ subApps:
       nodeTypes:
         - name: mgnl:portfolio-wrapper
           icon: icon-folder
+        - name: mgnl:portfolio-folder-wrapper
+          icon: icon-folder
         - name: mgnl:portfolio
           icon: icon-items
         - name: mgnl:support-wrapper
@@ -26,6 +28,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:support-architect
           icon: icon-items
+        - name: mgnl:support-project-wrapper
+          icon: icon-folder
+        - name: mgnl:support-project-folder-wrapper
+          icon: icon-folder
         - name: mgnl:support-project
           icon: icon-items
         - name: mgnl:support-review-i-wrapper
@@ -52,6 +58,12 @@ subApps:
           icon: icon-folder
         - name: mgnl:support-review-iv
           icon: icon-items
+        - name: mgnl:support-event-wrapper
+          icon: icon-folder
+        - name: mgnl:support-event-folder-wrapper
+          icon: icon-folder
+        - name: mgnl:support-event
+          icon: icon-items
         - name: mgnl:support-business-wrapper
           icon: icon-folder
         - name: mgnl:support-business-folder-wrapper
@@ -66,6 +78,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:format-video
           icon: icon-items
+        - name: mgnl:format-three-dimensional-wrapper
+          icon: icon-folder
+        - name: mgnl:format-three-dimensional-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-three-dimensional
           icon: icon-items
         - name: mgnl:format-cartographic
@@ -80,16 +96,28 @@ subApps:
           icon: icon-folder
         - name: mgnl:format-manuscript
           icon: icon-items
+        - name: mgnl:format-graphic-wrapper
+          icon: icon-folder
+        - name: mgnl:format-graphic-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-graphic
           icon: icon-items
+        - name: mgnl:format-continuous-wrapper
+          icon: icon-folder
+        - name: mgnl:format-continuous-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-continuous
           icon: icon-items
+        - name: mgnl:format-electronic-wrapper
+          icon: icon-folder
+        - name: mgnl:format-electronic-folder-wrapper
+          icon: icon-folder
         - name: mgnl:format-electronic
           icon: icon-items
         - name: mgnl:folder
           icon: icon-folder
     workbench:
-      dropConstraintClass: info.magnolia.ui.workbench.tree.drop.AlwaysTrueDropConstraint
+      dropConstraintClass: es.arquia.magnolia.ui.workbench.tree.drop.ArchitectureFilesJcrContentDropConstraint
       editable: false
       contentViews:
         - name: tree
@@ -223,7 +251,7 @@ subApps:
       # showVersions each file type
       
       # Details architect
-      showVersionsArchitects: 
+      showVersionsArchitect: 
         !include:/caar-architecture-files-app/include/app/support/files/architect/actions/showVersionsArchitect.yaml
         
       # Details Review Type I
@@ -242,17 +270,37 @@ subApps:
       showVersionsReviewIV: 
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/showVersionsReviewIV.yaml
         
+      # Details Event
+      showVersionsEvent: 
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/showVersionsEvent.yaml
+        
       # Details Business
       showVersionsBusiness: 
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/showVersionsBusiness.yaml
         
-      # Details Folder
-      showVersionsFolder: 
+      # Details Video
+      showVersionsVideo: 
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/showVersionsVideo.yaml
 
       # Details Manuscript
       showVersionsManuscript:
         !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/showVersionsManuscript.yaml
+        
+      # Details Graphic
+      showVersionsGraphic:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/showVersionsGraphic.yaml
+      
+      # Details Manuscript
+      showVersionsThreeDimensional:
+        !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/showVersionsThreeDimensional.yaml
+        
+      # Details Continuous
+      showVersionsContinuous:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/showVersionsContinuous.yaml
+        
+      # Details Electronic
+      showVersionsElectronic:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/showVersionsElectronic.yaml
         
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
@@ -284,14 +332,26 @@ subApps:
       # Review IV folder
       addFolderSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addFolderSupportReviewIV.yaml
+        
+      # Event folder
+      addFolderSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addFolderSupportEvent.yaml
       
       # Business folder
       addFolderSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addFolderSupportBusiness.yaml
         
+      # Project folder
+      addFolderSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addFolderSupportProject.yaml
+        
       # Manuscript folder
       addFolderFormatManuscript:
         !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFolderFormatManuscript.yaml
+        
+      # Graphic folder
+      addFolderFormatGraphic:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFolderFormatGraphic.yaml
       
       # Portfolio folder
       addFolderPortfolio:
@@ -300,6 +360,18 @@ subApps:
       # Video folder
       addFolderFormatVideo:
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/addFolderFormatVideo.yaml
+        
+      # Three-dimensional folder
+      addFolderFormatThreeDimensional:
+        !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/addFolderFormatThreeDimensional.yaml
+        
+      # Continuous folder
+      addFolderFormatContinuous:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFolderFormatContinuous.yaml
+        
+      # Electronic folder
+      addFolderFormatElectronic:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFolderFormatElectronic.yaml
       
       # Edit any folder
       editFolder:
@@ -311,11 +383,18 @@ subApps:
             - mgnl:support-architect-folder-wrapper
             - mgnl:support-review-i-folder-wrapper
             - mgnl:support-review-ii-folder-wrapper
-            - mgnl:support-review-iv-folder-wrapper
             - mgnl:support-review-iii-folder-wrapper
+            - mgnl:support-review-iv-folder-wrapper
+            - mgnl:support-event-folder-wrapper
             - mgnl:support-business-folder-wrapper
+            - mgnl:support-project-folder-wrapper
             - mgnl:format-video-folder-wrapper
+            - mgnl:format-graphic-folder-wrapper
             - mgnl:format-manuscript-folder-wrapper
+            - mgnl:format-three-dimensional-folder-wrapper
+            - mgnl:format-continuous-folder-wrapper
+            - mgnl:format-electronic-folder-wrapper
+            - mgnl:portfolio-folder-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -342,9 +421,17 @@ subApps:
             - mgnl:support-review-ii-wrapper
             - mgnl:support-review-iii-wrapper
             - mgnl:support-review-iv-wrapper
+            - mgnl:support-event-wrapper
             - mgnl:support-business-wrapper
+            - mgnl:support-project-wrapper
             - mgnl:portfolio-wrapper
             - mgnl:format-wrapper
+            - mgnl:format-video-wrapper
+            - mgnl:format-manuscript-wrapper
+            - mgnl:format-graphic-wrapper
+            - mgnl:format-three-dimensional-wrapper
+            - mgnl:format-continuous-wrapper
+            - mgnl:format-electronic-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -363,14 +450,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiii/actions/addSupportReviewIIIWrapper.yaml
       addSupportReviewIVWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIVWrapper.yaml
+      addSupportEventWrapper:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addSupportEventWrapper.yaml
       addSupportBusinessWrapper:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/addSupportBusinessWrapper.yaml
-      
-      # Format wrappers
-      
-      # Add
-      addFormatManuscriptWrapper:
-        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscriptWrapper.yaml
+      addSupportProjectWrapper:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addSupportProjectWrapper.yaml
       
       # Support Architect
       addSupportArchitect:
@@ -401,6 +486,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/addSupportReviewIV.yaml
       editSupportReviewIV:
         !include:/caar-architecture-files-app/include/app/support/files/reviewiv/actions/editSupportReviewIV.yaml
+        
+      # Support Event
+      addSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/addSupportEvent.yaml
+      editSupportEvent:
+        !include:/caar-architecture-files-app/include/app/support/files/event/actions/editSupportEvent.yaml
       
       # Support Business
       addSupportBusiness:
@@ -408,12 +499,12 @@ subApps:
       editSupportBusiness:
         !include:/caar-architecture-files-app/include/app/support/files/business/actions/editSupportBusiness.yaml
         
-      # Format Manuscript
-      addFormatManuscript:
-        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscript.yaml
-      editFormatManuscript:
-        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/editFormatManuscript.yaml
-      
+      # Support Project
+      addSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/addSupportProject.yaml
+      editSupportProject:
+        !include:/caar-architecture-files-app/include/app/support/files/project/actions/editSupportProject.yaml
+        
       # Portfolio
       addPortfolio:
         !include:/caar-architecture-files-app/include/app/portfolio/actions/addPortfolio.yaml
@@ -425,14 +516,54 @@ subApps:
       # Format wrappers
       
       # Add
+      addFormatManuscriptWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscriptWrapper.yaml
       addFormatVideoWrapper:
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/addFormatVideoWrapper.yaml
+      addFormatGraphicWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFormatGraphicWrapper.yaml
+      addFormatThreeDimensionalWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/addFormatThreeDimensionalWrapper.yaml
+      addFormatContinuousWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFormatContinuousWrapper.yaml
+      addFormatElectronicWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFormatElectronicWrapper.yaml
        
       # Format Video
       addFormatVideo:
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/addFormatVideo.yaml
       editFormatVideo:
         !include:/caar-architecture-files-app/include/app/format/files/video/actions/editFormatVideo.yaml
+        
+      # Format Manuscript
+      addFormatManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/addFormatManuscript.yaml
+      editFormatManuscript:
+        !include:/caar-architecture-files-app/include/app/format/files/manuscript/actions/editFormatManuscript.yaml
+        
+      # Format Graphic
+      addFormatGraphic:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFormatGraphic.yaml
+      editFormatGraphic:
+        !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/editFormatGraphic.yaml
+        
+      # Format ThreeDimensional
+      addFormatThreeDimensional:
+        !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/addFormatThreeDimensional.yaml
+      editFormatThreeDimensional:
+        !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/editFormatThreeDimensional.yaml
+
+      # Format Continuous
+      addFormatContinuous:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFormatContinuous.yaml
+      editFormatContinuous:
+        !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/editFormatContinuous.yaml
+        
+      # Format Electronic
+      addFormatElectronic:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFormatElectronic.yaml
+      editFormatElectronic:
+        !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/editFormatElectronic.yaml
       
     # Sections
     actionbar:
@@ -570,6 +701,26 @@ subApps:
         # Section if node review iv is not deleted
         - !include:/caar-architecture-files-app/include/app/support/files/reviewiv/sections/supportReviewIV.yaml
         
+        # Support Event
+        
+        # Wrapper
+        # Section if event wrapper is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventWrapperDeleted.yaml
+        # Section if event wrapper is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventWrapper.yaml
+        
+        # Support event folder
+        # Section if event folder is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventFolderDeleted.yaml
+        # Section if event folder is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventFolder.yaml
+        
+        # Node actions
+        # Section if node event is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEventDeleted.yaml
+        # Section if node event is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/event/sections/supportEvent.yaml
+        
         # Support business
         
         # Wrapper
@@ -589,6 +740,26 @@ subApps:
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusinessDeleted.yaml
         # Support Business Not Deleted
         - !include:/caar-architecture-files-app/include/app/support/files/business/sections/supportBusiness.yaml
+        
+        # Support project
+        
+        # Wrapper
+        # Section if project wrapper is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectWrapperDeleted.yaml
+        # Section if project wrapper is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectWrapper.yaml
+        
+        # Support project folder
+        # Section if project folder is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectFolderDeleted.yaml
+        # Section if project folder is not deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectFolder.yaml
+        
+        # Node actions
+        # Support Project Deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProjectDeleted.yaml
+        # Support Project Not Deleted
+        - !include:/caar-architecture-files-app/include/app/support/files/project/sections/supportProject.yaml
         
         # Format group
         
@@ -629,6 +800,63 @@ subApps:
         # Node actions
         - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscriptDeleted.yaml
         - !include:/caar-architecture-files-app/include/app/format/files/manuscript/sections/formatManuscript.yaml
+        
+        # Format Graphic
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicWrapper.yaml
+        
+        # Format Graphic folder
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphicDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/graphic/sections/formatGraphic.yaml
+        
+        # Format ThreeDimensional
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/sections/formatThreeDimensionalWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/sections/formatThreeDimensionalWrapper.yaml
+        
+        # Format ThreeDimensional folder
+        - !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/sections/formatThreeDimensionalFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/sections/formatThreeDimensionalFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/sections/formatThreeDimensionalDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/sections/formatThreeDimensional.yaml
+        
+        # Format Continuous
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousWrapper.yaml
+        
+        # Format Continuous folder
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuousDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/continuous/sections/formatContinuous.yaml
+        
+        # Format Electronic
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicWrapper.yaml
+        
+        # Format Electronic folder
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronic.yaml
+        
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -647,12 +875,30 @@ subApps:
   # Support review iv sub app
   detailSupportReviewIV:
     !include:/caar-architecture-files-app/include/app/support/files/reviewiv/subapp/detailSupportReviewIV.yaml
+  # Support event sub app
+  detailSupportEvent:
+    !include:/caar-architecture-files-app/include/app/support/files/event/subapp/detailSupportEvent.yaml
   # Support business sub app
   detailSupportBusiness:
     !include:/caar-architecture-files-app/include/app/support/files/business/subapp/detailSupportBusiness.yaml
+  # Support project sub app
+  detailSupportProject:
+    !include:/caar-architecture-files-app/include/app/support/files/project/subapp/detailSupportProject.yaml
   # Format video sub app
   detailFormatVideo:
     !include:/caar-architecture-files-app/include/app/format/files/video/subapp/detailFormatVideo.yaml
   # Format manuscript sub app
   detailFormatManuscript:
     !include:/caar-architecture-files-app/include/app/format/files/manuscript/subapp/detailFormatManuscript.yaml
+  # Format graphic sub app
+  detailFormatGraphic:
+    !include:/caar-architecture-files-app/include/app/format/files/graphic/subapp/detailFormatGraphic.yaml
+  # Format three-dimensional sub app
+  detailFormatThreeDimensional:
+    !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/subapp/detailFormatThreeDimensional.yaml
+  # Format continuous sub app
+  detailFormatContinuous:
+    !include:/caar-architecture-files-app/include/app/format/files/continuous/subapp/detailFormatContinuous.yaml
+  # Format electronic sub app
+  detailFormatElectronic:
+    !include:/caar-architecture-files-app/include/app/format/files/electronic/subapp/detailFormatElectronic.yaml

@@ -6,7 +6,8 @@ form:
         - name: image      
           required: true       
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-          label: caar-templating-module.templates.components.child-list-component.tabMain.backgroundImage.label    
+          label: caar-templating-module.templates.components.child-list-component.tabMain.backgroundImage.label
+          description: caar-templating-module.templates.components.child-list-component.tabMain.backgroundImage.description
           targetWorkspace: dam      
           appName: assets      
           identifierToPathConverter:      

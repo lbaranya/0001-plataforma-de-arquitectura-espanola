@@ -7,6 +7,34 @@
   <class>es.arquia.magnolia.CaarTemplatingModule</class>
   <versionHandler>es.arquia.magnolia.setup.CaarTemplatingModuleVersionHandler</versionHandler>
   <version>${project.version}</version>
+  
+	<components>
+		<id>main</id>
+		<component>
+			<type>es.arquia.magnolia.manager.NewsManager</type>
+			<implementation>es.arquia.magnolia.manager.NewsManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.AwardManager</type>
+			<implementation>es.arquia.magnolia.manager.AwardManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAward</type>
+			<implementation>es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAwardImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.templates.bean.ContextBean</type>
+			<implementation>es.arquia.magnolia.templates.bean.ContextBeanImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.functions.I18nURLFunctions</type>
+			<implementation>es.arquia.magnolia.functions.I18nURLFunctionsImpl</implementation>
+		</component>
+	</components>
 
   <dependencies>
     <dependency>

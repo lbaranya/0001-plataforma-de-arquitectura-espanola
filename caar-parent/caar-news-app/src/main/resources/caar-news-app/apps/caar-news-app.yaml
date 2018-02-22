@@ -33,6 +33,7 @@ subApps:
             - name: value
               editable: true
               sortable: true
+              width: 50
               propertyName: value
               class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
             - name: status
@@ -40,6 +41,11 @@ subApps:
               displayInChooseDialog: false
               formatterClass: info.magnolia.ui.workbench.column.StatusColumnFormatter
               class: info.magnolia.ui.workbench.column.definition.StatusColumnDefinition
+            - name: N1_8
+              sortable: true
+              class: info.magnolia.ui.workbench.column.definition.PropertyColumnDefinition
+              propertyName: N1_8
+              width: 100
             - name: moddate
               width: 160
               sortable: true
@@ -367,25 +373,16 @@ subApps:
           - name: newsData
             label: caar-news-app.newsData.label
             fields:
-              - name: N1.1
+              - name: N1_1
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                 label: caar-news-app.newsData.headline.label
                 required: true
                 i18n: true
-              - name: N1.2
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-                label: caar-news-app.newsData.longTitle.label
-                required: true
-                i18n: true
-              - name: N1.3
+              - name: N1_3
                 class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition 
                 label: caar-news-app.newsData.description.label
                 i18n: true
-              - name: N1.4
-                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition 
-                label: caar-news-app.newsData.longDescription.label
-                i18n: true
-              - name: N1.5
+              - name: N1_5
                 class: info.magnolia.ui.form.field.definition.DateFieldDefinition
                 type: Date
                 time: true
@@ -393,7 +390,8 @@ subApps:
                 timeFormat: HH:mm
                 label: caar-news-app.newsData.dateTime.label
                 defaultValue: now
-              - name: N1.6
+              - name: N1_6
+                required: true
                 class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
                 targetWorkspace: dam
                 appName: assets
@@ -402,9 +400,10 @@ subApps:
                   class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
                 contentPreviewDefinition:
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-              - name: N1.7
+              - name: N1_7
                 class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
                 label: caar-news-app.newsData.categories.label
+                required: true
                 field:
                   name: linkField
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
@@ -412,11 +411,11 @@ subApps:
                   appName: categories
                   identifierToPathConverter:
                     class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
-              - name: N1.8
+              - name: N1_8
                 class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
                 label: caar-news-app.newsData.important.label
                 buttonLabel: caar-news-app.newsData.important.buttonLabel
-              - name: N1.9
+              - name: N1_9
                 class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
                 label: caar-news-app.newsData.files.label
                 field:
@@ -426,7 +425,7 @@ subApps:
                   appName: caar-architecture-files-app
                   identifierToPathConverter:
                     class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
-              - name: N1.10
+              - name: N1_10
                 class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
                 label: caar-news-app.relatedNews.news.label
                 field:
@@ -435,7 +434,11 @@ subApps:
                   targetWorkspace: news
                   appName: caar-news-app
                   identifierToPathConverter:
-                    class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter 
+                    class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+              - name: N1_11
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-news-app.informativeMedium.label
+                required: true
       actions:
         - name: commit
         - name: cancel

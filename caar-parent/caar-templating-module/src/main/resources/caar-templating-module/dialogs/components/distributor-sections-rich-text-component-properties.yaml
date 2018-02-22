@@ -1,0 +1,49 @@
+form:
+  tabs:
+    - name: tabRichText
+      label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.label
+      fields:
+        - name: richTextOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.label
+          description: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.description
+          field:
+            name: richTextOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            layout: vertical
+            fields:
+                # Common fields
+              - name: type
+                class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+                defaultValue: richText
+              - name: richTextOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionWeight.label
+              - name: richTextOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionImageAnchor.label
+              - name: richTextOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionTitle.label
+                # End common fields
+                # Specific fields
+              - name: richTextOptionRichText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionRichText.label
+actions:        
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition 

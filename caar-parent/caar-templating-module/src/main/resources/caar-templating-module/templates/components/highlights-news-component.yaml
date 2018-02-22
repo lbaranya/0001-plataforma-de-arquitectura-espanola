@@ -1,4 +1,4 @@
-title: Componente Noticias Destacadas    
+title: caar-templating-module.components.highlights-news.dialog.title    
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/highlights-news-component.ftl    
 dialog: caar-templating-module:components/highlights-news-component-properties    

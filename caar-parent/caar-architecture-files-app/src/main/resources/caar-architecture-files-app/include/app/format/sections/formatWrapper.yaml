@@ -5,6 +5,10 @@ groups:
     items:
       - name: addFormatVideoWrapper
       - name: addFormatManuscriptWrapper
+      - name: addFormatGraphicWrapper
+      - name: addFormatThreeDimensionalWrapper
+      - name: addFormatContinuousWrapper
+      - name: addFormatElectronicWrapper
   - name: editActions
     items:
       - name: editWrapper

@@ -1,0 +1,229 @@
+form:
+  tabs:
+    - name: tabRichText
+      label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.label
+      fields:
+        - name: richTextOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.label
+          description: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.description
+          field:
+            name: richTextOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            layout: vertical
+            fields:
+                # Common fields
+              - name: type
+                class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+                defaultValue: richText
+              - name: richTextOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionWeight.label
+              - name: richTextOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionImageAnchor.label
+              - name: richTextOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionTitle.label
+              - name: richTextOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionAbtract.label
+                # End common fields
+                # Specific fields
+              - name: richTextOptionRichText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionRichText.label
+    - name: tabJury
+      label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.label
+      fields:
+          # Common fields
+        - name: type
+          class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+          defaultValue: jury
+        - name: juryOptionWeight
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionWeight.label
+        - name: juryOptionImageAnchor
+          required: true
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionImageAnchor.label
+        - name: juryOptionTitle
+          i18n: true
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionTitle.label
+        - name: juryOptionAbtract
+          i18n: true
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionAbtract.label
+        - name: judgeList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.label
+          field:
+            name: judgeComposite
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            layout: vertical
+            fields:
+              - name: judgeName
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeName.label
+              - name: judgePhoto
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgePhoto.label
+              - name: judgeFileLink
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: architecture-files      
+                appName: caar-architecture-files-app
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeFileLink.label
+              - name: judgeText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeText.label
+    - name: tabEnrollment
+      label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.label
+      fields:
+        - name: enrollmentOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.label
+          field:
+            name: enrollmentOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            layout: vertical
+            fields:
+                # Common fields
+              - name: type
+                class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+                defaultValue: enrollment
+              - name: enrollmentOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionWeight.label
+              - name: enrollmentOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionImageAnchor.label
+              - name: enrollmentOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionTitle.label
+              - name: enrollmentOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionAbtract.label
+                # End common fields
+                # Specific fields
+              - name: enrollmentOptionRichText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionRichText.label
+              - name: enrollmentOptionButtonText
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionButtonText.label
+              - name: enrollmentOptionButtonLink
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: website      
+                appName: pages
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionButtonLink.label
+                # End specific fields
+    - name: tabLemma
+      label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.label
+      fields:
+        - name: lemmaOptionList
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+          label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.label
+          field:
+            name: lemmaOptionCompositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            layout: vertical
+            fields:
+                # Common fields
+              - name: type
+                class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+                defaultValue: lemma
+              - name: lemmaOptionWeight
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionWeight.label
+              - name: lemmaOptionImageAnchor
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionImageAnchor.label
+              - name: lemmaOptionTitle
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionTitle.label
+              - name: lemmaOptionAbtract
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionAbtract.label
+                # End common fields
+                # Specific fields
+              - name: lemmaOptionRichText
+                i18n: true
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionRichText.label
+              - name: lemmaOptionLink
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                targetWorkspace: architecture-files      
+                appName: caar-architecture-files-app
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionLink.label
+              - name: lemmaOptionPhotoPreview
+                required: true
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                contentPreviewDefinition:      
+                  contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionPhotoPreview.label
+                # End specific fields
+actions:        
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition 

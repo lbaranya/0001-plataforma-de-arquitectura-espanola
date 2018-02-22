@@ -5,8 +5,28 @@
 	<displayName>${project.name}</displayName>
 	<description>${project.description}</description>
 	<class>es.arquia.magnolia.CaarArquitectureFilesApp</class>
-	<versionHandler>es.arquia.magnolia.setup.CaarArquitectureFilesAppVersionHandler</versionHandler>
+	<versionHandler>es.arquia.magnolia.setup.CaarArchitectureFilesAppVersionHandler</versionHandler>
 	<version>${project.version}</version>
+	
+	<components>
+		<id>main</id>
+		<component>
+			<type>es.arquia.magnolia.functions.QueryUtils</type>
+			<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.beans.ArchitectureFile</type>
+			<implementation>es.arquia.magnolia.beans.ArchitectureFileImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</type>
+			<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</type>
+			<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</implementation>
+		</component>
+	</components>
 
 	<dependencies>
 		<dependency>

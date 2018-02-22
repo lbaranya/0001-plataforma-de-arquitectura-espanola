@@ -1,0 +1,86 @@
+subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+label: caar-awards-app.subapp.detailEditionSubApp.label
+contentConnector:
+  workspace: awards
+editor:
+  nodeType:
+    icon: icon-items
+    name: mgnl:edition
+  form:
+    tabs:
+      - name: fileData
+        label: caar-awards-app.files.edition.fileData.label
+        fields:
+          - name: jcrName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.edition.fileData.jcrName.label
+            required: true
+      - name: editionData
+        label: caar-awards-app.files.edition.editionData.label
+        fields:
+          - name: state
+            label: caar-awards-app.files.edition.editionData.state.label
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+            required: true
+            options:
+              - name: open
+                value: open
+                label: caar-awards-app.files.edition.editionData.state.open.label
+                selected: true
+              - name: progress
+                value: progress
+                label: caar-awards-app.files.edition.editionData.state.progress.label
+              - name: closed
+                value: closed
+                label: caar-awards-app.files.edition.editionData.state.closed.label
+          - name: name
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.edition.editionData.name.label
+            i18n: true
+      - name: tabAwardHome
+        label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.label
+        fields:
+          - name: announcementButtonLink
+            class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
+            label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.announcementButtonLink.label
+            required: true
+            layout: vertical
+            options:      
+              - name: internalLink      
+                label: caar-templating-module.common.field.text.internal.label
+                selected: true      
+                value: internalLink      
+              - name: externalLink      
+                label: caar-templating-module.common.field.text.external.label
+                value: externalLink      
+            fields:      
+              - name: internalLink      
+                label: caar-templating-module.common.field.text.internalLink.label      
+                class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                targetWorkspace: dam      
+                appName: assets      
+                identifierToPathConverter:      
+                  class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                          
+              - name: externalLink      
+                label: caar-templating-module.common.field.text.externalLink.label
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          - name: announcementButtonText
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.announcementButtonText.label
+            i18n: true
+          - name: enrollmentButtonLink  
+            label: caar-templating-module.common.field.text.externalLink.label
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          - name: enrollmentButtonText
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.enrollmentButtonText.label
+            i18n: true
+  actions:
+    - name: commit
+    - name: cancel
+actions:
+  commit:
+    class: es.arquia.magnolia.ui.form.action.SaveEditionFormActionDefinition
+  cancel:
+    class: info.magnolia.ui.form.action.CancelFormActionDefinition

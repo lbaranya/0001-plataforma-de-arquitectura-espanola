@@ -1,11 +1,16 @@
 form:      
   tabs:      
     - name: tabLogos    
-      label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logo.label      
-      fields:      
-        - name: logoElements      
+      label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logo.label
+      fields:
+        - name: columnNameTab
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.columnNameTab.label
+        - name: logoElements
           label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.label      
-          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          description: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.description.label
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer      
           field:      
             name: compositeField      
@@ -15,12 +20,12 @@ form:
             fields:      
               - name: separator1      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                value: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.value
-                label: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.label
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: separator2      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                value: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.value
-                label: caar-templating-module.components.header-component-properties.tabMain.elements.compositeField.separator1.label
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                 label: caar-templating-module.common.field.text.link.label
@@ -52,29 +57,14 @@ form:
                   class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
                 contentPreviewDefinition:      
                   contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent      
-                label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.image.label      
-                description: Subir un fichero de imagen.     
-              - name: altImage      
-                label: Alt de la imagen      
-                class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-                i18n: true     
+                label: caar-templating-module.templates.components.dialog.footer-component.tabLogos.logoElements.image.label
     - name: tabEnlaces1    
-      label: Enlaces bloque 1    
-      fields:      
-        - name: cookiesLink      
-          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.cookiesLink.label      
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-          targetWorkspace: website      
-          appName: pages      
-          identifierToPathConverter:      
-            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter      
-        - name: legalLink      
-          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.legalLink.label    
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-          targetWorkspace: website      
-          appName: pages      
-          identifierToPathConverter:      
-            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter      
+      label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.label   
+      fields:
+        - name: columnNameTab1
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.columnNameTab1.label
         - name: linkElements1      
           label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.listElements1.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
@@ -84,13 +74,15 @@ form:
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
             layout: vertical 
-            fields:      
+            fields:
               - name: separator3      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: separator4      
-                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition      
-                label: Logo      
+                class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                label: caar-templating-module.components.separator.label
+                value: caar-templating-module.components.separator.value
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                 label: caar-templating-module.common.field.text.link.label
@@ -118,8 +110,12 @@ form:
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
                 i18n: true      
     - name: tabEnlaces2    
-      label: Enlaces bloque 2    
-      fields:      
+      label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces2.label   
+      fields:
+        - name: columnNameTab2
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces2.columnNameTab2.label 
         - name: linkElements2      
           label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces1.listElements2.label      
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
@@ -129,12 +125,15 @@ form:
             class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition      
             transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer      
             layout: vertical 
-            fields:      
+            fields:
               - name: separator5      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-                
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: separator6      
                 class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                value: caar-templating-module.components.separator.value
+                label: caar-templating-module.components.separator.label
               - name: link      
                 class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                 label: caar-templating-module.common.field.text.link.label      
@@ -161,9 +160,34 @@ form:
                 label: caar-templating-module.common.field.text.linkText.label      
                 class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
                 i18n: true
+    - name: tabEnlaces3
+      label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.label   
+      fields:
+        - name: columnNameTab3
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.columnNameTab3.label
+        - name: cookiesLink      
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.cookiesLink.label      
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: website      
+          appName: pages      
+          identifierToPathConverter:      
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter      
+        - name: legalLink      
+          label: caar-templating-module.templates.components.dialog.footer-component.tabEnlaces3.legalLink.label    
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: website      
+          appName: pages      
+          identifierToPathConverter:      
+            class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
     - name: tabRRSS
       label: caar-templating-module.templates.components.dialog.footer-component.tabRRSS.label
       fields:
+        - name: columnNameTab4
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          i18n: true
+          label: caar-templating-module.templates.components.dialog.footer-component.tabRRSS.columnNameTab4.label
         - name: listElementsRRSS
           class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition      
           transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueSubnodeTransformer

@@ -1,4 +1,4 @@
 title: Informacion del despacho
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/detail-business-department-info-component.ftl
-modelClass: es.arquia.magnolia.components.architectureFiles.support.business.ArchitectureFilesSupportBusinessModel
+modelClass: es.arquia.magnolia.components.models.architectureFiles.support.business.ArchitectureFilesSupportBusinessModel

@@ -12,8 +12,8 @@
                 <div class="img-jurado">
                 [#assign imgItemKey = judge.judge_image!]
             	[#if imgItemKey??]
-            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320")]
-            		[#if imgMediaRendition??]
+            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
+            		[#if imgMediaRendition?has_content]
             			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
             			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
             			[#if imageAlt?has_content]

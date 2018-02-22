@@ -1,0 +1,12 @@
+catalog: translations
+command: requestTranslation
+asynchronous: true
+parallel: false
+notifyUser: false
+icon: icon-content-translation-app
+class: es.arquia.magnolia.contentApps.actions.RequestTranslationActionDefinition
+label: caar-awards-app.browser.actions.requestTranslation.label
+availability:
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

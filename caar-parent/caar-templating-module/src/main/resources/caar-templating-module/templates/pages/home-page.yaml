@@ -1,6 +1,6 @@
 renderType: site
 dialog: caar-templating-module:pages/home-page-properties
-title: Portada
+title: caar-templating-module.pages.home-page.dialog.title
 visible: true
 areas:
   top-banner:
@@ -16,9 +16,11 @@ areas:
   main:
     templateScript: /caar-templating-module/templates/pages/home-page.ftl
     availableComponents:
-      highlights-excellence-component:
-        id: caar-templating-module:components/highlights-excellence-component
-      highlights-news-component:
-        id: caar-templating-module:components/highlights-news-component
-      highlights-events-component:
-        id: caar-templating-module:components/highlights-events-component
+      news-diary-component:
+        id: caar-templating-module:components/news-diary-component
+      #highlights-excellence-component:
+        #id: caar-templating-module:components/highlights-excellence-component
+      #highlights-news-component:
+        #id: caar-templating-module:components/highlights-news-component
+      #highlights-events-component:
+        #id: caar-templating-module:components/highlights-events-component
