@@ -139,15 +139,6 @@ public class NewsNodeUtilImpl implements NewsNodeUtil{
 			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
 		}
 		
-		// This fragment of code is just for testing the different related elements appearance. Delete after.
-		Value[] relatedFilesValues = node.getProperty(files).getValues();
-		for (Value currentValue : relatedFilesValues) {
-			
-			Node tmpNode = MgnlContext.getJCRSession(architectureFilesWorkspace).getNodeByIdentifier(currentValue.getString());
-			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
-		}
-		// Until here
-		
 		return list;
 	}
 
