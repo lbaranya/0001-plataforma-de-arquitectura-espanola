@@ -68,7 +68,7 @@
                 [#assign imgItemKey = awards.getAwardLogo(awardsContentNode)!]
             	[#if imgItemKey??]
             		[#if imgItemKey?has_content]
-                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "181x181")]
+                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "181x181")!]
 	            		[#if imgMediaRendition?has_content]
 	            			[#assign imageAlternativeText = "logo de bienal"]
 	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
