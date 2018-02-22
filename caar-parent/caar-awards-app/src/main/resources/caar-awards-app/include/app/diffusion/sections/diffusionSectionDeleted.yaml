@@ -4,6 +4,7 @@ groups:
   - name: addActions 
     items:
       - name: addEventWrapper
+      - name: addLiveEvent
   - name: editActions
     items:
       - name: editDiffusion

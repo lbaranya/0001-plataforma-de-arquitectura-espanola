@@ -1,14 +1,25 @@
 package es.arquia.magnolia.utils;
 
+import static es.arquia.magnolia.constants.AwardConstants.eventTitle;
+import static es.arquia.magnolia.constants.AwardConstants.eventWrapperNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.eventWrapperTitle;
+import static es.arquia.magnolia.constants.AwardConstants.facebookHashtagsList;
+import static es.arquia.magnolia.constants.AwardConstants.filesList;
+import static es.arquia.magnolia.constants.AwardConstants.liveEventNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.standardEventNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.standardEventText;
+import static es.arquia.magnolia.constants.AwardConstants.streamingLink;
+import static es.arquia.magnolia.constants.AwardConstants.twitterHashtagsList;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.Property;
+import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
-import javax.jcr.Value;
-
-import static es.arquia.magnolia.constants.AwardConstants.*;
 
 import info.magnolia.cms.i18n.I18nContentSupport;
 
@@ -27,9 +38,9 @@ public class EventNodeUtilImpl implements EventNodeUtil {
 	private List<String> getPropertyAsListOfString(Node node, String property) {
 		List<String> listString = new ArrayList<>();
 		try {
-			Value[] tmpValues = i18nContentSupport.getProperty(node, property).getValues();
-			for(int i = 0; i < tmpValues.length; ++i) {
-				listString.add(tmpValues[i].getString());
+			List<Property> tmpNoSystemProperties = validProperties(node, property);
+			for(Iterator<Property> iterator = tmpNoSystemProperties.iterator(); iterator.hasNext();) {
+				listString.add(iterator.next().getString());
 			}
 		}catch(RepositoryException e) {
 			return listString;
@@ -101,5 +112,21 @@ public class EventNodeUtilImpl implements EventNodeUtil {
 		return getPropertyAsListOfString(node, twitterHashtagsList);
 	}
 	
+	private List<Property> validProperties(Node node, String field) throws RepositoryException {
+		List<Property> validProperties = new ArrayList<>();
+		for (PropertyIterator iterator = node.getNode(field).getProperties(); iterator.hasNext();)
+		{
+			Property prop = (Property) iterator.next();
+			try {
+				if (Integer.valueOf(prop.getName()) != null) {
+					validProperties.add(prop);
+				}
+			} catch (NumberFormatException e) {
+				
+			}
+		}
+		
+		return validProperties;
+	}
 	
 }

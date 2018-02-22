@@ -4,7 +4,6 @@ groups:
   - name: addActions
     items:
       - name: addStandardEvent
-      - name: addLiveEvent
   - name: editActions
     items:
       - name: editEventWrapper

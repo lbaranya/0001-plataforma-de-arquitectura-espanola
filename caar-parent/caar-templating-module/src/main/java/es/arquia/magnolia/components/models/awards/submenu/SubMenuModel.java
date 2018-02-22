@@ -68,6 +68,14 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	public List<Node> getEvents(Node node) throws RepositoryException{
 		return awardManager.getEvents(node);
 	}
+	
+	public String getAwardStandardEventMenuLink(String currentUrl, Node node) {
+		return utilsBreadcrumbAward.getAwardStandardEventMenuLink(currentUrl, node);
+	}
+	
+	public String getAwardLiveEventMenuLink(String currentUrl, Node node) {
+		return utilsBreadcrumbAward.getAwardLiveEventMenuLink(currentUrl, node);
+	}
 
 
 }

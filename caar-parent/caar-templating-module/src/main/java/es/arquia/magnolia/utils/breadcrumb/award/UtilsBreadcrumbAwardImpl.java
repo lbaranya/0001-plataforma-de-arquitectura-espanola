@@ -30,4 +30,14 @@ public class UtilsBreadcrumbAwardImpl implements UtilsBreadcrumbAward{
 		}
 	}
 
+	@Override
+	public String getAwardStandardEventMenuLink(String currentUrl, Node node) {
+		return currentUrl.replace(URIRepositoryAward, URIPrefixAwardStandardEvent);
+	}
+
+	@Override
+	public String getAwardLiveEventMenuLink(String currentUrl, Node node) {
+		return currentUrl.replace(URIRepositoryAward, URIPrefixAwardLiveEvent);
+	}
+
 }

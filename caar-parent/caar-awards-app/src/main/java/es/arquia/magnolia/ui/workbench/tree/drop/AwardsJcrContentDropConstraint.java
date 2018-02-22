@@ -100,8 +100,8 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 				if(sourceNode.isNodeType(programNodeType) || sourceNode.isNodeType(diffusionNodeType) || sourceNode.isNodeType(announcementNodeType)) {
 					return targetNode.isNodeType(programNodeType) || targetNode.isNodeType(diffusionNodeType) || targetNode.isNodeType(announcementNodeType);
 				}else {
-					if(sourceNode.isNodeType(standardEventNodeType) || sourceNode.isNodeType(liveEventNodeType)) {
-						return targetNode.isNodeType(standardEventNodeType) || targetNode.isNodeType(liveEventNodeType);
+					if(sourceNode.isNodeType(standardEventNodeType)) {
+						return targetNode.isNodeType(standardEventNodeType);
 					}else {
 						return false;
 					}
@@ -124,7 +124,7 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 				ret = sourceNode.isNodeType(programNodeType) || sourceNode.isNodeType(announcementNodeType) || sourceNode.isNodeType(diffusionNodeType);
 			}else {
 				if(!ret && (targetNode.isNodeType(programNodeType) || targetNode.isNodeType(diffusionNodeType))) {
-					ret = sourceNode.isNodeType(eventWrapperNodeType);
+					ret = sourceNode.isNodeType(eventWrapperNodeType) || sourceNode.isNodeType(liveEventNodeType);
 				}
 			}
 		}

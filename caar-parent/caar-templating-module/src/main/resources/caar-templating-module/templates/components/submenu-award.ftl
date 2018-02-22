@@ -40,11 +40,16 @@
                             </a>
                             	[#if cmsfn.children(childItem)?has_content]
                             		<ul class="menu-third">
-                            		[#list model.getEvents(childItem) as thirdLevelItem]
+                            		[#list cmsfn.children(childItem) as thirdLevelItem]
                             			<li class="menu-third-item">
                             				[#assign currentUrlThirdLevel = cmsfn.link(thirdLevelItem)]
                         					[#assign href = model.getSecondLevelMenuLink(currentUrlThirdLevel, thirdLevelItem)!"#"]
-                            				<a href="${href}">
+                        					[#if thirdLevelItem.isNodeType("mgnl:event-wrapper")]
+                        						[#assign hrefModified = model.getAwardStandardEventMenuLink(href, thirdLevelElement)!"#"]
+                        					[#else]
+                        						[#assign hrefModified = model.getAwardLiveEventMenuLink(href, thirdLevelElement)!"#"]
+                        					[/#if]
+                            				<a href="${hrefModified!"#"}">
                             					<span>${event.getTitle(thirdLevelItem)}</span>
                             				</a>
                             			</li>
@@ -59,11 +64,16 @@
                             </a>
                             [#if cmsfn.children(childItem)?has_content]
                             		<ul class="menu-third">
-                            		[#list model.getEvents(childItem) as thirdLevelItem]
+                            		[#list cmsfn.children(childItem) as thirdLevelItem]
                             			<li class="menu-third-item">
                             				[#assign currentUrlThirdLevel = cmsfn.link(thirdLevelItem)]
                         					[#assign href = model.getSecondLevelMenuLink(currentUrlThirdLevel, thirdLevelItem)!"#"]
-                            				<a href="${href}">
+                        					[#if thirdLevelItem.isNodeType("mgnl:event-wrapper")]
+                        						[#assign hrefModified = model.getAwardStandardEventMenuLink(href, thirdLevelElement)!"#"]
+                        					[#else]
+                        						[#assign hrefModified = model.getAwardLiveEventMenuLink(href, thirdLevelElement)!"#"]
+                        					[/#if]
+                            				<a href="${hrefModified!"#"}">
                             					<span>${event.getTitle(thirdLevelItem)}</span>
                             				</a>
                             			</li>
