@@ -59,9 +59,11 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.continuous.data.displayText.label
           - name: m21_247$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.continuous.data.previousTitle.label
           - name: m21_247$b
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.continuous.data.restTitle.label 
           - name: m21_247$f
@@ -132,12 +134,15 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.continuous.notes.documentLanguage.label
           - name: m21_1_500$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.continuous.notes.differentTitles.label
           - name: m21_2_500$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.continuous.notes.responsibilityMentionsNotes.label
           - name: m21_3_500$a
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.continuous.notes.editionHistory.label
           - name: m21_530$a

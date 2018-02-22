@@ -169,7 +169,7 @@ editor:
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.electronic.notes.electronicAccessLocation.label
-          - name: m21_7856$u
+          - name: m21_856$u
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.electronic.notes.uri.label           

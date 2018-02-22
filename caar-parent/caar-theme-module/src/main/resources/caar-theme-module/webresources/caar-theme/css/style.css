@@ -2608,17 +2608,21 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	font-family: "National-Book", "Helvetica", "sans-serif";
 }
 
+.cmp-arquitectos-realacionados .arquitecto{
+	height:530px;
+}
+
 .cmp-arquitectos-realacionados .arquitecto h4 {
 	font-family: "National-BookItalic", "Helvetica", "sans-serif";
 	font-size: 15px;
-	height: 30px;
+	margin-bottom: 1px;
 }
 
 .cmp-arquitectos-realacionados .arquitecto .container-img {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-	height: 445px;
+	height: 502px;
 }
 
 .cmp-arquitectos-realacionados .arquitecto .container-img img {
@@ -2648,7 +2652,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	width: 100%;
 	position: absolute;
 	top: 0;
-	height: 445px;
+	height: 502px;
 	color: #fff;
 	background-color: rgba(208, 2, 27, 0.7);
 }
@@ -3305,8 +3309,9 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 /*National Font*/
 .evento-contenedor {
 	margin-bottom: 28px;
-	margin-top: 31px;
+	margin-top: 9px;
 	padding-left: 31px;
+	height: 525px;
 }
 
 .evento-contenedor a.evento-link {

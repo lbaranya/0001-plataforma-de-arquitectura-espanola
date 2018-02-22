@@ -44,3 +44,5 @@ areas:
             id: caar-templating-module:components/related-elements-component
           distributor-sections-rich-text-component:
             id: caar-templating-module:components/distributor-sections-rich-text-component
+          award-distributor-component:
+            id: caar-templating-module:components/award-distributor-component
