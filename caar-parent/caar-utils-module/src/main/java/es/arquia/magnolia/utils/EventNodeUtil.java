@@ -15,7 +15,7 @@ public interface EventNodeUtil {
 	
 	public String getStreamingLink(Node node);
 	
-	public List<String> getFacebookHashtags(Node node);
+	public String getFacebookUser(Node node);
 	
 	public List<String> getTwitterHashtags(Node node);
 }

@@ -62,7 +62,7 @@ public interface AwardConstants {
 	
 	String streamingLink = "streamingLink";
 	
-	String facebookHashtagsList = "facebookHashtagsList";
+	String facebookUser = "facebookUser";
 	
 	String twitterHashtagsList = "twitterHashtagsList";
 	

@@ -25,14 +25,9 @@ editor:
           - name: streamingLink
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.live-event.liveEventData.streamingLink.label
-          - name: facebookHashtagsList
-            label: caar-awards-app.files.live-event.liveEventData.facebookHashtagsList.label
-            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
-            field:
-              name: facebookHashtags
-              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-              label: caar-awards-app.files.live-event.liveEventData.facebookHashtagsList.facebookHashtags.label
+          - name: facebookUser
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.live-event.liveEventData.facebookUser.label
           - name: twitterHashtagsList
             label: caar-awards-app.files.live-event.liveEventData.twitterHashtagsList.label
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
