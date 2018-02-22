@@ -2988,5 +2988,953 @@
       </sv:property>
     </sv:node>
   </sv:node>
+  <sv:node sv:name="formatThree-dimensionalIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-three-dimensional</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-three-dimensional</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_022$a" sv:type="String">
+        <sv:value>m21_022$a_dataIssn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_1_500$a" sv:type="String">
+        <sv:value>m21_1_500$a_notesNature_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_2_500$a" sv:type="String">
+        <sv:value>m21_2_500$a_notesEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_3_500$a" sv:type="String">
+        <sv:value>m21_3_500$a_notesPhisical-data_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a" sv:type="String">
+        <sv:value>m21_590$a_notesLocalNote_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a" sv:type="String">
+        <sv:value>m21_700$a_notesSecondAuthorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e" sv:type="String">
+        <sv:value>m21_700$e_notesSecondAuthorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondAuthorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatThree-dimensionalIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-three-dimensional</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-three-dimensional_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_022$a" sv:type="String">
+        <sv:value>m21_022$a_dataIssn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_1_500$a_en" sv:type="String">
+        <sv:value>m21_1_500$a_notesNature_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a_en" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b_en" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c_en" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a_en" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b_en" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i_en" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a_en" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b_en" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_2_500$a_en" sv:type="String">
+        <sv:value>m21_2_500$a_notesEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a_en" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b_en" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e_en" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_3_500$a_en" sv:type="String">
+        <sv:value>m21_3_500$a_notesPhisical-data_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a_en" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a_en" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a_en" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a_en" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a_en" sv:type="String">
+        <sv:value>m21_590$a_notesLocalNote_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a_en" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a_en" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a" sv:type="String">
+        <sv:value>m21_700$a_notesSecondAuthorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e_en" sv:type="String">
+        <sv:value>m21_700$e_notesSecondAuthorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondAuthorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatContinuousIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-continuous</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-continuous</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_022$a" sv:type="String">
+        <sv:value>m21_022$a_dataIssn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_1_500$a" sv:type="String">
+        <sv:value>m21_1_500$a_notesDifferentTitles_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_247$a" sv:type="String">
+        <sv:value>m21_247$a_dataPreviousTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_247$b" sv:type="String">
+        <sv:value>m21_247$b_dataRestTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_247$f" sv:type="String">
+        <sv:value>m21_247$f_dataVolumeDateNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_247$x" sv:type="String">
+        <sv:value>m21_247$x_dataIssn2_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_2_500$a" sv:type="String">
+        <sv:value>m21_2_500$a_notesResponsibilityMentionsNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_310$a" sv:type="String">
+        <sv:value>m21_310$a_dataPeriodicity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_362$a" sv:type="String">
+        <sv:value>m21_362$a_dataNumbersAvailable</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_3_500$a" sv:type="String">
+        <sv:value>m21_3_500$a_notesEditionHistory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_4_500$a" sv:type="String">
+        <sv:value>m21_4_500$a_notesDescribedDocument_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_525$a" sv:type="String">
+        <sv:value>m21_525$a_notesSupplementNote_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a" sv:type="String">
+        <sv:value>m21_530$a_notesOtherFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a" sv:type="String">
+        <sv:value>m21_590$a_notesLocal_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a" sv:type="String">
+        <sv:value>m21_700$a_notesSecondaryActorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e" sv:type="String">
+        <sv:value>m21_700$e_notesSecondaryActorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondaryActorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatContinuousIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-continuous</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-continuous_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_022$a" sv:type="String">
+        <sv:value>m21_022$a_dataIssn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_1_500$a_en" sv:type="String">
+        <sv:value>m21_1_500$a_notesDifferentTitles_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a_en" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b_en" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c_en" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$a_en" sv:type="String">
+        <sv:value>m21_246$a_dataTitleVariant_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$b_en" sv:type="String">
+        <sv:value>m21_246$b_dataContinueTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_246$i_en" sv:type="String">
+        <sv:value>m21_246$i_dataDisplayText_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_247$a_en" sv:type="String">
+        <sv:value>m21_247$a_dataPreviousTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_247$b_en" sv:type="String">
+        <sv:value>m21_247$b_dataRestTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_247$f" sv:type="String">
+        <sv:value>m21_247$f_dataVolumeDateNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_247$x" sv:type="String">
+        <sv:value>m21_247$x_dataIssn2_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a_en" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_2_500$a_en" sv:type="String">
+        <sv:value>m21_2_500$a_notesResponsibilityMentionsNotes_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a_en" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b_en" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c_en" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_310$a" sv:type="String">
+        <sv:value>m21_310$a_dataPeriodicity_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_362$a" sv:type="String">
+        <sv:value>m21_362$a_dataNumbersAvailable</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_3_500$a_en" sv:type="String">
+        <sv:value>m21_3_500$a_notesEditionHistory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a_en" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_4_500$a" sv:type="String">
+        <sv:value>m21_4_500$a_notesDescribedDocument_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a_en" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a_en" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_525$a" sv:type="String">
+        <sv:value>m21_525$a_notesSupplementNote_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a_en" sv:type="String">
+        <sv:value>m21_530$a_notesOtherFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a_en" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a_en" sv:type="String">
+        <sv:value>m21_590$a_notesLocal_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a_en" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a_en" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a_en" sv:type="String">
+        <sv:value>m21_700$a_notesSecondaryActorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e_en" sv:type="String">
+        <sv:value>m21_700$e_notesSecondaryActorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondaryActorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatElectronicIndexer">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-electronic</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-electronic</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_022$a" sv:type="String">
+        <sv:value>m21_022$a_dataIssn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_1_500$a" sv:type="String">
+        <sv:value>m21_1_500$a_notesNature_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_2_500$a" sv:type="String">
+        <sv:value>m21_2_500$a_notesTitleVariants_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_3_500$a" sv:type="String">
+        <sv:value>m21_3_500$a_notesEditionHistory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_4_500$a" sv:type="String">
+        <sv:value>m21_4_500$a_notesDateConsultation_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a" sv:type="String">
+        <sv:value>m21_530$a_notesOtherFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_538$a" sv:type="String">
+        <sv:value>m21_538$a_notesSpecifications_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$a" sv:type="String">
+        <sv:value>m21_561$a_notesHistory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a" sv:type="String">
+        <sv:value>m21_590$a_notesLocal_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a" sv:type="String">
+        <sv:value>m21_700$a_notesSecondaryActorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e" sv:type="String">
+        <sv:value>m21_700$e_notesSecondaryActorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a" sv:type="String">
+        <sv:value>m21_710$a_notesSecondaryActorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_856" sv:type="String">
+        <sv:value>m21_856_notesElectronicAccessLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_856$u" sv:type="String">
+        <sv:value>m21_856$u_notesUri_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
+  <sv:node sv:name="formatElectronicIndexer_en">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+      <sv:value>mgnl:contentNode</sv:value>
+    </sv:property>
+    <sv:property sv:name="enabled" sv:type="String">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="indexed" sv:type="Boolean">
+      <sv:value>true</sv:value>
+    </sv:property>
+    <sv:property sv:name="nodeType" sv:type="String">
+      <sv:value>mgnl:format-electronic</sv:value>
+    </sv:property>
+    <sv:property sv:name="pull" sv:type="String">
+      <sv:value>false</sv:value>
+    </sv:property>
+    <sv:property sv:name="rootNode" sv:type="String">
+      <sv:value>/</sv:value>
+    </sv:property>
+    <sv:property sv:name="type" sv:type="String">
+      <sv:value>format-electronic_en</sv:value>
+    </sv:property>
+    <sv:property sv:name="workspace" sv:type="String">
+      <sv:value>architecture-files</sv:value>
+    </sv:property>
+    <sv:node sv:name="fieldMappings">
+      <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>mgnl:contentNode</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_001" sv:type="String">
+        <sv:value>m21_001_dataId_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_020$a" sv:type="String">
+        <sv:value>m21_020$a_dataIsbn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_022$a" sv:type="String">
+        <sv:value>m21_022$a_dataIssn_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_040$a" sv:type="String">
+        <sv:value>m21_040$a_dataDepositoryInstitution_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_080$a" sv:type="String">
+        <sv:value>m21_080$a_dataLocaleCode_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_1_500$a_en" sv:type="String">
+        <sv:value>m21_1_500$a_notesNature_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$a_en" sv:type="String">
+        <sv:value>m21_245$a_dataTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$b_en" sv:type="String">
+        <sv:value>m21_245$b_dataSubtitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_245$c_en" sv:type="String">
+        <sv:value>m21_245$c_dataMentions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$a_en" sv:type="String">
+        <sv:value>m21_250$a_dataEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_250$b_en" sv:type="String">
+        <sv:value>m21_250$b_dataMentionsEdition_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$a" sv:type="String">
+        <sv:value>m21_260$a_dataPublicationPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$b" sv:type="String">
+        <sv:value>m21_260$b_dataEditor_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$c" sv:type="String">
+        <sv:value>m21_260$c_dataYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$d" sv:type="String">
+        <sv:value>m21_260$d_dataPrintingYear_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$e" sv:type="String">
+        <sv:value>m21_260$e_dataPrintingPlace_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_260$f" sv:type="String">
+        <sv:value>m21_260$f_dataPrinter_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_2_500$a_en" sv:type="String">
+        <sv:value>m21_2_500$a_notesTitleVariants_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$a_en" sv:type="String">
+        <sv:value>m21_300$a_dataDocumentExtension_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$b_en" sv:type="String">
+        <sv:value>m21_300$b_dataOtherPhysicalDetails_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$c_en" sv:type="String">
+        <sv:value>m21_300$c_dataDimensions_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_300$e" sv:type="String">
+        <sv:value>m21_300$e_dataAccompanyingMaterial_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_3_500$a_en" sv:type="String">
+        <sv:value>m21_3_500$a_notesEditionHistory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$a_en" sv:type="String">
+        <sv:value>m21_440$a_dataCollectionTitle_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_440$v" sv:type="String">
+        <sv:value>m21_440$v_dataCollectionNumber_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_4_500$a" sv:type="String">
+        <sv:value>m21_4_500$a_notesDateConsultation_dt</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_502$a_en" sv:type="String">
+        <sv:value>m21_502$a_notesThesis_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_505$a_en" sv:type="String">
+        <sv:value>m21_505$a_notesContent_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_520$a_en" sv:type="String">
+        <sv:value>m21_520$a_notesSummary_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_530$a_en" sv:type="String">
+        <sv:value>m21_530$a_notesOtherFormats_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_538$a_en" sv:type="String">
+        <sv:value>m21_538$a_notesSpecifications_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_546$a_en" sv:type="String">
+        <sv:value>m21_546$a_notesDocumentLanguage_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_561$a_en" sv:type="String">
+        <sv:value>m21_561$a_notesHistory_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_590$a_en" sv:type="String">
+        <sv:value>m21_590$a_notesLocal_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_650$a_en" sv:type="String">
+        <sv:value>m21_650$a_notesTheme_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_651$a_en" sv:type="String">
+        <sv:value>m21_651$a_notesGeoThemeName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$a_en" sv:type="String">
+        <sv:value>m21_700$a_notesSecondaryActorName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_700$e_en" sv:type="String">
+        <sv:value>m21_700$e_notesSecondaryActorTypology_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_710$a_en" sv:type="String">
+        <sv:value>m21_710$a_notesSecondaryActorEntityName_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_856$u_en" sv:type="String">
+        <sv:value>m21_856$u_notesUri_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="m21_856_en" sv:type="String">
+        <sv:value>m21_856_notesElectronicAccessLocation_s</sv:value>
+      </sv:property>
+      <sv:property sv:name="mgnl:lastModified0" sv:type="String">
+        <sv:value>date</sv:value>
+      </sv:property>
+    </sv:node>
+  </sv:node>
 </sv:node>
 
