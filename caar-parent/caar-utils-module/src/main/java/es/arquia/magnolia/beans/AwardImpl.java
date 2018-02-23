@@ -3,6 +3,7 @@ package es.arquia.magnolia.beans;
 import static es.arquia.magnolia.constants.AwardConstants.awardAboutText;
 import static es.arquia.magnolia.constants.AwardConstants.awardDescription;
 import static es.arquia.magnolia.constants.AwardConstants.awardExternalURL;
+import static es.arquia.magnolia.constants.AwardConstants.awardExternalURLText;
 import static es.arquia.magnolia.constants.AwardConstants.awardHeaderBackground;
 import static es.arquia.magnolia.constants.AwardConstants.awardLogo;
 import static es.arquia.magnolia.constants.AwardConstants.awardName;
@@ -79,6 +80,14 @@ public class AwardImpl implements Award{
 	public String getAwardExternalURL(Node node) throws RepositoryException{
 		try {
 			return node.getProperty(awardExternalURL).getString();
+		}catch(RepositoryException e) {
+			return "";
+		}
+	}
+	
+	public String getAwardExternalURLText(Node node) throws RepositoryException{
+		try {
+			return node.getProperty(awardExternalURLText).getString();
 		}catch(RepositoryException e) {
 			return "";
 		}
