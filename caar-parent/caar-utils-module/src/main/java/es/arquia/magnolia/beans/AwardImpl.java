@@ -87,7 +87,7 @@ public class AwardImpl implements Award{
 	
 	public String getAwardExternalURLText(Node node) throws RepositoryException{
 		try {
-			return node.getProperty(awardExternalURLText).getString();
+			return i18nContentSupport.getProperty(node,awardExternalURLText).getString();
 		}catch(RepositoryException e) {
 			return "";
 		}

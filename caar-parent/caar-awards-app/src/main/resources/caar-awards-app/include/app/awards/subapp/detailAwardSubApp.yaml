@@ -55,6 +55,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.awardData.awardExternalURL.label
           - name: awardExternalURLText
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.awardData.awardExternalURLText.label
           - name: awardHeaderBackground
