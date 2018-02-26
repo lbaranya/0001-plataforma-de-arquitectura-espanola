@@ -64,7 +64,7 @@ public interface AwardConstants {
 	
 	String facebookUser = "facebookUser";
 	
-	String twitterHashtagsList = "twitterHashtagsList";
+	String twitterUser = "twitterUser";
 	
 	
 }

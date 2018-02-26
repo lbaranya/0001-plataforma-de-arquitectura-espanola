@@ -22,7 +22,7 @@ import javax.jcr.ValueFormatException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitectImpl;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
@@ -49,11 +49,11 @@ public class ArchitectureFilesSupportBusinessModel <RD extends ConfiguredTemplat
 	private static String annexes = "FS4.2.2";
 	private static String dossier = "FS4.2.3";
 	
-	private ArchitectureFilesSupportArchitect architect;
+	private ArchitectureFilesSupportArchitectImpl architect;
 	
 	public ArchitectureFilesSupportBusinessModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent) throws PathNotFoundException, RepositoryException {
         super(content, definition, parent);
-        architect = new ArchitectureFilesSupportArchitect();
+        architect = new ArchitectureFilesSupportArchitectImpl();
     }
 	
 	public String getBusinessType(Node node) throws ValueFormatException, PathNotFoundException, RepositoryException {
@@ -133,7 +133,7 @@ public class ArchitectureFilesSupportBusinessModel <RD extends ConfiguredTemplat
         return false;
 	}
 	
-	public ArchitectureFilesSupportArchitect getArchitect() {
+	public ArchitectureFilesSupportArchitectImpl getArchitect() {
 		return architect;
 	}
 	

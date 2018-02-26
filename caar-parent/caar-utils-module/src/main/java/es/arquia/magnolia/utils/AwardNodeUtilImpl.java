@@ -8,6 +8,7 @@ import static es.arquia.magnolia.constants.AwardConstants.awardHeaderBackground;
 import static es.arquia.magnolia.constants.AwardConstants.awardLogo;
 import static es.arquia.magnolia.constants.AwardConstants.awardName;
 import static es.arquia.magnolia.constants.AwardConstants.categoriesList;
+import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionAnnouncementButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionEnrollmentButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
@@ -159,5 +160,18 @@ public class AwardNodeUtilImpl implements AwardNodeUtil{
 		}
 		
 		return list;
+	}
+
+	@Override
+	public String getEditionState(Node node) throws RepositoryException {
+		if(node.isNodeType(editionNodeType)) {
+			try {
+				return i18nContentSupport.getProperty(node, editionState).getString();
+			}catch(RepositoryException e) {
+				return "";
+			}
+		}else {
+			return "";
+		}
 	}
 }

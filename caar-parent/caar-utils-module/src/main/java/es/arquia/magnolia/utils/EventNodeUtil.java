@@ -17,5 +17,5 @@ public interface EventNodeUtil {
 	
 	public String getFacebookUser(Node node);
 	
-	public List<String> getTwitterHashtags(Node node);
+	public String getTwitterUser(Node node);
 }

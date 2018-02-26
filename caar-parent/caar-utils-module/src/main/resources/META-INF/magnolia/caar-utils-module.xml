@@ -14,6 +14,10 @@
 			<type>es.arquia.magnolia.messages.magnoliaUI.MessagesUI</type>
 			<implementation>es.arquia.magnolia.messages.magnoliaUI.MgnlMessagesUI</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitectImpl</implementation>
+		</component>
 	</components>
 
 	<dependencies>

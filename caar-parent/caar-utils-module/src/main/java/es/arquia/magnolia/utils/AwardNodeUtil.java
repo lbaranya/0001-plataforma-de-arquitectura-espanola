@@ -25,6 +25,8 @@ public interface AwardNodeUtil {
 	
 	public List<String> getAwardCategoriesList(Node node) throws RepositoryException;
 	
+	public String getEditionState(Node node) throws RepositoryException;
+	
 	public String getEditionAnnouncementButtonText(Node node) throws RepositoryException;
 	
 	public String getEditionEnrollmentButtonText(Node node) throws RepositoryException;

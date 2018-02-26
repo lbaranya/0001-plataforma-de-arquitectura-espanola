@@ -2,7 +2,7 @@ subAppId: detailAnnouncementSubApp
 icon: icon-edit-wo
 nodeType: mgnl:announcement
 appName: caar-awards-app
-class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+class: es.arquia.magnolia.ui.contentapp.detail.action.EditionLimitEditItemActionDefinition
 label: caar-awards-app.subapp.browser.actions.editAnnouncement.label
 availability:
   nodeTypes:

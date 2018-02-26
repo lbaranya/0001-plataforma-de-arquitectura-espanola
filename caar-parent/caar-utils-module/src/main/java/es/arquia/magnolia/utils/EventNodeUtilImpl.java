@@ -8,7 +8,7 @@ import static es.arquia.magnolia.constants.AwardConstants.liveEventNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.standardEventNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.standardEventText;
 import static es.arquia.magnolia.constants.AwardConstants.streamingLink;
-import static es.arquia.magnolia.constants.AwardConstants.twitterHashtagsList;
+import static es.arquia.magnolia.constants.AwardConstants.twitterUser;
 import static es.arquia.magnolia.constants.AwardConstants.facebookUser;
 
 import java.util.ArrayList;
@@ -108,8 +108,8 @@ public class EventNodeUtilImpl implements EventNodeUtil {
 		return fromLiveEventAsString(node, facebookUser);
 	}
 	
-	public List<String> getTwitterHashtags(Node node) {
-		return getPropertyAsListOfString(node, twitterHashtagsList);
+	public String getTwitterUser(Node node) {
+		return fromLiveEventAsString(node, twitterUser);
 	}
 	
 	private List<Property> validProperties(Node node, String field) throws RepositoryException {

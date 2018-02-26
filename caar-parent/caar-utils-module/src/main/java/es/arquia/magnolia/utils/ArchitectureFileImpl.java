@@ -12,7 +12,7 @@ import javax.jcr.RepositoryException;
 public class ArchitectureFileImpl implements ArchitectureFile {
 
 	@Inject
-	private ArchitectureFilesSupportArchitect architectureFilesSupportArchitect;
+	private ArchitectureFilesSupportArchitectImpl architectureFilesSupportArchitect;
 	
 	@Override
 	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException {

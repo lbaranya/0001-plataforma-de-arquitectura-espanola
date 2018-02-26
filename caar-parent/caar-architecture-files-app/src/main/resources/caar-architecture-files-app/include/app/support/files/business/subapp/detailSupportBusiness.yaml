@@ -119,7 +119,7 @@ editor:
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
           - name: FS4_2_3
-            class: info.magnolia.ui.form.field.definition.
+            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             label: caar-architecture-files-app.files.support.business.additionalInfoData.dossier.label
             i18n: true

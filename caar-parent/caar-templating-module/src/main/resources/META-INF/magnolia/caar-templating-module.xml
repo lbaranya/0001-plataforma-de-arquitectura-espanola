@@ -34,6 +34,10 @@
 			<type>es.arquia.magnolia.templates.bean.ContextNewsNav</type>
 			<implementation>es.arquia.magnolia.templates.bean.ContextNewsNavImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.RelatedElementsManager</type>
+			<implementation>es.arquia.magnolia.manager.RelatedElementsManagerImpl</implementation>
+		</component>
 	</components>
 
   <dependencies>
