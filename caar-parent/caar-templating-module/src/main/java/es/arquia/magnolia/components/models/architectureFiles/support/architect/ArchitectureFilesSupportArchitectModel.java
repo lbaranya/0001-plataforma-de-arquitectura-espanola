@@ -3,6 +3,7 @@ package es.arquia.magnolia.components.models.architectureFiles.support.architect
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 
+import javax.inject.Inject;
 import javax.jcr.LoginException;
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
@@ -11,7 +12,7 @@ import javax.jcr.RepositoryException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitectImpl;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
@@ -22,14 +23,15 @@ public class ArchitectureFilesSupportArchitectModel <RD extends ConfiguredTempla
 	
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportArchitectModel.class);
 	
-	private ArchitectureFilesSupportArchitectImpl architect;
+	private ArchitectureFilesSupportArchitect architect;
 	
-	public ArchitectureFilesSupportArchitectModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent) throws PathNotFoundException, RepositoryException {
+	@Inject
+	public ArchitectureFilesSupportArchitectModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final ArchitectureFilesSupportArchitect architect) throws PathNotFoundException, RepositoryException {
         super(content, definition, parent);
-        architect = new ArchitectureFilesSupportArchitectImpl();
+        this.architect = architect;
     }
 	
-	public ArchitectureFilesSupportArchitectImpl getArchitect() {
+	public ArchitectureFilesSupportArchitect getArchitect() {
 		return architect;
 	}
 	

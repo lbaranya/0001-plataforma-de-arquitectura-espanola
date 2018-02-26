@@ -2,9 +2,11 @@ package es.arquia.magnolia.manager;
 
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
-import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationStartDate;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.important;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationStartDate;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -16,6 +18,8 @@ import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportEventImpl;
+import es.arquia.magnolia.utils.RelatedElement;
 
 public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFilesSupportEventManager {
 	
@@ -24,9 +28,13 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 	@Inject
 	private ArchitectureFilesSupportEvent architectureFilesSupportEvent;
 	
+	private RelatedElementsManager relatedElementsManager;
+	
 	@Inject
-	public ArchitectureFilesSupportEventManagerImpl(final QueryUtils queryUtils) {
+	public ArchitectureFilesSupportEventManagerImpl(final QueryUtils queryUtils, final RelatedElementsManager relatedElementsManager, final ArchitectureFilesSupportEvent architectureFilesSupportEvent) {
         this.queryUtils = queryUtils;
+        this.relatedElementsManager = relatedElementsManager;
+        this.architectureFilesSupportEvent = architectureFilesSupportEvent;
     }
 	
 	@Override
@@ -40,6 +48,16 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 	@Override
 	public ArchitectureFilesSupportEvent getInstance() {
 		return architectureFilesSupportEvent;
+	}
+
+	@Override
+	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException{
+		List<RelatedElement> tmpList = new ArrayList<>();
+		Iterator<Node> iterator = relatedElements.iterator();
+		while(iterator.hasNext()) {
+			tmpList.add(relatedElementsManager.transformToRelatedElement(iterator.next()));
+		}
+		return tmpList;
 	}
 
 }

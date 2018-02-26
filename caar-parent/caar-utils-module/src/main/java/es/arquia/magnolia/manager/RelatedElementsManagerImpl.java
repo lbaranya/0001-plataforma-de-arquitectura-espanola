@@ -2,6 +2,7 @@ package es.arquia.magnolia.manager;
 
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportProjectNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
 import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
 
@@ -29,6 +30,9 @@ public class RelatedElementsManagerImpl implements RelatedElementsManager {
 		}
 		else if (node.isNodeType(architectureFilesSupportEventNodeType)) {
 			return relatedElementsTransformers.architectureFilesSupportEventTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesSupportProjectNodeType)){
+			return relatedElementsTransformers.architectureFilesSupportProjectTransformer(node);
 		}
 		else {
 			return null;

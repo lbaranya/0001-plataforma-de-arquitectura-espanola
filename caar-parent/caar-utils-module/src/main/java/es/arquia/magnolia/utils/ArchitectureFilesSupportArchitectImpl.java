@@ -87,9 +87,6 @@ public class ArchitectureFilesSupportArchitectImpl implements ArchitectureFilesS
 	
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportArchitectImpl.class);
 	
-	@Inject
-	private RelatedElementsManagerImpl relatedElementsManagerImpl;
-	
 	public ArchitectureFilesSupportArchitectImpl() {}
 
 	public String getName(Node node) throws RepositoryException {
@@ -613,17 +610,8 @@ public class ArchitectureFilesSupportArchitectImpl implements ArchitectureFilesS
 		}
 	}
 	
-	public List<RelatedElement> getRelatedElements(Node node)  throws RepositoryException {
-		
-		List<RelatedElement> list = new ArrayList<>();
-		Value[] relatedValues = node.getProperty(relatedFiles).getValues();
-		for (Value currentValue : relatedValues) {
-			
-			Node tmpNode = MgnlContext.getJCRSession(architectureFilesWorkspace).getNode(currentValue.getString());
-			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
-		}
-		
-		return list;
+	public List<Node> getRelatedElements(Node node) throws RepositoryException {
+		return null;
 	}
 	
 	public String getDepartmentWebSiteFieldName() {

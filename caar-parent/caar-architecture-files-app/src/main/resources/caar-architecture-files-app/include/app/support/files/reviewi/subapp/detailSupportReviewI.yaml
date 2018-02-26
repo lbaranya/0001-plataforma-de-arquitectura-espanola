@@ -131,8 +131,10 @@ editor:
                   label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
                   value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
                 - name: FS3_6
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewi.relatedThoughtData.relatedThought.label
+                  appName: caar-architecture-files-app
+                  targetWorkspace: architecture-files
       - name: mediaGalleryData
         label: caar-architecture-files-app.files.support.reviewi.mediaGalleryData.label
         fields:

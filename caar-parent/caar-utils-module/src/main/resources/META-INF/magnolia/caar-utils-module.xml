@@ -18,6 +18,18 @@
 			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect</type>
 			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitectImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportEvent</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportEventImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewIImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportProject</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportProjectImpl</implementation>
+		</component>
 	</components>
 
 	<dependencies>

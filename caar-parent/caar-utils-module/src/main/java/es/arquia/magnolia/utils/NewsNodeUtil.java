@@ -25,6 +25,6 @@ public interface NewsNodeUtil {
 
 	public String getMedium(Node node) throws RepositoryException;
 	
-	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException;
+	public List<Node> getRelatedElements(Node node) throws RepositoryException;
 	
 }

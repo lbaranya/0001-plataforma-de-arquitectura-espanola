@@ -22,9 +22,12 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportReviewIManagerImpl.class);
 	private QueryUtils queryUtils;
 	
+	private ArchitectureFilesSupportReviewI architectureFilesSupportReviewI;
+	
 	@Inject
-	public ArchitectureFilesSupportReviewIManagerImpl(final QueryUtils queryUtils) throws PathNotFoundException, RepositoryException {
+	public ArchitectureFilesSupportReviewIManagerImpl(final QueryUtils queryUtils, final ArchitectureFilesSupportReviewI architectureFilesSupportReviewI) throws PathNotFoundException, RepositoryException {
         this.queryUtils = queryUtils;
+        this.architectureFilesSupportReviewI = architectureFilesSupportReviewI;
     }
 	
 	@Override
@@ -37,7 +40,7 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 	
 	@Override
 	public ArchitectureFilesSupportReviewI getInstance() {
-		return new ArchitectureFilesSupportReviewI();
+		return this.architectureFilesSupportReviewI;
 	}
 
 }

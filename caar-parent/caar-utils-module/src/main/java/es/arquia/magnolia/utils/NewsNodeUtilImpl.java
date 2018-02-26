@@ -32,9 +32,6 @@ import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
 public class NewsNodeUtilImpl implements NewsNodeUtil{
-	
-	@Inject
-	private RelatedElementsManagerImpl relatedElementsManagerImpl;
 
 	private I18nContentSupport i18nContentSupport;
 	
@@ -118,28 +115,10 @@ public class NewsNodeUtilImpl implements NewsNodeUtil{
 			return "";
 		}
 	}
-	
-	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException {
-		
-		List<RelatedElement> ret = new LinkedList<>();
 
-		// TODO: crear metodos iguales por cada tipo de elemento que pueda asociarse a un premio
-		ret.addAll(this.getRelatedElementsFromNewsList(node));
-		
-		return ret;
-	}
-	
-	public List<RelatedElement> getRelatedElementsFromNewsList(Node node) throws RepositoryException {
-		
-		List<RelatedElement> list = new LinkedList<>();
-		Value[] relatedNewsValues = node.getProperty(relatedNews).getValues();
-		for (Value currentValue : relatedNewsValues) {
-			
-			Node tmpNode = MgnlContext.getJCRSession(newsWorkspace).getNodeByIdentifier(currentValue.getString());
-			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
-		}
-		
-		return list;
+	@Override
+	public List<Node> getRelatedElements(Node node) throws RepositoryException {
+		return null;
 	}
 
 }

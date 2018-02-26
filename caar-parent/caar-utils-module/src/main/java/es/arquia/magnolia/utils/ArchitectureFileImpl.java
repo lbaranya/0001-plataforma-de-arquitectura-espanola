@@ -11,31 +11,4 @@ import javax.jcr.RepositoryException;
 
 public class ArchitectureFileImpl implements ArchitectureFile {
 
-	@Inject
-	private ArchitectureFilesSupportArchitectImpl architectureFilesSupportArchitect;
-	
-	@Override
-	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException {
-
-		List<RelatedElement> ret = new LinkedList<>();
-
-		// TODO: crear metodos iguales por cada tipo de elemento que pueda asociarse a un premio
-		ret.addAll(this.getRelatedElementsFromFilesList(node));
-
-		return ret;
-	}
-	
-	public List<RelatedElement> getRelatedElementsFromFilesList(Node node) throws RepositoryException {
-		
-		List<RelatedElement> ret = new LinkedList<>();
-		
-		// TODO: agregar diferentes tipos de fichas conforme se vayan implementando sus vistas detalle
-		if (node.isNodeType(architectureFilesSupportArchitectNodeType)) {
-			
-			ret.addAll(this.architectureFilesSupportArchitect.getRelatedElements(node));
-		}
-		
-		return ret;
-	}
-
 }

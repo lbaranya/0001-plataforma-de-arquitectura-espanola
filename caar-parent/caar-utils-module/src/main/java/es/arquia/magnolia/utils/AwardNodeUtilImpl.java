@@ -36,8 +36,7 @@ import info.magnolia.context.MgnlContext;
 public class AwardNodeUtilImpl implements AwardNodeUtil{
 	
 	private I18nContentSupport i18nContentSupport;
-	@Inject
-	private RelatedElementsManagerImpl relatedElementsManagerImpl;
+
 	
 	@Inject
 	public AwardNodeUtilImpl(final I18nContentSupport i18nContentSupport) {
@@ -139,29 +138,7 @@ public class AwardNodeUtilImpl implements AwardNodeUtil{
 		}
 	}
 	
-	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException {
-		List<RelatedElement> ret = new LinkedList<>();
-
-		// TODO: crear metodos iguales por cada tipo de elemento que pueda asociarse a un premio
-		ret.addAll(this.getRelatedElementsFromNewsList(node));
-		
-		return ret;
-	}
 	
-	public List<RelatedElement> getRelatedElementsFromNewsList(Node node) throws RepositoryException {
-			
-		List<RelatedElement> list = new LinkedList<>();
-		
-		Value[] relatedNewsValues = node.getProperty(relatedNewsList).getValues();
-		for (Value currentValue : relatedNewsValues) {
-			
-			Node tmpNode = MgnlContext.getJCRSession(newsWorkspace).getNodeByIdentifier(currentValue.getString());
-			list.add(relatedElementsManagerImpl.transformToRelatedElement(tmpNode));
-		}
-		
-		return list;
-	}
-
 	@Override
 	public String getEditionState(Node node) throws RepositoryException {
 		if(node.isNodeType(editionNodeType)) {
@@ -173,5 +150,10 @@ public class AwardNodeUtilImpl implements AwardNodeUtil{
 		}else {
 			return "";
 		}
+	}
+
+	@Override
+	public List<Node> getRelatedElements(Node node) throws RepositoryException {
+		return null;
 	}
 }

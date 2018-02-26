@@ -12,7 +12,7 @@ import javax.jcr.RepositoryException;
 import es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager;
 import es.arquia.magnolia.manager.NewsManager;
 import es.arquia.magnolia.templates.bean.ContextNewsNav;
-import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportEventImpl;
 import es.arquia.magnolia.utils.NewsNodeUtil;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;
@@ -49,7 +49,7 @@ public class NewsDiaryModel <T extends ConfiguredTemplateDefinition> extends Ren
 		return architectureFilesSupportEventManager.getArchitectureFilesSupportEventList();
 	}
 	
-	public ArchitectureFilesSupportEvent getArchitectureFilesSupportEventInstance() {
+	public ArchitectureFilesSupportEventImpl getArchitectureFilesSupportEventInstance() {
 		return architectureFilesSupportEventManager.getInstance();
 	}
 	
