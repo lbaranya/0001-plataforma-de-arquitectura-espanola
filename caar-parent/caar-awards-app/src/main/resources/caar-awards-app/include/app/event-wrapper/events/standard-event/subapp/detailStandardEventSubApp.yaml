@@ -1,0 +1,46 @@
+subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
+class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
+label: caar-awards-app.subapp.detailStandardEventSubApp.label
+contentConnector:
+  workspace: awards
+editor:
+  nodeType:
+    icon: icon-contents
+    name: mgnl:standard-event
+  form:
+    tabs:
+      - name: fileData
+        label: caar-awards-app.files.standard-event.fileData.label
+        fields:
+          - name: jcrName
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.standard-event.fileData.jcrName.label
+            required: true
+      - name: standardEventData
+        label: caar-awards-app.subapp.detailStandardEventSubApp.standardEventData.label
+        fields:
+          - name: title
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.files.standard-event.standardEventData.title.label
+          - name: text
+            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+            label: caar-awards-app.files.standard-event.standardEventData.text.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+          - name: filesList
+            label: caar-awards-app.files.standard-event.standardEventData.filesList.label
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
+            field:
+              name: fileLink
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              label: caar-awards-app.files.standard-event.standardEventData.filesList.fileLink.label
+              targetWorkspace: architecture-files
+              appName: caar-architecture-files-app
+  actions:
+    - name: commit
+    - name: cancel
+actions:
+  commit:
+    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

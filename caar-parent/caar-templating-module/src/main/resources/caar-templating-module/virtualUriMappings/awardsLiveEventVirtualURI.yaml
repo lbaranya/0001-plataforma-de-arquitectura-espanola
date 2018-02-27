@@ -1,0 +1,3 @@
+class: es.arquia.magnolia.virtualuri.mapping.regexp.LocaleRegexpVirtualUriMapping
+fromUri: /awards/live-event/(.*).html
+toUri: forward:/caar-home/bienales-premios/awardHome/live-event-page?path=/$1&workspace=awards

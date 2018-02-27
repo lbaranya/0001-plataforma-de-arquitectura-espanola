@@ -1,0 +1,12 @@
+subAppId: detailProgramSubApp
+icon: icon-edit-wo
+nodeType: mgnl:program
+appName: caar-awards-app
+class: es.arquia.magnolia.ui.contentapp.detail.action.EditionLimitEditItemActionDefinition
+label: caar-awards-app.subapp.browser.actions.editProgram.label
+availability:
+  nodeTypes:
+    - mgnl:program
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

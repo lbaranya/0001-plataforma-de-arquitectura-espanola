@@ -1,0 +1,12 @@
+subAppId: detailEventWrapperSubApp
+icon: icon-edit-wo
+nodeType: mgnl:event-wrapper
+appName: caar-awards-app
+class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+label: caar-awards-app.subapp.browser.actions.editEventWrapper.label
+availability:
+  nodeTypes:
+    - mgnl:event-wrapper
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

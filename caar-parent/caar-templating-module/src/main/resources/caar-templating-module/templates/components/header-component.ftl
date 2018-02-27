@@ -374,19 +374,19 @@
                 <div class="col-sm-7 col-menu-list">
                     <ul class="menu-list">
                     	[#assign homeName = cmsfn.page(content)]
-                    	[#if !state.currentURI?contains(homeName+".html")]
+                    	[#if !state.currentURI?contains(homeName+".html") && !state.currentURI?ends_with(homeName)]
                     	<li class="menu-item arrow">
                                 <a href="${cmsfn.link(navfn.rootPage(content))!"#"}" class="menu-home"><i class="fa fa-arrow-left"></i></a>
                             </li>
                         [/#if]
                         <li class="menu-item">
-                            <a href="#" data-submenu="ae" class="logo" alt="arquitectura_española_logotipo" title="arquitectura_española_logotipo">${i18n['caar-templating-module.templates.components.header-component.ae.label']!"A.E."}</a>
+                            <a href="#" data-submenu="ae" class="logo">${i18n['caar-templating-module.templates.components.header-component.ae.label']!"A.E."}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#" data-submenu="explorando" class="menu-link" alt="explorando_arquitectura" title="explorando_arquitectura">${i18n['caar-templating-module.templates.components.header-component.exploreArchitecture.label']!"explorando arquitectura"}</a>
+                            <a href="#" data-submenu="explorando" class="menu-link">${i18n['caar-templating-module.templates.components.header-component.exploreArchitecture.label']!"explorando arquitectura"}</a>
                         </li>
                         <li class="menu-item">
-                            <a href="#" data-submenu="bienales" class="menu-link" alt="bienales_premios" title="bienales_premios">${i18n['caar-templating-module.templates.components.header-component.biennialsAndAwards.label']!"bienales y premios"}</a>
+                            <a href="#" data-submenu="bienales" class="menu-link">${i18n['caar-templating-module.templates.components.header-component.biennialsAndAwards.label']!"bienales y premios"}</a>
                         </li>
                     </ul>
                 </div>

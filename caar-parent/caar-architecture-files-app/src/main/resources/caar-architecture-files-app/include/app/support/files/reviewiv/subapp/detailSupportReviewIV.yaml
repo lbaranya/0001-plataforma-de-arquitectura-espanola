@@ -65,6 +65,7 @@ editor:
           - name: FS3_2_6
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.workData.abstract.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
       - name: authorshipData
         label: caar-architecture-files-app.files.support.reviewiv.authorshipData.label
@@ -95,6 +96,7 @@ editor:
                 - name: FS3_3_3
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.authorshipData.authorshipDetails.label
+                  configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   i18n: true
       - name: notesData
         label: caar-architecture-files-app.files.support.reviewiv.notesData.label
@@ -102,6 +104,7 @@ editor:
           - name: FS3.4
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.notesData.notes.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
       - name: informationData
         label: caar-architecture-files-app.files.support.reviewiv.informationData.label
@@ -131,8 +134,10 @@ editor:
                   label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
                   value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
                 - name: FS3.6
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.relatedThoughtData.relatedThought.label
+                  appName: caar-architecture-files-app
+                  targetWorkspace: architecture-files
       - name: mediaGalleryData
         label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.label
         fields:
@@ -172,6 +177,7 @@ editor:
                 - name: FS3_7_3
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.reviewiv.mediaGalleryData.mediaDetails.label
+                  configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   i18n: true
                 - name: FS3_7_4
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition

@@ -19,10 +19,6 @@ a, a:hover, a:visited, a:link, a:active a:focus {
 	text-decoration: none;
 }
 
-a:hover, a:active, a:visited, a:focus {
-	text-decoration: none;
-}
-
 /* NUEVO CONTAINER */
 .container-margin {
 	width: 1442px;
@@ -2612,8 +2608,8 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	font-family: "National-Book", "Helvetica", "sans-serif";
 }
 
-.cmp-arquitectos-realacionados .arquitecto{
-	height:530px;
+.cmp-arquitectos-realacionados .arquitecto {
+	height: 530px;
 }
 
 .cmp-arquitectos-realacionados .arquitecto h4 {
@@ -3576,6 +3572,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	width: auto;
 	position: absolute;
 	right: 8px;
+	margin-top: 9px;
 }
 
 .cmp-convocatoria .submenu-convocatoria .contenedor-menu ul .menu-first.active
@@ -3624,6 +3621,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	width: auto;
 	position: absolute;
 	right: 8px;
+	margin-top: 9px;
 }
 
 .cmp-convocatoria .submenu-convocatoria .contenedor-menu ul .menu-first .menu-second .menu-second-item.active
@@ -3706,4 +3704,92 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 .cmp-convocatoria .header-comun .fa {
 	padding-left: 10px;
+}
+
+.cmp-programa-directo {
+	margin-top: 30px;
+}
+
+.cmp-programa-directo iframe {
+	width: 100%;
+	height: 450px;
+}
+
+.cmp-programa-directo-rrss {
+	margin-bottom: 30px;
+}
+
+.cmp-programa-directo-rrss .title {
+	height: 75px;
+	color: #D0021B;
+	border: 2px solid #D0021B;
+	display: flex;
+	align-items: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.cmp-programa-directo-rrss .title h3 {
+	margin: 0;
+	font-size: 28px;
+}
+
+.cmp-programa-directo-rrss .col-rrss {
+	border-right: 2px solid #000;
+}
+
+@media screen and (max-width: 992px) {
+	.cmp-programa-directo-rrss .col-rrss {
+		border-right: none;
+	}
+}
+
+.cmp-programas-marco .descript {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	font-size: 14px;
+	color: #4a4a4a;
+	padding: 0;
+}
+
+.cmp-programas-marco .descript h3 {
+	font-size: 24px;
+	color: #D0021B;
+	font-weight: bold;
+}
+
+.cmp-programas-marco .descript p {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.cmp-programas-marco .listado-fichas {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	margin-top: 20px;
+}
+
+.cmp-programas-marco .listado-fichas h3 {
+	color: #D0021B;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+/* .cmp-programas-marco .ficha {
+	height: 445px;
+	margin-bottom: 30px;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 55px;
+} */
+
+.cmp-programas-marco .seperador-black hr {
+	border-top: 2px solid black;
+}
+
+@media screen and (max-width: 768px) {
+	.cmp-programas-marco .descript {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 }

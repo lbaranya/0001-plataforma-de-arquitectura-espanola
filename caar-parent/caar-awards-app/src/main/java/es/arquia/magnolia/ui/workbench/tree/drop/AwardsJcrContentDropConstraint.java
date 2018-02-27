@@ -1,10 +1,16 @@
 package es.arquia.magnolia.ui.workbench.tree.drop;
 
+import static es.arquia.magnolia.constants.AnnouncementConstants.announcementNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.diffusionNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
+import static es.arquia.magnolia.constants.AwardConstants.eventWrapperNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.liveEventNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.programNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.standardEventNodeType;
 
 import javax.inject.Inject;
 import javax.jcr.Item;
@@ -91,30 +97,38 @@ public class AwardsJcrContentDropConstraint extends JcrDropConstraint{
 			if(sourceNode.isNodeType(awardNodeType)) {
 				return sourceNode.getPrimaryNodeType().getName().equals(targetNode.getPrimaryNodeType().getName());
 			}else {
-				return false;
+				if(sourceNode.isNodeType(programNodeType) || sourceNode.isNodeType(diffusionNodeType) || sourceNode.isNodeType(announcementNodeType)) {
+					return targetNode.isNodeType(programNodeType) || targetNode.isNodeType(diffusionNodeType) || targetNode.isNodeType(announcementNodeType);
+				}else {
+					if(sourceNode.isNodeType(standardEventNodeType)) {
+						return targetNode.isNodeType(standardEventNodeType);
+					}else {
+						return false;
+					}
+				}
 			}
 		}
 		
 	}
 
 	private boolean isAllowedAsChild(Node sourceNode, Node targetNode) throws RepositoryException {
-		boolean ret = false;
-		if(!ret && this.isAward(targetNode)) {
-			ret = this.targetNodeAllowSourceNode(sourceNode, targetNode);
-		}
-		return ret;
+		return this.targetNodeAllowSourceNode(sourceNode, targetNode);
 	}
 
 	private boolean targetNodeAllowSourceNode(Node sourceNode, Node targetNode) throws RepositoryException {
 		boolean ret = false;
 		if(!ret &&  targetNode.isNodeType(awardNodeType)) {
 			ret = sourceNode.isNodeType(editionNodeType);
+		}else {
+			if(!ret && targetNode.isNodeType(editionNodeType)) {
+				ret = sourceNode.isNodeType(programNodeType) || sourceNode.isNodeType(announcementNodeType) || sourceNode.isNodeType(diffusionNodeType);
+			}else {
+				if(!ret && (targetNode.isNodeType(programNodeType) || targetNode.isNodeType(diffusionNodeType))) {
+					ret = sourceNode.isNodeType(eventWrapperNodeType) || sourceNode.isNodeType(liveEventNodeType);
+				}
+			}
 		}
 		return ret;
-	}
-
-	private boolean isAward(Node targetNode) throws RepositoryException {
-		return targetNode.isNodeType(awardNodeType);
 	}
     
     

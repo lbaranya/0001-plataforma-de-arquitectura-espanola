@@ -175,6 +175,7 @@ editor:
                 - name: FS2_4_4
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.authorshipData.authorshipDetails.label
+                  configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   i18n: true
                   required: true
       - name: informationData
@@ -248,12 +249,26 @@ editor:
       - name: relatedThoughtsData
         label: caar-architecture-files-app.files.support.project.relatedThoughtsData.label
         fields:
-          - name: FS2_7_1
-            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-            label: caar-architecture-files-app.files.support.project.relatedThoughtsData.relatedThoughts.label
-            appName: caar-architecture-files-app
-            targetWorkspace: architecture-files
-            required: true
+          - name: listRelatedThought
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.reviewi.relatedThoughtData.listRelatedThought.label
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+            field:
+              name: compositeField
+              class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+              layout: vertical
+              fields:
+                - name: separator
+                  class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+                  label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
+                  value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
+                - name: FS2_7_1
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                  label: caar-architecture-files-app.files.support.project.relatedThoughtsData.relatedThoughts.label
+                  appName: caar-architecture-files-app
+                  targetWorkspace: architecture-files
+                  required: true
       - name: projectNotesData
         label: caar-architecture-files-app.files.support.project.projectNotesData.label
         fields:
@@ -347,6 +362,7 @@ editor:
                 - name: FS2_10_4
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.project.mediaGalleryData.mediaDetails.label
+                  configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   i18n: true
                 - name: FS2_10_5
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition

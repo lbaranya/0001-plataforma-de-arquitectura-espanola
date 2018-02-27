@@ -1,0 +1,8 @@
+class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+icon: icon-show-versions
+label: caar-awards-app.browser.actions.showVersions.label
+subAppId: detailStandardEventSubApp
+availability: 
+  rules: 
+    HasVersionsRule: 
+      implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule

@@ -6,8 +6,9 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.Award;
 import es.arquia.magnolia.manager.AwardManager;
+import es.arquia.magnolia.utils.AwardNodeUtil;
+import es.arquia.magnolia.utils.EventNodeUtil;
 import es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAward;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
@@ -26,7 +27,7 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 		this.utilsBreadcrumbAward = utilsBreadcrumbAward;
 	}
 	
-	public Award getInstance() {
+	public AwardNodeUtil getInstance() {
 		return awardManager.getInstance();
 	}
 	
@@ -48,6 +49,26 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	
 	public String getNewsListLink(String currentUrl) {
 		return utilsBreadcrumbAward.getAwardNewsListPageLink(currentUrl);
+	}
+	
+	public String getSecondLevelMenuLink(String currentUrl, Node node) {
+		return utilsBreadcrumbAward.getAwardSeconLevelMenuLink(currentUrl, node);
+	}
+	
+	public EventNodeUtil getEventInstance() {
+		return awardManager.getEventInstance();
+	}
+	
+	public List<Node> getEvents(Node node) throws RepositoryException{
+		return awardManager.getEvents(node);
+	}
+	
+	public String getAwardStandardEventMenuLink(String currentUrl, Node node) {
+		return utilsBreadcrumbAward.getAwardStandardEventMenuLink(currentUrl, node);
+	}
+	
+	public String getAwardLiveEventMenuLink(String currentUrl, Node node) {
+		return utilsBreadcrumbAward.getAwardLiveEventMenuLink(currentUrl, node);
 	}
 
 

@@ -1,0 +1,11 @@
+subAppId: detailDiffusionSubApp
+icon: icon-add-item
+class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+nodeType: mgnl:diffusion
+appName: caar-awards-app
+label: caar-awards-app.subapp.browser.actions.addDiffusion.label
+availability:
+  root: true
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
