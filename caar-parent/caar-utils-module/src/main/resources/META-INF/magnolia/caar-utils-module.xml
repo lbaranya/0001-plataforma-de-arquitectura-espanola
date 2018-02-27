@@ -10,10 +10,26 @@
 
 	<components>
 		<id>main</id>
-		<component>
-			<type>es.arquia.magnolia.messages.magnoliaUI.MessagesUI</type>
-			<implementation>es.arquia.magnolia.messages.magnoliaUI.MgnlMessagesUI</implementation>
-		</component>
+	<component>
+	   <type>es.arquia.magnolia.messages.magnoliaUI.MessagesUI</type>
+	   <implementation>es.arquia.magnolia.messages.magnoliaUI.MgnlMessagesUI</implementation>
+	  </component>
+	  <component>
+	   <type>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</type>
+	   <implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</implementation>
+	  </component>
+	  <component>
+	   <type>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</type>
+	   <implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</implementation>
+	  </component>
+	  <component>
+	  	<type>es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI</type>
+	  	<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI</implementation>
+	  </component>
+	  <component>
+	  	<type>es.arquia.magnolia.functions.RelatedElementsTransformers</type>
+	  	<implementation>es.arquia.magnolia.functions.RelatedElementsTransformers</implementation>
+	  </component>
 	</components>
 
 	<dependencies>

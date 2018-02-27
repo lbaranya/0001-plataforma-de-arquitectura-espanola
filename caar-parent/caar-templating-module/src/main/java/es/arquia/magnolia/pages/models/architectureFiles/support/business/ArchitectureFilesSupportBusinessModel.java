@@ -1,4 +1,4 @@
-package es.arquia.magnolia.components.models.architectureFiles.support.business;
+package es.arquia.magnolia.pages.models.architectureFiles.support.business;
 
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;

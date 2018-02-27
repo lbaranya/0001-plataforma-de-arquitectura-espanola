@@ -1,4 +1,3 @@
-title: Informacion del despacho
+title: caar-templating-module.components.detail-business-department-info.dialog.title
 renderType: freemarker    
 templateScript: /caar-templating-module/templates/components/detail-business-department-info-component.ftl
-modelClass: es.arquia.magnolia.components.models.architectureFiles.support.business.ArchitectureFilesSupportBusinessModel

@@ -34,6 +34,4 @@ public class RelatedElementsManagerImpl implements RelatedElementsManager {
 			return null;
 		}
 	}
-
-
 }

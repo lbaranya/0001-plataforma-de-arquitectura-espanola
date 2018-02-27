@@ -1,0 +1,5 @@
+title: caar-templating-module.components.architecture-files-support-architects-list.dialog.title
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/architecture-files-support-architects-list-component.ftl
+dialog: caar-templating-module:components/architecture-files-support-architects-list-component-properties
+modelClass: es.arquia.magnolia.components.models.architectureFiles.support.architect.ArchitectureFilesSupportArchitectsListModel

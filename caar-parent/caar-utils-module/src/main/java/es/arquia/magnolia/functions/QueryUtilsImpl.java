@@ -18,7 +18,7 @@ import info.magnolia.context.MgnlContext;
 
 public class QueryUtilsImpl implements QueryUtils {
 	
-	public List<Node> executeSelectQuery(String sqlQuery, String workspace, int limit, int offset) throws LoginException, RepositoryException {
+	public List<Node> executeSelectQuery(String sqlQuery, String workspace, int limit, int offset) throws RepositoryException {
 		List<Node> nodeList = new ArrayList<>();
 		
 		Session session = MgnlContext.getJCRSession(workspace);

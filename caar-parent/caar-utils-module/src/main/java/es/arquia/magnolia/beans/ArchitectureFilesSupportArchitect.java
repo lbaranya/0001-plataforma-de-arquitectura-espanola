@@ -2,6 +2,64 @@ package es.arquia.magnolia.beans;
 
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.aditionalInfo;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.annexes;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.artisticSkills;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.awardsAndDistinctions;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.biographicNews;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.birthCity;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.birthCountry;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.birthDate;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.certification;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.certificationCenter;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.certificationCountry;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.certificationYear;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.computerSkills;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.curriculum;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.deathCity;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.deathCountry;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.deathDate;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.departmentCity;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.departmentComponents;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.departmentCountry;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.departmentName;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.departmentWebSite;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.doctorate;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.drivingLicense;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.educationCenter;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.educationCenterType;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.educationEndingDate;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.educationLevel;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.educationList;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.educationQualification;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.educationStartDate;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.educationSubjects;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.firstSurname;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.language;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.listening;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.motherLanguage;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.name;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.organizationalSkills;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.otherLanguages;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.otherNames;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.otherSkills;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.otherStudies;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.photo;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.reading;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.relatedFiles;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.secondSurname;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.socialSkills;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.speakingExpression;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.speakingInteraction;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.technicalSkills;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.workExperienceBusinessName;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.workExperienceBusinessType;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.workExperienceEndingDate;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.workExperienceList;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.workExperienceMainFunctions;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.workExperiencePositionOccupied;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.workExperienceStartDate;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.writting;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 
 import java.text.DateFormat;
@@ -30,79 +88,13 @@ import info.magnolia.jcr.util.NodeUtil;
 public class ArchitectureFilesSupportArchitect {
 	
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportArchitect.class);
-
-	private static String name = "FS1_1_1";
-	private static String firstSurname = "FS1_1_2";
-	private static String secondSurname = "FS1_1_3";
-	private static String otherNames = "FS1_1_4";
-	private static String photo = "FS1_1_5";
-	private static String birthDate = "FS1_1_6";
-	private static String birthCity = "FS1_1_7";
-	private static String birthCountry = "FS1_1_8";
-	
-	private static String deathDate = "FS1_1_9_1";
-	private static String deathCity = "FS1_1_9_2";
-	private static String deathCountry = "FS1_1_9_3";
-	
-	private static String certification = "FS1_2_1";
-	private static String certificationCenter = "FS1_2_2";
-	private static String certificationCountry = "FS1_2_3";
-	private static String certificationYear = "FS1_2_4";
-	private static String otherStudies = "FS1_2_5";
-	private static String doctorate = "FS1_2_6";
-	
-	private static String departmentName = "FS1_3_1";
-	private static String departmentWebSite = "FS1_3_2";
-	private static String departmentCity = "FS1_3_3";
-	private static String departmentCountry = "FS1_3_4";
-	private static String departmentComponents = "FS1_3_5";
-	private static String biographicNews = "FS1_3_6";
-	private static String curriculum = "FS1_3_7";
-	private static String awardsAndDistinctions = "FS1_3_8";
-	
-	private static String workExperienceList = "listExperience";
-	private static String workExperienceStartDate = "FS1_4_1";
-	private static String workExperienceEndingDate = "FS1_4_2";
-	private static String workExperiencePositionOccupied = "FS1_4_3";
-	private static String workExperienceMainFunctions = "FS1_4_4";
-	private static String workExperienceBusinessName = "FS1_4_5";
-	private static String workExperienceBusinessType = "FS1_4_6";
-	
-	private static String educationList = "listEducation";
-	private static String educationStartDate = "FS1_5_1";
-	private static String educationEndingDate = "FS1_5_2";
-	private static String educationQualification = "FS1_5_3";
-	private static String educationSubjects = "FS1_5_4";
-	private static String educationCenter = "FS1_5_5";
-	private static String educationCenterType = "FS1_5_6";
-	private static String educationLevel = "FS1_5_7";
-	
-	private static String language = "FS1_6_1";
-	private static String otherLanguages = "FS1_6_2";
-	private static String motherLanguage = "FS1_6_3";
-	private static String listening = "FS1_6_4";
-	private static String reading = "FS1_6_5";
-	private static String speakingInteraction = "FS1_6_6";
-	private static String speakingExpression = "FS1_6_7";
-	private static String writting = "FS1_6_8";
-	
-	private static String socialSkills = "FS1_7_1";
-	private static String organizationalSkills = "FS1_7_2";
-	private static String technicalSkills = "FS1_7_3";
-	private static String computerSkills = "FS1_7_4";
-	private static String artisticSkills = "FS1_7_5";
-	private static String otherSkills = "FS1_7_6";
-	private static String drivingLicense = "FS1_7_7";
-	
-	private static String aditionalInfo = "FS1_8_1";
-	private static String annexes = "FS1_8_2";
-	
-	private static String relatedFiles = "relatedFiles";
 	
 	@Inject
 	private RelatedElementsManagerImpl relatedElementsManagerImpl;
 	
-	public ArchitectureFilesSupportArchitect() {}
+	public ArchitectureFilesSupportArchitect() {
+		//Do nothing
+	}
 	
 	private static AbstractPredicate<Node> MAGNOLIA_ARCHITECT_FILTER = new AbstractPredicate<Node>() {
 
@@ -672,5 +664,9 @@ public class ArchitectureFilesSupportArchitect {
 		}
 		
 		return validProperties;
+	}
+	
+	public String getFullName(Node node) throws RepositoryException {
+		return this.getName(node) + " " + this.getFirstSurname(node) + " " + this.getSecondSurname(node);
 	}
 }

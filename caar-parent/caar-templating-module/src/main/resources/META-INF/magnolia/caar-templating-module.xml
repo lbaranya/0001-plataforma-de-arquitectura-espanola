@@ -34,6 +34,10 @@
 			<type>es.arquia.magnolia.functions.I18nURLFunctions</type>
 			<implementation>es.arquia.magnolia.functions.I18nURLFunctionsImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportArchitectManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportArchitectManagerImpl</implementation>
+		</component>
 	</components>
 
   <dependencies>
