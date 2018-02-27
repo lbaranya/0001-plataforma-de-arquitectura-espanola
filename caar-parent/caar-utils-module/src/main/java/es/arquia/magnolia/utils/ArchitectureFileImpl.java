@@ -11,4 +11,10 @@ import javax.jcr.RepositoryException;
 
 public class ArchitectureFileImpl implements ArchitectureFile {
 
+	@Override
+	public List<Node> getRelatedElements(Node node) throws RepositoryException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

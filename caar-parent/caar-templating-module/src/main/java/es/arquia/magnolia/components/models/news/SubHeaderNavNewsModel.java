@@ -5,6 +5,7 @@ import static es.arquia.magnolia.templates.constants.ContextNewsNavConstants.con
 import java.util.Iterator;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
@@ -28,12 +29,15 @@ public class SubHeaderNavNewsModel <T extends ConfiguredTemplateDefinition> exte
 	private I18nURLFunctions i18nURLFunctions;
 	
 	private ContextNewsNav contextNewsNav;
-
+	
+	@Inject
 	public SubHeaderNavNewsModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final I18nURLFunctions i18nURLFunctions) {
 		super(content, definition, parent);
 		contextNewsNav = MgnlContext.getAttribute(contextNewsNavObject, Context.SESSION_SCOPE);
-		navigationNewsList = contextNewsNav.getListResultNews();
-		parentPath = contextNewsNav.getParentPath();
+		if(contextNewsNav != null) {
+			navigationNewsList = contextNewsNav.getListResultNews();
+			parentPath = contextNewsNav.getParentPath();
+		}
 		this.i18nURLFunctions = i18nURLFunctions;
 	}
 	

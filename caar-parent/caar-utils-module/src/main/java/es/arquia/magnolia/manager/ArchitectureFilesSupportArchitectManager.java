@@ -5,14 +5,13 @@ import java.util.List;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
+import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI;
 import es.arquia.magnolia.utils.RelatedElement;
 
-public interface ArchitectureFilesSupportReviewIManager {
-	
-	public List<Node> getArchitectureFilesSupportReviewIList() throws RepositoryException;
-	
-	public ArchitectureFilesSupportReviewI getInstance();
+public interface ArchitectureFilesSupportArchitectManager {
+		
+	public ArchitectureFilesSupportArchitect getInstance();
 	
 	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
 }

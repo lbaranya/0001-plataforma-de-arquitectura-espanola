@@ -10,7 +10,7 @@ import es.arquia.magnolia.utils.RelatedElement;
 
 public interface ArchitectureFilesSupportEventManager {
 	
-	public List<Node> getArchitectureFilesSupportEventList() throws Exception;
+	public List<Node> getArchitectureFilesSupportEventList() throws RepositoryException;
 	
 	public ArchitectureFilesSupportEvent getInstance();
 	

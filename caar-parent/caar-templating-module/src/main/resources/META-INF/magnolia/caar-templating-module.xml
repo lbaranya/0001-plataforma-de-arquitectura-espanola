@@ -15,6 +15,14 @@
 			<implementation>es.arquia.magnolia.manager.NewsManagerImpl</implementation>
 		</component>
 		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportArchitectManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportArchitectManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManagerImpl</implementation>
+		</component>
+		<component>
 			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager</type>
 			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManagerImpl</implementation>
 		</component>
@@ -37,6 +45,34 @@
 		<component>
 			<type>es.arquia.magnolia.manager.RelatedElementsManager</type>
 			<implementation>es.arquia.magnolia.manager.RelatedElementsManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitectImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportEvent</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportEventImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewIImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportProject</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportProjectImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.AwardNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.AwardNodeUtilImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.NewsNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.NewsNodeUtilImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.EventNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.EventNodeUtilImpl</implementation>
 		</component>
 	</components>
 

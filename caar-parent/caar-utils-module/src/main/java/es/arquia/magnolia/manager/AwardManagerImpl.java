@@ -7,6 +7,8 @@ import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
 import static es.arquia.magnolia.constants.AwardConstants.*;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -22,6 +24,7 @@ import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.AnnouncementNodeUtil;
 import es.arquia.magnolia.utils.AwardNodeUtil;
 import es.arquia.magnolia.utils.EventNodeUtil;
+import es.arquia.magnolia.utils.RelatedElement;
 import info.magnolia.jcr.util.NodeUtil;
 
 public class AwardManagerImpl implements AwardManager{
@@ -34,12 +37,15 @@ public class AwardManagerImpl implements AwardManager{
 	
 	private EventNodeUtil eventNodeUtil;
 	
+	private RelatedElementsManager relatedElementsManager;
+	
 	@Inject
-	public AwardManagerImpl(final QueryUtils queryUtils, final AwardNodeUtil award, final AnnouncementNodeUtil announcement, final EventNodeUtil eventNodeUtil) {
+	public AwardManagerImpl(final QueryUtils queryUtils, final AwardNodeUtil award, final AnnouncementNodeUtil announcement, final EventNodeUtil eventNodeUtil, final RelatedElementsManager relatedElementsManager) {
         this.queryUtils = queryUtils;
         this.award = award;
         this.announcement = announcement;
         this.eventNodeUtil = eventNodeUtil;
+        this.relatedElementsManager = relatedElementsManager;
     }
 
 	@Override
@@ -117,6 +123,16 @@ public class AwardManagerImpl implements AwardManager{
 			}
 		});
 		return Lists.newArrayList(tmpIterable);
+	}
+	
+	@Override
+	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException {
+		List<RelatedElement> tmpList = new ArrayList<>();
+		Iterator<Node> iterator = relatedElements.iterator();
+		while(iterator.hasNext()) {
+			tmpList.add(relatedElementsManager.transformToRelatedElement(iterator.next()));
+		}
+		return tmpList;
 	}
 
 }

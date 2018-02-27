@@ -1,6 +1,7 @@
 package es.arquia.magnolia.utils;
 
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.relatedFiles;
 import static es.arquia.magnolia.constants.NewsConstants.category;
 import static es.arquia.magnolia.constants.NewsConstants.dateTime;
 import static es.arquia.magnolia.constants.NewsConstants.description;
@@ -15,14 +16,18 @@ import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.NodeIterator;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
@@ -115,10 +120,25 @@ public class NewsNodeUtilImpl implements NewsNodeUtil{
 			return "";
 		}
 	}
+	
+	// If property has an array of strings (node's uuid)
+	private List<Node> getPropertyAsListOfNodes(Node node, String property, String workspace) throws RepositoryException{
+		List<Node> listNodes = new ArrayList<>();
+		Value[] tmpProp = node.getProperty(property).getValues();
+		List<Value> tmpList = Arrays.asList(tmpProp);
+		try {
+			for(Iterator<Value> iterator = tmpList.iterator(); iterator.hasNext();) {
+				listNodes.add(MgnlContext.getJCRSession(workspace).getNodeByIdentifier(iterator.next().getString()));
+			}
+		}catch(RepositoryException e) {
+			return listNodes;
+		}
+		return listNodes;
+	}
 
 	@Override
 	public List<Node> getRelatedElements(Node node) throws RepositoryException {
-		return null;
+		return getPropertyAsListOfNodes(node, relatedNews, newsWorkspace);
 	}
 
 }

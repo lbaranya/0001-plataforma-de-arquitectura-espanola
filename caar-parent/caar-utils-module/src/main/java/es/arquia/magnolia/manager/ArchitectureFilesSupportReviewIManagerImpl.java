@@ -4,6 +4,8 @@ import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectu
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportReviewIConstants.presentationDate;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -16,6 +18,7 @@ import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI;
+import es.arquia.magnolia.utils.RelatedElement;
 
 public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureFilesSupportReviewIManager {
 	
@@ -24,14 +27,17 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 	
 	private ArchitectureFilesSupportReviewI architectureFilesSupportReviewI;
 	
+	private RelatedElementsManager relatedElementsManager;
+	
 	@Inject
-	public ArchitectureFilesSupportReviewIManagerImpl(final QueryUtils queryUtils, final ArchitectureFilesSupportReviewI architectureFilesSupportReviewI) throws PathNotFoundException, RepositoryException {
+	public ArchitectureFilesSupportReviewIManagerImpl(final QueryUtils queryUtils, final ArchitectureFilesSupportReviewI architectureFilesSupportReviewI, final RelatedElementsManager relatedElementsManager) throws PathNotFoundException, RepositoryException {
         this.queryUtils = queryUtils;
         this.architectureFilesSupportReviewI = architectureFilesSupportReviewI;
+        this.relatedElementsManager = relatedElementsManager;
     }
 	
 	@Override
-	public List<Node> getArchitectureFilesSupportReviewIList() throws Exception{
+	public List<Node> getArchitectureFilesSupportReviewIList() throws RepositoryException{
 		final int limit = 4;
 		final int offset = 0;
 		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportReviewINodeType + "] ORDER BY [" + presentationDate + "] DESC";
@@ -41,6 +47,16 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 	@Override
 	public ArchitectureFilesSupportReviewI getInstance() {
 		return this.architectureFilesSupportReviewI;
+	}
+	
+	@Override
+	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException {
+		List<RelatedElement> tmpList = new ArrayList<>();
+		Iterator<Node> iterator = relatedElements.iterator();
+		while(iterator.hasNext()) {
+			tmpList.add(relatedElementsManager.transformToRelatedElement(iterator.next()));
+		}
+		return tmpList;
 	}
 
 }

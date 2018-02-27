@@ -25,7 +25,7 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 	
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportEventManagerImpl.class);
 	private QueryUtils queryUtils;
-	@Inject
+	
 	private ArchitectureFilesSupportEvent architectureFilesSupportEvent;
 	
 	private RelatedElementsManager relatedElementsManager;

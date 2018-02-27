@@ -8,6 +8,7 @@ import javax.jcr.RepositoryException;
 import es.arquia.magnolia.utils.AnnouncementNodeUtil;
 import es.arquia.magnolia.utils.AwardNodeUtil;
 import es.arquia.magnolia.utils.EventNodeUtil;
+import es.arquia.magnolia.utils.RelatedElement;
 
 public interface AwardManager {
 	
@@ -26,5 +27,7 @@ public interface AwardManager {
 	public EventNodeUtil getEventInstance();
 	
 	public List<Node> getEvents(Node node) throws RepositoryException;
+	
+	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
 
 }

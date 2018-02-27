@@ -30,6 +30,26 @@
 			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportProject</type>
 			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportProjectImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.AwardNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.AwardNodeUtilImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.NewsNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.NewsNodeUtilImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.EventNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.EventNodeUtilImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.RelatedElementsManager</type>
+			<implementation>es.arquia.magnolia.manager.RelatedElementsManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.functions.RelatedElementsTransformers</type>
+			<implementation>es.arquia.magnolia.functions.RelatedElementsTransformersImpl</implementation>
+		</component>
 	</components>
 
 	<dependencies>

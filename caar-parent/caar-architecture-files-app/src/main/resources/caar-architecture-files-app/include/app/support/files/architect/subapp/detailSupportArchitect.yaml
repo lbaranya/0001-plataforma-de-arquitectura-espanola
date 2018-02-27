@@ -394,6 +394,8 @@ editor:
               label: caar-architecture-files-app.files.support.architect.professionalData.officeComponents.picker.label
               appName: caar-architecture-files-app
               targetWorkspace: architecture-files
+              identifierToPathConverter:
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
   actions:
     - name: commit
     - name: cancel

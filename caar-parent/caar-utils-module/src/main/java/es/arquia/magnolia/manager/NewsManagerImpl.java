@@ -6,6 +6,8 @@ import static es.arquia.magnolia.constants.NewsConstants.important;
 import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
 import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -17,6 +19,7 @@ import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.NewsNodeUtil;
+import es.arquia.magnolia.utils.RelatedElement;
 import info.magnolia.context.MgnlContext;
 
 public class NewsManagerImpl implements NewsManager{
@@ -25,20 +28,23 @@ public class NewsManagerImpl implements NewsManager{
 	private QueryUtils queryUtils;
 	private NewsNodeUtil news;
 	private boolean lastRowOfNews = false;
+	
+	private RelatedElementsManager relatedElementsManager;
 
 	@Inject
-	public NewsManagerImpl(final QueryUtils queryUtils, final NewsNodeUtil news) {
+	public NewsManagerImpl(final QueryUtils queryUtils, final NewsNodeUtil news, final RelatedElementsManager relatedElementsManager) {
 		this.queryUtils = queryUtils;
 		this.news = news;
+		this.relatedElementsManager = relatedElementsManager;
 	}
 
 	@Override
-	public List<Node> getNewsList() throws Exception{
+	public List<Node> getNewsList() throws RepositoryException{
 		return getNewsList(0);
 	}
 
 	@Override
-	public List<Node> getNewsList(int numberOfNews) throws Exception{
+	public List<Node> getNewsList(int numberOfNews) throws RepositoryException{
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
 		final int limit = (numberOfNews > 0) ? (numberOfNews + 1) : 0;
 		final int lastNewsListElement = numberOfNews;
@@ -55,12 +61,12 @@ public class NewsManagerImpl implements NewsManager{
 	}
 
 	@Override
-	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
+	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws RepositoryException{
 		return getCategorizedNewsList(categoriesList, 0);
 	}
 
 	@Override
-	public List<Node> getCategorizedNewsList(List<String> categoriesList, int numberOfNews) throws Exception{
+	public List<Node> getCategorizedNewsList(List<String> categoriesList, int numberOfNews) throws RepositoryException{
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
 		final int limit = (numberOfNews > 0) ? (numberOfNews + 1) : 0;
 		final int lastNewsListElement = numberOfNews;
@@ -77,7 +83,7 @@ public class NewsManagerImpl implements NewsManager{
 	}
 
 	@Override
-	public List<Node> getImportantNewsList() throws Exception {
+	public List<Node> getImportantNewsList() throws RepositoryException {
 		final int limit = 3;
 		final int offset = 0;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
@@ -146,5 +152,15 @@ public class NewsManagerImpl implements NewsManager{
 		sqlQuery += ") AND [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
 
 		return sqlQuery;
+	}
+
+	@Override
+	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException {
+		List<RelatedElement> tmpList = new ArrayList<>();
+		Iterator<Node> iterator = relatedElements.iterator();
+		while(iterator.hasNext()) {
+			tmpList.add(relatedElementsManager.transformToRelatedElement(iterator.next()));
+		}
+		return tmpList;
 	}
 }
