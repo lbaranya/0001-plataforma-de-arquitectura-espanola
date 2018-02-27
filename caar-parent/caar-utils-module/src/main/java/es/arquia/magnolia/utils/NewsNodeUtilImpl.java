@@ -1,7 +1,5 @@
 package es.arquia.magnolia.utils;
 
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
-import static es.arquia.magnolia.constants.ArchitectureFilesSupportArchitectConstants.relatedFiles;
 import static es.arquia.magnolia.constants.NewsConstants.category;
 import static es.arquia.magnolia.constants.NewsConstants.dateTime;
 import static es.arquia.magnolia.constants.NewsConstants.description;
@@ -20,19 +18,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
-import javax.jcr.NodeIterator;
-import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
 
-import es.arquia.magnolia.manager.RelatedElementsManagerImpl;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 

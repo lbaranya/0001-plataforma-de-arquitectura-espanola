@@ -17,6 +17,16 @@ import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
 
+import static es.arquia.magnolia.constants.AnnouncementConstants.nodeNameContainsEnrollment;
+import static es.arquia.magnolia.constants.AnnouncementConstants.nodeNameContainsJury;
+import static es.arquia.magnolia.constants.AnnouncementConstants.nodeNameContainsLemma;
+import static es.arquia.magnolia.constants.AnnouncementConstants.nodeNameContainsRich;
+import static es.arquia.magnolia.constants.AnnouncementConstants.enrollmentOptionWeight;
+import static es.arquia.magnolia.constants.AnnouncementConstants.juryOptionWeight;
+import static es.arquia.magnolia.constants.AnnouncementConstants.lemmaOptionWeight;
+import static es.arquia.magnolia.constants.AnnouncementConstants.richTextOptionWeight;
+import static es.arquia.magnolia.constants.AnnouncementConstants.judgeListNameContains;
+
 public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	
 	private AwardManager awardManager;
@@ -50,16 +60,16 @@ public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> ext
 		generalSortArray = new ArrayList<>();
 		// Include sub nodes list into a general sortable array
 		for(Node iterator: nodeArray) {
-			if(NodeUtil.getName(iterator).contains("richText")) {
+			if(NodeUtil.getName(iterator).contains(nodeNameContainsRich)) {
 					generalSortArray.add(iterator);
 			}
-			if(NodeUtil.getName(iterator).contains("jury")) {
+			if(NodeUtil.getName(iterator).contains(nodeNameContainsJury)) {
 					generalSortArray.add(iterator);
 			}
-			if(NodeUtil.getName(iterator).contains("lemma")) {
+			if(NodeUtil.getName(iterator).contains(nodeNameContainsLemma)) {
 					generalSortArray.add(iterator);
 			}
-			if(NodeUtil.getName(iterator).contains("enrollment")) {
+			if(NodeUtil.getName(iterator).contains(nodeNameContainsEnrollment)) {
 					generalSortArray.add(iterator);
 			}
 		}
@@ -71,16 +81,16 @@ public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> ext
 				Integer weightOne;
 				Integer weightTwo;
 				try {
-					weightOne = Integer.valueOf(o1.getProperty("richTextOptionWeight").getString());
+					weightOne = Integer.valueOf(o1.getProperty(richTextOptionWeight).getString());
 				}catch(RepositoryException e) {
 					try {
-						weightOne = Integer.valueOf(o1.getProperty("juryOptionWeight").getString());
+						weightOne = Integer.valueOf(o1.getProperty(juryOptionWeight).getString());
 					}catch(RepositoryException e2) {
 						try {
-							weightOne = Integer.valueOf(o1.getProperty("lemmaOptionWeight").getString());
+							weightOne = Integer.valueOf(o1.getProperty(lemmaOptionWeight).getString());
 						}catch(RepositoryException e3) {
 							try {
-								weightOne = Integer.valueOf(o1.getProperty("enrollmentOptionWeight").getString());
+								weightOne = Integer.valueOf(o1.getProperty(enrollmentOptionWeight).getString());
 							}catch(RepositoryException e4) {
 								weightOne = 0;
 							}
@@ -88,16 +98,16 @@ public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> ext
 					}
 				}
 				try {
-					weightTwo = Integer.valueOf(o2.getProperty("richTextOptionWeight").getString());
+					weightTwo = Integer.valueOf(o2.getProperty(richTextOptionWeight).getString());
 				}catch(RepositoryException e) {
 					try {
-						weightTwo = Integer.valueOf(o2.getProperty("juryOptionWeight").getString());
+						weightTwo = Integer.valueOf(o2.getProperty(juryOptionWeight).getString());
 					}catch(RepositoryException e2) {
 						try {
-							weightTwo = Integer.valueOf(o2.getProperty("lemmaOptionWeight").getString());
+							weightTwo = Integer.valueOf(o2.getProperty(lemmaOptionWeight).getString());
 						}catch(RepositoryException e3) {
 							try {
-								weightTwo = Integer.valueOf(o2.getProperty("enrollmentOptionWeight").getString());
+								weightTwo = Integer.valueOf(o2.getProperty(enrollmentOptionWeight).getString());
 							}catch(RepositoryException e4) {
 								weightTwo = 0;
 							}
@@ -120,7 +130,7 @@ public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> ext
 		NodeIterator iterator = content.getNodes();
 		while(iterator.hasNext()) {
 			Node currentNode = iterator.nextNode();
-			if(currentNode.getName().contains("judge")) {
+			if(currentNode.getName().contains(judgeListNameContains)) {
 				juryList.add(currentNode);
 			}
 		}
