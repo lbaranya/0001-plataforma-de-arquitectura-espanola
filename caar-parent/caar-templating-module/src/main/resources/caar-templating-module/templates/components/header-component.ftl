@@ -374,7 +374,7 @@
                 <div class="col-sm-7 col-menu-list">
                     <ul class="menu-list">
                     	[#assign homeName = cmsfn.page(content)]
-                    	[#if !state.currentURI?contains(homeName+".html")]
+                    	[#if !state.currentURI?contains(homeName+".html") && !state.currentURI?ends_with(homeName)]
                     	<li class="menu-item arrow">
                                 <a href="${cmsfn.link(navfn.rootPage(content))!"#"}" class="menu-home"><i class="fa fa-arrow-left"></i></a>
                             </li>

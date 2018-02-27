@@ -12,6 +12,9 @@ import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
 
+import static es.arquia.magnolia.constants.AnnouncementConstants.nodeNameContainsRich;
+import static es.arquia.magnolia.constants.AnnouncementConstants.richTextOptionWeight;
+
 public class DistributorSectionsRichTextModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	
 	private List<Node> nodeArray;
@@ -31,7 +34,7 @@ public class DistributorSectionsRichTextModel <T extends ConfiguredTemplateDefin
 		generalSortArray = new ArrayList<>();
 		// Include sub nodes list into a general sortable array
 		for(Node iterator: nodeArray) {
-			if(NodeUtil.getName(iterator).contains("richText")) {
+			if(NodeUtil.getName(iterator).contains(nodeNameContainsRich)) {
 					generalSortArray.add(iterator);
 			}
 		}
@@ -43,12 +46,12 @@ public class DistributorSectionsRichTextModel <T extends ConfiguredTemplateDefin
 				Integer weightOne;
 				Integer weightTwo;
 				try {
-					weightOne = Integer.valueOf(o1.getProperty("richTextOptionWeight").getString());
+					weightOne = Integer.valueOf(o1.getProperty(richTextOptionWeight).getString());
 				}catch(RepositoryException e) {
 					weightOne = 0;
 				}
 				try {
-					weightTwo = Integer.valueOf(o2.getProperty("richTextOptionWeight").getString());
+					weightTwo = Integer.valueOf(o2.getProperty(richTextOptionWeight).getString());
 				}catch(RepositoryException e) {
 					weightTwo = 0;
 				}

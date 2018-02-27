@@ -1,6 +1,5 @@
 package es.arquia.magnolia.utils;
 
-import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.awardAboutText;
 import static es.arquia.magnolia.constants.AwardConstants.awardDescription;
 import static es.arquia.magnolia.constants.AwardConstants.awardExternalURL;
@@ -8,16 +7,17 @@ import static es.arquia.magnolia.constants.AwardConstants.awardHeaderBackground;
 import static es.arquia.magnolia.constants.AwardConstants.awardLogo;
 import static es.arquia.magnolia.constants.AwardConstants.awardName;
 import static es.arquia.magnolia.constants.AwardConstants.categoriesList;
-import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionAnnouncementButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionEnrollmentButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
-import static es.arquia.magnolia.constants.AwardConstants.relatedNewsList;
+import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.type;
+import static es.arquia.magnolia.constants.AwardConstants.*;
 import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -28,8 +28,6 @@ import javax.jcr.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.manager.RelatedElementsManagerImpl;
-import es.arquia.magnolia.utils.RelatedElement;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 
@@ -151,9 +149,24 @@ public class AwardNodeUtilImpl implements AwardNodeUtil{
 			return "";
 		}
 	}
+	
+	// If property has an array of strings (node's uuid)
+	private List<Node> getPropertyAsListOfNodes(Node node, String property, String workspace) throws RepositoryException{
+		List<Node> listNodes = new ArrayList<>();
+		Value[] tmpProp = node.getProperty(property).getValues();
+		List<Value> tmpList = Arrays.asList(tmpProp);
+		try {
+			for(Iterator<Value> iterator = tmpList.iterator(); iterator.hasNext();) {
+				listNodes.add(MgnlContext.getJCRSession(workspace).getNodeByIdentifier(iterator.next().getString()));
+			}
+		}catch(RepositoryException e) {
+			return listNodes;
+		}
+		return listNodes;
+	}
 
 	@Override
 	public List<Node> getRelatedElements(Node node) throws RepositoryException {
-		return null;
+		return getPropertyAsListOfNodes(node, relatedNewsList, newsWorkspace);
 	}
 }

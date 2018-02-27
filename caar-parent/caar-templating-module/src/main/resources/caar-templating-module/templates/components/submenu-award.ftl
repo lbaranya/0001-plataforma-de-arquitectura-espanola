@@ -31,11 +31,11 @@
                         	[#if childItem.isNodeType("mgnl:announcement")]
                         	[#assign currentUrl = cmsfn.link(childItem)]
                         	[#assign href = model.getSecondLevelMenuLink(currentUrl, childItem)!"#"]
-                            <a href="${href}"><span>convocatoria</span></a>
+                            <a href="${href}"><span>${i18n['caar-templating-module.templates.components.submenu-award.announcement.label']}</span></a>
                             [/#if]
                             [#if childItem.isNodeType("mgnl:program")]
                             <a href="javascript:void(0)">
-                            	<span>programa</span>
+                            	<span>${i18n['caar-templating-module.templates.components.submenu-award.program.label']}</span>
                             	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                             </a>
                             	[#if cmsfn.children(childItem)?has_content]
@@ -59,7 +59,7 @@
                             [/#if]
                             [#if childItem.isNodeType("mgnl:diffusion")]
                             <a href="javascript:void(0)">
-                            	<span>difusion</span>
+                            	<span>${i18n['caar-templating-module.templates.components.submenu-award.diffusion.label']}</span>
                             	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                             </a>
                             [#if cmsfn.children(childItem)?has_content]
@@ -84,13 +84,6 @@
                         </li>
                         [/#list]
                     </ul>
-                    <!--
-                    <ul class="menu-second">
-                        <li class="menu-second-item">
-                            <a href="#"><span>convocatoria</span></a>
-                        </li>
-                    </ul>
-                    -->
                 </li>
                 [/#if]
                 [#assign inProgressEdition = model.getEditionStateInProgress(awardsContentNode)!""]

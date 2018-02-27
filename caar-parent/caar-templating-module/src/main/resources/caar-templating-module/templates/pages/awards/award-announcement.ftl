@@ -146,7 +146,7 @@
 		                        <h2>${contentItem.juryOptionTitle!""}</h2></div>
 		                </div>
 		                <div class="new-links">
-		                    <span class="more-link" alt="leer más">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
+		                    <span class="more-link">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
 		                </div>
 		            </a>
 				[/#if]
@@ -174,7 +174,7 @@
 		                        <h2>${contentItem.lemmaOptionTitle!""}</h2></div>
 		                </div>
 		                <div class="new-links">
-		                    <span class="more-link" alt="leer más">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
+		                    <span class="more-link">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
 		                </div>
 		            </a>
 				[/#if]
@@ -202,7 +202,7 @@
 		                        <h2>${contentItem.enrollmentOptionTitle!""}</h2></div>
 		                </div>
 		                <div class="new-links">
-		                    <span class="more-link" alt="leer más">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
+		                    <span class="more-link">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
 		                </div>
 		            </a>
 				[/#if]

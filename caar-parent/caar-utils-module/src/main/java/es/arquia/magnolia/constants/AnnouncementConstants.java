@@ -103,5 +103,13 @@ public interface AnnouncementConstants {
 	String sectionJuryAbstract = "juryOptionAbstract";
 	
 	String judgeListNameContains = "judge";
+	
+	String nodeNameContainsRich = "richText";
+	
+	String nodeNameContainsJury = "jury";
+	
+	String nodeNameContainsEnrollment = "enrollment";
+	
+	String nodeNameContainsLemma = "lemma";
 
 }
