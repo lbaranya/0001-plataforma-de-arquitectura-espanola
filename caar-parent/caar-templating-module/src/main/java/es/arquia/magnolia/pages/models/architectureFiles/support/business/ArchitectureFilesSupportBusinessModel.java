@@ -25,12 +25,9 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-<<<<<<< HEAD:caar-parent/caar-templating-module/src/main/java/es/arquia/magnolia/pages/models/architectureFiles/support/business/ArchitectureFilesSupportBusinessModel.java
-=======
 import javax.inject.Inject;
-import javax.jcr.LoginException;
->>>>>>> CAAR0001-429:caar-parent/caar-templating-module/src/main/java/es/arquia/magnolia/components/models/architectureFiles/support/business/ArchitectureFilesSupportBusinessModel.java
 import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
 
@@ -50,12 +47,8 @@ public class ArchitectureFilesSupportBusinessModel <RD extends ConfiguredTemplat
 	
 	private ArchitectureFilesSupportArchitect architect;
 	
-<<<<<<< HEAD:caar-parent/caar-templating-module/src/main/java/es/arquia/magnolia/pages/models/architectureFiles/support/business/ArchitectureFilesSupportBusinessModel.java
-	public ArchitectureFilesSupportBusinessModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent) throws RepositoryException {
-=======
 	@Inject
 	public ArchitectureFilesSupportBusinessModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final ArchitectureFilesSupportArchitect architect) throws PathNotFoundException, RepositoryException {
->>>>>>> CAAR0001-429:caar-parent/caar-templating-module/src/main/java/es/arquia/magnolia/components/models/architectureFiles/support/business/ArchitectureFilesSupportBusinessModel.java
         super(content, definition, parent);
         this.architect = architect;
     }

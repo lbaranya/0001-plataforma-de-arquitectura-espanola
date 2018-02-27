@@ -14,4 +14,6 @@ public interface ArchitectureFilesSupportArchitectManager {
 	public ArchitectureFilesSupportArchitect getInstance();
 	
 	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
+	
+	public List<Node> getArchitectsList() throws RepositoryException;
 }

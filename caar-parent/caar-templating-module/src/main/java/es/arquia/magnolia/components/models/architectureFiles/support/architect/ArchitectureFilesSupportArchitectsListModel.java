@@ -6,7 +6,7 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
 import es.arquia.magnolia.manager.ArchitectureFilesSupportArchitectManager;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
@@ -25,7 +25,6 @@ public class ArchitectureFilesSupportArchitectsListModel <T extends ConfiguredTe
 	public List<Node> getArchitectsList() throws RepositoryException {
 		return architectureFilesSupportArchitectManager.getArchitectsList();
 	}
-	
 	
 	public ArchitectureFilesSupportArchitect getInstance() {
 		return architectureFilesSupportArchitectManager.getInstance();

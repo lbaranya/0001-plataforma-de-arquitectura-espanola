@@ -86,33 +86,6 @@ import info.magnolia.jcr.util.NodeUtil;
 
 public class ArchitectureFilesSupportArchitectImpl implements ArchitectureFilesSupportArchitect{
 	
-<<<<<<< HEAD:caar-parent/caar-utils-module/src/main/java/es/arquia/magnolia/beans/ArchitectureFilesSupportArchitect.java
-	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportArchitect.class);
-	
-	@Inject
-	private RelatedElementsManagerImpl relatedElementsManagerImpl;
-	
-	public ArchitectureFilesSupportArchitect() {
-		//Do nothing
-	}
-	
-	private static AbstractPredicate<Node> MAGNOLIA_ARCHITECT_FILTER = new AbstractPredicate<Node>() {
-
-        @Override
-        public boolean evaluateTyped(Node node) {
-
-            try {
-                return node.isNodeType(architectureFilesSupportArchitectNodeType);
-            } catch (RepositoryException e) {
-                log.error("Unable to read nodeType for node {}", NodeUtil.getNodePathIfPossible(node));
-            }
-            return false;
-        }
-    };
-=======
-	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportArchitectImpl.class);
->>>>>>> CAAR0001-429:caar-parent/caar-utils-module/src/main/java/es/arquia/magnolia/utils/ArchitectureFilesSupportArchitectImpl.java
-	
 	public ArchitectureFilesSupportArchitectImpl() {}
 
 	public String getName(Node node) throws RepositoryException {

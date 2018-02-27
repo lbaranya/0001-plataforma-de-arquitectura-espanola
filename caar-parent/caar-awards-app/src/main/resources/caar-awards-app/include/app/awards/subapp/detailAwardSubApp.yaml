@@ -96,6 +96,14 @@ editor:
               appName: caar-news-app
               identifierToPathConverter:
                 class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          - name: awardOrder
+            validators:
+              - name: onlyNumber
+                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                pattern: \d
+                errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.awardData.awardOrder.label
   actions:
     - name: commit
     - name: cancel
