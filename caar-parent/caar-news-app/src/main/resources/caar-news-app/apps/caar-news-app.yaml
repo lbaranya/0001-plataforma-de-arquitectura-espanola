@@ -379,7 +379,8 @@ subApps:
                 required: true
                 i18n: true
               - name: N1_3
-                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition 
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                 label: caar-news-app.newsData.description.label
                 i18n: true
               - name: N1_5

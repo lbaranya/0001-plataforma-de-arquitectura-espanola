@@ -1,6 +1,11 @@
 name: editionSection
 label: caar-awards-app.subapp.browser.actionbar.sections.editionSection.label
 groups:
+  - name: addActions
+    items:
+      - name: addAnnouncement
+      - name: addProgram
+      - name: addDiffusion
   - name: editActions
     items:
       - name: editEdition

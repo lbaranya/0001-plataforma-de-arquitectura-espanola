@@ -1,0 +1,29 @@
+name: diffusionSection
+label: caar-awards-app.subapp.browser.actionbar.sections.diffusionSection.label
+groups:
+  - name: addActions 
+    items:
+      - name: addEventWrapper
+      - name: addLiveEvent
+  - name: editActions
+    items:
+      - name: editDiffusion
+      - name: confirmDelete 
+  - name: importExportActions
+    items:
+      - name: import
+      - name: export
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: deletedActions
+    items:
+      - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:diffusion
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

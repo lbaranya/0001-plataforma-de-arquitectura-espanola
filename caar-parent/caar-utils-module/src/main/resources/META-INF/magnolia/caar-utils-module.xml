@@ -10,26 +10,46 @@
 
 	<components>
 		<id>main</id>
-	<component>
-	   <type>es.arquia.magnolia.messages.magnoliaUI.MessagesUI</type>
-	   <implementation>es.arquia.magnolia.messages.magnoliaUI.MgnlMessagesUI</implementation>
-	  </component>
-	  <component>
-	   <type>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</type>
-	   <implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</implementation>
-	  </component>
-	  <component>
-	   <type>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</type>
-	   <implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</implementation>
-	  </component>
-	  <component>
-	  	<type>es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI</type>
-	  	<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportReviewI</implementation>
-	  </component>
-	  <component>
-	  	<type>es.arquia.magnolia.functions.RelatedElementsTransformers</type>
-	  	<implementation>es.arquia.magnolia.functions.RelatedElementsTransformers</implementation>
-	  </component>
+		<component>
+			<type>es.arquia.magnolia.messages.magnoliaUI.MessagesUI</type>
+			<implementation>es.arquia.magnolia.messages.magnoliaUI.MgnlMessagesUI</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitectImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportEvent</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportEventImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewIImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportProject</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportProjectImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.AwardNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.AwardNodeUtilImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.NewsNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.NewsNodeUtilImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.EventNodeUtil</type>
+			<implementation>es.arquia.magnolia.utils.EventNodeUtilImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.RelatedElementsManager</type>
+			<implementation>es.arquia.magnolia.manager.RelatedElementsManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.functions.RelatedElementsTransformers</type>
+			<implementation>es.arquia.magnolia.functions.RelatedElementsTransformersImpl</implementation>
+		</component>
 	</components>
 
 	<dependencies>
@@ -55,6 +75,10 @@
 		</dependency>
 		<dependency>
 			<name>pages</name>
+			<version>5.6/*</version>
+		</dependency>
+		<dependency>
+			<name>cache</name>
 			<version>5.6/*</version>
 		</dependency>
 		<!-- Add other dependencies here, e.g the mte (magnolia templating essentials). 

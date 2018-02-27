@@ -15,16 +15,16 @@
 			<implementation>es.arquia.magnolia.functions.QueryUtilsImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.beans.ArchitectureFile</type>
-			<implementation>es.arquia.magnolia.beans.ArchitectureFileImpl</implementation>
+			<type>es.arquia.magnolia.utils.ArchitectureFile</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFileImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</type>
-			<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect</implementation>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</type>
-			<implementation>es.arquia.magnolia.beans.ArchitectureFilesSupportEvent</implementation>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportEvent</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportEvent</implementation>
 		</component>
 		<component>
 			<type>es.arquia.magnolia.manager.RelatedElementsManager</type>

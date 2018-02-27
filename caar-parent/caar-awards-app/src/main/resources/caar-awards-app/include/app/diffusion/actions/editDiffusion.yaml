@@ -1,0 +1,12 @@
+subAppId: detailDiffusionSubApp
+icon: icon-edit-wo
+nodeType: mgnl:diffusion
+appName: caar-awards-app
+class: info.magnolia.ui.contentapp.detail.action.EditItemActionDefinition
+label: caar-awards-app.subapp.browser.actions.editDiffusion.label
+availability:
+  nodeTypes:
+    - mgnl:diffusion
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule

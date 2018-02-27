@@ -3,6 +3,7 @@
 [#if nodeJcrPath?has_content]
 	[#assign fileContent = cmsfn.contentByPath(nodeJcrPath, nodeWorkspace)!""]
 	[#assign fileContentNode = cmsfn.asJCRNode(fileContent)!""]
+	${fileContentNode}
 	[#assign nodes = model.getRelatedElements(fileContentNode)!""]
 	[#if nodes?has_content]
 	<section class="cmp-arquitectos-realacionados cmp-last-news">

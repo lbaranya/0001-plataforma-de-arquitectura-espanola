@@ -1,0 +1,26 @@
+name: programSection
+label: caar-awards-app.subapp.browser.actionbar.sections.programSection.label
+groups:
+  - name: addActions 
+    items:
+      - name: addEventWrapper
+      - name: addLiveEvent
+  - name: editActions
+    items:
+      - name: editProgram
+      - name: confirmDelete 
+  - name: importExportActions
+    items:
+      - name: import
+      - name: export
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: deletedActions
+    items:
+      - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:program

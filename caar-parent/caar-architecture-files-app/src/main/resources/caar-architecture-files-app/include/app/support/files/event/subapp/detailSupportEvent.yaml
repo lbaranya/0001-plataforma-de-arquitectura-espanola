@@ -71,6 +71,7 @@ editor:
           - name: FS3_2_5
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.abstract.label
+            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             required: true
             i18n: true
           - name: FS3_2_7
@@ -129,10 +130,12 @@ editor:
                 - name: FS3_3_3
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   label: caar-architecture-files-app.files.support.event.authorshipData.authorshipDetails.label
+                  configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   required: true
                   i18n: true
                 - name: FS3_3_4
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                  configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   label: caar-architecture-files-app.files.support.event.authorshipData.authorshipInfo.label
                   i18n: true
       - name: mediaGalleryData

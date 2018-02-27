@@ -36,7 +36,8 @@ form:
                 required: true    
               - name: description        
                 label: caar-templating-module.components.highlights-excellence-component-properties.tabMain.elements.compositeField.description.label       
-                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition     
+                class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+                configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js 
                 i18n: true    
                 required: true    
               - name: link        

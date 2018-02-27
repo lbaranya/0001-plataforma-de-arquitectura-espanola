@@ -1,0 +1,28 @@
+name: eventWrapperSection
+label: caar-awards-app.subapp.browser.actionbar.sections.eventWrapperSection.label
+groups:
+  - name: addActions
+    items:
+      - name: addStandardEvent
+  - name: editActions
+    items:
+      - name: editEventWrapper
+      - name: confirmDelete 
+  - name: importExportActions
+    items:
+      - name: import
+      - name: export
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+  - name: deletedActions
+    items:
+      - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:event-wrapper
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

@@ -25,6 +25,11 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
+<<<<<<< HEAD:caar-parent/caar-templating-module/src/main/java/es/arquia/magnolia/pages/models/architectureFiles/support/business/ArchitectureFilesSupportBusinessModel.java
+=======
+import javax.inject.Inject;
+import javax.jcr.LoginException;
+>>>>>>> CAAR0001-429:caar-parent/caar-templating-module/src/main/java/es/arquia/magnolia/components/models/architectureFiles/support/business/ArchitectureFilesSupportBusinessModel.java
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Value;
@@ -32,7 +37,7 @@ import javax.jcr.Value;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.arquia.magnolia.beans.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.rendering.model.RenderingModel;
@@ -45,9 +50,14 @@ public class ArchitectureFilesSupportBusinessModel <RD extends ConfiguredTemplat
 	
 	private ArchitectureFilesSupportArchitect architect;
 	
+<<<<<<< HEAD:caar-parent/caar-templating-module/src/main/java/es/arquia/magnolia/pages/models/architectureFiles/support/business/ArchitectureFilesSupportBusinessModel.java
 	public ArchitectureFilesSupportBusinessModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent) throws RepositoryException {
+=======
+	@Inject
+	public ArchitectureFilesSupportBusinessModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final ArchitectureFilesSupportArchitect architect) throws PathNotFoundException, RepositoryException {
+>>>>>>> CAAR0001-429:caar-parent/caar-templating-module/src/main/java/es/arquia/magnolia/components/models/architectureFiles/support/business/ArchitectureFilesSupportBusinessModel.java
         super(content, definition, parent);
-        architect = new ArchitectureFilesSupportArchitect();
+        this.architect = architect;
     }
 	
 	public String getBusinessType(Node node) throws RepositoryException {

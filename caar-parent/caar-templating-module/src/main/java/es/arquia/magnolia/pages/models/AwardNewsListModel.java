@@ -1,7 +1,6 @@
 package es.arquia.magnolia.pages.models;
 
-import static es.arquia.magnolia.templates.constants.ContextBeanConstants.contextBeanNewsNodeList;
-import static es.arquia.magnolia.templates.constants.ContextBeanConstants.contextBeanParentPathString;
+import static es.arquia.magnolia.templates.constants.ContextNewsNavConstants.contextNewsNavObject;
 
 import java.util.List;
 
@@ -10,11 +9,11 @@ import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
 
-import es.arquia.magnolia.beans.Award;
-import es.arquia.magnolia.beans.News;
 import es.arquia.magnolia.manager.AwardManager;
 import es.arquia.magnolia.manager.NewsManager;
-import es.arquia.magnolia.templates.bean.ContextBean;
+import es.arquia.magnolia.templates.bean.ContextNewsNav;
+import es.arquia.magnolia.utils.AwardNodeUtil;
+import es.arquia.magnolia.utils.NewsNodeUtil;
 import info.magnolia.context.Context;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.rendering.model.RenderingModel;
@@ -26,34 +25,33 @@ public class AwardNewsListModel <T extends ConfiguredTemplateDefinition> extends
 	private NewsManager newsManager;
 	private AwardManager awardManager;
 	
-	private ContextBean contextBean;
+	private ContextNewsNav contextNewsNav;
 	
 	@Inject
-	public AwardNewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final AwardManager awardManager, final ContextBean contextBean) throws PathNotFoundException, RepositoryException {
+	public AwardNewsListModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final NewsManager newsManager, final AwardManager awardManager, final ContextNewsNav contextBean) throws PathNotFoundException, RepositoryException {
         super(content, definition, parent);
         this.newsManager = newsManager;
         this.awardManager = awardManager;
-        this.contextBean = contextBean;
+        this.contextNewsNav = contextBean;
     }
 	
 	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
-		contextBean.setListResultNews(newsManager.getCategorizedNewsList(categoriesList));
-		contextBean.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
-		setContextValuesFromNewsList(contextBean);
-		return contextBean.getListResultNews();
+		contextNewsNav.setListResultNews(newsManager.getCategorizedNewsList(categoriesList));
+		contextNewsNav.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
+		setContextValuesFromNewsList(contextNewsNav);
+		return contextNewsNav.getListResultNews();
 	}
 	
-	public News getNewsInstance() {
+	public NewsNodeUtil getNewsInstance() {
 		return newsManager.getInstance();
 	}
 	
-	public Award getAwardInstance() {
+	public AwardNodeUtil getAwardInstance() {
 		return awardManager.getInstance();
 	}
 	
-	private void setContextValuesFromNewsList(ContextBean contextBean) {
-		MgnlContext.setAttribute(contextBeanNewsNodeList, contextBean.getListResultNews(), Context.SESSION_SCOPE);
-		MgnlContext.setAttribute(contextBeanParentPathString, contextBean.getParentPath(), Context.SESSION_SCOPE);
+	private void setContextValuesFromNewsList(ContextNewsNav contextNewsNav) {
+		MgnlContext.setAttribute(contextNewsNavObject, contextNewsNav, Context.SESSION_SCOPE);
 	}
 
 }

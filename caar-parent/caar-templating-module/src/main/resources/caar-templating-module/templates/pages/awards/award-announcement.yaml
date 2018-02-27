@@ -1,0 +1,26 @@
+title: caar-templating-module.pages.award-announcement.dialog.title
+renderType: site
+visible: true
+dialog: caar-templating-module:pages/award-announcement-page-properties
+modelClass: es.arquia.magnolia.pages.models.AwardAnnouncementModel
+areas:
+  main:
+    templateScript: /caar-templating-module/templates/pages/awards/award-announcement.ftl
+    enabled: true
+    type: noComponent
+    areas:
+      breadcrumb:
+        type: single
+        availableComponents:
+          breadcrumb-awards-component:
+            id: caar-templating-module:components/breadcrumb-awards-component
+      subheader:
+        type: single
+        availableComponents:
+          sub-header-component:
+            id: caar-templating-module:components/sub-header-component
+      submenu-award:
+        type: single
+        availableComponents:
+          submenu-award:
+            id: caar-templating-module:components/submenu-award
