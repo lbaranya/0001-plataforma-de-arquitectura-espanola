@@ -47,6 +47,9 @@ public class CaarUtilsModuleVersionHandler extends DefaultModuleVersionHandler {
 				.addTask(new BootstrapSingleModuleResource("Category displayName i18n", "Add i18n property to displayName Textfield", "config.modules.categorization.apps.categories.subApps.detail.editor.form.tabs.category.fields.displayName.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				.addTask(new BootstrapSingleModuleResource("Arquia apps", "Add arquia custom apps to main layout", "config.modules.ui-admincentral.config.appLauncherLayout.groups.arquia.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				);
+		register(DeltaBuilder.update("0.23", "")
+				.addTask(new BootstrapSingleModuleResource("Content caching", "Disable content caching for all site", "config.modules.cache.config.contentCaching.defaultPageCache.cachePolicy.shouldBypassVoters.urls.excludes.caarCache.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				);
 	}
 	
 }
