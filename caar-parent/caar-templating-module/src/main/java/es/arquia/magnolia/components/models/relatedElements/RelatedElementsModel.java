@@ -1,10 +1,10 @@
 package es.arquia.magnolia.components.models.relatedElements;
 
-import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
+import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -14,8 +14,6 @@ import javax.jcr.RepositoryException;
 import es.arquia.magnolia.manager.ArchitectureFilesSupportArchitectManager;
 import es.arquia.magnolia.manager.AwardManager;
 import es.arquia.magnolia.manager.NewsManager;
-import es.arquia.magnolia.manager.RelatedElementsManager;
-import es.arquia.magnolia.utils.ArchitectureFileImpl;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
 import es.arquia.magnolia.utils.AwardNodeUtil;
 import es.arquia.magnolia.utils.NewsNodeUtil;
@@ -51,12 +49,12 @@ public class RelatedElementsModel <T extends ConfiguredTemplateDefinition> exten
 
 	public List<RelatedElement> getRelatedElements(Node node) throws RepositoryException{
 		List<RelatedElement> tmpElements = new ArrayList<>();
-		if(node.isNodeType("mgnl:support-architect")) {
+		if(node.isNodeType(architectureFilesSupportArchitectNodeType)) {
 			tmpElements = architectureFilesSupportArchitectManager.getTransformedRelatedElements(architectureFilesSupportArchitect.getRelatedElements(node));
 			
-		}else if(node.isNodeType("mgnl:news")){
+		}else if(node.isNodeType(newsNodeType)){
 			tmpElements = newsManager.getTransformedRelatedElements(newsNodeUtil.getRelatedElements(node));
-		}else if(node.isNodeType("mgnl:award")) {
+		}else if(node.isNodeType(awardNodeType)) {
 			tmpElements = awardManager.getTransformedRelatedElements(awardNodeUtil.getRelatedElements(node));
 		}
 		return tmpElements;
