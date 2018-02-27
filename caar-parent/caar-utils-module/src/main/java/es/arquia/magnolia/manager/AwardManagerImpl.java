@@ -6,6 +6,7 @@ import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
 import static es.arquia.magnolia.constants.AwardConstants.*;
+import static es.arquia.magnolia.constants.AnnouncementConstants.*;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -133,6 +134,27 @@ public class AwardManagerImpl implements AwardManager{
 			tmpList.add(relatedElementsManager.transformToRelatedElement(iterator.next()));
 		}
 		return tmpList;
+	}
+
+	@Override
+	public String getAnnouncementState(Node node) throws RepositoryException {
+		Node tmpEditionNode = null;
+		Iterable<Node> tmpIterable = NodeUtil.collectAllChildren(node, new Predicate() {
+
+			@Override
+			public boolean evaluate(Object arg0) {
+				Node tmpNode = (Node) arg0;
+				try {
+					return tmpNode.isNodeType(announcementNodeType) && tmpNode.getParent().isNodeType(editionNodeType) && award.getEditionState(tmpNode.getParent()).contains(editionStateOpen);
+				}catch(RepositoryException e) {
+					return false;
+				}
+			}
+			
+		});
+		if(tmpIterable.iterator().hasNext())
+			tmpEditionNode = tmpIterable.iterator().next();
+		return announcement.getAnnouncementState(tmpEditionNode);
 	}
 
 }

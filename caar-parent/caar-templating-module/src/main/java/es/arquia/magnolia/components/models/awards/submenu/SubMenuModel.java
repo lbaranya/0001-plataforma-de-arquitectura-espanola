@@ -70,6 +70,10 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	public String getAwardLiveEventMenuLink(String currentUrl, Node node) {
 		return utilsBreadcrumbAward.getAwardLiveEventMenuLink(currentUrl, node);
 	}
+	
+	public String getAnnouncementState(Node node) throws RepositoryException{
+		return awardManager.getAnnouncementState(node);
+	}
 
 
 }

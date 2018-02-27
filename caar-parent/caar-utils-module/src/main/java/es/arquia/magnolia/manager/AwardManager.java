@@ -29,5 +29,7 @@ public interface AwardManager {
 	public List<Node> getEvents(Node node) throws RepositoryException;
 	
 	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
+	
+	public String getAnnouncementState (Node node) throws RepositoryException;
 
 }

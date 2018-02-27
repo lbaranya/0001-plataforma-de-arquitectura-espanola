@@ -10,7 +10,7 @@
             <div class="row col-row">
                 <div class="col-header">
                     <h3 data-ref="menu">${awards.getAwardName(awardsContentNode)!""}<i class="fa fa-chevron-down" aria-hidden="true"></i></h3>
-                    <p>Fase: Descriptivo</p>
+                    <p>Fase: ${model.getAnnouncementState(awardsContentNode)!""}</p>
                 </div>
             </div>
         </div>
