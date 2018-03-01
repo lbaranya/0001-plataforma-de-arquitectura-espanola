@@ -139,6 +139,8 @@ public class AwardManagerImpl implements AwardManager{
 	@Override
 	public String getAnnouncementState(Node node) throws RepositoryException {
 		
+		String ret = null;
+		
 		Node tmpEditionNode = null;
 		Iterable<Node> tmpIterable = NodeUtil.collectAllChildren(node, new Predicate() {
 
@@ -159,7 +161,12 @@ public class AwardManagerImpl implements AwardManager{
 			tmpEditionNode = tmpIterable.iterator().next();
 		}
 		
-		return announcement.getAnnouncementState(tmpEditionNode);
+		if (tmpEditionNode != null) {
+		
+			ret = announcement.getAnnouncementState(tmpEditionNode);
+		}
+		
+		return ret;
 	}
 
 }
