@@ -6,7 +6,6 @@ import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
-import es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI;
 import es.arquia.magnolia.utils.RelatedElement;
 
 public interface ArchitectureFilesSupportArchitectManager {
@@ -15,5 +14,9 @@ public interface ArchitectureFilesSupportArchitectManager {
 	
 	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
 	
-	public List<Node> getArchitectsList() throws RepositoryException;
+	public List<Node> getHighlightedArchitectsList(int architectsPerRow) throws RepositoryException;
+	
+	public List<Node> getArchitectsListAfterHighlighted(int architectsPerRow, int architectsToSkip) throws RepositoryException;
+
+	public boolean isLastRowOfArchitects();
 }

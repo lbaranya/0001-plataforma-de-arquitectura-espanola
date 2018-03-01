@@ -22,12 +22,20 @@ public class ArchitectureFilesSupportArchitectsListModel <T extends ConfiguredTe
 		this.architectureFilesSupportArchitectManager = architectureFilesSupportArchitectManager;
 	}
 	
-	public List<Node> getArchitectsList() throws RepositoryException {
-		return architectureFilesSupportArchitectManager.getArchitectsList();
+	public List<Node> getArchitectsListAfterHighlighted(int architectsPerRow, int architectsToSkip) throws RepositoryException {
+		return architectureFilesSupportArchitectManager.getArchitectsListAfterHighlighted(architectsPerRow, architectsToSkip);
+	}
+	
+	public List<Node> getHighlightedArchitectsList(int architectsPerRow) throws RepositoryException {
+		return architectureFilesSupportArchitectManager.getHighlightedArchitectsList(architectsPerRow);
 	}
 	
 	public ArchitectureFilesSupportArchitect getInstance() {
 		return architectureFilesSupportArchitectManager.getInstance();
+	}
+	
+	public boolean isLastRowOfArchitects() {
+		return architectureFilesSupportArchitectManager.isLastRowOfArchitects();
 	}
 
 }
