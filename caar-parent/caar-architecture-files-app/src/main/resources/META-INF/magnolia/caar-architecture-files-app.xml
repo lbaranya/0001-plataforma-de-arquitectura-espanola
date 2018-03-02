@@ -26,6 +26,10 @@
 			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportEvent</type>
 			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportEvent</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.RelatedElementsManager</type>
+			<implementation>es.arquia.magnolia.manager.RelatedElementsManagerImpl</implementation>
+		</component>
 	</components>
 
 	<dependencies>

@@ -20,6 +20,8 @@ public interface AwardConstants {
 	
 	String awardExternalURL="awardExternalURL";
 	
+	String awardExternalURLText="awardExternalURLText";
+	
 	String awardHeaderBackground="awardHeaderBackground";
 	
 	String awardAboutText="awardAboutText";
@@ -27,6 +29,8 @@ public interface AwardConstants {
 	String categoriesList="categoriesList";
 	
 	String relatedNewsList="relatedNewsList";
+	
+	String awardOrder="awardOrder";
 	
 	String editionNodeType="mgnl:edition";
 	

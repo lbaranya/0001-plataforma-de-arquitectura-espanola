@@ -1,12 +1,15 @@
 package es.arquia.magnolia.manager;
 
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.awardOrder;
 import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
-import static es.arquia.magnolia.constants.AwardConstants.*;
 import static es.arquia.magnolia.constants.AnnouncementConstants.*;
+import static es.arquia.magnolia.constants.AwardConstants.liveEventNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.standardEventNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.type;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -51,18 +54,36 @@ public class AwardManagerImpl implements AwardManager{
 
 	@Override
 	public List<Node> getAwardList() throws RepositoryException {
+		List<Node> tmpList = new ArrayList<>();
 		final int limit = 6;
 		final int offset = 0;
-		String sqlQuery = "SELECT * FROM [" + awardNodeType + "] WHERE [" + type + "] LIKE 'standard' ORDER BY [" + "mgnl:lastModified" + "] DESC";
-		return queryUtils.executeSelectQuery(sqlQuery, awardWorkspace, limit, offset);
+		String sqlQuery = "SELECT * FROM [" + awardNodeType + "] WHERE [" + awardOrder + "] IS NOT NULL AND [" + type + "] LIKE 'standard' ORDER BY [" + awardOrder + "]";
+		tmpList.addAll(queryUtils.executeSelectQuery(sqlQuery, awardWorkspace, limit, offset));
+		sqlQuery = "SELECT * FROM [" + awardNodeType + "] WHERE [" + awardOrder + "] IS NULL AND [" + type + "] LIKE 'standard'";
+		tmpList.addAll(queryUtils.executeSelectQuery(sqlQuery, awardWorkspace, limit, offset));
+		if (tmpList.size() > 6) {
+			return tmpList.subList(0, limit);
+		}
+		else {
+			return tmpList;
+		}
 	}
 
 	@Override
 	public List<Node> getBiennialList() throws RepositoryException {
+		List<Node> tmpList = new ArrayList<>();
 		final int limit = 6;
 		final int offset = 0;
-		String sqlQuery = "SELECT * FROM [" + awardNodeType + "] WHERE [" + type + "] LIKE 'biennial' ORDER BY [" + "mgnl:lastModified" + "] DESC";
-		return queryUtils.executeSelectQuery(sqlQuery, awardWorkspace, limit, offset);
+		String sqlQuery = "SELECT * FROM [" + awardNodeType + "] WHERE [" + awardOrder + "] IS NOT NULL AND [" + type + "] LIKE 'biennial' ORDER BY [" + awardOrder + "]";
+		tmpList.addAll(queryUtils.executeSelectQuery(sqlQuery, awardWorkspace, limit, offset));
+		sqlQuery = "SELECT * FROM [" + awardNodeType + "] WHERE [" + awardOrder + "] IS NULL AND [" + type + "] LIKE 'biennial'";
+		tmpList.addAll(queryUtils.executeSelectQuery(sqlQuery, awardWorkspace, limit, offset));
+		if (tmpList.size() > 6) {
+			return tmpList.subList(0, limit);
+		}
+		else {
+			return tmpList;
+		}
 	}
 
 	@Override

@@ -76,4 +76,8 @@ imaging:
     "445h":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       height: 445
+    "261x350":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 261
+      height: 350
       

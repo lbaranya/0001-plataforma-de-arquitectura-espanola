@@ -44,18 +44,17 @@ public class NewsManagerImpl implements NewsManager{
 	}
 
 	@Override
-	public List<Node> getNewsList(int numberOfNews) throws RepositoryException{
+	public List<Node> getNewsList(int newsPerRow) throws RepositoryException{
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
-		final int limit = (numberOfNews > 0) ? (numberOfNews + 1) : 0;
-		final int lastNewsListElement = numberOfNews;
-		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
+		final int limit = (newsPerRow > 0) ? (newsPerRow + 1) : 0;
+		int offset = (rowsFromAjax != null) ? (newsPerRow * Integer.valueOf(rowsFromAjax)) : 0;
 		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [" + dateTime + "] DESC";
 		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 		if (newsList.size() < limit) {
 			lastRowOfNews = true;
 		}
 		else if (limit > 0) {
-			newsList.remove(lastNewsListElement);
+			newsList.remove(newsList.size() - 1);
 		}
 		return newsList;
 	}
@@ -66,10 +65,10 @@ public class NewsManagerImpl implements NewsManager{
 	}
 
 	@Override
-	public List<Node> getCategorizedNewsList(List<String> categoriesList, int numberOfNews) throws RepositoryException{
+	public List<Node> getCategorizedNewsList(List<String> categoriesList, int newsPerRow) throws RepositoryException{
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
-		final int limit = (numberOfNews > 0) ? (numberOfNews + 1) : 0;
-		final int lastNewsListElement = numberOfNews;
+		final int limit = (newsPerRow > 0) ? (newsPerRow + 1) : 0;
+		final int lastNewsListElement = newsPerRow;
 		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
 		String sqlQuery = categorizedNewsListQuery(categoriesList);
 		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
@@ -119,10 +118,10 @@ public class NewsManagerImpl implements NewsManager{
 	}
 
 	@Override
-	public List<Node> getCategorizedImportantNewsList(List<String> categoriesList, int numberOfNews) throws RepositoryException {
+	public List<Node> getCategorizedImportantNewsList(List<String> categoriesList, int newsPerRow) throws RepositoryException {
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
-		final int limit = (numberOfNews > 0) ? (numberOfNews + 1) : 0;
-		final int lastNewsListElement = numberOfNews;
+		final int limit = (newsPerRow > 0) ? (newsPerRow + 1) : 0;
+		final int lastNewsListElement = newsPerRow;
 		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
 		String sqlQuery = categorizedImportantNewsListQuery(categoriesList);
 		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
