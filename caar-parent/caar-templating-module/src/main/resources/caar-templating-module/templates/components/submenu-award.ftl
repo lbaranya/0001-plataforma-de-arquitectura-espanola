@@ -12,7 +12,7 @@
                     <h3 data-ref="menu">${awards.getAwardName(awardsContentNode)!""}<i class="fa fa-chevron-down" aria-hidden="true"></i></h3>
                     [#assign phase = model.getAnnouncementState(awardsContentNode)!""]
                     [#if phase?has_content]
-                    	<p>Fase: ${phase}</p>
+                    	<p>${i18n['caar-templating-module.templates.components.submenu-award.phase.label']}: ${phase}</p>
                     [/#if]
                 </div>
             </div>

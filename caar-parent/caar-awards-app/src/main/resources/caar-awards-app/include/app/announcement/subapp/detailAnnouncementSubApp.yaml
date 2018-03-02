@@ -22,20 +22,9 @@ editor:
           - name: state
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.state.label
-            options:
-              - name: open
-                value: open
-                label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.state.open.label
-                selected: true
-              - name: enrollments
-                value: enrollments
-                label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.state.enrollments.label
-              - name: contest
-                value: contest
-                label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.state.contest.label
-              - name: results
-                value: results
-                label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.state.results.label
+            repository: category
+            labelProperty: displayName
+            path: bienales-premios/convocatorias/fases
           - name: title
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition

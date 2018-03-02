@@ -27,21 +27,29 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 
+import org.apache.commons.lang3.StringUtils;
+
+import es.arquia.magnolia.constants.AnnouncementConstants;
+import es.arquia.magnolia.constants.UtilsConstants;
 import info.magnolia.cms.i18n.I18nContentSupport;
 import info.magnolia.context.MgnlContext;
 import info.magnolia.jcr.util.NodeTypes;
 import info.magnolia.jcr.util.NodeUtil;
+import info.magnolia.jcr.util.PropertyUtil;
+import info.magnolia.module.categorization.CategorizationModule;
+import info.magnolia.repository.RepositoryConstants;
 
 public class AnnouncementNodeUtilImpl implements AnnouncementNodeUtil {
 	@Inject
 	private I18nContentSupport i18nContentSupport;
 	
-	private String getPropertyAsString(Node node, String property) {
+	private String getPropertyAsI18nString(Node node, String property) {
 		try {
 			return i18nContentSupport.getProperty(node, property).getString();
 		}catch(RepositoryException e) {
-			return "";
+			return StringUtils.EMPTY;
 		}
 	}
 	
@@ -59,32 +67,49 @@ public class AnnouncementNodeUtilImpl implements AnnouncementNodeUtil {
 		return lemmaSectionsList;
 	}
 	
-	public String getAnnouncementState(Node node){
-		return getPropertyAsString(node, state);
+	public String getAnnouncementState(Node node) {
+		
+		Node categoryNode = null;
+		
+		try {
+			
+				Session categorizationWorkspaceSession = MgnlContext.getJCRSession(CategorizationModule.CATEGORIZATION_WORKSPACE);
+					Session configWorkspaceSession = MgnlContext.getJCRSession(RepositoryConstants.CONFIG);
+				String pathToAwardsAnnouncementPhasesCategories = PropertyUtil.getValueString(configWorkspaceSession.getProperty(AnnouncementConstants.jcrPropertyPathToAwardsAnnouncementPhasesCategoriesPathConstant));
+				String announcementStateCategoryValue = PropertyUtil.getValueString(node.getProperty(state));
+			categoryNode = categorizationWorkspaceSession.getNode(pathToAwardsAnnouncementPhasesCategories + "/" + announcementStateCategoryValue);
+			
+		} catch (RepositoryException e) {
+			
+			return StringUtils.EMPTY;
+		}
+		
+
+		return getPropertyAsI18nString(categoryNode, UtilsConstants.CATEGORIES_DISPLAY_NAME_PROP);
 	}
 	
 	public String getAnnouncementTitle(Node node){
-		return getPropertyAsString(node, title);
+		return getPropertyAsI18nString(node, title);
 	}
 	
 	public String getAnnouncementText(Node node){
-		return getPropertyAsString(node, text);
+		return getPropertyAsI18nString(node, text);
 	}
 	
 	public String getAnnouncementMediaType(Node node){
-		return getPropertyAsString(node, media);
+		return getPropertyAsI18nString(node, media);
 	}
 	
 	public String getAnnouncementMediaImage(Node node){
-		return getPropertyAsString(node, mediaImage);
+		return getPropertyAsI18nString(node, mediaImage);
 	}
 	
 	public String getAnnouncementMediaVideo(Node node){
-		return getPropertyAsString(node, mediaVideo);
+		return getPropertyAsI18nString(node, mediaVideo);
 	}
 	
 	public String getAnnouncementMediaPosition(Node node){
-		return getPropertyAsString(node, mediaPosition);
+		return getPropertyAsI18nString(node, mediaPosition);
 	}
 	
 	public List<Node> getAnnouncementRichTextSections(Node node) throws RepositoryException{

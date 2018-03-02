@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import com.vaadin.v7.data.Item;
 
+import es.arquia.magnolia.constants.AwardConstants;
 import es.arquia.magnolia.messages.magnoliaUI.MessagesUI;
 import es.arquia.magnolia.utils.AwardNodeUtil;
 import info.magnolia.context.MgnlContext;
@@ -59,9 +60,9 @@ public class EditionLimitEditItemAction extends AbstractAction<EditionLimitEditI
 
             final String path = contentConnector.getItemUrlFragment(itemId);
             /*	Edition's state validation	*/
-            Node announcementNode = MgnlContext.getJCRSession("awards").getNode(path);
+            Node announcementNode = MgnlContext.getJCRSession(AwardConstants.awardWorkspace).getNode(path);
             Node editionNode = announcementNode.getParent();
-            if(editionNode.isNodeType("mgnl:edition") && awardNodeUtil.getEditionState(editionNode).contains("open")) {
+            if(editionNode.isNodeType(AwardConstants.editionNodeType) && awardNodeUtil.getEditionState(editionNode).contains(AwardConstants.editionStateOpen)) {
 	            DetailLocation location = new DetailLocation(getDefinition().getAppName(), getDefinition().getSubAppId(), DetailView.ViewType.EDIT, path, "");
 	            locationController.goTo(location);
             }else {

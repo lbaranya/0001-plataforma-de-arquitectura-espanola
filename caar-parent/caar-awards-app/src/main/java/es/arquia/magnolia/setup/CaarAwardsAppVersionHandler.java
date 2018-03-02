@@ -21,5 +21,9 @@ public class CaarAwardsAppVersionHandler extends DefaultModuleVersionHandler {
 		register(DeltaBuilder.update("0.18", "")
 				.addTask(new BootstrapSingleModuleResource("URI2Repository mapping for awards", "Add a mapping to awards repository", "config.server.URI2RepositoryMapping.mappings.awards.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				);
+		
+		register(DeltaBuilder.update("0.24", "")
+				.addTask(new BootstrapSingleModuleResource("Configuration constants for awards", "Create configuration constants into JCR awards module", "config.modules.caar-awards-app.constants.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				);
 	}
 }

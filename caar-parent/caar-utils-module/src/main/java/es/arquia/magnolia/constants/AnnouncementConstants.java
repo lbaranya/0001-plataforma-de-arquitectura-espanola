@@ -2,6 +2,8 @@ package es.arquia.magnolia.constants;
 
 public interface AnnouncementConstants {
 	
+	String jcrPropertyPathToAwardsAnnouncementPhasesCategoriesPathConstant = AwardConstants.jcrPathToAwardsConfigurationConstants + "/announcements/phases/categoriesPath";
+	
 	String announcementNodeType = "mgnl:announcement";
 	
 	String state = "state";

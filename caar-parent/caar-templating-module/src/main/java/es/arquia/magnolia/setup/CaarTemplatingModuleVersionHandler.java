@@ -12,5 +12,5 @@ import info.magnolia.module.DefaultModuleVersionHandler;
  * @see info.magnolia.module.delta.Task
  */
 public class CaarTemplatingModuleVersionHandler extends DefaultModuleVersionHandler {
-
+	// TODO: agregar version handler
 }

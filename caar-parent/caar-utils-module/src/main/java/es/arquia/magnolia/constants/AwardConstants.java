@@ -2,6 +2,10 @@ package es.arquia.magnolia.constants;
 
 public interface AwardConstants {
 	
+	String awardsModuleName = "caar-awards-app";
+	
+	String jcrPathToAwardsConfigurationConstants = "/modules/" + awardsModuleName + "/constants";
+	
 	String awardWorkspace="awards";
 	
 	String awardNodeType="mgnl:award";

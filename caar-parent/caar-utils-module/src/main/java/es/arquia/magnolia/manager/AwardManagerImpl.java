@@ -32,9 +32,9 @@ public class AwardManagerImpl implements AwardManager{
 	
 	private QueryUtils queryUtils;
 	
-	private AwardNodeUtil award;
+	private AwardNodeUtil awardNodeUtil;
 	
-	private AnnouncementNodeUtil announcement;
+	private AnnouncementNodeUtil announcementNodeUtil;
 	
 	private EventNodeUtil eventNodeUtil;
 	
@@ -43,8 +43,8 @@ public class AwardManagerImpl implements AwardManager{
 	@Inject
 	public AwardManagerImpl(final QueryUtils queryUtils, final AwardNodeUtil award, final AnnouncementNodeUtil announcement, final EventNodeUtil eventNodeUtil, final RelatedElementsManager relatedElementsManager) {
         this.queryUtils = queryUtils;
-        this.award = award;
-        this.announcement = announcement;
+        this.awardNodeUtil = award;
+        this.announcementNodeUtil = announcement;
         this.eventNodeUtil = eventNodeUtil;
         this.relatedElementsManager = relatedElementsManager;
     }
@@ -67,12 +67,12 @@ public class AwardManagerImpl implements AwardManager{
 
 	@Override
 	public AwardNodeUtil getInstance() {
-		return this.award;
+		return this.awardNodeUtil;
 	}
 	
 	@Override
 	public AnnouncementNodeUtil getAnnouncementInstance() {
-		return this.announcement;
+		return this.announcementNodeUtil;
 	}
 	
 	@Override
@@ -149,7 +149,7 @@ public class AwardManagerImpl implements AwardManager{
 				Node tmpNode = (Node) arg0;
 				try {
 					return tmpNode.isNodeType(announcementNodeType) && tmpNode.getParent().isNodeType(editionNodeType) 
-							&& award.getEditionState(tmpNode.getParent()).contains(editionStateOpen);
+							&& awardNodeUtil.getEditionState(tmpNode.getParent()).contains(editionStateOpen);
 				}catch(RepositoryException e) {
 					return false;
 				}
@@ -163,7 +163,7 @@ public class AwardManagerImpl implements AwardManager{
 		
 		if (tmpEditionNode != null) {
 		
-			ret = announcement.getAnnouncementState(tmpEditionNode);
+			ret = announcementNodeUtil.getAnnouncementState(tmpEditionNode);
 		}
 		
 		return ret;

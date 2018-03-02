@@ -12,4 +12,6 @@ public interface UtilsConstants {
 	String tmpCaarCountiesFolderName = "caar-countries-tmp";
 	
 	String jcrLanguage = "JCR-SQL2";
+	
+	String CATEGORIES_DISPLAY_NAME_PROP = "displayName";
 }
