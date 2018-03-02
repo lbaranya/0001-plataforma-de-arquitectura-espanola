@@ -20,7 +20,7 @@ public class CaarTemplatingModuleVersionHandler extends DefaultModuleVersionHand
 	public CaarTemplatingModuleVersionHandler() {
 		
 		register(DeltaBuilder.update("0.24", "")
-				.addTask(new BootstrapSingleModuleResource("Module commands", "Create all module commands", "config.modules.site.config.site.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				.addTask(new BootstrapSingleModuleResource("Site definition", "Definition of site: templates, i18n ,etc", "config.modules.site.config.site.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				);
 	}
 }
