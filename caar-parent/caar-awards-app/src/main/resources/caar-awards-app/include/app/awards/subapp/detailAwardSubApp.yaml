@@ -54,6 +54,10 @@ editor:
           - name: awardExternalURL
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.awardData.awardExternalURL.label
+          - name: awardExternalURLText
+            i18n: true
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.awardData.awardExternalURLText.label
           - name: awardHeaderBackground
             label: caar-awards-app.awardData.awardHeaderBackground.label
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
@@ -92,6 +96,14 @@ editor:
               appName: caar-news-app
               identifierToPathConverter:
                 class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+          - name: awardOrder
+            validators:
+              - name: onlyNumber
+                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                pattern: \d
+                errorMessage: caar-architecture-files-app.files.support.architect.educationData.errorMessage.label
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.awardData.awardOrder.label
   actions:
     - name: commit
     - name: cancel

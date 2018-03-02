@@ -1,0 +1,31 @@
+title: caar-templating-module.pages.detail-business.dialog.title
+renderType: site
+visible: true
+dialog: caar-templating-module:pages/detail-business-page-properties
+modelClass: es.arquia.magnolia.pages.models.architectureFiles.support.business.ArchitectureFilesSupportBusinessModel
+areas:
+  main:
+    templateScript: /caar-templating-module/templates/pages/details/detail-business.ftl
+    enabled: true
+    type: noComponent
+    areas:
+      breadcrumb:
+        type: single
+        availableComponents:
+          breadcrumb-component:
+            id: caar-templating-module:components/breadcrumb-component
+      complementary-info:
+        type: single
+        availableComponents:
+          detail-business-complementary-info:
+            id: caar-templating-module:components/detail-business-complementary-info-component
+      department-components:
+        type: single
+        availableComponents:
+          detail-business-department-component:
+            id: caar-templating-module:components/detail-business-department-components-component
+      department-info:
+        type: single
+        availableComponents:
+          detail-business-department-info:
+            id: caar-templating-module:components/detail-business-department-info-component

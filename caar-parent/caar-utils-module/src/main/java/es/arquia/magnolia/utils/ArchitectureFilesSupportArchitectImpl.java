@@ -86,8 +86,6 @@ import info.magnolia.jcr.util.NodeUtil;
 
 public class ArchitectureFilesSupportArchitectImpl implements ArchitectureFilesSupportArchitect{
 	
-	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportArchitectImpl.class);
-	
 	public ArchitectureFilesSupportArchitectImpl() {}
 
 	public String getName(Node node) throws RepositoryException {
@@ -646,5 +644,9 @@ public class ArchitectureFilesSupportArchitectImpl implements ArchitectureFilesS
 		}
 		
 		return validProperties;
+	}
+	
+	public String getFullName(Node node) throws RepositoryException {
+		return this.getName(node) + " " + this.getFirstSurname(node) + " " + this.getSecondSurname(node);
 	}
 }

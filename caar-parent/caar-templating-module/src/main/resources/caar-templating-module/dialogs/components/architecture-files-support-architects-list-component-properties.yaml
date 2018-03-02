@@ -1,0 +1,30 @@
+form:
+  tabs:
+    - name: tabMain
+      label: caar-templating-module.templates.components.architecture-files-support-architects-list-component.tabMain.label
+      fields:
+        - name: headerImage
+          required: true      
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+          label: caar-templating-module.templates.components.architecture-files-support-architects-list-component.tabMain.headerImage.label
+        - name: headerText
+          i18n: true
+          required: true      
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.architecture-files-support-architects-list-component.tabMain.headerText.label
+        - name: title
+          i18n: true
+          required: true      
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: caar-templating-module.templates.components.architecture-files-support-architects-list-component.tabMain.title.label
+actions:      
+  commit:      
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      
+  cancel:      
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

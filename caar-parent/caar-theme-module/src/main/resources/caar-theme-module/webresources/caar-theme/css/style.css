@@ -3793,3 +3793,168 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 		padding-right: 15px;
 	}
 }
+
+/* LISTADO DE ARQUITECTOS */
+.cmp-arquitecto .sub-title-arqui {
+  color: #D0021B;
+  font-size: 15px;
+  letter-spacing: -0.1px;
+  margin: 10px 0 10px 0; }
+
+.cmp-arquitecto .cmp-header-arqui {
+  min-height: 626px;
+  background-repeat: no-repeat;
+  background-size: 100%; }
+  .cmp-arquitecto .cmp-header-arqui .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 626px; }
+    .cmp-arquitecto .cmp-header-arqui .header .sub-title {
+      color: #fff;
+      font-size: 15px;
+      font-family: "National-Book", "Helvetica", "sans-serif"; }
+      .cmp-arquitecto .cmp-header-arqui .header .sub-title .leer {
+        border-radius: 100%;
+        width: 10px;
+        height: 10px;
+        border: 1px solid #D0021B;
+        display: inline-block;
+        margin-right: 10px; }
+      .cmp-arquitecto .cmp-header-arqui .header .sub-title a {
+        text-decoration: none;
+        color: #fff; }
+        .cmp-arquitecto .cmp-header-arqui .header .sub-title a .leer {
+          border-radius: 100%;
+          width: 10px;
+          height: 10px;
+          border: 1px solid #D0021B;
+          display: inline-block;
+          margin-right: 10px; }
+    .cmp-arquitecto .cmp-header-arqui .header .title-big {
+      color: #fff;
+      font-size: 120px;
+      font-family: "FreightTextBookItalic", "Helvetica", "sans-serif";
+      font-weight: 900;
+      line-height: 0.77;
+      text-align: center;
+      width: 57%;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      margin: 0 auto; }
+  .cmp-arquitecto .cmp-header-arqui .rrss {
+    float: right;
+    margin: 10px 0 10px 0;
+    border: 1px solid #D0021B;
+    padding: 5px 10px 5px 10px; }
+    .cmp-arquitecto .cmp-header-arqui .rrss a {
+      padding: 10px;
+      text-decoration: none;
+      color: #fff; }
+
+.cmp-arquitecto .cmp-arquitecto-header h2 {
+  width: 460px;
+  height: 62px;
+  font-family: "National-Book", "Helvetica", "sans-serif";
+  font-size: 50px;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  text-align: center;
+  color: #D0021B;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px; }
+
+.cmp-arquitecto .cmp-arquitecto-ultimos {
+  font-family: "National-Book", "Helvetica", "sans-serif";
+  margin-bottom: 30px; }
+  .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui {
+    margin-bottom: 30px; }
+    .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .nom-arqui {
+      font-family: "National-BookItalic", "Helvetica", "sans-serif";
+      font-size: 15px;
+      line-height: 1;
+      letter-spacing: -0.1px;
+      color: #000;
+      margin: 5px 0 5px 0; }
+    .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text {
+      position: relative; }
+      .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text img {
+        width: 556px;
+        height: 445px;
+        border-bottom: 3px solid #D0021B; }
+      .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text .texto-hover {
+        display: none;
+        width: 556px;
+        height: 445px;
+        position: absolute;
+        top: 0;
+        color: #fff;
+        background-color: rgba(208, 2, 27, 0.7); }
+        .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text .texto-hover h2 {
+          width: 414px;
+          margin: 0;
+          text-align: center;
+          font-size: 44px;
+          font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
+      .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text:hover img {
+        border-bottom: none; }
+      .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text:hover .texto-hover {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+
+.cmp-arquitecto .cmp-todos-arqui {
+  margin-bottom: 30px; }
+  .cmp-arquitecto .cmp-todos-arqui .container-arqui .nom-arqui {
+    font-family: "National-BookItalic", "Helvetica", "sans-serif";
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -0.1px;
+    color: #000;
+    margin: 5px 0 5px 0; }
+  .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text {
+    position: relative; }
+    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text img {
+      border-bottom: 3px solid #D0021B;
+      width: 261px;
+      height: 350px; }
+    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover {
+      display: none;
+      width: 261px;
+      height: 350px;
+      position: absolute;
+      top: 0;
+      color: #fff;
+      background-color: rgba(208, 2, 27, 0.7); }
+      .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover h2 {
+        width: 414px;
+        margin: 0;
+        text-align: center;
+        font-size: 34px;
+        padding: 0 10px 0 10px;
+        font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
+    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text:hover img {
+      border-bottom: none; }
+    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text:hover .texto-hover {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+
+@media screen and (max-width: 1200px) {
+  .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text img {
+    width: 212px;
+    height: 320px; }
+  .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover {
+    width: 212px;
+    height: 320px; }
+    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover h2 {
+      width: 414px;
+      margin: 0;
+      text-align: center;
+      font-size: 34px;
+      padding: 0 10px 0 10px;
+      font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; } }
+/* LISTADO DE ARQUITECTOS - Termina*/

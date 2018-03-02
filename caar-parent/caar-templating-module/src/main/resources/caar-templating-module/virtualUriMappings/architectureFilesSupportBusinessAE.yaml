@@ -1,0 +1,3 @@
+class: info.magnolia.cms.beans.config.RegexpVirtualURIMapping
+fromURI: /architecture-files/support-business/(.*).html
+toURI: forward:/caar-home/explorando-arquitectura/documentaryEA/business/architectureFilesSupportBusinessDetailsAE?path=/$1&workspace=architecture-files

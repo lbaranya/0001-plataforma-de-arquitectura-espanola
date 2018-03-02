@@ -18,7 +18,6 @@ import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
-import es.arquia.magnolia.utils.ArchitectureFilesSupportEventImpl;
 import es.arquia.magnolia.utils.RelatedElement;
 
 public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFilesSupportEventManager {
