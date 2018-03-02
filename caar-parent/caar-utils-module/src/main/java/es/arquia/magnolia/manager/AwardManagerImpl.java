@@ -6,6 +6,7 @@ import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
+import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
 import static es.arquia.magnolia.constants.AnnouncementConstants.*;
 import static es.arquia.magnolia.constants.AwardConstants.liveEventNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.standardEventNodeType;
