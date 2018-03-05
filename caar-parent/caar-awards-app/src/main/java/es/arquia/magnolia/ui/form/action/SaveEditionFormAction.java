@@ -10,6 +10,7 @@ import javax.jcr.NodeIterator;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -103,7 +104,7 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
     	try {
     		String oldState = PropertyUtil.getString(nodeWithoutChanges, editionState);
 			String newEditionState = node.getProperty(editionState).getValue().getString();
-			if(!oldState.equalsIgnoreCase(newEditionState) || StringUtil.isEmpty(oldState)) {
+			if(! newEditionState.equalsIgnoreCase(oldState) || StringUtils.isEmpty(oldState)) {
 				if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {
 					Node parentNode = node.getParent();
 					NodeIterator parentIterator = parentNode.getNodes();
