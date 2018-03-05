@@ -1,7 +1,8 @@
 package es.arquia.magnolia.ui.form.action;
 
-import static es.arquia.magnolia.constants.AwardConstants.*;
+import static es.arquia.magnolia.constants.AwardConstants.editionState;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
+import static es.arquia.magnolia.constants.AwardConstants.standardEventNodeType;
 
 import javax.jcr.Node;
 import javax.jcr.Property;
@@ -23,7 +24,7 @@ import info.magnolia.ui.form.EditorValidator;
 import info.magnolia.ui.vaadin.integration.jcr.JcrNodeAdapter;
 import info.magnolia.ui.vaadin.integration.jcr.ModelConstants;
 
-public class SaveIfEditionOpenFormAction extends AbstractAction<SaveEditionFormActionDefinition> {
+public class SaveIfEditionOpenFormAction extends AbstractAction<SaveIfEditionOpenFormActionDefinition> {
 
     private static final Logger log = LoggerFactory.getLogger(SaveIfEditionOpenFormAction.class);
 
@@ -38,7 +39,7 @@ public class SaveIfEditionOpenFormAction extends AbstractAction<SaveEditionFormA
     private static final String ITEM_SAVE_ERROR_SUBJECT = "caar-awards-app.message.ui.item.save.subject";
     private static final String ITEM_SAVE_ERROR_MESSAGE = "caar-awards-app.message.ui.item.save.messageText";
 
-    public SaveIfEditionOpenFormAction(SaveEditionFormActionDefinition definition, JcrNodeAdapter item, EditorCallback callback, EditorValidator validator, final MessagesUI messagesUI, final SimpleTranslator i18n) {
+    public SaveIfEditionOpenFormAction(SaveIfEditionOpenFormActionDefinition definition, JcrNodeAdapter item, EditorCallback callback, EditorValidator validator, final MessagesUI messagesUI, final SimpleTranslator i18n) {
         super(definition);
         this.item = item;
         this.callback = callback;
