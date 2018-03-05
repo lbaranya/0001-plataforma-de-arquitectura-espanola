@@ -2359,6 +2359,10 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	vertical-align: sub;
 }
 
+.cmp-last-news .noticias-container:hover{
+	color: #D0021B;
+}
+
 @media screen and (max-width: 768px) {
 	.cmp-last-news .noticias-container .noticias-item .container-destacado {
 		width: 100%;
@@ -3485,6 +3489,10 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	width: 70%;
 	padding-left: 63px;
 	position: relative;
+}
+
+.cmp-noticias-eventos .cmp-noticias .noticias-item:hover {
+    color: #D0021B; 
 }
 
 /* Noticias y Agenda: Termina */
