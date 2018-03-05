@@ -14,8 +14,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.twelvemonkeys.lang.StringUtil;
-
 import es.arquia.magnolia.messages.magnoliaUI.MessagesUI;
 import info.magnolia.cms.core.Path;
 import info.magnolia.i18nsystem.SimpleTranslator;
