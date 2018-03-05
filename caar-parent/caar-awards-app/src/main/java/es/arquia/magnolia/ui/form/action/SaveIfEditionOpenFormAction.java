@@ -1,16 +1,12 @@
 package es.arquia.magnolia.ui.form.action;
 
-import static es.arquia.magnolia.constants.AwardConstants.editionState;
-import static es.arquia.magnolia.constants.AwardConstants.editionStateClosed;
-import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
+import static es.arquia.magnolia.constants.AwardConstants.*;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
 
 import javax.jcr.Node;
-import javax.jcr.NodeIterator;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,9 +23,9 @@ import info.magnolia.ui.form.EditorValidator;
 import info.magnolia.ui.vaadin.integration.jcr.JcrNodeAdapter;
 import info.magnolia.ui.vaadin.integration.jcr.ModelConstants;
 
-public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionDefinition> {
+public class SaveIfEditionOpenFormAction extends AbstractAction<SaveEditionFormActionDefinition> {
 
-    private static final Logger log = LoggerFactory.getLogger(SaveEditionFormAction.class);
+    private static final Logger log = LoggerFactory.getLogger(SaveIfEditionOpenFormAction.class);
 
     protected final JcrNodeAdapter item;
     protected final EditorCallback callback;
@@ -39,10 +35,10 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
     
     private final SimpleTranslator i18n;
     
-    private static final String EDITION_SAVE_ERROR_SUBJECT = "caar-awards-app.message.ui.edition.save.subject";
-    private static final String EDITION_SAVE_ERROR_MESSAGE = "caar-awards-app.message.ui.edition.save.messageText";
+    private static final String ITEM_SAVE_ERROR_SUBJECT = "caar-awards-app.message.ui.item.save.subject";
+    private static final String ITEM_SAVE_ERROR_MESSAGE = "caar-awards-app.message.ui.item.save.messageText";
 
-    public SaveEditionFormAction(SaveEditionFormActionDefinition definition, JcrNodeAdapter item, EditorCallback callback, EditorValidator validator, final MessagesUI messagesUI, final SimpleTranslator i18n) {
+    public SaveIfEditionOpenFormAction(SaveEditionFormActionDefinition definition, JcrNodeAdapter item, EditorCallback callback, EditorValidator validator, final MessagesUI messagesUI, final SimpleTranslator i18n) {
         super(definition);
         this.item = item;
         this.callback = callback;
@@ -55,14 +51,12 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
     public void execute() throws ActionExecutionException {
         if (validateForm()) {
             try {
-            	JcrNodeAdapter jcrNodeAdapterOld = new JcrNodeAdapter(((JcrNodeAdapter)this.item).getJcrItem());
-            	Node nodeWithoutChanges = jcrNodeAdapterOld.getJcrItem();
                 final Node node = item.applyChanges();
-                if(validateEditionState(item.getJcrItem(), nodeWithoutChanges)) {
+                if(validateEditionState(item.getJcrItem())) {
 	                setNodeName(node, item);
 	                node.getSession().save();
                 }else {
-                	messagesUI.sendToCurrentUser(MessageType.ERROR, this.i18n.translate(EDITION_SAVE_ERROR_SUBJECT), this.i18n.translate(EDITION_SAVE_ERROR_MESSAGE));
+                	messagesUI.sendToCurrentUser(MessageType.ERROR, this.i18n.translate(ITEM_SAVE_ERROR_SUBJECT), this.i18n.translate(ITEM_SAVE_ERROR_MESSAGE));
                 }
             } catch (final RepositoryException e) {
                 throw new ActionExecutionException(e);
@@ -98,33 +92,13 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
         }
     }
     
-    private boolean validateEditionState(Node node, Node nodeWithoutChanges) {
+    private boolean validateEditionState(Node node) {
     	try {
-    		String oldState = PropertyUtil.getString(nodeWithoutChanges, editionState);
-			String newEditionState = node.getProperty(editionState).getValue().getString();
-			if(! newEditionState.equalsIgnoreCase(oldState) || StringUtils.isEmpty(oldState)) {
-				if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {
-					Node parentNode = node.getParent();
-					NodeIterator parentIterator = parentNode.getNodes();
-					boolean existState = false;
-					while(parentIterator.hasNext() && !existState) {
-						Node childNode = parentIterator.nextNode();
-						if(!childNode.isSame(node)) {
-							String stateString = childNode.getProperty(editionState).getValue().getString();
-							if((stateString.equalsIgnoreCase(editionStateOpen) || stateString.equalsIgnoreCase(editionStateInProgress)) && stateString.equalsIgnoreCase(newEditionState)) {
-								existState = true;
-							}else{
-								existState = false;
-							}
-						}
-					}
-					return !existState;
-				}else {
-					return true;
-				}
-			}else {
-				return !(newEditionState.equals(editionStateInProgress) || newEditionState.equals(editionStateClosed));
-			}
+    		Node currentNode = node;
+    		if(node.isNodeType(standardEventNodeType)) {
+    			currentNode = currentNode.getParent();
+    		}
+    		return PropertyUtil.getString(currentNode.getParent(), editionState).equalsIgnoreCase(editionStateOpen);
 		} catch (IllegalStateException | RepositoryException e) {
 			return true;
 		}

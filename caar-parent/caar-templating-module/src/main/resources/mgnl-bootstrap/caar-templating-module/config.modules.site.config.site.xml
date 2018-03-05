@@ -127,6 +127,30 @@
             <sv:value>caar-templating-module:pages/awards/award-about</sv:value>
           </sv:property>
         </sv:node>
+        <sv:node sv:name="awardsAnnouncement">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+          </sv:property>
+          <sv:property sv:name="id" sv:type="String">
+            <sv:value>caar-templating-module:pages/awards/award-announcement</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="awardsStandardEvent">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+          </sv:property>
+          <sv:property sv:name="id" sv:type="String">
+            <sv:value>caar-templating-module:pages/awards/award-standard-event</sv:value>
+          </sv:property>
+        </sv:node>
+        <sv:node sv:name="awardsLiveEvent">
+          <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>mgnl:contentNode</sv:value>
+          </sv:property>
+          <sv:property sv:name="id" sv:type="String">
+            <sv:value>caar-templating-module:pages/awards/award-live-event</sv:value>
+          </sv:property>
+        </sv:node>
         <sv:node sv:name="awardsNewsList">
           <sv:property sv:name="jcr:primaryType" sv:type="Name">
             <sv:value>mgnl:contentNode</sv:value>

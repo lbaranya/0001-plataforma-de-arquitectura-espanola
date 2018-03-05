@@ -299,6 +299,6 @@ editor:
     - name: cancel
 actions:
   commit:
-    class: info.magnolia.ui.form.action.SaveFormActionDefinition
+    class: es.arquia.magnolia.ui.form.action.SaveIfEditionOpenFormActionDefinition
   cancel:      
     class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
