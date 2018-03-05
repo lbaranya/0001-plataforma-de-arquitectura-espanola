@@ -55,10 +55,11 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
     public void execute() throws ActionExecutionException {
         if (validateForm()) {
             try {
-            	JcrNodeAdapter jcrNodeAdapterOld = new JcrNodeAdapter(((JcrNodeAdapter)this.item).getJcrItem());
-            	Node nodeWithoutChanges = jcrNodeAdapterOld.getJcrItem();
-                final Node node = item.applyChanges();
-                if(validateEditionState(item.getJcrItem(), nodeWithoutChanges)) {
+            	
+            	final Node node = item.getJcrItem();
+            	String oldState = PropertyUtil.getString(node, editionState);
+                item.applyChanges(); // Changes applied will update all variables that point to this JCR item, because it is the nature of JcrNodeAdapter, so it is not necessary to assign the result of this line
+                if(validateEditionState(item.getJcrItem(), oldState)) {
 	                setNodeName(node, item);
 	                node.getSession().save();
                 }else {
@@ -98,9 +99,8 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
         }
     }
     
-    private boolean validateEditionState(Node node, Node nodeWithoutChanges) {
+    private boolean validateEditionState(Node node, String oldState) {
     	try {
-    		String oldState = PropertyUtil.getString(nodeWithoutChanges, editionState);
 			String newEditionState = node.getProperty(editionState).getValue().getString();
 			if(! newEditionState.equalsIgnoreCase(oldState) || StringUtils.isEmpty(oldState)) {
 				if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {

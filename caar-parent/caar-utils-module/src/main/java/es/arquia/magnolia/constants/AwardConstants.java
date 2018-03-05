@@ -36,11 +36,11 @@ public interface AwardConstants {
 	
 	String editionState = "state";
 	
-	String editionStateOpen = "open";
+	String editionStateOpen = "abierta";
 	
-	String editionStateInProgress = "progress";
+	String editionStateInProgress = "progreso";
 	
-	String editionStateClosed = "closed";
+	String editionStateClosed = "cerrada";
 	
 	String editionAnnouncementButtonText = "announcementButtonText";
 	
