@@ -8,14 +8,6 @@ public interface AnnouncementConstants {
 	
 	String state = "state";
 	
-	String stateOpen = "open";
-	
-	String stateEnrollment = "enrollment";
-	
-	String stateContest = "contest";
-	
-	String stateResults = "results";
-	
 	String title = "title";
 	
 	String text = "text";
