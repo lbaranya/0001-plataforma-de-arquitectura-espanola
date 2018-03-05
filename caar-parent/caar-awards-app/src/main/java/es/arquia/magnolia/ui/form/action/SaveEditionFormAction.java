@@ -13,6 +13,8 @@ import javax.jcr.RepositoryException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.twelvemonkeys.lang.StringUtil;
+
 import es.arquia.magnolia.messages.magnoliaUI.MessagesUI;
 import info.magnolia.cms.core.Path;
 import info.magnolia.i18nsystem.SimpleTranslator;
@@ -101,7 +103,7 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
     	try {
     		String oldState = PropertyUtil.getString(nodeWithoutChanges, editionState);
 			String newEditionState = node.getProperty(editionState).getValue().getString();
-			if(!oldState.equalsIgnoreCase(newEditionState)) {
+			if(!oldState.equalsIgnoreCase(newEditionState) || StringUtil.isEmpty(oldState)) {
 				if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {
 					Node parentNode = node.getParent();
 					NodeIterator parentIterator = parentNode.getNodes();
