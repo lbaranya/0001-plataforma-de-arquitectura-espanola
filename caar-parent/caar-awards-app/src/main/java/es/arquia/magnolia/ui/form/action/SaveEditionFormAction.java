@@ -1,6 +1,7 @@
 package es.arquia.magnolia.ui.form.action;
 
 import static es.arquia.magnolia.constants.AwardConstants.editionState;
+import static es.arquia.magnolia.constants.AwardConstants.editionStateClosed;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateInProgress;
 import static es.arquia.magnolia.constants.AwardConstants.editionStateOpen;
 
@@ -14,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 import info.magnolia.cms.core.Path;
 import info.magnolia.jcr.util.NodeUtil;
+import info.magnolia.jcr.util.PropertyUtil;
 import info.magnolia.ui.api.action.AbstractAction;
 import info.magnolia.ui.api.action.ActionExecutionException;
 import info.magnolia.ui.form.EditorCallback;
@@ -40,8 +42,10 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
     public void execute() throws ActionExecutionException {
         if (validateForm()) {
             try {
+            	JcrNodeAdapter jcrNodeAdapterOld = new JcrNodeAdapter(((JcrNodeAdapter)this.item).getJcrItem());
+            	Node nodeWithoutChanges = jcrNodeAdapterOld.getJcrItem();
                 final Node node = item.applyChanges();
-                if(validateEditionState(item.getJcrItem())) {
+                if(validateEditionState(item.getJcrItem(), nodeWithoutChanges)) {
 	                setNodeName(node, item);
 	                node.getSession().save();
                 }
@@ -79,27 +83,32 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
         }
     }
     
-    private boolean validateEditionState(Node node) {
+    private boolean validateEditionState(Node node, Node nodeWithoutChanges) {
     	try {
+    		String oldState = PropertyUtil.getString(nodeWithoutChanges, editionState);
 			String newEditionState = node.getProperty(editionState).getValue().getString();
-			if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {
-				Node parentNode = node.getParent();
-				NodeIterator parentIterator = parentNode.getNodes();
-				boolean existState = false;
-				while(parentIterator.hasNext() && !existState) {
-					Node childNode = parentIterator.nextNode();
-					if(!childNode.isSame(node)) {
-						String stateString = childNode.getProperty(editionState).getValue().getString();
-						if((stateString.equalsIgnoreCase(editionStateOpen) || stateString.equalsIgnoreCase(editionStateInProgress)) && stateString.equalsIgnoreCase(newEditionState)) {
-							existState = true;
-						}else{
-							existState = false;
+			if(!oldState.equalsIgnoreCase(newEditionState)) {
+				if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {
+					Node parentNode = node.getParent();
+					NodeIterator parentIterator = parentNode.getNodes();
+					boolean existState = false;
+					while(parentIterator.hasNext() && !existState) {
+						Node childNode = parentIterator.nextNode();
+						if(!childNode.isSame(node)) {
+							String stateString = childNode.getProperty(editionState).getValue().getString();
+							if((stateString.equalsIgnoreCase(editionStateOpen) || stateString.equalsIgnoreCase(editionStateInProgress)) && stateString.equalsIgnoreCase(newEditionState)) {
+								existState = true;
+							}else{
+								existState = false;
+							}
 						}
 					}
+					return !existState;
+				}else {
+					return true;
 				}
-				return !existState;
 			}else {
-				return true;
+				return !(newEditionState.equals(editionStateInProgress) || newEditionState.equals(editionStateClosed));
 			}
 		} catch (IllegalStateException | RepositoryException e) {
 			return true;
