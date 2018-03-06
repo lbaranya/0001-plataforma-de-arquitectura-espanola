@@ -1,5 +1,6 @@
 package es.arquia.magnolia.components.models.news;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -34,7 +35,9 @@ public class RelatedNewsModel <T extends ConfiguredTemplateDefinition> extends R
 	
 	public List<Node> getCategorizedImportantNewsList(Node node) throws RepositoryException{
 		AwardNodeUtilImpl tmpAward = new AwardNodeUtilImpl(i18nContentSupport);
-		return newsManager.getCategorizedImportantNewsList(tmpAward.getAwardCategoriesList(node), 4);
+		List<String> categoriesList = new ArrayList<>();
+		categoriesList.add(tmpAward.getAwardCategoriesList(node));
+		return newsManager.getCategorizedImportantNewsList(categoriesList, 4);
 	}
 	
 }

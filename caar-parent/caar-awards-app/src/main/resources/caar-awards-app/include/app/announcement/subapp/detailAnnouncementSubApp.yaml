@@ -129,7 +129,6 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionWeight.label
           - name: juryOptionImageAnchor
-            required: true
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
             targetWorkspace: dam      
             appName: assets      
@@ -160,7 +159,6 @@ editor:
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeName.label
                 - name: judgePhoto
-                  required: true
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                   targetWorkspace: dam      
                   appName: assets      
@@ -278,11 +276,6 @@ editor:
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionRichText.label
-                - name: lemmaOptionLink
-                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-                  targetWorkspace: architecture-files      
-                  appName: caar-architecture-files-app
-                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionLink.label
                 - name: lemmaOptionPhotoPreview
                   required: true
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
@@ -293,6 +286,11 @@ editor:
                   contentPreviewDefinition:      
                     contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionPhotoPreview.label
+                - name: lemmaOptionLink
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                  targetWorkspace: architecture-files      
+                  appName: caar-architecture-files-app
+                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionLink.label
                   # End specific fields
   actions:
     - name: commit
