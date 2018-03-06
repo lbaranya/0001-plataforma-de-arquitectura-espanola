@@ -36,7 +36,7 @@
 	                            <h4 class="title">${headLineTruncated!""}</h4>
 	                            <div class="info">
 	                            	[#assign descriptionTruncated = cmsfn.abbreviateString(description, 401)!""]
-	                            	<p>${descriptionTruncated!""}</p>
+	                            	<p>${descriptionTruncated?replace("<img","<img style='display:none;'")}</p>
 	                            </div>
 	                            <div class="noticias-links">
 			                    	<a href='${cmsfn.link(newNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>

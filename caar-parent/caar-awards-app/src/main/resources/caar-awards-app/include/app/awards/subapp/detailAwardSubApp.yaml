@@ -74,18 +74,14 @@ editor:
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
             required: true
-          - name: categoriesList
-            label: caar-awards-app.awardData.categoriesList.label
-            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueTransformer
+          - name: category
+            label: caar-awards-app.awardData.category.label
             required: true
-            field:
-              name: linkField
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              targetWorkspace: category
-              appName: categories
-              identifierToPathConverter:
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            targetWorkspace: category
+            appName: categories
+            identifierToPathConverter:
+              class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
           - name: relatedNewsList
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-awards-app.awardData.relatedNewsList.label

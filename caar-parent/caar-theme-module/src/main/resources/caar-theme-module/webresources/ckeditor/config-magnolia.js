@@ -87,6 +87,8 @@ CKEDITOR.editorConfig = function( config ) {
 	config.allowedContent = true;
 	config.disallowedContent = 'br';
 	
+	config.copyFormatting_allowedContexts = false;
+	
 	config.fillEmptyBlocks = false;
 
 	config.fullPage = false;
@@ -105,7 +107,6 @@ CKEDITOR.editorConfig = function( config ) {
 		{ name: "styles",        items: [ "Font", "FontSize", "TextColor" ] },
 		{ name: "clipboard",     items: [ "Cut", "Copy", "Paste", "PasteText", "PasteFromWord" ] },
 		{ name: "tools",         items: [ "Source" ] },
-		{ name: 'insert', 		 items: [ "Image" ] },
 		{ name: "ownstyles",     items: [ "Styles"] }
 	];
 };

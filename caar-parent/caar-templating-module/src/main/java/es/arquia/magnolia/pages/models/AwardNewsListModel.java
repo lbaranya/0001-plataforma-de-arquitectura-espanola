@@ -2,6 +2,7 @@ package es.arquia.magnolia.pages.models;
 
 import static es.arquia.magnolia.templates.constants.ContextNewsNavConstants.contextNewsNavObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -35,7 +36,9 @@ public class AwardNewsListModel <T extends ConfiguredTemplateDefinition> extends
         this.contextNewsNav = contextBean;
     }
 	
-	public List<Node> getCategorizedNewsList(List<String> categoriesList) throws Exception{
+	public List<Node> getCategorizedNewsList(String category) throws Exception{
+		List<String> categoriesList = new ArrayList<>();
+		categoriesList.add(category);
 		contextNewsNav.setListResultNews(newsManager.getCategorizedNewsList(categoriesList));
 		contextNewsNav.setParentPath(MgnlContext.getAggregationState().getOriginalBrowserURI());
 		setContextValuesFromNewsList(contextNewsNav);

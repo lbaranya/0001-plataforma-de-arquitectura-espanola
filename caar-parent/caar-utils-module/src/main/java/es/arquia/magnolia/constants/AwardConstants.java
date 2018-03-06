@@ -26,7 +26,7 @@ public interface AwardConstants {
 	
 	String awardAboutText="awardAboutText";
 	
-	String categoriesList="categoriesList";
+	String category="category";
 	
 	String relatedNewsList="relatedNewsList";
 	
