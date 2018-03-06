@@ -100,7 +100,7 @@ public class SaveIfEditionOpenFormAction extends AbstractAction<SaveIfEditionOpe
     	try {
     		Node currentNode = node;
     		if(node.isNodeType(standardEventNodeType)) {
-    			currentNode = currentNode.getParent();
+    			currentNode = currentNode.getParent().getParent();
     		}
     		return PropertyUtil.getString(currentNode.getParent(), editionState).equalsIgnoreCase(editionStateOpen);
 		} catch (IllegalStateException | RepositoryException e) {
