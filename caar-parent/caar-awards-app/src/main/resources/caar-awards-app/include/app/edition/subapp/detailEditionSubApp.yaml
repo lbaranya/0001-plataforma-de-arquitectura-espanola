@@ -23,17 +23,9 @@ editor:
             label: caar-awards-app.files.edition.editionData.state.label
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             required: true
-            options:
-              - name: open
-                value: open
-                label: caar-awards-app.files.edition.editionData.state.open.label
-                selected: true
-              - name: progress
-                value: progress
-                label: caar-awards-app.files.edition.editionData.state.progress.label
-              - name: closed
-                value: closed
-                label: caar-awards-app.files.edition.editionData.state.closed.label
+            repository: category
+            labelProperty: displayName
+            path: bienales-premios/ediciones/fases
           - name: name
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.edition.editionData.name.label
