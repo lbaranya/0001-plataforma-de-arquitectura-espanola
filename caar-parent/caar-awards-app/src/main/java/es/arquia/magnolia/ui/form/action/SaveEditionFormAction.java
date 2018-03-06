@@ -87,7 +87,7 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
      * the value of the property 'name' if it is present.
      */
     protected void setNodeName(Node node, JcrNodeAdapter item) throws RepositoryException {
-        String propertyName = "name";
+        String propertyName = "jcrName";
         if (node.hasProperty(propertyName) && !node.hasProperty(ModelConstants.JCR_NAME)) {
             Property property = node.getProperty(propertyName);
             String newNodeName = property.getString();
