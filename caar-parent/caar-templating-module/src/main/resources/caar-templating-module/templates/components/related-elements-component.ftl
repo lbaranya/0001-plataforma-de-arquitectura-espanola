@@ -44,7 +44,7 @@
 		                            	<p>${descriptionTruncated?replace("<img","<img style='display:none;'")!""}</p>
 		                            </div>
 		                            <div class="noticias-links">
-				                    	<a href='${cmsfn.link(cmsfn.nodeByPath(node.getPath(), node.getWorkspace()))!"#"}!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
+				                    	<a href='${cmsfn.link(cmsfn.nodeByPath(node.getPath(), node.getWorkspace()))!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
 					                </div>
 			                    </div>
 			                </div>
