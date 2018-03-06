@@ -18,6 +18,8 @@ areas:
     availableComponents:
       news-diary-component:
         id: caar-templating-module:components/news-diary-component
+      home-grid-component:
+        id: caar-templating-module:components/home-grid-component
       #highlights-excellence-component:
         #id: caar-templating-module:components/highlights-excellence-component
       #highlights-news-component:

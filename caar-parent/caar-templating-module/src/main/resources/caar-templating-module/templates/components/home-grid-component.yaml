@@ -1,0 +1,5 @@
+title: caar-templating-module.components.home-grid-component.title
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/home-grid-component.ftl
+dialog: caar-templating-module:components/home-grid-component-properties
+modelClass: es.arquia.magnolia.components.models.home.HomeGridModel
