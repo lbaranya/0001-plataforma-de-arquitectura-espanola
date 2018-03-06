@@ -1,5 +1,8 @@
 package es.arquia.magnolia.manager;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIPrefixArchitectureFilesSupportArchitect;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIPrefixArchitectureFilesSupportBusiness;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIRepositoryArchitectureFiles;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesFormatAudioNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesFormatBookNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesFormatCartographicNodeType;
@@ -18,9 +21,6 @@ import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectu
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIINodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewINodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIVNodeType;
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
-import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
-import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
