@@ -62,7 +62,7 @@
             data:{rows:rows},
             success: function(datos){
 			
-                $('.cmp-last-news').find(".container").append($(datos).find('.cmp-pagination-last').find(".row"));
+                $('.cmp-last-news').find(".container-margin").append($(datos).find('.cmp-pagination-last').find(".row"));
                 $('.cmp-more').remove();
                 ultimo = $(datos).find('.cmp-pagination-last').attr("last");
                 if (ultimo == "true") {
