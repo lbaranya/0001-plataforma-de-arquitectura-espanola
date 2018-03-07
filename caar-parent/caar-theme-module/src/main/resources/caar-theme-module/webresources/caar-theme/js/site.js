@@ -229,10 +229,11 @@ $(document).ready(function () {
 	/**Termina funcion politica de cookies**/
 
 	/* COMPONENTE DE SECCIONES / SUSTITUTO DE ACORDEON -> COMPORTAMIENTO */
-
+	$(".cmp-distribuidor-convocatoria .cmp-volver").hide();
 	$('.anchor-distribuidor').click(function(event) {
 		event.preventDefault();
 		$(".cmp-distribuidor-general-content").hide();
+		$(".cmp-distribuidor-convocatoria .cmp-volver").show();
 		var strAncla = $(this).attr('href');
 		$(strAncla).show();
 		$('html, body').stop(true, true).animate({
@@ -252,7 +253,7 @@ $(document).ready(function () {
 		}, {
 			duration: 500
 		});
-
+		$(".cmp-distribuidor-convocatoria .cmp-volver").hide();
 
 	});
 

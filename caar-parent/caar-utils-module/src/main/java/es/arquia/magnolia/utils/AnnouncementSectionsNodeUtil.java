@@ -28,6 +28,8 @@ public interface AnnouncementSectionsNodeUtil {
 	
 	public String getJudgePhoto(Node node);
 	
+	public String getJudgeCV(Node node);
+	
 	public String getJudgeFileLink(Node node);
 	
 	public String getJudgeText(Node node);

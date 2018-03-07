@@ -107,10 +107,6 @@ editor:
                   i18n: true
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionTitle.label
-                - name: richTextOptionAbtract
-                  i18n: true
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionAbtract.label
                   # End common fields
                   # Specific fields
                 - name: richTextOptionRichText
@@ -172,6 +168,15 @@ editor:
                   targetWorkspace: architecture-files      
                   appName: caar-architecture-files-app
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeFileLink.label
+                - name: judgeCV
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                  targetWorkspace: dam      
+                  appName: assets      
+                  identifierToPathConverter:      
+                    class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+                  contentPreviewDefinition:      
+                    contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeCV.label
                 - name: judgeText
                   i18n: true
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
@@ -211,10 +216,6 @@ editor:
                   i18n: true
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionTitle.label
-                - name: enrollmentOptionAbtract
-                  i18n: true
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionAbtract.label
                   # End common fields
                   # Specific fields
                 - name: enrollmentOptionRichText
@@ -265,10 +266,6 @@ editor:
                   i18n: true
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionTitle.label
-                - name: lemmaOptionAbtract
-                  i18n: true
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionAbtract.label
                   # End common fields
                   # Specific fields
                 - name: lemmaOptionRichText

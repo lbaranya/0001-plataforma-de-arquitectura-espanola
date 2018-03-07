@@ -1,8 +1,7 @@
 [#assign nodeJcrPath = ctx.getParameter('path')!?html]
 [#if nodeJcrPath?has_content]
-	
-	[#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
-	[#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
+	[#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")!""]
+	[#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)!""]
 	[#assign awards = model.parent.getInstance()!""]
 	[@cms.area name="breadcrumb" /]
 	[#-- [@cms.component content=content template="submenu-award" /] --]

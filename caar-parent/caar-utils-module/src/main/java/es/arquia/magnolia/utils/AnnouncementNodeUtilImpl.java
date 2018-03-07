@@ -1,5 +1,6 @@
 package es.arquia.magnolia.utils;
 
+import static es.arquia.magnolia.constants.AnnouncementConstants.judgeCV;
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgeFileLink;
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgeListNameContains;
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgeName;
@@ -147,6 +148,7 @@ public class AnnouncementNodeUtilImpl implements AnnouncementNodeUtil {
 					Node tmpJudgeList = juryTmp.addNode(tmpIteratorNode.getName(), NodeTypes.ContentNode.NAME);
 					try{ tmpJudgeList.setProperty(judgeName, i18nContentSupport.getProperty(node.getNode(tmpIteratorNode.getName()),judgeName).getValue());}catch(RepositoryException e2) {}
 					try{ tmpJudgeList.setProperty(judgePhoto, i18nContentSupport.getProperty(node.getNode(tmpIteratorNode.getName()),judgePhoto).getValue());}catch(RepositoryException e2) {}
+					try{ tmpJudgeList.setProperty(judgeCV, i18nContentSupport.getProperty(node.getNode(tmpIteratorNode.getName()),judgeCV).getValue());}catch(RepositoryException e2) {}
 					try{ tmpJudgeList.setProperty(judgeText, i18nContentSupport.getProperty(node.getNode(tmpIteratorNode.getName()),judgeText).getValue());}catch(RepositoryException e2) {}
 					try{ tmpJudgeList.setProperty(judgeFileLink, i18nContentSupport.getProperty(node.getNode(tmpIteratorNode.getName()),judgeFileLink).getValue());}catch(RepositoryException e2) {}
 				}

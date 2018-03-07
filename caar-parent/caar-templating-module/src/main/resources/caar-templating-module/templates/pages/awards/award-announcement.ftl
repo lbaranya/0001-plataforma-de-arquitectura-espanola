@@ -93,6 +93,7 @@
 			
 				[#if contentItem.type == "richText"]
 					[#assign richTextOptionIdAnchor = model.parent.getAnchorFromString(contentItem.richTextOptionTitle)!""]
+					[#if richTextOptionIdAnchor?has_content]
 					<a href="#${richTextOptionIdAnchor?lower_case!""}" class="col-md-3 anchor-distribuidor">
 		                <div class="title">
 		                    <p>${contentItem.richTextOptionTitle!""}</p>
@@ -119,10 +120,12 @@
 		                    <span class="more-link" alt="leer más">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
 		                </div>
 		            </a>
+		            [/#if]
 				[/#if]
 				
 				[#if contentItem.type == "jury"]
 					[#assign juryOptionIdAnchor = model.parent.getAnchorFromString(contentItem.juryOptionTitle)!""]
+					[#if juryOptionIdAnchor?has_content]
 					<a href="#${juryOptionIdAnchor?lower_case!""}" class="col-md-3 anchor-distribuidor">
 		                <div class="title">
 		                    <p>${contentItem.juryOptionTitle!""}</p>
@@ -149,10 +152,12 @@
 		                    <span class="more-link">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
 		                </div>
 		            </a>
+		        [/#if]
 				[/#if]
 				
 				[#if contentItem.type == "lemma"]
 					[#assign lemmaOptionIdAnchor = model.parent.getAnchorFromString(contentItem.lemmaOptionTitle)!""]
+					[#if lemmaOptionIdAnchor?has_content]
 					<a href="#${lemmaOptionIdAnchor?lower_case!""}" class="col-md-3 anchor-distribuidor">
 		                <div class="title">
 		                    <p>${contentItem.lemmaOptionTitle!""}</p>
@@ -177,10 +182,12 @@
 		                    <span class="more-link">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
 		                </div>
 		            </a>
+		            [/#if]
 				[/#if]
 				
 				[#if contentItem.type == "enrollment"]
 					[#assign enrollmentOptionIdAnchor = model.parent.getAnchorFromString(contentItem.enrollmentOptionTitle)!""]
+					[#if enrollmentOptionIdAnchor?has_content]
 					<a href="#${enrollmentOptionIdAnchor?lower_case!""}" class="col-md-3 anchor-distribuidor">
 		                <div class="title">
 		                    <p>${contentItem.enrollmentOptionTitle!""}</p>
@@ -205,6 +212,7 @@
 		                    <span class="more-link">${i18n['caar-templating-module.templates.components.distributor-sections-rich-text.read.label']!""}</span>
 		                </div>
 		            </a>
+		            [/#if]
 				[/#if]
 				
 			[/#if]
@@ -231,10 +239,6 @@
 						[#assign title = contentItem.richTextOptionTitle]
 						[#assign idAnchor = model.parent.getAnchorFromString(contentItem.richTextOptionTitle)?lower_case!""]
 					[/#if]
-					[#assign abstract = ""]
-					[#if contentItem.richTextOptionAbstract??]
-						[#assign abstract = contentItem.richTextOptionAbstract]
-					[/#if]
 					[#assign richText = ""]
 					[#if contentItem.richTextOptionRichText??]
 						[#assign richText = cmsfn.decode(contentItem).richTextOptionRichText]
@@ -245,9 +249,6 @@
 				            <div class="row">
 				                <div class="col-md-12 content-title">
 				                    <h3>${title!""}</h3>
-				                </div>
-				                <div class="col-md-12 text-contenido">
-				                    <p>${abstract!""}</p>
 				                </div>
 				                <div class="cmp-distruidor-contenido">
 						        <div class="container-sub-info">
@@ -318,6 +319,13 @@
 											                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
 											                </a>
 										                [/#if]
+										                [#assign hrefLink = "#"]
+										                [#if judge.judgeCV??]
+											               	[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeCV))]
+		                									<a href="${hrefLink}" class="ficha-jurado">
+											                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
+											                </a>
+										                [/#if]
 		            								</div>
 					                			[/#list]
 					                		[/#if]
@@ -337,10 +345,6 @@
 						[#assign title = contentItem.lemmaOptionTitle]
 						[#assign idAnchor = model.parent.getAnchorFromString(contentItem.lemmaOptionTitle)?lower_case!""]
 					[/#if]
-					[#assign abstract = ""]
-					[#if contentItem.lemmaOptionAbstract??]
-						[#assign abstract = contentItem.lemmaOptionAbstract]
-					[/#if]
 					[#assign lemmaFileLink = "#"]
 					[#if contentItem.lemmaOptionLink??]
 						[#assign lemmaFileLink = contentItem.lemmaOptionLink]
@@ -359,9 +363,6 @@
 				            <div class="row">
 				                <div class="col-md-12 content-title">
 				                    <h3>${title!""}</h3>
-				                </div>
-				                <div class="col-md-12 text-contenido">
-				                    <p>${abstract!""}</p>
 				                </div>
 				                <div class="cmp-distruidor-contenido">
 						        <div class="container-sub-info">
@@ -406,10 +407,6 @@
 						[#assign title = contentItem.enrollmentOptionTitle]
 						[#assign idAnchor = model.parent.getAnchorFromString(contentItem.enrollmentOptionTitle)?lower_case!""]
 					[/#if]
-					[#assign abstract = ""]
-					[#if contentItem.enrollmentOptionAbstract??]
-						[#assign abstract = contentItem.enrollmentOptionAbstract]
-					[/#if]
 					[#assign richText = ""]
 					[#if contentItem.enrollmentOptionRichText??]
 						[#assign richText = cmsfn.decode(contentItem).enrollmentOptionRichText]
@@ -428,9 +425,6 @@
 				            <div class="row">
 				                <div class="col-md-12 content-title">
 				                    <h3>${title!""}</h3>
-				                </div>
-				                <div class="col-md-12 text-contenido">
-				                    <p>${abstract!""}</p>
 				                </div>
 				                <div class="cmp-distruidor-contenido">
 						        <div class="container-sub-info">

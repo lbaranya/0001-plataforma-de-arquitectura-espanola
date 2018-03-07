@@ -9,6 +9,8 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
+import org.apache.commons.lang3.StringUtils;
+
 import es.arquia.magnolia.manager.AwardManager;
 import es.arquia.magnolia.utils.AnnouncementNodeUtil;
 import es.arquia.magnolia.utils.AwardNodeUtil;
@@ -122,6 +124,8 @@ public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> ext
 	}
 	
 	public String getAnchorFromString(String str) {
+		if(StringUtils.isBlank(str))
+			return "";
 		return str.replaceAll("\\W", "");
 	}
 	
