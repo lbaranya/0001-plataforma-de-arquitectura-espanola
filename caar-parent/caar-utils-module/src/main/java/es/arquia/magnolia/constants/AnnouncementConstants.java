@@ -52,6 +52,8 @@ public interface AnnouncementConstants {
 	
 	String judgePhoto = "judgePhoto";
 	
+	String judgeCV = "judgeCV";
+	
 	String judgeFileLink = "judgeFileLink";
 	
 	String judgeText = "judgeText";
