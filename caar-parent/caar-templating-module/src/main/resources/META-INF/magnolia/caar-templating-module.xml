@@ -74,6 +74,10 @@
 			<type>es.arquia.magnolia.utils.EventNodeUtil</type>
 			<implementation>es.arquia.magnolia.utils.EventNodeUtilImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.HomeGridManager</type>
+			<implementation>es.arquia.magnolia.manager.HomeGridManagerImpl</implementation>
+		</component>
 	</components>
 
   <dependencies>
