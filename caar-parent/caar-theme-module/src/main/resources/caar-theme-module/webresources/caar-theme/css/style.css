@@ -3153,6 +3153,8 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 .noticias-container .noticias-item .noticias-links {
 	margin-top: 10px;
+	position: absolute;
+	bottom: 10px;
 }
 
 .noticias-container .noticias-item .noticias-links .more-link {
