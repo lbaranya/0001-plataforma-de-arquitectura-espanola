@@ -20,7 +20,7 @@ public interface NewsManager {
 	
 	public List<Node> getImportantNewsList() throws RepositoryException;
 	
-	public List<Node> getCategorizedImportantNewsList(List<String> categoriesList, int numberOfNews) throws RepositoryException;
+	public List<Node> getCategorizedImportantNewsList(List<String> string, int numberOfNews) throws RepositoryException;
 	
 	public boolean isLastRowOfNews();
 	

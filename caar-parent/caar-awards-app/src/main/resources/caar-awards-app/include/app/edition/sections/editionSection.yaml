@@ -19,6 +19,7 @@ groups:
       - name: activate
       - name: activateRecursive
       - name: deactivate
+      - name: requestTranslation
   - name: deletedActions
     items:
       - name: restorePreviousVersion

@@ -13,7 +13,8 @@
 		<div class="container">
 		    <div class="row">
 		        <div class="col-md-12">
-						${awards.getAwardAboutText(awardsContentNode)!}
+						[#assign richTextContent = cmsfn.asContentMap(awardsContentNode)!""]
+            			${cmsfn.decode(richTextContent).awardAboutText!""}
 				</div>
 			</div>
 		</div>

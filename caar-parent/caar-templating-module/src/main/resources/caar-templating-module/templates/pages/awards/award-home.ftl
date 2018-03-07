@@ -46,11 +46,8 @@
                     	[#assign openEditionNode = model.parent.getEditionStateOpen(awardsContentNode)!""]
                     	[#if openEditionNode?has_content]
                     		[#assign openEditionContentMap = cmsfn.asContentMap(openEditionNode)!""]
-	                    	[#if openEditionContentMap.announcementButtonLinkexternalLink?has_content]
-								[#assign hrefLink = cmsfn.externalLink(openEditionContentMap, "announcementButtonLinkexternalLink")]                        		
-	                    	[/#if]
-	                    	[#if openEditionContentMap.announcementButtonLinkinternalLink?has_content]
-	                    		[#assign hrefLink = cmsfn.link(cmsfn.contentById(openEditionContentMap.announcementButtonLinkinternalLink, "dam"))]
+	                    	[#if openEditionContentMap.announcementButtonLink?has_content]
+	                    		[#assign hrefLink = cmsfn.link(cmsfn.contentById(openEditionContentMap.announcementButtonLink, "dam"))]
 	                    	[/#if]
                     	<a class="btn" href="${hrefLink}">${awards.getEditionAnnouncementButtonText(openEditionNode)}</a>
                         <a class="btn" href="${cmsfn.externalLink(openEditionContentMap, "enrollmentButtonLink")}">${awards.getEditionEnrollmentButtonText(openEditionNode)}</a>
@@ -73,7 +70,8 @@
     <div class="container-margin">
         <div class="row">
             <div class="col-md-12 descripcion">
-                ${awards.getAwardDescription(awardsContentNode)!""}
+            	[#assign richTextContent = cmsfn.asContentMap(awardsContentNode)!""]
+            	${cmsfn.decode(richTextContent).awardDescription!""}
             </div>
         </div>
     </div>

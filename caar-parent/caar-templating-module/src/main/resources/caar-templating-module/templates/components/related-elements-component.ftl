@@ -41,10 +41,10 @@
 		                            <h4 class="title">${headLineTruncated!""}</h4>
 		                            <div class="info">
 		                            	[#assign descriptionTruncated = cmsfn.abbreviateString(description, 401)!""]
-		                            	<p>${descriptionTruncated!""}</p>
+		                            	<p>${descriptionTruncated?replace("<img","<img style='display:none;'")!""}</p>
 		                            </div>
 		                            <div class="noticias-links">
-				                    	<a href='${node.getPath()!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
+				                    	<a href='${cmsfn.link(cmsfn.nodeByPath(node.getPath(), node.getWorkspace()))!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
 					                </div>
 			                    </div>
 			                </div>
@@ -77,7 +77,8 @@
 						                    	[/#if]
 						                    [/#if]
                                         <h4 class="title">${cmsfn.abbreviateString(node.getTitle()!"", 45)!""}</h4>
-                                        <p>${cmsfn.abbreviateString(node.getDescription()!"", 183)!""}</p>
+                                        [#assign descriptionAbbv = cmsfn.abbreviateString(node.getDescription()!"", 183)!""]
+                                        <p>${descriptionAbbv?replace("<img","<img style='display:none;'")!""!""}</p>
                                         <span class="more-link">${i18n['caar-templating-module.templates.components.news-diary-component.read.label']}</span>
                                     </div>
                                 </a>

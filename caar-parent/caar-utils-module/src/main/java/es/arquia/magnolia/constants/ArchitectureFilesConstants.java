@@ -13,8 +13,8 @@ public interface ArchitectureFilesConstants {
 	/** SUPPORT NODE TYPES **/
 	String architectureFilesSupportWrapperNodeType = "mgnl:support-wrapper";
 	
-	String architectureFilesSupportArchitectWrappertNodeType = "mgnl:support-architect-wrapper";
-	String architectureFilesSupportArchitectFolderWrappertNodeType = "mgnl:support-architect-folder-wrapper";
+	String architectureFilesSupportArchitectWrapperNodeType = "mgnl:support-architect-wrapper";
+	String architectureFilesSupportArchitectFolderWrapperNodeType = "mgnl:support-architect-folder-wrapper";
 	String architectureFilesSupportArchitectNodeType = "mgnl:support-architect";
 	
 	String architectureFilesSupportProjectWrapperNodeType = "mgnl:support-project-wrapper";
@@ -89,7 +89,7 @@ public interface ArchitectureFilesConstants {
 	String[] architectureFilesPortfolioNodeTypes = {architectureFilesPortfolioWrapperNodeType, architectureFilesPortfolioFolderWrapperNodeType, architectureFilesPortfolioNodeType};
 	
 	String[] architectureFilesSupportNodeTypes = {architectureFilesSupportWrapperNodeType, 
-			architectureFilesSupportArchitectWrappertNodeType,	architectureFilesSupportArchitectFolderWrappertNodeType, architectureFilesSupportArchitectNodeType,
+			architectureFilesSupportArchitectWrapperNodeType,	architectureFilesSupportArchitectFolderWrapperNodeType, architectureFilesSupportArchitectNodeType,
 			architectureFilesSupportProjectWrapperNodeType,	architectureFilesSupportProjectFolderWrapperNodeType, architectureFilesSupportProjectNodeType, 
 			architectureFilesSupportReviewIWrapperNodeType, architectureFilesSupportReviewIFolderWrapperNodeType, architectureFilesSupportReviewINodeType, 
 			architectureFilesSupportReviewIIWrapperNodeType, architectureFilesSupportReviewIIFolderWrapperNodeType, architectureFilesSupportReviewIINodeType, 
@@ -109,6 +109,75 @@ public interface ArchitectureFilesConstants {
 			architectureFilesFormatGraphicWrapperNodeType, architectureFilesFormatGraphicFolderWrapperNodeType, architectureFilesFormatGraphicNodeType, 
 			architectureFilesFormatContinuousWrapperNodeType, architectureFilesFormatContinuousFolderWrapperNodeType, architectureFilesFormatContinuousNodeType, 
 			architectureFilesFormatElectronicWrapperNodeType, architectureFilesFormatElectronicFolderWrapperNodeType, architectureFilesFormatElectronicNodeType
+	};
+	
+	String[] architectureFilesSupportFolderNodeTypes = {
+			architectureFilesSupportArchitectFolderWrapperNodeType,
+			architectureFilesSupportProjectFolderWrapperNodeType,
+			architectureFilesSupportReviewIFolderWrapperNodeType,
+			architectureFilesSupportReviewIIFolderWrapperNodeType,
+			architectureFilesSupportReviewIIIFolderWrapperNodeType,
+			architectureFilesSupportReviewIVFolderWrapperNodeType,
+			architectureFilesSupportEventFolderWrapperNodeType,
+			architectureFilesSupportBusinessFolderWrapperNodeType
+	};
+	
+	String[] architectureFilesFormatFolderNodeTypes = {
+			architectureFilesFormatVideoFolderWrapperNodeType,
+			architectureFilesFormatManuscriptFolderWrapperNodeType,
+			architectureFilesFormatThreeDimensionalFolderWrapperNodeType,
+			architectureFilesFormatCartographicFolderWrapperNodeType,
+			architectureFilesFormatAudioFolderWrapperNodeType,
+			architectureFilesFormatBookFolderWrapperNodeType,
+			architectureFilesFormatGraphicFolderWrapperNodeType,
+			architectureFilesFormatContinuousFolderWrapperNodeType,
+			architectureFilesFormatElectronicFolderWrapperNodeType
+	};
+	
+	String[] architectureFilesSupportWrapperNodeTypes = {
+			architectureFilesSupportArchitectWrapperNodeType,
+			architectureFilesSupportProjectWrapperNodeType,
+			architectureFilesSupportReviewIWrapperNodeType,
+			architectureFilesSupportReviewIIWrapperNodeType,
+			architectureFilesSupportReviewIIIWrapperNodeType,
+			architectureFilesSupportReviewIVWrapperNodeType,
+			architectureFilesSupportEventWrapperNodeType,
+			architectureFilesSupportBusinessWrapperNodeType
+	};
+	
+	String[] architectureFilesFormatWrapperNodeTypes = {
+			architectureFilesFormatVideoWrapperNodeType,
+			architectureFilesFormatManuscriptWrapperNodeType,
+			architectureFilesFormatThreeDimensionalWrapperNodeType,
+			architectureFilesFormatCartographicWrapperNodeType,
+			architectureFilesFormatAudioWrapperNodeType,
+			architectureFilesFormatBookWrapperNodeType,
+			architectureFilesFormatGraphicWrapperNodeType,
+			architectureFilesFormatContinuousWrapperNodeType,
+			architectureFilesFormatElectronicWrapperNodeType
+	};
+	
+	String[] architectureFilesSupportNodesNodeTypes = {
+			architectureFilesSupportArchitectNodeType,
+			architectureFilesSupportProjectNodeType,
+			architectureFilesSupportReviewINodeType,
+			architectureFilesSupportReviewIINodeType,
+			architectureFilesSupportReviewIIINodeType,
+			architectureFilesSupportReviewIVNodeType,
+			architectureFilesSupportEventNodeType,
+			architectureFilesSupportBusinessNodeType
+	};
+	
+	String[] architectureFilesFormatNodesNodeTypes = {
+			architectureFilesFormatVideoNodeType,
+			architectureFilesFormatManuscriptNodeType,
+			architectureFilesFormatThreeDimensionalNodeType,
+			architectureFilesFormatCartographicNodeType,
+			architectureFilesFormatAudioNodeType,
+			architectureFilesFormatBookNodeType,
+			architectureFilesFormatGraphicNodeType,
+			architectureFilesFormatContinuousNodeType,
+			architectureFilesFormatElectronicNodeType
 	};
 	
 	String URIRepositoryArchitectureFiles = "/architecture-files/";

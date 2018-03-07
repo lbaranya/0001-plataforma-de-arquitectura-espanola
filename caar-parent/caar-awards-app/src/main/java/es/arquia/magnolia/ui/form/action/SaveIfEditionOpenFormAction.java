@@ -12,8 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.messages.magnoliaUI.MessagesUI;
-import info.magnolia.cms.core.Path;
 import info.magnolia.i18nsystem.SimpleTranslator;
+import info.magnolia.jcr.util.NodeNameHelper;
 import info.magnolia.jcr.util.NodeUtil;
 import info.magnolia.jcr.util.PropertyUtil;
 import info.magnolia.ui.api.action.AbstractAction;
@@ -36,16 +36,19 @@ public class SaveIfEditionOpenFormAction extends AbstractAction<SaveIfEditionOpe
     
     private final SimpleTranslator i18n;
     
+    private final NodeNameHelper nodeNameHelper;
+    
     private static final String ITEM_SAVE_ERROR_SUBJECT = "caar-awards-app.message.ui.item.save.subject";
     private static final String ITEM_SAVE_ERROR_MESSAGE = "caar-awards-app.message.ui.item.save.messageText";
 
-    public SaveIfEditionOpenFormAction(SaveIfEditionOpenFormActionDefinition definition, JcrNodeAdapter item, EditorCallback callback, EditorValidator validator, final MessagesUI messagesUI, final SimpleTranslator i18n) {
+    public SaveIfEditionOpenFormAction(SaveIfEditionOpenFormActionDefinition definition, JcrNodeAdapter item, EditorCallback callback, EditorValidator validator, final MessagesUI messagesUI, final SimpleTranslator i18n, final NodeNameHelper nodeNameHelper) {
         super(definition);
         this.item = item;
         this.callback = callback;
         this.validator = validator;
         this.i18n = i18n;
         this.messagesUI = messagesUI;
+        this.nodeNameHelper = nodeNameHelper;
     }
 
     @Override
@@ -81,12 +84,12 @@ public class SaveIfEditionOpenFormAction extends AbstractAction<SaveIfEditionOpe
      * the value of the property 'name' if it is present.
      */
     protected void setNodeName(Node node, JcrNodeAdapter item) throws RepositoryException {
-        String propertyName = "name";
+    	String propertyName = ModelConstants.JCR_NAME;
         if (node.hasProperty(propertyName) && !node.hasProperty(ModelConstants.JCR_NAME)) {
             Property property = node.getProperty(propertyName);
             String newNodeName = property.getString();
-            if (!node.getName().equals(Path.getValidatedLabel(newNodeName))) {
-                newNodeName = Path.getUniqueLabel(node.getSession(), node.getParent().getPath(), Path.getValidatedLabel(newNodeName));
+            if (!node.getName().equals(nodeNameHelper.getValidatedName(newNodeName))) {
+                newNodeName = nodeNameHelper.getUniqueName(node.getSession(), node.getParent().getPath(), nodeNameHelper.getValidatedName(newNodeName));
                 item.setNodeName(newNodeName);
                 NodeUtil.renameNode(node, newNodeName);
             }
@@ -97,7 +100,7 @@ public class SaveIfEditionOpenFormAction extends AbstractAction<SaveIfEditionOpe
     	try {
     		Node currentNode = node;
     		if(node.isNodeType(standardEventNodeType)) {
-    			currentNode = currentNode.getParent();
+    			currentNode = currentNode.getParent().getParent();
     		}
     		return PropertyUtil.getString(currentNode.getParent(), editionState).equalsIgnoreCase(editionStateOpen);
 		} catch (IllegalStateException | RepositoryException e) {

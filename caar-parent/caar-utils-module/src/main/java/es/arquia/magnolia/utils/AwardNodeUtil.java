@@ -23,7 +23,7 @@ public interface AwardNodeUtil {
 	
 	public String getAwardAboutText(Node node) throws RepositoryException;
 	
-	public List<String> getAwardCategoriesList(Node node) throws RepositoryException;
+	public String getAwardCategoriesList(Node node) throws RepositoryException;
 	
 	public String getEditionState(Node node) throws RepositoryException;
 	

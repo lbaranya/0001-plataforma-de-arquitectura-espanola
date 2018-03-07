@@ -32,7 +32,8 @@
                     <p>${news.getDate(newsContentNode)!""} <span>/ ${news.getMedium(newsContentNode)!""}</span></p>
                 </div>
                 <div class="info-noticia">
-                    ${news.getDescription(newsContentNode)!""}
+                    [#assign richTextContent = cmsfn.asContentMap(newsContentNode)!""]
+            		${cmsfn.decode(richTextContent).N1_3!""}
                 </div>
             </div>
         </div>

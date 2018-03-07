@@ -7,13 +7,13 @@ import static es.arquia.magnolia.constants.AwardConstants.awardExternalURLText;
 import static es.arquia.magnolia.constants.AwardConstants.awardHeaderBackground;
 import static es.arquia.magnolia.constants.AwardConstants.awardLogo;
 import static es.arquia.magnolia.constants.AwardConstants.awardName;
-import static es.arquia.magnolia.constants.AwardConstants.categoriesList;
+import static es.arquia.magnolia.constants.AwardConstants.category;
 import static es.arquia.magnolia.constants.AwardConstants.editionAnnouncementButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionEnrollmentButtonText;
 import static es.arquia.magnolia.constants.AwardConstants.editionNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.editionState;
+import static es.arquia.magnolia.constants.AwardConstants.relatedNewsList;
 import static es.arquia.magnolia.constants.AwardConstants.type;
-import static es.arquia.magnolia.constants.AwardConstants.*;
 import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 
 import java.util.ArrayList;
@@ -108,16 +108,11 @@ public class AwardNodeUtilImpl implements AwardNodeUtil{
 		}
 	}
 	
-	public List<String> getAwardCategoriesList(Node node) throws RepositoryException{
+	public String getAwardCategoriesList(Node node) throws RepositoryException{
 		try{
-			List<String> finalList = new ArrayList<>();
-			Value[] valuesList = node.getProperty(categoriesList).getValues();
-			for (Value value : valuesList) {
-				finalList.add(value.getString());
-			}
-			return finalList;
-		}catch(Exception e) {
-			return null;
+			return node.getProperty(category).getString();
+		}catch(RepositoryException e) {
+			return "";
 		}
 	}
 	
@@ -162,9 +157,9 @@ public class AwardNodeUtilImpl implements AwardNodeUtil{
 	// If property has an array of strings (node's uuid)
 	private List<Node> getPropertyAsListOfNodes(Node node, String property, String workspace) throws RepositoryException{
 		List<Node> listNodes = new ArrayList<>();
-		Value[] tmpProp = node.getProperty(property).getValues();
-		List<Value> tmpList = Arrays.asList(tmpProp);
 		try {
+			Value[] tmpProp = node.getProperty(property).getValues();
+			List<Value> tmpList = Arrays.asList(tmpProp);
 			for(Iterator<Value> iterator = tmpList.iterator(); iterator.hasNext();) {
 				listNodes.add(MgnlContext.getJCRSession(workspace).getNodeByIdentifier(iterator.next().getString()));
 			}
