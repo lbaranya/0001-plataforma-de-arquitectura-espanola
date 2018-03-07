@@ -8,7 +8,7 @@
 [/#if]
 [#if listNews?has_content]
 	<section class="cmp-last-news">
-        <div class="container cmp-pagination-last" last="[#if model.isLastRowOfNews() == true]true[#else]false[/#if]">
+        <div class="container-margin cmp-pagination-last" last="[#if model.isLastRowOfNews() == true]true[#else]false[/#if]">
             <div class="row">
 				[#list listNews as newNode]
 	                <div class="col-md-3 col-sm-6 col-xs-12">
