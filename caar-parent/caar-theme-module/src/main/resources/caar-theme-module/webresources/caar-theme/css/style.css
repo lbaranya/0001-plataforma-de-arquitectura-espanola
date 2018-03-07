@@ -3966,3 +3966,60 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
       padding: 0 10px 0 10px;
       font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; } }
 /* LISTADO DE ARQUITECTOS - Termina*/
+
+/* GRID DE LA HOME */
+
+.cmp-rejilla-home .col-info {
+  height: 481px; }
+  .cmp-rejilla-home .col-info h4 {
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    font-style: italic;
+    font-size: 15px; }
+    .cmp-rejilla-home .col-info h4 span {
+      color: #D0021B;
+      padding-right: 10px;
+      font-style: normal; }
+  .cmp-rejilla-home .col-info a {
+    text-decoration: none;
+    color: #000; }
+    .cmp-rejilla-home .col-info a img {
+      height: 445px;
+      border-bottom: 3px solid #D0021B; }
+    .cmp-rejilla-home .col-info a .pensamiento {
+      border-bottom: 3px solid #D0021B;
+      height: 445px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .cmp-rejilla-home .col-info a .pensamiento h3 {
+        font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif";
+        font-size: 60px;
+        text-align: center; }
+      .cmp-rejilla-home .col-info a .pensamiento p {
+        text-align: center; }
+  .cmp-rejilla-home .col-info .imagen-video {
+    height: 445px;
+    border-bottom: 3px solid #D0021B; }
+    .cmp-rejilla-home .col-info .imagen-video iframe {
+      width: 100%;
+      height: 100%; }
+  .cmp-rejilla-home .col-info .col-vertical {
+    height: 473px;
+    border-bottom: 3px solid #D0021B; }
+    .cmp-rejilla-home .col-info .col-vertical .datos-arquitectos {
+      font-family: "National-Book", "Helvetica", "sans-serif"; }
+      .cmp-rejilla-home .col-info .col-vertical .datos-arquitectos .inicial {
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        font-size: 250px;
+        font-weight: 900;
+        text-align: left;
+        color: #000; }
+      .cmp-rejilla-home .col-info .col-vertical .datos-arquitectos .arquitecto {
+        font-size: 15px;
+        color: #D0021B; }
+
+@media screen and (max-width: 1200px) {
+  .cmp-rejilla-home .col-info.col-premios {
+    height: auto; } }
+
+/* GRID DE LA HOME - termina */

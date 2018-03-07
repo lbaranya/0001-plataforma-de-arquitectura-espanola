@@ -80,4 +80,15 @@ imaging:
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 261
       height: 350
-      
+    "263x445":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 263
+      height: 445
+    "691x445":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 691
+      height: 445
+    "1412x445":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 1412
+      height: 445

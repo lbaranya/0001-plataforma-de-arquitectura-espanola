@@ -110,4 +110,8 @@ public interface ArchitectureFilesConstants {
 			architectureFilesFormatContinuousWrapperNodeType, architectureFilesFormatContinuousFolderWrapperNodeType, architectureFilesFormatContinuousNodeType, 
 			architectureFilesFormatElectronicWrapperNodeType, architectureFilesFormatElectronicFolderWrapperNodeType, architectureFilesFormatElectronicNodeType
 	};
+	
+	String URIRepositoryArchitectureFiles = "/architecture-files/";
+	String URIPrefixArchitectureFilesSupportArchitect = URIRepositoryArchitectureFiles + "support-architect/";
+	String URIPrefixArchitectureFilesSupportBusiness = URIRepositoryArchitectureFiles + "support-business/";
 }
