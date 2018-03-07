@@ -1,11 +1,12 @@
 package es.arquia.magnolia.commands;
 
-import static es.arquia.magnolia.constants.UtilsConstants.caarCountriesFolderName;
-import static es.arquia.magnolia.constants.UtilsConstants.caarCountriesOldFolderName;
+import static es.arquia.magnolia.constants.UtilsConstants.caarLanguagesFolderName;
+import static es.arquia.magnolia.constants.UtilsConstants.caarLanguagesOldFolderName;
 import static es.arquia.magnolia.constants.UtilsConstants.caarRootFolderName;
-import static es.arquia.magnolia.constants.UtilsConstants.tmpCaarCountiesFolderName;
+import static es.arquia.magnolia.constants.UtilsConstants.tmpCaarLanguagesFolderName;
 
 import java.text.Collator;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -22,64 +23,62 @@ import info.magnolia.jcr.util.NodeTypes;
 import info.magnolia.module.categorization.CategorizationModule;
 import info.magnolia.module.categorization.CategorizationNodeTypes;
 
-public class CountryCommand {
-
-	private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
+public class LanguagesCommand {
+	
+private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 	
 	private Locale userLocale;
 
-	public CountryCommand() {
+	public LanguagesCommand() {
 		userLocale = MgnlContext.getLocale();
 	}
-
+	
 	public boolean execute() throws Exception {
-
-		String[] locales = Locale.getISOCountries();
-		List<String> countryNames = new ArrayList<>();
-		for (String countryCode : locales) {
-			Locale obj2 = new Locale(userLocale.getLanguage(), countryCode);
-			countryNames.add(obj2.getDisplayCountry(userLocale));
+		Locale[] allLanguages = DateFormat.getAvailableLocales();
+		List<String> allLanguagesNames = new ArrayList<>();
+		for(int i=0; i<allLanguages.length; ++i) {
+			allLanguagesNames.add(userLocale.getDisplayLanguage(allLanguages[i]));
 		}
-
+		
 		// Ordenar ignorando caracteres especiales, como acentos
 		Collator coll = Collator.getInstance(userLocale);
 		coll.setStrength(Collator.PRIMARY);
-		Collections.sort(countryNames, coll);
-
+		Collections.sort(allLanguagesNames, coll);
+		
 		Session session = MgnlContext.getJCRSession(CategorizationModule.CATEGORIZATION_WORKSPACE);
 		Node caarCategoryRootNode = null;
 		Node subFolderCountriesNode = null;
 		if (!session.getRootNode().hasNode(caarRootFolderName)) {
 
 			caarCategoryRootNode = session.getRootNode().addNode(caarRootFolderName, NodeTypes.Folder.NAME);
-			if (!caarCategoryRootNode.hasNode(caarCountriesFolderName)) {
-				subFolderCountriesNode = caarCategoryRootNode.addNode(caarCountriesFolderName, NodeTypes.Folder.NAME);
+			if (!caarCategoryRootNode.hasNode(caarLanguagesFolderName)) {
+				subFolderCountriesNode = caarCategoryRootNode.addNode(caarLanguagesFolderName, NodeTypes.Folder.NAME);
 			}
 
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
-				for (int i = 0; i < countryNames.size(); ++i) {
-					subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+				for (int i = 0; i < allLanguagesNames.size(); ++i) {
+					subFolderCountriesNode.addNode(allLanguagesNames.get(i), CategorizationNodeTypes.Category.NAME);
 				}
 			}
 
 		} else {
 			log.debug("Exists node \"caar\", creating node \"caar-countries-tmp\"...");
 			caarCategoryRootNode = session.getRootNode().getNode(caarRootFolderName);
-			if (!caarCategoryRootNode.hasNode(tmpCaarCountiesFolderName)) {
+			if (!caarCategoryRootNode.hasNode(tmpCaarLanguagesFolderName)) {
 				log.debug("Creating \"caar-countries-tmp\" node...");
-				subFolderCountriesNode = caarCategoryRootNode.addNode(tmpCaarCountiesFolderName, NodeTypes.Folder.NAME);
+				subFolderCountriesNode = caarCategoryRootNode.addNode(tmpCaarLanguagesFolderName, NodeTypes.Folder.NAME);
 			}
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
-				for (int i = 0; i < countryNames.size(); ++i) {
-					subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+				for (int i = 0; i < allLanguagesNames.size(); ++i) {
+					subFolderCountriesNode.addNode(allLanguagesNames.get(i), CategorizationNodeTypes.Category.NAME);
 				}
 			}
 			
 			log.debug("Rename old node \"caar-countries\" to \"caar-contries-old\", and rename \"caar-countries-tmp\" to \"caar-countries\"...");
-			Node oldNode = session.getRootNode().getNode(caarRootFolderName).getNode(caarCountriesFolderName);
-			Node newNode = session.getRootNode().getNode(caarRootFolderName).getNode(tmpCaarCountiesFolderName);
-			oldNode.getSession().move(oldNode.getPath(), oldNode.getParent().getPath() + "/" + caarCountriesOldFolderName);
-			newNode.getSession().move(newNode.getPath(), newNode.getParent().getPath() + "/" + caarCountriesFolderName);
+			Node oldNode = session.getRootNode().getNode(caarRootFolderName).getNode(caarLanguagesFolderName);
+			Node newNode = session.getRootNode().getNode(caarRootFolderName).getNode(tmpCaarLanguagesFolderName);
+			oldNode.getSession().move(oldNode.getPath(), oldNode.getParent().getPath() + "/" + caarLanguagesOldFolderName);
+			newNode.getSession().move(newNode.getPath(), newNode.getParent().getPath() + "/" + caarLanguagesFolderName);
 			
 			log.debug("Remove old node renamed to \"caar-countries-old\"...");
 			oldNode.remove();
