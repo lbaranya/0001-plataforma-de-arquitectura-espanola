@@ -200,10 +200,6 @@
                             </div>
                         </div>
                         <div class="col-md-3 col-info" style="    vertical-align: middle; display: flex; justify-content: center; align-items: center;height: 100vh; font-size: 100px;">
-                            <!--
-                            <h4><span>premios</span>Nominados Premio arquia Tesis</h4>
-                            <a href="#"><img src="../../assets/img/evento-agenda-10.jpg" alt="arquitecto" style="width: 100%;" /></a>
--->
                             <p>Twitter</p>
                         </div>
                         <div class="col-md-3 col-info col-premios">

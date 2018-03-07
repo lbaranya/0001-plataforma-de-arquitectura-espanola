@@ -112,6 +112,6 @@ public interface ArchitectureFilesConstants {
 	};
 	
 	String URIRepositoryArchitectureFiles = "/architecture-files/";
-	String URIPrefixArchitectureFilesSupportArchitect = "/architecture-files/support-architect/";
-	String URIPrefixArchitectureFilesSupportBusiness = "/architecture-files/support-business/";
+	String URIPrefixArchitectureFilesSupportArchitect = URIRepositoryArchitectureFiles + "support-architect/";
+	String URIPrefixArchitectureFilesSupportBusiness = URIRepositoryArchitectureFiles + "support-business/";
 }
