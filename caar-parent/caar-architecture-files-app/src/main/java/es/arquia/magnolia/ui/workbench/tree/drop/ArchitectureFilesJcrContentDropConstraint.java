@@ -31,9 +31,9 @@ import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectu
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesPortfolioFolderWrapperNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesPortfolioNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesPortfolioWrapperNodeType;
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectFolderWrappertNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectFolderWrapperNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectWrappertNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectWrapperNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessFolderWrapperNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessWrapperNodeType;
@@ -124,6 +124,59 @@ public class ArchitectureFilesJcrContentDropConstraint extends JcrDropConstraint
     	
     	return ret;
     }
+    
+    @Override
+    protected boolean allowedSibling(Item source, Item target) {
+    	boolean movable = super.allowedAsChild(source, target) && source.isNode();
+        if (movable) {
+        	
+            try {
+            	
+                Node sourceNode = (Node) source;
+                Node targetNode = (Node) target;
+            	
+            	if (! this.isAllowedAsSibling(sourceNode, targetNode)) {
+
+                    log.debug("Could not move a node type '{}' as sibling to a node type '{}'", sourceNode.getPrimaryNodeType().getName(), targetNode.getPrimaryNodeType().getName());
+                    return false;
+				}
+                
+            } catch (RepositoryException e) {
+                log.warn("Could not check if siblings are allowed. ", e);
+            }
+        }
+
+        return movable;
+    }
+    
+    private boolean isAllowedAsSibling(Node sourceNode, Node targetNode) throws RepositoryException {
+    	
+    	boolean ret = false;
+    	
+    	if(sourceNode.getPrimaryNodeType().equals(targetNode.getPrimaryNodeType())) {
+    		return true;
+    	}else {
+    		if(isSupportNode(sourceNode)) {
+    			if(isSupportWrapperNode(sourceNode) && isSupportWrapperNode(targetNode)) {
+    				ret = true;
+    			}else {
+    				if((isSupportTypeNode(sourceNode) || isSupportFolderNode(sourceNode)) && (isSupportTypeNode(targetNode) || isSupportFolderNode(targetNode)) && isAllowedAsChild(sourceNode, targetNode.getParent())){
+    					ret = true;
+    				}
+    			}
+    		}else {
+    			if(isFormatWrapperNode(sourceNode) && isFormatWrapperNode(targetNode)) {
+    				ret = true;
+    			}else {
+    				if((isFormatTypeNode(sourceNode) || isFormatFolderNode(sourceNode)) && (isFormatTypeNode(targetNode) || isFormatFolderNode(targetNode)) && isAllowedAsChild(sourceNode, targetNode.getParent())){
+    					ret = true;
+    				}
+    			}
+    		}
+    	}
+    	return ret;
+    	
+    }
 
 
 
@@ -143,6 +196,42 @@ public class ArchitectureFilesJcrContentDropConstraint extends JcrDropConstraint
 		
 		return ret;
 	}
+	
+	private boolean isSupportWrapperNode(Node targetNode) throws RepositoryException {
+		
+		boolean ret = false;
+		
+		for (int i = 0; i < ArchitectureFilesConstants.architectureFilesSupportWrapperNodeTypes.length && !ret; i++) {
+			
+			ret = NodeUtil.isNodeType(targetNode, ArchitectureFilesConstants.architectureFilesSupportWrapperNodeTypes[i]);
+		}
+		
+		return ret;
+	}
+	
+	private boolean isSupportFolderNode(Node targetNode) throws RepositoryException {
+		
+		boolean ret = false;
+		
+		for (int i = 0; i < ArchitectureFilesConstants.architectureFilesSupportFolderNodeTypes.length && !ret; i++) {
+			
+			ret = NodeUtil.isNodeType(targetNode, ArchitectureFilesConstants.architectureFilesSupportFolderNodeTypes[i]);
+		}
+		
+		return ret;
+	}
+	
+	private boolean isSupportTypeNode(Node targetNode) throws RepositoryException {
+		
+		boolean ret = false;
+		
+		for (int i = 0; i < ArchitectureFilesConstants.architectureFilesSupportNodesNodeTypes.length && !ret; i++) {
+			
+			ret = NodeUtil.isNodeType(targetNode, ArchitectureFilesConstants.architectureFilesSupportNodesNodeTypes[i]);
+		}
+		
+		return ret;
+	}
 
 	/**
 	 * @param sourceNode
@@ -157,7 +246,7 @@ public class ArchitectureFilesJcrContentDropConstraint extends JcrDropConstraint
 		/** GENERAL SUPPORT WRAPPER **/
 		if (! ret && NodeUtil.isNodeType(targetNode, architectureFilesSupportWrapperNodeType)) {
 			
-			ret = NodeUtil.isNodeType(sourceNode, architectureFilesSupportArchitectWrappertNodeType) 
+			ret = NodeUtil.isNodeType(sourceNode, architectureFilesSupportArchitectWrapperNodeType) 
 					|| NodeUtil.isNodeType(sourceNode, architectureFilesSupportReviewIWrapperNodeType) 
 					|| NodeUtil.isNodeType(sourceNode, architectureFilesSupportReviewIIWrapperNodeType) 
 					|| NodeUtil.isNodeType(sourceNode, architectureFilesSupportReviewIIIWrapperNodeType) 
@@ -167,15 +256,15 @@ public class ArchitectureFilesJcrContentDropConstraint extends JcrDropConstraint
 		/*****************************/
 		
 		/** SUPPORT ARCHITECT **/
-		if (! ret && NodeUtil.isNodeType(targetNode, architectureFilesSupportArchitectWrappertNodeType)) {
+		if (! ret && NodeUtil.isNodeType(targetNode, architectureFilesSupportArchitectWrapperNodeType)) {
 			
-			ret = NodeUtil.isNodeType(sourceNode, architectureFilesSupportArchitectFolderWrappertNodeType) 
+			ret = NodeUtil.isNodeType(sourceNode, architectureFilesSupportArchitectFolderWrapperNodeType) 
 					|| NodeUtil.isNodeType(sourceNode, architectureFilesSupportArchitectNodeType);
 		}
 		
-		if (! ret && NodeUtil.isNodeType(targetNode, architectureFilesSupportArchitectFolderWrappertNodeType)) {
+		if (! ret && NodeUtil.isNodeType(targetNode, architectureFilesSupportArchitectFolderWrapperNodeType)) {
 			
-			ret = NodeUtil.isNodeType(sourceNode, architectureFilesSupportArchitectFolderWrappertNodeType) 
+			ret = NodeUtil.isNodeType(sourceNode, architectureFilesSupportArchitectFolderWrapperNodeType) 
 					|| NodeUtil.isNodeType(sourceNode, architectureFilesSupportArchitectNodeType);
 		}
 		/*****************************/
@@ -264,6 +353,42 @@ public class ArchitectureFilesJcrContentDropConstraint extends JcrDropConstraint
 		for (int i = 0; i < ArchitectureFilesConstants.architectureFilesFormatNodeTypes.length && !ret; i++) {
 			
 			ret = NodeUtil.isNodeType(targetNode, ArchitectureFilesConstants.architectureFilesFormatNodeTypes[i]);
+		}
+		
+		return ret;
+	}
+	
+	private boolean isFormatWrapperNode(Node targetNode) throws RepositoryException {
+		
+		boolean ret = false;
+		
+		for (int i = 0; i < ArchitectureFilesConstants.architectureFilesFormatWrapperNodeTypes.length && !ret; i++) {
+			
+			ret = NodeUtil.isNodeType(targetNode, ArchitectureFilesConstants.architectureFilesFormatWrapperNodeTypes[i]);
+		}
+		
+		return ret;
+	}
+	
+	private boolean isFormatFolderNode(Node targetNode) throws RepositoryException {
+		
+		boolean ret = false;
+		
+		for (int i = 0; i < ArchitectureFilesConstants.architectureFilesFormatFolderNodeTypes.length && !ret; i++) {
+			
+			ret = NodeUtil.isNodeType(targetNode, ArchitectureFilesConstants.architectureFilesFormatFolderNodeTypes[i]);
+		}
+		
+		return ret;
+	}
+	
+	private boolean isFormatTypeNode(Node targetNode) throws RepositoryException {
+		
+		boolean ret = false;
+		
+		for (int i = 0; i < ArchitectureFilesConstants.architectureFilesFormatNodesNodeTypes.length && !ret; i++) {
+			
+			ret = NodeUtil.isNodeType(targetNode, ArchitectureFilesConstants.architectureFilesFormatNodesNodeTypes[i]);
 		}
 		
 		return ret;
