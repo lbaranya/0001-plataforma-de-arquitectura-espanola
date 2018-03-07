@@ -122,6 +122,8 @@ public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> ext
 	}
 	
 	public String getAnchorFromString(String str) {
+		if(str == null)
+			return "";
 		return str.replaceAll("\\W", "");
 	}
 	

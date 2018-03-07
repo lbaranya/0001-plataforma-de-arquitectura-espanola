@@ -47,6 +47,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.announcementButtonText.label
             i18n: true
+            maxLength: 20
           - name: enrollmentButtonLink  
             label: caar-templating-module.common.field.text.externalLink.label
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -54,6 +55,7 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-templating-module.templates.pages.award-home-page.tabAwardHome.enrollmentButtonText.label
             i18n: true
+            maxLength: 20
   actions:
     - name: commit
     - name: cancel

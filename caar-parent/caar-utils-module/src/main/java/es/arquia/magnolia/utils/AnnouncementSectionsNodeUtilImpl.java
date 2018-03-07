@@ -8,6 +8,7 @@ import static es.arquia.magnolia.constants.AnnouncementConstants.enrollmentOptio
 import static es.arquia.magnolia.constants.AnnouncementConstants.enrollmentOptionRichText;
 import static es.arquia.magnolia.constants.AnnouncementConstants.enrollmentOptionTitle;
 import static es.arquia.magnolia.constants.AnnouncementConstants.enrollmentOptionWeight;
+import static es.arquia.magnolia.constants.AnnouncementConstants.judgeCV;
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgeFileLink;
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgeName;
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgePhoto;
@@ -102,6 +103,10 @@ public class AnnouncementSectionsNodeUtilImpl implements AnnouncementSectionsNod
 	
 	public String getJudgePhoto(Node node) {
 		return getPropertyAsString(node, judgePhoto);
+	}
+	
+	public String getJudgeCV(Node node) {
+		return getPropertyAsString(node, judgeCV);
 	}
 	
 	public String getJudgeFileLink(Node node) {

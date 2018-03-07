@@ -216,10 +216,6 @@ editor:
                   i18n: true
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionTitle.label
-                - name: enrollmentOptionAbtract
-                  i18n: true
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionAbtract.label
                   # End common fields
                   # Specific fields
                 - name: enrollmentOptionRichText
