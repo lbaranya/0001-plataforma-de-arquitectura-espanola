@@ -62,10 +62,10 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 			}
 
 		} else {
-			log.debug("Exists node \"caar\", creating node \"caar-countries-tmp\"...");
+			log.debug("Exists node \"caar\", creating node \"caar-languages-tmp\"...");
 			caarCategoryRootNode = session.getRootNode().getNode(caarRootFolderName);
 			if (!caarCategoryRootNode.hasNode(tmpCaarLanguagesFolderName)) {
-				log.debug("Creating \"caar-countries-tmp\" node...");
+				log.debug("Creating \"caar-languages-tmp\" node...");
 				subFolderCountriesNode = caarCategoryRootNode.addNode(tmpCaarLanguagesFolderName, NodeTypes.Folder.NAME);
 			}
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
@@ -74,13 +74,13 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 				}
 			}
 			
-			log.debug("Rename old node \"caar-countries\" to \"caar-contries-old\", and rename \"caar-countries-tmp\" to \"caar-countries\"...");
+			log.debug("Rename old node \"caar-countries\" to \"caar-languages-old\", and rename \"caar-languages-tmp\" to \"caar-languages\"...");
 			Node oldNode = session.getRootNode().getNode(caarRootFolderName).getNode(caarLanguagesFolderName);
 			Node newNode = session.getRootNode().getNode(caarRootFolderName).getNode(tmpCaarLanguagesFolderName);
 			oldNode.getSession().move(oldNode.getPath(), oldNode.getParent().getPath() + "/" + caarLanguagesOldFolderName);
 			newNode.getSession().move(newNode.getPath(), newNode.getParent().getPath() + "/" + caarLanguagesFolderName);
 			
-			log.debug("Remove old node renamed to \"caar-countries-old\"...");
+			log.debug("Remove old node renamed to \"caar-languages-old\"...");
 			oldNode.remove();
 		}
 		if (caarCategoryRootNode != null)

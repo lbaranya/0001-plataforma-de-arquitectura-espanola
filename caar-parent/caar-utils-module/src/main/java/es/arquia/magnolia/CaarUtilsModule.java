@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.commands.CountryCommand;
+import es.arquia.magnolia.commands.LanguagesCommand;
 import info.magnolia.module.ModuleLifecycle;
 import info.magnolia.module.ModuleLifecycleContext;
 
@@ -19,10 +20,13 @@ public class CaarUtilsModule implements ModuleLifecycle {
 	private static final Logger log = LoggerFactory.getLogger(CaarUtilsModule.class);
 	
 	private CountryCommand getCountries;
+	
+	private LanguagesCommand getLanguages;
 
 	public CaarUtilsModule() {
 		super();
 		getCountries = new CountryCommand();
+		getLanguages = new LanguagesCommand();
 	}
 
 	@Override
@@ -31,6 +35,7 @@ public class CaarUtilsModule implements ModuleLifecycle {
 		try {
 			
 			getCountries.execute();
+			getLanguages.execute();
 			
 		} catch (Exception e) {
 			
