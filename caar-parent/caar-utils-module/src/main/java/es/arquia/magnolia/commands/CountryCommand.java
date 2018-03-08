@@ -2,6 +2,7 @@ package es.arquia.magnolia.commands;
 
 import static es.arquia.magnolia.constants.UtilsConstants.caarCountriesFolderName;
 import static es.arquia.magnolia.constants.UtilsConstants.caarCountriesOldFolderName;
+import static es.arquia.magnolia.constants.UtilsConstants.caarLanguagesFolderName;
 import static es.arquia.magnolia.constants.UtilsConstants.caarRootFolderName;
 import static es.arquia.magnolia.constants.UtilsConstants.tmpCaarCountiesFolderName;
 
@@ -12,8 +13,10 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,16 +52,25 @@ public class CountryCommand {
 		Session session = MgnlContext.getJCRSession(CategorizationModule.CATEGORIZATION_WORKSPACE);
 		Node caarCategoryRootNode = null;
 		Node subFolderCountriesNode = null;
-		if (!session.getRootNode().hasNode(caarRootFolderName)) {
-
-			caarCategoryRootNode = session.getRootNode().addNode(caarRootFolderName, NodeTypes.Folder.NAME);
+		if (!session.getRootNode().hasNode(caarRootFolderName) || !session.getRootNode().getNode(caarRootFolderName).hasNode(caarCountriesFolderName)) {
+			if (!session.getRootNode().hasNode(caarRootFolderName)) {
+				caarCategoryRootNode = session.getRootNode().addNode(caarRootFolderName, NodeTypes.Folder.NAME);
+			}else {
+				caarCategoryRootNode = session.getRootNode().getNode(caarRootFolderName);
+			}
 			if (!caarCategoryRootNode.hasNode(caarCountriesFolderName)) {
 				subFolderCountriesNode = caarCategoryRootNode.addNode(caarCountriesFolderName, NodeTypes.Folder.NAME);
 			}
 
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
 				for (int i = 0; i < countryNames.size(); ++i) {
-					subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+					if(!StringUtils.isBlank(countryNames.get(i))) {
+						try {
+							subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+						}catch(RepositoryException e) {
+							// Next language
+						}
+					}
 				}
 			}
 
@@ -71,7 +83,13 @@ public class CountryCommand {
 			}
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
 				for (int i = 0; i < countryNames.size(); ++i) {
-					subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+					if(!StringUtils.isBlank(countryNames.get(i))) {
+						try {
+							subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+						}catch(RepositoryException e) {
+							// Next language
+						}
+					}
 				}
 			}
 			

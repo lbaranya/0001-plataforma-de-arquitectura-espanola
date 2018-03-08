@@ -13,8 +13,10 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,7 +39,8 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 		Locale[] allLanguages = DateFormat.getAvailableLocales();
 		List<String> allLanguagesNames = new ArrayList<>();
 		for(int i=0; i<allLanguages.length; ++i) {
-			allLanguagesNames.add(userLocale.getDisplayLanguage(allLanguages[i]));
+			allLanguagesNames.add(allLanguages[i].getDisplayLanguage(userLocale));
+			System.out.println(allLanguages[i].getDisplayLanguage(userLocale));
 		}
 		
 		// Ordenar ignorando caracteres especiales, como acentos
@@ -48,16 +51,25 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 		Session session = MgnlContext.getJCRSession(CategorizationModule.CATEGORIZATION_WORKSPACE);
 		Node caarCategoryRootNode = null;
 		Node subFolderCountriesNode = null;
-		if (!session.getRootNode().hasNode(caarRootFolderName)) {
-
-			caarCategoryRootNode = session.getRootNode().addNode(caarRootFolderName, NodeTypes.Folder.NAME);
+		if (!session.getRootNode().hasNode(caarRootFolderName) || !session.getRootNode().getNode(caarRootFolderName).hasNode(caarLanguagesFolderName)) {
+			if (!session.getRootNode().hasNode(caarRootFolderName)) {
+				caarCategoryRootNode = session.getRootNode().addNode(caarRootFolderName, NodeTypes.Folder.NAME);
+			}else {
+				caarCategoryRootNode = session.getRootNode().getNode(caarRootFolderName);
+			}
 			if (!caarCategoryRootNode.hasNode(caarLanguagesFolderName)) {
 				subFolderCountriesNode = caarCategoryRootNode.addNode(caarLanguagesFolderName, NodeTypes.Folder.NAME);
 			}
 
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
 				for (int i = 0; i < allLanguagesNames.size(); ++i) {
-					subFolderCountriesNode.addNode(allLanguagesNames.get(i), CategorizationNodeTypes.Category.NAME);
+					if(!StringUtils.isBlank(allLanguagesNames.get(i))) {
+						try {
+							subFolderCountriesNode.addNode(allLanguagesNames.get(i), CategorizationNodeTypes.Category.NAME);
+						}catch(RepositoryException e) {
+							// Next language
+						}
+					}
 				}
 			}
 
@@ -70,11 +82,17 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 			}
 			if (subFolderCountriesNode != null && !subFolderCountriesNode.hasNodes()) {
 				for (int i = 0; i < allLanguagesNames.size(); ++i) {
-					subFolderCountriesNode.addNode(allLanguagesNames.get(i), CategorizationNodeTypes.Category.NAME);
+					if(!StringUtils.isBlank(allLanguagesNames.get(i))) {
+						try {
+							subFolderCountriesNode.addNode(allLanguagesNames.get(i), CategorizationNodeTypes.Category.NAME);
+						}catch(RepositoryException e) {
+							// Next language
+						}
+					}
 				}
 			}
 			
-			log.debug("Rename old node \"caar-countries\" to \"caar-languages-old\", and rename \"caar-languages-tmp\" to \"caar-languages\"...");
+			log.debug("Rename old node \"caar-languages\" to \"caar-languages-old\", and rename \"caar-languages-tmp\" to \"caar-languages\"...");
 			Node oldNode = session.getRootNode().getNode(caarRootFolderName).getNode(caarLanguagesFolderName);
 			Node newNode = session.getRootNode().getNode(caarRootFolderName).getNode(tmpCaarLanguagesFolderName);
 			oldNode.getSession().move(oldNode.getPath(), oldNode.getParent().getPath() + "/" + caarLanguagesOldFolderName);
