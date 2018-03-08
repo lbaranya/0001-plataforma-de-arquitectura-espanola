@@ -30,9 +30,14 @@ public class LanguagesCommand {
 private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 	
 	private Locale userLocale;
+	
+	private Locale englishLocale;
+	private Locale spanishLocale;
 
 	public LanguagesCommand() {
 		userLocale = MgnlContext.getLocale();
+		englishLocale = new Locale("en");
+		spanishLocale = new Locale("es");
 	}
 	
 	public boolean execute() throws Exception {
@@ -40,13 +45,8 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 		List<String> allLanguagesNames = new ArrayList<>();
 		for(int i=0; i<allLanguages.length; ++i) {
 			allLanguagesNames.add(allLanguages[i].getDisplayLanguage(userLocale));
-			System.out.println(allLanguages[i].getDisplayLanguage(userLocale));
+			System.out.println(allLanguages[i].getDisplayLanguage(spanishLocale));
 		}
-		
-		// Ordenar ignorando caracteres especiales, como acentos
-		Collator coll = Collator.getInstance(userLocale);
-		coll.setStrength(Collator.PRIMARY);
-		Collections.sort(allLanguagesNames, coll);
 		
 		Session session = MgnlContext.getJCRSession(CategorizationModule.CATEGORIZATION_WORKSPACE);
 		Node caarCategoryRootNode = null;
@@ -65,7 +65,11 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 				for (int i = 0; i < allLanguagesNames.size(); ++i) {
 					if(!StringUtils.isBlank(allLanguagesNames.get(i))) {
 						try {
-							subFolderCountriesNode.addNode(allLanguagesNames.get(i), CategorizationNodeTypes.Category.NAME);
+							Node categoryNode = subFolderCountriesNode.addNode(allLanguagesNames.get(i).toLowerCase(), CategorizationNodeTypes.Category.NAME);
+							categoryNode.setProperty("name", allLanguagesNames.get(i).toLowerCase());
+							categoryNode.setProperty("displayName", allLanguages[i].getDisplayName(spanishLocale).toUpperCase().replaceAll("\\s\\(.+?\\)", ""));
+							categoryNode.setProperty("displayName_en", allLanguages[i].getDisplayName(englishLocale).toUpperCase().replaceAll("\\s\\(.+?\\)", ""));
+							categoryNode.getSession().save();
 						}catch(RepositoryException e) {
 							// Next language
 						}
@@ -84,9 +88,13 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 				for (int i = 0; i < allLanguagesNames.size(); ++i) {
 					if(!StringUtils.isBlank(allLanguagesNames.get(i))) {
 						try {
-							subFolderCountriesNode.addNode(allLanguagesNames.get(i), CategorizationNodeTypes.Category.NAME);
+							Node categoryNode = subFolderCountriesNode.addNode(allLanguagesNames.get(i).toLowerCase(), CategorizationNodeTypes.Category.NAME);
+							categoryNode.setProperty("name", allLanguagesNames.get(i).toLowerCase());
+							categoryNode.setProperty("displayName", allLanguages[i].getDisplayName(spanishLocale).toUpperCase().replaceAll("\\s\\(.+?\\)", ""));
+							categoryNode.setProperty("displayName_en", allLanguages[i].getDisplayName(englishLocale).toUpperCase().replaceAll("\\s\\(.+?\\)", ""));
+							categoryNode.getSession().save();
 						}catch(RepositoryException e) {
-							// Next language
+							// If exists a node with the same JCR name, skipped it!
 						}
 					}
 				}

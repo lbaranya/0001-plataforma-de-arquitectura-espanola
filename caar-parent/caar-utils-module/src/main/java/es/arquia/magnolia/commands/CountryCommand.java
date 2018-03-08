@@ -7,6 +7,7 @@ import static es.arquia.magnolia.constants.UtilsConstants.caarRootFolderName;
 import static es.arquia.magnolia.constants.UtilsConstants.tmpCaarCountiesFolderName;
 
 import java.text.Collator;
+import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -31,23 +32,27 @@ public class CountryCommand {
 	
 	private Locale userLocale;
 
+	private Locale englishLocale;
+	private Locale spanishLocale;
+
 	public CountryCommand() {
 		userLocale = MgnlContext.getLocale();
+		englishLocale = new Locale("en");
+		spanishLocale = new Locale("es");
 	}
 
 	public boolean execute() throws Exception {
-
+		
 		String[] locales = Locale.getISOCountries();
+		Locale[] allCountries = new Locale[locales.length];
 		List<String> countryNames = new ArrayList<>();
+		int index = 0;
 		for (String countryCode : locales) {
 			Locale obj2 = new Locale(userLocale.getLanguage(), countryCode);
+			allCountries[index] = obj2;
 			countryNames.add(obj2.getDisplayCountry(userLocale));
+			++index;
 		}
-
-		// Ordenar ignorando caracteres especiales, como acentos
-		Collator coll = Collator.getInstance(userLocale);
-		coll.setStrength(Collator.PRIMARY);
-		Collections.sort(countryNames, coll);
 
 		Session session = MgnlContext.getJCRSession(CategorizationModule.CATEGORIZATION_WORKSPACE);
 		Node caarCategoryRootNode = null;
@@ -66,9 +71,14 @@ public class CountryCommand {
 				for (int i = 0; i < countryNames.size(); ++i) {
 					if(!StringUtils.isBlank(countryNames.get(i))) {
 						try {
-							subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+							//subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+							Node categoryNode = subFolderCountriesNode.addNode(countryNames.get(i).toLowerCase(), CategorizationNodeTypes.Category.NAME);
+							categoryNode.setProperty("name", countryNames.get(i).toLowerCase());
+							categoryNode.setProperty("displayName", allCountries[i].getDisplayCountry(spanishLocale).toUpperCase());
+							categoryNode.setProperty("displayName_en", allCountries[i].getDisplayCountry(englishLocale).toUpperCase());
+							categoryNode.getSession().save();
 						}catch(RepositoryException e) {
-							// Next language
+							// If exists a node with the same JCR name, skipped it!
 						}
 					}
 				}
@@ -85,7 +95,12 @@ public class CountryCommand {
 				for (int i = 0; i < countryNames.size(); ++i) {
 					if(!StringUtils.isBlank(countryNames.get(i))) {
 						try {
-							subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+							//subFolderCountriesNode.addNode(countryNames.get(i), CategorizationNodeTypes.Category.NAME);
+							Node categoryNode = subFolderCountriesNode.addNode(countryNames.get(i).toLowerCase(), CategorizationNodeTypes.Category.NAME);
+							categoryNode.setProperty("name", countryNames.get(i).toLowerCase());
+							categoryNode.setProperty("displayName", allCountries[i].getDisplayCountry(spanishLocale).toUpperCase());
+							categoryNode.setProperty("displayName_en", allCountries[i].getDisplayCountry(englishLocale).toUpperCase());
+							categoryNode.getSession().save();
 						}catch(RepositoryException e) {
 							// Next language
 						}
