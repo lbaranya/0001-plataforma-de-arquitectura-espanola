@@ -19,6 +19,16 @@ editor:
       - name: data
         label: caar-architecture-files-app.files.format.electronic.data.label          
         fields:
+          - name: FF9_1
+            required: true
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            targetWorkspace: dam
+            appName: assets
+            label: caar-architecture-files-app.files.format.electronic.data.photoPreview.label
+            identifierToPathConverter:
+              class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+            contentPreviewDefinition:
+              contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent        
           - name: m21_001
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.electronic.data.id.label
