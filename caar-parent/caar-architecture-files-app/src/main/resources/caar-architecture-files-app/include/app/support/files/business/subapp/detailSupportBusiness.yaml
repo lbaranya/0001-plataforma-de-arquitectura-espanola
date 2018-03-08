@@ -57,6 +57,7 @@ editor:
             textInputAllowed: true
             filteringMode: startswith
             pageLength: 5
+            labelProperty: displayName
             label: caar-architecture-files-app.files.support.business.businessData.departmentCountry.label
             required: true
           # user picker
