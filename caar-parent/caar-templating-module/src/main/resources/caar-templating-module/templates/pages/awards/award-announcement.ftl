@@ -362,14 +362,14 @@
 				        <div>
 				            <div class="row">
 				                <div class="col-md-12 content-title">
-				                    <h3>${title!""}</h3>
+				                    <h4>${title!""}</h4>
 				                </div>
 				                <div class="cmp-distruidor-contenido">
 						        <div class="container-sub-info">
 						            <div class="row">
 						                <div class="col-md-12 contenido">
+						                <div class="preview">
 						                	<div class="descript">
-						                	<div class="preview">
 						                	<div class="col-info-preview">
 						                    	<a href="${lemmaFileLink}">
 						                    		[#assign imgItemKey = lemmaPhotoPreview!]
@@ -386,11 +386,11 @@
 						                            [/#if]
 						                    	</a>
 						                    </div>
-						                    </div>
-						                    </div>
 						                    <div class="info-basica">
 						                    	${richText}
 						                    </div>
+						                  </div>
+						                 </div>
 						                </div>
 						           	</div>
 						        </div>
