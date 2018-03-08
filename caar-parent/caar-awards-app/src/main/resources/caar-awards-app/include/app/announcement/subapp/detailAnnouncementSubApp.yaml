@@ -226,11 +226,26 @@ editor:
                 - name: enrollmentOptionButtonText
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionButtonText.label
-                - name: enrollmentOptionButtonLink
-                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-                  targetWorkspace: website      
-                  appName: pages
+                - name: enrollmentOptionButtonLink 
+                  class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionButtonLink.label
+                  options:      
+                    - name: internalLink    
+                      label: caar-templating-module.common.field.text.internal.label      
+                      selected: true      
+                      value: internalLink      
+                    - name: externalLink      
+                      label: caar-templating-module.common.field.text.external.label     
+                      value: externalLink      
+                  fields:      
+                    - name: internalLink
+                      label: caar-templating-module.common.field.text.internalLink.label      
+                      class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                      targetWorkspace: website      
+                      appName: pages
+                    - name: externalLink      
+                      label: caar-templating-module.common.field.text.externalLink.label      
+                      class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   # End specific fields
       - name: tabLemma
         label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.label
