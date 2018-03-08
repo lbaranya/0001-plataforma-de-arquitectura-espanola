@@ -106,6 +106,7 @@ editor:
             textInputAllowed: true
             filteringMode: startswith
             pageLength: 5
+            labelProperty: displayName
             label: caar-architecture-files-app.files.support.architect.educationData.certificationCountry.label
           - name: FS1_2_4
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
