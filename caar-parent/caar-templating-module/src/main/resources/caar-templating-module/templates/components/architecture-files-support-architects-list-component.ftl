@@ -50,7 +50,7 @@
 		                <div class="arqui-img-text">
 		                    [#assign imgItemKey = architectsInstance.getPhoto(architect)!""]
 			            	[#if imgItemKey??]
-		                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "261x350")!]
+		                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "556x445")!]
 			            		[#if imgMediaRendition??]
 			            			[#assign imageAlternativeText = "arquitecto"]
 			            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
