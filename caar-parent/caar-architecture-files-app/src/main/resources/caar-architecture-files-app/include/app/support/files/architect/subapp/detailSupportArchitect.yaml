@@ -299,17 +299,31 @@ editor:
                   label: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.label
                   value: caar-architecture-files-app.appLauncherLayout.architectureFiles.separator.value
                 - name: FS1_6_1
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.architect.languagesData.language.label
                   required: true
+                  class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                  repository: category
+                  path: caar/caar-languages
+                  textInputAllowed: true
+                  filteringMode: startswith
+                  pageLength: 5
                 - name: FS1_6_2
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.architect.languagesData.otherLanguages.label
                   required: true
+                  class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                  repository: category
+                  path: caar/caar-languages
+                  textInputAllowed: true
+                  filteringMode: startswith
+                  pageLength: 5
                 - name: FS1_6_3
-                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.architect.languagesData.firstLanguage.label
-                  i18n: true
+                  class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                  repository: category
+                  path: caar/caar-languages
+                  textInputAllowed: true
+                  filteringMode: startswith
+                  pageLength: 5
                 - name: FS1_6_4
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-architecture-files-app.files.support.architect.languagesData.auditiveComprehension.label
