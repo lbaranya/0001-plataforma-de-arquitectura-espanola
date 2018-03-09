@@ -248,7 +248,7 @@ editor:
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionButtonLink.label
                   options:      
                     - name: internalLink    
-                      label: caar-templating-module.common.field.text.internal.label      
+                      label: caar-templating-module.common.field.text.internal.page.label    
                       selected: true      
                       value: internalLink      
                     - name: externalLink      

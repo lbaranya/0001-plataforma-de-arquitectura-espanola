@@ -45,7 +45,6 @@ private static final Logger log = LoggerFactory.getLogger(CountryCommand.class);
 		List<String> allLanguagesNames = new ArrayList<>();
 		for(int i=0; i<allLanguages.length; ++i) {
 			allLanguagesNames.add(allLanguages[i].getDisplayLanguage(userLocale));
-			System.out.println(allLanguages[i].getDisplayLanguage(spanishLocale));
 		}
 		
 		Session session = MgnlContext.getJCRSession(CategorizationModule.CATEGORIZATION_WORKSPACE);

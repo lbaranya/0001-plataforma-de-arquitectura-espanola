@@ -31,6 +31,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-top: 15px;
 }
 
+.row-flex{
+	display: flex;
+	justify-content: center;
+}
+
 @media screen and (max-width: 1442px) {
 	.container-margin {
 		width: 1342px;
@@ -2952,7 +2957,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	color: #D0021B;
 }
 
-.inscripcion a {
+.inscripcion .btn {
 	border-radius: 0;
 	border: 2px solid #D0021B;
 	color: #fff;
@@ -3547,6 +3552,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-bottom: 20px;
 	margin-top: 20px;
 	margin-right: 10px;
+	font-size: 24px;
 }
 
 .cmp-convocatoria .submenu-convocatoria {
