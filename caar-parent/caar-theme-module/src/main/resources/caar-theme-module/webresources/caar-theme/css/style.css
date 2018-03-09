@@ -3814,7 +3814,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 .cmp-arquitecto .cmp-header-arqui {
   min-height: 626px;
   background-repeat: no-repeat;
-  background-size: 100%; }
+  background-size: cover; }
   .cmp-arquitecto .cmp-header-arqui .header {
     display: flex;
     flex-direction: column;
