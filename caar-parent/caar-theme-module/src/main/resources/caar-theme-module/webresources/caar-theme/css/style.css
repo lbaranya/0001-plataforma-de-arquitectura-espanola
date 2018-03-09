@@ -2530,6 +2530,13 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	border-bottom: 3px solid #D0021B;
 }
 
+.cmp-ficha-arquitecto .col-right {
+	padding-left:50px;
+}
+.cmp-ficha-arquitecto .col-left {
+	padding-right:50px;
+}
+
 .cmp-ficha-detalle-arquitecto .header-img {
 	float: left;
 	width: 70%;
