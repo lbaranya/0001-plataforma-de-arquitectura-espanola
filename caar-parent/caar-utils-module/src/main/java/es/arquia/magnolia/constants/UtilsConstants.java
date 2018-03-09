@@ -6,10 +6,14 @@ public interface UtilsConstants {
 	String dateFormatDayOfWeek = "EEE.";
 	
 	// Countries
-	String caarCountriesRootFolderName = "caar";
+	String caarRootFolderName = "caar";
 	String caarCountriesFolderName = "caar-countries";
 	String caarCountriesOldFolderName = "caar-countries-old";
 	String tmpCaarCountiesFolderName = "caar-countries-tmp";
+	
+	String caarLanguagesFolderName = "caar-languages";
+	String caarLanguagesOldFolderName = "caar-languages-old";
+	String tmpCaarLanguagesFolderName = "caar-languages-tmp";
 	
 	String jcrLanguage = "JCR-SQL2";
 	

@@ -46,7 +46,10 @@
                     	[#if openEditionNode?has_content]
                     		[#assign openEditionContentMap = cmsfn.asContentMap(openEditionNode)!""]
 	                    	[#if openEditionContentMap.announcementButtonLink?has_content]
-	                    		[#assign hrefLink = cmsfn.link(cmsfn.contentById(openEditionContentMap.announcementButtonLink, "dam"))]
+	                    		[#assign checkContent = cmsfn.contentById(openEditionContentMap.announcementButtonLink, "dam")!""]
+	                    		[#if checkContent?has_content]
+	                    			[#assign hrefLink = cmsfn.link(cmsfn.contentById(openEditionContentMap.announcementButtonLink, "dam"))]
+	                    		[/#if]
 	                    	[/#if]
                     	<a class="btn" href="${hrefLink}">${awards.getEditionAnnouncementButtonText(openEditionNode)}</a>
                         <a class="btn" href="${cmsfn.externalLink(openEditionContentMap, "enrollmentButtonLink")}">${awards.getEditionEnrollmentButtonText(openEditionNode)}</a>

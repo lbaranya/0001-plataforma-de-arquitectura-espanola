@@ -10,7 +10,10 @@
             ${cmsfn.decode(content).basic_information!""}
             [#assign hrefLink="#"]
             [#if content.architect_file_link??]
-            	[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(content.architect_file_link))]
+            	[#assign checkContent = cmsfn.contentByPath(content.architect_file_link)!""]
+	            [#if checkContent?has_content]
+            		[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(content.architect_file_link))]
+            	[/#if]
             [/#if]
             <a href="${hrefLink}" class="btn">${content.architect_link_name!""}</a>
         </div>

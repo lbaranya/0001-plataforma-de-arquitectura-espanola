@@ -1,17 +1,17 @@
 form:
   tabs:
-    - name: tabMain
-      label: caar-templating-module.templates.components.home-grid-component.tabMain.label
+    - name: elem11
+      label: caar-templating-module.templates.components.home-grid-component.elem11.label
       fields:
-        - name: type1
+        - name: title11
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.type1.label
-        - name: title1
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle11
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.title1.label
-        - name: image1
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: image11
           required: true      
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: dam      
@@ -20,10 +20,10 @@ form:
             class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
           contentPreviewDefinition:      
             contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-          label: caar-templating-module.templates.components.home-grid-component.dialog.image1.label
-        - name: link1
+          label: caar-templating-module.templates.components.home-grid-component.dialog.image.label
+        - name: link11
           class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-          label: caar-templating-module.templates.components.home-grid-component.dialog.link1.label
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
           required: true
           layout: vertical
           options:      
@@ -65,27 +65,32 @@ form:
             - name: externalLink
               label: caar-templating-module.common.field.text.externalLink.label
               class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-        - name: type2
+    - name: elem12
+      label: caar-templating-module.templates.components.home-grid-component.elem12.label
+      fields:              
+        - name: title12
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.type2.label
-        - name: title2
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle12
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.title2.label
-        - name: image2
-          required: true      
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: image12
+          required: true
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: dam      
-          appName: pages      
+          appName: assets      
           identifierToPathConverter:      
             class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
           contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent    
+          contentPreviewDefinition:      
             contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-          label: caar-templating-module.templates.components.home-grid-component.dialog.image2.label
-        - name: link2
+          label: caar-templating-module.templates.components.home-grid-component.dialog.image.label
+        - name: link12
           class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-          label: caar-templating-module.templates.components.home-grid-component.dialog.link2.label
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
           required: true
           layout: vertical
           options:      
@@ -127,29 +132,36 @@ form:
             - name: externalLink
               label: caar-templating-module.common.field.text.externalLink.label
               class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-        - name: videoType
+    - name: elem13
+      label: caar-templating-module.templates.components.home-grid-component.elem13.label
+      fields:                
+        - name: title13
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.videoType.label
-        - name: videoTitle
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle13
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.videoTitle.label
-        - name: videoLink
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: videoLink13
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.videoLink.label
-        - name: type3
+          description: caar-templating-module.templates.components.rich-text-video-component.dialog.videoLink.description
+    - name: elem21
+      label: caar-templating-module.templates.components.home-grid-component.elem21.label
+      fields:           
+        - name: title21
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.type3.label
-        - name: title3
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle21
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.title3.label
-        - name: link3
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: link21
           class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-          label: caar-templating-module.templates.components.home-grid-component.dialog.link3.label
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
           required: true
           layout: vertical
           options:      
@@ -191,23 +203,26 @@ form:
             - name: externalLink
               label: caar-templating-module.common.field.text.externalLink.label
               class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-        - name: contentTitle3
+        - name: contentTitle21
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.contentTitle3.label
-        - name: contentText3
+          label: caar-templating-module.templates.components.home-grid-component.dialog.contentTitle.label
+        - name: contentText21
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition      
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.contentText.label
+    - name: elem22
+      label: caar-templating-module.templates.components.home-grid-component.elem22.label
+      fields:          
+        - name: title22
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.contentText3.label
-        - name: type4
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle22
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.type4.label
-        - name: title4
-          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-          required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.title4.label
-        - name: image4
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: image22
           required: true      
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: dam      
@@ -216,10 +231,10 @@ form:
             class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
           contentPreviewDefinition:      
             contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-          label: caar-templating-module.templates.components.home-grid-component.dialog.image4.label
-        - name: link4
+          label: caar-templating-module.templates.components.home-grid-component.dialog.image.label
+        - name: link22
           class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-          label: caar-templating-module.templates.components.home-grid-component.dialog.link4.label
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
           required: true
           layout: vertical
           options:      
@@ -261,15 +276,18 @@ form:
             - name: externalLink
               label: caar-templating-module.common.field.text.externalLink.label
               class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-        - name: type5
+    - name: elem23
+      label: caar-templating-module.templates.components.home-grid-component.elem23.label
+      fields:          
+        - name: title23
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.type5.label
-        - name: title5
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle23
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.title5.label
-        - name: image5
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: image23
           required: true      
           class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
           targetWorkspace: dam      
@@ -278,10 +296,65 @@ form:
             class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
           contentPreviewDefinition:      
             contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-          label: caar-templating-module.templates.components.home-grid-component.dialog.image5.label
-        - name: link5
+          label: caar-templating-module.templates.components.home-grid-component.dialog.image.label
+        - name: link23
           class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-          label: caar-templating-module.templates.components.home-grid-component.dialog.link5.label
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
+          required: true
+          layout: vertical
+          options:      
+            - name: architectureFileLink      
+              label: caar-templating-module.common.field.text.architectureFileLink.label
+              selected: true      
+              value: architectureFileLink
+            - name: awardLink
+              label: caar-templating-module.common.field.text.awardLink.label
+              value: awardLink
+            - name: newsLink
+              label: caar-templating-module.common.field.text.newsLink.label
+              value: newsLink
+            - name: externalLink      
+              label: caar-templating-module.common.field.text.external.label
+              value: externalLink      
+          fields:      
+            - name: architectureFileLink
+              label: caar-templating-module.common.field.text.architectureFileLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-architecture-files-app
+              targetWorkspace: architecture-files
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter   
+            - name: awardLink
+              label: caar-templating-module.common.field.text.awardLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-awards-app
+              targetWorkspace: awards
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
+            - name: newsLink
+              label: caar-templating-module.common.field.text.newsLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-news-app
+              targetWorkspace: news
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
+            - name: externalLink
+              label: caar-templating-module.common.field.text.externalLink.label
+              class: info.magnolia.ui.form.field.definition.TextFieldDefinition              
+    - name: elem24
+      label: caar-templating-module.templates.components.home-grid-component.elem24.label
+      fields:          
+        - name: title24
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle24
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: link24
+          class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
           required: true
           layout: vertical
           options:      
@@ -323,195 +396,214 @@ form:
             - name: externalLink
               label: caar-templating-module.common.field.text.externalLink.label
               class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-        - name: type6
-          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-          required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.type6.label
-        - name: title6
-          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-          required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.title6.label
-        - name: image6
-          required: true      
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-          targetWorkspace: dam      
-          appName: assets      
-          identifierToPathConverter:      
-            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
-          contentPreviewDefinition:      
-            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-          label: caar-templating-module.templates.components.home-grid-component.dialog.image6.label
-        - name: link6
-          class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-          label: caar-templating-module.templates.components.home-grid-component.dialog.link6.label
-          required: true
-          layout: vertical
-          options:      
-            - name: architectureFileLink      
-              label: caar-templating-module.common.field.text.architectureFileLink.label
-              selected: true      
-              value: architectureFileLink
-            - name: awardLink
-              label: caar-templating-module.common.field.text.awardLink.label
-              value: awardLink
-            - name: newsLink
-              label: caar-templating-module.common.field.text.newsLink.label
-              value: newsLink
-            - name: externalLink      
-              label: caar-templating-module.common.field.text.external.label
-              value: externalLink      
-          fields:      
-            - name: architectureFileLink
-              label: caar-templating-module.common.field.text.architectureFileLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-architecture-files-app
-              targetWorkspace: architecture-files
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter   
-            - name: awardLink
-              label: caar-templating-module.common.field.text.awardLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-awards-app
-              targetWorkspace: awards
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
-            - name: newsLink
-              label: caar-templating-module.common.field.text.newsLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-news-app
-              targetWorkspace: news
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
-            - name: externalLink
-              label: caar-templating-module.common.field.text.externalLink.label
-              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-        - name: type7
-          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-          required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.type7.label
-        - name: title7
-          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-          required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.title7.label
-        - name: image7
-          required: true      
-          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
-          targetWorkspace: dam      
-          appName: assets      
-          identifierToPathConverter:      
-            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
-          contentPreviewDefinition:      
-            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
-          label: caar-templating-module.templates.components.home-grid-component.dialog.image7.label
-        - name: link7
-          class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-          label: caar-templating-module.templates.components.home-grid-component.dialog.link7.label
-          required: true
-          layout: vertical
-          options:      
-            - name: architectureFileLink      
-              label: caar-templating-module.common.field.text.architectureFileLink.label
-              selected: true      
-              value: architectureFileLink
-            - name: awardLink
-              label: caar-templating-module.common.field.text.awardLink.label
-              value: awardLink
-            - name: newsLink
-              label: caar-templating-module.common.field.text.newsLink.label
-              value: newsLink
-            - name: externalLink      
-              label: caar-templating-module.common.field.text.external.label
-              value: externalLink      
-          fields:      
-            - name: architectureFileLink
-              label: caar-templating-module.common.field.text.architectureFileLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-architecture-files-app
-              targetWorkspace: architecture-files
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter   
-            - name: awardLink
-              label: caar-templating-module.common.field.text.awardLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-awards-app
-              targetWorkspace: awards
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
-            - name: newsLink
-              label: caar-templating-module.common.field.text.newsLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-news-app
-              targetWorkspace: news
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
-            - name: externalLink
-              label: caar-templating-module.common.field.text.externalLink.label
-              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-        - name: type8
-          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-          required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.type8.label
-        - name: title8
-          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
-          required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.title8.label
-        - name: link8
-          class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
-          label: caar-templating-module.templates.components.home-grid-component.dialog.link8.label
-          required: true
-          layout: vertical
-          options:      
-            - name: architectureFileLink      
-              label: caar-templating-module.common.field.text.architectureFileLink.label
-              selected: true      
-              value: architectureFileLink
-            - name: awardLink
-              label: caar-templating-module.common.field.text.awardLink.label
-              value: awardLink
-            - name: newsLink
-              label: caar-templating-module.common.field.text.newsLink.label
-              value: newsLink
-            - name: externalLink      
-              label: caar-templating-module.common.field.text.external.label
-              value: externalLink      
-          fields:      
-            - name: architectureFileLink
-              label: caar-templating-module.common.field.text.architectureFileLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-architecture-files-app
-              targetWorkspace: architecture-files
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter   
-            - name: awardLink
-              label: caar-templating-module.common.field.text.awardLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-awards-app
-              targetWorkspace: awards
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
-            - name: newsLink
-              label: caar-templating-module.common.field.text.newsLink.label      
-              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              appName: caar-news-app
-              targetWorkspace: news
-              identifierToPathConverter:      
-                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
-            - name: externalLink
-              label: caar-templating-module.common.field.text.externalLink.label
-              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-        - name: contentInitial8
+        - name: contentInitial24
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
           maxLength: 1
-          label: caar-templating-module.templates.components.home-grid-component.dialog.contentInitial8.label
-        - name: contentTitle8
+          label: caar-templating-module.templates.components.home-grid-component.dialog.contentInitial.label
+        - name: contentTitle24
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.contentTitle8.label
-        - name: contentText8
+          label: caar-templating-module.templates.components.home-grid-component.dialog.contentTitle.label
+        - name: contentText24
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition      
           required: true
-          label: caar-templating-module.templates.components.home-grid-component.dialog.contentText8.label
+          label: caar-templating-module.templates.components.home-grid-component.dialog.contentText.label                         
+    - name: elem31
+      label: caar-templating-module.templates.components.home-grid-component.elem31.label
+      fields:   
+        - name: title31
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle31
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: image31
+          required: true      
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+          label: caar-templating-module.templates.components.home-grid-component.dialog.image.label
+        - name: link31
+          class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
+          required: true
+          layout: vertical
+          options:      
+            - name: architectureFileLink      
+              label: caar-templating-module.common.field.text.architectureFileLink.label
+              selected: true      
+              value: architectureFileLink
+            - name: awardLink
+              label: caar-templating-module.common.field.text.awardLink.label
+              value: awardLink
+            - name: newsLink
+              label: caar-templating-module.common.field.text.newsLink.label
+              value: newsLink
+            - name: externalLink      
+              label: caar-templating-module.common.field.text.external.label
+              value: externalLink      
+          fields:      
+            - name: architectureFileLink
+              label: caar-templating-module.common.field.text.architectureFileLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-architecture-files-app
+              targetWorkspace: architecture-files
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter   
+            - name: awardLink
+              label: caar-templating-module.common.field.text.awardLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-awards-app
+              targetWorkspace: awards
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
+            - name: newsLink
+              label: caar-templating-module.common.field.text.newsLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-news-app
+              targetWorkspace: news
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
+            - name: externalLink
+              label: caar-templating-module.common.field.text.externalLink.label
+              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+    - name: elem34
+      label: caar-templating-module.templates.components.home-grid-component.elem34.label
+      fields:  
+        - name: title34
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle34
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: image34
+          required: true
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+          label: caar-templating-module.templates.components.home-grid-component.dialog.image.label
+        - name: link34
+          class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
+          required: true
+          layout: vertical
+          options:      
+            - name: architectureFileLink      
+              label: caar-templating-module.common.field.text.architectureFileLink.label
+              selected: true      
+              value: architectureFileLink
+            - name: awardLink
+              label: caar-templating-module.common.field.text.awardLink.label
+              value: awardLink
+            - name: newsLink
+              label: caar-templating-module.common.field.text.newsLink.label
+              value: newsLink
+            - name: externalLink      
+              label: caar-templating-module.common.field.text.external.label
+              value: externalLink      
+          fields:      
+            - name: architectureFileLink
+              label: caar-templating-module.common.field.text.architectureFileLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-architecture-files-app
+              targetWorkspace: architecture-files
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter   
+            - name: awardLink
+              label: caar-templating-module.common.field.text.awardLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-awards-app
+              targetWorkspace: awards
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
+            - name: newsLink
+              label: caar-templating-module.common.field.text.newsLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-news-app
+              targetWorkspace: news
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
+            - name: externalLink
+              label: caar-templating-module.common.field.text.externalLink.label
+              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+    - name: elem41
+      label: caar-templating-module.templates.components.home-grid-component.elem41.label
+      fields:  
+        - name: title41
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
+        - name: subtitle41
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          required: true
+          label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
+        - name: image41
+          required: true      
+          class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+          targetWorkspace: dam      
+          appName: assets      
+          identifierToPathConverter:      
+            class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator      
+          contentPreviewDefinition:      
+            contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+          label: caar-templating-module.templates.components.home-grid-component.dialog.image.label
+        - name: link41
+          class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
+          label: caar-templating-module.templates.components.home-grid-component.dialog.link.label
+          required: true
+          layout: vertical
+          options:      
+            - name: architectureFileLink      
+              label: caar-templating-module.common.field.text.architectureFileLink.label
+              selected: true      
+              value: architectureFileLink
+            - name: awardLink
+              label: caar-templating-module.common.field.text.awardLink.label
+              value: awardLink
+            - name: newsLink
+              label: caar-templating-module.common.field.text.newsLink.label
+              value: newsLink
+            - name: externalLink      
+              label: caar-templating-module.common.field.text.external.label
+              value: externalLink      
+          fields:      
+            - name: architectureFileLink
+              label: caar-templating-module.common.field.text.architectureFileLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-architecture-files-app
+              targetWorkspace: architecture-files
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter   
+            - name: awardLink
+              label: caar-templating-module.common.field.text.awardLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-awards-app
+              targetWorkspace: awards
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
+            - name: newsLink
+              label: caar-templating-module.common.field.text.newsLink.label      
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              appName: caar-news-app
+              targetWorkspace: news
+              identifierToPathConverter:      
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter                 
+            - name: externalLink
+              label: caar-templating-module.common.field.text.externalLink.label
+              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
 actions:      
   commit:      
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition      

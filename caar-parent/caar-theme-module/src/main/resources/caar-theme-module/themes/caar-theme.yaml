@@ -66,6 +66,10 @@ imaging:
     "1440w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 1440
+    "928x627":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 928
+      height: 627
     "130x115":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 130
@@ -80,10 +84,18 @@ imaging:
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 261
       height: 350
+    "556x445":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 556
+      height: 445
     "263x445":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 263
       height: 445
+    "331x445":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 331
+      height: 445      
     "691x445":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 691
@@ -92,3 +104,7 @@ imaging:
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 1412
       height: 445
+    "331x926":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 331
+      height: 926     

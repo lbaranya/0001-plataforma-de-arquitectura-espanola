@@ -22,19 +22,24 @@ editor:
           - name: title
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.live-event.liveEventData.title.label
+            required: true
           - name: streamingLink
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.live-event.liveEventData.streamingLink.label
+            required: true
           - name: facebookUser
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.live-event.liveEventData.facebookUser.label
+            required: true
           - name: twitterUser
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.live-event.liveEventData.twitterUser.label
+            required: true
           - name: filesList
             label: caar-awards-app.files.live-event.liveEventData.filesList.label
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
+            required: true
             field:
               name: formatFileLink
               class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
