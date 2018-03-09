@@ -5,13 +5,13 @@
 		[#assign architectContentNode = cmsfn.asJCRNode(architectContent)!""]
 		[#assign architect = model.getArchitect()!"No se puede obtener la instancia"]
 		<section class="cmp-ficha-detalle-arquitecto">
-	        <div class="">
-	            <div class="">
+	        <div class="container-margin">
+	            <div class="row">
 	                <div class="header-img">
 	                	[#assign imgItemKey = architect.getPhoto(architectContentNode)!""]
 		            	[#if imgItemKey??]
 		            		[#if imgItemKey?has_content]
-		                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1440w")!]
+		                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "928x627")!]
 			            		[#if imgMediaRendition?has_content]
 			            			[#assign imageAlternativeText = "arquitecto"]
 			            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
