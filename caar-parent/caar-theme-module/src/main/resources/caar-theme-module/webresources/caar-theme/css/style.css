@@ -2631,8 +2631,12 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	padding-bottom: 20px;
 }
 
-.cmp-arquitectos-realacionados .title {
+.cmp-last-news .noticias-container:hover .title{
 	color: #D0021B;
+}
+
+.cmp-arquitectos-realacionados .title {
+	color: #000;
 	font-size: 24px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
 }
