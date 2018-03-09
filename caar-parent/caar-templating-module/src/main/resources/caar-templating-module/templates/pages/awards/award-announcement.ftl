@@ -39,22 +39,9 @@
 		        <h3>${announcement.getAnnouncementTitle(announcementContentNode)!""}</h3>
 		    </div>
 		    [/#if]
-		    [#if mediaPosition == "left"]
-		    	<div class="col-md-7 video-img-acerca">
-			    [#if mediaType == "image"]
-			    	[#if imgMediaRendition?has_content]
-			    		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
-			    	[/#if]
-			   	[#else]
-						<iframe src="${announcement.getAnnouncementMediaVideo(announcementContentNode)!"#"}" frameborder="0" allowfullscreen></iframe>
-			    [/#if]
-			    </div>
-		    [/#if]
-			<div class="col-md-5 info-acerca">
-				<p>${announcement.getAnnouncementText(announcementContentNode)!""}</p>
-			</div>
-			[#if mediaPosition == "right"]
-				<div class="col-md-7 video-img-acerca">
+		    <div class="col-md-12 info-acerca">
+		    [#if imgMediaRendition?has_content || announcement.getAnnouncementMediaVideo(announcementContentNode)?has_content]
+				<div class="col-md-7 video-img-acerca" style="float:${mediaPosition}; padding-${mediaPosition}:0;">
 			    [#if mediaType == "image"]
 			    	[#if imgMediaRendition?has_content]
 			    		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
@@ -64,6 +51,8 @@
 			    [/#if]
 			    </div>
 			[/#if]
+				<p>${announcement.getAnnouncementText(announcementContentNode)!""}</p>
+			</div>
 		</section>
 		</div>
 		
@@ -324,9 +313,9 @@
 										                [/#if]
 										                [#assign hrefLink = "#"]
 										                [#if judge.judgeCV?has_content]
-										                	[#assign checkContent = cmsfn.contentByPath(judge.judgeCV)!""]
+										                	[#assign checkContent = cmsfn.contentById(judge.judgeCV)!""]
 	        												[#if checkContent?has_content]
-											               		[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeCV))]
+											               		[#assign hrefLink = cmsfn.link(cmsfn.contentById(judge.judgeCV)!"#")]
 											               	[/#if]
 		                									<a href="${hrefLink}" class="ficha-jurado">
 											                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
