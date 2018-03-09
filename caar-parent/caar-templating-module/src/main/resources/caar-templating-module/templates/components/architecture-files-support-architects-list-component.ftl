@@ -54,7 +54,7 @@
 			            		[#if imgMediaRendition??]
 			            			[#assign imageAlternativeText = "arquitecto"]
 			            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-			            			[#if imageAlt?has_content]
+			            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 			            				[#assign imageAlternativeText = imageAlt.alternative!""]
 			            			[/#if]
 		                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText}" />
@@ -93,7 +93,7 @@
 			            		[#if imgMediaRendition??]
 			            			[#assign imageAlternativeText = "arquitecto"]
 			            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-			            			[#if imageAlt?has_content]
+			            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 			            				[#assign imageAlternativeText = imageAlt.alternative!""]
 			            			[/#if]
 		                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText}" />

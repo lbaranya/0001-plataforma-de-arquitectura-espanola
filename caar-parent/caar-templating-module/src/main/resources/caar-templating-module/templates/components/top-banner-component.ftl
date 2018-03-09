@@ -18,7 +18,7 @@
 	            		[#if imgMediaRendition?has_content]
 	            			[#assign imageAlternativeText = "imagen de banner en la cabecera"]
 	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-	            			[#if imageAlt?has_content]
+	            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 	            				[#assign imageAlternativeText = imageAlt.alternative!""]
 	            			[/#if]
 							<img class="image-banner" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />						

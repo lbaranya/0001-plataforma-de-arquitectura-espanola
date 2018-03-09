@@ -409,7 +409,7 @@
                             	[#assign image = damfn.getAssetLink(element.image)!]
                             	[#assign imageAlternativeText = ""]
                     			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(element.image!"").getPath(),"dam")!]
-                    			[#if imageAlt?has_content]
+                    			[#if imageAlt?has_content && imageAlt.alternative?has_content]
                     				[#assign imageAlternativeText = imageAlt.alternative!""]
                     			[/#if]
                                 <img src="${image}" alt="${imageAlternativeText!""}">
