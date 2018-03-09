@@ -92,6 +92,10 @@ imaging:
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 263
       height: 445
+    "331x445":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 331
+      height: 445      
     "691x445":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 691
@@ -100,3 +104,7 @@ imaging:
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 1412
       height: 445
+    "331x926":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 331
+      height: 926     
