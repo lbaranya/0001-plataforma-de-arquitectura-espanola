@@ -4,10 +4,10 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-3 col-info">
-	                        [#assign imgItemKey = content.image1!""]
+	                        [#assign imgItemKey = content.image11!""]
 							[#if imgItemKey??]
 								[#if imgItemKey?has_content]
-							 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "263x445")!]
+							 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "331x445")!]
 							 		[#if imgMediaRendition?has_content]
 							 			[#assign imageAlternativeText = "imagen de grid de la home"]
 							 			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -17,35 +17,35 @@
 							    	[/#if]
 								[/#if]
 							[/#if]
-                            <h4><span>${content.title1!""}</span>${content.subtitle1!""}</h4>
+                            <h4><span>${content.title11!""}</span>${content.subtitle11!""}</h4>
                             [#assign hrefTmp = "#"]
-                        	[#if content.link1 == "architectureFileLink"]
-	                        	[#if content.link1architectureFileLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link1architectureFileLink, "architecture-files")]
+                        	[#if content.link11 == "architectureFileLink"]
+	                        	[#if content.link11architectureFileLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link11architectureFileLink, "architecture-files")]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
-                        	[#elseif content.link1 == "awardLink"]
-	                      		[#if content.link1awardLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link1awardLink, "awards")!""]
+                        	[#elseif content.link11 == "awardLink"]
+	                      		[#if content.link11awardLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link11awardLink, "awards")!""]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
-                        	[#elseif content.link1 == "newsLink"]
-	                      		[#if content.link1newsLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link1newsLink, "news")!""]
+                        	[#elseif content.link11 == "newsLink"]
+	                      		[#if content.link11newsLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link11newsLink, "news")!""]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
 	                      	[#else]
-	                      		[#if content.link1externalLink?has_content]
+	                      		[#if content.link11externalLink?has_content]
 	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link1externalLink")!""]
 	                        	[/#if]
                         	[/#if]
                             <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%;" /></a>
                         </div>
                         <div class="col-md-3 col-info">
-	                        [#assign imgItemKey = content.image2!""]
+	                        [#assign imgItemKey = content.image12!""]
 							[#if imgItemKey??]
 								[#if imgItemKey?has_content]
-							 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "263x445")!]
+							 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "331x445")!]
 							 		[#if imgMediaRendition?has_content]
 							 			[#assign imageAlternativeText = "imagen de grid de la home"]
 							 			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -55,34 +55,34 @@
 							    	[/#if]
 								[/#if]
 							[/#if]
-                            <h4><span>${content.title2!""}</span>${content.subtitle2!""}</h4>
+                            <h4><span>${content.title12!""}</span>${content.subtitle12!""}</h4>
                             [#assign hrefTmp = "#"]
-                        	[#if content.link2 == "architectureFileLink"]
-	                        	[#if content.link2architectureFileLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link2architectureFileLink, "architecture-files")]
+                        	[#if content.link12 == "architectureFileLink"]
+	                        	[#if content.link12architectureFileLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link12architectureFileLink, "architecture-files")]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
-                        	[#elseif content.link2 == "awardLink"]
-	                      		[#if content.link2awardLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link2awardLink, "awards")!""]
+                        	[#elseif content.link12 == "awardLink"]
+	                      		[#if content.link12awardLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link12awardLink, "awards")!""]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
-                        	[#elseif content.link2 == "newsLink"]
-	                      		[#if content.link2newsLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link2newsLink, "news")!""]
+                        	[#elseif content.link12 == "newsLink"]
+	                      		[#if content.link12newsLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link12newsLink, "news")!""]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
 	                      	[#else]
-	                      		[#if content.link2externalLink?has_content]
-	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link2externalLink")!""]
+	                      		[#if content.link12externalLink?has_content]
+	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link12externalLink")!""]
 	                        	[/#if]
                         	[/#if]
                             <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%;" /></a>
                         </div>
                         <div class="col-md-6 col-info">
-                            <h4><span>${content.title3!""}</span>${content.subtitle3!""}</h4>
+                            <h4><span>${content.title13!""}</span>${content.subtitle13!""}</h4>
                             <div class="imagen-video">
-                                <iframe src="${content.videoLink!""}" frameborder="0" allowfullscreen></iframe>
+                                <iframe src="${content.videoLink13!""}" frameborder="0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
@@ -90,40 +90,40 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6 col-info col-one">
-                                    <h4><span>${content.title4!""}</span>${content.subtitle4!""}</h4>
+                                    <h4><span>${content.title21!""}</span>${content.subtitle21!""}</h4>
 		                            [#assign hrefTmp = "#"]
-		                        	[#if content.link4 == "architectureFileLink"]
-			                        	[#if content.link4architectureFileLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link4architectureFileLink, "architecture-files")]
+		                        	[#if content.link21 == "architectureFileLink"]
+			                        	[#if content.link21architectureFileLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link21architectureFileLink, "architecture-files")]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link4 == "awardLink"]
-			                      		[#if content.link4awardLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link4awardLink, "awards")!""]
+		                        	[#elseif content.link21 == "awardLink"]
+			                      		[#if content.link21awardLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link21awardLink, "awards")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link4 == "newsLink"]
-			                      		[#if content.link4newsLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link4newsLink, "news")!""]
+		                        	[#elseif content.link21 == "newsLink"]
+			                      		[#if content.link21newsLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link21newsLink, "news")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
 			                      	[#else]
-			                      		[#if content.link4externalLink?has_content]
-			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link4externalLink")!""]
+			                      		[#if content.link21externalLink?has_content]
+			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link21externalLink")!""]
 			                        	[/#if]
 		                        	[/#if]
                                     <a href="${hrefTmp!"#"}">
                                         <div class="pensamiento">
-                                            <h3>${content.contentTitle4!""}</h3>
-                                            <p>${cmsfn.decode(content).contentText4!""}</p>
+                                            <h3>${content.contentTitle21!""}</h3>
+                                            <p>${cmsfn.decode(content).contentText21!""}</p>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="col-md-6 col-info col-two">
-			                        [#assign imgItemKey = content.image5!""]
+			                        [#assign imgItemKey = content.image22!""]
 									[#if imgItemKey??]
 										[#if imgItemKey?has_content]
-									 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "263x445")!]
+									 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "331x445")!]
 									 		[#if imgMediaRendition?has_content]
 									 			[#assign imageAlternativeText = "imagen de grid de la home"]
 									 			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -133,26 +133,26 @@
 									    	[/#if]
 										[/#if]
 									[/#if]
-		                            <h4><span>${content.title5!""}</span>${content.subtitle5!""}</h4>
+		                            <h4><span>${content.title22!""}</span>${content.subtitle22!""}</h4>
 		                            [#assign hrefTmp = "#"]
-		                        	[#if content.link5 == "architectureFileLink"]
-			                        	[#if content.link5architectureFileLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link5architectureFileLink, "architecture-files")]
+		                        	[#if content.link22 == "architectureFileLink"]
+			                        	[#if content.link22architectureFileLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link22architectureFileLink, "architecture-files")]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link5 == "awardLink"]
-			                      		[#if content.link5awardLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link5awardLink, "awards")!""]
+		                        	[#elseif content.link22 == "awardLink"]
+			                      		[#if content.link22awardLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link22awardLink, "awards")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link5 == "newsLink"]
-			                      		[#if content.link5newsLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link5newsLink, "news")!""]
+		                        	[#elseif content.link22 == "newsLink"]
+			                      		[#if content.link22newsLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link22newsLink, "news")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
 			                      	[#else]
-			                      		[#if content.link5externalLink?has_content]
-			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link5externalLink")!""]
+			                      		[#if content.link22externalLink?has_content]
+			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link22externalLink")!""]
 			                        	[/#if]
 		                        	[/#if]
 		                            <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%;" /></a>
@@ -160,7 +160,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 col-info col-width">
-			                        [#assign imgItemKey = content.image6!""]
+			                        [#assign imgItemKey = content.image31!""]
 									[#if imgItemKey??]
 										[#if imgItemKey?has_content]
 									 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "691x445")!]
@@ -173,72 +173,107 @@
 									    	[/#if]
 										[/#if]
 									[/#if]
-		                            <h4><span>${content.title6!""}</span>${content.subtitle6!""}</h4>
+		                            <h4><span>${content.title31!""}</span>${content.subtitle31!""}</h4>
 		                            [#assign hrefTmp = "#"]
-		                        	[#if content.link6 == "architectureFileLink"]
-			                        	[#if content.link6architectureFileLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link6architectureFileLink, "architecture-files")]
+		                        	[#if content.link31 == "architectureFileLink"]
+			                        	[#if content.link31architectureFileLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link31architectureFileLink, "architecture-files")]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link6 == "awardLink"]
-			                      		[#if content.link6awardLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link6awardLink, "awards")!""]
+		                        	[#elseif content.link31 == "awardLink"]
+			                      		[#if content.link31awardLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link31awardLink, "awards")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link6 == "newsLink"]
-			                      		[#if content.link6newsLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link6newsLink, "news")!""]
+		                        	[#elseif content.link31 == "newsLink"]
+			                      		[#if content.link31newsLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link31newsLink, "news")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
 			                      	[#else]
-			                      		[#if content.link6externalLink?has_content]
-			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link6externalLink")!""]
+			                      		[#if content.link31externalLink?has_content]
+			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link24externalLink")!""]
 			                        	[/#if]
 		                        	[/#if]
 		                            <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%;" /></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3 col-info" style="    vertical-align: middle; display: flex; justify-content: center; align-items: center;height: 100vh; font-size: 100px;">
-                            <p>Twitter</p>
+                        <div class="col-md-3 col-info" style="    vertical-align: middle; display: flex; font-size: 100px; flex-direction: column;">
+                    		[#assign imgItemKey = content.image23!""]
+							[#if imgItemKey??]
+								[#if imgItemKey?has_content]
+							 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "331x926")!]
+							 		[#if imgMediaRendition?has_content]
+							 			[#assign imageAlternativeText = "imagen de grid de la home"]
+							 			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+							 			[#if imageAlt?has_content]
+							 				[#assign imageAlternativeText = imageAlt.alternative!""]
+							 			[/#if]
+							    	[/#if]
+								[/#if]
+							[/#if]
+                            <h4><span>${content.title23!""}</span>${content.subtitle23!""}</h4>
+                            [#assign hrefTmp = "#"]
+                        	[#if content.link23 == "architectureFileLink"]
+	                        	[#if content.link23architectureFileLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link23architectureFileLink, "architecture-files")]
+	                        		[#assign hrefTmp = model.getLink(node)]
+	                        	[/#if]
+                        	[#elseif content.link23 == "awardLink"]
+	                      		[#if content.link23awardLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link23awardLink, "awards")!""]
+	                        		[#assign hrefTmp = model.getLink(node)]
+	                        	[/#if]
+                        	[#elseif content.link23 == "newsLink"]
+	                      		[#if content.link23newsLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link23newsLink, "news")!""]
+	                        		[#assign hrefTmp = model.getLink(node)]
+	                        	[/#if]
+	                      	[#else]
+	                      		[#if content.link23externalLink?has_content]
+	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link8externalLink")!""]
+	                        	[/#if]
+                        	[/#if]
+                            <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%; height: 927px;" /></a>
                         </div>
                         <div class="col-md-3 col-info col-premios">
                                 <div class="col-vertical">
-                                    <h4><span>${content.title7!""}</span>${content.subtitle7!""}</h4>
+                                    <h4><span>${content.title24!""}</span>${content.subtitle24!""}</h4>
 		                            [#assign hrefTmp = "#"]
-		                        	[#if content.link7 == "architectureFileLink"]
-			                        	[#if content.link7architectureFileLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link7architectureFileLink, "architecture-files")]
+		                        	[#if content.link24 == "architectureFileLink"]
+			                        	[#if content.link24architectureFileLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link24architectureFileLink, "architecture-files")]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link7 == "awardLink"]
-			                      		[#if content.link7awardLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link7awardLink, "awards")!""]
+		                        	[#elseif content.link24 == "awardLink"]
+			                      		[#if content.link24awardLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link24awardLink, "awards")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link7 == "newsLink"]
-			                      		[#if content.link7newsLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link7newsLink, "news")!""]
+		                        	[#elseif content.link24 == "newsLink"]
+			                      		[#if content.link24newsLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link24newsLink, "news")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
 			                      	[#else]
-			                      		[#if content.link7externalLink?has_content]
-			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link7externalLink")!""]
+			                      		[#if content.link24externalLink?has_content]
+			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link24externalLink")!""]
 			                        	[/#if]
 		                        	[/#if]
                                     <a href="${hrefTmp!"#"}">
                                         <div class="datos-arquitectos">
-                                            <h5 class="inicial">${content.contentInitial7!""}</h5>
-                                            <h5 class="arquitecto">${content.contentTitle7!""}</h5>
-                                            <p>${cmsfn.decode(content).contentText7!""}</p>
+                                            <h5 class="inicial">${content.contentInitial24!""}</h5>
+                                            <h5 class="arquitecto">${content.contentTitle24!""}</h5>
+                                            <p>${cmsfn.decode(content).contentText24!""}</p>
                                         </div>
                                     </a>
                                 </div>
                                 <div class="">
-			                        [#assign imgItemKey = content.image8!""]
+			                        [#assign imgItemKey = content.image34!""]
 									[#if imgItemKey??]
 										[#if imgItemKey?has_content]
-									 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "263x445")!]
+									 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "331x445")!]
 									 		[#if imgMediaRendition?has_content]
 									 			[#assign imageAlternativeText = "imagen de grid de la home"]
 									 			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -248,25 +283,25 @@
 									    	[/#if]
 										[/#if]
 									[/#if]
-		                            <h4><span>${content.title8!""}</span>${content.subtitle8!""}</h4>
+		                            <h4><span>${content.title34!""}</span>${content.subtitle34!""}</h4>
 		                            [#assign hrefTmp = "#"]
-		                        	[#if content.link8 == "architectureFileLink"]
-			                        	[#if content.link8architectureFileLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link8architectureFileLink, "architecture-files")]
+		                        	[#if content.link34 == "architectureFileLink"]
+			                        	[#if content.link34architectureFileLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link34architectureFileLink, "architecture-files")]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link8 == "awardLink"]
-			                      		[#if content.link8awardLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link8awardLink, "awards")!""]
+		                        	[#elseif content.link34 == "awardLink"]
+			                      		[#if content.link34awardLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link34awardLink, "awards")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
-		                        	[#elseif content.link8 == "newsLink"]
-			                      		[#if content.link8newsLink?has_content]
-			                        		[#assign node = cmsfn.nodeById(content.link8newsLink, "news")!""]
+		                        	[#elseif content.link34 == "newsLink"]
+			                      		[#if content.link34newsLink?has_content]
+			                        		[#assign node = cmsfn.nodeById(content.link34newsLink, "news")!""]
 			                        		[#assign hrefTmp = model.getLink(node)]
 			                        	[/#if]
 			                      	[#else]
-			                      		[#if content.link8externalLink?has_content]
+			                      		[#if content.link34externalLink?has_content]
 			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link8externalLink")!""]
 			                        	[/#if]
 		                        	[/#if]
@@ -276,7 +311,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-info">
-	                        [#assign imgItemKey = content.image9!""]
+	                        [#assign imgItemKey = content.image41!""]
 							[#if imgItemKey??]
 								[#if imgItemKey?has_content]
 							 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1412x445")!]
@@ -289,26 +324,26 @@
 							    	[/#if]
 								[/#if]
 							[/#if]
-                            <h4><span>${content.title9!""}</span>${content.subtitle9!""}</h4>
+                            <h4><span>${content.title41!""}</span>${content.subtitle41!""}</h4>
                             [#assign hrefTmp = "#"]
-                        	[#if content.link9 == "architectureFileLink"]
-	                        	[#if content.link9architectureFileLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link9architectureFileLink, "architecture-files")]
+                        	[#if content.link41 == "architectureFileLink"]
+	                        	[#if content.link41architectureFileLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link41architectureFileLink, "architecture-files")]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
-                        	[#elseif content.link9 == "awardLink"]
-	                      		[#if content.link9awardLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link9awardLink, "awards")!""]
+                        	[#elseif content.link41 == "awardLink"]
+	                      		[#if content.link41awardLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link41awardLink, "awards")!""]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
-                        	[#elseif content.link9 == "newsLink"]
-	                      		[#if content.link9newsLink?has_content]
-	                        		[#assign node = cmsfn.nodeById(content.link9newsLink, "news")!""]
+                        	[#elseif content.link41 == "newsLink"]
+	                      		[#if content.link41newsLink?has_content]
+	                        		[#assign node = cmsfn.nodeById(content.link41newsLink, "news")!""]
 	                        		[#assign hrefTmp = model.getLink(node)]
 	                        	[/#if]
 	                      	[#else]
-	                      		[#if content.link9externalLink?has_content]
-	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link9externalLink")!""]
+	                      		[#if content.link41externalLink?has_content]
+	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link41externalLink")!""]
 	                        	[/#if]
                         	[/#if]
                             <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%;" /></a>
