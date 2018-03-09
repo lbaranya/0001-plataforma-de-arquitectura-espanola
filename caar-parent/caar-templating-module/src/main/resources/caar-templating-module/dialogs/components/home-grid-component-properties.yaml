@@ -6,10 +6,12 @@ form:
         - name: title11
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle11
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true          
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: image11
           required: true      
@@ -71,10 +73,12 @@ form:
         - name: title12
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle12
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: image12
           required: true
@@ -138,10 +142,12 @@ form:
         - name: title13
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle13
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: videoLink13
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
@@ -154,10 +160,12 @@ form:
         - name: title21
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle21
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: link21
           class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
@@ -206,10 +214,12 @@ form:
         - name: contentTitle21
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.contentTitle.label
         - name: contentText21
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.contentText.label
     - name: elem22
       label: caar-templating-module.templates.components.home-grid-component.elem22.label
@@ -217,10 +227,12 @@ form:
         - name: title22
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle22
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: image22
           required: true      
@@ -282,10 +294,12 @@ form:
         - name: title23
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle23
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: image23
           required: true      
@@ -347,10 +361,12 @@ form:
         - name: title24
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle24
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: link24
           class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
@@ -404,10 +420,12 @@ form:
         - name: contentTitle24
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.contentTitle.label
         - name: contentText24
           class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.contentText.label                         
     - name: elem31
       label: caar-templating-module.templates.components.home-grid-component.elem31.label
@@ -415,10 +433,12 @@ form:
         - name: title31
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle31
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: image31
           required: true      
@@ -480,10 +500,12 @@ form:
         - name: title34
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle34
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: image34
           required: true
@@ -545,10 +567,12 @@ form:
         - name: title41
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.title.label
         - name: subtitle41
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition
           required: true
+          i18n: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.subtitle.label
         - name: image41
           required: true      

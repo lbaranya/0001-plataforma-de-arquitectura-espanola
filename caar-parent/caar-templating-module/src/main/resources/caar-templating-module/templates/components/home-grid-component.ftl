@@ -36,7 +36,7 @@
 	                        	[/#if]
 	                      	[#else]
 	                      		[#if content.link11externalLink?has_content]
-	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link1externalLink")!""]
+	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link11externalLink")!""]
 	                        	[/#if]
                         	[/#if]
                             <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%;" /></a>
@@ -192,7 +192,7 @@
 			                        	[/#if]
 			                      	[#else]
 			                      		[#if content.link31externalLink?has_content]
-			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link24externalLink")!""]
+			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link31externalLink")!""]
 			                        	[/#if]
 		                        	[/#if]
 		                            <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%;" /></a>
@@ -232,7 +232,7 @@
 	                        	[/#if]
 	                      	[#else]
 	                      		[#if content.link23externalLink?has_content]
-	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link8externalLink")!""]
+	                        		[#assign hrefTmp = cmsfn.externalLink(content, "link23externalLink")!""]
 	                        	[/#if]
                         	[/#if]
                             <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%; height: 927px;" /></a>
@@ -302,7 +302,7 @@
 			                        	[/#if]
 			                      	[#else]
 			                      		[#if content.link34externalLink?has_content]
-			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link8externalLink")!""]
+			                        		[#assign hrefTmp = cmsfn.externalLink(content, "link34externalLink")!""]
 			                        	[/#if]
 		                        	[/#if]
 		                            <a href="${hrefTmp!"#"}"><img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" style="width: 100%;" /></a>
