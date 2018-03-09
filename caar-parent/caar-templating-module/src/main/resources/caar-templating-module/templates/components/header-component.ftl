@@ -400,7 +400,10 @@
 								[#assign hrefLink = cmsfn.externalLink(element, "linkexternalLink")]                        		
                         	[/#if]
                         	[#if element.linkinternalLink??]
-                        		[#assign hrefLink = cmsfn.link(cmsfn.contentById(element.linkinternalLink, "website"))]
+                        		[#assign checkContent = cmsfn.contentById(element.linkinternalLink, "website")!""]
+	                    			[#if checkContent?has_content]
+                        			[#assign hrefLink = cmsfn.link(cmsfn.contentById(element.linkinternalLink, "website"))]
+                        		[/#if]
                         	[/#if]
                             <a href="${hrefLink!""}" class="">
                             	[#assign image = damfn.getAssetLink(element.image)!]
