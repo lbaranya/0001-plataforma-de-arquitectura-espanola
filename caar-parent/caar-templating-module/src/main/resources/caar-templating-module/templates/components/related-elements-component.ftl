@@ -31,7 +31,7 @@
 				                        		[#if imgMediaRendition?has_content]
 				                        			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
 				                        			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-				                        			[#if imageAlt?has_content]
+				                        			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 				                        				[#assign imageAlternativeText = imageAlt.alternative!""]
 				                        			[/#if]
 				                            		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
@@ -45,7 +45,7 @@
 		                            <h4 class="title">${headLineTruncated!""}</h4>
 		                            <div class="info">
 		                            	[#assign descriptionTruncated = cmsfn.abbreviateString(description, 401)!""]
-		                            	<p>${descriptionTruncated?replace("<img","<img style='display:none;'")!""}</p>
+		                            	<p>${descriptionTruncated?replace("<img(.)*>","","r")!""}</p>
 		                            </div>
 		                            <div class="noticias-links">
 				                    	<a href='${cmsfn.link(cmsfn.nodeByPath(node.getPath(), node.getWorkspace()))!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
@@ -73,7 +73,7 @@
 								            		[#if imgMediaRendition?has_content]
 								            			[#assign imageAlternativeText = "logo de evento"]
 								            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-								            			[#if imageAlt?has_content]
+								            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 								            				[#assign imageAlternativeText = imageAlt.alternative!""]
 								            				<img class="img-evento" src="${imgMediaRendition.getLink()}" width="130" height="115" alt="${imageAlternativeText}" />
 								            			[/#if]
@@ -101,7 +101,7 @@
 					            		[#if imgMediaRendition?has_content]
 					            			[#assign imageAlternativeText = "ficha de arquitectura"]
 					            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-					            			[#if imageAlt?has_content]
+					            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 					            				[#assign imageAlternativeText = imageAlt.alternative!""]
 					            			[/#if]
 				                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />

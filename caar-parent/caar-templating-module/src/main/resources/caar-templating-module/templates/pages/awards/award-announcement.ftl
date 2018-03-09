@@ -27,7 +27,7 @@
 				 		[#if imgMediaRendition?has_content]
 				 			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
 				 			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-				 			[#if imageAlt?has_content]
+				 			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 				 				[#assign imageAlternativeText = imageAlt.alternative!""]
 				 			[/#if]
 				    	[/#if]
@@ -95,7 +95,7 @@
 			                		[#if imgMediaRendition?has_content]
 			                			[#assign imageAlternativeText = "imagen del ancla"]
 			                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-			                			[#if imageAlt?has_content]
+			                			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 			                				[#assign imageAlternativeText = imageAlt.alternative!""]
 			                			[/#if]
 			                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
@@ -127,7 +127,7 @@
 			                		[#if imgMediaRendition?has_content]
 			                			[#assign imageAlternativeText = "imagen del ancla"]
 			                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-			                			[#if imageAlt?has_content]
+			                			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 			                				[#assign imageAlternativeText = imageAlt.alternative!""]
 			                			[/#if]
 			                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
@@ -158,7 +158,7 @@
 		                		[#if imgMediaRendition?has_content]
 		                			[#assign imageAlternativeText = "imagen del ancla"]
 		                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-		                			[#if imageAlt?has_content]
+		                			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 		                				[#assign imageAlternativeText = imageAlt.alternative!""]
 		                			[/#if]
 		                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
@@ -188,7 +188,7 @@
 		                		[#if imgMediaRendition?has_content]
 		                			[#assign imageAlternativeText = "imagen del ancla"]
 		                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-		                			[#if imageAlt?has_content]
+		                			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 		                				[#assign imageAlternativeText = imageAlt.alternative!""]
 		                			[/#if]
 		                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
@@ -290,7 +290,7 @@
 											            		[#if imgMediaRendition?has_content]
 											            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
 											            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-											            			[#if imageAlt?has_content]
+											            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 											            				[#assign imageAlternativeText = imageAlt.alternative!""]
 											            			[/#if]
 											                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
@@ -373,7 +373,7 @@
 						                        		[#if imgMediaRendition?has_content]
 						                        			[#assign imageAlternativeText = "imagen del arquitecto del lema"]
 						                        			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-						                        			[#if imageAlt?has_content]
+						                        			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 						                        				[#assign imageAlternativeText = imageAlt.alternative!""]
 						                        			[/#if]
 						                            		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
