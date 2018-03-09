@@ -98,6 +98,65 @@
                         <span>${i18n['caar-templating-module.award.home.inProgressEdition.label']}</span>
                         <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
+                    <ul class="menu-second">
+                    	[#list cmsfn.children(inProgressEdition) as childItem]
+                        <li class="menu-second-item">
+                        	[#if childItem.isNodeType("mgnl:announcement")]
+                        	[#assign currentUrl = cmsfn.link(childItem)]
+                        	[#assign href = model.getSecondLevelMenuLink(currentUrl, childItem)!"#"]
+                            <a href="${href}"><span>${i18n['caar-templating-module.templates.components.submenu-award.announcement.label']}</span></a>
+                            [/#if]
+                            [#if childItem.isNodeType("mgnl:program")]
+                            <a href="javascript:void(0)">
+                            	<span>${i18n['caar-templating-module.templates.components.submenu-award.program.label']}</span>
+                            	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                            </a>
+                            	[#if cmsfn.children(childItem)?has_content]
+                            		<ul class="menu-third">
+                            		[#list cmsfn.children(childItem) as thirdLevelItem]
+                            			<li class="menu-third-item">
+                            				[#assign currentUrlThirdLevel = cmsfn.link(thirdLevelItem)]
+                        					[#assign href = model.getSecondLevelMenuLink(currentUrlThirdLevel, thirdLevelItem)!"#"]
+                        					[#if thirdLevelItem.isNodeType("mgnl:event-wrapper")]
+                        						[#assign hrefModified = model.getAwardStandardEventMenuLink(href, thirdLevelElement)!"#"]
+                        					[#else]
+                        						[#assign hrefModified = model.getAwardLiveEventMenuLink(href, thirdLevelElement)!"#"]
+                        					[/#if]
+                            				<a href="${hrefModified!"#"}">
+                            					<span>${event.getTitle(thirdLevelItem)}</span>
+                            				</a>
+                            			</li>
+                            		[/#list]
+                            		</ul>
+                            	[/#if]
+                            [/#if]
+                            [#if childItem.isNodeType("mgnl:diffusion")]
+                            <a href="javascript:void(0)">
+                            	<span>${i18n['caar-templating-module.templates.components.submenu-award.diffusion.label']}</span>
+                            	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+                            </a>
+                            [#if cmsfn.children(childItem)?has_content]
+                            		<ul class="menu-third">
+                            		[#list cmsfn.children(childItem) as thirdLevelItem]
+                            			<li class="menu-third-item">
+                            				[#assign currentUrlThirdLevel = cmsfn.link(thirdLevelItem)]
+                        					[#assign href = model.getSecondLevelMenuLink(currentUrlThirdLevel, thirdLevelItem)!"#"]
+                        					[#if thirdLevelItem.isNodeType("mgnl:event-wrapper")]
+                        						[#assign hrefModified = model.getAwardStandardEventMenuLink(href, thirdLevelElement)!"#"]
+                        					[#else]
+                        						[#assign hrefModified = model.getAwardLiveEventMenuLink(href, thirdLevelElement)!"#"]
+                        					[/#if]
+                            				<a href="${hrefModified!"#"}">
+                            					<span>${event.getTitle(thirdLevelItem)}</span>
+                            				</a>
+                            			</li>
+                            		[/#list]
+                            		</ul>
+                            	[/#if]
+                            [/#if]
+                        </li>
+                        [/#list]
+                    </ul>
                 </li>
                 [/#if]
                 [#assign aboutText = awards.getAwardAboutText(awardsContentNode)]
