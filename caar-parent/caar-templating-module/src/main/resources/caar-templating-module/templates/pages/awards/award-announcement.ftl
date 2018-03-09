@@ -39,7 +39,8 @@
 		        <h3>${announcement.getAnnouncementTitle(announcementContentNode)!""}</h3>
 		    </div>
 		    [/#if]
-			<div class="col-md-12 info-acerca">
+		    <div class="col-md-12 info-acerca">
+		    [#if imgMediaRendition?has_content || announcement.getAnnouncementMediaVideo(announcementContentNode)?has_content]
 				<div class="col-md-7 video-img-acerca" style="float:${mediaPosition}; padding-${mediaPosition}:0;">
 			    [#if mediaType == "image"]
 			    	[#if imgMediaRendition?has_content]
@@ -49,6 +50,7 @@
 						<iframe src="${announcement.getAnnouncementMediaVideo(announcementContentNode)!"#"}" frameborder="0" allowfullscreen></iframe>
 			    [/#if]
 			    </div>
+			[/#if]
 				<p>${announcement.getAnnouncementText(announcementContentNode)!""}</p>
 			</div>
 		</section>

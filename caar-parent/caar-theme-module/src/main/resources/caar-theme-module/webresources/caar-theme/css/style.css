@@ -1131,6 +1131,10 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	height: 389px;
 }
 
+.cmp-acerca-de-ae .video-img-acerca img {
+	width: 100%;
+}
+
 .cmp-acerca-de-ae .separador {
 	width: 100%;
 	margin: 0 auto;
