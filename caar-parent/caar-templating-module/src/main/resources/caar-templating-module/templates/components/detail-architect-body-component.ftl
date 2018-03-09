@@ -5,7 +5,7 @@
 		[#assign architectContentNode = cmsfn.asJCRNode(architectContent)!""]
 		[#assign architect = model.getArchitect()!""]	
 		<section class="cmp-ficha-arquitecto">
-	        <div class="container">
+	        <div class="container-margin">
 	            <div class="row">
 	                <div class="col-md-6">
 	                    <div class="col-md-12">
