@@ -14,6 +14,8 @@ public interface NewsNodeUtil {
 	public String getDate(Node node) throws RepositoryException;
 
 	public String getImage(Node node) throws RepositoryException;
+	
+	public String getVideo(Node node) throws RepositoryException;
 
 	public String getCategories(Node node) throws RepositoryException;
 
