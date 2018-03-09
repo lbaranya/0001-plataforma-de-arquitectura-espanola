@@ -11,7 +11,7 @@
             	[#if idList??]
             		[#list idList as id]
             			[#assign component = cmsfn.contentById(id,"architecture-files")!""]
-            			[#if component??]
+            			[#if component?has_content]
             				[#assign componentNode = cmsfn.asJCRNode(component)!""]
                 			[#if componentNode??]
                 				<div class="col-md-6">

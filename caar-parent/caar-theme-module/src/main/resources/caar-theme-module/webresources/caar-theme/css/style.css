@@ -31,6 +31,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-top: 15px;
 }
 
+.row-flex{
+	display: flex;
+	justify-content: center;
+}
+
 @media screen and (max-width: 1442px) {
 	.container-margin {
 		width: 1342px;
@@ -1691,6 +1696,15 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	padding-left: 20px;
 }
 
+.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .lema .preview h4 {
+    width: 100%;
+    float: left;
+    color: #D0021B;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
 @media screen and (max-width: 1200px) {
 	.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .jurado .col-jurado
 		{
@@ -2516,6 +2530,13 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	border-bottom: 3px solid #D0021B;
 }
 
+.cmp-ficha-arquitecto .col-right {
+	padding-left:50px;
+}
+.cmp-ficha-arquitecto .col-left {
+	padding-right:50px;
+}
+
 .cmp-ficha-detalle-arquitecto .header-img {
 	float: left;
 	width: 70%;
@@ -2709,7 +2730,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
-	height: 445px;
+	height: 269px;
 }
 
 .cmp-distribuidor-convocatoria .row a .img-arquia img {
@@ -2718,7 +2739,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	left: 50%;
 	top: 50%;
 	height: 100%;
-	width: auto;
+	width: 100%;
 	-webkit-transform: translate(-50%, -50%);
 	-ms-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
@@ -2737,7 +2758,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	width: 100%;
 	position: absolute;
 	top: 0;
-	height: 445px;
+	height: 269px;
 	color: #fff;
 	background-color: rgba(208, 2, 27, 0.7);
 	display: flex;
@@ -2787,11 +2808,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 @media screen and (max-width: 1400px) {
 	.cmp-distribuidor-convocatoria .row a .img-arquia img {
 		width: 100%;
-		height: 445px;
+		height: 269px;
 	}
 	.cmp-distribuidor-convocatoria .row a .img-arquia .text {
 		width: 100%;
-		height: 445px;
+		height: 269px;
 	}
 	.cmp-distribuidor-convocatoria .row a .img-arquia .text h2 {
 		font-size: 45px;
@@ -2868,6 +2889,18 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 .cmp-distribuidor-general-content .cmp-distruidor-content-title .content-title h3
 	{
 	padding-left: 20px;
+	font-size: 27px;
+}
+
+.cmp-distribuidor-general-content .cmp-distruidor-content-title .content-title h4 {
+    width: 100%;
+    float: left;
+    color: #D0021B;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 45px;
+    padding-top: 20px;
 }
 
 .cmp-distribuidor-general-content .cmp-distruidor-content-title .text-contenido
@@ -2931,7 +2964,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	color: #D0021B;
 }
 
-.inscripcion a {
+.inscripcion .btn {
 	border-radius: 0;
 	border: 2px solid #D0021B;
 	color: #fff;
@@ -3526,6 +3559,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-bottom: 20px;
 	margin-top: 20px;
 	margin-right: 10px;
+	font-size: 24px;
 }
 
 .cmp-convocatoria .submenu-convocatoria {
