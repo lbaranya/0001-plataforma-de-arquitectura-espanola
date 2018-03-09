@@ -145,6 +145,7 @@ form:
           class: info.magnolia.ui.form.field.definition.TextFieldDefinition      
           required: true
           label: caar-templating-module.templates.components.home-grid-component.dialog.videoLink.label
+          description: caar-templating-module.templates.components.rich-text-video-component.dialog.videoLink.description
     - name: elem4
       label: caar-templating-module.templates.components.home-grid-component.elem4.label
       fields:           
