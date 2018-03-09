@@ -14,4 +14,5 @@ public interface NewsConstants {
 	String files = "N1_9";
 	String relatedNews = "N1_10";
 	String informativeMedium = "N1_11";
+	String video = "N1_12";	
 }

@@ -7,19 +7,24 @@
     <div class="row-imagen-video">
         <div class="container">
             <div class="imagen-video">
-                [#assign imgItemKey = news.getImage(newsContentNode)]
-            	[#if imgItemKey??]
-            		[#if imgItemKey?has_content]
-	            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1024w")!]
-	            		[#if imgMediaRendition?has_content]
-	            			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
-	            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
-	            			[#if imageAlt?has_content]
-	            				[#assign imageAlternativeText = imageAlt.alternative!""]
-	            			[/#if]
-	                		<img src='${imgMediaRendition.getLink()}' alt='${imageAlternativeText!""}' />
+            	[#assign video = news.getVideo(newsContentNode)!""]
+            	[#if video?has_content]
+            		<iframe src="${video!""}" frameborder="0" allowfullscreen></iframe>
+            	[#else]
+	                [#assign imgItemKey = news.getImage(newsContentNode)]
+	            	[#if imgItemKey??]
+	            		[#if imgItemKey?has_content]
+		            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "1024w")!]
+		            		[#if imgMediaRendition?has_content]
+		            			[#assign imageAlternativeText = "imagen de cabecera de la noticia"]
+		            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+		            			[#if imageAlt?has_content]
+		            				[#assign imageAlternativeText = imageAlt.alternative!""]
+		            			[/#if]
+		                		<img src='${imgMediaRendition.getLink()}' alt='${imageAlternativeText!""}' />
+		                	[/#if]
 	                	[/#if]
-                	[/#if]
+	                [/#if]
                 [/#if]
             </div>
         </div>

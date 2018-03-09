@@ -10,6 +10,7 @@ import static es.arquia.magnolia.constants.NewsConstants.important;
 import static es.arquia.magnolia.constants.NewsConstants.informativeMedium;
 import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 import static es.arquia.magnolia.constants.NewsConstants.relatedNews;
+import static es.arquia.magnolia.constants.NewsConstants.video;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
 
 import java.text.DateFormat;
@@ -66,6 +67,14 @@ public class NewsNodeUtilImpl implements NewsNodeUtil{
 		try{
 			Property tmp = node.getProperty(image);
 			return tmp.getString();
+		}catch(RepositoryException e) {
+			return "";
+		}
+	}
+	
+	public String getVideo(Node node) throws RepositoryException{
+		try{
+			return i18nContentSupport.getProperty(node, video).getString();
 		}catch(RepositoryException e) {
 			return "";
 		}
