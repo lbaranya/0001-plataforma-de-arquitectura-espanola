@@ -28,7 +28,7 @@
                 </div>
                 <div class="img-arquia">
                 	[#assign imgItemKey = contentItem.richTextOptionImageAnchor!]
-                	[#if imgItemKey??]
+                	[#if imgItemKey?has_content]
                 		[#if imgItemKey?has_content]
 	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
 	                		[#if imgMediaRendition?has_content]
@@ -58,7 +58,7 @@
                 </div>
                 <div class="img-arquia">
                 	[#assign imgItemKey = contentItem.juryOptionImageAnchor!]
-                	[#if imgItemKey??]
+                	[#if imgItemKey?has_content]
                 		[#if imgItemKey?has_content]
 	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
 	                		[#if imgMediaRendition?has_content]
@@ -88,7 +88,7 @@
                 </div>
                 <div class="img-arquia">
                 	[#assign imgItemKey = contentItem.lemmaOptionImageAnchor!]
-                	[#if imgItemKey??]
+                	[#if imgItemKey?has_content]
                 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
                 		[#if imgMediaRendition?has_content]
                 			[#assign imageAlternativeText = "imagen del ancla"]
@@ -116,7 +116,7 @@
                 </div>
                 <div class="img-arquia">
                 	[#assign imgItemKey = contentItem.enrollmentOptionImageAnchor!]
-                	[#if imgItemKey??]
+                	[#if imgItemKey?has_content]
                 		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
                 		[#if imgMediaRendition?has_content]
                 			[#assign imageAlternativeText = "imagen del ancla"]
@@ -156,16 +156,16 @@
 		[#if contentItem.type == "richText"]
 			[#assign idAnchor = ""]
 			[#assign title = ""]
-			[#if contentItem.richTextOptionTitle??]
+			[#if contentItem.richTextOptionTitle?has_content]
 				[#assign title = contentItem.richTextOptionTitle]
 				[#assign idAnchor = model.getAnchorFromString(contentItem.richTextOptionTitle)?lower_case!""]
 			[/#if]
 			[#assign abstract = ""]
-			[#if contentItem.richTextOptionAbstract??]
+			[#if contentItem.richTextOptionAbstract?has_content]
 				[#assign abstract = contentItem.richTextOptionAbstract]
 			[/#if]
 			[#assign richText = ""]
-			[#if contentItem.richTextOptionRichText??]
+			[#if contentItem.richTextOptionRichText?has_content]
 				[#assign richText = cmsfn.decode(contentItem).richTextOptionRichText]
 			[/#if]
 		<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">
@@ -195,12 +195,12 @@
 		[#if contentItem.type == "jury"]
 			[#assign idAnchor = ""]
 			[#assign title = ""]
-			[#if contentItem.juryOptionTitle??]
+			[#if contentItem.juryOptionTitle?has_content]
 				[#assign title = contentItem.juryOptionTitle]
 				[#assign idAnchor = model.getAnchorFromString(contentItem.juryOptionTitle)?lower_case!""]
 			[/#if]
 			[#assign abstract = ""]
-			[#if contentItem.juryOptionAbstract??]
+			[#if contentItem.juryOptionAbstract?has_content]
 				[#assign abstract = contentItem.juryOptionAbstract]
 			[/#if]
 		<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">
@@ -224,7 +224,7 @@
 			                				<div class="col-jurado">
             									<div class="img-jurado">
             										[#assign imgItemKey = judge.judgePhoto!]
-									            	[#if imgItemKey??]
+									            	[#if imgItemKey?has_content]
 									            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
 									            		[#if imgMediaRendition?has_content]
 									            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
@@ -241,11 +241,14 @@
             										${cmsfn.decode(judge).judgeText!""}
             									</div>
             									[#assign hrefLink = "#"]
-								                [#if judge.judgeFileLink??]
+								                [#if judge.judgeFileLink?has_content]
+								                	[#assign checkContent = cmsfn.contentByPath(judge.judgeFileLink)!""]
+	            									[#if checkContent?has_content]
 									               	[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeFileLink))]
                 									<a href="${hrefLink}" class="ficha-jurado">
 									                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
 									                </a>
+									                [/#if]
 								                [/#if]
             								</div>
 			                			[/#list]
@@ -262,24 +265,24 @@
 		[#if contentItem.type == "lemma"]
 			[#assign idAnchor = ""]
 			[#assign title = ""]
-			[#if contentItem.lemmaOptionTitle??]
+			[#if contentItem.lemmaOptionTitle?has_content]
 				[#assign title = contentItem.lemmaOptionTitle]
 				[#assign idAnchor = model.getAnchorFromString(contentItem.lemmaOptionTitle)?lower_case!""]
 			[/#if]
 			[#assign abstract = ""]
-			[#if contentItem.lemmaOptionAbstract??]
+			[#if contentItem.lemmaOptionAbstract?has_content]
 				[#assign abstract = contentItem.lemmaOptionAbstract]
 			[/#if]
 			[#assign lemmaFileLink = "#"]
-			[#if contentItem.lemmaOptionLink??]
+			[#if contentItem.lemmaOptionLink?has_content]
 				[#assign lemmaFileLink = contentItem.lemmaOptionLink]
 			[/#if]
 			[#assign lemmaPhotoPreview = "#"]
-			[#if contentItem.lemmaOptionPhotoPreview??]
+			[#if contentItem.lemmaOptionPhotoPreview?has_content]
 				[#assign lemmaPhotoPreview = contentItem.lemmaOptionPhotoPreview]
 			[/#if]
 			[#assign richText = ""]
-			[#if contentItem.lemmaOptionRichText??]
+			[#if contentItem.lemmaOptionRichText?has_content]
 				[#assign richText = cmsfn.decode(contentItem).lemmaOptionRichText]
 			[/#if]
 		<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">
@@ -301,7 +304,7 @@
 				                	<div class="col-info-preview">
 				                    	<a href="${lemmaFileLink}">
 				                    		[#assign imgItemKey = lemmaPhotoPreview!]
-				                        	[#if imgItemKey??]
+				                        	[#if imgItemKey?has_content]
 				                        		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
 				                        		[#if imgMediaRendition?has_content]
 				                        			[#assign imageAlternativeText = "imagen del arquitecto del lema"]
@@ -331,24 +334,27 @@
 		[#if contentItem.type == "enrollment"]
 			[#assign idAnchor = ""]
 			[#assign title = ""]
-			[#if contentItem.enrollmentOptionTitle??]
+			[#if contentItem.enrollmentOptionTitle?has_content]
 				[#assign title = contentItem.enrollmentOptionTitle]
 				[#assign idAnchor = model.getAnchorFromString(contentItem.enrollmentOptionTitle)?lower_case!""]
 			[/#if]
 			[#assign abstract = ""]
-			[#if contentItem.enrollmentOptionAbstract??]
+			[#if contentItem.enrollmentOptionAbstract?has_content]
 				[#assign abstract = contentItem.enrollmentOptionAbstract]
 			[/#if]
 			[#assign richText = ""]
-			[#if contentItem.enrollmentOptionRichText??]
+			[#if contentItem.enrollmentOptionRichText?has_content]
 				[#assign richText = cmsfn.decode(contentItem).enrollmentOptionRichText]
 			[/#if]
 			[#assign buttonLink = "#"]
-			[#if contentItem.enrollmentOptionButtonLink??]
-				[#assign buttonLink = cmsfn.link(cmsfn.contentByPath(contentItem.enrollmentOptionButtonLink))]
+			[#if contentItem.enrollmentOptionButtonLink?has_content]
+				[#assign checkContent = cmsfn.contentByPath(contentItem.enrollmentOptionButtonLink)!""]
+	            [#if checkContent?has_content]
+					[#assign buttonLink = cmsfn.link(cmsfn.contentByPath(contentItem.enrollmentOptionButtonLink))]
+				[/#if]
 			[/#if]
 			[#assign buttonText = ""]
-			[#if contentItem.enrollmentOptionButtonText??]
+			[#if contentItem.enrollmentOptionButtonText?has_content]
 				[#assign buttonText = contentItem.enrollmentOptionButtonText]
 			[/#if]
 		<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">

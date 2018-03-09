@@ -13,7 +13,11 @@
                 </div>
             </div>
             <div class="row">
+            	[#assign counterRow = 1]
             	[#list nodes as node]
+            		[#if counterRow%4 == 1]
+            			<div class="row row-flex">
+            		[/#if]
             		[#if node.getNodeType() = "mgnl:news"]
             		
 		                <div class="col-md-3 col-sm-6 col-xs-12">
@@ -111,6 +115,10 @@
 		                </div>
 		                
 	                [/#if]
+	            [#if counterRow%4 = 0]
+	            	</div>
+	            [/#if]
+	            [#assign counterRow = counterRow + 1]
                 [/#list]
             </div>
         </div>

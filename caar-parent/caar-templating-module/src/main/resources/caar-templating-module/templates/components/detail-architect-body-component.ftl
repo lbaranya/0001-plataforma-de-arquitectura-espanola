@@ -5,9 +5,9 @@
 		[#assign architectContentNode = cmsfn.asJCRNode(architectContent)!""]
 		[#assign architect = model.getArchitect()!""]	
 		<section class="cmp-ficha-arquitecto">
-	        <div class="container">
+	        <div class="container-margin">
 	            <div class="row">
-	                <div class="col-md-6">
+	                <div class="col-md-6 col-left">
 	                    <div class="col-md-12">
 	                        <h3>${i18n['caar-templating-module.templates.components.detail-architect-body-component.training']}</h3>
 	                        <ul>
@@ -33,7 +33,7 @@
 	                        </p>
 	                	</div>
 	                </div>
-	                <div class="col-md-6">
+	                <div class="col-md-6 col-right">
 	                    <div class="col-md-12">
 	                        <h3>${i18n['caar-templating-module.templates.components.detail-architect-body-component.work-experience']}</h3>
 	                        <p>

@@ -12,6 +12,8 @@
   [#assign relatedNewsNodeList = cmsfn.children(content.newsPicker)!]
   [#if relatedNewsNodeList?has_content]
 		[#list relatedNewsNodeList as relatedNewsContent]
+			[#assign checkContent = cmsfn.contentByPath(relatedNewsContent.newsPicker, "news")!""]
+	        [#if checkContent?has_content]
 			[#assign relatedNewsContentMap = cmsfn.contentByPath(relatedNewsContent.newsPicker, "news")!]
 			[#assign relatedNews = cmsfn.asJCRNode(relatedNewsContentMap)!]
                <div class="col-md-3 col-sm-6 col-xs-12">
@@ -41,6 +43,7 @@
                        </div>
                    </div>
                </div>
+        [/#if]
         [/#list]
    [/#if]
         </div>

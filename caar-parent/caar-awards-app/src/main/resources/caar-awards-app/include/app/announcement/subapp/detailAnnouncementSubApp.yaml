@@ -36,9 +36,11 @@ editor:
             class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.text.label
+            required: true
           - name: media
             class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition
             label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.media.label
+            description: caar-templating-module.templates.components.rich-text-video-component.dialog.videoLink.description
             options:
               - name: image
                 label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.media.image.label
@@ -93,6 +95,7 @@ editor:
                 - name: richTextOptionWeight
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionWeight.label
+                  required: true
                 - name: richTextOptionImageAnchor
                   required: true
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
@@ -105,11 +108,13 @@ editor:
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionImageAnchor.label
                 - name: richTextOptionTitle
                   i18n: true
+                  required: true
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabRichText.richTextOptionList.richTextOptionCompositeField.richTextOptionTitle.label
                   # End common fields
                   # Specific fields
                 - name: richTextOptionRichText
+                  required: true
                   i18n: true
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
@@ -125,7 +130,8 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionWeight.label
           - name: juryOptionImageAnchor
-            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            required: true  
             targetWorkspace: dam      
             appName: assets      
             identifierToPathConverter:      
@@ -135,10 +141,12 @@ editor:
             label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionImageAnchor.label
           - name: juryOptionTitle
             i18n: true
+            required: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionTitle.label
           - name: juryOptionAbtract
             i18n: true
+            required: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionAbtract.label
           - name: judgeList
@@ -153,9 +161,11 @@ editor:
               fields:
                 - name: judgeName
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  required: true
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeName.label
                 - name: judgePhoto
-                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+                  required: true    
                   targetWorkspace: dam      
                   appName: assets      
                   identifierToPathConverter:      
@@ -164,11 +174,13 @@ editor:
                     contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgePhoto.label
                 - name: judgeFileLink
+                  required: true
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                   targetWorkspace: architecture-files      
                   appName: caar-architecture-files-app
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeFileLink.label
                 - name: judgeCV
+                  required: true
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                   targetWorkspace: dam      
                   appName: assets      
@@ -179,6 +191,7 @@ editor:
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeCV.label
                 - name: judgeText
                   i18n: true
+                  required: true
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgeText.label
@@ -201,6 +214,7 @@ editor:
                   defaultValue: enrollment
                 - name: enrollmentOptionWeight
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  required: true
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionWeight.label
                 - name: enrollmentOptionImageAnchor
                   required: true
@@ -214,24 +228,27 @@ editor:
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionImageAnchor.label
                 - name: enrollmentOptionTitle
                   i18n: true
+                  required: true
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionTitle.label
                   # End common fields
                   # Specific fields
                 - name: enrollmentOptionRichText
                   i18n: true
+                  required: true
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionRichText.label
                 - name: enrollmentOptionButtonText
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionButtonText.label
-                - name: enrollmentOptionButtonLink 
+                - name: enrollmentOptionButtonLink
+                  required: true
                   class: info.magnolia.ui.form.field.definition.SwitchableFieldDefinition      
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabEnrollment.enrollmentOptionList.enrollmentOptionCompositeField.enrollmentOptionButtonLink.label
                   options:      
                     - name: internalLink    
-                      label: caar-templating-module.common.field.text.internal.label      
+                      label: caar-templating-module.common.field.text.internal.page.label    
                       selected: true      
                       value: internalLink      
                     - name: externalLink      
@@ -266,6 +283,7 @@ editor:
                   defaultValue: lemma
                 - name: lemmaOptionWeight
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  required: true
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionWeight.label
                 - name: lemmaOptionImageAnchor
                   required: true
@@ -279,12 +297,14 @@ editor:
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionImageAnchor.label
                 - name: lemmaOptionTitle
                   i18n: true
+                  required: true
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionTitle.label
                   # End common fields
                   # Specific fields
                 - name: lemmaOptionRichText
                   i18n: true
+                  required: true
                   class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
                   configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionRichText.label
@@ -299,6 +319,7 @@ editor:
                     contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionPhotoPreview.label
                 - name: lemmaOptionLink
+                  required: true
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
                   targetWorkspace: architecture-files      
                   appName: caar-architecture-files-app
