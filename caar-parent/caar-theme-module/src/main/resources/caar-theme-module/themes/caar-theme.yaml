@@ -49,6 +49,10 @@ imaging:
     "320w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 320
+    "320x320":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 320
+      height: 320
     "360w":
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 360
