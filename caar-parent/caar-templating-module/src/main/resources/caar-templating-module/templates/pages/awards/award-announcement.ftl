@@ -91,7 +91,7 @@
 		                	[#assign imgItemKey = contentItem.richTextOptionImageAnchor!]
 		                	[#if imgItemKey?has_content]
 		                		[#if imgItemKey?has_content]
-			                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
+			                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "556x445")!]
 			                		[#if imgMediaRendition?has_content]
 			                			[#assign imageAlternativeText = "imagen del ancla"]
 			                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -123,7 +123,7 @@
 		                	[#assign imgItemKey = contentItem.juryOptionImageAnchor!]
 		                	[#if imgItemKey?has_content]
 		                		[#if imgItemKey?has_content]
-			                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
+			                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "556x445")!]
 			                		[#if imgMediaRendition?has_content]
 			                			[#assign imageAlternativeText = "imagen del ancla"]
 			                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -154,7 +154,7 @@
 		                <div class="img-arquia">
 		                	[#assign imgItemKey = contentItem.lemmaOptionImageAnchor!]
 		                	[#if imgItemKey?has_content]
-		                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
+		                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "556x445")!]
 		                		[#if imgMediaRendition?has_content]
 		                			[#assign imageAlternativeText = "imagen del ancla"]
 		                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -184,7 +184,7 @@
 		                <div class="img-arquia">
 		                	[#assign imgItemKey = contentItem.enrollmentOptionImageAnchor!]
 		                	[#if imgItemKey?has_content]
-		                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
+		                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "556x445")!]
 		                		[#if imgMediaRendition?has_content]
 		                			[#assign imageAlternativeText = "imagen del ancla"]
 		                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -237,7 +237,7 @@
 				        <div>
 				            <div class="row">
 				                <div class="col-md-12 content-title">
-				                    <h3>${title!""}</h3>
+				                    <h4>${title!""}</h4>
 				                </div>
 				                <div class="cmp-distruidor-contenido">
 						        <div class="container-sub-info">
@@ -269,7 +269,7 @@
 				        <div>
 				            <div class="row">
 				                <div class="col-md-12 content-title">
-				                    <h3>${title!""}</h3>
+				                    <h4>${title!""}</h4>
 				                </div>
 				                <div class="col-md-12 text-contenido">
 				                    <p>${abstract!""}</p>
@@ -303,22 +303,22 @@
 		            									</div>
 		            									[#assign hrefLink = "#"]
 										                [#if judge.judgeFileLink?has_content]
-										                	[#assign checkContent = cmsfn.contentByPath(judge.judgeFileLink)!""]
+										                	[#assign checkContent = cmsfn.contentByPath(judge.judgeFileLink, "architecture-files")!""]
 	        												[#if checkContent?has_content]
-											               		[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeFileLink))]
+											               		[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeFileLink, "architecture-files"))]
 											               	[/#if]
-		                									<a href="${hrefLink}" class="ficha-jurado">
-											                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
+											               	<a href="${hrefLink}" class="ficha-jurado">
+											                   <div style="margin-right:45px;"><i class="fa fa-plus" aria-hidden="true"></i></div>
 											                </a>
 										                [/#if]
 										                [#assign hrefLink = "#"]
 										                [#if judge.judgeCV?has_content]
-										                	[#assign checkContent = cmsfn.contentById(judge.judgeCV)!""]
+										                	[#assign checkContent = damfn.getAsset(judge.judgeCV)!""]
 	        												[#if checkContent?has_content]
-											               		[#assign hrefLink = cmsfn.link(cmsfn.contentById(judge.judgeCV)!"#")]
+											               		[#assign hrefLink = damfn.getAssetLink(judge.judgeCV)!"#"]
 											               	[/#if]
-		                									<a href="${hrefLink}" class="ficha-jurado">
-											                    <div><i class="fa fa-plus" aria-hidden="true"></i></div>
+											               	<a href="${hrefLink}" class="ficha-jurado">
+											               	    <div><i class="fa fa-file-o" aria-hidden="true"></i></div>
 											                </a>
 										                [/#if]
 		            								</div>
@@ -430,7 +430,7 @@
 				        <div>
 				            <div class="row">
 				                <div class="col-md-12 content-title">
-				                    <h3>${title!""}</h3>
+				                    <h4>${title!""}</h4>
 				                </div>
 				                <div class="cmp-distruidor-contenido">
 						        <div class="container-sub-info">

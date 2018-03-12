@@ -38,12 +38,11 @@
                     <h2>${awards.getAwardName(awardsContentNode)!""}</h2>
                 </div>
             </div>
-            [#assign hrefLink = "#"]
-            [#assign openEditionNode = model.parent.getEditionStateOpen(awardsContentNode)!""]
-            [#if openEditionNode?has_content && awards.getAwardExternalURL(awardsContentNode)?has_content]
             <div class="row">
                 <div class="contendor-btn">
                     <div class="botonera">
+                        [#assign hrefLink = "#"]
+                        [#assign openEditionNode = model.parent.getEditionStateOpen(awardsContentNode)!""]
                     	[#if openEditionNode?has_content]
                     		[#assign openEditionContentMap = cmsfn.asContentMap(openEditionNode)!""]
 	                    	[#if openEditionContentMap.announcementButtonLink?has_content]
@@ -51,9 +50,15 @@
 	                    		[#if checkContent?has_content]
 	                    			[#assign hrefLink = cmsfn.link(cmsfn.contentById(openEditionContentMap.announcementButtonLink, "dam"))]
 	                    		[/#if]
-	                    	[/#if]
-                    	<a class="btn" href="${hrefLink}">${awards.getEditionAnnouncementButtonText(openEditionNode)}</a>
-                        <a class="btn" href="${cmsfn.externalLink(openEditionContentMap, "enrollmentButtonLink")}">${awards.getEditionEnrollmentButtonText(openEditionNode)}</a>
+	                        [/#if]
+	                        [#assign externalLink = "#"]
+	                        [#if cmsfn.externalLink(openEditionContentMap, "enrollmentButtonLink")?has_content]
+	                            [#assign externalLink = cmsfn.externalLink(openEditionContentMap, "enrollmentButtonLink")]
+	                        [/#if]
+	                        [#if awards.getEditionAnnouncementButtonText(openEditionNode)?has_content &&  awards.getEditionEnrollmentButtonText(openEditionNode)?has_content]
+	                    	    <a class="btn" href="${hrefLink}">${awards.getEditionAnnouncementButtonText(openEditionNode)}</a>
+                                <a class="btn" href="${externalLink}">${awards.getEditionEnrollmentButtonText(openEditionNode)}</a>
+                            [/#if]
                         [/#if]
                         [#if awards.getAwardExternalURL(awardsContentNode)?has_content]
 	                        [#if awards.getAwardExternalURLText(awardsContentNode)?has_content]
@@ -66,7 +71,6 @@
                     </div>
                 </div>
             </div>
-            [/#if]
 
         </div>
 </section>
