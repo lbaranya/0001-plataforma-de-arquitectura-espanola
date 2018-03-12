@@ -42,6 +42,7 @@ editor:
             time: false
             type: Date
             defaultValue: now
+            dateFormat: dd-MM-yyyy
             label: caar-architecture-files-app.files.support.business.businessData.constitutionDate.label
           - name: FS4_1_5
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
@@ -104,9 +105,12 @@ editor:
                 configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
                 i18n: true
           - name: FS4_1_11
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.awards.label
-            required: true
+            field:
+              name: awardElement
+              class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+              label: caar-architecture-files-app.files.support.business.businessData.awards.awardElement.label           
       - name: additionalInfoData
         label: caar-architecture-files-app.files.support.business.additionalInfoData.label
         fields:
@@ -116,15 +120,41 @@ editor:
             configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
             i18n: true
           - name: FS4_2_2
-            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
             label: caar-architecture-files-app.files.support.business.additionalInfoData.annexes.label
-            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
-            i18n: true
+            field:
+              name: annexesElement
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              label: caar-architecture-files-app.files.support.business.additionalInfoData.annexes.annexesElement.label
+              targetWorkspace: dam
+              appName: assets
+              identifierToPathConverter:
+                class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+              contentPreviewDefinition:
+                contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
           - name: FS4_2_3
-            class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
-            configJsFile: /.resources/caar-theme-module/webresources/ckeditor/config-magnolia.js
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
             label: caar-architecture-files-app.files.support.business.additionalInfoData.dossier.label
-            i18n: true
+            targetWorkspace: dam
+            appName: assets
+            identifierToPathConverter:
+              class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+            contentPreviewDefinition:
+              contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
+      - name: relatedFilesTab
+        label: caar-architecture-files-app.files.support.business.relatedFilesTab.label
+        fields:
+          - name: relatedFiles
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            label: caar-architecture-files-app.files.support.business.relatedFilesTab.relatedFiles.label
+            field:
+              name: fileLink
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              label: caar-architecture-files-app.files.support.business.relatedFilesTab.relatedFiles.fileLink.label
+              appName: caar-architecture-files-app
+              targetWorkspace: architecture-files
+              identifierToPathConverter:
+                class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter              
   actions:
       - name: commit
       - name: cancel
