@@ -74,5 +74,7 @@ public interface AwardConstants {
 	
 	String twitterUser = "twitterUser";
 	
+	String editionSectionWeight = "weight";
+	
 	
 }

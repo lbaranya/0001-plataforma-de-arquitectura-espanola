@@ -19,6 +19,10 @@ editor:
       - name: announcementData
         label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.label
         fields:
+          - name: weight
+            class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+            defaultValue: 1
+            type: Integer
           - name: state
             class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-awards-app.subapp.detailAnnouncementSubApp.announcementData.state.label

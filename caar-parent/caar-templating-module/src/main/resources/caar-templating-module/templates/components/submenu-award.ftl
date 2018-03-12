@@ -30,7 +30,8 @@
                         <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
                     <ul class="menu-second">
-                    	[#list cmsfn.children(openEdition) as childItem]
+                    	[#assign orderedChildList = model.getChildrenOrderedByWeight(cmsfn.children(openEdition))!""]
+                    	[#list orderedChildList as childItem]
                         <li class="menu-second-item">
                         	[#if childItem.isNodeType("mgnl:announcement")]
                         	[#assign currentUrl = cmsfn.link(childItem)]
@@ -99,7 +100,8 @@
                         <div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
                     </a>
                     <ul class="menu-second">
-                    	[#list cmsfn.children(inProgressEdition) as childItem]
+                    	[#assign orderedChildList = model.getChildrenOrderedByWeight(cmsfn.children(inProgressEdition))!""]
+                    	[#list orderedChildList as childItem]
                         <li class="menu-second-item">
                         	[#if childItem.isNodeType("mgnl:announcement")]
                         	[#assign currentUrl = cmsfn.link(childItem)]
