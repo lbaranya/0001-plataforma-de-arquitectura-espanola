@@ -21,7 +21,7 @@
 		            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 		            				[#assign imageAlternativeText = imageAlt.alternative!""]
 		            			[/#if]
-		                		<img src='${imgMediaRendition.getLink()}' alt='${imageAlternativeText!""}' />
+		                		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
 		                	[/#if]
 	                	[/#if]
 	                [/#if]

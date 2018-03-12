@@ -38,11 +38,12 @@
                     <h2>${awards.getAwardName(awardsContentNode)!""}</h2>
                 </div>
             </div>
+            [#assign hrefLink = "#"]
+            [#assign openEditionNode = model.parent.getEditionStateOpen(awardsContentNode)!""]
+            [#if openEditionNode?has_content && awards.getAwardExternalURL(awardsContentNode)?has_content]
             <div class="row">
                 <div class="contendor-btn">
                     <div class="botonera">
-                    	[#assign hrefLink = "#"]
-                    	[#assign openEditionNode = model.parent.getEditionStateOpen(awardsContentNode)!""]
                     	[#if openEditionNode?has_content]
                     		[#assign openEditionContentMap = cmsfn.asContentMap(openEditionNode)!""]
 	                    	[#if openEditionContentMap.announcementButtonLink?has_content]
@@ -65,6 +66,7 @@
                     </div>
                 </div>
             </div>
+            [/#if]
 
         </div>
 </section>

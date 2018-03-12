@@ -111,6 +111,9 @@ public class AwardManagerImpl implements AwardManager{
 			while(nodeIterator.hasNext() && !foundNode) {
 				found = nodeIterator.nextNode();
 				foundNode = found.getProperty(editionState).getValue().getString().equalsIgnoreCase(editionStateOpen);
+				if(!foundNode) {
+					found = null;
+				}
 			}
 			return found;
 		}
@@ -126,6 +129,9 @@ public class AwardManagerImpl implements AwardManager{
 			while(nodeIterator.hasNext() && !foundNode) {
 				found = nodeIterator.nextNode();
 				foundNode = found.getProperty(editionState).getValue().getString().equalsIgnoreCase(editionStateInProgress);
+				if(!foundNode) {
+					found = null;
+				}
 			}
 			return foundNode?found:null;
 		}

@@ -44,7 +44,7 @@
 				<div class="col-md-7 video-img-acerca" style="float:${mediaPosition}; padding-${mediaPosition}:0;">
 			    [#if mediaType == "image"]
 			    	[#if imgMediaRendition?has_content]
-			    		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
+			    		<img class="imagen-destacada" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
 			    	[/#if]
 			   	[#else]
 						<iframe src="${announcement.getAnnouncementMediaVideo(announcementContentNode)!"#"}" frameborder="0" allowfullscreen></iframe>
@@ -286,7 +286,7 @@
 		            									<div class="img-jurado">
 		            										[#assign imgItemKey = judge.judgePhoto!]
 											            	[#if imgItemKey?has_content]
-											            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]
+											            		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320x320")!]
 											            		[#if imgMediaRendition?has_content]
 											            			[#assign imageAlternativeText = "imagen del arquitecto jurado"]
 											            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -299,7 +299,7 @@
 		            									</div>
 		            									<div class="info-jurado">
 		            										<h4>${judge.judgeName!""}</h4>
-		            										${cmsfn.decode(judge).judgeText!""}
+		            										${cmsfn.abbreviateString(cmsfn.decode(judge).judgeText,450)!""}
 		            									</div>
 		            									[#assign hrefLink = "#"]
 										                [#if judge.judgeFileLink?has_content]

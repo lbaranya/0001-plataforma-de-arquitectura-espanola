@@ -1,10 +1,14 @@
 package es.arquia.magnolia.components.models.awards.submenu;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.RepositoryException;
+import javax.jcr.ValueFormatException;
 
 import es.arquia.magnolia.manager.AwardManager;
 import es.arquia.magnolia.utils.AwardNodeUtil;
@@ -13,6 +17,8 @@ import es.arquia.magnolia.utils.breadcrumb.award.UtilsBreadcrumbAward;
 import info.magnolia.rendering.model.RenderingModel;
 import info.magnolia.rendering.model.RenderingModelImpl;
 import info.magnolia.rendering.template.configured.ConfiguredTemplateDefinition;
+
+import static es.arquia.magnolia.constants.AwardConstants.editionSectionWeight;
 
 public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	
@@ -73,6 +79,25 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	
 	public String getAnnouncementState(Node node) throws RepositoryException{
 		return awardManager.getAnnouncementState(node);
+	}
+	
+	public List<Node> getChildrenOrderedByWeight(List<Node> childNodes){
+		List<Node> resList = new ArrayList<>(childNodes);
+		resList.sort(new Comparator<Node>() {
+
+			@Override
+			public int compare(Node o1, Node o2) {
+				Integer w1 = new Integer(0);
+				Integer w2 = new Integer(0);
+				try {
+					w1 = Integer.valueOf(o1.getProperty(editionSectionWeight).getValue().getString());
+					w2 = Integer.valueOf(o2.getProperty(editionSectionWeight).getValue().getString());
+				} catch (RepositoryException e) {
+				}
+				return w1.compareTo(w2);
+			}
+		});
+		return resList;
 	}
 
 

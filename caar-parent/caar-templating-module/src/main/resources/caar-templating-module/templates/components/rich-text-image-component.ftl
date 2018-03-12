@@ -19,7 +19,7 @@
     [/#if]
     [#if imgMediaRendition?has_content && content.imagePosition == "left"]
 		<div class="col-md-7 video-img-acerca">
-    		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
+    		<img class="imagen-destacada" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
     	</div>
     [/#if]
 	<div class="col-md-5 info-acerca">
@@ -27,7 +27,7 @@
 	</div>
 	[#if imgMediaRendition?has_content && content.imagePosition == "right"]
 	<div class="col-md-7 video-img-acerca">
-		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
+		<img class="imagen-destacada" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
 	</div>
 	[/#if]
 </div>

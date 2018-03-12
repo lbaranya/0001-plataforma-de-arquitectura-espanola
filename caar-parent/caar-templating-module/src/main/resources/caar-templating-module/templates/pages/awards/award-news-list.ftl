@@ -28,7 +28,7 @@
 			                        			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 			                        				[#assign imageAlternativeText = imageAlt.alternative!""]
 			                        			[/#if]
-			                            		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
+			                            		<img class="imagen-destacada" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
 			                            	[/#if]
 			                            [/#if]
 		                            [/#if]
@@ -42,7 +42,7 @@
 	                            	<p>${descriptionTruncated!""}</p>
 	                            </div>
 	                            <div class="noticias-links">
-			                    	<a href='${cmsfn.link(newsNode)!"#"}'><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
+			                    	<a href="${cmsfn.link(newsNode)!"#"}"><span class="more-link"> ${i18n['caar-templating-module.templates.components.news-list-component.information.label']}</span></a>
 				                </div>
 		                    </div>
 		                </div>

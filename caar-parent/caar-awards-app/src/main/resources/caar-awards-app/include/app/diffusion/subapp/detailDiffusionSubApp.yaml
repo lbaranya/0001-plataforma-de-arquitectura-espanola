@@ -19,6 +19,10 @@ editor:
       - name: diffusionData
         label: caar-awards-app.subapp.detailDiffusionSubApp.diffusionData.label
         fields:
+          - name: weight
+            class: info.magnolia.ui.form.field.definition.HiddenFieldDefinition
+            defaultValue: 3
+            type: Integer
           - name: title
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.diffusion.diffusionData.title.label
