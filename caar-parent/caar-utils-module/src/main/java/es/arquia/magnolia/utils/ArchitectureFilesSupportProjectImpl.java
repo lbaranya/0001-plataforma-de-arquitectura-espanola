@@ -71,6 +71,7 @@ import java.util.Locale;
 import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
+import javax.jcr.PathNotFoundException;
 import javax.jcr.Property;
 import javax.jcr.PropertyIterator;
 import javax.jcr.RepositoryException;
@@ -93,8 +94,13 @@ public class ArchitectureFilesSupportProjectImpl implements ArchitectureFilesSup
 	
 	private List<Node> getPropertyAsListOfNodes(Node node, String property) {
 		List<Node> listNodes = new ArrayList<>();
+		Node nodeList = null;
 		try {
-			for(NodeIterator iterator = node.getNodes(); iterator.hasNext();) {
+			nodeList = node.getNode(property);
+		} catch (RepositoryException e1) {
+		}
+		try {
+			for(NodeIterator iterator = nodeList.getNodes(); iterator.hasNext();) {
 				listNodes.add(iterator.nextNode());
 			}
 		}catch(RepositoryException e) {

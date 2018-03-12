@@ -1,5 +1,6 @@
 package es.arquia.magnolia.components.models.awards.submenu;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -81,25 +82,22 @@ public class SubMenuModel <T extends ConfiguredTemplateDefinition> extends Rende
 	}
 	
 	public List<Node> getChildrenOrderedByWeight(List<Node> childNodes){
-		childNodes.sort(new Comparator<Node>() {
+		List<Node> resList = new ArrayList<>(childNodes);
+		resList.sort(new Comparator<Node>() {
 
 			@Override
 			public int compare(Node o1, Node o2) {
-				Integer w1 = 0;
+				Integer w1 = new Integer(0);
+				Integer w2 = new Integer(0);
 				try {
-					w1 = Integer.getInteger(o1.getProperty(editionSectionWeight).getValue().getString());
+					w1 = Integer.valueOf(o1.getProperty(editionSectionWeight).getValue().getString());
+					w2 = Integer.valueOf(o2.getProperty(editionSectionWeight).getValue().getString());
 				} catch (RepositoryException e) {
 				}
-				Integer w2 = 0;
-				try {
-					w2 = Integer.getInteger(o2.getProperty(editionSectionWeight).getValue().getString());
-				} catch (RepositoryException e) {
-				}
-				return w2.compareTo(w1);
+				return w1.compareTo(w2);
 			}
-			
 		});
-		return childNodes;
+		return resList;
 	}
 
 
