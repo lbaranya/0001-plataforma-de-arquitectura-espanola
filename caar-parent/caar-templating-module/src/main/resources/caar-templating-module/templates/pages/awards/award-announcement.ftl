@@ -44,7 +44,7 @@
 				<div class="col-md-7 video-img-acerca" style="float:${mediaPosition}; padding-${mediaPosition}:0;">
 			    [#if mediaType == "image"]
 			    	[#if imgMediaRendition?has_content]
-			    		<img class="imagen-destacada" src='${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}' />
+			    		<img class="imagen-destacada" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
 			    	[/#if]
 			   	[#else]
 						<iframe src="${announcement.getAnnouncementMediaVideo(announcementContentNode)!"#"}" frameborder="0" allowfullscreen></iframe>

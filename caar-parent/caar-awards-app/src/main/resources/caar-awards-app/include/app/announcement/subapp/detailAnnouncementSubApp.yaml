@@ -174,7 +174,6 @@ editor:
                     contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabJudgeList.judgeList.judgeComposite.judgePhoto.label
                 - name: judgeFileLink
-                  required: true
                   class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
                   targetWorkspace: architecture-files      
                   appName: caar-architecture-files-app
