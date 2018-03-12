@@ -1,0 +1,3 @@
+class: info.magnolia.cms.beans.config.RegexpVirtualURIMapping
+fromURI: /architecture-files/format-continuous/(.*).html
+toURI: forward:/caar-home/
