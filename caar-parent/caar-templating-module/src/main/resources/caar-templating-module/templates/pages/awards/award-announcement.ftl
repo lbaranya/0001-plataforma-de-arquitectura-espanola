@@ -272,7 +272,7 @@
 				                    <h4>${title!""}</h4>
 				                </div>
 				                <div class="col-md-12 text-contenido">
-				                    <p>${abstract!""}</p>
+				                    <p class="ckeditor text-contenido">${abstract!""}</p>
 				                </div>
 				                <div class="cmp-distruidor-contenido">
 						        <div class="container-sub-info">

@@ -148,7 +148,7 @@ editor:
             required: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-templating-module.templates.components.distributor-sections-award-component.tabJury.juryOptionList.juryOptionCompositeField.juryOptionTitle.label
-          - name: juryOptionAbtract
+          - name: juryOptionAbstract
             i18n: true
             required: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
