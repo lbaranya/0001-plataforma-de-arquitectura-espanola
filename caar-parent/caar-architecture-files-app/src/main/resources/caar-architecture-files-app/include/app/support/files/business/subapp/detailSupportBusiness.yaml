@@ -20,10 +20,14 @@ editor:
         label: caar-architecture-files-app.files.support.business.businessData.label
         fields:
           - name: FS4_1_1
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.businessType.label
-            i18n: true
             required: true
+            targetWorkspace: category
+            appName: categories
+            targetTreeRootPath: /caar/support-business/type
+            identifierToPathConverter:
+              class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter           
           - name: FS4_1_2
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.business.businessData.businessLegalName.label
