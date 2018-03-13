@@ -98,6 +98,7 @@
                 [/#if]
                 [#assign inProgressEdition = model.getEditionStateInProgress(awardsContentNode)!""]
                 [#if inProgressEdition?has_content]
+                [#if cmsfn.children(inProgressEdition)?has_content]
                 <li class="menu-first">
                     <a href="javascript:void(0)">
                         <span>${i18n['caar-templating-module.award.home.inProgressEdition.label']}</span>
@@ -168,6 +169,7 @@
                         [/#list]
                     </ul>
                 </li>
+                [/#if]
                 [/#if]
                 [#assign aboutText = awards.getAwardAboutText(awardsContentNode)]
                 [#if aboutText?has_content]
