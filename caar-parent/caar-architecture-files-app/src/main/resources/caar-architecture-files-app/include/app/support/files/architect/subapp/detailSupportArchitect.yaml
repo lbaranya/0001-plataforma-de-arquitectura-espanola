@@ -428,15 +428,15 @@ editor:
               contentPreviewDefinition:
                 contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
       - name: relatedFilesTab
-        label: Related files Tab
+        label: caar-architecture-files-app.files.support.architect.relatedFilesTab.label
         fields:
           - name: relatedFiles
             class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
-            label: Related files
+            label: caar-architecture-files-app.files.support.architect.relatedFilesTab.relatedFiles.label
             field:
               name: fileLink
               class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
-              label: caar-architecture-files-app.files.support.architect.professionalData.officeComponents.picker.label
+              label: caar-architecture-files-app.files.support.architect.relatedFilesTab.relatedFiles.fileLink.label
               appName: caar-architecture-files-app
               targetWorkspace: architecture-files
               identifierToPathConverter:
