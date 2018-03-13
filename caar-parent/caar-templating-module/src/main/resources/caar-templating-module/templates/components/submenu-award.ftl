@@ -32,13 +32,15 @@
                     <ul class="menu-second">
                     	[#assign orderedChildList = model.getChildrenOrderedByWeight(cmsfn.children(openEdition))!""]
                     	[#list orderedChildList as childItem]
-                        <li class="menu-second-item">
                         	[#if childItem.isNodeType("mgnl:announcement")]
                         	[#assign currentUrl = cmsfn.link(childItem)]
                         	[#assign href = model.getSecondLevelMenuLink(currentUrl, childItem)!"#"]
+                        	<li class="menu-second-item">
                             <a href="${href}"><span>${i18n['caar-templating-module.templates.components.submenu-award.announcement.label']}</span></a>
+                            </li>
                             [/#if]
-                            [#if childItem.isNodeType("mgnl:program")]
+                            [#if childItem.isNodeType("mgnl:program") && cmsfn.children(childItem)?has_content]
+                            <li class="menu-second-item">
                             <a href="javascript:void(0)">
                             	<span>${i18n['caar-templating-module.templates.components.submenu-award.program.label']}</span>
                             	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
@@ -61,8 +63,10 @@
                             		[/#list]
                             		</ul>
                             	[/#if]
+                            </li>
                             [/#if]
-                            [#if childItem.isNodeType("mgnl:diffusion")]
+                            [#if childItem.isNodeType("mgnl:diffusion") && cmsfn.children(childItem)?has_content]
+                            <li class="menu-second-item">
                             <a href="javascript:void(0)">
                             	<span>${i18n['caar-templating-module.templates.components.submenu-award.diffusion.label']}</span>
                             	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
@@ -85,8 +89,8 @@
                             		[/#list]
                             		</ul>
                             	[/#if]
+                            </li>
                             [/#if]
-                        </li>
                         [/#list]
                     </ul>
                 </li>
@@ -94,6 +98,7 @@
                 [/#if]
                 [#assign inProgressEdition = model.getEditionStateInProgress(awardsContentNode)!""]
                 [#if inProgressEdition?has_content]
+                [#if cmsfn.children(inProgressEdition)?has_content]
                 <li class="menu-first">
                     <a href="javascript:void(0)">
                         <span>${i18n['caar-templating-module.award.home.inProgressEdition.label']}</span>
@@ -102,13 +107,15 @@
                     <ul class="menu-second">
                     	[#assign orderedChildList = model.getChildrenOrderedByWeight(cmsfn.children(inProgressEdition))!""]
                     	[#list orderedChildList as childItem]
-                        <li class="menu-second-item">
                         	[#if childItem.isNodeType("mgnl:announcement")]
                         	[#assign currentUrl = cmsfn.link(childItem)]
                         	[#assign href = model.getSecondLevelMenuLink(currentUrl, childItem)!"#"]
+                        	<li class="menu-second-item">
                             <a href="${href}"><span>${i18n['caar-templating-module.templates.components.submenu-award.announcement.label']}</span></a>
+                            </li>
                             [/#if]
-                            [#if childItem.isNodeType("mgnl:program")]
+                            [#if childItem.isNodeType("mgnl:program") && cmsfn.children(childItem)?has_content]
+                            <li class="menu-second-item">
                             <a href="javascript:void(0)">
                             	<span>${i18n['caar-templating-module.templates.components.submenu-award.program.label']}</span>
                             	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
@@ -131,8 +138,10 @@
                             		[/#list]
                             		</ul>
                             	[/#if]
+                            	</li>
                             [/#if]
-                            [#if childItem.isNodeType("mgnl:diffusion")]
+                            [#if childItem.isNodeType("mgnl:diffusion") && cmsfn.children(childItem)?has_content]
+                            <li class="menu-second-item">
                             <a href="javascript:void(0)">
                             	<span>${i18n['caar-templating-module.templates.components.submenu-award.diffusion.label']}</span>
                             	<div class="icon"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
@@ -155,11 +164,12 @@
                             		[/#list]
                             		</ul>
                             	[/#if]
+                            	</li>
                             [/#if]
-                        </li>
                         [/#list]
                     </ul>
                 </li>
+                [/#if]
                 [/#if]
                 [#assign aboutText = awards.getAwardAboutText(awardsContentNode)]
                 [#if aboutText?has_content]

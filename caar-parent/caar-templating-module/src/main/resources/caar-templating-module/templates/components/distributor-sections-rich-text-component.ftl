@@ -29,7 +29,7 @@
                 	[#assign imgItemKey = contentItem.richTextOptionImageAnchor!]
                 	[#if imgItemKey??]
                 		[#if imgItemKey?has_content]
-	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
+	                		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "556x445")!]
 	                		[#if imgMediaRendition?has_content]
 	                			[#assign imageAlternativeText = "imagen del ancla"]
 	                			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
