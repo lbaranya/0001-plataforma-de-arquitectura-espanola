@@ -16,27 +16,6 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.reviewiv.fileData.jcrName.label
             required: true
-      - name: platformData
-        label: caar-architecture-files-app.files.support.reviewiv.platformData.label          
-        fields:
-          - name: FS3_1_1
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.support.reviewiv.platformData.pieceId.label
-          - name: FS3_1_2
-            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
-            time: false
-            type: Date
-            defaultValue: now
-            label: caar-architecture-files-app.files.support.reviewiv.platformData.dischargeDate.label
-          - name: FS3_1_3
-            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
-            time: false
-            type: Date
-            defaultValue: now
-            label: caar-architecture-files-app.files.support.reviewiv.platformData.lastUpdateDate.label
-          - name: FS3_1_4
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.support.reviewiv.platformData.publishedDirectory.label
       - name: workData
         label: caar-architecture-files-app.files.support.reviewiv.workData.label
         fields:
