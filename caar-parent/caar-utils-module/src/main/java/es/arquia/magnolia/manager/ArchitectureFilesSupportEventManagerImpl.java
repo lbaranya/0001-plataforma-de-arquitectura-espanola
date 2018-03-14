@@ -24,6 +24,7 @@ import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.utils.RelatedElement;
 import info.magnolia.cms.util.DateUtil;
+import info.magnolia.context.MgnlContext;
 
 public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFilesSupportEventManager {
 	
@@ -34,6 +35,8 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 	
 	private RelatedElementsManager relatedElementsManager;
 	
+	private boolean lastRowOfNews = false;
+	
 	@Inject
 	public ArchitectureFilesSupportEventManagerImpl(final QueryUtils queryUtils, final RelatedElementsManager relatedElementsManager, final ArchitectureFilesSupportEvent architectureFilesSupportEvent) {
         this.queryUtils = queryUtils;
@@ -42,7 +45,7 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
     }
 	
 	@Override
-	public List<Node> getImportantArchitectureFilesSupportEventList() throws RepositoryException {
+	public List<Node> getNewsDiaryArchitectureFilesSupportEventList() throws RepositoryException {
 		final int limit = 4;
 		final int offset = 0;
 		Date today = Calendar.getInstance().getTime();
@@ -70,8 +73,30 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 	}
 
 	@Override
-	public List<Node> getArchitectureFilesSupportEventList() throws RepositoryException {
-		return null;
+	public List<Node> getArchitectureFilesSupportEventList(int eventsPerRow) throws RepositoryException {
+		String rowsFromAjax = MgnlContext.getAttribute("rows");
+		final int limit = (eventsPerRow > 0) ? (eventsPerRow + 1) : 0;
+		final int lastNewsListElement = eventsPerRow;
+		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
+		Date today = Calendar.getInstance().getTime();
+		SimpleDateFormat sdf = new SimpleDateFormat(DateUtil.YYYY_MM_DD);
+		Calendar c = Calendar.getInstance();
+		c.setTime(today); // Now use today date.
+		String date = sdf.format(c.getTime());
+		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportEventNodeType + "] WHERE [" + presentationStartDate + "] >= CAST('" + date + dateFormatIgnoreTime + "' AS DATE) ORDER BY [" + presentationStartDate + "] DESC";
+		List<Node> eventsList = queryUtils.executeSelectQuery(sqlQuery, architectureFilesWorkspace, limit, offset);
+		if (eventsList.size() < limit) {
+			lastRowOfNews = true;
+		}
+		else if (limit > 0) {
+			eventsList.remove(lastNewsListElement);
+		}
+		return eventsList;
+	}
+	
+	@Override
+	public boolean isLastRowOfEvents() {
+		return lastRowOfNews;
 	}
 
 }

@@ -48,3 +48,5 @@ areas:
             id: caar-templating-module:components/award-distributor-component
           architecture-files-support-architects-list-component:
             id: caar-templating-module:components/architecture-files-support-architects-list-component
+          events-list-component:
+            id: caar-templating-module:components/events-list-component

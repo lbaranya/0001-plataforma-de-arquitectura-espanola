@@ -10,11 +10,13 @@ import es.arquia.magnolia.utils.RelatedElement;
 
 public interface ArchitectureFilesSupportEventManager {
 	
-	public List<Node> getImportantArchitectureFilesSupportEventList() throws RepositoryException;
+	public List<Node> getNewsDiaryArchitectureFilesSupportEventList() throws RepositoryException;
 	
-	public List<Node> getArchitectureFilesSupportEventList() throws RepositoryException;
+	public List<Node> getArchitectureFilesSupportEventList(int eventsPerRow) throws RepositoryException;
 	
 	public ArchitectureFilesSupportEvent getInstance();
 	
 	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
+	
+	public boolean isLastRowOfEvents();
 }
