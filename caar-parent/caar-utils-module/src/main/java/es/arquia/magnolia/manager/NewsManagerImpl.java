@@ -21,6 +21,7 @@ import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.NewsNodeUtil;
 import es.arquia.magnolia.utils.RelatedElement;
 import info.magnolia.context.MgnlContext;
+import info.magnolia.jcr.util.NodeTypes;
 
 public class NewsManagerImpl implements NewsManager{
 
@@ -48,7 +49,7 @@ public class NewsManagerImpl implements NewsManager{
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
 		final int limit = (newsPerRow > 0) ? (newsPerRow + 1) : 0;
 		int offset = (rowsFromAjax != null) ? (newsPerRow * Integer.valueOf(rowsFromAjax)) : 0;
-		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [mgnl:lastModified] DESC";
+		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [" + NodeTypes.LastModified.LAST_MODIFIED + "] DESC";
 		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 		if (newsList.size() < limit) {
 			lastRowOfNews = true;
@@ -85,7 +86,7 @@ public class NewsManagerImpl implements NewsManager{
 	public List<Node> getImportantNewsList() throws RepositoryException {
 		final int limit = 3;
 		final int offset = 0;
-		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [mgnl:lastModified] DESC";
+		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [" + NodeTypes.LastModified.LAST_MODIFIED + "] DESC";
 		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 	}
 
@@ -112,7 +113,7 @@ public class NewsManagerImpl implements NewsManager{
 			}
 			sqlQuery += "CONTAINS([" + category + "], '" + iterator + "') ";
 		}
-		sqlQuery += "ORDER BY [mgnl:lastModified] DESC";
+		sqlQuery += "ORDER BY [" + NodeTypes.LastModified.LAST_MODIFIED + "] DESC";
 
 		return sqlQuery;
 	}
@@ -148,7 +149,7 @@ public class NewsManagerImpl implements NewsManager{
 			}
 			sqlQuery += "CONTAINS([" + category + "], '" + iterator + "') ";
 		}
-		sqlQuery += ") AND [" + important + "] IS NOT NULL ORDER BY [mgnl:lastModified] DESC";
+		sqlQuery += ") AND [" + important + "] IS NOT NULL ORDER BY [" + NodeTypes.LastModified.LAST_MODIFIED + "] DESC";
 
 		return sqlQuery;
 	}

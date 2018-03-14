@@ -62,12 +62,26 @@ subApps:
               displayInChooseDialog: false
               formatterClass: info.magnolia.ui.workbench.column.StatusColumnFormatter
               class: info.magnolia.ui.workbench.column.definition.StatusColumnDefinition
+            - name: createddate
+              width: 160
+              sortable: true
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.DateColumnFormatter
+              propertyName: mgnl:created
+              class: info.magnolia.ui.workbench.column.definition.MetaDataColumnDefinition              
             - name: moddate
               width: 160
               sortable: true
               displayInChooseDialog: false
               formatterClass: info.magnolia.ui.workbench.column.DateColumnFormatter
               propertyName: mgnl:lastModified
+              class: info.magnolia.ui.workbench.column.definition.MetaDataColumnDefinition
+            - name: activationdate
+              width: 160
+              sortable: true
+              displayInChooseDialog: false
+              formatterClass: info.magnolia.ui.workbench.column.DateColumnFormatter
+              propertyName: mgnl:lastActivated
               class: info.magnolia.ui.workbench.column.definition.MetaDataColumnDefinition
         - name: list
           class: info.magnolia.ui.workbench.list.ListPresenterDefinition
