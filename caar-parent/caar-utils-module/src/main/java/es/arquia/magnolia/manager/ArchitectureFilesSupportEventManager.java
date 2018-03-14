@@ -12,6 +12,8 @@ public interface ArchitectureFilesSupportEventManager {
 	
 	public List<Node> getImportantArchitectureFilesSupportEventList() throws RepositoryException;
 	
+	public List<Node> getArchitectureFilesSupportEventList() throws RepositoryException;
+	
 	public ArchitectureFilesSupportEvent getInstance();
 	
 	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
