@@ -65,7 +65,7 @@
 										            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
 										            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 										            				[#assign imageAlternativeText = imageAlt.alternative!""]
-										            				<img class="img-evento" src="${imgMediaRendition.getLink()}" width="130" height="115" alt="${imageAlternativeText}" />
+										            				<img class="img-evento" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText}" />
 										            			[/#if]
 									                    	[/#if]
 								                    	[/#if]
