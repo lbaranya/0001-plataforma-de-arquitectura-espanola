@@ -48,7 +48,7 @@ public class NewsManagerImpl implements NewsManager{
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
 		final int limit = (newsPerRow > 0) ? (newsPerRow + 1) : 0;
 		int offset = (rowsFromAjax != null) ? (newsPerRow * Integer.valueOf(rowsFromAjax)) : 0;
-		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [" + dateTime + "] DESC";
+		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] ORDER BY [mgnl:lastModified] DESC";
 		List<Node> newsList = queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 		if (newsList.size() < limit) {
 			lastRowOfNews = true;
@@ -85,7 +85,7 @@ public class NewsManagerImpl implements NewsManager{
 	public List<Node> getImportantNewsList() throws RepositoryException {
 		final int limit = 3;
 		final int offset = 0;
-		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
+		String sqlQuery = "SELECT * FROM [" + newsNodeType + "] WHERE [" + important + "] IS NOT NULL ORDER BY [mgnl:lastModified] DESC";
 		return queryUtils.executeSelectQuery(sqlQuery, newsWorkspace, limit, offset);
 	}
 
@@ -112,7 +112,7 @@ public class NewsManagerImpl implements NewsManager{
 			}
 			sqlQuery += "CONTAINS([" + category + "], '" + iterator + "') ";
 		}
-		sqlQuery += "ORDER BY [" + dateTime + "] DESC";
+		sqlQuery += "ORDER BY [mgnl:lastModified] DESC";
 
 		return sqlQuery;
 	}
@@ -148,7 +148,7 @@ public class NewsManagerImpl implements NewsManager{
 			}
 			sqlQuery += "CONTAINS([" + category + "], '" + iterator + "') ";
 		}
-		sqlQuery += ") AND [" + important + "] IS NOT NULL ORDER BY [" + dateTime + "] DESC";
+		sqlQuery += ") AND [" + important + "] IS NOT NULL ORDER BY [mgnl:lastModified] DESC";
 
 		return sqlQuery;
 	}
