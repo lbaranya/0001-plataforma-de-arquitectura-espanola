@@ -41,7 +41,7 @@
                     <div class="row eventos-row">
                     
                         [#assign eventsInstance = model.getArchitectureFilesSupportEventInstance()!""]
-						[#assign eventsList = model.getArchitectureFilesSupportEventList()!""]
+						[#assign eventsList = model.getImportantArchitectureFilesSupportEventList()!""]
 						[#assign counter = 0][#assign eventsToShow = 4]
                     	[#list eventsList as eventsNode]
                     		[#if counter < eventsToShow]

@@ -37,7 +37,7 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
     }
 	
 	@Override
-	public List<Node> getArchitectureFilesSupportEventList() throws RepositoryException {
+	public List<Node> getImportantArchitectureFilesSupportEventList() throws RepositoryException {
 		final int limit = 4;
 		final int offset = 0;
 		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportEventNodeType + "] WHERE [" + important + "] IS NOT NULL AND [" + important + "] = true ORDER BY [" + presentationStartDate + "] DESC";
