@@ -78,6 +78,10 @@
 			<type>es.arquia.magnolia.manager.HomeGridManager</type>
 			<implementation>es.arquia.magnolia.manager.HomeGridManagerImpl</implementation>
 		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManagerImpl</implementation>
+		</component>		
 	</components>
 
   <dependencies>
