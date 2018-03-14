@@ -34,5 +34,9 @@ public class ArchitectureFilesSupportEventListModel <T extends ConfiguredTemplat
 	public boolean isLastRow() {
 		return architectureFilesSupportEventManager.isLastRowOfEvents();
 	}
+	
+	public String getLink(String link) {
+		return architectureFilesSupportEventManager.getEventLink(link);
+	}
 
 }

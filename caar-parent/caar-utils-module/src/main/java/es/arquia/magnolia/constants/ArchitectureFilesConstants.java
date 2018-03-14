@@ -183,4 +183,5 @@ public interface ArchitectureFilesConstants {
 	String URIRepositoryArchitectureFiles = "/architecture-files/";
 	String URIPrefixArchitectureFilesSupportArchitect = URIRepositoryArchitectureFiles + "support-architect/";
 	String URIPrefixArchitectureFilesSupportBusiness = URIRepositoryArchitectureFiles + "support-business/";
+	String URIPrefixArchitectureFilesSupportEvent = URIRepositoryArchitectureFiles + "support-event/";
 }

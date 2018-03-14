@@ -1,5 +1,7 @@
 package es.arquia.magnolia.manager;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIPrefixArchitectureFilesSupportEvent;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIRepositoryArchitectureFiles;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.important;
@@ -97,6 +99,11 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 	@Override
 	public boolean isLastRowOfEvents() {
 		return lastRowOfNews;
+	}
+
+	@Override
+	public String getEventLink(String link) {
+		return link.replace(URIRepositoryArchitectureFiles, URIPrefixArchitectureFilesSupportEvent);
 	}
 
 }

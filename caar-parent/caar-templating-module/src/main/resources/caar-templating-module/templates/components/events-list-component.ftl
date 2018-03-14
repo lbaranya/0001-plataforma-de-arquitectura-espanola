@@ -12,7 +12,11 @@
 				<div class="col-md-3 evento-contenedor">
                     <div class="evento-item">
                         [#-- <a href="${cmsfn.link(eventsNode)}" class="evento-link">  --]
-                        <a href="${cmsfn.link(navfn.rootPage(content))}" class="evento-link"> 
+                        [#assign href = "#"]
+                        [#if model.getLink(cmsfn.link(eventsNode))?has_content]
+                        	[#assign href = model.getLink(cmsfn.link(eventsNode))]
+                        [/#if]
+                        <a href="${href}" class="evento-link"> 
                             <div class="evento-header">
                                 <span class="categoria">${eventsInstance.getEventType(eventsNode)!""}</span>
                                 <span class="evento-fecha">${eventsInstance.getStartDayOfWeek(eventsNode)!""}</span>

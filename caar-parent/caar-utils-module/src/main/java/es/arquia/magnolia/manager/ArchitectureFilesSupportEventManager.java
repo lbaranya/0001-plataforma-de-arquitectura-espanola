@@ -19,4 +19,6 @@ public interface ArchitectureFilesSupportEventManager {
 	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
 	
 	public boolean isLastRowOfEvents();
+	
+	public String getEventLink(String link);
 }
