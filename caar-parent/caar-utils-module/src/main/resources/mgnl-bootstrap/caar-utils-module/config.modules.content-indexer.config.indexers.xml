@@ -985,18 +985,6 @@
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
       </sv:property>
-      <sv:property sv:name="FS2.1.1" sv:type="String">
-        <sv:value>FS2.1.1_platformDataProjectId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS2.1.2" sv:type="String">
-        <sv:value>FS2.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS2.1.3" sv:type="String">
-        <sv:value>FS2.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS2.1.4" sv:type="String">
-        <sv:value>FS2.1.4_platformDataPublishedDirectory_s</sv:value>
-      </sv:property>
       <sv:property sv:name="FS2_10_1" sv:type="String">
         <sv:value>FS2_10_1_mediaGalleryDataGalleryTitle_s</sv:value>
       </sv:property>
@@ -1186,18 +1174,6 @@
     <sv:node sv:name="fieldMappings">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS2.1.1" sv:type="String">
-        <sv:value>FS2.1.1_platformDataProjectId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS2.1.2" sv:type="String">
-        <sv:value>FS2.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS2.1.3" sv:type="String">
-        <sv:value>FS2.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS2.1.4" sv:type="String">
-        <sv:value>FS2.1.4_platformDataPublishedDirectory_s</sv:value>
       </sv:property>
       <sv:property sv:name="FS2_10_1" sv:type="String">
         <sv:value>FS2_10_1_mediaGalleryDataGalleryTitle_s</sv:value>
@@ -1389,18 +1365,6 @@
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
       </sv:property>
-      <sv:property sv:name="FS3_1_1" sv:type="String">
-        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_2" sv:type="String">
-        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_3" sv:type="String">
-        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_4" sv:type="String">
-        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
-      </sv:property>
       <sv:property sv:name="FS3_2_1" sv:type="String">
         <sv:value>FS3.2.1_workDataTitle_s</sv:value>
       </sv:property>
@@ -1479,18 +1443,6 @@
     <sv:node sv:name="fieldMappings">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_1" sv:type="String">
-        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_2" sv:type="String">
-        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_3" sv:type="String">
-        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_4" sv:type="String">
-        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
       </sv:property>
       <sv:property sv:name="FS3_2_1_en" sv:type="String">
         <sv:value>FS3.2.1_workDataTitle_s</sv:value>
@@ -1571,18 +1523,6 @@
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
       </sv:property>
-      <sv:property sv:name="FS3_1_1" sv:type="String">
-        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_2" sv:type="String">
-        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_3" sv:type="String">
-        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_4" sv:type="String">
-        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
-      </sv:property>
       <sv:property sv:name="FS3_2_1" sv:type="String">
         <sv:value>FS3.2.1_workDataTitle_s</sv:value>
       </sv:property>
@@ -1661,18 +1601,6 @@
     <sv:node sv:name="fieldMappings">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_1" sv:type="String">
-        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_2" sv:type="String">
-        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_3" sv:type="String">
-        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_4" sv:type="String">
-        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
       </sv:property>
       <sv:property sv:name="FS3_2_1_en" sv:type="String">
         <sv:value>FS3.2.1_workDataTitle_s</sv:value>
@@ -1753,18 +1681,6 @@
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
       </sv:property>
-      <sv:property sv:name="FS3_1_1" sv:type="String">
-        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_2" sv:type="String">
-        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_3" sv:type="String">
-        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_4" sv:type="String">
-        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
-      </sv:property>
       <sv:property sv:name="FS3_2_1" sv:type="String">
         <sv:value>FS3.2.1_workDataTitle_s</sv:value>
       </sv:property>
@@ -1844,18 +1760,6 @@
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
       </sv:property>
-      <sv:property sv:name="FS3_1_1" sv:type="String">
-        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_2" sv:type="String">
-        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_3" sv:type="String">
-        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_4" sv:type="String">
-        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
-      </sv:property>
       <sv:property sv:name="FS3_2_1_en" sv:type="String">
         <sv:value>FS3.2.1_workDataTitle_s</sv:value>
       </sv:property>
@@ -1934,18 +1838,6 @@
     <sv:node sv:name="fieldMappings">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_1" sv:type="String">
-        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_2" sv:type="String">
-        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_3" sv:type="String">
-        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_4" sv:type="String">
-        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
       </sv:property>
       <sv:property sv:name="FS3_2_1" sv:type="String">
         <sv:value>FS3.2.1_workDataOuvretitle_s</sv:value>
@@ -2028,18 +1920,6 @@
     <sv:node sv:name="fieldMappings">
       <sv:property sv:name="jcr:primaryType" sv:type="Name">
         <sv:value>mgnl:contentNode</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_1" sv:type="String">
-        <sv:value>FS3.1.1_platformDataPieceId_s</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_2" sv:type="String">
-        <sv:value>FS3.1.2_platformDataDischargeDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_3" sv:type="String">
-        <sv:value>FS3.1.3_platformDataLastUpdateDate_dt</sv:value>
-      </sv:property>
-      <sv:property sv:name="FS3_1_4" sv:type="String">
-        <sv:value>FS3.1.4_platformDataPublishedDirectory_s</sv:value>
       </sv:property>
       <sv:property sv:name="FS3_2_1_en" sv:type="String">
         <sv:value>FS3.2.1_workDataOuvretitle_s</sv:value>

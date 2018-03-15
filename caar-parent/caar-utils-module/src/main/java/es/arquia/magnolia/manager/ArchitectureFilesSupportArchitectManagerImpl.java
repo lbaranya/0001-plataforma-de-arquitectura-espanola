@@ -18,6 +18,7 @@ import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
 import es.arquia.magnolia.utils.RelatedElement;
 import info.magnolia.context.MgnlContext;
+import info.magnolia.jcr.util.NodeTypes;
 
 public class ArchitectureFilesSupportArchitectManagerImpl implements ArchitectureFilesSupportArchitectManager {
 	
@@ -57,7 +58,7 @@ public class ArchitectureFilesSupportArchitectManagerImpl implements Architectur
 			List<Node> architectsList = new ArrayList<>();
 			if (rowsFromAjax == null) {
 				final int offset = 0;
-				String sqlQuery = "SELECT * FROM [" + architectureFilesSupportArchitectNodeType + "] ORDER BY [" + "mgnl:lastModified" + "] DESC";
+				String sqlQuery = "SELECT * FROM [" + architectureFilesSupportArchitectNodeType + "] ORDER BY [" + NodeTypes.LastModified.LAST_MODIFIED + "] DESC";
 				architectsList = queryUtils.executeSelectQuery(sqlQuery, architectureFilesWorkspace, architectsPerRow, offset);
 			}
 			return architectsList;
@@ -69,7 +70,7 @@ public class ArchitectureFilesSupportArchitectManagerImpl implements Architectur
 		String rowsFromAjax = MgnlContext.getAttribute("rows");
 		int limit = (architectsPerRow > 0) ? (limit = architectsPerRow + 1) : 0; // If it's the first call, add "architectsToSkip" to the limit so that we can load the highlighted architects
 		int offset = (rowsFromAjax != null) ? (architectsPerRow * Integer.valueOf(rowsFromAjax) + architectsToSkip) : architectsToSkip; // We'll have to increment offset too because of the two highlighted elements
-		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportArchitectNodeType + "] ORDER BY [" + "mgnl:lastModified" + "] DESC";
+		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportArchitectNodeType + "] ORDER BY [" + NodeTypes.LastModified.LAST_MODIFIED + "] DESC";
 		List<Node> architectsList = queryUtils.executeSelectQuery(sqlQuery, architectureFilesWorkspace, limit, offset);
 		if (architectsList.size() < limit) {
 			lastRowOfArchitects = true;

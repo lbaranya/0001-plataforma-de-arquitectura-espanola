@@ -1,0 +1,4 @@
+title: caar-templating-module.components.events-list.dialog.title   
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/events-list-component.ftl
+modelClass: es.arquia.magnolia.components.models.architectureFiles.support.event.ArchitectureFilesSupportEventListModel
