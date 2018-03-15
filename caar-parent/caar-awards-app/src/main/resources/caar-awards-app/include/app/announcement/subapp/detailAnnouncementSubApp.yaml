@@ -328,6 +328,65 @@ editor:
                   appName: caar-architecture-files-app
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionLink.label
                   # End specific fields
+      - name: tabEnrollmentRequirements
+        label: Enrollment Requirements
+        fields:
+          - name: enrollmentRequirementsInitialDate
+            label: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementsInitialDate.label
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: true
+            defaultValue: now
+            type: Date
+          - name: enrollmentRequirementsFinishDate
+            label: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementsFinishDate.label
+            class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+            time: true
+            defaultValue: now
+            type: Date
+          - name: enrollmentRequirementesProfiles
+            class: info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition
+            multiselect: true
+            type: String
+            label: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementesProfiles.label
+            path: ae/enrollment/profiles
+            repository: category
+            labelProperty: displayName
+            sortOptions: false
+          - name: enrollmentRequirementsFilesList
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+            label: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementsFilesList.label
+            field:
+              name: compositeField
+              class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+              transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+              fields:
+                - name: enrollmentRequirementsFile
+                  class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                  label: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementsFile.label
+                  path: ae/enrollment/architectFiles
+                  repository: category
+                  labelProperty: displayName
+                - name: enrollmentRequirementsMaximumNumber
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementsMaximumNumber.label
+                  validators:
+                    - name: onlyNumbers
+                      class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                      pattern: \d
+                      errorMessage: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.validator.onlyDigits
+          - name: enrollmentRequirementsMaximumNumberOfAnnexes
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementsMaximumNumberOfAnnexes.label
+            validators:
+              - name: onlyNumbers
+                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
+                pattern: \d
+                errorMessage: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.validator.onlyDigits
+          - name: enrollmentRequirementsAllowComments
+            class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+            label: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementsAllowComments.label
+            buttonLabel: caar-awards-app.subapp.detailAnnouncementSubApp.tabEnrollmentRequirements.enrollmentRequirementsAllowComments.buttonLabel
   actions:
     - name: commit
     - name: cancel
