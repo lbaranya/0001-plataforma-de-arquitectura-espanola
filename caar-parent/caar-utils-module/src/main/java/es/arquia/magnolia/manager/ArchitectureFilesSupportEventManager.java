@@ -15,6 +15,4 @@ public interface ArchitectureFilesSupportEventManager {
 	public ArchitectureFilesSupportEvent getInstance();
 	
 	public List<RelatedElement> getTransformedRelatedElements(List<Node> relatedElements) throws RepositoryException;
-	
-	public boolean isEventNodeType(Node node) throws RepositoryException;
 }

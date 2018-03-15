@@ -1,5 +1,6 @@
 package es.arquia.magnolia.utils;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipDetail;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipInfo;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipName;
@@ -196,5 +197,9 @@ public class ArchitectureFilesSupportEventImpl implements ArchitectureFilesSuppo
 		}catch(RepositoryException e) {
 			return null;
 		}
+	}
+	
+	public boolean isEventNodeType(Node node) throws RepositoryException {
+		return node.isNodeType(architectureFilesSupportEventNodeType);
 	}
 }

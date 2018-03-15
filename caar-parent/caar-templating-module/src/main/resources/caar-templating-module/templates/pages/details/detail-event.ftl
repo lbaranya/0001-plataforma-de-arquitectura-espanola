@@ -4,9 +4,9 @@
 
 [#if nodeJcrPath?has_content]
 	[#assign eventInstance = model.parent.getInstance()]
-	[#if eventInstance.isEventNodeType(nodeJcrPath)]
-		[#assign eventContent = cmsfn.contentByPath(nodeJcrPath, "architecture-files")]
-		[#assign eventContentNode = cmsfn.asJCRNode(eventContent)]
+	[#assign eventContent = cmsfn.contentByPath(nodeJcrPath, "architecture-files")] falla aqui
+	[#assign eventContentNode = cmsfn.asJCRNode(eventContent)]
+	[#if eventInstance.isEventNodeType(eventContentNode)]
 	
 		<section class="cmp-detalle-agenda">
 	        <div class="container-fluid">

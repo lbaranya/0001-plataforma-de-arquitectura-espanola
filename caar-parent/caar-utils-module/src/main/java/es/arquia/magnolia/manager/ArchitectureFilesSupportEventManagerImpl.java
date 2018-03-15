@@ -58,9 +58,4 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 		}
 		return tmpList;
 	}
-	
-	public boolean isEventNodeType(Node node) throws RepositoryException {
-		return node.isNodeType(architectureFilesSupportEventNodeType);
-	}
-
 }
