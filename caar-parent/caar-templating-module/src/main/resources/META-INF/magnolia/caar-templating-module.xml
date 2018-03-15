@@ -55,8 +55,8 @@
 			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportEventImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI</type>
-			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewIImpl</implementation>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportReview</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewImpl</implementation>
 		</component>
 		<component>
 			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportProject</type>

@@ -3,6 +3,10 @@ package es.arquia.magnolia.manager;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportProjectNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIIINodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIINodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewINodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIVNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
 import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
 
@@ -33,6 +37,9 @@ public class RelatedElementsManagerImpl implements RelatedElementsManager {
 		}
 		else if(node.isNodeType(architectureFilesSupportProjectNodeType)){
 			return relatedElementsTransformers.architectureFilesSupportProjectTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesSupportReviewINodeType) || node.isNodeType(architectureFilesSupportReviewIINodeType) || node.isNodeType(architectureFilesSupportReviewIIINodeType) || node.isNodeType(architectureFilesSupportReviewIVNodeType)) {
+			return relatedElementsTransformers.architectureFilesSupportReviewTransformer(node);
 		}
 		else {
 			return null;

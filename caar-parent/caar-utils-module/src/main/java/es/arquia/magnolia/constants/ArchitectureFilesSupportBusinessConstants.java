@@ -17,5 +17,7 @@ public interface ArchitectureFilesSupportBusinessConstants {
 	String aditionalInfo = "FS4_2_1";
 	String annexes = "FS4_2_2";
 	String dossier = "FS4_2_3";
+	
+	String relatedFiles = "relatedFiles";
 
 }

@@ -17,7 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import es.arquia.magnolia.functions.QueryUtils;
-import es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportReview;
 import es.arquia.magnolia.utils.RelatedElement;
 
 public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureFilesSupportReviewIManager {
@@ -25,14 +25,14 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportReviewIManagerImpl.class);
 	private QueryUtils queryUtils;
 	
-	private ArchitectureFilesSupportReviewI architectureFilesSupportReviewI;
+	private ArchitectureFilesSupportReview architectureFilesSupportReview;
 	
 	private RelatedElementsManager relatedElementsManager;
 	
 	@Inject
-	public ArchitectureFilesSupportReviewIManagerImpl(final QueryUtils queryUtils, final ArchitectureFilesSupportReviewI architectureFilesSupportReviewI, final RelatedElementsManager relatedElementsManager) throws PathNotFoundException, RepositoryException {
+	public ArchitectureFilesSupportReviewIManagerImpl(final QueryUtils queryUtils, final ArchitectureFilesSupportReview architectureFilesSupportReview, final RelatedElementsManager relatedElementsManager) throws PathNotFoundException, RepositoryException {
         this.queryUtils = queryUtils;
-        this.architectureFilesSupportReviewI = architectureFilesSupportReviewI;
+        this.architectureFilesSupportReview = architectureFilesSupportReview;
         this.relatedElementsManager = relatedElementsManager;
     }
 	
@@ -45,8 +45,8 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 	}
 	
 	@Override
-	public ArchitectureFilesSupportReviewI getInstance() {
-		return this.architectureFilesSupportReviewI;
+	public ArchitectureFilesSupportReview getInstance() {
+		return this.architectureFilesSupportReview;
 	}
 	
 	@Override

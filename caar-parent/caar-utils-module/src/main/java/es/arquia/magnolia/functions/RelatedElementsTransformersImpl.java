@@ -16,6 +16,7 @@ import javax.jcr.RepositoryException;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportProject;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportReview;
 import es.arquia.magnolia.utils.AwardNodeUtil;
 import es.arquia.magnolia.utils.NewsNodeUtil;
 import es.arquia.magnolia.utils.RelatedElement;
@@ -28,6 +29,8 @@ public class RelatedElementsTransformersImpl implements RelatedElementsTransform
 	private ArchitectureFilesSupportProject architectureFilesSupportProject;
 	@Inject
 	private ArchitectureFilesSupportEvent architectureFilesSupportEvent;
+	@Inject
+	private ArchitectureFilesSupportReview architectureFilesSupportReview;
 	@Inject
 	private NewsNodeUtil news;
 	@Inject
@@ -96,6 +99,21 @@ public class RelatedElementsTransformersImpl implements RelatedElementsTransform
 		related.setPath(node.getPath());
 		related.setWorkspace(awardWorkspace);
 		related.setNodeType(awardNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesSupportReviewTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+		
+		if(node.isNodeType(architectureFilesSupportReviewINodeType) || node.isNodeType(architectureFilesSupportReviewIINodeType) || node.isNodeType(architectureFilesSupportReviewIIINodeType) || node.isNodeType(architectureFilesSupportReviewIVNodeType)) {
+			related.setTitle(architectureFilesSupportReview.getOuvreTitle(node));
+			related.setPhoto(architectureFilesSupportReview.getFirstMediaImage(node).getPath());
+			related.setPath(node.getPath());
+			related.setWorkspace(architectureFilesWorkspace);
+			related.setNodeType(node.getPrimaryNodeType().getName());
+		}
 		
 		return related;
 	}
