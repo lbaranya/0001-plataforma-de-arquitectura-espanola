@@ -1,10 +1,9 @@
 package es.arquia.magnolia.manager;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIPrefixArchitectureFilesSupportArchitect;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIRepositoryArchitectureFiles;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
-import static es.arquia.magnolia.constants.NewsConstants.dateTime;
-import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
-import static es.arquia.magnolia.constants.NewsConstants.newsWorkspace;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -84,6 +83,11 @@ public class ArchitectureFilesSupportArchitectManagerImpl implements Architectur
 	@Override
 	public boolean isLastRowOfArchitects() {
 		return lastRowOfArchitects;
+	}
+
+	@Override
+	public String getLink(String link) {
+		return link.replace(URIRepositoryArchitectureFiles, URIPrefixArchitectureFilesSupportArchitect);
 	}
 
 }

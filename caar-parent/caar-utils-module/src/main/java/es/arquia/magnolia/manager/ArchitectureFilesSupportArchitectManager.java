@@ -19,4 +19,6 @@ public interface ArchitectureFilesSupportArchitectManager {
 	public List<Node> getArchitectsListAfterHighlighted(int architectsPerRow, int architectsToSkip) throws RepositoryException;
 
 	public boolean isLastRowOfArchitects();
+	
+	public String getLink(String link);
 }

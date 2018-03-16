@@ -4,7 +4,7 @@ public interface UtilsConstants {
 	String dateFormat = "dd MMMM YYYY";
 	String dateFormatNumeric = "dd.MM.YYYY";
 	String dateFormatDayOfWeek = "EEE.";
-	String dateFormatIgnoreTime = "T00:00:00.000";
+	String dateFormatComplete = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 	
 	// Countries
 	String caarRootFolderName = "caar";

@@ -6,7 +6,8 @@ import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectu
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.important;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationStartDate;
-import static es.arquia.magnolia.constants.UtilsConstants.dateFormatIgnoreTime;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.presentationEndingDate;
+import static es.arquia.magnolia.constants.UtilsConstants.dateFormatComplete;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -51,11 +52,11 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 		final int limit = 4;
 		final int offset = 0;
 		Date today = Calendar.getInstance().getTime();
-		SimpleDateFormat sdf = new SimpleDateFormat(DateUtil.YYYY_MM_DD);
+		SimpleDateFormat sdf = new SimpleDateFormat(dateFormatComplete);
 		Calendar c = Calendar.getInstance();
 		c.setTime(today); // Now use today date.
 		String date = sdf.format(c.getTime());
-		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportEventNodeType + "] WHERE [" + presentationStartDate + "] >= CAST('" + date + dateFormatIgnoreTime + "' AS DATE) AND [" + important + "] IS NOT NULL AND [" + important + "] = true ORDER BY [" + presentationStartDate + "] DESC";
+		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportEventNodeType + "] WHERE [" + presentationEndingDate + "] >= CAST('" + date + "' AS DATE) AND [" + important + "] IS NOT NULL AND [" + important + "] = true ORDER BY [" + presentationStartDate + "] DESC";
 		return queryUtils.executeSelectQuery(sqlQuery, architectureFilesWorkspace, limit, offset);
 	}
 	
@@ -81,11 +82,11 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 		final int lastNewsListElement = eventsPerRow;
 		int offset = (rowsFromAjax != null) ? (lastNewsListElement * Integer.valueOf(rowsFromAjax)) : 0;
 		Date today = Calendar.getInstance().getTime();
-		SimpleDateFormat sdf = new SimpleDateFormat(DateUtil.YYYY_MM_DD);
+		SimpleDateFormat sdf = new SimpleDateFormat(dateFormatComplete);
 		Calendar c = Calendar.getInstance();
 		c.setTime(today); // Now use today date.
 		String date = sdf.format(c.getTime());
-		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportEventNodeType + "] WHERE [" + presentationStartDate + "] >= CAST('" + date + dateFormatIgnoreTime + "' AS DATE) ORDER BY [" + presentationStartDate + "] DESC";
+		String sqlQuery = "SELECT * FROM [" + architectureFilesSupportEventNodeType + "] WHERE [" + presentationEndingDate + "] >= CAST('" + date + "' AS DATE) ORDER BY [" + presentationStartDate + "] DESC";
 		List<Node> eventsList = queryUtils.executeSelectQuery(sqlQuery, architectureFilesWorkspace, limit, offset);
 		if (eventsList.size() < limit) {
 			lastRowOfNews = true;

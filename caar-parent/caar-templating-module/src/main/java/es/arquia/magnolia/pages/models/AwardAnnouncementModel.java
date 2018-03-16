@@ -11,6 +11,11 @@ import javax.jcr.RepositoryException;
 
 import org.apache.commons.lang3.StringUtils;
 
+import es.arquia.magnolia.manager.ArchitectureFilesSupportArchitectManager;
+import es.arquia.magnolia.manager.ArchitectureFilesSupportBusinessManager;
+import es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager;
+import es.arquia.magnolia.manager.ArchitectureFilesSupportProjectManager;
+import es.arquia.magnolia.manager.ArchitectureFilesSupportReviewManager;
 import es.arquia.magnolia.manager.AwardManager;
 import es.arquia.magnolia.utils.AnnouncementNodeUtil;
 import es.arquia.magnolia.utils.AwardNodeUtil;
@@ -29,17 +34,32 @@ import static es.arquia.magnolia.constants.AnnouncementConstants.lemmaOptionWeig
 import static es.arquia.magnolia.constants.AnnouncementConstants.richTextOptionWeight;
 import static es.arquia.magnolia.constants.AnnouncementConstants.judgeListNameContains;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
+
 public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> extends RenderingModelImpl<ConfiguredTemplateDefinition>{
 	
 	private AwardManager awardManager;
+	
+	private ArchitectureFilesSupportArchitectManager architectManager;
+	private ArchitectureFilesSupportBusinessManager businessManager;
+	private ArchitectureFilesSupportProjectManager projectManager;
+	private ArchitectureFilesSupportReviewManager reviewManager;
+	private ArchitectureFilesSupportEventManager eventManager;
+	// TODO: Hacer los managers de las fichas de formato
+	
 	
 	private List<Node> nodeArray;
 	private List<Node> generalSortArray;
 	
 	@Inject
-	public AwardAnnouncementModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final AwardManager awardManager) {
+	public AwardAnnouncementModel(Node content, ConfiguredTemplateDefinition definition, RenderingModel<?> parent, final AwardManager awardManager, final ArchitectureFilesSupportArchitectManager architectManager, final ArchitectureFilesSupportBusinessManager businessManager, final ArchitectureFilesSupportProjectManager projectManager, final ArchitectureFilesSupportReviewManager reviewManager, final ArchitectureFilesSupportEventManager eventManager) {
 		super(content, definition, parent);
 		this.awardManager = awardManager;
+		this.architectManager = architectManager;
+		this.projectManager = projectManager;
+		this.businessManager = businessManager;
+		this.reviewManager = reviewManager;
+		this.eventManager = eventManager;
 		nodeArray = new ArrayList<>();
 	}
 	
@@ -139,5 +159,23 @@ public class AwardAnnouncementModel <T extends ConfiguredTemplateDefinition> ext
 			}
 		}
 		return juryList;
+	}
+	
+	public String getLink(Node node, String link) {
+		try {
+			if(node.isNodeType(architectureFilesSupportArchitectNodeType)) {
+				return architectManager.getLink(link);
+			}else if(node.isNodeType(architectureFilesSupportBusinessNodeType)) {
+				return businessManager.getLink(link);
+			}else if(node.isNodeType(architectureFilesSupportProjectNodeType)) {
+				return projectManager.getLink(link);
+			}else if(node.isNodeType(architectureFilesSupportReviewINodeType) || node.isNodeType(architectureFilesSupportReviewIINodeType) || node.isNodeType(architectureFilesSupportReviewIIINodeType) || node.isNodeType(architectureFilesSupportReviewIVNodeType)) {
+				return reviewManager.getLink(link);
+			}else {
+				return link;
+			}
+		} catch (RepositoryException e) {
+			return link;
+		}
 	}
 }

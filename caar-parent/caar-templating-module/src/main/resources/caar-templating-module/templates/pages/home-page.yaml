@@ -4,15 +4,11 @@ title: caar-templating-module.pages.home-page.dialog.title
 visible: true
 areas:
   top-banner:
-    enabled: true
     type: single
     renderType: freemarker
     availableComponents:
       header-component:
         id: caar-templating-module:components/top-banner-component
-    inheritance:
-      enabled: true
-      components: all
   main:
     templateScript: /caar-templating-module/templates/pages/home-page.ftl
     availableComponents:
@@ -20,9 +16,3 @@ areas:
         id: caar-templating-module:components/news-diary-component
       home-grid-component:
         id: caar-templating-module:components/home-grid-component
-      #highlights-excellence-component:
-        #id: caar-templating-module:components/highlights-excellence-component
-      #highlights-news-component:
-        #id: caar-templating-module:components/highlights-news-component
-      #highlights-events-component:
-        #id: caar-templating-module:components/highlights-events-component
