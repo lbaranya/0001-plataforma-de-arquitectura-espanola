@@ -2278,6 +2278,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	height: auto;
 	background-color: #f9f7f3;
 	padding: 19px 0px 31px 0px;
+	margin-top: 15px;
 }
 
 .cmp-noticias-eventos .cmp-noticias {
@@ -4014,6 +4015,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 /* LISTADO DE ARQUITECTOS - Termina*/
 
 /* GRID DE LA HOME */
+
+.cmp-rejilla-home {
+	margin-top: 15px;
+	margin-botton: 15px;
+}
 
 .cmp-rejilla-home .col-info {
   height: 481px; }
