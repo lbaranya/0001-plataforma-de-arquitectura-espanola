@@ -302,12 +302,16 @@
 		            										${cmsfn.abbreviateString(cmsfn.decode(judge).judgeText,450)!""}
 		            									</div>
 		            									[#assign hrefLink = "#"]
+		            									[#assign judgeFileNode = ""]
 										                [#if judge.judgeFileLink?has_content]
 										                	[#assign checkContent = cmsfn.contentByPath(judge.judgeFileLink, "architecture-files")!""]
 	        												[#if checkContent?has_content]
-											               		[#assign hrefLink = cmsfn.link(cmsfn.contentByPath(judge.judgeFileLink, "architecture-files"))]
+	        													[#assign judgeFileNode = cmsfn.nodeByPath(judge.judgeFileLink, "architecture-files")!""]
+	        													[#if judgeFileNode?has_content]
+											               			[#assign hrefLink = cmsfn.link(judgeFileNode)!"#"]
+											               		[/#if]
 											               	[/#if]
-											               	<a href="${hrefLink}" class="ficha-jurado">
+											               	<a href="${model.parent.getLink(judgeFileNode,hrefLink)!"#"}" class="ficha-jurado">
 											                   <div style="margin-right:45px;"><i class="fa fa-plus" aria-hidden="true"></i></div>
 											                </a>
 										                [/#if]
@@ -341,8 +345,12 @@
 						[#assign idAnchor = model.parent.getAnchorFromString(contentItem.lemmaOptionTitle)?lower_case!""]
 					[/#if]
 					[#assign lemmaFileLink = "#"]
+					[#assign lemmaFileNode = ""]
 					[#if contentItem.lemmaOptionLink?has_content]
 						[#assign lemmaFileLink = contentItem.lemmaOptionLink]
+						[#if lemmaFileLink?has_content]
+							[#assign lemmaFileNode = cmsfn.nodeByPath(lemmaFileLink, "architecture-files")!""]
+						[/#if]
 					[/#if]
 					[#assign lemmaPhotoPreview = "#"]
 					[#if contentItem.lemmaOptionPhotoPreview?has_content]
@@ -366,7 +374,8 @@
 						                <div class="preview">
 						                	<div class="descript">
 						                	<div class="col-info-preview">
-						                    	<a href="${lemmaFileLink}">
+						                		[#assign hrefLemma = cmsfn.link(lemmaFileNode)!"#"]
+						                    	<a href="${model.parent.getLink(lemmaFileNode,hrefLemma)!"#"}">
 						                    		[#assign imgItemKey = lemmaPhotoPreview!]
 						                        	[#if imgItemKey?has_content]
 						                        		[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "320w")!]

@@ -8,10 +8,14 @@
 <head>
     
     <meta charset="utf-8">
+    <title>${content.windowTitle!content.title!}</title>
     
-    <title>${content.title!""}</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="description" content="${content.description!""}" />
+	<meta name="keywords" content="${content.keywords!""}" />
+	<meta name="author" content="Ministerio de Fomento" />
+	<meta name="generator" content="Powered by Magnolia - Intuitive Opensource CMS" />
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     

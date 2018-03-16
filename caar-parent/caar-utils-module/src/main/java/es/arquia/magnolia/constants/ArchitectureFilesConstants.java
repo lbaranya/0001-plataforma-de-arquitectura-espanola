@@ -181,7 +181,20 @@ public interface ArchitectureFilesConstants {
 	};
 	
 	String URIRepositoryArchitectureFiles = "/architecture-files/";
+	
 	String URIPrefixArchitectureFilesSupportArchitect = URIRepositoryArchitectureFiles + "support-architect/";
 	String URIPrefixArchitectureFilesSupportBusiness = URIRepositoryArchitectureFiles + "support-business/";
 	String URIPrefixArchitectureFilesSupportEvent = URIRepositoryArchitectureFiles + "support-event/";
+	String URIPrefixArchitectureFilesSupportProject = URIRepositoryArchitectureFiles + "support-project/";
+	String URIPrefixArchitectureFilesSupportReview = URIRepositoryArchitectureFiles + "support-review/";
+	
+	String URIPrefixArchitectureFilesFormatAudio = URIRepositoryArchitectureFiles + "format-audio/";
+	String URIPrefixArchitectureFilesFormatBook = URIRepositoryArchitectureFiles + "format-book/";
+	String URIPrefixArchitectureFilesFormatCartographic = URIRepositoryArchitectureFiles + "format-cartographic/";
+	String URIPrefixArchitectureFilesFormatContinuous = URIRepositoryArchitectureFiles + "format-continuous/";
+	String URIPrefixArchitectureFilesFormatElectronic = URIRepositoryArchitectureFiles + "format-electronic/";
+	String URIPrefixArchitectureFilesFormatGraphic = URIRepositoryArchitectureFiles + "format-graphic/";
+	String URIPrefixArchitectureFilesFormatManuscript = URIRepositoryArchitectureFiles + "format-manuscript/";
+	String URIPrefixArchitectureFilesFormatThreeDimensional = URIRepositoryArchitectureFiles + "format-three-dimensional/";
+	String URIPrefixArchitectureFilesFormatVideo = URIRepositoryArchitectureFiles + "format-video/";
 }

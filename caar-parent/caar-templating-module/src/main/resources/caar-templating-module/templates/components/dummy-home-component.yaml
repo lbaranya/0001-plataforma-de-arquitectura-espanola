@@ -1,3 +1,0 @@
-title: Dummy home
-renderType: freemarker    
-templateScript: /caar-templating-module/templates/components/dummy-home-component.ftl
