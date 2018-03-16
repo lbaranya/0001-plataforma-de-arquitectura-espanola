@@ -1,10 +1,10 @@
-name: formatContinuousFolderDeleted
-label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatContinuousWrapper.label
+name: formatCartographicFolderDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatCartographicWrapper.label
 groups:
 - name: addActions
   items:
-  - name: addFolderFormatContinuous
-  - name: addFormatContinuous
+  - name: addFolderFormatCartographic
+  - name: addFormatCartographic
 - name: editActions
   items:
   - name: editFolder
@@ -23,7 +23,7 @@ groups:
   - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:format-continuous-folder-wrapper
+    - mgnl:format-cartographic-folder-wrapper
   rules:
     IsDeletedRule:
       implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule

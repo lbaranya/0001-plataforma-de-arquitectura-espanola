@@ -1,0 +1,29 @@
+name: formatCartographicWrapperDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatCartographicWrapper.label
+groups:
+  - name: addActions
+    items:
+      - name: addFolderFormatCartographic
+      - name: addFormatCartographic
+  - name: editActions
+    items:
+      - name: editWrapper
+      - name: confirmDelete 
+  - name: importExportActions
+    items:
+      - name: import
+      - name: export
+  - name: activationActions
+    items:
+      - name: activateDeleted
+      - name: activateRecursive
+      - name: deactivate
+  - name: deletedActions
+    items:
+      - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:format-cartographic-wrapper
+  rules:
+    IsDeletedRule:
+      implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
