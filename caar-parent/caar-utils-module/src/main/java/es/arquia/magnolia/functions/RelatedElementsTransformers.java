@@ -15,6 +15,8 @@ public interface RelatedElementsTransformers {
 	
 	public RelatedElement architectureFilesSupportReviewTransformer(Node node) throws RepositoryException;
 	
+	public RelatedElement architectureFilesSupportBusinessTransformer(Node node) throws RepositoryException;
+	
 	public RelatedElement newsTransformer(Node node) throws RepositoryException;
 	
 	public RelatedElement awardTransformer(Node node) throws RepositoryException;

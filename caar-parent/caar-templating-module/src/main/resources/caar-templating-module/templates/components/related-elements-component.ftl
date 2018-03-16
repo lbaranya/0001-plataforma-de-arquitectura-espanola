@@ -97,7 +97,7 @@
 			                    [#assign imgItemKey = node.getPhoto()!""]
 				            	[#if imgItemKey??]
 				            		[#if imgItemKey?has_content]
-				                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
+				                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "263x445")!]
 					            		[#if imgMediaRendition?has_content]
 					            			[#assign imageAlternativeText = "ficha de arquitectura"]
 					            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]

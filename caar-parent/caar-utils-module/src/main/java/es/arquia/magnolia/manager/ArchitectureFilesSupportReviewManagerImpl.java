@@ -1,5 +1,7 @@
 package es.arquia.magnolia.manager;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIPrefixArchitectureFilesSupportReview;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.URIRepositoryArchitectureFiles;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewINodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportReviewIConstants.presentationDate;
@@ -20,9 +22,9 @@ import es.arquia.magnolia.functions.QueryUtils;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportReview;
 import es.arquia.magnolia.utils.RelatedElement;
 
-public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureFilesSupportReviewIManager {
+public class ArchitectureFilesSupportReviewManagerImpl implements ArchitectureFilesSupportReviewManager {
 	
-	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportReviewIManagerImpl.class);
+	private static final Logger log = LoggerFactory.getLogger(ArchitectureFilesSupportReviewManagerImpl.class);
 	private QueryUtils queryUtils;
 	
 	private ArchitectureFilesSupportReview architectureFilesSupportReview;
@@ -30,7 +32,7 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 	private RelatedElementsManager relatedElementsManager;
 	
 	@Inject
-	public ArchitectureFilesSupportReviewIManagerImpl(final QueryUtils queryUtils, final ArchitectureFilesSupportReview architectureFilesSupportReview, final RelatedElementsManager relatedElementsManager) throws PathNotFoundException, RepositoryException {
+	public ArchitectureFilesSupportReviewManagerImpl(final QueryUtils queryUtils, final ArchitectureFilesSupportReview architectureFilesSupportReview, final RelatedElementsManager relatedElementsManager) throws PathNotFoundException, RepositoryException {
         this.queryUtils = queryUtils;
         this.architectureFilesSupportReview = architectureFilesSupportReview;
         this.relatedElementsManager = relatedElementsManager;
@@ -57,6 +59,11 @@ public class ArchitectureFilesSupportReviewIManagerImpl implements ArchitectureF
 			tmpList.add(relatedElementsManager.transformToRelatedElement(iterator.next()));
 		}
 		return tmpList;
+	}
+	
+	@Override
+	public String getLink(String link) {
+		return link.replace(URIRepositoryArchitectureFiles, URIPrefixArchitectureFilesSupportReview);
 	}
 
 }

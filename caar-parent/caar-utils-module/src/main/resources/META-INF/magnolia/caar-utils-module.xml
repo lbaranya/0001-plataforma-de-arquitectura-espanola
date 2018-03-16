@@ -27,6 +27,10 @@
 			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewImpl</implementation>
 		</component>
 		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportBusiness</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportBusinessImpl</implementation>
+		</component>
+		<component>
 			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportProject</type>
 			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportProjectImpl</implementation>
 		</component>

@@ -1,9 +1,15 @@
 package es.arquia.magnolia.functions;
 
-import static es.arquia.magnolia.constants.ArchitectureFilesSupportProjectConstants.*;
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportProjectNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIIINodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIINodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewINodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIVNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesWorkspace;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportProjectConstants.photoPreview;
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.awardWorkspace;
 import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
@@ -13,7 +19,17 @@ import javax.inject.Inject;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 
+import es.arquia.magnolia.utils.ArchitectureFilesFormatAudio;
+import es.arquia.magnolia.utils.ArchitectureFilesFormatBook;
+import es.arquia.magnolia.utils.ArchitectureFilesFormatCartographic;
+import es.arquia.magnolia.utils.ArchitectureFilesFormatContinuous;
+import es.arquia.magnolia.utils.ArchitectureFilesFormatElectronic;
+import es.arquia.magnolia.utils.ArchitectureFilesFormatGraphic;
+import es.arquia.magnolia.utils.ArchitectureFilesFormatManuscript;
+import es.arquia.magnolia.utils.ArchitectureFilesFormatThreeDimensional;
+import es.arquia.magnolia.utils.ArchitectureFilesFormatVideo;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportArchitect;
+import es.arquia.magnolia.utils.ArchitectureFilesSupportBusiness;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportEvent;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportProject;
 import es.arquia.magnolia.utils.ArchitectureFilesSupportReview;
@@ -31,6 +47,26 @@ public class RelatedElementsTransformersImpl implements RelatedElementsTransform
 	private ArchitectureFilesSupportEvent architectureFilesSupportEvent;
 	@Inject
 	private ArchitectureFilesSupportReview architectureFilesSupportReview;
+	@Inject
+	private ArchitectureFilesSupportBusiness architectureFilesSupportBusiness;
+	@Inject
+	private ArchitectureFilesFormatAudio architectureFilesFormatAudio;
+	@Inject
+	private ArchitectureFilesFormatBook architectureFilesFormatBook;
+	@Inject
+	private ArchitectureFilesFormatCartographic architectureFilesFormatCartographic;
+	@Inject
+	private ArchitectureFilesFormatContinuous architectureFilesFormatContinuous;
+	@Inject
+	private ArchitectureFilesFormatElectronic architectureFilesFormatElectronic;
+	@Inject
+	private ArchitectureFilesFormatGraphic architectureFilesFormatGraphic;
+	@Inject
+	private ArchitectureFilesFormatManuscript architectureFilesFormatManuscript;
+	@Inject
+	private ArchitectureFilesFormatThreeDimensional architectureFilesFormatThreeDimensional;
+	@Inject
+	private ArchitectureFilesFormatVideo architectureFilesFormatVideo;
 	@Inject
 	private NewsNodeUtil news;
 	@Inject
@@ -109,11 +145,24 @@ public class RelatedElementsTransformersImpl implements RelatedElementsTransform
 		
 		if(node.isNodeType(architectureFilesSupportReviewINodeType) || node.isNodeType(architectureFilesSupportReviewIINodeType) || node.isNodeType(architectureFilesSupportReviewIIINodeType) || node.isNodeType(architectureFilesSupportReviewIVNodeType)) {
 			related.setTitle(architectureFilesSupportReview.getOuvreTitle(node));
-			related.setPhoto(architectureFilesSupportReview.getFirstMediaImage(node).getPath());
+			related.setPhoto(architectureFilesSupportReview.getPreviewPhoto(architectureFilesSupportReview.getFirstMediaImage(node)));
 			related.setPath(node.getPath());
 			related.setWorkspace(architectureFilesWorkspace);
 			related.setNodeType(node.getPrimaryNodeType().getName());
 		}
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesSupportBusinessTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesSupportBusiness.getLegalName(node));
+		related.setPhoto(architectureFilesSupportBusiness.getLogo(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesSupportBusinessNodeType);
 		
 		return related;
 	}

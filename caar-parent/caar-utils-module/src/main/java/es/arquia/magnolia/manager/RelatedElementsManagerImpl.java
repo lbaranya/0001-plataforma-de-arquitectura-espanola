@@ -7,6 +7,7 @@ import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectu
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIINodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewINodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIVNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.awardNodeType;
 import static es.arquia.magnolia.constants.NewsConstants.newsNodeType;
 
@@ -40,6 +41,9 @@ public class RelatedElementsManagerImpl implements RelatedElementsManager {
 		}
 		else if(node.isNodeType(architectureFilesSupportReviewINodeType) || node.isNodeType(architectureFilesSupportReviewIINodeType) || node.isNodeType(architectureFilesSupportReviewIIINodeType) || node.isNodeType(architectureFilesSupportReviewIVNodeType)) {
 			return relatedElementsTransformers.architectureFilesSupportReviewTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesSupportBusinessNodeType)) {
+			return relatedElementsTransformers.architectureFilesSupportBusinessTransformer(node);
 		}
 		else {
 			return null;

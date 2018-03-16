@@ -51,7 +51,7 @@
 								            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
 								            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
 								            				[#assign imageAlternativeText = imageAlt.alternative!""]
-								            				<img class="img-evento" src="${imgMediaRendition.getLink()}" width="130" height="115" alt="${imageAlternativeText}" />
+								            				<img class="img-evento" src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText}" />
 								            			[/#if]
 							                    	[/#if]
 						                    	[/#if]
@@ -64,7 +64,7 @@
                             </div>
                         </div>
             		
-            			[#elseif relatedElement.getNodeType() == "mgnl:support-architect" || relatedElement.getNodeType() == "mgnl:support-project" || relatedElement.getNodeType() == "mgnl:support-review-i" || relatedElement.getNodeType() == "mgnl:support-review-ii" || relatedElement.getNodeType() == "mgnl:support-review-iii" || relatedElement.getNodeType() == "mgnl:support-review-iv"]
+            			[#elseif relatedElement.getNodeType() == "mgnl:support-architect" || relatedElement.getNodeType() == "mgnl:support-project" || relatedElement.getNodeType() == "mgnl:support-review-i" || relatedElement.getNodeType() == "mgnl:support-review-ii" || relatedElement.getNodeType() == "mgnl:support-review-iii" || relatedElement.getNodeType() == "mgnl:support-review-iv" || relatedElement.getNodeType() == "mgnl:support-business"]
             		
 		                <div class="col-md-3 arquitecto">
 		                    <h4>${relatedElement.getTitle()!""}</h4>
@@ -72,7 +72,7 @@
 			                    [#assign imgItemKey = relatedElement.getPhoto()!""]
 				            	[#if imgItemKey??]
 				            		[#if imgItemKey?has_content]
-				                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "445h")!]
+				                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "338x502")!]
 					            		[#if imgMediaRendition?has_content]
 					            			[#assign imageAlternativeText = "ficha de arquitectura"]
 					            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
@@ -90,7 +90,8 @@
 		                </div>
 		                
 	                [/#if]
-					[#if countRows%4 == 0]
+	                [#assign countRows = countRows + 1]
+					[#if countRows%5 == 0]
 					</div>
 					[/#if]
 				[/#list]
