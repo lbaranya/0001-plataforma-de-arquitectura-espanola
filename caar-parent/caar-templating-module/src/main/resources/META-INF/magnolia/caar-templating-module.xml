@@ -35,6 +35,10 @@
 			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportBusinessManagerImpl</implementation>
 		</component>
 		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesFormatManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesFormatManagerImpl</implementation>
+		</component>
+		<component>
 			<type>es.arquia.magnolia.manager.AwardManager</type>
 			<implementation>es.arquia.magnolia.manager.AwardManagerImpl</implementation>
 		</component>
