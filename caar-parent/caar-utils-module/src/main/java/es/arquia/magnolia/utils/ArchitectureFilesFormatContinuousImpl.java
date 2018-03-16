@@ -9,7 +9,7 @@ import javax.jcr.RepositoryException;
 
 import info.magnolia.cms.i18n.I18nContentSupport;
 
-public class ArchitectureFilesFormatContinuousImpl implements ArchitectureFilesFormatCartographic {
+public class ArchitectureFilesFormatContinuousImpl implements ArchitectureFilesFormatContinuous {
 
 	private I18nContentSupport i18nContentSupport;
 	

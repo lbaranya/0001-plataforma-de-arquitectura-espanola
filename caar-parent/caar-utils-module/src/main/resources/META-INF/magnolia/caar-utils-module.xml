@@ -35,6 +35,42 @@
 			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportProjectImpl</implementation>
 		</component>
 		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatAudio</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatAudioImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatBook</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatBookImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatCartographic</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatCartographicImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatContinuous</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatContinuousImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatElectronic</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatElectronicImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatGraphic</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatGraphicImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatManuscript</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatManuscriptImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatThreeDimensional</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatThreeDimensionalImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesFormatVideo</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesFormatVideoImpl</implementation>
+		</component>
+		<component>
 			<type>es.arquia.magnolia.utils.AwardNodeUtil</type>
 			<implementation>es.arquia.magnolia.utils.AwardNodeUtilImpl</implementation>
 		</component>
