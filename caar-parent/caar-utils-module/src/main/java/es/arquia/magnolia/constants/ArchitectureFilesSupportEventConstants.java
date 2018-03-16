@@ -10,6 +10,7 @@ public interface ArchitectureFilesSupportEventConstants {
 	String price = "FS3_2_7";
 	String website = "FS3_2_8";
 	
+	String listAuthorship = "listAuthorship";
 	String authorshipType = "FS3_3_1";
 	String authorshipName = "FS3_3_2";
 	String authorshipDetail = "FS3_3_3";

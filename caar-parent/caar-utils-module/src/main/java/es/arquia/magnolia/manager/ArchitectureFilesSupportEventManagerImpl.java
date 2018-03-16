@@ -74,8 +74,6 @@ public class ArchitectureFilesSupportEventManagerImpl implements ArchitectureFil
 		return tmpList;
 	}
 
-}
-}
 
 	@Override
 	public List<Node> getArchitectureFilesSupportEventList(int eventsPerRow) throws RepositoryException {
