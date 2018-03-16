@@ -1,4 +1,0 @@
-title: caar-templating-module.components.accordion-structure-enrollment.dialog.title
-renderType: freemarker    
-templateScript: /caar-templating-module/templates/components/accordion-structure-enrollment-component.ftl
-dialog: caar-templating-module:components/accordion-structure-enrollment-component-properties

@@ -19,12 +19,20 @@
 			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportArchitectManagerImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManager</type>
-			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewIManagerImpl</implementation>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportReviewManagerImpl</implementation>
 		</component>
 		<component>
 			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManager</type>
 			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportEventManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportProjectManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportProjectManagerImpl</implementation>
+		</component>
+		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportBusinessManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportBusinessManagerImpl</implementation>
 		</component>
 		<component>
 			<type>es.arquia.magnolia.manager.AwardManager</type>
@@ -55,8 +63,8 @@
 			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportEventImpl</implementation>
 		</component>
 		<component>
-			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewI</type>
-			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewIImpl</implementation>
+			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportReview</type>
+			<implementation>es.arquia.magnolia.utils.ArchitectureFilesSupportReviewImpl</implementation>
 		</component>
 		<component>
 			<type>es.arquia.magnolia.utils.ArchitectureFilesSupportProject</type>
