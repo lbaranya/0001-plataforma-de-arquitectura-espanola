@@ -1,4 +1,4 @@
-name: formatVideoFolderDeleted
+name: formatContinuousFolderDeleted
 label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatContinuousWrapper.label
 groups:
 - name: addActions

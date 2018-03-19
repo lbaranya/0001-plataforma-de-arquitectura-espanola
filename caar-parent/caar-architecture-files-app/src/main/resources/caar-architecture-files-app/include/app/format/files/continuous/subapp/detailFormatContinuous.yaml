@@ -40,7 +40,7 @@ editor:
             label: caar-architecture-files-app.files.format.continuous.data.issn.label
           - name: m21_040$a
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.graphic.data.depositoryInstitution.label
+            label: caar-architecture-files-app.files.format.continuous.data.depositoryInstitution.label
           - name: m21_080$a
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.continuous.data.localeCode.label

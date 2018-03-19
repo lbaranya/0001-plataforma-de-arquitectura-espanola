@@ -2,6 +2,8 @@ package es.arquia.magnolia.constants;
 
 public interface ArchitectureFilesSupportReviewIConstants {
 	
+	String nodeTypeR4 = "mgnl:support-review-iv";
+	
 	String idOuvre = "FS3_1_1";
 	String startDate = "FS3_1_2";
 	String lastUpdateDate = "FS3_1_3";
@@ -12,6 +14,13 @@ public interface ArchitectureFilesSupportReviewIConstants {
 	String presentationLocation = "FS3_2_3";
 	String presentationEntity = "FS3_2_4";
 	String ouvreAbstract = "FS3_2_5";
+	
+	String articleTitle = "FS3_2_1";
+	String ouvreTitleR4 = "FS3_2_2";
+	String place = "FS3_2_3";
+	String editor = "FS3_2_4";
+	String year = "FS3_2_5";
+	String ouvreAbstractR4 = "FS3_2_6";
 	
 	String authorshipType = "FS3_3_1";
 	String authorshipName = "FS3_3_2";

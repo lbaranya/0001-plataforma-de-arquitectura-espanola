@@ -1,5 +1,5 @@
 <section class="cmp-noticias-eventos">
-    <div class="container-fluid">
+    <div class="container-margin">
         <div class="row row-noticias">
             <div class="col-md-3 cmp-noticias">
                 <!-- Aqui va el componente de NOTICIAS estilo footer-->

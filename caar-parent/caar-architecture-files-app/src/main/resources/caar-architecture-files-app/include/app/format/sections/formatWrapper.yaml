@@ -9,6 +9,7 @@ groups:
       - name: addFormatThreeDimensionalWrapper
       - name: addFormatContinuousWrapper
       - name: addFormatElectronicWrapper
+      - name: addFormatCartographicWrapper
   - name: editActions
     items:
       - name: editWrapper

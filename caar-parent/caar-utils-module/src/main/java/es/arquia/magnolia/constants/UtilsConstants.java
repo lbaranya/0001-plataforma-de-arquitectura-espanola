@@ -6,7 +6,7 @@ public interface UtilsConstants {
 	String dateFormatDayOfWeek = "EEE.";
 	String dateFormatCompleteDayOfWeek = "EEEE";
 	String dateFormatHoursMinutes = "HH.mm'h'";
-	String dateFormatIgnoreTime = "T00:00:00.000";
+	String dateFormatComplete = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 	
 	// Countries
 	String caarRootFolderName = "caar";

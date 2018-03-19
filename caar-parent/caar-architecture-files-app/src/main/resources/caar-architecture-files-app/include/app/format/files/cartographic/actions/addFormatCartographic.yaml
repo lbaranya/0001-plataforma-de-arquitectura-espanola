@@ -1,0 +1,13 @@
+subAppId: detailFormatCartographic
+icon: icon-add-item
+nodeType: mgnl:format-cartographic
+appName: caar-architecture-files-app
+class: info.magnolia.ui.contentapp.detail.action.CreateItemActionDefinition
+label: caar-architecture-files-app.subapp.browser.actions.addFormatCartographic.label
+availability:
+  nodeTypes:
+    - mgnl:format-cartographic-wrapper
+    - mgnl:format-cartographic-folder-wrapper
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
