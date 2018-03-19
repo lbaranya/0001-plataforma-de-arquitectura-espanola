@@ -7,7 +7,7 @@
 	[#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 	[#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)]
 	[#assign awards = model.getInstance()!""]
-	[#assign ancestorsList = cmsfn.ancestors(awardsContentNode)]
+	[#assign ancestorsList = cmsfn.ancestors(awardsContentNode,"mgnl:award")]
 <section class="cmp-acerca-de-ae cmp-breadcrumb-info-video">
 	[#assign ancestor = navfn.ancestorPageAtLevel(content, 2)!]
 	<ul class="breadcrumb">
@@ -15,10 +15,9 @@
 		<li><a href="${cmsfn.link(ancestor)!"#"}">${ancestor.navTitle!ancestor.title}</a></li>
 	[#if ancestorsList?has_content]
 		[#list ancestorsList as ancestor]
-			<li><a href="${cmsfn.link(ancestor)!"#"}">${awards.getAwardName(ancestor)?lower_case}</a></li>
+			<li class="active"><a href="${cmsfn.link(ancestor)!"#"}">${awards.getAwardName(ancestor)?lower_case}</a></li>
 		[/#list]
 	[/#if]
-	<li class="active"><a href="${cmsfn.link(awardsContentNode)!"#"}">${awards.getAwardName(awardsContentNode)!""}</a></li>
 	</ul>
 </section>
 [/#if]

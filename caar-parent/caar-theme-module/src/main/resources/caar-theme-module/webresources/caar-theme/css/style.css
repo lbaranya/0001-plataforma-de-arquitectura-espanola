@@ -2751,6 +2751,12 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	color: #D0021B;
 }
 
+.cmp-arquitectos-realacionados .div-portafolio .more a {
+	display: flex;
+	align-items: center;
+	color: #D0021B;
+}
+
 .cmp-arquitectos-realacionados .div-portafolio .more span:before {
 	content: '';
 	display: inline-block;
@@ -4285,6 +4291,10 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	position: absolute;
 	bottom: 15px;
 	width: 90%;
+}
+
+.div-instituciones .more a {
+	color: #D0021B;
 }
 
 .div-instituciones .more span {

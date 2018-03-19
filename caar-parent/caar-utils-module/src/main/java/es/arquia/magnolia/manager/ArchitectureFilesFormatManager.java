@@ -1,6 +1,7 @@
 package es.arquia.magnolia.manager;
 
 import javax.jcr.Node;
+import javax.jcr.RepositoryException;
 
 import es.arquia.magnolia.utils.ArchitectureFilesFormatAudio;
 import es.arquia.magnolia.utils.ArchitectureFilesFormatBook;
@@ -33,5 +34,7 @@ public interface ArchitectureFilesFormatManager {
 	public ArchitectureFilesFormatVideo getVideoInstance();
 	
 	public String getLink(Node node, String link);
+	
+	public boolean isFormat(Node node) throws RepositoryException;
 
 }

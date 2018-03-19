@@ -140,4 +140,9 @@ public class ArchitectureFilesFormatManagerImpl implements ArchitectureFilesForm
 		}
 	}
 
+	@Override
+	public boolean isFormat(Node node) throws RepositoryException {
+		return node.isNodeType(architectureFilesFormatAudioNodeType) || node.isNodeType(architectureFilesFormatBookNodeType) || node.isNodeType(architectureFilesFormatCartographicNodeType) || node.isNodeType(architectureFilesFormatContinuousNodeType) || node.isNodeType(architectureFilesFormatElectronicNodeType) || node.isNodeType(architectureFilesFormatGraphicNodeType) || node.isNodeType(architectureFilesFormatManuscriptNodeType) || node.isNodeType(architectureFilesFormatThreeDimensionalNodeType) || node.isNodeType(architectureFilesFormatVideoNodeType);
+	}
+
 }

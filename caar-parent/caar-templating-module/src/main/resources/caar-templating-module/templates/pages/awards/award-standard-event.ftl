@@ -39,7 +39,7 @@
 								<div class="evento-contenedor">
 		                            <div class="evento-item">
 		                                [#-- <a href="${cmsfn.link(eventsNode)}" class="evento-link">  --]
-		                                <a href="${cmsfn.link(navfn.rootPage(content))}" class="evento-link"> 
+		                                <a href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}" class="evento-link"> 
 		                                    <div class="evento-header">
 		                                        <span class="categoria">${relatedElement.getEventType()!""}</span>
 		                                        <span class="evento-fecha">${relatedElement.getDayOfWeek()!""}</span>
@@ -92,7 +92,7 @@
 					                    	[/#if]
 					                    [/#if]
 				                        <div class="texto">
-				                            <a style="color:#fff" href="${cmsfn.link(cmsfn.nodeByPath(relatedElement.getPath(), relatedElement.getWorkspace()))!"#"}"><h2>${relatedElement.getTitle()!""}</h2></a>
+				                            <a style="color:#fff" href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}"><h2>${relatedElement.getTitle()!""}</h2></a>
 				                        </div>
 				                    </div>
 			                    </div>
@@ -120,16 +120,42 @@
 				                    [/#if]
 				                    <div class="info-block">
 				                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
-				                        <p class="business-type">${relatedElement.getBusinessType()!""}</p>
-				                        <p class="descript">${relatedElement.getCity()!""}, ${relatedElement.getCountry()!""}</p>
+				                        <p class="business-type">${cmsfn.contentById(relatedElement.getBusinessType(),"category").displayName!""}</p>
+				                        <p class="descript">${relatedElement.getCity()!""}, ${model.parent.getCountryName(catfn.getCategoryNodeByName(relatedElement.getCountry()))!""}</p>
 			                        </div>
-			                        <div class="more"><span>Ver Más</span><img src="${ctx.resourcesURL}/icons/interface-1.svg" alt="icon"/></div>
+			                        <div class="more"><span><a href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}">Ver más</a></span><img src="${ctx.resourcesURL}/icons/interface-1.svg" alt="icon"/></div>
 			                    </div>
 			                </div>
 			                [#if countRows%4 == 0 || countRows == listSupport?size]
 							</div>
 							[/#if]
 			                [#assign countRows = countRows + 1]
+			            [#elseif relatedElement.getNodeType() == "mgnl:portfolio"]
+			            	<div class="col-md-3">
+			                    <div class="div-portafolio">
+			                        [#assign imgItemKey = relatedElement.getPhoto()!""]
+					            	[#if imgItemKey??]
+					            		[#if imgItemKey?has_content]
+					                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "338x502")!]
+						            		[#if imgMediaRendition?has_content]
+						            			[#assign imageAlternativeText = "ficha de arquitectura"]
+						            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+						            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
+						            				[#assign imageAlternativeText = imageAlt.alternative!""]
+						            			[/#if]
+					                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+					                    	[/#if]
+				                    	[/#if]
+				                    [/#if]
+			                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
+			                        <p class="descript">${relatedElement.getDescription()!""}</p>
+			                        <div class="more"><span><a href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}">Ver más</a></span><img src="${ctx.resourcesURL}/icons/interface.svg" alt="icon"/></div>
+			                    </div>
+			                </div>
+			                [#if countRowsFormat%4 == 0 || countRowsFormat == listSupport?size]
+							</div>
+							[/#if]
+			                [#assign countRowsFormat = countRowsFormat + 1]
 		                [/#if]
 					[/#list]
 					[/#if]
@@ -169,7 +195,7 @@
 				                    [/#if]
 			                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
 			                        <p class="descript">${relatedElement.getSubtitle()!""}</p>
-			                        <div class="more"><span>Ver Más</span><img src="${ctx.resourcesURL}/icons/interface.svg" alt="icon"/></div>
+			                        <div class="more"><span><a href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}">Ver más</a></span><img src="${ctx.resourcesURL}/icons/interface.svg" alt="icon"/></div>
 			                    </div>
 			                </div>
 			                [#if countRowsFormat%4 == 0 || countRowsFormat == listSupport?size]
