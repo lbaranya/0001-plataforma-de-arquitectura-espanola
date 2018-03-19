@@ -77,8 +77,11 @@ editor:
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.format.cartographic.data.mentionsEdition.label
           - name: m21_255$a
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
             label: caar-architecture-files-app.files.format.cartographic.data.scale.label
+            repository: category
+            labelProperty: displayName
+            path: caar/format-cartographic/scale
           - name: m21_255$b
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition

@@ -84,6 +84,10 @@ subApps:
           icon: icon-folder
         - name: mgnl:format-three-dimensional
           icon: icon-items
+        - name: mgnl:format-cartographic-wrapper
+          icon: icon-folder
+        - name: mgnl:format-cartographic-folder-wrapper
+          icon: icon-folder          
         - name: mgnl:format-cartographic
           icon: icon-items
         - name: mgnl:format-audio
@@ -316,6 +320,10 @@ subApps:
       showVersionsElectronic:
         !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/showVersionsElectronic.yaml
         
+      # Details Cartographic
+      showVersionsCartographic:
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/showVersionsCartographic.yaml        
+        
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
         icon: icon-retrieve-versions
@@ -386,6 +394,10 @@ subApps:
       # Electronic folder
       addFolderFormatElectronic:
         !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFolderFormatElectronic.yaml
+        
+      # Cartographic folder
+      addFolderFormatCartographic:
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFolderFormatCartographic.yaml        
       
       # Edit any folder
       editFolder:
@@ -408,6 +420,7 @@ subApps:
             - mgnl:format-three-dimensional-folder-wrapper
             - mgnl:format-continuous-folder-wrapper
             - mgnl:format-electronic-folder-wrapper
+            - mgnl:format-cartographic-folder-wrapper
             - mgnl:portfolio-folder-wrapper
           rules: 
             IsNotDeletedRule: 
@@ -446,6 +459,7 @@ subApps:
             - mgnl:format-three-dimensional-wrapper
             - mgnl:format-continuous-wrapper
             - mgnl:format-electronic-wrapper
+            - mgnl:format-cartographic-wrapper            
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -542,6 +556,8 @@ subApps:
         !include:/caar-architecture-files-app/include/app/format/files/continuous/actions/addFormatContinuousWrapper.yaml
       addFormatElectronicWrapper:
         !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFormatElectronicWrapper.yaml
+      addFormatCartographicWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFormatCartographicWrapper.yaml        
        
       # Format Video
       addFormatVideo:
@@ -578,6 +594,12 @@ subApps:
         !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFormatElectronic.yaml
       editFormatElectronic:
         !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/editFormatElectronic.yaml
+        
+      # Format Cartographic
+      addFormatCartographic:
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFormatCartographic.yaml
+      editFormatCartographic:
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/editFormatCartographic.yaml        
       
     # Sections
     actionbar:
@@ -871,6 +893,20 @@ subApps:
         - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronicDeleted.yaml
         - !include:/caar-architecture-files-app/include/app/format/files/electronic/sections/formatElectronic.yaml
         
+        # Format Cartographic
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographicWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographicWrapper.yaml
+        
+        # Format Cartographic folder
+        - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographicFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographicFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographicDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographic.yaml        
+        
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
        damLinkPropertyName: image
@@ -916,3 +952,6 @@ subApps:
   # Format electronic sub app
   detailFormatElectronic:
     !include:/caar-architecture-files-app/include/app/format/files/electronic/subapp/detailFormatElectronic.yaml
+  # Format cartographic sub app
+  detailFormatCartographic:
+    !include:/caar-architecture-files-app/include/app/format/files/cartographic/subapp/detailFormatCartographic.yaml    
