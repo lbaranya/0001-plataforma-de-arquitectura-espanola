@@ -118,8 +118,11 @@
 					                    	[/#if]
 				                    	[/#if]
 				                    [/#if]
-			                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
-			                        <p class="descript">${relatedElement.getDescription()!""}</p>
+				                    <div class="info-block">
+				                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
+				                        <p class="business-type">${relatedElement.getBusinessType()!""}</p>
+				                        <p class="descript">${relatedElement.getCity()!""}, ${relatedElement.getCountry()!""}</p>
+			                        </div>
 			                        <div class="more"><span>Ver Más</span><img src="${ctx.resourcesURL}/icons/interface-1.svg" alt="icon"/></div>
 			                    </div>
 			                </div>
@@ -166,7 +169,7 @@
 				                    [/#if]
 			                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
 			                        <p class="descript">${relatedElement.getSubtitle()!""}</p>
-			                        <div class="more"><span>Ver Más</span><img src="${ctx.resourcesURL}/icons/interface-1.svg" alt="icon"/></div>
+			                        <div class="more"><span>Ver Más</span><img src="${ctx.resourcesURL}/icons/interface.svg" alt="icon"/></div>
 			                    </div>
 			                </div>
 			                [#if countRowsFormat%4 == 0 || countRowsFormat == listSupport?size]

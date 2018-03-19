@@ -9,6 +9,9 @@ public class RelatedElement {
 	private String eventType;
 	private String dayOfWeek;
 	private String date;
+	private String country;
+	private String city;
+	private String businessType;
 	
 	private String path;
 	
@@ -74,6 +77,28 @@ public class RelatedElement {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getBusinessType() {
+		return businessType;
+	}
+
+	public void setBusinessType(String businessType) {
+		this.businessType = businessType;
 	}
 
 	public String getEventType() {
@@ -99,6 +124,8 @@ public class RelatedElement {
 	public void setDayOfWeek(String dayOfWeek) {
 		this.dayOfWeek = dayOfWeek;
 	}
+	
+	
 	
 	
 }

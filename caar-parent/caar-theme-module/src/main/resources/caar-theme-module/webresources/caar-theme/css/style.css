@@ -2767,66 +2767,6 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 }
 
 /* Arquitecto Detalle: termina */
-.div-instituciones {
-	background-color: #f9f7f3;
-	border-bottom: 3px solid #D0021B;
-	padding: 20px;
-	font-family: "National-Book", "Helvetica", "sans-serif";
-	text-align: center;
-	margin-top: 20px; margin-bottom : 20px; padding-top : 20px;
-	padding-bottom : 20px;
-	height: 510px;
-	position: relative;
-	margin-bottom: 20px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
-
-.div-instituciones .title {
-	font-size: 22px;
-	font-weight: bold;
-	text-align: left;
-}
-
-.div-instituciones .descript {
-	font-weight: bold;
-	text-align: left;
-}
-
-.div-instituciones img {
-	width: 137px;
-	height: 173px;
-	text-align: center;
-}
-
-.div-instituciones .more {
-	display: flex;
-	justify-content: space-between;
-	position: absolute;
-	bottom: 15px;
-	width: 90%;
-}
-
-.div-instituciones .more span {
-	display: flex;
-	align-items: center;
-	color: #D0021B;
-}
-
-.div-instituciones .more span:before {
-	content: '';
-	display: inline-block;
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-	border: 1px solid #D0021B;
-	margin-right: 10px;
-}
-
-.div-instituciones .more img {
-	width: 23px;
-	height: 29px;
-}
 
 /* COMPONENTE SUSTITUTO DE ACORDEON */
 .cmp-distribuidor-convocatoria {
@@ -3945,7 +3885,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-top: 20px;
 }
 
-.cmp-programas-marco .listado-fichas h3 {
+.listado-fichas .div-portafolio h3 {
 	color: #D0021B;
 	font-size: 24px;
 	font-weight: bold;
@@ -4291,3 +4231,80 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 }
 
 /* GRID DE LA HOME - termina */
+
+.div-instituciones {
+	background-color: #f9f7f3;
+	border-bottom: 3px solid #D0021B;
+	padding: 20px;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	margin-top: 20px; margin-bottom : 20px; padding-top : 20px;
+	padding-bottom : 20px;
+	height: 510px;
+	position: relative;
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.div-instituciones .info-block {
+	padding-top: 100px;	
+}
+
+
+.div-instituciones .info-block .title{
+	font-size: 22px;
+	font-weight: bold;
+	text-align: left;
+	color: black;
+}
+
+.div-instituciones .info-block .business-type{
+	margin-top: 25px;
+	color: #D0021B;
+	text-align: left;
+	font-weight: bold;
+}
+
+.div-instituciones .info-block .descript {
+	font-weight: bold;
+	text-align: left;
+}
+
+.div-instituciones img {
+	width: 137px;
+	height: 173px;
+	text-align: center;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-instituciones .more {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 15px;
+	width: 90%;
+}
+
+.div-instituciones .more span {
+	display: flex;
+	align-items: center;
+	color: #D0021B;
+}
+
+.div-instituciones .more span:before {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid #D0021B;
+	margin-right: 10px;
+}
+
+.div-instituciones .more img {
+	width: 23px;
+	height: 29px;
+	margin-right: 10px;
+}
