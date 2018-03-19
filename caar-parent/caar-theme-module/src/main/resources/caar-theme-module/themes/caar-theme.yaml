@@ -117,4 +117,8 @@ imaging:
       class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
       width: 338
       height: 502
+    "137x173":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 173
+      height: 137
       

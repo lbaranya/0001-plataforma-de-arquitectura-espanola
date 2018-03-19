@@ -2719,6 +2719,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-top: 30px;
 	padding-top: 15px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
+	position: relative;
 }
 
 .cmp-arquitectos-realacionados .div-portafolio .title {
@@ -2738,6 +2739,10 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 .cmp-arquitectos-realacionados .div-portafolio .more {
 	display: flex;
 	justify-content: space-between;
+	position: absolute;
+	bottom: 15px;
+	width: 90%;
+	
 }
 
 .cmp-arquitectos-realacionados .div-portafolio .more span {
@@ -2762,6 +2767,66 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 }
 
 /* Arquitecto Detalle: termina */
+.div-instituciones {
+	background-color: #f9f7f3;
+	border-bottom: 3px solid #D0021B;
+	padding: 20px;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	text-align: center;
+	margin-top: 20px; margin-bottom : 20px; padding-top : 20px;
+	padding-bottom : 20px;
+	height: 510px;
+	position: relative;
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.div-instituciones .title {
+	font-size: 22px;
+	font-weight: bold;
+	text-align: left;
+}
+
+.div-instituciones .descript {
+	font-weight: bold;
+	text-align: left;
+}
+
+.div-instituciones img {
+	width: 137px;
+	height: 173px;
+	text-align: center;
+}
+
+.div-instituciones .more {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 15px;
+	width: 90%;
+}
+
+.div-instituciones .more span {
+	display: flex;
+	align-items: center;
+	color: #D0021B;
+}
+
+.div-instituciones .more span:before {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid #D0021B;
+	margin-right: 10px;
+}
+
+.div-instituciones .more img {
+	width: 23px;
+	height: 29px;
+}
 
 /* COMPONENTE SUSTITUTO DE ACORDEON */
 .cmp-distribuidor-convocatoria {
@@ -3872,7 +3937,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 .cmp-programas-marco .seperador-black {
 	width: 101%;
-	padding-left:15px;
+	padding-left: 15px;
 }
 
 .cmp-programas-marco .listado-fichas {

@@ -72,7 +72,7 @@
 								</div>
 								[/#if]
 	            				[#assign countRows = countRows + 1]
-	            			[#elseif relatedElement.getNodeType() == "mgnl:support-architect" || relatedElement.getNodeType() == "mgnl:support-project" || relatedElement.getNodeType() == "mgnl:support-review-i" || relatedElement.getNodeType() == "mgnl:support-review-ii" || relatedElement.getNodeType() == "mgnl:support-review-iii" || relatedElement.getNodeType() == "mgnl:support-review-iv" || relatedElement.getNodeType() == "mgnl:support-business"]
+	            			[#elseif relatedElement.getNodeType() == "mgnl:support-architect" || relatedElement.getNodeType() == "mgnl:support-project" || relatedElement.getNodeType() == "mgnl:support-review-i" || relatedElement.getNodeType() == "mgnl:support-review-ii" || relatedElement.getNodeType() == "mgnl:support-review-iii" || relatedElement.getNodeType() == "mgnl:support-review-iv"]
 			                <div class="col-md-3">
 			                	<div class="arquitecto">
 				                    <h4>${relatedElement.getTitle()!""}</h4>
@@ -95,6 +95,32 @@
 				                            <a style="color:#fff" href="${cmsfn.link(cmsfn.nodeByPath(relatedElement.getPath(), relatedElement.getWorkspace()))!"#"}"><h2>${relatedElement.getTitle()!""}</h2></a>
 				                        </div>
 				                    </div>
+			                    </div>
+			                </div>
+			                [#if countRows%4 == 0 || countRows == listSupport?size]
+							</div>
+							[/#if]
+			                [#assign countRows = countRows + 1]
+			            [#elseif relatedElement.getNodeType() == "mgnl:support-business"]
+			            	<div class="col-md-3">
+			                    <div class="div-instituciones">
+			                        [#assign imgItemKey = relatedElement.getPhoto()!""]
+					            	[#if imgItemKey??]
+					            		[#if imgItemKey?has_content]
+					                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "137x173")!]
+						            		[#if imgMediaRendition?has_content]
+						            			[#assign imageAlternativeText = "ficha de arquitectura"]
+						            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+						            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
+						            				[#assign imageAlternativeText = imageAlt.alternative!""]
+						            			[/#if]
+					                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+					                    	[/#if]
+				                    	[/#if]
+				                    [/#if]
+			                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
+			                        <p class="descript">${relatedElement.getDescription()!""}</p>
+			                        <div class="more"><span>Ver Más</span><img src="${ctx.resourcesURL}/icons/interface-1.svg" alt="icon"/></div>
 			                    </div>
 			                </div>
 			                [#if countRows%4 == 0 || countRows == listSupport?size]
