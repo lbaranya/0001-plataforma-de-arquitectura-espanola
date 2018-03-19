@@ -3870,6 +3870,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	font-weight: bold;
 }
 
+.cmp-programas-marco .seperador-black {
+	width: 101%;
+	padding-left:15px;
+}
+
 .cmp-programas-marco .listado-fichas {
 	font-family: "National-Book", "Helvetica", "sans-serif";
 	margin-top: 20px;
