@@ -45,7 +45,7 @@ public class NewsDiaryModel <T extends ConfiguredTemplateDefinition> extends Ren
 		return newsManager.getInstance();
 	}
 	
-	public List<Node> getArchitectureFilesSupportEventList() throws Exception{
+	public List<Node> getNewsDiaryArchitectureFilesSupportEventList() throws Exception{
 		return architectureFilesSupportEventManager.getNewsDiaryArchitectureFilesSupportEventList();
 	}
 	
