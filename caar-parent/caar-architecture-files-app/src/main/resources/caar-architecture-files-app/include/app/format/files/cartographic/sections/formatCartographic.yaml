@@ -1,0 +1,23 @@
+name: formatCartographic
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatCartographic.label
+groups:
+  - name: editActions
+    items:
+      - name: editFormatCartographic
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+      - name: requestTranslation
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsCartographic
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:format-cartographic
