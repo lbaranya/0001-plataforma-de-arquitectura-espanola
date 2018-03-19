@@ -31,7 +31,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-top: 15px;
 }
 
-.row-flex{
+.row-flex {
 	display: flex;
 	justify-content: center;
 }
@@ -214,8 +214,8 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	color: #4a4a4a;
 	font-size: 25px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
-	padding-left:30px;
-	padding-right:30px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 /**termina ck-editor**/
 
@@ -1702,13 +1702,14 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	padding-left: 20px;
 }
 
-.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .lema .preview h4 {
-    width: 100%;
-    float: left;
-    color: #D0021B;
-    font-size: 30px;
-    margin-top: 0;
-    margin-bottom: 5px;
+.cmp-acerca-de-ae.cmp-accordion-acercade.cmp-accordion-convocatoria .lema .preview h4
+	{
+	width: 100%;
+	float: left;
+	color: #D0021B;
+	font-size: 30px;
+	margin-top: 0;
+	margin-bottom: 5px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2278,6 +2279,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	height: auto;
 	background-color: #f9f7f3;
 	padding: 19px 0px 31px 0px;
+	margin-top: 15px;
 }
 
 .cmp-noticias-eventos .cmp-noticias {
@@ -2379,7 +2381,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	vertical-align: sub;
 }
 
-.cmp-last-news .noticias-container:hover{
+.cmp-last-news .noticias-container:hover {
 	color: #D0021B;
 }
 
@@ -2537,10 +2539,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 }
 
 .cmp-ficha-arquitecto .col-right {
-	padding-left:50px;
+	padding-left: 50px;
 }
+
 .cmp-ficha-arquitecto .col-left {
-	padding-right:50px;
+	padding-right: 50px;
 }
 
 .cmp-ficha-detalle-arquitecto .header-img {
@@ -2633,7 +2636,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	padding-bottom: 20px;
 }
 
-.cmp-last-news .noticias-container:hover .title{
+.cmp-last-news .noticias-container:hover .title {
 	color: #D0021B;
 }
 
@@ -2706,6 +2709,56 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 .cmp-arquitectos-realacionados .separator hr {
 	border-bottom: 3px solid #979797;
+}
+
+.cmp-arquitectos-realacionados .div-portafolio {
+	background-color: #fff;
+	border-bottom: 3px solid #D0021B;
+	padding: 20px;
+	height: 500px;
+	margin-top: 30px;
+	padding-top: 15px;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.cmp-arquitectos-realacionados .div-portafolio .title {
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.cmp-arquitectos-realacionados .div-portafolio .descript {
+	font-weight: bold;
+}
+
+.cmp-arquitectos-realacionados .div-portafolio img {
+	width: 100%;
+	height: 173px;
+}
+
+.cmp-arquitectos-realacionados .div-portafolio .more {
+	display: flex;
+	justify-content: space-between;
+}
+
+.cmp-arquitectos-realacionados .div-portafolio .more span {
+	display: flex;
+	align-items: center;
+	color: #D0021B;
+}
+
+.cmp-arquitectos-realacionados .div-portafolio .more span:before {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid #D0021B;
+	margin-right: 10px;
+}
+
+.cmp-arquitectos-realacionados .div-portafolio .more img {
+	width: 23px;
+	height: 29px;
 }
 
 /* Arquitecto Detalle: termina */
@@ -2902,15 +2955,16 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	font-size: 27px;
 }
 
-.cmp-distribuidor-general-content .cmp-distruidor-content-title .content-title h4 {
-    width: 100%;
-    float: left;
-    color: #D0021B;
-    font-size: 30px;
-    margin-top: 0;
-    margin-bottom: 5px;
-    margin-left: 45px;
-    padding-top: 20px;
+.cmp-distribuidor-general-content .cmp-distruidor-content-title .content-title h4
+	{
+	width: 100%;
+	float: left;
+	color: #D0021B;
+	font-size: 30px;
+	margin-top: 0;
+	margin-bottom: 5px;
+	margin-left: 45px;
+	padding-top: 20px;
 }
 
 .cmp-distribuidor-general-content .cmp-distruidor-content-title .text-contenido
@@ -3537,7 +3591,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 }
 
 .cmp-noticias-eventos .cmp-noticias .noticias-item:hover {
-    color: #D0021B; 
+	color: #D0021B;
 }
 
 /* Noticias y Agenda: Termina */
@@ -3816,6 +3870,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	font-weight: bold;
 }
 
+.cmp-programas-marco .seperador-black {
+	width: 101%;
+	padding-left:15px;
+}
+
 .cmp-programas-marco .listado-fichas {
 	font-family: "National-Book", "Helvetica", "sans-serif";
 	margin-top: 20px;
@@ -3836,7 +3895,6 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	align-items: center;
 	font-size: 55px;
 } */
-
 .cmp-programas-marco .seperador-black hr {
 	border-top: 2px solid black;
 }
@@ -3850,222 +3908,321 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 /* LISTADO DE ARQUITECTOS */
 .cmp-arquitecto .sub-title-arqui {
-  color: #D0021B;
-  font-size: 15px;
-  letter-spacing: -0.1px;
-  margin: 10px 0 10px 0; }
+	color: #D0021B;
+	font-size: 15px;
+	letter-spacing: -0.1px;
+	margin: 10px 0 10px 0;
+}
 
 .cmp-arquitecto .cmp-header-arqui {
-  min-height: 626px;
-  background-repeat: no-repeat;
-  background-size: cover; }
-  .cmp-arquitecto .cmp-header-arqui .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    text-align: center;
-    min-height: 626px; }
-    .cmp-arquitecto .cmp-header-arqui .header .sub-title {
-      color: #fff;
-      font-size: 15px;
-      font-family: "National-Book", "Helvetica", "sans-serif"; }
-      .cmp-arquitecto .cmp-header-arqui .header .sub-title .leer {
-        border-radius: 100%;
-        width: 10px;
-        height: 10px;
-        border: 1px solid #D0021B;
-        display: inline-block;
-        margin-right: 10px; }
-      .cmp-arquitecto .cmp-header-arqui .header .sub-title a {
-        text-decoration: none;
-        color: #fff; }
-        .cmp-arquitecto .cmp-header-arqui .header .sub-title a .leer {
-          border-radius: 100%;
-          width: 10px;
-          height: 10px;
-          border: 1px solid #D0021B;
-          display: inline-block;
-          margin-right: 10px; }
-    .cmp-arquitecto .cmp-header-arqui .header .title-big {
-      color: #fff;
-      font-size: 120px;
-      font-family: "FreightTextBookItalic", "Helvetica", "sans-serif";
-      font-weight: 900;
-      line-height: 0.77;
-      text-align: center;
-      width: 57%;
-      padding-top: 20px;
-      padding-bottom: 20px;
-      margin: 0 auto; }
-  .cmp-arquitecto .cmp-header-arqui .rrss {
-    float: right;
-    margin: 10px 0 10px 0;
-    border: 1px solid #D0021B;
-    padding: 5px 10px 5px 10px; }
-    .cmp-arquitecto .cmp-header-arqui .rrss a {
-      padding: 10px;
-      text-decoration: none;
-      color: #fff; }
+	min-height: 626px;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.cmp-arquitecto .cmp-header-arqui .header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	text-align: center;
+	min-height: 626px;
+}
+
+.cmp-arquitecto .cmp-header-arqui .header .sub-title {
+	color: #fff;
+	font-size: 15px;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.cmp-arquitecto .cmp-header-arqui .header .sub-title .leer {
+	border-radius: 100%;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #D0021B;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.cmp-arquitecto .cmp-header-arqui .header .sub-title a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.cmp-arquitecto .cmp-header-arqui .header .sub-title a .leer {
+	border-radius: 100%;
+	width: 10px;
+	height: 10px;
+	border: 1px solid #D0021B;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.cmp-arquitecto .cmp-header-arqui .header .title-big {
+	color: #fff;
+	font-size: 120px;
+	font-family: "FreightTextBookItalic", "Helvetica", "sans-serif";
+	font-weight: 900;
+	line-height: 0.77;
+	text-align: center;
+	width: 57%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: 0 auto;
+}
+
+.cmp-arquitecto .cmp-header-arqui .rrss {
+	float: right;
+	margin: 10px 0 10px 0;
+	border: 1px solid #D0021B;
+	padding: 5px 10px 5px 10px;
+}
+
+.cmp-arquitecto .cmp-header-arqui .rrss a {
+	padding: 10px;
+	text-decoration: none;
+	color: #fff;
+}
 
 .cmp-arquitecto .cmp-arquitecto-header h2 {
-  width: 460px;
-  height: 62px;
-  font-family: "National-Book", "Helvetica", "sans-serif";
-  font-size: 50px;
-  line-height: 1.2;
-  letter-spacing: 0.3px;
-  text-align: center;
-  color: #D0021B;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 30px; }
+	width: 460px;
+	height: 62px;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	font-size: 50px;
+	line-height: 1.2;
+	letter-spacing: 0.3px;
+	text-align: center;
+	color: #D0021B;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
 
 .cmp-arquitecto .cmp-arquitecto-ultimos {
-  font-family: "National-Book", "Helvetica", "sans-serif";
-  margin-bottom: 30px; }
-  .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui {
-    margin-bottom: 30px; }
-    .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .nom-arqui {
-      font-family: "National-BookItalic", "Helvetica", "sans-serif";
-      font-size: 15px;
-      line-height: 1;
-      letter-spacing: -0.1px;
-      color: #000;
-      margin: 5px 0 5px 0; }
-    .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text {
-      position: relative; }
-      .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text img {
-        width: 556px;
-        height: 445px;
-        border-bottom: 3px solid #D0021B; }
-      .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text .texto-hover {
-        display: none;
-        width: 556px;
-        height: 445px;
-        position: absolute;
-        top: 0;
-        color: #fff;
-        background-color: rgba(208, 2, 27, 0.7); }
-        .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text .texto-hover h2 {
-          width: 414px;
-          margin: 0;
-          text-align: center;
-          font-size: 44px;
-          font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
-      .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text:hover img {
-        border-bottom: none; }
-      .cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text:hover .texto-hover {
-        display: flex;
-        justify-content: center;
-        align-items: center; }
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	margin-bottom: 30px;
+}
+
+.cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui {
+	margin-bottom: 30px;
+}
+
+.cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .nom-arqui {
+	font-family: "National-BookItalic", "Helvetica", "sans-serif";
+	font-size: 15px;
+	line-height: 1;
+	letter-spacing: -0.1px;
+	color: #000;
+	margin: 5px 0 5px 0;
+}
+
+.cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text {
+	position: relative;
+}
+
+.cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text img {
+	width: 556px;
+	height: 445px;
+	border-bottom: 3px solid #D0021B;
+}
+
+.cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text .texto-hover
+	{
+	display: none;
+	width: 556px;
+	height: 445px;
+	position: absolute;
+	top: 0;
+	color: #fff;
+	background-color: rgba(208, 2, 27, 0.7);
+}
+
+.cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text .texto-hover h2
+	{
+	width: 414px;
+	margin: 0;
+	text-align: center;
+	font-size: 44px;
+	font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif";
+}
+
+.cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text:hover img
+	{
+	border-bottom: none;
+}
+
+.cmp-arquitecto .cmp-arquitecto-ultimos .ult-arqui .arqui-img-text:hover .texto-hover
+	{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 .cmp-arquitecto .cmp-todos-arqui {
-  margin-bottom: 30px; }
-  .cmp-arquitecto .cmp-todos-arqui .container-arqui .nom-arqui {
-    font-family: "National-BookItalic", "Helvetica", "sans-serif";
-    font-size: 15px;
-    line-height: 1;
-    letter-spacing: -0.1px;
-    color: #000;
-    margin: 5px 0 5px 0; }
-  .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text {
-    position: relative; }
-    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text img {
-      border-bottom: 3px solid #D0021B;
-      width: 261px;
-      height: 350px; }
-    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover {
-      display: none;
-      width: 261px;
-      height: 350px;
-      position: absolute;
-      top: 0;
-      color: #fff;
-      background-color: rgba(208, 2, 27, 0.7); }
-      .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover h2 {
-        width: 414px;
-        margin: 0;
-        text-align: center;
-        font-size: 34px;
-        padding: 0 10px 0 10px;
-        font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; }
-    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text:hover img {
-      border-bottom: none; }
-    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text:hover .texto-hover {
-      display: flex;
-      justify-content: center;
-      align-items: center; }
+	margin-bottom: 30px;
+}
+
+.cmp-arquitecto .cmp-todos-arqui .container-arqui .nom-arqui {
+	font-family: "National-BookItalic", "Helvetica", "sans-serif";
+	font-size: 15px;
+	line-height: 1;
+	letter-spacing: -0.1px;
+	color: #000;
+	margin: 5px 0 5px 0;
+}
+
+.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text {
+	position: relative;
+}
+
+.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text img {
+	border-bottom: 3px solid #D0021B;
+	width: 261px;
+	height: 350px;
+}
+
+.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover
+	{
+	display: none;
+	width: 261px;
+	height: 350px;
+	position: absolute;
+	top: 0;
+	color: #fff;
+	background-color: rgba(208, 2, 27, 0.7);
+}
+
+.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover h2
+	{
+	width: 414px;
+	margin: 0;
+	text-align: center;
+	font-size: 34px;
+	padding: 0 10px 0 10px;
+	font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif";
+}
+
+.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text:hover img
+	{
+	border-bottom: none;
+}
+
+.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text:hover .texto-hover
+	{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
 @media screen and (max-width: 1200px) {
-  .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text img {
-    width: 212px;
-    height: 320px; }
-  .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover {
-    width: 212px;
-    height: 320px; }
-    .cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover h2 {
-      width: 414px;
-      margin: 0;
-      text-align: center;
-      font-size: 34px;
-      padding: 0 10px 0 10px;
-      font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif"; } }
+	.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text img {
+		width: 212px;
+		height: 320px;
+	}
+	.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover
+		{
+		width: 212px;
+		height: 320px;
+	}
+	.cmp-arquitecto .cmp-todos-arqui .container-arqui .arqui-img-text .texto-hover h2
+		{
+		width: 414px;
+		margin: 0;
+		text-align: center;
+		font-size: 34px;
+		padding: 0 10px 0 10px;
+		font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif";
+	}
+}
 /* LISTADO DE ARQUITECTOS - Termina*/
 
 /* GRID DE LA HOME */
+.cmp-rejilla-home {
+	margin-top: 15px;
+	margin-botton: 15px;
+}
 
 .cmp-rejilla-home .col-info {
-  height: 481px; }
-  .cmp-rejilla-home .col-info h4 {
-    font-family: "National-Book", "Helvetica", "sans-serif";
-    font-style: italic;
-    font-size: 15px; }
-    .cmp-rejilla-home .col-info h4 span {
-      color: #D0021B;
-      padding-right: 10px;
-      font-style: normal; }
-  .cmp-rejilla-home .col-info a {
-    text-decoration: none;
-    color: #000; }
-    .cmp-rejilla-home .col-info a img {
-      height: 445px;
-      border-bottom: 3px solid #D0021B; }
-    .cmp-rejilla-home .col-info a .pensamiento {
-      border-bottom: 3px solid #D0021B;
-      height: 445px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; }
-      .cmp-rejilla-home .col-info a .pensamiento h3 {
-        font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif";
-        font-size: 60px;
-        text-align: center; }
-      .cmp-rejilla-home .col-info a .pensamiento p {
-        text-align: center; }
-  .cmp-rejilla-home .col-info .imagen-video {
-    height: 445px;
-    border-bottom: 3px solid #D0021B; }
-    .cmp-rejilla-home .col-info .imagen-video iframe {
-      width: 100%;
-      height: 100%; }
-  .cmp-rejilla-home .col-info .col-vertical {
-    height: 473px;
-    border-bottom: 3px solid #D0021B; }
-    .cmp-rejilla-home .col-info .col-vertical .datos-arquitectos {
-      font-family: "National-Book", "Helvetica", "sans-serif"; }
-      .cmp-rejilla-home .col-info .col-vertical .datos-arquitectos .inicial {
-        font-family: "National-Book", "Helvetica", "sans-serif";
-        font-size: 250px;
-        font-weight: 900;
-        text-align: left;
-        color: #000; }
-      .cmp-rejilla-home .col-info .col-vertical .datos-arquitectos .arquitecto {
-        font-size: 15px;
-        color: #D0021B; }
+	height: 481px;
+}
+
+.cmp-rejilla-home .col-info h4 {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	font-style: italic;
+	font-size: 15px;
+}
+
+.cmp-rejilla-home .col-info h4 span {
+	color: #D0021B;
+	padding-right: 10px;
+	font-style: normal;
+}
+
+.cmp-rejilla-home .col-info a {
+	text-decoration: none;
+	color: #000;
+}
+
+.cmp-rejilla-home .col-info a img {
+	height: 445px;
+	border-bottom: 3px solid #D0021B;
+}
+
+.cmp-rejilla-home .col-info a .pensamiento {
+	border-bottom: 3px solid #D0021B;
+	height: 445px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.cmp-rejilla-home .col-info a .pensamiento h3 {
+	font-family: "FreightDispBlackItalic", "Helvetica", "sans-serif";
+	font-size: 60px;
+	text-align: center;
+}
+
+.cmp-rejilla-home .col-info a .pensamiento p {
+	text-align: center;
+}
+
+.cmp-rejilla-home .col-info .imagen-video {
+	height: 445px;
+	border-bottom: 3px solid #D0021B;
+}
+
+.cmp-rejilla-home .col-info .imagen-video iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.cmp-rejilla-home .col-info .col-vertical {
+	height: 473px;
+	border-bottom: 3px solid #D0021B;
+}
+
+.cmp-rejilla-home .col-info .col-vertical .datos-arquitectos {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+}
+
+.cmp-rejilla-home .col-info .col-vertical .datos-arquitectos .inicial {
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	font-size: 250px;
+	font-weight: 900;
+	text-align: left;
+	color: #000;
+}
+
+.cmp-rejilla-home .col-info .col-vertical .datos-arquitectos .arquitecto
+	{
+	font-size: 15px;
+	color: #D0021B;
+}
 
 @media screen and (max-width: 1200px) {
-  .cmp-rejilla-home .col-info.col-premios {
-    height: auto; } }
+	.cmp-rejilla-home .col-info.col-premios {
+		height: auto;
+	}
+}
 
 /* GRID DE LA HOME - termina */

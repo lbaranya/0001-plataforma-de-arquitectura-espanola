@@ -6,6 +6,8 @@ public interface ArchitectureFilesFormatCartographic {
 	
 	public String getTitle(Node node);
 	
+	public String getSubtitle(Node node);
+	
 	public String getPhoto(Node node);
 
 }

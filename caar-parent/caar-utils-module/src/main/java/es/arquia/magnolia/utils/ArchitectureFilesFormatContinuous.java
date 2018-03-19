@@ -6,6 +6,8 @@ public interface ArchitectureFilesFormatContinuous {
 	
 	public String getTitle(Node node);
 	
+	public String getSubtitle(Node node);
+	
 	public String getPhoto(Node node);
 
 }

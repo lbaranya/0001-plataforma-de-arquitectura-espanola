@@ -1,6 +1,6 @@
 package es.arquia.magnolia.manager;
 
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportProjectNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportReviewIIINodeType;
@@ -44,6 +44,33 @@ public class RelatedElementsManagerImpl implements RelatedElementsManager {
 		}
 		else if(node.isNodeType(architectureFilesSupportBusinessNodeType)) {
 			return relatedElementsTransformers.architectureFilesSupportBusinessTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatAudioNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatAudioTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatBookNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatBookTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatCartographicNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatCartographicTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatContinuousNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatContinuousTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatElectronicNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatElectronicTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatGraphicNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatGraphicTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatManuscriptNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatManuscriptTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatThreeDimensionalNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatThreeDimensionalTransformer(node);
+		}
+		else if(node.isNodeType(architectureFilesFormatVideoNodeType)) {
+			return relatedElementsTransformers.architectureFilesFormatVideoTransformer(node);
 		}
 		else {
 			return null;

@@ -1,5 +1,6 @@
 package es.arquia.magnolia.utils;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesFormatAudioConstants.subtitle;
 import static es.arquia.magnolia.constants.ArchitectureFilesFormatBookConstants.photo;
 import static es.arquia.magnolia.constants.ArchitectureFilesFormatBookConstants.title;
 
@@ -34,6 +35,11 @@ public class ArchitectureFilesFormatBookImpl implements ArchitectureFilesFormatB
 	@Override
 	public String getPhoto(Node node) {
 		return getPropertyAsString(node, photo);
+	}
+
+	@Override
+	public String getSubtitle(Node node) {
+		return getPropertyAsString(node, subtitle);
 	}
 
 }

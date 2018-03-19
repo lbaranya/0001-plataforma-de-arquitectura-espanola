@@ -3,6 +3,7 @@ package es.arquia.magnolia.utils;
 public class RelatedElement {
 	
 	private String title;
+	private String subtitle;
 	private String photo;
 	private String description;
 	private String eventType;
@@ -29,6 +30,12 @@ public class RelatedElement {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	public String getSubtitle() {
+		return subtitle;
+	}
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
 	}
 	public String getPhoto() {
 		return photo;

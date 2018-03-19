@@ -1,6 +1,6 @@
 package es.arquia.magnolia.functions;
 
-import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportArchitectNodeType;
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.*;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportBusinessNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportProjectNodeType;
@@ -163,6 +163,132 @@ public class RelatedElementsTransformersImpl implements RelatedElementsTransform
 		related.setPath(node.getPath());
 		related.setWorkspace(architectureFilesWorkspace);
 		related.setNodeType(architectureFilesSupportBusinessNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatAudioTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatAudio.getTitle(node));
+		related.setSubtitle(architectureFilesFormatAudio.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatAudio.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatAudioNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatBookTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatBook.getTitle(node));
+		related.setSubtitle(architectureFilesFormatBook.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatBook.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatBookNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatCartographicTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatCartographic.getTitle(node));
+		related.setSubtitle(architectureFilesFormatCartographic.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatCartographic.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatCartographicNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatContinuousTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatContinuous.getTitle(node));
+		related.setSubtitle(architectureFilesFormatContinuous.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatContinuous.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatContinuousNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatElectronicTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatElectronic.getTitle(node));
+		related.setSubtitle(architectureFilesFormatElectronic.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatElectronic.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatElectronicNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatGraphicTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatGraphic.getTitle(node));
+		related.setSubtitle(architectureFilesFormatGraphic.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatGraphic.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatGraphicNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatManuscriptTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatManuscript.getTitle(node));
+		related.setSubtitle(architectureFilesFormatManuscript.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatManuscript.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatManuscriptNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatThreeDimensionalTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatThreeDimensional.getTitle(node));
+		related.setSubtitle(architectureFilesFormatThreeDimensional.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatThreeDimensional.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatThreeDimensionalNodeType);
+		
+		return related;
+	}
+
+	@Override
+	public RelatedElement architectureFilesFormatVideoTransformer(Node node) throws RepositoryException {
+		RelatedElement related = new RelatedElement();
+
+		related.setTitle(architectureFilesFormatVideo.getTitle(node));
+		related.setSubtitle(architectureFilesFormatVideo.getSubtitle(node));
+		related.setPhoto(architectureFilesFormatVideo.getPhoto(node));
+		related.setPath(node.getPath());
+		related.setWorkspace(architectureFilesWorkspace);
+		related.setNodeType(architectureFilesFormatVideoNodeType);
 		
 		return related;
 	}
