@@ -327,6 +327,19 @@ editor:
                   targetWorkspace: architecture-files      
                   appName: caar-architecture-files-app
                   label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionLink.label
+                - name: lemmaOptionFileLinkName
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionFileLinkName.label
+                  i18n: true
+                - name: lemmaOptionFileLink
+                  label: caar-templating-module.templates.components.distributor-sections-award-component.tabLemma.lemmaOptionList.lemmaOptionCompositeField.lemmaOptionFileLink.label
+                  class: info.magnolia.ui.form.field.definition.LinkFieldDefinition      
+                  targetWorkspace: dam      
+                  appName: assets      
+                  identifierToPathConverter:      
+                    class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
+                  contentPreviewDefinition:      
+                    contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
                   # End specific fields
       - name: tabEnrollmentRequirements
         label: Enrollment Requirements

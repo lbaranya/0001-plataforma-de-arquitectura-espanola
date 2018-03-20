@@ -360,6 +360,10 @@
 					[#if contentItem.lemmaOptionRichText?has_content]
 						[#assign richText = cmsfn.decode(contentItem).lemmaOptionRichText]
 					[/#if]
+					[#assign lemmaFileDownloadLink = "#"]
+					[#if contentItem.lemmaOptionFileLink?has_content]
+						[#assign lemmaFileDownloadLink = contentItem.lemmaOptionFileLink]
+					[/#if]
 				<section class="cmp-distribuidor-general-content" id="${idAnchor!""}">
 				    <div class="cmp-distruidor-content-title">
 				        <div>
@@ -390,6 +394,9 @@
 						                            [/#if]
 						                    	</a>
 						                    </div>
+						                    [#if contentItem.lemmaOptionFileLink?has_content]
+						                    	<a class=" " href="${damfn.getAssetLink(lemmaFileDownloadLink)!"#"}">${contentItem.lemmaOptionFileLinkName!i18n['caar-templating-module.templates.pages.award-announcement.downloadPDF.text']} <i class="fa fa-file" aria-hidden="true"></i></a>
+						                    [/#if]
 						                    <div class="info-basica">
 						                    	${richText}
 						                    </div>
