@@ -56,4 +56,8 @@ public class NewsDiaryModel <T extends ConfiguredTemplateDefinition> extends Ren
 	private void setContextValuesFromNewsList(ContextNewsNav contextNewsNav) {
 		MgnlContext.setAttribute(contextNewsNavObject, contextNewsNav, Context.SESSION_SCOPE);
 	}
+	
+	public String getEventLink(String link) {
+		return architectureFilesSupportEventManager.getEventLink(link);
+	}
 }

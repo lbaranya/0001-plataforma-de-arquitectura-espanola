@@ -4,6 +4,8 @@ public interface UtilsConstants {
 	String dateFormat = "dd MMMM YYYY";
 	String dateFormatNumeric = "dd.MM.YYYY";
 	String dateFormatDayOfWeek = "EEE.";
+	String dateFormatCompleteDayOfWeek = "EEEE";
+	String dateFormatHoursMinutes = "HH.mm'h'";
 	String dateFormatComplete = "yyyy-MM-dd'T'HH:mm:ss.SSS";
 	
 	// Countries

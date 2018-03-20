@@ -1,5 +1,6 @@
 package es.arquia.magnolia.utils;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesConstants.architectureFilesSupportEventNodeType;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipDetail;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipInfo;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.authorshipName;
@@ -7,6 +8,7 @@ import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstant
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.endTime;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.eventType;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.important;
+import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.listAuthorship;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.listMedia;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.ouvreAbstract;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.ouvreTitle;
@@ -18,7 +20,9 @@ import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstant
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.startTime;
 import static es.arquia.magnolia.constants.ArchitectureFilesSupportEventConstants.website;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormat;
+import static es.arquia.magnolia.constants.UtilsConstants.dateFormatCompleteDayOfWeek;
 import static es.arquia.magnolia.constants.UtilsConstants.dateFormatDayOfWeek;
+import static es.arquia.magnolia.constants.UtilsConstants.dateFormatHoursMinutes;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -29,6 +33,7 @@ import java.util.Locale;
 
 import javax.inject.Inject;
 import javax.jcr.Node;
+import javax.jcr.NodeIterator;
 import javax.jcr.Property;
 import javax.jcr.RepositoryException;
 
@@ -87,6 +92,31 @@ public class ArchitectureFilesSupportEventImpl implements ArchitectureFilesSuppo
 		}
 	}
 	
+	public String getStartCompleteDayOfWeek(Node node) throws RepositoryException {
+		try {
+			Calendar calendar = node.getProperty(presentationStartDate).getDate();
+			Locale locale = MgnlContext.getAggregationState().getLocale();
+			DateFormat formatter = new SimpleDateFormat(dateFormatCompleteDayOfWeek, locale);
+			return formatter.format(calendar.getTime());
+		} catch(RepositoryException e) {
+			return "";
+		}
+	}
+	
+	public String getSchedule(Node node) throws RepositoryException {
+		try {
+			Calendar calendar = node.getProperty(presentationStartDate).getDate();
+			Locale locale = MgnlContext.getAggregationState().getLocale();
+			DateFormat formatter = new SimpleDateFormat(dateFormatHoursMinutes, locale);
+			String start = formatter.format(calendar.getTime());
+			calendar = node.getProperty(presentationEndingDate).getDate();
+			String end = formatter.format(calendar.getTime());
+			return start + " - " + end;
+		} catch(RepositoryException e) {
+			return "";
+		}
+	}
+	
 	public String getPresentationLocation(Node node) throws RepositoryException {
 		try{
 			Property tmp = node.getProperty(presentationLocation);
@@ -94,6 +124,10 @@ public class ArchitectureFilesSupportEventImpl implements ArchitectureFilesSuppo
 		}catch(RepositoryException e) {
 			return "";
 		}
+	}
+	
+	public String getPresentationLocationForMap(Node node) throws RepositoryException {
+		return getPresentationLocation(node).replace(" ", "+");
 	}
 	
 	public String getOuvreAbstract(Node node) throws RepositoryException {
@@ -133,6 +167,23 @@ public class ArchitectureFilesSupportEventImpl implements ArchitectureFilesSuppo
 		}
 	}
 	
+	public String getWebsiteFieldName() {
+		return website;
+	}
+	
+	public List<Node> getAuthorshipList(Node node) throws RepositoryException {
+		List<Node> nodeList = new ArrayList<>();
+		try{
+			Node tmp = node.getNode(listAuthorship);
+			for (NodeIterator it = tmp.getNodes(); it.hasNext();) {
+				nodeList.add(it.nextNode());
+			}
+			return nodeList;
+		}catch(RepositoryException e) {
+			return nodeList;
+		}
+	}
+	
 	public String getAuthorshipType(Node node) throws RepositoryException {
 		try{
 			return i18nContentSupport.getProperty(node, authorshipType).getString();
@@ -166,7 +217,7 @@ public class ArchitectureFilesSupportEventImpl implements ArchitectureFilesSuppo
 	}
 	
 	public List<Node> getListMedia(Node node) throws RepositoryException{
-		List<Node> nodeList = new ArrayList<Node>();
+		List<Node> nodeList = new ArrayList<>();
 		try{
 			Node tmp = node.getNode(listMedia);
 			return (List<Node>) tmp.getNodes();
@@ -196,5 +247,9 @@ public class ArchitectureFilesSupportEventImpl implements ArchitectureFilesSuppo
 		}catch(RepositoryException e) {
 			return null;
 		}
+	}
+	
+	public boolean isEventNodeType(Node node) throws RepositoryException {
+		return node.isNodeType(architectureFilesSupportEventNodeType);
 	}
 }
