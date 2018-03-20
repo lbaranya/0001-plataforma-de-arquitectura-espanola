@@ -3,12 +3,12 @@
 	[#assign eventsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 	[#assign eventsContentNode = cmsfn.asJCRNode(eventsContent)]
 	[#assign events = model.parent.getInstance()!""]
-	[@cms.area name="breadcrumb" /]
 	[#-- [@cms.component content=content template="submenu-award" /] --]
 	[#--  [#include "submenu-award.ftl"]--]
 	[#assign awardContentNode = cmsfn.asJCRNode(cmsfn.parent(eventsContent, "mgnl:award"))!""]
+	[@cms.area name="breadcrumb" contextAttributes={"contentNode", eventsContentNode}/]
 	[@cms.area name="submenu-award" contextAttributes={"currentAward":awardContentNode} /]
-	[@cms.area name="subheader" /]
+	[@cms.area name="subheader" contextAttributes={"nodeName": events.getTitle(eventsContentNode)}/]
 	[#list cmsfn.children(eventsContent) as eventItem]
 		[#assign eventNode = cmsfn.asJCRNode(eventItem)!""]
 		<section class="cmp-programas-marco">
@@ -39,7 +39,7 @@
 								<div class="evento-contenedor">
 		                            <div class="evento-item">
 		                                [#-- <a href="${cmsfn.link(eventsNode)}" class="evento-link">  --]
-		                                <a href="${cmsfn.link(navfn.rootPage(content))}" class="evento-link"> 
+		                                <a href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}" class="evento-link"> 
 		                                    <div class="evento-header">
 		                                        <span class="categoria">${relatedElement.getEventType()!""}</span>
 		                                        <span class="evento-fecha">${relatedElement.getDayOfWeek()!""}</span>
@@ -72,7 +72,7 @@
 								</div>
 								[/#if]
 	            				[#assign countRows = countRows + 1]
-	            			[#elseif relatedElement.getNodeType() == "mgnl:support-architect" || relatedElement.getNodeType() == "mgnl:support-project" || relatedElement.getNodeType() == "mgnl:support-review-i" || relatedElement.getNodeType() == "mgnl:support-review-ii" || relatedElement.getNodeType() == "mgnl:support-review-iii" || relatedElement.getNodeType() == "mgnl:support-review-iv" || relatedElement.getNodeType() == "mgnl:support-business"]
+	            			[#elseif relatedElement.getNodeType() == "mgnl:support-architect" || relatedElement.getNodeType() == "mgnl:support-project" || relatedElement.getNodeType() == "mgnl:support-review-i" || relatedElement.getNodeType() == "mgnl:support-review-ii" || relatedElement.getNodeType() == "mgnl:support-review-iii" || relatedElement.getNodeType() == "mgnl:support-review-iv"]
 			                <div class="col-md-3">
 			                	<div class="arquitecto">
 				                    <h4>${relatedElement.getTitle()!""}</h4>
@@ -92,7 +92,7 @@
 					                    	[/#if]
 					                    [/#if]
 				                        <div class="texto">
-				                            <a style="color:#fff" href="${cmsfn.link(cmsfn.nodeByPath(relatedElement.getPath(), relatedElement.getWorkspace()))!"#"}"><h2>${relatedElement.getTitle()!""}</h2></a>
+				                            <a style="color:#fff" href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}"><h2>${relatedElement.getTitle()!""}</h2></a>
 				                        </div>
 				                    </div>
 			                    </div>
@@ -101,6 +101,61 @@
 							</div>
 							[/#if]
 			                [#assign countRows = countRows + 1]
+			            [#elseif relatedElement.getNodeType() == "mgnl:support-business"]
+			            	<div class="col-md-3">
+			                    <div class="div-instituciones">
+			                        [#assign imgItemKey = relatedElement.getPhoto()!""]
+					            	[#if imgItemKey??]
+					            		[#if imgItemKey?has_content]
+					                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "137x173")!]
+						            		[#if imgMediaRendition?has_content]
+						            			[#assign imageAlternativeText = "ficha de arquitectura"]
+						            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+						            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
+						            				[#assign imageAlternativeText = imageAlt.alternative!""]
+						            			[/#if]
+					                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+					                    	[/#if]
+				                    	[/#if]
+				                    [/#if]
+				                    <div class="info-block">
+				                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
+				                        <p class="business-type">${cmsfn.contentById(relatedElement.getBusinessType(),"category").displayName!""}</p>
+				                        <p class="descript">${relatedElement.getCity()!""}, ${model.parent.getCountryName(catfn.getCategoryNodeByName(relatedElement.getCountry()))!""}</p>
+			                        </div>
+			                        <div class="more"><span><a href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}">Ver más</a></span><img src="${ctx.resourcesURL}/icons/interface-1.svg" alt="icon"/></div>
+			                    </div>
+			                </div>
+			                [#if countRows%4 == 0 || countRows == listSupport?size]
+							</div>
+							[/#if]
+			                [#assign countRows = countRows + 1]
+			            [#elseif relatedElement.getNodeType() == "mgnl:portfolio"]
+			            	<div class="col-md-3">
+			                    <div class="div-portafolio">
+			                        [#assign imgItemKey = relatedElement.getPhoto()!""]
+					            	[#if imgItemKey??]
+					            		[#if imgItemKey?has_content]
+					                    	[#assign imgMediaRendition = damfn.getRendition(imgItemKey, "338x502")!]
+						            		[#if imgMediaRendition?has_content]
+						            			[#assign imageAlternativeText = "ficha de arquitectura"]
+						            			[#assign imageAlt = cmsfn.contentByPath(damfn.getAsset(imgItemKey!"").getPath(),"dam")!]
+						            			[#if imageAlt?has_content && imageAlt.alternative?has_content]
+						            				[#assign imageAlternativeText = imageAlt.alternative!""]
+						            			[/#if]
+					                    		<img src="${imgMediaRendition.getLink()}" alt="${imageAlternativeText!""}" />
+					                    	[/#if]
+				                    	[/#if]
+				                    [/#if]
+			                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
+			                        <p class="descript">${relatedElement.getDescription()!""}</p>
+			                        <div class="more"><span><a href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}">Ver más</a></span><img src="${ctx.resourcesURL}/icons/interface.svg" alt="icon"/></div>
+			                    </div>
+			                </div>
+			                [#if countRowsFormat%4 == 0 || countRowsFormat == listSupport?size]
+							</div>
+							[/#if]
+			                [#assign countRowsFormat = countRowsFormat + 1]
 		                [/#if]
 					[/#list]
 					[/#if]
@@ -140,7 +195,7 @@
 				                    [/#if]
 			                        <h3 class="title">${relatedElement.getTitle()!""}</h3>
 			                        <p class="descript">${relatedElement.getSubtitle()!""}</p>
-			                        <div class="more"><span>Ver Más</span><img src="${ctx.resourcesURL}/icons/interface-1.svg" alt="icon"/></div>
+			                        <div class="more"><span><a href="${model.parent.getLink(nodeItem, cmsfn.link(nodeItem))!"#"}">Ver más</a></span><img src="${ctx.resourcesURL}/icons/interface.svg" alt="icon"/></div>
 			                    </div>
 			                </div>
 			                [#if countRowsFormat%4 == 0 || countRowsFormat == listSupport?size]

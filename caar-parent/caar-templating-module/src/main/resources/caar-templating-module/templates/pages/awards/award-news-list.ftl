@@ -7,7 +7,7 @@
 	[#assign category = awards.getAwardCategoriesList(awardsContentNode)!""]
 	[#assign listNews = model.parent.getCategorizedNewsList(category)!""]
 	[#assign news = model.parent.getNewsInstance()!""]
-	[@cms.area name="content" contextAttributes={"awardHomeName" : awards.getAwardName(awardsContentNode)}/]
+	[@cms.area name="content" contextAttributes={"contentNode" : awardsContentNode}/]
 	[@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
 	[@cms.area name="subheader" /]
 	<section class="cmp-last-news">

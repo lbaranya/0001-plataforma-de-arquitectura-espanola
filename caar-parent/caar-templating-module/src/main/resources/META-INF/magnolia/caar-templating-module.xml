@@ -39,6 +39,10 @@
 			<implementation>es.arquia.magnolia.manager.ArchitectureFilesFormatManagerImpl</implementation>
 		</component>
 		<component>
+			<type>es.arquia.magnolia.manager.ArchitectureFilesSupportManager</type>
+			<implementation>es.arquia.magnolia.manager.ArchitectureFilesSupportManagerImpl</implementation>
+		</component>
+		<component>
 			<type>es.arquia.magnolia.manager.AwardManager</type>
 			<implementation>es.arquia.magnolia.manager.AwardManagerImpl</implementation>
 		</component>

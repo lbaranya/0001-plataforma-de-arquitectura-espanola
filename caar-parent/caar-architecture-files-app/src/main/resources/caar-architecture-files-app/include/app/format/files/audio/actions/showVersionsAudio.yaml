@@ -1,0 +1,8 @@
+class: es.arquia.magnolia.contentApps.actions.FixedShowVersionsActionDefinition
+icon: icon-show-versions
+label: caar-architecture-files-app.browser.actions.showVersions.label
+subAppId: detailFormatAudio
+availability: 
+  rules: 
+    HasVersionsRule: 
+      implementationClass: info.magnolia.ui.framework.availability.HasVersionsRule

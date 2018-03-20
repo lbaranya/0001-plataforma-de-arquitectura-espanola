@@ -160,6 +160,9 @@ public class RelatedElementsTransformersImpl implements RelatedElementsTransform
 
 		related.setTitle(architectureFilesSupportBusiness.getLegalName(node));
 		related.setPhoto(architectureFilesSupportBusiness.getLogo(node));
+		related.setCountry(architectureFilesSupportBusiness.getDepartmentCountry(node));
+		related.setCity(architectureFilesSupportBusiness.getDepartmentCity(node));
+		related.setBusinessType(architectureFilesSupportBusiness.getBusinessType(node));
 		related.setPath(node.getPath());
 		related.setWorkspace(architectureFilesWorkspace);
 		related.setNodeType(architectureFilesSupportBusinessNodeType);

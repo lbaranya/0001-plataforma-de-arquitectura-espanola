@@ -1085,6 +1085,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 .cmp-acerca-de-ae .breadcrumb li {
 	text-transform: lowercase;
+	color: #D0021B;
 }
 
 .cmp-acerca-de-ae .breadcrumb li a {
@@ -2719,6 +2720,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-top: 30px;
 	padding-top: 15px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
+	position: relative;
 }
 
 .cmp-arquitectos-realacionados .div-portafolio .title {
@@ -2738,9 +2740,19 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 .cmp-arquitectos-realacionados .div-portafolio .more {
 	display: flex;
 	justify-content: space-between;
+	position: absolute;
+	bottom: 15px;
+	width: 90%;
+	
 }
 
 .cmp-arquitectos-realacionados .div-portafolio .more span {
+	display: flex;
+	align-items: center;
+	color: #D0021B;
+}
+
+.cmp-arquitectos-realacionados .div-portafolio .more a {
 	display: flex;
 	align-items: center;
 	color: #D0021B;
@@ -3872,7 +3884,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 .cmp-programas-marco .seperador-black {
 	width: 101%;
-	padding-left:15px;
+	padding-left: 15px;
 }
 
 .cmp-programas-marco .listado-fichas {
@@ -3880,7 +3892,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	margin-top: 20px;
 }
 
-.cmp-programas-marco .listado-fichas h3 {
+.listado-fichas .div-portafolio h3 {
 	color: #D0021B;
 	font-size: 24px;
 	font-weight: bold;
@@ -4341,3 +4353,87 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
     margin: 0 auto; } }
     
  /* Detalle de eventos - termina*/
+
+/* Estilo variante de fichas en actos - empieza */
+.div-instituciones {
+	background-color: #f9f7f3;
+	border-bottom: 3px solid #D0021B;
+	padding: 20px;
+	font-family: "National-Book", "Helvetica", "sans-serif";
+	margin-top: 20px; margin-bottom : 20px; padding-top : 20px;
+	padding-bottom : 20px;
+	height: 510px;
+	position: relative;
+	margin-bottom: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.div-instituciones .info-block {
+	padding-top: 100px;	
+}
+
+
+.div-instituciones .info-block .title{
+	font-size: 22px;
+	font-weight: bold;
+	text-align: left;
+	color: black;
+}
+
+.div-instituciones .info-block .business-type{
+	margin-top: 25px;
+	color: #D0021B;
+	text-align: left;
+	font-weight: bold;
+}
+
+.div-instituciones .info-block .descript {
+	font-weight: bold;
+	text-align: left;
+}
+
+.div-instituciones img {
+	width: 137px;
+	height: 173px;
+	text-align: center;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.div-instituciones .more {
+	display: flex;
+	justify-content: space-between;
+	position: absolute;
+	bottom: 15px;
+	width: 90%;
+}
+
+.div-instituciones .more a {
+	color: #D0021B;
+}
+
+.div-instituciones .more span {
+	display: flex;
+	align-items: center;
+	color: #D0021B;
+}
+
+.div-instituciones .more span:before {
+	content: '';
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	border: 1px solid #D0021B;
+	margin-right: 10px;
+}
+
+.div-instituciones .more img {
+	width: 23px;
+	height: 29px;
+	margin-right: 10px;
+}
+
+/* Estilo variante de fichas en actos - termina */

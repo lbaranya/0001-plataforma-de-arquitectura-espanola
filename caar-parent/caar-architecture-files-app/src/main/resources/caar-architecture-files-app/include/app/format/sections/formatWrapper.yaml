@@ -10,6 +10,7 @@ groups:
       - name: addFormatContinuousWrapper
       - name: addFormatElectronicWrapper
       - name: addFormatCartographicWrapper
+      - name: addFormatAudioWrapper      
   - name: editActions
     items:
       - name: editWrapper

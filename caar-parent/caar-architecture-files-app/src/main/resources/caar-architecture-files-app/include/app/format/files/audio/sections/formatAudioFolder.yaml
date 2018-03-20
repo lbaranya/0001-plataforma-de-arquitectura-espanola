@@ -1,0 +1,26 @@
+name: formatAudioFolder
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatAudioWrapper.label
+groups:
+- name: addActions
+  items:
+  - name: addFolderFormatAudio
+  - name: addFormatAudio
+- name: editActions
+  items:
+  - name: editFolder
+  - name: confirmDelete
+- name: importExportActions
+  items:
+  - name: import
+  - name: export
+- name: activationsActions
+  items:
+  - name: activate
+  - name: activateRecursive
+  - name: deactivate
+- name: deletedActions
+  items:
+  - name: restorePreviousVersion
+availability:
+  nodeTypes:
+    - mgnl:format-audio-folder-wrapper
