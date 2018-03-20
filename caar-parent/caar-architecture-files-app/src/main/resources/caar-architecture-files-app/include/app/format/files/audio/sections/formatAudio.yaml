@@ -1,0 +1,23 @@
+name: formatAudio
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatAudio.label
+groups:
+  - name: editActions
+    items:
+      - name: editFormatAudio
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+      - name: requestTranslation
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsAudio
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:format-audio
