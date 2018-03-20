@@ -18,6 +18,8 @@ import static es.arquia.magnolia.constants.AnnouncementConstants.juryOptionImage
 import static es.arquia.magnolia.constants.AnnouncementConstants.juryOptionTitle;
 import static es.arquia.magnolia.constants.AnnouncementConstants.juryOptionWeight;
 import static es.arquia.magnolia.constants.AnnouncementConstants.lemmaOptionAbstract;
+import static es.arquia.magnolia.constants.AnnouncementConstants.lemmaOptionFileLink;
+import static es.arquia.magnolia.constants.AnnouncementConstants.lemmaOptionFileLinkName;
 import static es.arquia.magnolia.constants.AnnouncementConstants.lemmaOptionImageAnchor;
 import static es.arquia.magnolia.constants.AnnouncementConstants.lemmaOptionLink;
 import static es.arquia.magnolia.constants.AnnouncementConstants.lemmaOptionPhotoPreview;
@@ -175,5 +177,15 @@ public class AnnouncementSectionsNodeUtilImpl implements AnnouncementSectionsNod
 	
 	public String getLemmaOptionPhotoPreview(Node node) {
 		return getPropertyAsString(node, lemmaOptionPhotoPreview);
+	}
+
+	@Override
+	public String getLemmaOptionFileLinkName(Node node) {
+		return getPropertyAsString(node, lemmaOptionFileLinkName);
+	}
+
+	@Override
+	public String getLemmaOptionFileLink(Node node) {
+		return getPropertyAsString(node, lemmaOptionFileLink);
 	}
 }

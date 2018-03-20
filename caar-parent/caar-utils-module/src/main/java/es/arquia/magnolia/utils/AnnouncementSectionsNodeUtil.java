@@ -61,5 +61,9 @@ public interface AnnouncementSectionsNodeUtil {
 	public String getLemmaOptionLink(Node node);
 	
 	public String getLemmaOptionPhotoPreview(Node node);
+	
+	public String getLemmaOptionFileLinkName(Node node);
+	
+	public String getLemmaOptionFileLink(Node node);
 
 }
