@@ -50,6 +50,9 @@ public class CaarUtilsModuleVersionHandler extends DefaultModuleVersionHandler {
 		register(DeltaBuilder.update("0.23", "")
 				.addTask(new BootstrapSingleModuleResource("Content caching", "Disable content caching for all site", "config.modules.cache.config.contentCaching.defaultPageCache.cachePolicy.shouldBypassVoters.urls.excludes.caarCache.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
 				);
+		register(DeltaBuilder.update("0.34", "")
+				.addTask(new BootstrapSingleModuleResource("Choose asset dialog", "Disable direct asset upload", "config.modules.dam-app.apps.assets.chooseDialog.xml", ImportUUIDBehavior.IMPORT_UUID_COLLISION_REPLACE_EXISTING))
+				);
 	}
 	
 }

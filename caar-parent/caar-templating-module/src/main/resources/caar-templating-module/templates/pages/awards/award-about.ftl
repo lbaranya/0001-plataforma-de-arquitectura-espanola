@@ -3,7 +3,7 @@
 	[#assign awardsContent = cmsfn.contentByPath(nodeJcrPath, "awards")!""]
 	[#assign awardsContentNode = cmsfn.asJCRNode(awardsContent)!""]
 	[#assign awards = model.parent.getInstance()!""]
-	[@cms.area name="breadcrumb" /]
+	[@cms.area name="breadcrumb" contextAttributes={"contentNode": awardsContentNode}/]
 	[#-- [@cms.component content=content template="submenu-award" /] --]
 	[#--  [#include "submenu-award.ftl"]--]
 	[@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]

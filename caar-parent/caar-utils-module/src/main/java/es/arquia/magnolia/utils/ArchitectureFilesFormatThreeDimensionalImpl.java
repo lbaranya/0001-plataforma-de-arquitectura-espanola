@@ -6,6 +6,7 @@ import javax.jcr.RepositoryException;
 
 import info.magnolia.cms.i18n.I18nContentSupport;
 
+import static es.arquia.magnolia.constants.ArchitectureFilesFormatAudioConstants.subtitle;
 import static es.arquia.magnolia.constants.ArchitectureFilesFormatThreeDimensionalConstants.*;
 
 public class ArchitectureFilesFormatThreeDimensionalImpl implements ArchitectureFilesFormatThreeDimensional {
@@ -33,6 +34,11 @@ public class ArchitectureFilesFormatThreeDimensionalImpl implements Architecture
 	@Override
 	public String getPhoto(Node node) {
 		return getPropertyAsString(node, photo);
+	}
+
+	@Override
+	public String getSubtitle(Node node) {
+		return getPropertyAsString(node, subtitle);
 	}
 
 }

@@ -1,0 +1,3 @@
+title: caar-templating-module.components.sub-header.dialog.title
+renderType: freemarker    
+templateScript: /caar-templating-module/templates/components/sub-header-award-component.ftl

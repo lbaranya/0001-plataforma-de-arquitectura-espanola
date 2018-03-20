@@ -26,7 +26,7 @@ editor:
             repository: category
             labelProperty: displayName
             path: bienales-premios/ediciones/fases
-          - name: name
+          - name: title
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-awards-app.files.edition.editionData.name.label
             i18n: true
