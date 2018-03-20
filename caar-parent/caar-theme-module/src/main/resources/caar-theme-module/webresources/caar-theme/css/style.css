@@ -3157,6 +3157,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	float: left;
 }
 
+.preview .descript a{
+	color: #D0021B;
+	float: right;
+}
+
 .col-info-preview {
 	position: relative;
 	float: left;
