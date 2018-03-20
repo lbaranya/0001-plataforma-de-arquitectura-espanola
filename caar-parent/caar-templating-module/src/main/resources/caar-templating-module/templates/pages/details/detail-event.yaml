@@ -1,0 +1,16 @@
+title: caar-templating-module.pages.detail-event.dialog.title
+renderType: site
+visible: true
+dialog: caar-templating-module:pages/detail-event-page-properties
+modelClass: es.arquia.magnolia.pages.models.architectureFiles.support.event.ArchitectureFilesSupportEventModel
+areas:
+  main:
+    templateScript: /caar-templating-module/templates/pages/details/detail-event.ftl
+    enabled: true
+    type: noComponent
+    areas:
+      breadcrumb:
+        type: single
+        availableComponents:
+          breadcrumb-component:
+            id: caar-templating-module:components/breadcrumb-component

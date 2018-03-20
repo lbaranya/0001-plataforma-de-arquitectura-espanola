@@ -42,5 +42,7 @@ public interface ArchitectureFilesSupportEvent {
 	public String getStartTime(Node node) throws RepositoryException;
 	
 	public String getEndTime(Node node) throws RepositoryException;
+	
+	public boolean isEventNodeType(Node node) throws RepositoryException;
 
 }
