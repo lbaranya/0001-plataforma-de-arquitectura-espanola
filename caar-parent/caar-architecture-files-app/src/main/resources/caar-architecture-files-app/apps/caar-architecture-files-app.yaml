@@ -90,6 +90,10 @@ subApps:
           icon: icon-folder          
         - name: mgnl:format-cartographic
           icon: icon-items
+        - name: mgnl:format-audio-wrapper
+          icon: icon-folder
+        - name: mgnl:format-audio-folder-wrapper
+          icon: icon-folder                
         - name: mgnl:format-audio
           icon: icon-items
         - name: mgnl:format-book
@@ -322,7 +326,11 @@ subApps:
         
       # Details Cartographic
       showVersionsCartographic:
-        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/showVersionsCartographic.yaml        
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/showVersionsCartographic.yaml
+        
+      # Details Audio
+      showVersionsAudio:
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/showVersionsAudio.yaml             
         
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
@@ -397,7 +405,11 @@ subApps:
         
       # Cartographic folder
       addFolderFormatCartographic:
-        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFolderFormatCartographic.yaml        
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFolderFormatCartographic.yaml
+        
+      # Audio folder
+      addFolderFormatAudio:
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/addFolderFormatAudio.yaml           
       
       # Edit any folder
       editFolder:
@@ -421,6 +433,7 @@ subApps:
             - mgnl:format-continuous-folder-wrapper
             - mgnl:format-electronic-folder-wrapper
             - mgnl:format-cartographic-folder-wrapper
+            - mgnl:format-audio-folder-wrapper            
             - mgnl:portfolio-folder-wrapper
           rules: 
             IsNotDeletedRule: 
@@ -459,7 +472,8 @@ subApps:
             - mgnl:format-three-dimensional-wrapper
             - mgnl:format-continuous-wrapper
             - mgnl:format-electronic-wrapper
-            - mgnl:format-cartographic-wrapper            
+            - mgnl:format-cartographic-wrapper
+            - mgnl:format-audio-wrapper
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -557,7 +571,9 @@ subApps:
       addFormatElectronicWrapper:
         !include:/caar-architecture-files-app/include/app/format/files/electronic/actions/addFormatElectronicWrapper.yaml
       addFormatCartographicWrapper:
-        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFormatCartographicWrapper.yaml        
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFormatCartographicWrapper.yaml
+      addFormatAudioWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/addFormatAudioWrapper.yaml        
        
       # Format Video
       addFormatVideo:
@@ -599,7 +615,13 @@ subApps:
       addFormatCartographic:
         !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFormatCartographic.yaml
       editFormatCartographic:
-        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/editFormatCartographic.yaml        
+        !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/editFormatCartographic.yaml
+        
+      # Format Audio
+      addFormatAudio:
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/addFormatAudio.yaml
+      editFormatAudio:
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/editFormatAudio.yaml         
       
     # Sections
     actionbar:
@@ -905,7 +927,21 @@ subApps:
         
         # Node actions
         - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographicDeleted.yaml
-        - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographic.yaml        
+        - !include:/caar-architecture-files-app/include/app/format/files/cartographic/sections/formatCartographic.yaml
+        
+        # Format Audio
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudioWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudioWrapper.yaml
+        
+        # Format Audio folder
+        - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudioFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudioFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudioDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudio.yaml          
         
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
@@ -954,4 +990,7 @@ subApps:
     !include:/caar-architecture-files-app/include/app/format/files/electronic/subapp/detailFormatElectronic.yaml
   # Format cartographic sub app
   detailFormatCartographic:
-    !include:/caar-architecture-files-app/include/app/format/files/cartographic/subapp/detailFormatCartographic.yaml    
+    !include:/caar-architecture-files-app/include/app/format/files/cartographic/subapp/detailFormatCartographic.yaml
+  # Format audio sub app
+  detailFormatAudio:
+    !include:/caar-architecture-files-app/include/app/format/files/audio/subapp/detailFormatAudio.yaml  
