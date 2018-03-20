@@ -1,184 +1,174 @@
 subAppClass: info.magnolia.ui.contentapp.detail.DetailSubApp
 class: info.magnolia.ui.contentapp.detail.DetailSubAppDescriptor
-label: caar-architecture-files-app.subapp.detailFormatCartographic.label
+label: caar-architecture-files-app.subapp.detailFormatAudio.label
 contentConnector:
   workspace: architecture-files
 editor:
   nodeType:
     icon: icon-items
-    name: mgnl:format-cartographic
+    name: mgnl:format-audio
   form:
     tabs:
       - name: fileData
-        label: caar-architecture-files-app.files.format.cartographic.fileData.label
+        label: caar-architecture-files-app.files.format.audio.fileData.label
         fields:
           - name: jcrName
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.fileData.jcrName.label
+            label: caar-architecture-files-app.files.format.audio.fileData.jcrName.label
             required: true
       - name: data
-        label: caar-architecture-files-app.files.format.cartographic.data.label          
+        label: caar-architecture-files-app.files.format.audio.data.label          
         fields:
-          - name: FF3_1
+          - name: FF4_1
             required: true
             class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
             targetWorkspace: dam
             appName: assets
-            label: caar-architecture-files-app.files.format.cartographic.data.photoPreview.label
+            label: caar-architecture-files-app.files.format.audio.data.photoPreview.label
             identifierToPathConverter:
               class: info.magnolia.dam.app.assets.field.translator.AssetCompositeIdKeyTranslator
             contentPreviewDefinition:
               contentPreviewClass: info.magnolia.dam.app.ui.field.DamFilePreviewComponent
           - name: m21_001
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.id.label
+            label: caar-architecture-files-app.files.format.audio.data.id.label
           - name: m21_020$a
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.isbn.label
+            label: caar-architecture-files-app.files.format.audio.data.isbn.label
           - name: m21_022$a
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.issn.label
+            label: caar-architecture-files-app.files.format.audio.data.issn.label
+          - name: m21_028$a
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.format.audio.data.editorNumber.label
+          - name: m21_028$b
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.format.audio.data.source.label                       
           - name: m21_040$a
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.depositoryInstitution.label
+            label: caar-architecture-files-app.files.format.audio.data.depositoryInstitution.label
           - name: m21_080$a
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.localeCode.label
+            label: caar-architecture-files-app.files.format.audio.data.localeCode.label
           - name: m21_245$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.title.label
+            label: caar-architecture-files-app.files.format.audio.data.title.label
           - name: m21_245$b
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.subTitle.label
+            label: caar-architecture-files-app.files.format.audio.data.subTitle.label
           - name: m21_245$c
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.mentions.label
+            label: caar-architecture-files-app.files.format.audio.data.mentions.label
           - name: m21_246$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.titleVariant.label
+            label: caar-architecture-files-app.files.format.audio.data.titleVariant.label
           - name: m21_246$b
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.continueTitle.label
+            label: caar-architecture-files-app.files.format.audio.data.continueTitle.label
           - name: m21_246$i
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.displayText.label
-          - name: m21_250$a
-            i18n: true
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.edition.label
+            label: caar-architecture-files-app.files.format.audio.data.displayText.label
           - name: m21_250$b
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.mentionsEdition.label
-          - name: m21_255$a
-            class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.scale.label
-            repository: category
-            labelProperty: displayName
-            path: caar/format-cartographic/scale
-          - name: m21_255$b
-            i18n: true
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.projection.label
-          - name: m21_255$c
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.coordinates.label            
-          - name: m21_255$e
-            i18n: true
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.equinox.label            
+            label: caar-architecture-files-app.files.format.audio.data.mentionsEdition.label        
           - name: m21_260$a
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.publicationPlace.label
+            label: caar-architecture-files-app.files.format.audio.data.publicationPlace.label
           - name: m21_260$b
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.editor.label
+            label: caar-architecture-files-app.files.format.audio.data.editor.label
           - name: m21_260$c
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.year.label
+            label: caar-architecture-files-app.files.format.audio.data.year.label
           - name: m21_260$e
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.printingPlace.label
+            label: caar-architecture-files-app.files.format.audio.data.printingPlace.label
           - name: m21_260$f
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.printer.label
+            label: caar-architecture-files-app.files.format.audio.data.printer.label
           - name: m21_260$d
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.printingYear.label
+            label: caar-architecture-files-app.files.format.audio.data.printingYear.label
           - name: m21_300$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.documentExtension.label
+            label: caar-architecture-files-app.files.format.audio.data.documentExtension.label
           - name: m21_300$b
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.otherPhysicalDetails.label
+            label: caar-architecture-files-app.files.format.audio.data.otherPhysicalDetails.label
           - name: m21_300$c
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.dimensions.label
+            label: caar-architecture-files-app.files.format.audio.data.dimensions.label
           - name: m21_300$e
+            i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.accompanyingMaterial.label           
+            label: caar-architecture-files-app.files.format.audio.data.accompanyingMaterial.label           
           - name: m21_440$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.collectionTitle.label
+            label: caar-architecture-files-app.files.format.audio.data.collectionTitle.label
           - name: m21_440$v
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.data.collectionNumber.label
+            label: caar-architecture-files-app.files.format.audio.data.collectionNumber.label
       - name: notes
-        label: caar-architecture-files-app.files.format.cartographic.notes.label
+        label: caar-architecture-files-app.files.format.audio.notes.label
         fields:
           - name: m21_500$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.nature.label
+            label: caar-architecture-files-app.files.format.audio.notes.nature.label
           - name: m21_546$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.documentLanguage.label
-          - name: m21_521$a
+            label: caar-architecture-files-app.files.format.audio.notes.documentLanguage.label
+          - name: m21_502$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.recipients.label            
+            label: caar-architecture-files-app.files.format.audio.notes.thesis.label
           - name: m21_530$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.otherFormats.label            
+            label: caar-architecture-files-app.files.format.audio.notes.otherFormats.label              
+          - name: m21_520$a
+            i18n: true
+            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+            label: caar-architecture-files-app.files.format.audio.notes.summary.label                      
           - name: m21_505$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.content.label
+            label: caar-architecture-files-app.files.format.audio.notes.content.label
           - name: m21_590$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.local.label              
+            label: caar-architecture-files-app.files.format.audio.notes.local.label              
           - name: m21_650$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.theme.label
+            label: caar-architecture-files-app.files.format.audio.notes.theme.label
           - name: m21_651$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.geoThemeName.label
+            label: caar-architecture-files-app.files.format.audio.notes.geoThemeName.label
           - name: m21_700$a
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.secondaryActorName.label
+            label: caar-architecture-files-app.files.format.audio.notes.secondaryActorName.label
           - name: m21_700$e
             i18n: true
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.secondaryActorTypology.label
+            label: caar-architecture-files-app.files.format.audio.notes.secondaryActorTypology.label
           - name: m21_710$a
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.format.cartographic.notes.secondaryActorEntityName.label             
+            label: caar-architecture-files-app.files.format.audio.notes.secondaryActorEntityName.label             
   actions:
     - name: commit
     - name: cancel
