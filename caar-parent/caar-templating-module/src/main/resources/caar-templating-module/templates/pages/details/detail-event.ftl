@@ -12,7 +12,7 @@
 				[#if eventInstance.isEventNodeType(eventContentNode)]
 				
 					<section class="cmp-detalle-agenda">
-				        <div class="container-fluid">
+				        <div class="container-margin">
 				            <div class="row">
 				                <div class="col-md-12">
 				                    <h1 class="main-title">${i18n['caar-templating-module.templates.components.detail-event-component.title']!""}</h1>
@@ -41,18 +41,18 @@
 				                            <div class="col-md-6 agenda-detalles">
 				                                <div class="detalle-info">
 				                                    <h2 class="subtitle">${eventInstance.getOuvreTitle(eventContentNode)!""}</h2>
-				                                    <p class="info-texto">
+				                                    <div class="info-texto">
 				                                    	${eventInstance.getOuvreAbstract(eventContentNode)!""}
-				                                    </p>
+				                                    </div>
 				                                    <div class="info-conferenciantes">
 				                                        <span class="title">${i18n['caar-templating-module.templates.components.detail-event-component.lecturers']!""}</span>
-				                                        <p class="info-texto"><div>
+				                                        <div class="info-texto">
 				                                        	[#assign lecturerList = eventInstance.getAuthorshipList(eventContentNode)!""]
 				                                        	[#list lecturerList as lecturer]
 				                                        		<span>${eventInstance.getAuthorshipName(lecturer)!""} (${eventInstance.getAuthorshipType(lecturer)!""}):</span>
 				                                        		${eventInstance.getAuthorshipDetail(lecturer)!""}
 				                                        	[/#list]
-				                                        </div></p>
+				                                        </div>
 				                                    </div>
 				                                </div>
 				                            </div>
