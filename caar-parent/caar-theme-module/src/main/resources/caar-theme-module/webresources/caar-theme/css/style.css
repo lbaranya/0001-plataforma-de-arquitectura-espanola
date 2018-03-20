@@ -19,6 +19,12 @@ a, a:hover, a:visited, a:link, a:active a:focus {
 	text-decoration: none;
 }
 
+/**Quitar padding**/
+
+.col-padding-out{
+	padding: 0 !important;
+}
+
 /* NUEVO CONTAINER */
 .container-margin {
 	width: 1442px;
