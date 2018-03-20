@@ -9,11 +9,11 @@
 	[#assign announcementContent = cmsfn.contentByPath(nodeJcrPath+editionPath+announcementPath, "awards")]
 	[#assign announcementContentNode = cmsfn.asJCRNode(announcementContent)!""]
 	[#assign announcement = model.parent.getAnnouncementInstance()!""]
-	[@cms.area name="breadcrumb" /]
+	[@cms.area name="breadcrumb" contextAttributes={"contentNode", announcementContentNode}/]
 	[#-- [@cms.component content=content template="submenu-award" /] --]
 	[#--  [#include "submenu-award.ftl"]--]
 	[@cms.area name="submenu-award" contextAttributes={"currentAward":awardsContentNode} /]
-	[@cms.area name="subheader" /]
+	[@cms.area name="subheader" contextAttributes={"nodeName": announcement.getAnnouncementTitle(announcementContentNode)}/]
 	<div class="container-margin">
 		<div class="row">
 		<section class="cmp-acerca-de-ae cmp-breadcrumb-info-video">

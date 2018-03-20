@@ -3,12 +3,12 @@
 	[#assign eventsContent = cmsfn.contentByPath(nodeJcrPath, "awards")]
 	[#assign eventsContentNode = cmsfn.asJCRNode(eventsContent)]
 	[#assign events = model.parent.getInstance()!""]
-	[@cms.area name="breadcrumb" /]
 	[#-- [@cms.component content=content template="submenu-award" /] --]
 	[#--  [#include "submenu-award.ftl"]--]
 	[#assign awardContentNode = cmsfn.asJCRNode(cmsfn.parent(eventsContent, "mgnl:award"))!""]
+	[@cms.area name="breadcrumb" contextAttributes={"contentNode", eventsContentNode}/]
 	[@cms.area name="submenu-award" contextAttributes={"currentAward":awardContentNode} /]
-	[@cms.area name="subheader" /]
+	[@cms.area name="subheader" contextAttributes={"nodeName": events.getTitle(eventsContentNode)}/]
 	<section class="cmp-programa-directo">
         <div class="container">
             <div class="row">
