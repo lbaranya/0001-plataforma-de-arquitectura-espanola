@@ -13,6 +13,8 @@ public interface EventNodeUtil {
 	
 	public List<String> getFilesList(Node node);
 	
+	public List<String> getNewsList(Node node);
+	
 	public String getStreamingLink(Node node);
 	
 	public String getFacebookUser(Node node);

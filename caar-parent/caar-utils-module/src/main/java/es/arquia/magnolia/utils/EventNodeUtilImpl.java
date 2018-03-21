@@ -3,13 +3,14 @@ package es.arquia.magnolia.utils;
 import static es.arquia.magnolia.constants.AwardConstants.eventTitle;
 import static es.arquia.magnolia.constants.AwardConstants.eventWrapperNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.eventWrapperTitle;
+import static es.arquia.magnolia.constants.AwardConstants.facebookUser;
 import static es.arquia.magnolia.constants.AwardConstants.filesList;
 import static es.arquia.magnolia.constants.AwardConstants.liveEventNodeType;
+import static es.arquia.magnolia.constants.AwardConstants.newsList;
 import static es.arquia.magnolia.constants.AwardConstants.standardEventNodeType;
 import static es.arquia.magnolia.constants.AwardConstants.standardEventText;
 import static es.arquia.magnolia.constants.AwardConstants.streamingLink;
 import static es.arquia.magnolia.constants.AwardConstants.twitterUser;
-import static es.arquia.magnolia.constants.AwardConstants.facebookUser;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -127,6 +128,11 @@ public class EventNodeUtilImpl implements EventNodeUtil {
 		}
 		
 		return validProperties;
+	}
+
+	@Override
+	public List<String> getNewsList(Node node) {
+		return getPropertyAsListOfString(node, newsList);
 	}
 	
 }
