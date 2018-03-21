@@ -1,0 +1,11 @@
+icon: icon-add-folder
+class: info.magnolia.ui.framework.action.AddNodeActionDefinition
+label: caar-architecture-files-app.subapp.browser.actions.addFolder.label
+nodeType: mgnl:format-book-folder-wrapper
+availability:
+  nodeTypes:
+    - mgnl:format-book-wrapper
+    - mgnl:format-book-folder-wrapper
+  rules: 
+    IsNotDeletedRule: 
+      implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
