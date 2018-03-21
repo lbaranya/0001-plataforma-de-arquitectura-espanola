@@ -7,6 +7,7 @@ label: caar-architecture-files-app.subapp.browser.actions.addPortfolio.label
 availability:
   nodeTypes:
     - mgnl:portfolio-wrapper
+    - mgnl:portfolio-folder-wrapper
   rules: 
     IsNotDeletedRule: 
       implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
