@@ -96,6 +96,10 @@ subApps:
           icon: icon-folder                
         - name: mgnl:format-audio
           icon: icon-items
+        - name: mgnl:format-book-wrapper
+          icon: icon-folder
+        - name: mgnl:format-book-folder-wrapper
+          icon: icon-folder          
         - name: mgnl:format-book
           icon: icon-items
         - name: mgnl:format-manuscript-wrapper
@@ -330,7 +334,11 @@ subApps:
         
       # Details Audio
       showVersionsAudio:
-        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/showVersionsAudio.yaml             
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/showVersionsAudio.yaml
+        
+      # Details Book
+      showVersionsBook:
+        !include:/caar-architecture-files-app/include/app/format/files/book/actions/showVersionsBook.yaml        
         
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
@@ -409,7 +417,11 @@ subApps:
         
       # Audio folder
       addFolderFormatAudio:
-        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/addFolderFormatAudio.yaml           
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/addFolderFormatAudio.yaml
+        
+      # Book folder
+      addFolderFormatBook:
+        !include:/caar-architecture-files-app/include/app/format/files/book/actions/addFolderFormatBook.yaml        
       
       # Edit any folder
       editFolder:
@@ -433,7 +445,8 @@ subApps:
             - mgnl:format-continuous-folder-wrapper
             - mgnl:format-electronic-folder-wrapper
             - mgnl:format-cartographic-folder-wrapper
-            - mgnl:format-audio-folder-wrapper            
+            - mgnl:format-audio-folder-wrapper
+            - mgnl:format-book-folder-wrapper            
             - mgnl:portfolio-folder-wrapper
           rules: 
             IsNotDeletedRule: 
@@ -474,6 +487,7 @@ subApps:
             - mgnl:format-electronic-wrapper
             - mgnl:format-cartographic-wrapper
             - mgnl:format-audio-wrapper
+            - mgnl:format-book-wrapper            
           rules: 
             IsNotDeletedRule: 
               implementationClass: info.magnolia.ui.framework.availability.IsNotDeletedRule
@@ -573,7 +587,9 @@ subApps:
       addFormatCartographicWrapper:
         !include:/caar-architecture-files-app/include/app/format/files/cartographic/actions/addFormatCartographicWrapper.yaml
       addFormatAudioWrapper:
-        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/addFormatAudioWrapper.yaml        
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/addFormatAudioWrapper.yaml
+      addFormatBookWrapper:
+        !include:/caar-architecture-files-app/include/app/format/files/book/actions/addFormatBookWrapper.yaml        
        
       # Format Video
       addFormatVideo:
@@ -621,7 +637,13 @@ subApps:
       addFormatAudio:
         !include:/caar-architecture-files-app/include/app/format/files/audio/actions/addFormatAudio.yaml
       editFormatAudio:
-        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/editFormatAudio.yaml         
+        !include:/caar-architecture-files-app/include/app/format/files/audio/actions/editFormatAudio.yaml
+        
+      # Format Book
+      addFormatBook:
+        !include:/caar-architecture-files-app/include/app/format/files/book/actions/addFormatBook.yaml
+      editFormatBook:
+        !include:/caar-architecture-files-app/include/app/format/files/book/actions/editFormatBook.yaml        
       
     # Sections
     actionbar:
@@ -941,7 +963,21 @@ subApps:
         
         # Node actions
         - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudioDeleted.yaml
-        - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudio.yaml          
+        - !include:/caar-architecture-files-app/include/app/format/files/audio/sections/formatAudio.yaml
+        
+        # Format Book
+        
+        #Wrapper
+        - !include:/caar-architecture-files-app/include/app/format/files/book/sections/formatBookWrapperDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/book/sections/formatBookWrapper.yaml
+        
+        # Format Cartographic folder
+        - !include:/caar-architecture-files-app/include/app/format/files/book/sections/formatBookFolderDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/book/sections/formatBookFolder.yaml
+        
+        # Node actions
+        - !include:/caar-architecture-files-app/include/app/format/files/book/sections/formatBookDeleted.yaml
+        - !include:/caar-architecture-files-app/include/app/format/files/book/sections/formatBook.yaml        
         
     imageProvider:
        class: info.magnolia.dam.app.ui.imageprovider.DamLinkImageProviderDefinition
@@ -994,3 +1030,6 @@ subApps:
   # Format audio sub app
   detailFormatAudio:
     !include:/caar-architecture-files-app/include/app/format/files/audio/subapp/detailFormatAudio.yaml  
+  # Format book sub app
+  detailFormatBook:
+    !include:/caar-architecture-files-app/include/app/format/files/book/subapp/detailFormatBook.yaml    

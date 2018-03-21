@@ -1,17 +1,10 @@
-name: formatWrapperDeleted
-label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatWrapper.label
+name: formatBookWrapperDeleted
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatBookWrapper.label
 groups:
   - name: addActions
     items:
-      - name: addFormatVideoWrapper
-      - name: addFormatManuscriptWrapper
-      - name: addFormatGraphicWrapper
-      - name: addFormatThreeDimensionalWrapper
-      - name: addFormatContinuousWrapper
-      - name: addFormatElectronicWrapper
-      - name: addFormatCartographicWrapper
-      - name: addFormatAudioWrapper
-      - name: addFormatBookWrapper      
+      - name: addFolderFormatBook
+      - name: addFormatBook
   - name: editActions
     items:
       - name: editWrapper
@@ -30,7 +23,7 @@ groups:
       - name: restorePreviousVersion
 availability:
   nodeTypes:
-    - mgnl:format-wrapper
+    - mgnl:format-book-wrapper
   rules:
     IsDeletedRule:
       implementationClass: info.magnolia.ui.framework.availability.IsDeletedRule
