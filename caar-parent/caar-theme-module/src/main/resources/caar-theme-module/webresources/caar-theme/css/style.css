@@ -13,7 +13,7 @@ a, a:hover, a:visited, a:link, a:active a:focus {
 }
 
 * {
-	margin: 0px;
+	margin: 0px;f
 	padding: 0px;
 	list-style: none;
 	text-decoration: none;
@@ -2722,8 +2722,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	background-color: #fff;
 	border-bottom: 3px solid #D0021B;
 	padding: 20px;
-	height: 500px;
-	margin-top: 30px;
+	height: 483px;
 	padding-top: 15px;
 	font-family: "National-Book", "Helvetica", "sans-serif";
 	position: relative;
@@ -4366,6 +4365,21 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
  /* Detalle de eventos - termina*/
 
 /* Estilo variante de fichas en actos - empieza */
+
+.arquitecto .header-div-text {
+	font-family: "National-BookItalic", "Helvetica", "sans-serif";
+	font-size: 15px;
+	margin-bottom: 1px;
+	padding-left: 5px;
+}
+
+.header-div-text {
+	font-family: "National-BookItalic", "Helvetica", "sans-serif";
+    font-size: 15px;
+    margin-bottom: 1px;
+    padding-left: 5px;
+}
+
 .div-instituciones {
 	background-color: #f9f7f3;
 	border-bottom: 3px solid #D0021B;
@@ -4373,7 +4387,7 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	font-family: "National-Book", "Helvetica", "sans-serif";
 	margin-top: 20px; margin-bottom : 20px; padding-top : 20px;
 	padding-bottom : 20px;
-	height: 510px;
+	height: 483px;
 	position: relative;
 	margin-bottom: 20px;
 	padding-top: 20px;
@@ -4445,6 +4459,13 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	width: 23px;
 	height: 29px;
 	margin-right: 10px;
+}
+
+.cmp-programas-marco .cmp-arquitectos-realacionados .noticias-container {
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 0px;
+	width: 360px;
 }
 
 /* Estilo variante de fichas en actos - termina */

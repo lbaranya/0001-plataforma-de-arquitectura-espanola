@@ -37,6 +37,26 @@ editor:
               label: caar-awards-app.files.standard-event.standardEventData.filesList.fileLink.label
               targetWorkspace: architecture-files
               appName: caar-architecture-files-app
+          - name: newsList
+            label: caar-awards-app.files.standard-event.standardEventData.newsList.label
+            class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
+            field:
+              name: newsLink
+              class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              label: caar-awards-app.files.standard-event.standardEventData.newsList.fileLink.label
+              targetWorkspace: news
+              appName: caar-news-app
+          #- name: institutionsList
+            #label: caar-awards-app.files.standard-event.standardEventData.filesList.label
+            #class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+            #transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueChildNodeTransformer
+            #field:
+              #name: institutionLink
+              #class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+              #label: caar-awards-app.files.standard-event.standardEventData.filesList.fileLink.label
+              #targetWorkspace: news
+              #appName: caar-news-app
   actions:
     - name: commit
     - name: cancel
