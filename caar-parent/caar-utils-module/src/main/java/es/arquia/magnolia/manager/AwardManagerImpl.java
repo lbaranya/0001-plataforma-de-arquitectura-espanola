@@ -176,8 +176,7 @@ public class AwardManagerImpl implements AwardManager{
 			public boolean evaluate(Object arg0) {
 				Node tmpNode = (Node) arg0;
 				try {
-					return tmpNode.isNodeType(announcementNodeType) && tmpNode.getParent().isNodeType(editionNodeType) 
-							&& awardNodeUtil.getEditionState(tmpNode.getParent()).contains(editionStateOpen);
+					return tmpNode.isNodeType(announcementNodeType) && tmpNode.getParent().isNodeType(editionNodeType);
 				}catch(RepositoryException e) {
 					return false;
 				}

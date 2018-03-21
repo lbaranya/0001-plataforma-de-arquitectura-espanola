@@ -19,6 +19,12 @@ a, a:hover, a:visited, a:link, a:active a:focus {
 	text-decoration: none;
 }
 
+/**Quitar padding**/
+
+.col-padding-out{
+	padding: 0 !important;
+}
+
 /* NUEVO CONTAINER */
 .container-margin {
 	width: 1442px;
@@ -3157,6 +3163,11 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	float: left;
 }
 
+.preview .descript a{
+	color: #D0021B;
+	float: right;
+}
+
 .col-info-preview {
 	position: relative;
 	float: left;
@@ -4239,6 +4250,122 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 
 /* GRID DE LA HOME - termina */
 
+/* Detalle de Eventos */
+
+.cmp-detalle-agenda {
+  background-color: #f9f7f3; }
+  .cmp-detalle-agenda .main-title {
+    text-align: center;
+    font-family: "National-Book", "Helvetica", "sans-serif";
+    font-size: 55px;
+    margin-bottom: 35px;
+    margin-top: 0px; }
+  .cmp-detalle-agenda .detalle-container {
+    padding-bottom: 100px;
+    border-bottom: 2px solid #D0021B; }
+    .cmp-detalle-agenda .detalle-container .agenda-evento {
+      display: table;
+      padding-right: 0px; }
+      .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-img {
+        overflow: hidden;
+        padding: 0px; }
+      .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles {
+        display: table-cell;
+        float: none;
+        border-right: 1px solid #000000;
+        padding: 0px 30px 0px 56px; }
+        .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          min-height: 661px; }
+          .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .subtitle {
+            font-family: "National-Book", "Helvetica", "sans-serif";
+            font-size: 34px;
+            line-height: 34px;
+            color: #D0021B;
+            margin: 10px 0px 30px 0px; }
+          .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .info-texto {
+            font-family: "National-Book", "Helvetica", "sans-serif";
+            font-size: 17px;
+            line-height: 20px;
+            margin: 0px;
+            padding: 0px 0px 22px 6%;
+            border-bottom: 1px solid #979797; }
+          .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .info-conferenciantes {
+            padding-top: 23px; }
+            .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .info-conferenciantes .title {
+              display: inline-block;
+              font-family: "National-BookItalic", "Helvetica", "sans-serif";
+              font-size: 15px;
+              margin-bottom: 23px; }
+          .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .evento-footer-rrss {
+            position: absolute;
+            bottom: 0;
+            width: 111px;
+            height: 28px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid #D0021B; }
+            .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .evento-footer-rrss .rrss-link {
+              font-size: 11px;
+              color: #D0021B; }
+          .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .info-link {
+            padding-top: 15px; }
+            .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .info-link .info-link-more {
+              margin-bottom: 76.5px; }
+              .cmp-detalle-agenda .detalle-container .agenda-evento .agenda-detalles .detalle-info .info-link .info-link-more .moreinfo {
+                font-family: "National-Book", "Helvetica", "sans-serif";
+                font-size: 12px;
+                color: #D0021B; }
+    .cmp-detalle-agenda .detalle-container .evento-informacion {
+      padding-left: 45px; }
+      .cmp-detalle-agenda .detalle-container .evento-informacion .title {
+        display: inline-block;
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        font-size: 15px;
+        line-height: 10px; }
+      .cmp-detalle-agenda .detalle-container .evento-informacion .horario-hora,
+      .cmp-detalle-agenda .detalle-container .evento-informacion .precio-cantidad {
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        font-size: 34px;
+        line-height: 39px;
+        margin: 0px; }
+      .cmp-detalle-agenda .detalle-container .evento-informacion .cuando {
+        margin-bottom: 37px; }
+        .cmp-detalle-agenda .detalle-container .evento-informacion .cuando .cuando-fecha {
+          font-family: "National-Bold", "Helvetica", "sans-serif";
+          font-size: 35px;
+          line-height: 25px;
+          margin-top: 11px; }
+      .cmp-detalle-agenda .detalle-container .evento-informacion .horario {
+        margin-bottom: 26px; }
+        .cmp-detalle-agenda .detalle-container .evento-informacion .horario .horario-hora {
+          margin-top: 12px; }
+      .cmp-detalle-agenda .detalle-container .evento-informacion .precio {
+        margin-bottom: 26px; }
+      .cmp-detalle-agenda .detalle-container .evento-informacion .donde .google-map {
+        margin: 12px 0px 20px 0px; }
+        .cmp-detalle-agenda .detalle-container .evento-informacion .donde .google-map .map {
+          width: 100%; }
+      .cmp-detalle-agenda .detalle-container .evento-informacion .donde .donde-direccion,
+      .cmp-detalle-agenda .detalle-container .evento-informacion .donde .donde-link {
+        font-family: "National-Book", "Helvetica", "sans-serif";
+        font-size: 17px;
+        line-height: 17px;
+        display: block; }
+      .cmp-detalle-agenda .detalle-container .evento-informacion .donde .donde-link {
+        color: #D0021B; }
+
+@media screen and (max-width: 1760px) {
+  .general-container {
+    width: 95%;
+    margin: 0 auto; } }
+    
+ /* Detalle de eventos - termina*/
+
+/* Estilo variante de fichas en actos - empieza */
 .div-instituciones {
 	background-color: #f9f7f3;
 	border-bottom: 3px solid #D0021B;
@@ -4319,3 +4446,5 @@ section.cmp-acerca-de-ae.cmp-breadcrumb-info-video {
 	height: 29px;
 	margin-right: 10px;
 }
+
+/* Estilo variante de fichas en actos - termina */

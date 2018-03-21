@@ -1,7 +1,7 @@
     <section class="cmp-rejilla-home">
         <div class="container-margin">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-padding-out">
                     <div class="row">
                         <div class="col-md-3 col-info">
 	                        [#assign imgItemKey = content.image11!""]

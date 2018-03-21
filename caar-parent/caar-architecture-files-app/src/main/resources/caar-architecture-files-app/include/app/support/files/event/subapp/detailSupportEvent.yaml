@@ -46,24 +46,6 @@ editor:
             type: Date
             defaultValue: now
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.presentationEndingDate.label
-          - name: FS3_2_11
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.support.event.ouvrePresentation.startTime.label
-            description: caar-architecture-files-app.files.support.event.ouvrePresentation.hourFormat.label
-            validators:
-              - name: hourPattern
-                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
-                pattern: '(([01][0-9])|(2[0-3])):[0-5][0-9]'
-                errorMessage: caar-architecture-files-app.files.support.event.ouvrePresentation.hourTime.errorMessage.label
-          - name: FS3_2_12
-            class: info.magnolia.ui.form.field.definition.TextFieldDefinition
-            label: caar-architecture-files-app.files.support.event.ouvrePresentation.endTime.label
-            description: caar-architecture-files-app.files.support.event.ouvrePresentation.hourFormat.label
-            validators:
-              - name: hourPattern
-                class: info.magnolia.ui.form.validator.definition.RegexpValidatorDefinition
-                pattern: '(([01][0-9])|(2[0-3])):[0-5][0-9]'
-                errorMessage: caar-architecture-files-app.files.support.event.ouvrePresentation.hourTime.errorMessage.label
           - name: FS3_2_3
             class: info.magnolia.ui.form.field.definition.TextFieldDefinition
             label: caar-architecture-files-app.files.support.event.ouvrePresentation.presentationLocation.label

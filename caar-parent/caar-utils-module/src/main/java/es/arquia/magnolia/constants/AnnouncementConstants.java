@@ -90,6 +90,10 @@ public interface AnnouncementConstants {
 	
 	String lemmaOptionPhotoPreview = "lemmaOptionPhotoPreview";
 	
+	String lemmaOptionFileLinkName = "lemmaOptionFileLinkName";
+	
+	String lemmaOptionFileLink = "lemmaOptionFileLink";
+	
 	String nodeName = "juryTmp";
 	String sectionJuryType = "type";
 	String sectionJuryWeight = "juryOptionWeight";

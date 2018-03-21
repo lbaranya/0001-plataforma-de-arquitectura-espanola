@@ -105,11 +105,11 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
     private boolean validateEditionState(Node node, String oldState) {
     	try {
 			String newEditionState = node.getProperty(editionState).getValue().getString();
-			if(! newEditionState.equalsIgnoreCase(oldState) || StringUtils.isEmpty(oldState)) {
+			boolean existState = false;
 				if(newEditionState.equalsIgnoreCase(editionStateOpen)||newEditionState.equalsIgnoreCase(editionStateInProgress)) {
 					Node parentNode = node.getParent();
 					NodeIterator parentIterator = parentNode.getNodes();
-					boolean existState = false;
+					existState = false;
 					while(parentIterator.hasNext() && !existState) {
 						Node childNode = parentIterator.nextNode();
 						if(!childNode.isSame(node)) {
@@ -121,13 +121,13 @@ public class SaveEditionFormAction extends AbstractAction<SaveEditionFormActionD
 							}
 						}
 					}
-					return !existState;
 				}else {
 					return true;
 				}
-			}else {
-				return !(newEditionState.equals(editionStateInProgress) || newEditionState.equals(editionStateClosed));
-			}
+				if(existState)
+					return !(newEditionState.equals(editionStateInProgress) || newEditionState.equals(editionStateOpen));
+				else
+					return !existState;
 		} catch (IllegalStateException | RepositoryException e) {
 			return true;
 		}

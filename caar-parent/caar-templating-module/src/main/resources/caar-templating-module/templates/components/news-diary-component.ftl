@@ -47,8 +47,7 @@
                 			[#assign counter = counter + 1]
                             <div class="col-md-3 evento-contenedor">
                                 <div class="evento-item">
-                                    [#-- <a href="${cmsfn.link(eventsNode)}" class="evento-link">  --]
-                                    <a href="${cmsfn.link(navfn.rootPage(content))}" class="evento-link"> 
+                                    <a href="${model.getEventLink(cmsfn.link(eventsNode)!"")!""}" class="evento-link">
                                         <div class="evento-header">
                                             <span class="categoria">${eventsInstance.getEventType(eventsNode)!""}</span>
                                             <span class="evento-fecha">${eventsInstance.getStartDayOfWeek(eventsNode)!""}</span>
@@ -77,7 +76,6 @@
                                 </div>
                             </div>
                         [/#if]
-                    
                     [/#list]
                 </div>
                 <div class="ver-todo ver-eventos">
