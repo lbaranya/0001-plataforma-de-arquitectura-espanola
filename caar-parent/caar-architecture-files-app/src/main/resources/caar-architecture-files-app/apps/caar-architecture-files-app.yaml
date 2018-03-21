@@ -316,7 +316,7 @@ subApps:
       showVersionsGraphic:
         !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/showVersionsGraphic.yaml
       
-      # Details Manuscript
+      # Details Three Dimensional
       showVersionsThreeDimensional:
         !include:/caar-architecture-files-app/include/app/format/files/three-dimensional/actions/showVersionsThreeDimensional.yaml
         
