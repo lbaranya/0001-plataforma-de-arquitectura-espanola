@@ -1,0 +1,23 @@
+name: formatBook
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatBook.label
+groups:
+  - name: editActions
+    items:
+      - name: editFormatBook
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+      - name: requestTranslation
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsBook
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:format-book
