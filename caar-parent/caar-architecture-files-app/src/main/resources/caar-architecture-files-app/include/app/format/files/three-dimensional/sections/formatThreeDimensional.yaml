@@ -1,4 +1,4 @@
-name: formatManuscript
+name: formatThreeDimensional
 label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatThreeDimensional.label
 groups:
   - name: editActions
