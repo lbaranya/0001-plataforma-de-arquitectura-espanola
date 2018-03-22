@@ -1,10 +1,10 @@
-name: formatThreeDimensional
-label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatThreeDimensional.label
+name: formatBook
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.formatBook.label
 groups:
   - name: editActions
     items:
-     - name: editFormatThreeDimensional
-     - name: confirmDelete
+      - name: editFormatBook
+      - name: confirmDelete
   - name: activationActions
     items:
       - name: activate
@@ -16,8 +16,8 @@ groups:
       - name: export
   - name: versionsActions
     items:
-      - name: showVersionsThreeDimensional
+      - name: showVersionsBook
       - name: restoreVersion
 availability:
   nodeTypes:
-    - mgnl:format-three-dimensional
+    - mgnl:format-book

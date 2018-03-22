@@ -5,7 +5,7 @@
 	<parent>
 		<artifactId>caar-parent</artifactId>
 		<groupId>es.arquia.magnolia</groupId>
-		<version>0.35-SNAPSHOT</version>
+		<version>0.36-SNAPSHOT</version>
 	</parent>
 	
 	<artifactId>caar-news-app</artifactId>
@@ -32,7 +32,7 @@
     <dependency>
 		<groupId>es.arquia.magnolia</groupId>
 		<artifactId>caar-utils-module</artifactId>
-		<version>0.35-SNAPSHOT</version>
+		<version>0.36-SNAPSHOT</version>
 	</dependency>
 
     <!-- TEST -->

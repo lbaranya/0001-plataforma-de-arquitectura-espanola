@@ -68,6 +68,10 @@ public interface AwardConstants {
 	
 	String filesList = "filesList";
 	
+	String newsList = "newsList";
+	
+	String institutionsList = "institutionsList";
+	
 	String streamingLink = "streamingLink";
 	
 	String facebookUser = "facebookUser";
