@@ -335,10 +335,14 @@ subApps:
       # Details Audio
       showVersionsAudio:
         !include:/caar-architecture-files-app/include/app/format/files/audio/actions/showVersionsAudio.yaml
-        
+              
       # Details Book
       showVersionsBook:
         !include:/caar-architecture-files-app/include/app/format/files/book/actions/showVersionsBook.yaml        
+
+      # Details Portfolio
+      showVersionsPortfolio:
+        !include:/caar-architecture-files-app/include/app/portfolio/actions/showVersionsPortfolio.yaml
         
       restoreVersion: 
         class: info.magnolia.ui.contentapp.browser.action.RestoreVersionActionDefinition
@@ -390,10 +394,6 @@ subApps:
       # Graphic folder
       addFolderFormatGraphic:
         !include:/caar-architecture-files-app/include/app/format/files/graphic/actions/addFolderFormatGraphic.yaml
-      
-      # Portfolio folder
-      addFolderPortfolio:
-        !include:/caar-architecture-files-app/include/app/portfolio/actions/addFolderPortfolio.yaml
         
       # Video folder
       addFolderFormatVideo:
@@ -422,6 +422,10 @@ subApps:
       # Book folder
       addFolderFormatBook:
         !include:/caar-architecture-files-app/include/app/format/files/book/actions/addFolderFormatBook.yaml        
+
+      # Portfolio folder
+      addFolderPortfolio:
+        !include:/caar-architecture-files-app/include/app/portfolio/actions/addFolderPortfolio.yaml
       
       # Edit any folder
       editFolder:
@@ -672,6 +676,23 @@ subApps:
         
         # Section if portfolio wrapper is not deleted
         - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolioWrapper.yaml
+        
+        # Section if portfolio wrapper is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolioWrapperDeleted.yaml
+        # Section if portfolio wrapper is not deleted
+        - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolioWrapper.yaml
+        
+        # portfolio folder
+        # Section if portfolio folder is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolioFolderDeleted.yaml
+        # Section if portfolio folder is not deleted
+        - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolioFolder.yaml
+        
+        # Node actions
+        # Section if portfolio is marked for deletion
+        - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolioDeleted.yaml
+        # Section if portfolio is not deleted
+        - !include:/caar-architecture-files-app/include/app/portfolio/sections/portfolio.yaml
         
         # Support group
         
@@ -1029,7 +1050,10 @@ subApps:
     !include:/caar-architecture-files-app/include/app/format/files/cartographic/subapp/detailFormatCartographic.yaml
   # Format audio sub app
   detailFormatAudio:
-    !include:/caar-architecture-files-app/include/app/format/files/audio/subapp/detailFormatAudio.yaml  
+    !include:/caar-architecture-files-app/include/app/format/files/audio/subapp/detailFormatAudio.yaml     
   # Format book sub app
   detailFormatBook:
-    !include:/caar-architecture-files-app/include/app/format/files/book/subapp/detailFormatBook.yaml    
+    !include:/caar-architecture-files-app/include/app/format/files/book/subapp/detailFormatBook.yaml
+  # Portfolio sub app
+  detailPortfolio:
+    !include:/caar-architecture-files-app/include/app/portfolio/subapp/detailPortfolio.yaml 

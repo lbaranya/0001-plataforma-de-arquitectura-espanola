@@ -1,0 +1,23 @@
+name: portfolio
+label: caar-architecture-files-app.subapp.browser.actionbar.sections.portfolio.label
+groups:
+  - name: editActions
+    items:
+      - name: editPortfolio
+      - name: confirmDelete
+  - name: activationActions
+    items:
+      - name: activate
+      - name: activateRecursive
+      - name: deactivate
+      - name: requestTranslation
+  - name: importExportActions
+    items:
+      - name: export
+  - name: versionsActions
+    items:
+      - name: showVersionsPortfolio
+      - name: restoreVersion
+availability:
+  nodeTypes:
+    - mgnl:portfolio
